@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#Este script tiene como finalidad instalar y configurar puppet.
+
+#Esta linea solo tiene el fin de saber si se ejecuto el snipet
+touch /root/instala_puppet;
+
+#Añado el repositorio de puppet e instalo el agente
+rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm;
+yum install -y puppet;
+
+#Añado la linea que indica la direccion IP del servidor puppet
+echo '192.168.122.230 puppet cobbler puppet.example.com' >> /etc/hosts;
+
+#Aca modifico el archivo de configuracion de puppet y coloco el mio.
+echo '[main]' > /etc/puppet/puppet.conf;
+echo 'logdir = /var/log/puppet' >> /etc/puppet/puppet.conf ;
+echo 'rundir = /var/run/puppet' >> /etc/puppet/puppet.conf;
+echo 'ssldir = $vardir/ssl' >> /etc/puppet/puppet.conf;
+echo 'certname = agente' >> /etc/puppet/puppet.conf;
+echo 'server = puppet' >> /etc/puppet/puppet.conf;
+echo 'runinterval = 2m' >> /etc/puppet/puppet.conf;
+echo '[agent]' >> /etc/puppet/puppet.conf;
+echo 'classfile = $vardir/classes.txt' >> /etc/puppet/puppet.conf;
+echo 'localconfig = $vardir/localconfig' >> /etc/puppet/puppet.conf;
+
+service puppet restar;
+
+exit;

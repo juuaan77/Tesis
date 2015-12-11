@@ -1,0 +1,132 @@
+1) Desactivar selinux
+	
+	vi /etc/sysconfig/selinux
+
+	[...]
+	SELINUX=disabled
+	[...]
+
+2) Desactivar IPtables
+
+	service iptables stop
+	chkconfig iptables off
+
+3) Descar y añadir repositorios EPEL
+
+	wget http://epel.mirror.net.in/epel/6/i386/epel-release-6-8.noarch.rpm
+	rpm -Uvh epel-release-6-8.noarch.rpm
+
+4) Instalar servicios necesarios
+
+	yum install cobbler cobbler-web dhcp debmirror pykickstart system-config-kickstart dhcp mod_python tftp cman -y
+
+5) Abilitar TFTP y Rsync
+
+	vi /etc/xinetd.d/tftp
+	disable = no
+
+	vi /etc/xinetd.d/rsync
+	disable = no
+
+6) Configurar DHCP
+	
+	cp /usr/share/doc/dhcp-4.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf
+
+	vi /etc/dhcp/dhcpd.conf
+	
+	[...]
+	# A slightly different configuration for an internal subnet.
+	subnet 192.168.1.0 netmask 255.255.255.0 {
+	  range 192.168.1.100 192.168.1.254;
+	  option domain-name-servers server.unixmen.local;
+	  option domain-name "unixmen.local";
+	  option routers 192.168.1.1;
+	  option broadcast-address 192.168.1.255;
+	  default-lease-time 600;
+	  max-lease-time 7200;
+	}
+	[...]
+
+7) Reiniciar todos los servicios
+
+	service httpd start
+	service dhcpd start
+	service xinetd start
+	service cobblerd start
+	chkconfig httpd on
+	chkconfig dhcpd on
+	chkconfig xinetd on
+	chkconfig cobblerd on
+
+8) Configurar cobbler
+
+	vi /etc/cobbler/settings
+
+	[...]
+	manage_dhcp: 1
+	[...]
+	[...]
+	next_server: tuIP
+	[...]
+	server: tuIP
+	[...]
+
+	vi /etc/cobbler/dhcp.template
+
+	 subnet 192.168.1.0 netmask 255.255.255.0 {
+	 option routers             192.168.1.1;
+	 option domain-name-servers 192.168.1.1;
+	 option subnet-mask         255.255.255.0;
+	 range dynamic-bootp        192.168.1.100 192.168.1.254;
+	 default-lease-time         21600;
+	 max-lease-time             43200;
+	 next-server                tuIP
+
+	vi /etc/cobbler/modules.conf
+
+	[...]
+	[authentication]
+	module = authn_configfile
+	[...]
+	[authorization]
+	module = authz_allowall
+	[...]
+
+	cobbler get-loaders
+
+Comentar las siguientes lineas
+
+	vi /etc/debmirror.conf
+
+	[...]
+	#@dists="sid";
+	[...]
+	#@arches="i386";
+	[...]
+
+	service httpd restart
+	service dhcpd restart
+	service xinetd restart
+	service cobblerd restart
+
+	cobbler check
+
+9) Solucionar errores que arroje el cobbler check. Debemos obtener el siguiente resultado
+
+	No configuration problems found.  All systems go.
+
+ERRORES CONOCIDOS:
+
+1) Si insiste en que el httpd o el selinux joden, reiniciar la maquina y asegurarse que este desabilitado el selinux e iniciado el httpd
+
+2) si indica que se debe cambiar el password por defecto ejecutar:
+
+	openssl passwd -1
+	insertar y verificar su clave y obtendra una serie de caracteres que es la calve encriptada, y debe colocar esa clave en
+
+	vi /etc/cobbler/settings
+
+	[...]
+	default_password_crypted: "$1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/"
+	[...]
+
