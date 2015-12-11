@@ -1,0 +1,10520 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Documentación Proyecto Integrador
+\end_layout
+
+\begin_layout Author
+\begin_inset Graphics
+	filename Escudo_UNC_modernoo.png
+	width 4in
+	height 4in
+	keepAspectRatio
+	rotateOrigin centerBottom
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Juan Arese, Werner Diers
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+KVM
+\end_layout
+
+\begin_layout Subsection
+Requerimientos de KVM
+\end_layout
+
+\begin_layout Standard
+El Hipervisor KVM requiere que el microprocesador cuente con VT-x para procesado
+res de Intel o con AMD -V para los propios de AMD.
+ Para poder confirmar que un un procesador cuenta con esto, en los sistemas
+ basados en Linux, se debe ejecutar el siguiente comando:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+grep -E 'svm|vmx' /proc/cpuinfo 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La salida de este comando es una porción del archivo /proc/cpuinfo en el
+ cual se detallan las diferentes flags que contiene el procesador, entre
+ ellas, la svm (AMD) o vmx (Intel).
+ En caso de no poseer esas flags, el procesador no soporta hiper-virtualización
+ y la salida será vacía.
+\end_layout
+
+\begin_layout Standard
+La siguiente, es la salida obtenida con un AMD Athlon(tm) II P360 Dual-Core
+ Processor de 1,7GHz:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat
+ pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp
+ lm 3dnowext 3dnow constant_tsc rep_good nopl nonstop_tsc extd_apicid pni
+ monitor cx16 popcnt lahf_lm cmp_legacy 
+\color red
+svm
+\color inherit
+ extapic cr8_legacy abm sse4a 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+ hw_pstate npt lbrv svm_lock nrip_save 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se debe asegurar que el módulo de KVM este cargado, para esto ejecutamos
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+lsmod | grep kvm 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La salida obtenida, nuevamente en la misma máquina que en el caso anterior
+ es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+kvm_amd 60554 0 kvm 448375 1 kvm_amd 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En caso de no estar cargados los módulos, se deben cargar manualmente.
+\end_layout
+
+\begin_layout Subsection
+Restricciones de KVM
+\end_layout
+
+\begin_layout Itemize
+El número máximo de CPUs por huésped es elevado (240 para RHE 7.1) por lo
+ que no aplica en este trabajo.
+ 
+\end_layout
+
+\begin_layout Itemize
+La virtualización anidada no está soportada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sobre utilización de memoria es soportada por KVM utilizando el disco de
+ swap.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sobre utilización de CPUs es soportada por KVM, se recomienda no utilizar
+ más de diez CPUs virtuales por cada CPU físico.
+\end_layout
+
+\begin_layout Itemize
+Virtualización de dispositivos SCSI no está soportada.
+ Virtualización de dispositivos IDE en KVM es limitada a cuatro por huésped.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soporta 32 slots para dispositivos PCI (paravirtualizados) y 8 de estos
+ por cada slot (datos RHE7) 
+\end_layout
+
+\begin_layout Itemize
+La asignación de dispositivos referenciados a dispositivos físicos son de
+ uso exclusivo a la VM .
+\end_layout
+
+\begin_layout Itemize
+La migración y salvado, o restauración de la VM no está soportada mientras
+ el dispositivo esté en uso.
+ 
+\end_layout
+
+\begin_layout Itemize
+KVM no soporta kernels de real time.
+ 
+\end_layout
+
+\begin_layout Subsection
+Instalación de paquetes de virtualización en CentOS 7 existente 
+\end_layout
+
+\begin_layout Standard
+Se deben ejecutar los siguientes comandos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum update 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum install qemu-kvm qemu-img 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y se recomienda la instalación de los siguientes paquetes, con el siguiente
+ comando:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum install kvm libvirt python-virtinst qemu-kvm virt-manager libvirt qemu-syste
+m-x86 qemu-img libvirt-python libvirt-client virt-install virt-viewer python-vir
+tinst
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Instalación utilizando kickstart con virt-install
+\end_layout
+
+\begin_layout Standard
+Para conocer como utilizar virt-install revisar el man del mismo con:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+man virt-install
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede automatizar la instalación de un sistema operativo utilizando un
+ kickstart, es decir, un archivo que le indica al sistema operativo como
+ debe instalarse, éste, además, permite ejecutar configuraciones pre y pos
+ instalación.
+ Se indica el archivo kickstart deseado en la creación de la maquina virtual,
+ añadiendo la siguiente sección al comando virt-install:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--extra-args="ks=http://192.168.122.1/ks.cfg 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se ve, el archivo se llama (en este caso) 
+\family typewriter
+ks.cfg 
+\family default
+y est alojado en un host con la direccioón IP 192.18.122.1
+\end_layout
+
+\begin_layout Subsection
+Booteo por red con libvirt
+\end_layout
+
+\begin_layout Standard
+Se necesita un servidor para PXE con DHCP y TFTP, dnsmasq y un servidor
+ configurado por cobbler.
+\end_layout
+
+\begin_layout Subsubsection
+Configuración de la red 
+\end_layout
+
+\begin_layout Standard
+CentOS 7 soporta las siguientes configuraciones de red para la virtualización:
+\end_layout
+
+\begin_layout Itemize
+Redes virtuales usando NAT (Network Address Translation)
+\end_layout
+
+\begin_layout Itemize
+Dispositivos físicos distribuidos usando la asignación de dispositivos PCI
+\end_layout
+
+\begin_layout Itemize
+Redes puenteadas (bridge) 
+\end_layout
+
+\begin_layout Standard
+Se debe habilitar NAT, bridge o asignar directamente un dispositivo PCI
+ para permitir a host externos acceder a los servicios de red en las máquinas
+ virtuales huéspedes.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+NAT con libvirt 
+\end_layout
+
+\begin_layout Standard
+Uno de los métodos más comunes para compartir las conexiones de red es usar
+ NAT forwading (también conocido como redes virtuales).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Configuración del host 
+\end_layout
+
+\begin_layout Standard
+Cada instalación estándar de libvirt provee una conectividad basada en NAT
+ a las máquinas virtuales como red virtual por defecto.
+ Verificar que está disponible con el comando '
+\family typewriter
+virsh net-list --all
+\family default
+'.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh net-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Nombre 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Estado 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Inicio automático 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Persistente 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--------------------------------------------------------------------------------
+-----------
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ activo
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ si
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ si 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si no se encuentra, lo siguiente puede ser usado en el archivo de configuración
+ XML (
+\family typewriter
+/etc/libvirtd/qemu/myguest.xml
+\family default
+) para el huésped:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+ll /etc/libvirt/qemu
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+total 24
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+drwxr-xr-x 3 root root 4096 sep 7 11:42 ./
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+drwxr-xr-x 6 root root 4096 sep 1 11:57 ../
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+-rw------- 1 root root 3435 sep 3 10:58 centosLImpio.xml 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+-rw------- 1 root root 3458 sep 7 11:42 master.xml 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+drwxr-xr-x 3 root root 4096 sep 1 11:57 networks/ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La red por defecto está definida desde 
+\family typewriter
+/etc/libvirt/qemu/networks/default.xml
+\end_layout
+
+\begin_layout Standard
+Para marcar la red por defecto para iniciar automáticamente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh net-autostart default
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Network default marked as autostarted
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para iniciar la red por defecto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh net-start default
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Network default started
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez que la red por defecto de libvirt está corriendo, se verá un dispositivo
+ bridge aislado.
+ Este dispositivo no tiene ninguna interfaz física añadida.
+ El nuevo dispositivo utiliza NAT e IP forwarding para conectarse a la red
+ física.
+ No añadir nuevas interfaces.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# brctl show 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+bridge name 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+bridge id
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ STP enabled 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+interfaces 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+virbr0 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+8000.000000000000 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+libvirt añade reglas de iptables las cuales permiten el tráfico desde y
+ hacia las máquinas virtuales huéspedes unidas al dispositivo virbr0 en
+ las cadenas (chains) INOUT, FORWARD, OUTPUT y POSTROUTING.
+ libvirt luego intenta habilitar el parámetro ip_forward.
+ Algunas otras aplicaciones tal vez deshabiliten ip_forward por lo tanto
+ lo mejor es dejar esta configuración fija añadiendo lo siguiente a 
+\family typewriter
+/etc/sysctl.conf
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+net.ipv4.ip_forward = 1 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Configuración de las máquinas virtuales huéspedes
+\end_layout
+
+\begin_layout Standard
+Una vez que la configuración del host está completa, una máquina virtual
+ huésped puede ser conectada a la red virtual basada en su nombre.
+ Para conectar a un huésped a la red virtual por defecto, lo siguiente puede
+ ser utilizado en el archivo de configuración XML para el huésped (
+\family typewriter
+/etc/libvirtd/qemu/myguest.xml
+\family default
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+<interface type='network'> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<source network='default'/> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+</interface> 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+NOTA: Definir la dirección MAC es opcional.
+ Si no se define una, una dirección MAC es automáticamente generada y usada
+ como la dirección MAC del dispositivo bridge utilizado por la red.
+ Definirla manualmente es útil para mantener la consistencia o la facilidad
+ de referencia a través del ambiente, o para evitar la posibilidad de conflicto
+ (muy escasa).
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+<interface type='network'>
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<source network='default'/> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+<mac address='00:16:3e:1a:b3:4a'/>
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+</interface>
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Bridged networking
+\end_layout
+
+\begin_layout Standard
+Bridged networking (también conocido como virtual network switching) es
+ usado para poner las interfaces de red de la máquinas virtuales en la misma
+ red que la interfaz física.
+\end_layout
+
+\begin_layout Subsubsection
+Bridged networking con Virtual Machine Manager
+\end_layout
+
+\begin_layout Standard
+Procedimiento para crear un bridge con virt-manager: 
+\end_layout
+
+\begin_layout Enumerate
+Desde el menú principal de virt-manager, ir a Editar > Detalles de la Conexión
+ > Interfaces de Red (Edit > Connection Details > Network Interfaces) .
+\end_layout
+
+\begin_layout Enumerate
+Pulsar el ícono + en la parte inferior.
+\end_layout
+
+\begin_layout Enumerate
+En el Tipo de Interfaz (Interface type) del menú que se despliega, seleccionar
+ Bridge y luego continuar.
+ 
+\end_layout
+
+\begin_layout Enumerate
+En el campo Nombre (Name) ingresar un nombre como por ejemplo virbr0 o br0.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Seleccionar un Modo de inicio (Start mode) del menú desplegable.
+ Seleccionar onboot (activa la interfaz bridge en el próximo reinicio de
+ la máquina virtual).
+\end_layout
+
+\begin_layout Enumerate
+Seleccionar la casilla Activar ahora (Activate now) para activarlo inmediatament
+e.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Para configurar Configuraciones IP (IP settings) o Configuraciones Bridge
+ (Bridge settings) realizar los cambios necesarios y pulsar OK al finalizar.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Seleccionar la interfaz física para conectar a las máquinas virtuales.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Pulsar Finalizar (Finish).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Seleccionar el bridge a utilizar y pulsar Aplicar (Apply).
+\end_layout
+
+\begin_layout Standard
+Para detener la interfaz, pulsar Detener Interfaz (Stop Interface).
+ Luego para eliminarla pulsar Delete Interface (Borrar Interfaz).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Utilizar la interfaz por defecto virbr0
+\end_layout
+
+\begin_layout Standard
+Para utrilizar la interfaz bridge por defecto, en el caso de arranque a
+ través de la red por medio de PXE, en el paso 5/5 de la creación de una
+ nueva máquina virtual con virt-manager, seleccionar bajo Opciones Avanzadas
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Especificar el nombre del dispositivo compartido
+\begin_inset Quotes erd
+\end_inset
+
+ y en 
+\begin_inset Quotes eld
+\end_inset
+
+Nombre del bridge
+\begin_inset Quotes erd
+\end_inset
+
+ ingresar 
+\family typewriter
+virbr0
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Section
+Pools de almacenamiento
+\end_layout
+
+\begin_layout Standard
+Un pool de almacenamiento es un conjunto de almacenamiento guardado por
+ un administrador.
+ Los pools de almacenamiento son divididos en volúmenes de almacenamiento
+ por los administradores, y los volúmenes son asignados a las VM's como
+ dispositivos de bloques.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, el administrador de almacenamiento responsable por un servidor
+ NFS crea un disco compartido que almacena toda la información de las VM's.
+ El administrador definiría un pool de almacenamiento en el host de virtualizaci
+ón usando el detalle de disco compartido.
+ En este ejemplo, el administrador quiere que 
+\family typewriter
+nfs.example.com:/path/to/share
+\family default
+ sea montado en
+\family typewriter
+ /vm_data
+\family default
+.
+ Cuando el pool es iniciado, libvirt monta el compartido en el directorio
+ especifico, tal como lo haría el administrador del sistema logueándose
+ y ejecutando mount.
+ Si el pool está configurado con autostart, libvirt asegura que el disco
+ compartido NFS es montado en el directorio especificado cuando libvirt
+ es iniciado.
+ Una vez que el pool esté iniciado, el directorio en el disco compartido
+ NFS es reportado como un volúmen de almacenamiento y el path de los SV
+ (storage volumes) pueden ser consultados por las APIs de libvirt.
+ El path del SV puede entonces ser copiado en la sección que describe la
+ fuente de almacenamiento en el archivo XML de las VM's para dispositivos
+ de bloques.
+ En el caso de NFS, una aplicación que usa las APIs de libvirt puede crear
+ y eliminar SV en el SP(storage pool).
+ No todos los tipos de SP soportan creación y destrucción de volúmenes.
+ 
+\end_layout
+
+\begin_layout Standard
+Los SP y SV no son requeridos por la mayoría de las operaciones de las VM's.
+ Los SP y SV proveen de un camino para libvirt para asegurar que una parte
+ del almacenamiento 
+\family typewriter
+\size largest
+\color magenta
+que cosa aegura0.....
+
+\family default
+\size default
+\color inherit
+ Note que uno de las características de libvirt is el protocolo remoto,
+ entonces es posible administrar todos los aspectos de los ciclos de vida
+ de las VM's así como las configuraciones de los recursos requeridos por
+ las VM's.
+ Esas operaciones deben representar a un host remoto con las API de libvirt.
+ En otras palabras, un administrador usando aplicaciones de libvirt puede
+ asegurar un usuario para desempeñar todas las tareas para configurar la
+ maquina física para las VM's.
+ Aunque el SP es un contenedor virtual, está limitado por dos factores:
+ 
+\end_layout
+
+\begin_layout Itemize
+El tamaño máximo permitido por qemu-kvm y 
+\end_layout
+
+\begin_layout Itemize
+el tamaño del disco de la máquina física.
+\end_layout
+
+\begin_layout Standard
+Los siguientes son los tamaños máximos permitidos:
+\end_layout
+
+\begin_layout Itemize
+virtio-blk -> 8 Exabytes 
+\end_layout
+
+\begin_layout Itemize
+Ext4 -> 16 Terabytes 
+\end_layout
+
+\begin_layout Itemize
+XFS -> 8 Exabytes
+\end_layout
+
+\begin_layout Standard
+Libvirt usa un directorio basado en un SP, el 
+\family typewriter
+/var/lib/libvirt/images
+\family default
+, como el SP por defecto.
+ Este, puede ser cambiado por otro.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Local storage pools:
+\series default
+ Los LSP están directamente unidos a la máquina física servidor.
+ Los LSP incluyen : Directorios locales, discos directamente conectados,
+ particiones físicas y LVM.
+ Esos SV almacenan las imágenes de las VM's o son unidas a la VM's como
+ almacenamiento adicional.
+ Los LSP no son apropiados para muchos entornos de producción dado que no
+ soportan migración en vivo
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Networked storage pools:
+\series default
+ Loss NSP incluyen almacenamiento de dispositivos compartidos sobre una
+ red usando protocolos estándar.
+ NSP es requerido cuando las VM's migran entre dos máquinas físicas con
+ virt-manager, pero es opcional cuando migran con virsh.
+ Los protocolos soportados por los NSP incluyen: 
+\end_layout
+
+\begin_layout Itemize
+Fibre Channel-based LUNs 
+\end_layout
+
+\begin_layout Itemize
+iSCSI 
+\end_layout
+
+\begin_layout Itemize
+NFS 
+\end_layout
+
+\begin_layout Itemize
+GFS2 
+\end_layout
+
+\begin_layout Itemize
+SCSI RDMA protocols (SCSI RCP)
+\end_layout
+
+\begin_layout Standard
+Crear un SP basado en un disco usando virsh.
+\end_layout
+
+\begin_layout Enumerate
+Crear una etiqueta GTP (GUID partition table) en el disco: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+parted /dev/sdb 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+GNU Parted 2.1 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Using /dev/sdb Welcome to GNU Parted! Type 'help' to view a list of commands.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+(parted) mklabel 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+New disk label type? gpt 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+(parted) quit 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Information: You may need to update /etc/fstab.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# 
+\end_layout
+
+\begin_layout Standard
+2.
+ Crear archivo de configuración del SP
+\end_layout
+
+\begin_layout Standard
+Crear un archivo XML temporal conteniendo la información del SP requerida
+ por el nuevo dispositivo.
+ El archivo debe contener el formato mostrado abajo y contener los siguientes
+ campos:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+<name>guest_images_disk</name> 
+\series default
+El parámetro determina el nombre del SP.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+<device path = '/dev/sdb' />
+\series default
+ Especifica el path donde se almacena el dispositivo.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+<target> <path>/dev</path></target> 
+\series default
+Determina la localización en el host físico donde es unido el volúmen creado
+ con el SP.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+<formattype= 'gpt'/> 
+\series default
+Especifica el tipo de tabla de la partición.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A modo de ejemplo se tiene:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+<pool type='disk'> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<name>guest_images_disk</name>
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<source> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<device path='/dev/sdb'/> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<format type='gpt'/> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+</source> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<target> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+<path>/dev</path> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+</target>
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+</pool> 
+\end_layout
+
+\begin_layout Standard
+3.
+ Asignar el dispositivo
+\end_layout
+
+\begin_layout Standard
+Añadir la definición del storage pool usando el comando virsh pool-define
+ con la configuración XML creada en el paso anterior.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-define ~/guest_images_disk.xml 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Pool guest_images_disk defined from /root/guest_images_disk.xml 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+State 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Autostart
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+----------------------------------------- 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+guest_images_disk 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+inactive 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+no 
+\end_layout
+
+\begin_layout Standard
+4.
+ Iniciar el storage pool 
+\end_layout
+
+\begin_layout Standard
+Iniciar el storage pool con el comando 
+\family typewriter
+virsh pool-start
+\family default
+.
+ Verificar que el pool es iniciado con el comando 
+\family typewriter
+virsh pool-list –all
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-start guest_images_disk 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Pool guest_images_disk started 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ State
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ Autostart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+----------------------------------------- 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+guest_images_disk
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+no 
+\end_layout
+
+\begin_layout Standard
+5.
+ Habilitar inicio automático
+\end_layout
+
+\begin_layout Standard
+El inicio automático configura el servicio libvirtd para iniciar el storage
+ pool cuando el servicio inicia.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-autostart guest_images_disk 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Pool guest_images_disk marked as autostarted 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ State 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Autostart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+----------------------------------------- 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+guest_images_disk 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+6.
+ Verificar la configuración del storage pool
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para verificar que el storage pool fue creado correctamente, los tamaños
+ reportados correctamente y el estado sea 
+\family typewriter
+'running'
+\family default
+, ejecutar 
+\family typewriter
+virsh pool-info
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-info guest_images_disk 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name: 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+guest_images_disk 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+UUID: 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+551a67c8-5f2a-012c-3844-df29b167431c 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+State: 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+running 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Capacity: 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+465.76 GB 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Allocation: 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+0.00
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Available: 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+465.76 GB 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# ls -la /dev/sdb 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+brw-rw----.
+ 1 root disk 8, 16 May 30 14:08 /dev/sdb 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh vol-list guest_images_disk 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Path
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+----------------------------------------- 
+\end_layout
+
+\begin_layout Subsubsection
+Borrar un storage pool utilizando virsh
+\end_layout
+
+\begin_layout Standard
+1.
+ Para evitar inconvenientes con otras máquinas virtuales huéspedes utilizando
+ el mismo pool, lo mejor es pararlo y liberar los recursos usados por el
+ mismo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-destroy guest_images_disk
+\end_layout
+
+\begin_layout Standard
+2.
+ Eliminar las definiciones del storage pool:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-undefine guest_images_disk
+\end_layout
+
+\begin_layout Subsubsection
+Crear sotrage pools basados en directorios con virsh
+\end_layout
+
+\begin_layout Standard
+1.
+ Crear la definición del storage pool
+\end_layout
+
+\begin_layout Standard
+Usar el comando virsh pool-define-as para definir un nuevo storage pool.
+ Hay dos opciones requeridas para la creación de un storage pool basado
+ en directorio:
+\end_layout
+
+\begin_layout Itemize
+El nombre del storage pool
+\end_layout
+
+\begin_layout Itemize
+El path a un sistema de directorios de archivos para guardar los archivos
+ imágenes del huésped.
+ Si el directorio no existe, virsh lo creará.
+ 
+\end_layout
+
+\begin_layout Standard
+Este ejemplo utilizat el directorio /guest_images.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-define-as guest_images dir - - - - "/guest_images" Pool guest_image
+s defined
+\end_layout
+
+\begin_layout Standard
+2.
+ Verificar que el storage pool aparece en la lista 
+\end_layout
+
+\begin_layout Standard
+Verificar que el storage pool es creado correctamente y el estado lo muestra
+ como inactivo.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+State 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Autostart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--------------------------------------------- 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+guest_images 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+inactive 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+no
+\end_layout
+
+\begin_layout Standard
+3.
+ Crear el directorio local
+\end_layout
+
+\begin_layout Standard
+Usar el comando virsh pool-build para construir el storage pool basado en
+ directorio para el directorio guest_images (por ejemplo) como se muestra:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-build guest_images 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Pool guest_images built 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# ls -la /guest_images 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+total 8 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+drwx------.
+ 2 root root 4096 May 30 02:44 .
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+dr-xr-xr-x.
+ 26 root root 4096 May 30 02:44 ..
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+State 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Autostart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+----------------------------------------- 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+guest_images 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+inactive 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+no 
+\end_layout
+
+\begin_layout Standard
+4.
+ Iniciar el storage pool 
+\end_layout
+
+\begin_layout Standard
+Usar el comando pool-start para habilitar un directorio de storage pool,
+ permitiendo que los volúmenes permitidos del pool sean usados como imágenes
+ de disco de los huéspedes.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-start guest_images 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Pool guest_images started
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+State 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Autostart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+----------------------------------------- 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+guest_images 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+active
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ no 
+\end_layout
+
+\begin_layout Standard
+5.
+ Habilitar inicio automático
+\end_layout
+
+\begin_layout Standard
+El inicio automático configura el servicio libvirtd para iniciar el storage
+ pool cuando el servicio inicia.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-autostart guest_images 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Pool guest_images marked as autostarted 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-list --all 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ State 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Autostart
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+----------------------------------------- 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ active
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+guest_images
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ active 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+yes 
+\end_layout
+
+\begin_layout Standard
+6.
+ Verificar la configuración del storage pool 
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-info guest_images 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Name: guest_images 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+UUID: 779081bf-7a82-107b-2874-a19a9c51d24c 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+State: running 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Persistent: yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Autostart: yes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Capacity: 49.22 GB 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Allocation: 12.80 GB 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Available: 36.41 GB 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# ls -la /guest_images 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+total 8 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+drwx------.
+ 2 root root 4096 May 30 02:44 .
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+dr-xr-xr-x.
+ 26 root root 4096 May 30 02:44 ..
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# 
+\end_layout
+
+\begin_layout Standard
+Para verificar que el storage pool fue creado correctamente, los tamaños
+ reportados correctamente y el estado sea 
+\family typewriter
+'running'
+\family default
+.
+ Si se quiere que el pool sea accesible incluso si la máquina virtual huésped
+ no está corriendo, asegurarse que 
+\family typewriter
+Persistent
+\family default
+ sea indicado como 
+\family typewriter
+yes
+\family default
+.
+ Si se quiere que el pool inicie automáticamente cuando comienze el servicio,
+ asegurarse que 
+\family typewriter
+Autostart
+\family default
+ esté indicado como 
+\family typewriter
+yes
+\family default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Borrar un storage pool utilizando virsh 
+\end_layout
+
+\begin_layout Standard
+1.
+ Para evitar inconvenientes con otras máquinas virtuales huéspedes utilizando
+ el mismo pool, lo mejor es pararlo y liberar los recursos usados por el
+ mismo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-destroy guest_images_disk
+\end_layout
+
+\begin_layout Standard
+2.
+ Opcionalmente, si se quiere eliminat el directorio donde el storage pool
+ reside, utilizar el siguiente comando:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-delete guest_images_disk
+\end_layout
+
+\begin_layout Standard
+3.
+ Eliminar la definición del storage pool:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# virsh pool-undefine guest_images_disk 
+\end_layout
+
+\begin_layout Section
+Instalación y configuración de Cobbler
+\end_layout
+
+\begin_layout Standard
+Para poder alojar las imágenes de los sistemas operativos, el servidor Cobbler
+ debe contar con al menos 20 GB de disco.
+ Para evitar inconvenientes, se debe deshabilitar SELinux y el firewall,
+ de la siguiente forma.
+ Editar el archivo /
+\family typewriter
+etc/sysconfig/selinux
+\family default
+ y setear:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+SELINUX=disabled
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+En el caso del firewall ejecutar ,para CentOS 6:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service iptables stop 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+chkconfig iptables off
+\end_layout
+
+\begin_layout Standard
+Para CentOS 7 (esta distro no utiliza iptables): 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+systemctl stop firewalld.service
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+systemctl mask firewalld.service 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+systemctl status firewalld.service
+\end_layout
+
+\begin_layout Standard
+O bien, si no se desea desactivarlo, permitir el acceso al los siguientes
+ puertos de http 80/443, cobbler 69 y 25151:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 69 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 25151 -j ACCEPT
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+Cerrar y guardar los cambios, luego ejecutar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service iptables restart
+\end_layout
+
+\begin_layout Subsection
+Pre requisitos
+\end_layout
+
+\begin_layout Standard
+Primero y principal, Cobbler necesita python, alguna versión superior a
+ la 2.6.
+ Además, requiere la instalación de los siguientes paquetes:
+\end_layout
+
+\begin_layout Itemize
+createrepo
+\end_layout
+
+\begin_layout Itemize
+httpd (apache2 for Debian/Ubuntu)
+\end_layout
+
+\begin_layout Itemize
+mkisofs mod_wsgi (libapache2-mod-wsgi for Debian/Ubuntu)
+\end_layout
+
+\begin_layout Itemize
+mod_ssl (libapache2-mod-ssl)
+\end_layout
+
+\begin_layout Itemize
+python-cheetah 
+\end_layout
+
+\begin_layout Itemize
+python-netaddr
+\end_layout
+
+\begin_layout Itemize
+python-simplejson 
+\end_layout
+
+\begin_layout Itemize
+python-urlgrabber 
+\end_layout
+
+\begin_layout Itemize
+PyYAML (python-yaml for Debian/Ubuntu) 
+\end_layout
+
+\begin_layout Itemize
+rsync 
+\end_layout
+
+\begin_layout Itemize
+syslinux 
+\end_layout
+
+\begin_layout Itemize
+tftp-server (atftpd for Debian/Ubuntu) 
+\end_layout
+
+\begin_layout Itemize
+yum-utils 
+\end_layout
+
+\begin_layout Standard
+Mientras que cobbler web solo requiere Django (python-django para Debian/Ubuntu).
+\end_layout
+
+\begin_layout Standard
+Entonces, para instalar todos los pre requisitos en CentOS 7, ejecutar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum update
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum install *
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se debe añadir los repositorios necesarios para la instalación de cobbler.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para CentOS 7:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+rpm -Uvh epel-release-*
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para CentOS 6:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+wget http://epel.mirror.net.in/epel/6/i386/epel-release-6-8.noarch.rpm
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+rpm -Uvh epel-release-6-8.noarch.rpm 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Instalar cobbler junto con: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum install cobbler cobbler-web dhcp debmirror pykickstart system-config-kicksta
+rt dhcp mod_python tftp cman -y
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size largest
+\color magenta
+En centos7 no se instalan mod_python, debmirror, ni cman (instalar encambio
+ fence-tools) 
+\end_layout
+
+\begin_layout Subsection
+Habilitar TFTP y rsync
+\end_layout
+
+\begin_layout Standard
+Los siguientes cambios deberían ser realizados antes de comenzar a usar
+ cobbler.
+ Editar 
+\family typewriter
+/etc/xinetd.d/tftp
+\family default
+ modificando 
+\family typewriter
+disable = yes
+\family default
+ por no.
+\end_layout
+
+\begin_layout Standard
+Luego editar 
+\family typewriter
+/etc/xinetd.d/rsync
+\family default
+ y del mismo modo cambiar 
+\family typewriter
+disable = yes 
+\family default
+por no.
+\end_layout
+
+\begin_layout Standard
+
+\size largest
+\color magenta
+En centos 7 el de rsync: /etc/rsyncd.conf pero no está la opción
+\end_layout
+
+\begin_layout Standard
+Configurar DHCP
+\end_layout
+
+\begin_layout Standard
+Copiar el archivo de configuración de ejemplo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cp /usr/share/doc/dhcp-4.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf
+\end_layout
+
+\begin_layout Standard
+o
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Verificar en cada caso la versión de dhcp.
+\end_layout
+
+\begin_layout Standard
+Luego editar 
+\family typewriter
+/etc/dhcp/dhcpd.conf 
+\family default
+y modificarlo como sea necesario, por ejemplo se tiene:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# A slightly different configuration for an internal subnet.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+subnet 192.168.1.0 netmask 255.255.255.0 { 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+range 192.168.1.100 192.168.1.254; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+option domain-name-servers puppet; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+option domain-name "localdomain"; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+option routers 192.168.1.1; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+option broadcast-address 192.168.1.255; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default-lease-time 600; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+max-lease-time 7200; } 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Añadir a 
+\family typewriter
+/etc/hosts 
+\family default
+la dirección del servidor y su nombre (puppet).
+ Luego configurar el parámetro 
+\family typewriter
+ServerName
+\family default
+ en 
+\family typewriter
+/etc/httpd/conf/httpd.conf 
+\family default
+con el nombre del host, en este caso será
+\family typewriter
+ puppet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] 
+\end_layout
+
+\begin_layout Standard
+ServerName puppet
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora iniciar todos los servicios:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service httpd start 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service dhcpd start 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service xinetd start 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service cobblerd start
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En CentOS 7 el formato es:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+systemctl start httpd.service
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Configurarlos para inicio automático:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+chkconfig httpd on 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+chkconfig dhcpd on 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+chkconfig xinetd on
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+chkconfig cobblerd on
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En CentOS 7 el formato es:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+systemctl enable httpd.service
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cobbler tiene varias plantillas de kickstarts ejemplo en
+\family typewriter
+ /var/lib/cobbler/kickstarts/
+\family default
+.
+ Por defecto contraseña del servidor es “cobbler” y el comando 
+\family typewriter
+cobbler check
+\family default
+ informará de esto si no se cambia.
+ Para hacer esto, generar una contraseña encriptada con:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+openssl passwd -1
+\end_layout
+
+\begin_layout Standard
+Lo que nos dará algo similar a:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Password: Verifying - Password: $1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/
+\end_layout
+
+\begin_layout Standard
+Luego editamos el archivo 
+\family typewriter
+/etc/cobbler/settings 
+\family default
+cambiar la línea 
+\family typewriter
+“default_password_crypted”
+\family default
+ por la nueva contraseña generada.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] default_password_crypted: "$1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/" [...]
+\end_layout
+
+\begin_layout Standard
+Luego modificar “manage_dhcp: 0” para habilitar que cobbler administre DHCP
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] manage_dhcp: 1 [...]
+\end_layout
+
+\begin_layout Standard
+Configurar ahora la dirección IP de Cobbler en las variables “server” y
+ “next_server”, por ejemplo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+next_server: 192.168.1.200 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+server: 192.168.1.200 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+EL siguiente paso es modificar el archivo 
+\family typewriter
+/etc/cobbler/dhcp.template
+\family default
+ y realizar los cambios necesarios, por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+subnet 192.168.1.0 netmask 255.255.255.0 { 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+option routers 192.168.1.1; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+option domain-name-servers 192.168.1.1; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+option subnet-mask 255.255.255.0; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+range dynamic-bootp 192.168.1.100 192.168.1.254; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+default-lease-time 21600; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+max-lease-time 43200; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+next-server 192.168.1.200; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+class "pxeclients" { match if substring (option vendor-class-identifier,
+ 0, 9) = "PXEClient"; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+if option pxe-system-type = 00:02 {
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+filename "ia64/elilo.efi"; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+} else if option pxe-system-type = 00:06 {
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+filename "grub/grub-x86.efi"; } 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+else if option pxe-system-type = 00:07 {
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+filename "grub/grub-x86_64.efi"; } 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+else { filename "pxelinux.0"; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para habilitar la interfaz web de Cobbler y configurar usuario y contraseña,
+ modificar las siguientes líneas del archivo 
+\family typewriter
+/etc/cobbler/modules.conf 
+\family default
+para que queden de este modo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[authentication] module = authn_configfile
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[authorization] module = authz_allowall 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora, para cambiar el usuario y la contraseña para la interfaz web, correr
+ el siguiente comando e ingresar la contraseña preferida dos veces:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+htdigest /etc/cobbler/users.digest "Cobbler" admin
+\end_layout
+
+\begin_layout Standard
+En este caso el usuario es admin y la contraseña se ingresa luego de ejecutar
+ el comando.
+ Por defecto se tiene usuario cobbler y contraseña cobbler.
+\end_layout
+
+\begin_layout Standard
+Editar el archivo 
+\family typewriter
+/etc/debmirror.conf
+\family default
+ comentando lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+#@dists="sid"; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+#@arches="i386"; 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El próximo paso es descargar los “network boot loaders” con 
+\family typewriter
+cobbler get-loaders.
+\end_layout
+
+\begin_layout Standard
+Por último reiniciar los servicios:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service httpd restart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service dhcpd restart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service xinetd restart 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service cobblerd restart
+\end_layout
+
+\begin_layout Standard
+Si todo va bien, al ejecutar 
+\family typewriter
+cobbler check
+\family default
+, devolverá algo similar a
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+No configuration problems found.
+ All systems go.
+ 
+\end_layout
+
+\begin_layout Standard
+Sincronizar cobbler 
+\family typewriter
+cobbler sync.
+\end_layout
+
+\begin_layout Subsection
+Importar imágenes ISO al servidor Cobbler
+\end_layout
+
+\begin_layout Standard
+Para hacer esto se utiliza el comando mount.
+ Primero crear un directorio:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mkdir /mnt/centos
+\end_layout
+
+\begin_layout Standard
+En CentOS 6:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mount -o loop CentOS-6.6-x86_64-bin-DVD1.iso /mnt/centos 
+\end_layout
+
+\begin_layout Standard
+En CentOS 7:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mount -t iso9660 -o loop,ro /path/to/isos/CentOS-6.6-x86_64-bin-DVD1.iso /mnt/cent
+os
+\end_layout
+
+\begin_layout Standard
+Luego ejecutar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler import --name=CentOS_6 --arch=x86_64 --path=/mnt/centos 
+\end_layout
+
+\begin_layout Section
+Tópicos generales de Cobbler
+\end_layout
+
+\begin_layout Subsection
+Modelado
+\end_layout
+
+\begin_layout Standard
+Cobbler utiliza objetos para definir la configuración de aprovisionamiento.
+ A medida que nos movemos hacia abajo del árbol de objetos, las variables
+ se sobre escriben y se añaden a la información definida en los objetos
+ superiores.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[h] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=4in,height=4in,keepaspectratio]{cobbler_modelado}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+protect
+\backslash
+caption{Modelado de Cobbler} 
+\backslash
+label{cobbler_modelado}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Distros
+\end_layout
+
+\begin_layout Standard
+Distribución que se desea instalar.
+ Importar el contenido de la distro ayuda a disminuir el tiempo de instalación
+ ya que no se utilizan fuentes de instalación externas.
+ Generalmente es más fácil utilizar el comando 'import' en vez de añadir
+ la distribución manualmente.
+\end_layout
+
+\begin_layout Subsection
+Profiles
+\end_layout
+
+\begin_layout Standard
+Un profile asocia una distribución a opciones especializadas adicionales,
+ como puede ser una kickstart.
+ Los profiles son el núcleo del aprovisionamiento y debe existir al menos
+ uno por cada distribución.
+ Un profile puede representar, por ejemplo, una configuración de web server
+ o de escritorio.
+\end_layout
+
+\begin_layout Subsection
+Systems 
+\end_layout
+
+\begin_layout Standard
+Los grabaciones de sistemas mapean una pieza de hardware (o una máquina
+ virtual) con el profile asignado a correr en ella.
+ Esto puede verse como una forma de asignarle un rol a un sistema específico.
+ Cuando se aprovisiona vía koan y PXE, no es necesario crearlos ya que son
+ útiles cuando una personalización de un sistema específico es necesaria.
+ Por ejemplo, personalizar la MAC, si hay un rol específico para una máquina
+ dada, se debería crear una grabación del sistema para ésta.
+\end_layout
+
+\begin_layout Subsection
+Images 
+\end_layout
+
+\begin_layout Standard
+Cobbler puede bootear imágenes físicamente o virtualmente.
+ Los despliegues de máquinas no basadas en imágenes son generalmente más
+ fáciles para trabajar y llevan a una infraestructura más sustentable.
+ La mayoría de las instalaciones de cobbler están directamente basadas en
+ la distribución (kernel + initrd).
+ La siguiente página documenta algunas cosas que no están basadas en kernel
+ + initrd y muestra como instalarlas con cobbler y koan.
+ Por ejemplo, trata la instalación de sistemas operativos Windows usando
+ qemu/KVM: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+https://fedorahosted.org/cobbler/wiki/AllAboutImages
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+https://fedorahosted.org/cobbler/wiki/KoanWithIsos
+\end_layout
+
+\begin_layout Subsection
+Repos 
+\end_layout
+
+\begin_layout Standard
+Espejar repositorios le permite a cobbler espejar el árbol de instalación
+ (
+\family typewriter
+cobbler import
+\family default
+) y también paquetes opcionales.
+ Si se espeja todo esto localmente en la red, las instalaciones y actualizacione
+s serán más rápidas (usualmente es válido realizar esto para largos setups
+ en datacenters, laboratorios, etc).
+ Si un profile tiene un repo dado, este repo puede ser automáticamente configura
+do durante el aprovisionamiento y los sistemas instalados podrán usarlo
+ como espejo (
+\family typewriter
+yum_post_install_mirror
+\family default
+ debe estar habilitado).
+ Si se especifica una lista de paquetes para –rpm-list, se puede espejar
+ solo esa parte del repo, más sus dependencias.
+ Por ejemplo, si se espeja FC6 Extras, para descargar cobbler y koan, ponemos
+ 
+\family typewriter
+–rpm-list=”cobbler koan”
+\family default
+ y se saltea la parte de los paquetes de juegos.
+ Esta función sólo funciona para repositorios http o ftp.
+\end_layout
+
+\begin_layout Standard
+Los repositorios pueden ser creados del siguiente modo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler repo add --mirror=url --name=string [--rpmlist=list] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ [--creatrepo-flags=string] [--keep-updated=Y/N] [--priority=number] [--arch=str
+ing] [--mirror-locally=Y/N] [--breed=yum|rsync|rhn]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+mirror:
+\series default
+ Es la dirección del espejo yum.
+ Puede ser una URL rsync:// , una ubicación ssh o una ubicación http://
+ o ftp:// de un espejo.
+ Direcciones del filesystem tabién funcionan.
+ Esta dirección debe especificar un repositorio exacto a espejar, solo una
+ arquitectura y una distribución.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+name: 
+\series default
+Este nombre es el usado para guardar la ubicación del espejo.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+rpm-list:
+\series default
+ Con esta opción se puede decidir espejar solo una parte de un repositorio
+ (la lista de paquetes dados más dependencias).
+ Por ejemplo : 
+\family typewriter
+--rpm-list="paquete_1 paquete_2"
+\family default
+.
+ Esta opción sólo funciona con repositorios http:// y ftp:// para espejos
+ de otros tipos esta opción será ignorada.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+createrepo-flags:
+\series default
+ Especifica banderas opcionales para añadir a la herramienta 
+\family typewriter
+createrepo
+\family default
+ la cual es llamada cuando se ejecuta 
+\family typewriter
+cobbler reposync
+\family default
+ para el repositorio dado.
+ Por defecto se tiene 
+\family typewriter
+’-c cache’
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+keep-updated: 
+\series default
+Especifica si el repositorio debería ser o no actualizado durante una ejecución
+ normal de 
+\family typewriter
+cobbler reposync
+\family default
+.
+ El repositorio puede seguir siendo actualizado por el nombre.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+mirror-locally: 
+\series default
+Cuando se configura a N, especifica que este repositorio yum se utiliza
+ para ser referenciado directamente por kickstarts y no para ser espejado
+ localmente en el servidor cobbler.
+ Solo espejos con URLs http:// y ftp:// son soportados cuando se utiliza
+ 
+\family typewriter
+--mirror-locally=N
+\family default
+, no se puede usar URLs del filesystem.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+priority: 
+\series default
+Especifica la prioridad del repositorio (menor número, mayor prioridad)
+ que se aplica a máquinas instaladas usando los repositorios que tienen
+ el plugin yum priorities instalado.
+ Por defecto se tiene 99.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+arch: 
+\series default
+Especifica la arquitectura que el repositorio debeía utilizar.
+ Por defect se utiliza la arquitectura del servidor cobbler.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+breed: 
+\series default
+Usualmente cobbler comprenderá este parámetro si no se entrega.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para crear un repositorio local, por ejemplo para instalar Puppet sin una
+ conexión a Internet, primero es necesario tener los paquetes necesarios
+ y sus dependencias, para ello se ejecuta:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo yum install --downloadonly --downloaddir=<directory> <package>
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde se debe reemplazar 
+\family typewriter
+<directory> 
+\family default
+por el directorio donde se descargará el paquete con sus dependencias y
+ 
+\family typewriter
+<package>
+\family default
+ por el 
+\family typewriter
+puppet.
+\end_layout
+
+\begin_layout Standard
+Una vez obtenidos, crear una carpeta con el nombre del repositorio en 
+\family typewriter
+/var/www/cobbler/repo_mirror 
+\family default
+por ejemplo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo mkdir /var/www/cobbler/repo_mirror/puppet
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler repo add --name=puppet --keep-updated=N --arch=x86_64 --mirror-locally=Y
+ --breed=yum
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\family typewriter
+--name 
+\family default
+debe ser el mismo que el de la carpeta creada anteriormente.
+ Acto seguido ejecutar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+createrepo /var/www/cobbler/repo_mirror/puppet
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler reposync
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para añadir este nuevo repositorio a un profile existente:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler profile edit --name=centos --repos=puppet 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para ver información acerca del mismo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler repo report --name=puppet
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Repositorio local separado de cobbler.
+\end_layout
+
+\begin_layout Standard
+En el caso que se desee crear un repositorio local que no dependa del servidor
+ cobbler se debe primeramente instalar los servicios necesarios para el
+ correcto funcionamiento del servicio de repositorios.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo yum install -y createrepo vsftpd lftp
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez hecho esto, tenemos que crear el arbol de directorios adecuado segun
+ nuestra aplicacion, este puede estar divido segun deseemos, por ejemplo
+ por sistema operativo o por distribucion, etc
+\end_layout
+
+\begin_layout Standard
+Se recomienda que se utilice como base el directorio /var/ftp dado que se
+ utilizara este sistema de transmision de archivos utilizados.
+\end_layout
+
+\begin_layout Standard
+Una vez creado el sistema de archivos, se guardan los correspondientes archivos
+ rpm en los lugares adecaudos segun se haya creado el arbol de archivos
+ y se ejecuta el comando
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+creterepo -v /var/ftp/nombre_repo
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debemos configurar el vsftpd editando el archivo /etc/vsftpd/vsftpd.conf,
+ hay diversas configuraciones posibles segun la aplicacion particular deseada,
+ pero debemos asegurarnos que haya dos puntos importantes:
+\end_layout
+
+\begin_layout Enumerate
+anonymous_enable=YES #Indica que se puede acceder via ftp de manera anonima
+\end_layout
+
+\begin_layout Enumerate
+anon_root=/var/ftp #Indica la raiz del directorio al cual se puede acceder
+ de manera anonima.
+\end_layout
+
+\begin_layout Standard
+Ademas, debemos asegurarnos de añadir la regla adecuada al firewall para
+ permitir el acceso al puerto 21 o en su defecto, desactivar el firewall.
+\end_layout
+
+\begin_layout Standard
+En el lado del cliente se crea un archivo en /etc/yum.repos.d/ con el siguiente
+ contenido
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[nombredelrepo] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+name=nombredelrepo
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+comment ="Repositorio local para proyecto integrador" 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+baseurl=ftp://IPservidor/nombre_de_tu_sistema_de_Arhivos
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+gpgcheck=0 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+enabled=1
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para utilizar este repositorio hay que habilitarlo con:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum --enablerepo="paquetes"
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+actualizar base de datos de repositorios en CENTOS: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum makecache
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Buildiso
+\end_layout
+
+\begin_layout Standard
+Frecuentemente un entorno no puede soportar PXE porque otro grupo posee
+ el control sobre las configuraciones DHCP y no entregará una entrada de
+ 
+\family typewriter
+next-server
+\family default
+ o sólo se están usando IPs estáticas.
+ Esto se soluciona fácilmente:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# cobbler buildiso
+\end_layout
+
+\begin_layout Standard
+Este comando copia todos el kernel/initrd de la distro a una 'imagen de
+ CD' booteable y genera un menú para la ISO que es esencialmente equivalente
+ al menú PXE provisto para la instalación de máquinas por red vía Cobbler.
+ Por defecto el menú del CD booteable va a incluir todos los profiles y
+ systems.
+\end_layout
+
+\begin_layout Standard
+Si se necesita instalar en un laboratorio u otro ambiente que no tenga acceso
+ por red al servidor cobbler, se puede copiar completamente el árbol de
+ la distribución más el profile y los systems records a una imagen.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# cobbler buildiso --standalone –distro="distro1" 
+\end_layout
+
+\begin_layout Subsection
+Import
+\end_layout
+
+\begin_layout Standard
+El propósito de “
+\family typewriter
+cobbler import
+\family default
+” es configurar un servidor de instalación por red para una o más distribuciones.
+ Éste espeja contenido basado en un imagen DVD, un archivo ISO, un árbol
+ en un filesystem, un espejo externo rsync o una ubicación SSH.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+$ cobbler import --path=/path/to/distro –name=F12
+\end_layout
+
+\begin_layout Standard
+Este ejemplo muestra los dos argumentos requeridos para import: --path y
+ –name.
+\end_layout
+
+\begin_layout Standard
+Luego de que import es ejecutado, cobbler tratará de detectar el tipo de
+ distribución y automáticamente asignar kickstarts.
+ Por defecto, proveerá el sistema borrando el disco duro, configurando eth0
+ para DHCP y utilizando la contraseña por defecto “cobbler”.
+ Si esto no es deseado, editar los archivos kickstart en 
+\family typewriter
+/var/lib/cobbler/kickstarts
+\family default
+ para hacer algo distinto o cambiar la configuración del kickstart después
+ que cobbler cree el profile.
+ El contenido espejado es guardado automáticamente en 
+\family typewriter
+/var/www/cobbler/ks_mirror
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplos:
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+cobbler import --path=rsync://mirrorserver.example.com/path/ --name=fedora
+ --arch=x86
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+cobbler import --path=root@192.168.1.10:/stuff --name=bar
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+cobbler import --path=/mnt/dvd --name=baz --arch=x86_64
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+cobbler import --path=/path/to/stuff –name=glorp
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+cobbler import --path=/path/where/filer/is/mounted --name=anyname 
+\backslash
+ --available-as=nfs://nfs.example.org:/where/mounted/
+\end_layout
+
+\begin_layout Standard
+Una vez importado, ejecutar “
+\family typewriter
+cobbler list
+\family default
+” o “
+\family typewriter
+cobbler report
+\family default
+” para ver que se ha añadido.
+ Si se quiere forzar la utilización de una plantilla kickstart de cobbler
+ para todos los profiles creados por un import, se puede pasar la opción
+ 
+\family typewriter
+–kickstart
+\family default
+ a import para saltar la auto detección del kickstart.
+\end_layout
+
+\begin_layout Subsection
+Kickstarts
+\end_layout
+
+\begin_layout Standard
+Los kickstarts son archivos que indican como debe ser configurado el Sistema
+ Operativo, el archivo contiene palabras claves y valores y en otros casos
+ solo contienen la palabra clave que en si misma es una configuracion especifica.
+ 
+\end_layout
+
+\begin_layout Standard
+Algunas Keywords son opcionales, mientras que otras son necesarias para
+ la instalacion.
+\end_layout
+
+\begin_layout Subsubsection
+Keywords
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+autopart (optional)
+\series default
+ : Creación automática de particiones, 1 GB o más para el root ( / ), una
+ partición de intercambio y una partición de arranque apropiada para la
+ arquitectura .
+ Uno o más de los tamaños de las particiones por defecto puede ser redefinido
+ con la zona de directivas.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ignoredisk (optional)
+\series default
+ : Hace que el instalador ignore los discos especificados.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La sintaxis es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ignoredisk --drives=drive1,drive2,...
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+autostep (optional) :REVISAR
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+auth or authconfig (required) :
+\series default
+Establece las opciones de autenticación para el sistema.
+ Es similar al comando authconfig , que se puede ejecutar después de la
+ instalación .
+ Por defecto, las contraseñas son encriptadas y no están sombreados .
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+bootloader (required): 
+\series default
+Especifica cómo se debe instalar el gestor de arranque.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+clearpart (optional) :
+\series default
+ Elimina las particiones del sistema , antes de la creación de nuevas particione
+s .
+ Por defecto, no se eliminan las particiones .
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+cmdline (optional) : 
+\series default
+Realiza la instalación en un modo de línea de comandos completamente no
+ interactiva.
+ Cualquier solicitud por interacciones detendrá la instalación.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+device (optional) : 
+\series default
+El comando de dispositivo , indica al programa de instalación para instalar
+ módulos adicionales , es en este formato :
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+device <type><moduleName> --opts=<options>
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+driverdisk (optional) : 
+\series default
+Disquetes de controladores se pueden usar durante instalaciones kickstart.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+firewall (optional) : 
+\series default
+Esta opción corresponde a la pantalla de configuración de Firewall en el
+ programa de instalación.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+firstboot (optional) :
+\series default
+ Determinar si el Agente de configuración se inicia la primera vez que se
+ arranca el sistema .
+ Si se activa, el paquete Firstboot debe estar instalado.
+ Si no se especifica, esta opción está desactivada por defecto.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+halt (optional) : 
+\series default
+Detiene el sistema después de la instalación se ha completado con éxito
+ .
+ Esto es similar a una instalación manual , en donde anaconda muestra un
+ mensaje y espera a que el usuario presione una tecla antes de reiniciar.
+ Durante una instalación Kickstart, si no se especifica el método de terminación
+, la opción reboot se utiliza como predeterminado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+graphical (optional) : 
+\series default
+Realice la instalación kickstart en modo gráfico .
+ Este es el valor predeterminado .
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+install (optional) : 
+\series default
+Le dice al sistema para instalar un sistema nuevo en lugar de actualizar
+ un sistema existente.
+ Este es el modo por defecto.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ignore disk (optional) : 
+\series default
+Se utiliza para especificar los discos que anaconda no debe tocar durante
+ la partición , el formato, y la limpieza .
+ Este comando tiene un único argumento necesario , que toma una lista separada
+ por comas de nombres de unidad de ignorar.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ignoredisk --drives=[disk1,disk2,...]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+interactive (optional) : 
+\series default
+Utiliza la información proporcionada en el archivo kickstart durante la
+ instalación , pero permite la inspección y modificación de los valores
+ dados .
+ Se le presentará con cada pantalla del programa de instalación con los
+ valores del archivo kickstart .
+ Puede aceptar los valores haciendo clic en Siguiente o cambiar los valores
+ y haga clic en Siguiente para continuar.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+key (optional): 
+\series default
+Especifique una clave de instalación , que es necesaria para ayudar en la
+ selección de paquetes e identificar su sistema con fines de apoyo.
+ Este comando es Red Hat Enterprise Linux específico.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+keyboard (required) : 
+\series default
+Establece el tipo de teclado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+lang (required) : 
+\series default
+Establece el idioma que desea utilizar durante la instalación y el idioma
+ predeterminado para utilizar en el sistema instalado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+langsupport (required) : 
+\series default
+Es obsoleto y su uso causará un mensaje de error que se debe imprimir a
+ la pantalla y la instalación se detendra.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+logvol (optional) : 
+\series default
+Crea un Logical Voume con la sintaxis:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+logvol <mntpoint> --vgname=<name> --size=<size> --name=<name><options>
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+logging (optional) : 
+\series default
+Este comando controla el registro de errores de anaconda durante la instalación.
+ No tiene ningún efecto en el sistema instalado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+monitor (optional) : 
+\series default
+Si no se da el comando monitor, anaconda utilizará X para detectar automáticamen
+te la configuración del monitor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+mouse (required) : 
+\series default
+Palabra clave obsoleta y su uso causara un mensaje de error.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+network (optional) : 
+\series default
+Configura la información de red para el sistema.Si la instalación no requiere
+ redes y la información de la red no se proporciona en el archivo kickstart
+ , el programa de instalación asume que la instalación debe hacerse sobre
+ eth0 a través de una dirección IP dinámica ( BOOTP / DHCP) , y configura
+ el sistema final , instalado para determinar su dirección IP de forma dinámica.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+part or partition (required for installs, ignored for upgrades) : 
+\series default
+Crea una perticion en el sistema.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+poweroff (optional) : 
+\series default
+Apaga el sistema luego de que la instacion se complete exitosamente.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+raid (optional) : 
+\series default
+Monta un sistema RAID.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+reboot (optional) : 
+\series default
+Reinicia el sistema despues de una instalacion exitosa.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+repo (optional) : 
+\series default
+Configura un repositorio adicional YUM que puede ser utilizado como fuente
+ para la instalacion de paquetes.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+rootpw (required) : 
+\series default
+Establece la contraseña de root.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+selinux (optional) : 
+\series default
+Establece el estado del SElinux en el sistema instalado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+services (optional) :
+\series default
+Modifica el conjunto predeterminado de servicios que se ejecutarán bajo
+ el nivel de ejecución predeterminado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+shutdown (optional) : 
+\series default
+Apaga el sistema despues de una instalacion exitosa.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+text (optional) : 
+\series default
+Realice la instalación kickstart en modo texto.
+ Las instalaciones Kickstart se ejecutan en modo gráfico por defecto.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+timezone (required) : 
+\series default
+Selecciona la zona horaria del sistema.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+upgrade (optional) : 
+\series default
+Indica que se realiza una actualizacion del sistema instalado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+user (optional) :
+\series default
+ Crea usuario en el sistema.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+vnc (optional) : 
+\series default
+Permite que la instalación gráfica pueda ser vista de forma remota a través
+ de VNC.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+volgroup (optional) : 
+\series default
+Crea logical volume group con la sintaxis:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+volgroup <name><partition><options>
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+zerombr (optional) : 
+\series default
+Si se especifica zerombr , y sí es su único argumento , cualquier tabla
+ de partición no válidas que se encuentran en los discos son inicializadas
+ .
+ Esto destruye todos los contenidos de discos con tablas de partición inválidas.
+ 
+\end_layout
+
+\begin_layout Subsection
+Firewall
+\end_layout
+
+\begin_layout Standard
+Dependiendo del uso, será necesario asegurar que iptables está configurado
+ para permitir el acceso a los servicios correctos.
+ Un ejemplo de configuración es el siguiente:
+\end_layout
+
+\begin_layout Standard
+# Firewall configuration written by system-config-securitylevel
+\end_layout
+
+\begin_layout Standard
+# Manual customization of this file is not recommended.
+ 
+\end_layout
+
+\begin_layout Standard
+*filter :INPUT ACCEPT [0:0]
+\end_layout
+
+\begin_layout Standard
+:FORWARD ACCEPT [0:0] 
+\end_layout
+
+\begin_layout Standard
+:OUTPUT ACCEPT [0:0]
+\end_layout
+
+\begin_layout Standard
+-A INPUT -p icmp --icmp-type any -j ACCEPT
+\end_layout
+
+\begin_layout Standard
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+\end_layout
+
+\begin_layout Standard
+# LOCALHOST
+\end_layout
+
+\begin_layout Standard
+-A INPUT -i lo -j ACCEPT
+\end_layout
+
+\begin_layout Standard
+# SSH
+\end_layout
+
+\begin_layout Standard
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+# DNS 
+\end_layout
+
+\begin_layout Standard
+- TCP/UDP -A INPUT -m state --state NEW -m udp -p udp --dport 53 -j ACCEPT
+ -A INPUT -m state --state NEW -m tcp -p tcp --dport 53 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+# DHCP 
+\end_layout
+
+\begin_layout Standard
+-A INPUT -m state --state NEW -m udp -p udp --dport 68 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+# TFTP
+\end_layout
+
+\begin_layout Standard
+- TCP/UDP -A INPUT -m state --state NEW -m tcp -p tcp --dport 69 -j ACCEPT
+ -A INPUT -m state --state NEW -m udp -p udp --dport 69 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+# NTP
+\end_layout
+
+\begin_layout Standard
+-A INPUT -m state --state NEW -m udp -p udp --dport 123 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+# HTTP/HTTPS
+\end_layout
+
+\begin_layout Standard
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT -A INPUT
+ -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+# Syslog for cobbler
+\end_layout
+
+\begin_layout Standard
+-A INPUT -m state --state NEW -m udp -p udp --dport 25150 -j ACCEPT 
+\end_layout
+
+\begin_layout Standard
+# Koan XMLRPC ports 
+\end_layout
+
+\begin_layout Standard
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 25151 -j ACCEPT -A INPUT
+ -m state --state NEW -m tcp -p tcp --dport 25152 -j ACCEPT
+\end_layout
+
+\begin_layout Standard
+#-A INPUT -j LOG 
+\end_layout
+
+\begin_layout Standard
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+\end_layout
+
+\begin_layout Standard
+COMMIT
+\end_layout
+
+\begin_layout Subsection
+SELinux
+\end_layout
+
+\begin_layout Standard
+Para permitir el acceso del servidor web Apache por SELinux se puede hacer:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+setsebool -P httpd_can_network_connect true
+\end_layout
+
+\begin_layout Standard
+o directamente deshabilitarlo.
+\end_layout
+
+\begin_layout Subsection
+Servicios
+\end_layout
+
+\begin_layout Standard
+Dependiendo si se está corriendo DHCP y DNS en el mismo servidor, será necesario
+ habilitar varios servicios: 
+\end_layout
+
+\begin_layout Standard
+/sbin/service httpd start 
+\end_layout
+
+\begin_layout Standard
+/sbin/service dhcpd start 
+\end_layout
+
+\begin_layout Standard
+/sbin/service xinetd start 
+\end_layout
+
+\begin_layout Standard
+/sbin/service cobblerd start
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+/sbin/chkconfig httpd on 
+\end_layout
+
+\begin_layout Standard
+/sbin/chkconfig dhcpd on 
+\end_layout
+
+\begin_layout Standard
+/sbin/chkconfig xinetd on 
+\end_layout
+
+\begin_layout Standard
+/sbin/chkconfig tftp on 
+\end_layout
+
+\begin_layout Standard
+/sbin/chkconfig cobblerd on
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El comando “
+\family typewriter
+cobbler check
+\family default
+” debería informar acerca de ésto.
+\end_layout
+
+\begin_layout Subsection
+PXE
+\end_layout
+
+\begin_layout Standard
+La instalación en máquinas “bare metal” desde la red utilizando PXE es directa.
+ Se necesita configurar DHCP: 
+\end_layout
+
+\begin_layout Itemize
+Si el servidor DHCP está en otro lado y no en el servidor Cobbler, su administra
+dor debe setear su “
+\family typewriter
+next-server
+\family default
+” para especificar el servidor Cobbler.
+ 
+\end_layout
+
+\begin_layout Itemize
+Si se está corriendo DHCP localmente y se quiere que Cobbler lo administre,
+ se debe configurar la variable manage_dhcp a 1 en 
+\family typewriter
+/etc/cobbler/settings
+\family default
+, editar 
+\family typewriter
+/etc/cobbler/dhcp.template
+\family default
+ para cambiar configuración por defecto y ejecutar “
+\family typewriter
+cobbler sync
+\family default
+”.
+\end_layout
+
+\begin_layout Standard
+Una vez que se tenga el PXE configurado, todos los profiles compatibles
+ aparecerá por nombre en el menú de booteo PXE.
+ Se puede seleccionar uno de la lista o por defecto la máquina booteará
+ localmente.
+ Si se quiere adjuntar un sistema particular a un profile particular la
+ próxima vez que reinicie, se debe ejecutar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler system add --name=example --mac=$mac-address --profile=$profile-name
+ 
+\end_layout
+
+\begin_layout Standard
+Luego la máquina booteará directamente con el profile seleccionado sin mostrar
+ el menú.
+\end_layout
+
+\begin_layout Subsection
+Reinstalación
+\end_layout
+
+\begin_layout Standard
+Si se necesita reinstalar un sistema operativo a una máquina que tiene corriendo
+ uno distinto, se puede utilizar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum install koan 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+koan --server=bootserver.example.com --list=profiles koan --replace-self --server=
+bootserver.example.com --profile=F12-i386 /sbin/reboot
+\end_layout
+
+\begin_layout Standard
+El sistema instalará el nuevo sistema operativo luego del reinicio, sin
+ interacción requerida.
+\end_layout
+
+\begin_layout Subsection
+Virtualización
+\end_layout
+
+\begin_layout Standard
+Si se quiere instalar un huésped virtual (KVM o Xen) se puede hacer:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum install koan
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+koan --server=bootserver.example.com --virt --virt-type=xenpv –profile=F12-i386-xe
+n
+\end_layout
+
+\begin_layout Standard
+Se puede utilizar KVM u otro método de virtualización.
+\end_layout
+
+\begin_layout Subsection
+Integración con Puppet
+\end_layout
+
+\begin_layout Standard
+Este ejemplo es relativamente avanzado, involucrando “
+\family typewriter
+mgmt-classes
+\family default
+” de Cobbler para controlar diferentes tipos de configuración inicial.
+ Pero si en cambio se opta por poner la mayor parte de la configuración
+ inicial en Puppet en vez de aquí, entonces podría ser más simple.
+\end_layout
+
+\begin_layout Subsubsection
+Manter class mappings en cobbler
+\end_layout
+
+\begin_layout Standard
+Primero se debe asignar “
+\family typewriter
+management classes
+\family default
+” a la distro, profile o system.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler distro edit --name=distro1 --mgmt-classes="distro1" 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler profile add --name=webserver --distro=distro1 --mgmt-classes="webserver
+ likes_llamas" --kickstart=/etc/cobbler/my.ks 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler system edit --name=system --profile=webserver --mgmt-classes="orange"
+ –dns-name=system.example.org
+\end_layout
+
+\begin_layout Standard
+Para Puppet el –dns-name (mostrado arriba) debe estar configurado porque
+ esto es lo que Puppet estará enviando a cobbler y es como encontrará el
+ sistema.
+ Puppet no tiene conocimiento sobre el nombre del sistema objeto en cobbler.
+ Para hacerlo de forma segura, probablemente se utilice FQDN aquí (lo cual
+ es lo que se quiere si se utiliza cobbler para administrar DNS).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+External Nodes 
+\end_layout
+
+\begin_layout Standard
+Cobbler provee uno, así configura Puppet para usar 
+\family typewriter
+/usr/bin/cobbler-ext-nodes
+\family default
+: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[main] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+external_nodes = /usr/bin/cobbler-ext-nodes 
+\end_layout
+
+\begin_layout Standard
+y también añadir lo siguiente al archivo de configuración: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+node_terminus = exec
+\end_layout
+
+\begin_layout Standard
+Ésto es un script simple que toma el información en la siguiente URL, la
+ cual es una URL que siempre retorna un documento YAML en la forma que Puppet
+ espera que sea retornado.
+ Este archivo contiene todos los parámetros y clases que están para ser
+ asignadas en el nodo en cuestión.
+ Esta URL de Cobbler es: 
+\family typewriter
+http://cobbler/cblr/svc/op/puppet/hostname/foo
+\end_layout
+
+\begin_layout Standard
+y esto retornará datos como: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--- classes: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+- distro1 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+- webserver 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+- likes_llamas 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+- orange 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+parameters: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+tree: 'http://.../x86_64/tree'
+\end_layout
+
+\begin_layout Standard
+Estos parámetros vienen de todo lo que Cobbler monitorea en “
+\family typewriter
+--ks-meta
+\family default
+” (también es un parámetro).
+ De este modo se puede fácilmente añadir parámetros como añadir clases y
+ mantener todo organizado en un lugar.
+ En caso de tener parámetros o clases globales para añadir, esto se puede
+ hacer editando los siguientes campos en
+\family typewriter
+ /etc/cobbler/settings
+\family default
+: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mgmt_classes: [ ] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mgmt_parameters: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+from_cobbler: 1
+\end_layout
+
+\begin_layout Subsubsection
+Script alternativos para External Nodes 
+\end_layout
+
+\begin_layout Standard
+Adjunto a 
+\family typewriter
+puppet_node.py
+\family default
+ está un script alternativo para nodos externos que competa todos los nodos
+ con items de un repositorio de manifiesto (en 
+\family typewriter
+/etc/puppet/manifests/
+\family default
+) e información de red de Cobbler.
+ Se configura como arriba del lado de Puppet y luego busca en 
+\family typewriter
+/etc/puppet/external_node.yaml
+\family default
+ del lado de la configuración de Cobbler.
+\end_layout
+
+\begin_layout Standard
+La configuración es la siguiente:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+base: /etc/puppet/manifests/nodes 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler: <%= cobbler_host %> 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+no_yaml: puppet::noyaml 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+no_cobbler: network::nocobbler 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+bad_yaml: puppet::badyaml 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+unmanaged: network::unmanaged
+\end_layout
+
+\begin_layout Standard
+La salida de la información de red estará en la forma de pseudo estructura
+ de datos que permite a Puppet dividirla y crear las interfaces de red en
+ el nodo que está siendo administrado.
+ 
+\end_layout
+
+\begin_layout Subsection
+Replicate
+\end_layout
+
+\begin_layout Standard
+Este comando descarga la configuración de un servidor Cobbler a otro.
+ Sirve para tener implementaciones de High Availability, recuperación de
+ desastres o para balanceo de carga.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cobbler replicate --master=master.example.org
+\end_layout
+
+\begin_layout Standard
+Con los argumentos por defecto, solo la metadata de la distribución y del
+ perfil es sincronizada.
+ A continuación se muestra los argumentos que se le pueden pasar a Cobbler
+ para que replique: 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# cobbler replicate --help 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Usage: cobbler [options]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Options: -h, --help show this help message and exit 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--master=MASTER Cobbler server to replicate from.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--distros=PATTERN pattern of distros to replicate 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--profiles=PATTERN pattern of profiles to replicate 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--systems=PATTERN pattern of systems to replicate 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--repos=PATTERN pattern of repos to replicate 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--image=PATTERN pattern of images to replicate 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--omit-data do not rsync data 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+--prune remove objects (of all types) not found on the master
+\end_layout
+
+\begin_layout Subsubsection
+Setup
+\end_layout
+
+\begin_layout Standard
+En cada servidor que será la réplica del master, instalar Cobbler normalmente
+ y asegurarse que 
+\family typewriter
+/etc/cobbler/settings
+\family default
+ y 
+\family typewriter
+/etc/cobbler/modules.conf 
+\family default
+están configurados apropiadamente.
+ Utilizar cobbler check para ver si existe algún error.
+ El comando no modificará estos archivos.
+ 
+\end_layout
+
+\begin_layout Standard
+Los archivos son transferidos por rsync (sobre ssh) o por scp, por lo que
+ es necesario tener un agente ssh antes de utilizar el comando de réplica
+ o si no, utilizar authorized_keys en el host remoto.
+\end_layout
+
+\begin_layout Section
+Puppet
+\end_layout
+
+\begin_layout Standard
+Puppet es en términos prácticos, un conjunto de proyectos como ser, puppet
+ agent y server, hiera, puppetDB y Facter.
+\end_layout
+
+\begin_layout Standard
+Puppet funciona bajo la arquitectura cliente servidor donde un el puppet
+ máster indica a sus agentes que configuraciones deben aplicar.
+ Ademas, los máster pueden aplicar manifiestos así mismos.
+ Notar que hay dos etapas: 
+\end_layout
+
+\begin_layout Enumerate
+Compilar los catálogos 
+\end_layout
+
+\begin_layout Enumerate
+Aplicar los catálogos
+\end_layout
+
+\begin_layout Standard
+Un catálogo es un archivo que describe los deseos de un estado de sistema
+ para una PC en especifico.
+ Enumera todos los recursos que necesitan ser administrados, así como las
+ dependencias entre esos recursos.
+\end_layout
+
+\begin_layout Standard
+En esta arquitectura, los nodos administrados corren la aplicación Puppet
+ agent, usualmente en background y uno o mas servidores corren la aplicación
+ Puppet máster administrada por un servidor web (como apache.) Periódicamente,
+ los Puppet agent piden al puppet máster el catalogo.
+ El máster, compila y corre el catalogo del nodo usando varias fuentes de
+ información a las que tiene acceso.
+ Una vez que recibe el catalogo, el agente chequea cada recurso descripto
+ en el.
+ Si encuentra algún recurso que no esta en el estado que se desea, se realizan
+ los cambios necesarios para corregirlos.
+ Luego de aplicar el catalogo el agente enviá un reporte al Máster.
+\end_layout
+
+\begin_layout Subsection
+Comunicación y seguridad
+\end_layout
+
+\begin_layout Standard
+El agente y el máster se comunican vía HTTPS con client-verification El
+ máster provee una interfaz HTTP con varios extremos disponibles.
+ Cuando se pide o enviá cualquier cosa al máster, el agente hace un pedido
+ HTPS o uno de esos extremos.
+\end_layout
+
+\begin_layout Standard
+Client-vefied HTTPS quiere decir que cada máster o agente tiene un identificador
+ por certificado SSL y examinan los certificados de sus contrapartes para
+ decidir si permite un intercambio de información.
+ Puppet incluye un constructor de certificado de autorización para administra
+ los certificados.
+ Los agentes puede pedir automáticamente los certificados vía la API HTTP
+ del máster.
+ El administrador del máster puede usar el comando puppet cert para inspeccionar
+ los pedidos y firmar nuevos certificados y los agentes pueden entonces
+ descargar los certificados firmados.
+ 
+\end_layout
+
+\begin_layout Subsection
+Tareas de pre-instalacion
+\end_layout
+
+\begin_layout Standard
+Puppet usualmente corre bajo la arquitectura cliente-servidor, pero ademas,
+ puede correr en una arquitectura autocontenida.
+ La decision determina que paquetes serán instalados y que extra configuraciones
+ necesarias se harán.
+ Adicionalmente , usted se puede considerar usar la PuppetDB, la cual permite
+ funciones extra de puppet y vuelve mas fácil consultar y analizar la informació
+n de la infraestructura de puppet.
+\end_layout
+
+\begin_layout Standard
+Se toma la opción de utilizar la arquitectura cliente-servidor.
+ Se debe completar la instalación y configuración de todos los puppet masters
+ antes de instalar cualquier agente.
+ El máster necesariamente debe correr en un sistema basado en Unix
+\end_layout
+
+\begin_layout Subsubsection
+Requerimientos de sistema y chequeo de versión de SO
+\end_layout
+
+\begin_layout Itemize
+Hardware: El puppet agent no tiene requerimientos particulares de hardware
+ y corre prácticamente en cualquier cosa, sin embargo, el servidor es un
+ recurso intensivo y debe ser instalado en un servidor robusto y dedicado.
+ Como mínimo, el servidor debe tener 2 procesadores y al menos 1GB de RAM,
+ para administrar eficientemente 1000 nodos, debe poseer entre 2 y 4 procesadore
+s y 4GB de RAM.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sistemas operativos soportados: Hay una variedad importante de distribuciones
+ Linux que soportan puppet, entre ellas destaca la utilizada para la realización
+ del trabajo, CentOS.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ruby: Se soportan varias versiones de Ruby, pero se recomienda el uso de
+ las versiones 2.1.x 
+\end_layout
+
+\begin_layout Itemize
+Librerías obligatorias: Facter 2.4.3 o posterior, Hiera 2.0.0 o posterior, json
+ gem, cualquier versión moderna, rgen gem 0.6.6 o posterior 
+\end_layout
+
+\begin_layout Itemize
+Librerías opcionales: msgpack gem es requerido si se utiliza msgpack racionaliza
+ción.
+\end_layout
+
+\begin_layout Subsubsection
+Chequeo de la configuración de red
+\end_layout
+
+\begin_layout Standard
+En un agent/master deployment se debe preparar la red para el tráfico de
+ puppet.
+ 
+\end_layout
+
+\begin_layout Itemize
+Firewall: El máster debe permitir conexiones entrantes al puerto 8140 y
+ los agentes deben ser capaces de conectarse a ese puerto.
+ 
+\end_layout
+
+\begin_layout Itemize
+Resolución de nombres: Cada nodo debe tener un nombre único.
+\end_layout
+
+\begin_layout Subsection
+Instalar Puppet 
+\end_layout
+
+\begin_layout Standard
+Primero se debe instalar puppet master.
+ Para ello:
+\end_layout
+
+\begin_layout Enumerate
+Habilitar los paquetes de los repositorios de puppet labs: En los sistemas
+ basados en yum el repositorio es soportado por las últimas versiones de
+ RHEL y derivados.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+En el caso de REHL 7 y derivados habilitamos el repositorio con el siguiente
+ comando (versión 4.2.2):
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Para versiones anteriores, como la 3.8 utilizar el siguiente:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+ 
+\end_layout
+
+\begin_layout Standard
+En el caso de RHEL 6 y derivados:
+\family typewriter
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Instalar el puppet master con el siguiente comando: 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+yum install puppetserver
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+No iniciar el servicio aún
+\end_layout
+
+\begin_layout Subsubsection
+Asignación de memoria 
+\end_layout
+
+\begin_layout Standard
+Por defecto, puppet server está configurado para usar 2GB de RAM pero si
+ se quiere experimentar con puppet server en una VM se puede asignar tan
+ poco como 512MB de memoria.
+ Para cambiar la asignación de memoria se edita el archivo de configuración,
+ que se encuentra en 
+\family typewriter
+/etc/sysconfig/puppetserver
+\family default
+ y modificar la siguiente línea:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# Modify this if you'd like to change the memory allocation, enable JMX,
+ etc 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+JAVA_ARGS="-Xms2g -Xmx2g"
+\end_layout
+
+\begin_layout Standard
+Si se desea por ejemplo, utilizar 512MB se debe reemplazar 2g por 512m:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+JAVA_ARGS="-Xms512m -Xmx512m"
+\end_layout
+
+\begin_layout Standard
+Luego, para aplicar los cambios, se debe reiniciar el servicio con:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service puppetserver restart
+\end_layout
+
+\begin_layout Subsubsection
+Instalar el paquete puppet-agent
+\end_layout
+
+\begin_layout Standard
+Una vez habilitado el repositorio como se indicó anteriormente, en los sistemas
+ basados en yum como CentOS el puppet-agent se instala con el siguiente
+ comando:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo yum install puppet-agent
+\end_layout
+
+\begin_layout Standard
+No se inicia el servicio aún.
+ Por defecto, el valor del server es puppet, si se nombró de otra forma
+ a la máquina servidora del puppet server, se debe editar esto.
+\end_layout
+
+\begin_layout Subsubsection
+Configuraciones para los agentes
+\end_layout
+
+\begin_layout Standard
+Básicas:
+\end_layout
+
+\begin_layout Itemize
+server – El nombre del master server al cual se le pediran los manifiestos.
+ Por defecto es Puppet 
+\end_layout
+
+\begin_layout Itemize
+certname – Nombre con el cual el nodo pide el certificado y se presenta
+ al servidor.
+ 
+\end_layout
+
+\begin_layout Itemize
+environment – Indica el entorno solicitado cuando se contacta al master.
+ De cualquier forma, el master puede configurarse para ignorar esta configuració
+n.
+ 
+\end_layout
+
+\begin_layout Standard
+Comportamiento de la ejecución: 
+\end_layout
+
+\begin_layout Itemize
+noop – Si esta habilitado, el agnete no reializara ningun trabajo, en cambio,
+ mirara que cambios se haria y lo reporta al master 
+\end_layout
+
+\begin_layout Itemize
+priority – Permite asignar el valor “nice” para evitar que otras aplicaciones
+ de la CPU no mueran de hambre mientras se aplican los catálogos 
+\end_layout
+
+\begin_layout Itemize
+report – indica si se deben enviar reportes, por defecto es true.
+ 
+\end_layout
+
+\begin_layout Itemize
+tags – Limita a los agentes a correr recursos con ciertas etiquetas.
+ 
+\end_layout
+
+\begin_layout Itemize
+usecacheonfailure – se utiliza para tomar el ultimo buen catálogo si el
+ master no posee uno bueno.
+ 
+\end_layout
+
+\begin_layout Itemize
+prerun_command and postrun_command – Comandos que se desean correr de cada
+ lado del puppet
+\end_layout
+
+\begin_layout Standard
+Comportamiento del servicio: 
+\end_layout
+
+\begin_layout Itemize
+runinterval – indica cada cuanto tiempo el agnete se contacta con el servidor
+ para pedirle los manifiestos.
+ Por defecto es de 30minutos.
+ 
+\end_layout
+
+\begin_layout Itemize
+waitforcert – Indica al agent que persista si no puede obtener su certificado.
+ Por defecto esta habilitado.
+ 
+\end_layout
+
+\begin_layout Standard
+Útilies cuando se ejecutan los agentes desde Cron: 
+\end_layout
+
+\begin_layout Itemize
+splay and splaylimit – Se utiliza para sincronizar el agente y el server
+ si el puppet agent utiliza un cron en lugar del demonio.
+ 
+\end_layout
+
+\begin_layout Itemize
+daemonize – se debe colocar esta opción en falso si se utiliza un cron 
+\end_layout
+
+\begin_layout Itemize
+onetime – sale luego de terminar el puppet actual.
+ Debe ser true si se utiliza un cron.
+\end_layout
+
+\begin_layout Standard
+Configuraciones para los master:
+\end_layout
+
+\begin_layout Standard
+Básicas:
+\end_layout
+
+\begin_layout Itemize
+dns_alt_names – Una lista de los hostname de los servers permitidos para
+ usar cuando actuan como masters environment
+\end_layout
+
+\begin_layout Itemize
+path – Indica la hubicacion del entorno.
+ 
+\end_layout
+
+\begin_layout Itemize
+basemodulepath – una lista de las hubicaciones que contienen modulos que
+ pueden ser usados en todos los environments 
+\end_layout
+
+\begin_layout Itemize
+manifest – EL principal punto de entrada para compilar los catálogos.
+ Por defecto es site.pp 
+\end_layout
+
+\begin_layout Itemize
+reports – que controlador de reportes se usa.
+\end_layout
+
+\begin_layout Standard
+Configuraciones relacionadas a Rack:
+\end_layout
+
+\begin_layout Itemize
+ssl_client_header and ssl_client_verify_header – Son utilizados cunado corre
+ el master puppet como un rack de aplicaciones.
+\end_layout
+
+\begin_layout Standard
+Configuraciones de CA:
+\end_layout
+
+\begin_layout Itemize
+ca - si actua como un ca 
+\end_layout
+
+\begin_layout Itemize
+ca_ttl – indica por cuanto tiempo son validos los certificados 
+\end_layout
+
+\begin_layout Itemize
+autosign – indica si los certifcados deben ser autofirmados.
+\end_layout
+
+\begin_layout Standard
+Como ejemplo de configuración se tiene:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el nodo que corre puppetserver, a la configuración por defecto, añadir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[...]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+certname = puppet
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+server = puppet
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+runinterval = 2m
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[...]
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ejecutar puppet
+\end_layout
+
+\begin_layout Standard
+Para el Puppet master, si es el único master en el deployment, o si actuará
+ como el servidor de CA para un sitio con múltiples masters, se debe ejecutar
+ puppet como sigue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo puppet master --verbose --no-daemonize
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto creará el certificado de CA y el certificado del puppet master, con
+ los nombres DNS apropiados incluidos.
+ Una vez que se muestre en pantalla 
+\family typewriter
+Notice: Starting Puppet master version <VERSION>
+\family default
+, tipear Ctrl-C para matar el proceso.
+\end_layout
+
+\begin_layout Standard
+Para corroborar la creación y firmado del servicio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo puppet cert list --all
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En caso que el master no haga las veces de CA, parasolicitar un certificado,
+ ejecutar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+sudo puppet agent --test --ca_server=<SERVER> 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego en el master que oficia de CA:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo puppet cert list 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo puppet cert --allow-dns-alt-names sign <NAME> 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este último es para firmar el certificado.
+ Luego en el nuevo master, ejecutar nuevamente 
+\family typewriter
+sudo puppet agent --test --ca_server=<SERVER> 
+\family default
+para recibir el certificado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nota:
+\series default
+ si se recive 
+\family typewriter
+--bash: puppet: command not found error, 
+\family default
+entonces se tiene instalada la versión 4.X de Puppet.
+ El directorio donde en esta versión se instalan los binarios, es 
+\family typewriter
+/opt/puppetlabs/bin 
+\family default
+y no está incluido en el default $PATH.
+ Para incluir estos binarios en el default $PATH, añadirlos ejecutando:
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+PATH=/opt/puppetlabs/bin:$PATH;export PATH.
+\end_layout
+
+\begin_layout Section
+Tópicos generales de Puppet
+\end_layout
+
+\begin_layout Subsection
+Module
+\end_layout
+
+\begin_layout Standard
+Un módulo o module, es un conjunto de código de Puppet enpaquetado junto
+ con los otros archivos y datos que se necesita administrar sobre algún
+ aspecto del sistema.
+ Consiste en una estructura predefinida de directorios que ayudan a Puppet
+ a encontrar los contenidos del módulo.
+ Para ver los módulos instalados se puede ejecutar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet module list
+\end_layout
+
+\begin_layout Standard
+Existe un repositorio público (The Puppet Forge) donde se pueden encontrar
+ módulos hechos por la comunidad y también mantenidos por Puppet Labs.
+\end_layout
+
+\begin_layout Standard
+Los módulos son auto-contenidos y separados.
+ Su estructura de archivo le da a Puppet una forma consistente de localizar
+ cualquier clase, plantillas, plugins y binarios requeridos para satisfacer
+ la funcionalidad del módulo.
+\end_layout
+
+\begin_layout Standard
+Todos los módulos accesibles por el Puppet Master están localizados en los
+ directorios especificados por la variable 
+\family typewriter
+'modulepath'
+\family default
+ en el archivo de configuración de Puppet.
+ Para encontrar esta variable en cualquier sistema con Puppet, se puede
+ ejecutar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet agent --configprint modulepath 
+\end_layout
+
+\begin_layout Subsection
+Node group 
+\end_layout
+
+\begin_layout Standard
+Los grupos de nodos o node groups permiten segmentar todos los nodos de
+ la infraestructura en grupos separados configurables basados en la información
+ colectada por 'facter tool'.
+\end_layout
+
+\begin_layout Subsection
+Resources
+\end_layout
+
+\begin_layout Standard
+Cada recurso o resource, describe algún aspecto de un sistema y su estado,
+ como por ejemplo, un servicio que debería estar ejectándose o un paquete
+ que se quiere esté instalado.
+ El bloque de código que describe un recurso se llama declaración de recurso
+ (resource declaration).
+ Estas declaraciones de recurso están escritas en código Puppet, un DLS
+ (Domain Specific Language) construido en Ruby.
+ El DLS de Puppet es un leguaje declarativo en vez de imperativo.
+ Esto quiere decir que en vez de definir un proceso o un conjunto de comandos,
+ el código de Puppet describe (o declara) solo el estado final deseado,
+ y depende de proveedores integrados para lidiar con la implementación.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet resource tool -> puppet resource <type> <name> 
+\end_layout
+
+\begin_layout Standard
+Puppet incluye una variedad de tipos de recursos integrados, que permiten
+ administrar varios aspectos de un sistema.
+ Algunos de los tipos de recursos claves que generalmente se encuentran
+ en un sistema son los siguientes:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+user 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un usuario 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+group 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un grupo de usuario 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+file 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un archivo específico 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+package 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un paquete de software 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un servicio corriendo
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cron 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un trabajo pogramado de cron 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+exec 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un comando externo 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+host 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Un host
+\end_layout
+
+\begin_layout Standard
+Una declaración de recurso seguirá un patrón como el de abajo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+tipo {'título': atributo => 'valor', }
+\end_layout
+
+\begin_layout Standard
+Se puede utilizar la sintaxis de declaración de recursos conla herramienta
+ '
+\family typewriter
+puppet apply
+\family default
+' con la bandera 
+\family typewriter
+-e (--execute)
+\family default
+ para hacer cambios rápidos en el sistema.
+ Por ejemplo, para crear un usuario llamado 'galatea':
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet apply -e "user { 'galatea': ensure => 'present', }" 
+\end_layout
+
+\begin_layout Subsection
+Manifiests 
+\end_layout
+
+\begin_layout Standard
+Un manifiesto o manifest, es un archivo de texto que contiene código Puppet
+ y posee la extensión 
+\family typewriter
+.pp
+\family default
+.
+ Para comprobar la sintaxis de un manifiesto se puede utilizar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet parser validate <manifiesto.pp> 
+\end_layout
+
+\begin_layout Standard
+El parseador no retornará nada si no hay errores, en caso de que se detecte
+ un error se debe corregirlo antes de continuar.
+ Si se trata de aplicar un manifiesto que no ha sido declarado, no cambiará
+ nada en el sistema.
+ Para ésto se debe crear un .pp que contenga un sentencia:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include módulo::clase
+\end_layout
+
+\begin_layout Standard
+Antes de aplicar cambios en el sistema, se puede utilizar la bandera 
+\family typewriter
+–noop
+\family default
+ para compilar el catálogo (catálogo) y notificar los cambios que Puppet
+ habría realizado si hubiera sido ejecutado sin 
+\family typewriter
+–noop
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet apply --noop 
+\end_layout
+
+\begin_layout Subsection
+Catálogos
+\end_layout
+
+\begin_layout Standard
+Los manifiestos de Puppet pueden usar lógica condicional para describir
+ muchas configuraciones de nodos como una.
+ Antes de configurar un nodo, Puppet compila los manifiestos en un catalogo,
+ el cual solo es valido para un único nodo y no contiene lógica ambigua.
+\end_layout
+
+\begin_layout Standard
+Los catálogos son documentos estáticos los cuales contienen recursos y relacione
+s.
+ 
+\end_layout
+
+\begin_layout Standard
+En la arquitectura estándar agent/master, los nodos requieren los catálogos
+ al Puppet Server, el cual los compila cuando se lo requieren.
+ Los agentes mantienen en cache sus mas recientes catálogos, si al pedir
+ el catalogo, el master falla al compilarlo, ellos reusaran su catalogo
+ cacheado.
+\end_layout
+
+\begin_layout Subsection
+Classes 
+\end_layout
+
+\begin_layout Standard
+Una clasees un bloque de código Puppet con nombre.
+ Una clase administrará generalmente un conjunto de recursos relacionados
+ a una función simple o un componente del sistema.
+ Las clases usualmente contienen otras clases, este anidamiento provee una
+ forma estructurada de juntar funciones de clases diferentes como componentes
+ de soluciones más grandes.
+ Para utilizar una clase, se necesita definirla escribiendo una definición
+ de clase y guardándola en un archivo manifiesto.
+ Cuando Puppet se ejecuta, parseará este manifiesto y guardará la definición
+ de clase; luego ésta puede ser declarada para aplicarla en los nodos de
+ la infraestructura.
+ En Puppet las clases son singleton, lo que quiere decir que una clase puede
+ ser declarada solo una vez en un nodo dado.
+ Cuando se declara una clase:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include módulo::clase
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+módulo
+\family default
+ le indica a Puppet donde encontrar esa 
+\family typewriter
+clase
+\family default
+.
+ Sin embargo, para la clase principal de un módulo, además de llevar el
+ mismo nombre que el módulo mismo, en vez de seguir el patrón del manifiesto
+ para la clase que contiene, Puppet reconoce el nombre especial del archivo
+ 'init.pp' como el manifiesto que contendrá la clase principal de un módulo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Referencias de tipo
+\end_layout
+
+\begin_layout Standard
+Todos los tipos tiene un atributo especial llamado namevar.
+ Este es el atributo usado para identificar univocamente un recurso en el
+ sistema de destino.
+ Si no se especifica un valor para el namevar, este valor es tomado por
+ defecto según el titulo del recurso.
+\end_layout
+
+\begin_layout Standard
+Ejemplo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+file { '/etc/passwd': 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+owner => root, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+group => root, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+mode => 644 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+} 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este código, 
+\family typewriter
+/etc/passwd
+\family default
+ es el titulo del recurso 
+\emph on
+file
+\emph default
+, otros códigos de Puppet pueden hacer referencia al recurso como File['/etc/pas
+swd'] para declarar relación.
+ Porque el path es el 
+\emph on
+namevar
+\emph default
+ para el tipo file y si nosotros no le proveemos un valor, toma el por defecto
+ que es 
+\emph on
+/etc/passwd.
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+atributos
+\series default
+, a veces llamados parámetros, de un recurso, determinan el estado deseado
+ para el.
+ Cualquiera de ellos modifica directamente el sistema (internamente, las
+ llamadas “propiedades”) o afectan como el recurso se comporta.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Providers
+\series default
+ implementan el mismo tipo de recursos en diferentes tipos de sistemas,
+ ellos suelen hacer esto llamando a comandos externos.
+ Aunque Puppet seleccionara automáticamente un provider apropiado por defecto,
+ se puede sobrescribir este con el provider attribute.
+ Por ejemplo, el recurso 
+\emph on
+package
+\emph default
+ de sistemas Red Hat tiene por defecto YUM como 
+\emph on
+provider
+\emph default
+, pero se puede especificar p
+\family typewriter
+rovider => gem
+\family default
+ para instalar librerías de Ruby con el comando gem.
+ 
+\end_layout
+
+\begin_layout Standard
+Frecuentemente los providers especifican binarios que ellos necesitan.
+ Los binarios calificados indican que el binario debe existir en ese path
+ especifico y los no calificados, indican que puppet los buscara usando
+ la ruta del shell.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Features
+\series default
+ son habilidades que algunos providers pueden no soportar.
+ Generalmente una característica corresponderá con algunos valores permitidos
+ por un recurso de un atributo, por ejemplo, si un paquete soporta la caracterís
+tica 
+\emph on
+purgeable
+\emph default
+, se puede especificar 
+\family typewriter
+ensure => purged 
+\family default
+para borrar los archivos de configuración instalados por el paquete.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Augeas:
+\series default
+ Aplica un cambio o un arreglo de cambios en el archivo de sistemas usando
+ Auges 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Computer:
+\series default
+ Manejo de objetos de la computadora usando DirectyoryService en un SO X.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cron:
+\series default
+ Instale y maneje trabajos Cron.
+ Todo cron creado por Puppet requiere un comando y al menos un atributo
+ de un periodo (horas, minutos,meses, etc).
+ Mientras el nombre del Cron no es para del trabajo actual, el nombre es
+ almacenado en un comentario comenzando con #Puppet Name:.
+ Ese comentario es usado para machear entadas crontab creadas por Puppet
+ con un recurso Cron.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Exec:
+\series default
+ Ejecuta comandos externos.
+ Cualquier comando en un recurso Exec debe poder correr múltiples veces
+ sin causar daños.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+File:
+\series default
+ El manejo de archivos incluye su contenido, dueño, y permisos.
+ El tipo archivo puede manejar archivos, directorios y enlaces simbólicos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Filebucket:
+\series default
+ Un repositorio para almacenar y recuperar archivos conformados por MD5
+ checksum.
+ Puede ser local a cada nodo agente o centralizado en un master Puppet.
+ Todos los Puppet Master proveen un servicio filebucket que los agentes
+ pueden acceder vía HTTP.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Group:
+\series default
+ Manejo de grupos.
+ En muchas plataformas esto solo puede crear grpos.
+ Ingresar a los grupos debe ser administrado por los usuarios individuales.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Host:
+\series default
+ Instalar y manejar entradas de hosts.
+ Para muchos sistemas, esas entradas deben estar solo en /etc/hosts, pero
+ algunos SO tienen diferentes soluciones.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Interface:
+\series default
+ Esto representa una interfaz de router o switch.
+ Es posible gestiona el modo interfaz y las características switchport.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+K5login:
+\series default
+ Controla el archivo .k5login para un usuario.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mailalias:
+\series default
+ Crea un alias email en la base de datos de alias local.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Maillist:
+\series default
+ Controla la lista de emails.
+ Este tipo de recurso puede solo crear y remover listas, no puede reconfigurar
+ listas actuales.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mcx:
+\series default
+ Manejo de objetos MCX usando DirectoryService en SO X.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mount:
+\series default
+ Manejo de filesystem montued, incluyen la colocación de informacion de
+ montaje el la tabla de montaje.
+ El comportamiento actual depende de el valor de el parámetro “ensure” 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Notify:
+\series default
+ Envió de un mensaje arbitrario a el log del agente en tiempo de ejecución.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Package:
+\series default
+ Manejo de paquetes.
+ Hay una dicótoma básica en los paquetes soportados correctamente ahora:
+ Algunos tipos de paquetes como yum y apt pueden recuperar sus propios archivos
+ de paquetes, mientras que otros no pueden.
+ Para esos paquetes, se puede usar el parametro source para poner el archivo
+ adecuado.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Resources:
+\series default
+ Este es un metatipo que puede controlar otro tipo de recursos.
+ Cualquier metaparametro especificado aquí sera pasado a los recursos generados,
+ por lo que puede purgar recursos no administrados.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Router:
+\series default
+ Control de routers conectados.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Schedule:
+\series default
+ Define el programa para Puppet.
+ Los recursos pueden ser limitados por un programa usando el metaparametro
+ schedule.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SelBoolean: 
+\series default
+Manejo de SELinux Boolean en sistemas que soportan SELinux.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SelModule: 
+\series default
+Manejo de carga y descarga de modulos de política de SELinux en el sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Service: 
+\series default
+Controla servicios en marcha.
+ Desafortunadamente service soporta una amplia variedad por plataforma.
+ Algunas tienen una variedad muy pequeña de concepto de servicio en ejecución.
+ y algunos tienen un concepto muy poderoso.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ssh_authorized_key: 
+\series default
+Manejo de llaves autorizadas SSH.
+ Actualmente solo dos tipos de llaves son soportadas.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sshkey: 
+\series default
+Instala y administra las llaves de host SSH.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stage: 
+\series default
+Un tipo de recurso para crear nuevos escenarios.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tidy: 
+\series default
+Remueve archivos base indeseados con criterios específicos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+User: 
+\series default
+Administración de usuarios.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Vlan: 
+\series default
+Administra VLANs en un router o switch 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Yumrepo: 
+\series default
+La descripción del lado del cliente de un repositorio YUM.
+ La configuración de un repositorio se encuentra en /etc/yum.conf y el archivo
+ indicado por la opción reposdir en el archivo.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Zfs: 
+\series default
+Administración de ZFS.
+ Crea, destruye y pone propiedades en instancias ZFS.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Zpool: 
+\series default
+Administración de zpools.
+ Crea y elimina zpools.
+ El proveedor no sincroniza, solo reporta diferencias.
+ Soporta vdevs con espejos, raidz, logs y spares
+\end_layout
+
+\begin_layout Subsection
+\begin_inset space ~
+\end_inset
+
+Referencia de funciones
+\end_layout
+
+\begin_layout Standard
+Hay dos tipos de funciones en Puppet, statements (declaraciones) y rvalues.
+ Las statements no retornan argumentos, son utilizadas para hacer trabajos
+ independientes como importar.
+ Rvalues retornan valores y pueden ser usadas solo en un statement requiriendo
+ un valor, como una asignación o una declaración case.
+\end_layout
+
+\begin_layout Standard
+Las funciones se ejecutan en el Puppet master, no se ejecutan en el agente.
+ Por lo tanto sólo tienen acceso a los comandos y datos disponibles en el
+ host master.
+\end_layout
+
+\begin_layout Standard
+Algunas de las funciones disponibles son:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+alert:
+\series default
+ (statement) deja un mensaje en el log del servidor en el nivel de alerta.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+assert_type:
+\series default
+(rvalue) retorna el valor dado si este es una instancia del tipo dado, y
+ levanta un error en caso contrario.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+contatin:
+\series default
+ (statement) contiene una o más clases dentro de la clase actual.
+ Si alguna de estas clases están sin declarar, serán declaradas como si
+ fueran llamadas con la función 
+\emph on
+include
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+create_resources:
+\series default
+ (statement) convierte un hash en un conjunto de recursos y los añade al
+ catálogo.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+crit: 
+\series default
+(statement) deja un mensaje en el log del servidor en el nivel crítico.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+debug: 
+\series default
+(statement) deja un mensaje en el log del servidor en el nivel de debug.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+defined: 
+\series default
+(rvalue) determina si una clase dada o un tipo de recurso está definido.
+ También puede determinar si un recurso específico está definido o si una
+ variable ha sido asignada con un valor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+digest:
+\series default
+ (rvalue) retorna un valor de hash de un string dado usando la configuración
+ digest_algorithm del archivo de configuración de Puppet.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+each:
+\series default
+ (rvalue) aplica un bloque parametrizado a cada elemento en una secuencia
+ de entradas seleccionadas del primer argumento y retorna el primero argumento.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+emerg:
+\series default
+ (statement) deja un mensaje en el log del servidor en el nivel de emergencia.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+epp:
+\series default
+ (rvalue) evalúa una plantilla Embedded Puppet y retorna el texto renderizado
+ resultante como un string.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+err:
+\series default
+ (statement) deja un mensaje en el log del servidor en el nivel de error.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+fail:
+\series default
+ (statement) fallo con un error del parser.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+file: 
+\series default
+(rvalue) carga un archivo desde un módulo y retorna sus contenidos como
+ un string.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+filter:
+\series default
+ (statement) aplica un bloque parametrizado a cada elemento en una secuencia
+ de entradas del primer argumento y retorna un array o un hash con las entradas
+ para cada bloque evalúa a true.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+fqdn_rand:
+\series default
+ (rvalue) genera un número Integer aleatorio mayor o igual a cero y menor
+ a MAX, combinando 
+\emph on
+$fqdn
+\emph default
+ y el valor de SEED para aleatoriedad repetible.
+ Ésto quiere decir que cada nodo obtendrá un número aleatorio diferente
+ de esta función pero el resultadod e un nodo dado será el mismo cada vez
+ a menos que su hostname cambie (uso: fqdn_rand(MAX, [SEED])).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+generate: 
+\series default
+(rvalue) llama a un comando externo en el Puppet master y retorna los resultados
+ del comando.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+hiera:
+\series default
+ (rvalue) realiza una búsqueda de prioridad estándar y retorna el valor
+ más específico para una clave dada.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+hiera_array:
+\series default
+ (rvalue) retorna todas las coincidencias a través de la jerarquía como
+ un array plano de valores únicos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+hiera_hash: 
+\series default
+(rvalue) retorna un hash mezclado de coincidencias a través de la jerarquía.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+hiera_include: 
+\series default
+(rvalue) asigna clases a un nodo usando un array de búsqueda (array merge
+ lookup ) que retorna el valor para una clave de usuario-específico de la
+ fuente de datos de Hiera.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+include:
+\series default
+ (statement) declara una o más clases, causando que los recursos en ellas
+ sead evaluados y añadidos al catálogo.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+info: 
+\series default
+(statement) deja un mensaje en el log del servidor en el nivel info.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+inline_epp: 
+\series default
+(rvalue) evalúa una plantilla Embedded Puppet y retorna el texto renderizado
+ resultante como un string.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+inline_template:
+\series default
+ (rvalue) evalúa un string plantilla y retorna su valor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+lookup:
+\series default
+ (rvalue) busca datos definidos usando Data Binding y Data Providers utilizando
+ diferentes estrategias.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+match: 
+\series default
+(statement) retorna el resultado de coincidir un string o un array[string]
+ con regexp, string (transformado a regexp, tipo pattern o tipo regexp).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+md5: 
+\series default
+(rvalue) retorna un valor de hash MD5 de un string dado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+notice: 
+\series default
+(statement) deja un mensaje en el log del servidor en el nivel noticia.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+realize: 
+\series default
+(statement) hace un objeto virtual, real.
+ Es útil cuando se quiere saber el nombre del objeto virtual y no se quiere
+ utilizar una colección entera.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+reduce: 
+\series default
+(rvalue) aplica un bloque parametrizado a cada elemento en una secuencia
+ de entradas del primer argumento (
+\emph on
+el enumerable
+\emph default
+) y retorna el último resultado de la invocación del bloque parametrizado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+regsubst: 
+\series default
+(rvalue) realiza un reemplazo regexp en un string o array de strings.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+requiere: 
+\series default
+(statement) evalúa una o más clases, añadiendo la clase requerida como dependenc
+ia.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+scanf: 
+\series default
+(rvalue) escanea un string y retorna un array de uno o más valores convertidos
+ dirigidos por un formato dado string.args.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+sha1: 
+\series default
+(rvalue) retorna un valor hash SHA1 de un string dado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+shellquote: 
+\series default
+(rvalue) cita y concatena argumentos para usar en Bourne Shell.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+slice:
+\series default
+ (rvalue) aplica un bloque parametrizado a cada 
+\emph on
+slice 
+\emph default
+de elementos en una secuencia de entradas seleccionadas del primer argumento
+ y retorna el primer argumento, o si ningún bloque es dado, retorna un nuevo
+ array con una concatenación de los slices.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+split:
+\series default
+ (rvalue) divide una variable string en un array usando el divisor regexp
+ especificado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+sprintf: 
+\series default
+(rvalue) realiza un formateo de texto con estilo printf.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+tag: 
+\series default
+(statement) añade las etiquetas especificadas a la clase o definición que
+ la contiene.
+ Todos los objetos también adquirirán luego esa etiqueta.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+tagged:
+\series default
+ (rvalue) una función booleana que dice si el contenedor actual está etiquetado
+ con las etiquetas especificadas.
+ Las etiquetas son operadas con AND, así que todas deben ser incluidas para
+ que la función retorne true.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+template:
+\series default
+ (rvalue) carga una plantilla ERB de un módulo, la evalúa y retorna el valor
+ resultante como un string.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+versioncmp:
+\series default
+ (rvalue) compara dos números de versión.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+warning: 
+\series default
+(statement) deja un mensaje en el log del servidor en el nivel advertencia.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+with: 
+\series default
+(rvalue) llama a un bloque de código lambda con los argumentos dados.
+ Como los parámetros de lambda son locales para el alcance de ella, esto
+ puede ser utilizado para crear secciones privadas de lógica en una clase
+ para que las variables no sean visibles fuera de la clase.
+\end_layout
+
+\begin_layout Subsection
+Referencia de metaparametros
+\end_layout
+
+\begin_layout Standard
+Metaparametros son atributos que trabajan con cualquier tipo de recurso,
+ incluido los tipos personalizados y los tipos definidos.
+\end_layout
+
+\begin_layout Standard
+En general, ellos afectan el comportamiento de Puppet en preferencia a el
+ deseo del estado del recurso.
+ 
+\end_layout
+
+\begin_layout Standard
+Los metaparametros hacen cosas como agregar metadata a un recurso (alias,tag),
+ poner limites cuando el recurso debe ser sincronizado(require,schedule,etc.),
+ evita que Puppet realice cambios (noop), y cambia la verborrea del log
+ (loglevel).
+\end_layout
+
+\begin_layout Subsubsection
+Metaparametros disponibles
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Alias: 
+\series default
+Crea un alias para el recurso.
+ Puppet usa esto internamente cuando se provee un titulo simbólico y un
+ valor de 
+\emph on
+namevar 
+\emph default
+explicito.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+file { 'sshdconfig': 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+path => $operatingsystem ? { 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+solaris => '/usr/local/etc/ssh/sshd_config', 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+default => '/etc/ssh/sshd_config', 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+}, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+source => '...' 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service { 'sshd': 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+subscribe => File['sshdconfig'], 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando se usa esta característica, el parser pone sshdconfig como el titulo,
+ y la librería pone que es como un alias para el archivo entonces la dependencia
+ trabaja hacia arriba en 
+\family typewriter
+Service['sshd'].
+ 
+\family default
+Se puede usar este metaparametro uno mismo, pero note que el aliases generalment
+e solo trabaja creando relaciones; cualquier cosa mas que referirse a un
+ recurso existente debe usar el titulo exacto del recurso.
+ Por ejemplo, el siguiente código no funciona.
+\end_layout
+
+\begin_layout Standard
+file { '/etc/ssh/sshd_config': 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+owner => root, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+group => root, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+alias => 'sshdconfig', 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+File['sshdconfig'] { 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+mode => '0644', 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Puppet no tiene forma de saber que esas dos estrofas deben afectar el mismo
+ archivo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+audit:
+\series default
+Marca un subconjunto de atributos sin administrar de recurso para auditar.
+ Acepta un atributo nombre, un array de atributos nombre o todos.
+
+\series bold
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Auditar un atributo de un recurso tiene dos efectos: Primero, cuando un
+ catalogo es aplicado con 
+\family typewriter
+puppet apply 
+\family default
+or 
+\family typewriter
+puppet agent,
+\family default
+ Puppet chequeara si ese atributo del recurso ha sido modificado, comparando
+ el valor actual con el previo a la ejecución; cualquier cambio sera registrado
+ junto a cualquier acción realizada por Puppet mientras aplica el catalogo
+\end_layout
+
+\begin_layout Standard
+Segundo, marcar atributos de un recurso para auditar incluirá ese atributo
+ en reportes de inspección generados por Puppet inspect.
+\end_layout
+
+\begin_layout Standard
+Los atributos administrados para un recurso también pueden ser auditados,
+ pero esos cambios serán realizados por puppet registrados como modificaciones
+ adicionales.(Ej: Si un usuario manualmente edita un archivo cuyo contenido
+ era auditado y administrado, en la próxima ejecución de puppet agent registrara
+ ambas noticias: La primer ejecución registra la edición del usuario y luego
+ revierte al estado deseado el archivo y segundo, registrara lo editado
+ por Puppet.)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+before: 
+\series default
+Uno o mas recursos que depende de este recurso, expresados como referencia
+ de recursos.
+ Múltiples recursos pueden ser especificados como un conjunto de referencias.
+ Cuando este atributo esta presente: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Este recurso se aplicara luego del recurso o los recursos de los cuales
+ depende.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+loglevel: 
+\series default
+Coloca el nivel de informacion que sera registrada.
+ Los niveles de registro tienen un gran impacto cuando los registros son
+ enviados al syslog(que es el caso por defecto)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+El orden por de los niveles, en prioridad decreciente, es:
+\end_layout
+
+\begin_layout Itemize
+crit
+\end_layout
+
+\begin_layout Itemize
+emerg 
+\end_layout
+
+\begin_layout Itemize
+alert 
+\end_layout
+
+\begin_layout Itemize
+err 
+\end_layout
+
+\begin_layout Itemize
+warning 
+\end_layout
+
+\begin_layout Itemize
+notice 
+\end_layout
+
+\begin_layout Itemize
+info / verbose 
+\end_layout
+
+\begin_layout Itemize
+debug
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+noop: 
+\series default
+Es para aplicar este recurso en modo noop.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Cuando aplica un recurso en modo noop, Puppet chequera si esta sincronizado,
+ como cuando corre normalmente.
+ Sin embargo, si un atributo de un recurso no esta en el estado deseado
+ (como lo declara el catalogo), Puppet no realizara ninguna acción, y en
+ su lugar, reportara los cambios que habría de hecho.
+ Esos cambios simulados aparecen e el reporte enviado al Puppet Master,
+ o serán mostrados en consola si 
+\family typewriter
+puppet agent
+\family default
+ o 
+\family typewriter
+puppet applay 
+\family default
+corren en primer plano.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+notify: 
+\series default
+Uno o mas recursos que depende de este recurso, expresados como referencia
+ de recursos.
+ Múltiples recursos pueden ser especificados como un conjunto de referencias.
+ Cuando este atributo esta presente: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Este recurso sera aplicado antes que el recurso notificado
+\end_layout
+
+\begin_layout Itemize
+Si Puppet hace cambios en este recurso, causara que todos los recursos notificad
+os se refresquen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+require: 
+\series default
+Uno o mas recursos que depende de este recurso, expresados como referencia
+ de recursos.
+ Múltiples recursos pueden ser especificados como un conjunto de referencias.
+ Cuando este atributo esta presente: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+El recurso o los recursos requeridos con anterioridad para aplicar este
+ recurso.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+schedule: 
+\series default
+Un programa para gobernar cuando Puppet tiene permitido administrar este
+ recurso.
+ El valor de este metaparametro debe ser el nombre de un recurso 
+\emph on
+schedule.
+
+\series bold
+\emph default
+ 
+\series default
+Esto significa que se debe declarar un recurso schedule
+\series bold
+\emph on
+ 
+\series default
+\emph default
+y luego referirse a el por su nombre
+\series bold
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+schedule { 'everyday': 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+period => daily, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+range => "2-4" 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+exec { "/usr/bin/apt-get update": 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+schedule => 'everyday' 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+stage: 
+\series default
+En cual estado de ejecución esta clase debería residir.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Note que este metaparametro solo puede ser usado con clases, y solo declarándolo
+s como recursos de sintaxis.
+ No se puede usar con recursos normales o en clases declaradas con include.
+\end_layout
+
+\begin_layout Standard
+Por defecto, todas las clases son declaradas en el estado principal.
+ Para asignar una clase a un estado diferente, se debe:
+\end_layout
+
+\begin_layout Itemize
+Declarar un nuevo estado como un recurso estado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Declarar un orden de relación entre el nuevo el nuevo estado y el estado
+ principal
+\end_layout
+
+\begin_layout Itemize
+Usar la sintaxis de recurso para declarar la clase y poner el estado deseado
+\end_layout
+
+\begin_layout Standard
+Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+stage { 'pre':
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+before => Stage['main'], 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+class { 'apt-updates': 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+stage => 'pre', 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+subscribe: 
+\series default
+Uno o mas recursos que depende de este recurso, expresados como referencia
+ de recursos.
+ Múltiples recursos pueden ser especificados como un conjunto de referencias.
+ Cuando este atributo esta presente: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+El recurso suscripto aplicara los cambios antes que este recurso.
+\end_layout
+
+\begin_layout Itemize
+Si Puppet realiza cambios a cualquier recurso subscripto, esto causara que
+ este recurso se refresque.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+tag: 
+\series default
+Agrega la etiqueta especificada al recurso asociado.
+ si bien todos los recursos son automáticamente etiquetados con la mayor
+ cantidad de informacion posible, puede ser útil agregar su propia etiquetas
+ a los recursos.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+file {'/etc/hosts': 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ensure => file, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+source => 'puppet:///modules/site/hosts', 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+mode => '0644', 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+tag => ['bootstrap', 'minimumrun', 'mediumrun'], 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Lenguaje
+\end_layout
+
+\begin_layout Subsubsection
+Variables
+\end_layout
+
+\begin_layout Standard
+Las variables guardan valores para que sean accedidos más tarde.
+ En Puppet, las variables son en realidad constantes ya que no pueden ser
+ reasignadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Facts y variables incorporadas
+\end_layout
+
+\begin_layout Standard
+Puppet tiene muchas variables pre-definidas que pueden ser utilizadas en
+ los manifiestos.
+ Para ver una lista de ellas ver :
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+http://docs.puppetlabs.com/puppet/4.2/reference/lang_facts_and_builtin_vars.html
+\end_layout
+
+\begin_layout Subsubsection
+Sintaxis
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+$contenido = "algún contenido
+\backslash
+n"
+\end_layout
+
+\begin_layout Standard
+Los nombres de variables tienen como prefijo un signo $.
+ Los valores son asignados a ellas con el símbolo = y se pueden asignar
+ valores de cualquier tipo de dato.
+ La variable contendrá el valor que la declaración resuelve, en vez de una
+ referencia a la declaración.
+ 
+\end_layout
+
+\begin_layout Standard
+Las variables solo pueden ser asignadas utilizando su nombre corto.
+ Esto es, un alcance dado no puede asignar a variables en un ámbito exterior.
+\end_layout
+
+\begin_layout Subsubsection
+Asignar múltiples variables
+\end_layout
+
+\begin_layout Standard
+Se pueden asignar múltiples variables de una vez desde un array o hash.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Arrays
+\end_layout
+
+\begin_layout Standard
+Cuando se asignan múltiples variables desde un array, debe haber un número
+ igual de variables y valores.
+ Si no coinciden, la operación fallará.
+ Arrays anidados también pueden ser usados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[$a, $b, $c] = [1,2,3] # $a = 1, $b = 2, $c = 3
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[$a, [$b, $c]] = [1,[2,3]] # $a = 1, $b = 2, $c = 3 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[$a, $b] = [1, [2]] # $a = 1, $b = [2] 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+[$a, [$b]] = [1, [2]] # $a = 1, $b = 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Hashes
+\end_layout
+
+\begin_layout Standard
+Cuando se asignan múltiples variables con un hash, las variables son listadas
+ en un array en el lado izquierdo de la asignación, y el hash está del lado
+ derecho.
+ Las claves de hash deben coincidir su nombre correspondiente de variable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[$a, $b] = {a => 10, b => 20} # $a = 10, $b = 20 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Resolución
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+file {'/tmp/testing': 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+ensure => file,
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+content => $content, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+$address_array = [$address1, $address2, $address3]
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El nombre de la variable puede ser usado en cualquier lugar donde un valor
+ de su tipo de dato fuera aceptado, incluyendo expresiones, funciones y
+ atributos de recursos.
+ Puppet reemplazará el nombre de la variable por su valor.
+ Por defecto, variables sin asignar tienen el valor undef.
+\end_layout
+
+\begin_layout Subsubsection
+Interpolación
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+$rule = "Allow * from $ipaddress"
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+file { "${homedir}/.vim":
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+ensure => directory, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+...
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Puppet puede resolver variables en strings entre comillas dobles, esto es
+ llamado interpolación.
+ Dentro de las comillas dobles, se puede opcionalmente envolver el nombre
+ de la variable (la porción luego de $) con llaves (${nombre_variable}).
+ Esta sintaxis ayuda a evitar ambigüedades y permite ubicar las variables
+ directamente siguiendo a caracteres que no son espacios en blanco.
+ Estas llaves opcionales, están permitidas solo dentro de strings.
+\end_layout
+
+\begin_layout Subsubsection
+Comportamiento
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Alcance
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El área de código donde una variable dada es visible está dictada por su
+ alcance.
+ Las variables en un alcance dado solo están disponibles dentro de ese alcance/á
+mbito su alcance hijo, y cualquier alcance local puede sobre escribir localmente
+ las variables que recibe de sus padres.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Acceso a variables fuera de alcance
+\end_layout
+
+\begin_layout Standard
+Se puede acceder a variables fuera de alcance utilizando su nombre completo
+ (qualified name)
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+$vhostdir = $apache::params::vhostdir
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Variables sin asignar y Modo Estricto (Strict Mode)
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por defecto, se pueden acceder a variables a las que nunca se les han asignado
+ valores.
+ Su valor será 
+\family typewriter
+undef
+\family default
+.
+ Usualmente esto no es algo deseado, ya que una variable sin asignar es
+ usualmente un accidente o error de tipografía.
+ 
+\end_layout
+
+\begin_layout Standard
+Si se desea que las variables sin asignar tiren un mensaje de error, para
+ notificar ésto, se puede habilitar el modo estricto.
+ Configurar 
+\family typewriter
+strict_variables = true
+\family default
+ en 
+\family typewriter
+puppet.conf 
+\family default
+en el Puppet master y cualquier nodo que ejecuta Puppet aplica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Dependencia del orden de evaluación 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A diferencia de las declaraciones de recursos, las asignaciones de variables
+ son dependientes del orden de evaluación.
+ Esto quiere decir que no se puede resolver una variable antes que haya
+ sido asignada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nombramiento
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los nombres de variables comienzan con el signo $ y son sensibles a mayúsculas.
+ La mayoría de los nombres deben comenzar con una letra en minúscula o un
+ guión bajo.
+ Los nombres pueden incluir:
+\end_layout
+
+\begin_layout Itemize
+Mayúsculas y minúsculas
+\end_layout
+
+\begin_layout Itemize
+Números
+\end_layout
+
+\begin_layout Itemize
+Guión bajo
+\end_layout
+
+\begin_layout Standard
+Si el primer carácter es un guión bajo, esa variable debería ser accedida
+ solo desde su propio alcance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nombres de variables calificados
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los nombres calificados de variables tienen un prefijo con el nombre de
+ su alcance y el :: separados de 
+\family typewriter
+namespace
+\family default
+.
+ Por ejemplo, la variable 
+\family typewriter
+$vhostdir
+\family default
+ de la clase 
+\family typewriter
+apache::params
+\family default
+ sería 
+\family typewriter
+$apache::params::vhostdir.
+\end_layout
+
+\begin_layout Standard
+Opcionalmente el nombre del primer namespace puede estár vacío, representando
+ el namespace superior.
+ Por ejemplo
+\family typewriter
+ $::is_virtual.
+\end_layout
+
+\begin_layout Subsubsection
+Recursos
+\end_layout
+
+\begin_layout Standard
+Los recursos son la unidad fundamental para modelar la configuración del
+ sistema.
+ Cada recurso describe algún aspecto de un sistema, como un servicio o paquete
+ especifico.
+\end_layout
+
+\begin_layout Standard
+Cada recurso es asociado con un tipo de recurso el cual determina su tipo
+ de configuración.
+ Puppet tiene muchos tipos de recursos como archivos, cron, services, etc,
+ Pero, ademas, se pueden agregar nuevos tipos, pudiendo escribir tipos nuevos
+ o personalizando los existentes.
+\end_layout
+
+\begin_layout Standard
+Cada recurso tiene un tipo de recurso, un titulo y un conjunto de atributos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+<TYPE> { '<TITLE>': 
+\end_layout
+
+\begin_layout Standard
+<ATTRIBUTE> => <VALUE>, 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nótese que se puede utilizar cualquier cantidad de espacios en blancos en
+ el lenguaje de Puppet
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Titulo: 
+\series default
+Es un string que identifica un recurso para el compilador de Puppet.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+El titulo no tiene que coincidir con lo que va a administrar en el sistema,
+ pero a menudo se desea eso.
+ 
+\end_layout
+
+\begin_layout Standard
+Los títulos deben ser únicos por tipos de recursos, se puede tener un paquete
+ y un servicios ambos con el mismo titulo, pero no dos servicios con ese
+ titulo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Atributos: 
+\series default
+Los atributos describen el estado deseado para un recurso; cada atributo
+ maneja algún aspecto del recurso.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Cada tipo de recurso tiene su propio juego de atributos.
+ Muchos tipos de recursos tienen un puñado de atributos claves y una gran
+ cantidad de opcionales.
+\end_layout
+
+\begin_layout Standard
+Todos los atributos declarados deben tener un valor; el tipo de dato del
+ valor depende de los que acepte el atributo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Comportamiento: 
+\series default
+Una declaración de recurso agrega un recurso al catalogo y le dice a Puppet
+ que administre el estado del recurso.
+ Cuando Puppet aplica el catalogo compilado, lo que hará es:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Leer el estado actual del recurso en el sistema objetivo.
+\end_layout
+
+\begin_layout Itemize
+Comprar el estado actual con el deseado
+\end_layout
+
+\begin_layout Itemize
+Si es necesario, realizar cambios para llevar el estado actual al deseado
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Recursos no administrados: 
+\series default
+Si el catalogo no contiene un recurso, implica que Puppet ya no lo administra,
+ pero no que lo 
+\begin_inset Quotes eld
+\end_inset
+
+elimina
+\begin_inset Quotes erd
+\end_inset
+
+, si se desea eliminarlo, se debe aclararlo en su estado deseado.
+ ensure => absent
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Singularidad: 
+\series default
+Puppet no permite que se declare un mismo recurso dos veces.
+ Esto prevee conflictos de valores.
+ Si múltiples clases requieren el mismo recurso se puede usar una clase
+ o un recurso virtual para añadirlo al catalogo en múltiples lugares sin
+ duplicar.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Relaciones y orden: 
+\series default
+Por defecto, Puppet aplica los recursos sin seguir el orden en que fueron
+ escritos.
+ Esto, se puede desactivar con la opción de ordenado.
+ Sin embargo, si un recurso debe ser aplicado antes o después de otro, se
+ puede indicar una relación entre ellos.
+ Incluso se puede indicar que cambios en un recurso causen que otro se refresque.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cambios, eventos y reportes: 
+\series default
+Si Puppet realiza cambios, en un recurso, registra esos cambios como eventos.
+ Esos eventos aparecerán en el 
+\emph on
+log
+\emph default
+ y en el reporte de ejecución de puppet.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Independencia de alcance: 
+\series default
+Los recursos no están sujetos a los alcances.
+ Un recurso, en cualquier ámbito, se puede referenciar desde cualquier otro
+ ámbito.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Atributos especiales de los recursos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Name/Namevar: 
+\series default
+Muchos tipos de recursos tiene un atributo el cual define un recurso en
+ el sistema objetivo.
+ Este atributo especial es el 
+\emph on
+namevar o name.
+ 
+\emph default
+Por ejemplo, el 
+\emph on
+name
+\emph default
+ de un servicio o paquete es el nombre por el cual las herramientas de paquetes
+ o servicios lo reconocen o en el caso de un archivo, su namevar es el path.
+ Esto es diferente al titulo, el cual identifica un recurso para el compilador
+ de Puppet.
+ Sin embargo, ellos a veces tienen el mismo valor.
+
+\series bold
+ 
+\series default
+La separación de nombre y titulo permite administrar un recurso que mantiene
+ su titulo, pero que tiene diferente nombre en diferentes plataformas.
+ Por ejemplo, un servicio 
+\emph on
+ntp 
+\emph default
+en sistemas Red Hat tiene por nombre 
+\emph on
+ntpd 
+\emph default
+y 
+\emph on
+ntp 
+\emph default
+en sistemas debian.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ensure: 
+\series default
+Esto generalmente maneja el aspecto mas importante de un recurso en el sistema
+ objetivo.
+ Indica si el archivo existe, si el servicio esta corriendo o parado, si
+ el paquete esta instalado, etc.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todo esto no se si ponerlo ni dónde
+\end_layout
+
+\begin_layout Standard
+****** 
+\end_layout
+
+\begin_layout Standard
+El demonio del puppet agent se ejecuta en segundo plano en cualquier nodo
+ que administre Puppet.
+ Cada treinta minutos, el demonio pide un catálogo (catálogo) del puppet
+ master.
+ Éste parsea todas las clases aplicadas a ese nodo y construye en catálogo
+ que describe como ese nodo se supone que debe ser configurado, el cual
+ es entregado al demonio del puppet agent.
+ Luego, el demonio aplica cualquier cambio necesario para llevar al nodo
+ al estado descrito en el catálogo.
+ En vez de esperar a que el puppet agent realice su ejecución programada,
+ se lo puede ejecutar:
+\end_layout
+
+\begin_layout Standard
+puppet agent –test
+\end_layout
+
+\begin_layout Standard
+******** 
+\end_layout
+
+\begin_layout Standard
+Puppet toma las descripciones expresadas en las declaraciones de recursos
+ y utiliza proveedores específicos para el sistema operativo para realizarlas.
+ Estos proveedores abstraen la complejidad de administrar diversas implementacio
+nes de tipos de recursos en diferentes sistemas.
+ A todo esto se lo llama RAL (Resource Abstraction Layer).
+\end_layout
+
+\begin_layout Standard
+Puppet takes the descriptions expressed by resource declarations and uses
+ providers specific to the operating system to realize them.
+ These providers abstract away the complexity of managing diverse implementation
+s of resource types on different systems.
+ As a whole, we call this system of resource types and providers the Resource
+ Abstraction Layer or RAL.
+ In the case of users, Puppet can use providers to manage users with LDAP,
+ Windows ADSI, AIX, and several other providers depending on a node's system.
+ Similarly, when you wish to install a package, you can stand back and watch
+ Puppet figure out whether to use 'yum', 'apt', 'rpm', or one of several
+ other providers for package management.
+ This lets you set aside the implementation-related details of managing
+ the resources, such as the names of commands (is it adduser or useradd
+ ?), arguments for the commands, and file formats, and lets you focus on
+ the end result.
+\end_layout
+
+\end_body
+\end_document

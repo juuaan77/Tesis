@@ -1,0 +1,1663 @@
+%% LyX 2.1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{babel}
+\begin{document}
+
+\title{Documentación Proyecto Integrador}
+
+
+\author{Juan Arese, Werner Diers}
+
+\maketitle
+\begin{figure}[h]
+\includegraphics[width=4in,height=4in,keepaspectratio]{Escudo_UNC_clasico}
+
+\protect\caption{escudo}
+\label{escudoUNC}
+
+\end{figure}
+
+
+\pagebreak
+
+\tableofcontents{}
+
+\pagebreak
+
+
+\section{KVM}
+
+
+\subsection{Requerimientos de KVM}
+
+El Hipervisor KVM requiere que el microprocesador cuente con VT-x
+para procesadores de Intel o con AMD -V para los propios de AMD. Para
+poder confirmar que un un procesador cuenta con esto, en los sistemas
+basados en Linux, se debe ejecutar el siguiente comando:
+
+~
+
+\texttt{grep -E 'svm|vmx' /proc/cpuinfo }
+
+~
+
+La salida de este comando es una porción del archivo /proc/cpuinfo
+en el cual se detallan las diferentes flags que contiene el procesador,
+entre ellas, la svm (AMD) o vmx (Intel). En caso de no poseer esas
+flags, el procesador no soporta hiper-virtualización y la salida será
+vacía.
+
+La siguiente, es la salida obtenida con un AMD Athlon(tm) II P360
+Dual-Core Processor de 1,7GHz:
+
+~
+
+\texttt{flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge
+mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext
+fxsr\_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant\_tsc rep\_good
+nopl nonstop\_tsc extd\_apicid pni monitor cx16 popcnt lahf\_lm cmp\_legacy
+}\texttt{\textcolor{red}{svm}}\texttt{ extapic cr8\_legacy abm sse4a
+3dnowprefetch osvw ibs skinit wdt nodeid\_msr hw\_pstate npt lbrv
+svm\_lock nrip\_save }
+
+~
+
+Se debe asegurar que el módulo de KVM este cargado, para esto ejecutamos
+:
+
+~
+
+\texttt{lsmod | grep kvm }
+
+~
+
+La salida obtenida, nuevamente en la misma máquina que en el caso
+anterior es:
+
+~
+
+\texttt{kvm\_amd 60554 0 kvm 448375 1 kvm\_amd }
+
+~
+
+En caso de no estar cargados los módulos, se deben cargar manualmente.
+
+
+\subsection{Restricciones de KVM}
+\begin{itemize}
+\item El número máximo de CPUs por huésped es elevado (240 para RHE 7.1)
+por lo que no aplica en este trabajo. 
+\item La virtualización anidada no está soportada. 
+\item Sobre utilización de memoria es soportada por KVM utilizando el disco
+de swap. 
+\item Sobre utilización de CPUs es soportada por KVM, se recomienda no utilizar
+más de diez CPUs virtuales por cada CPU físico.
+\item Virtualización de dispositivos SCSI no está soportada. Virtualización
+de dispositivos IDE en KVM es limitada a cuatro por huésped. 
+\item Soporta 32 slots para dispositivos PCI (paravirtualizados) y 8 de
+estos por cada slot (datos RHE7) 
+\item La asignación de dispositivos referenciados a dispositivos físicos
+son de uso exclusivo a la VM .
+\item La migración y salvado, o restauración de la VM no está soportada
+mientras el dispositivo esté en uso. 
+\item KVM no soporta kernels de real time. 
+\end{itemize}
+
+\subsection{Instalación de paquetes de virtualización en CentOS 7 existente }
+
+Se deben ejecutar los siguientes comandos:
+
+~
+
+\texttt{yum update yum install qemu-kvm qemu-img }
+
+~
+
+Y se recomienda la instalación de los siguientes paquetes, con el
+siguiente comando:
+
+~
+
+\texttt{yum install virt-manager libvirt libvirt-python python-virtinst
+libvirt-client }
+
+~
+
+
+\subsection{Instalación utilizando kickstart con virt-install}
+
+Para conocer como utilizar virt-install revisar el man del mismo con:
+
+~
+
+\texttt{man virt-install}
+
+~
+
+Se puede automatizar la instalación de un sistema operativo utilizando
+un kickstart, es decir, un archivo que le indica al sistema operativo
+como debe instalarse, éste, además, permite ejecutar configuraciones
+pre y pos instalación. Se indica el archivo kickstart deseado en la
+creación de la maquina virtual, añadiendo la siguiente sección al
+comando virt-install:
+
+~
+
+\texttt{-{}-extra-args=\textquotedbl{}ks=http://192.168.122.1/ks.cfg }
+
+~
+
+Como se ve, el archivo se llama (en este caso) \texttt{ks.cfg }y est
+alojado en un host con la direccioón IP 192.18.122.1
+
+
+\subsection{Booteo por red con libvirt}
+
+Se necesita un servidor para PXE con DHCP y TFTP, dnsmasq y un servidor
+configurado por cobbler.
+
+
+\subsubsection{Configuración de la red }
+
+CentOS 7 soporta las siguientes configuraciones de red para la virtualización:
+\begin{itemize}
+\item Redes virtuales usando NAT (Network Address Translation)
+\item Dispositivos físicos distribuidos usando la asignación de dispositivos
+PCI
+\item Redes puenteadas (bridge) 
+\end{itemize}
+Se debe habilitar NAT, bridge o asignar directamente un dispositivo
+PCI para permitir a host externos acceder a los servicios de red en
+las máquinas virtuales huéspedes. 
+
+
+\subsubsection{NAT con libvirt }
+
+Uno de los métodos más comunes para compartir las conexiones de red
+es usar NAT forwading (también conocido como redes virtuales). 
+
+
+\subsubsection{Configuración del host }
+
+Cada instalación estándar de libvirt provee una conectividad basada
+en NAT a las máquinas virtuales como red virtual por defecto. Verificar
+que está disponible con el comando '\texttt{virsh net-list -{}-all}'. 
+
+\texttt{~}
+
+\texttt{\# virsh net-list -{}-all }
+
+\texttt{Nombre \ \ \ \ \ \ Estado \ \ \ \ \ \ Inicio automático
+\ \ \ \ \ \ Persistente }
+
+\texttt{-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-}
+
+\texttt{default\ \ \ \ \ \  activo\ \ \ \ \ \  si\ \ \ \ \ \ \ \ \ \ \ \ 
+si }
+
+~
+
+Si no se encuentra, lo siguiente puede ser usado en el archivo de
+configuración XML (\texttt{/etc/libvirtd/qemu/myguest.xml}) para el
+huésped:
+
+~
+
+\texttt{ll /etc/libvirt/qemu}
+
+\texttt{total 24}
+
+\texttt{drwxr-xr-x 3 root root 4096 sep 7 11:42 ./}
+
+\texttt{drwxr-xr-x 6 root root 4096 sep 1 11:57 ../}
+
+\texttt{-rw-{}-{}-{}-{}-{}-{}- 1 root root 3435 sep 3 10:58 centosLImpio.xml }
+
+\texttt{-rw-{}-{}-{}-{}-{}-{}- 1 root root 3458 sep 7 11:42 master.xml }
+
+\texttt{drwxr-xr-x 3 root root 4096 sep 1 11:57 networks/ }
+
+~
+
+La red por defecto está definida desde \texttt{/etc/libvirt/qemu/networks/default.xml}
+
+Para marcar la red por defecto para iniciar automáticamente:
+
+~
+
+\texttt{\# virsh net-autostart default}
+
+\texttt{Network default marked as autostarted}
+
+~
+
+Para iniciar la red por defecto:
+
+~
+
+\texttt{\# virsh net-start default}
+
+\texttt{Network default started}
+
+~
+
+Una vez que la red por defecto de libvirt está corriendo, se verá
+un dispositivo bridge aislado. Este dispositivo no tiene ninguna interfaz
+física añadida. El nuevo dispositivo utiliza NAT e IP forwarding para
+conectarse a la red física. No añadir nuevas interfaces.
+
+~
+
+\texttt{\# brctl show }
+
+\texttt{bridge name \ \ \ \ \ \ bridge id\ \ \ \ \ \ 
+STP enabled \ \ \ \ \ \ interfaces }
+
+\texttt{virbr0 \ \ \ \ \ \ 8000.000000000000 \ \ \ \ \ \ yes }
+
+~
+
+libvirt añade reglas de iptables las cuales permiten el tráfico desde
+y hacia las máquinas virtuales huéspedes unidas al dispositivo virbr0
+en las cadenas (chains) INOUT, FORWARD, OUTPUT y POSTROUTING. libvirt
+luego intenta habilitar el parámetro ip\_forward. Algunas otras aplicaciones
+tal vez deshabiliten ip\_forward por lo tanto lo mejor es dejar esta
+configuración fija añadiendo lo siguiente a \texttt{/etc/sysctl.conf}.
+
+~
+
+\texttt{net.ipv4.ip\_forward = 1 }
+
+~
+
+
+\subsubsection{Configuración de las máquinas virtuales huéspedes}
+
+Una vez que la configuración del host está completa, una máquina virtual
+huésped puede ser conectada a la red virtual basada en su nombre.
+Para conectar a un huésped a la red virtual por defecto, lo siguiente
+puede ser utilizado en el archivo de configuración XML para el huésped
+(\texttt{/etc/libvirtd/qemu/myguest.xml}):
+
+~
+
+\texttt{<interface type='network'> }
+
+\texttt{\ \ \ <source network='default'/> }
+
+\texttt{</interface> }
+
+~
+
+NOTA: Definir la dirección MAC es opcional. Si no se define una, una
+dirección MAC es automáticamente generada y usada como la dirección
+MAC del dispositivo bridge utilizado por la red. Definirla manualmente
+es útil para mantener la consistencia o la facilidad de referencia
+a través del ambiente, o para evitar la posibilidad de conflicto (muy
+escasa).
+
+~
+
+\texttt{<interface type='network'>}
+
+\texttt{\ \ \ <source network='default'/> }
+
+\texttt{<mac address='00:16:3e:1a:b3:4a'/> </interface>}
+
+~
+
+
+\subsection{Bridged networking}
+
+Bridged networking (también conocido como virtual network switching)
+es usado para poner las interfaces de red de la máquinas virtuales
+en la misma red que la interfaz física.
+
+
+\subsubsection{Bridged networking con Virtual Machine Manager}
+
+Procedimiento para crear un bridge con virt-manager: 
+\begin{enumerate}
+\item Desde el menú principal de virt-manager, ir a Editar > Detalles de
+la Conexión > Interfaces de Red (Edit > Connection Details > Network
+Interfaces) 
+\item Pulsar el ícono + en la parte inferior 
+\item En el Tipo de Interfaz (Interface type) del menú que se despliega,
+seleccionar Bridge y luego continuar. 
+\item En el campo Nombre (Name) ingresar un nombre como por ejemplo virbr0
+o br0. 
+\item Seleccionar un Modo de inicio (Start mode) del menú desplegable. Seleccionar
+onboot (activa la interfaz bridge en el próximo reinicio de la máquina
+virtual)
+\item Seleccionar la casilla Activar ahora (Activate now) para activarlo
+inmediatamente. 
+\item Para configurar Configuraciones IP (IP settings) o Configuraciones
+Bridge (Bridge settings) realizar los cambios necesarios y pulsar
+OK al finalizar. 
+\item Seleccionar la interfaz física para conectar a las máquinas virtuales. 
+\item Pulsar Finalizar (Finish). 
+\item Seleccionar el bridge a utilizar y pulsar Aplicar (Apply)
+\end{enumerate}
+Para detener la interfaz, pulsar Detener Interfaz (Stop Interface).
+Luego para eliminarla pulsar Delete Interface (Borrar Interfaz). 
+
+
+\section{Pools de almacenamiento}
+
+Un pool de almacenamiento es un conjunto de almacenamiento guardado
+por un administrador. Los pools de almacenamiento son divididos en
+volúmenes de almacenamiento por los administradores, y los volúmenes
+son asignados a las VM's como dispositivos de bloques.
+
+Por ejemplo, el administrador de almacenamiento responsable por un
+servidor NFS crea un disco compartido que almacena toda la información
+de las VM's. El administrador definiría un pool de almacenamiento
+en el host de virtualización usando el detalle de disco compartido.
+En este ejemplo, el administrador quiere que \texttt{nfs.example.com:/path/to/share}
+sea montado en\texttt{ /vm\_data}. Cuando el pool es iniciado, libvirt
+monta el compartido en el directorio especifico, tal como lo haría
+el administrador del sistema logueándose y ejecutando mount. Si el
+pool está configurado con autostart, libvirt asegura que el disco
+compartido NFS es montado en el directorio especificado cuando libvirt
+es iniciado. Una vez que el pool esté iniciado, el directorio en el
+disco compartido NFS es reportado como un volúmen de almacenamiento
+y el path de los SV (storage volumes) pueden ser consultados por las
+APIs de libvirt. El path del SV puede entonces ser copiado en la sección
+que describe la fuente de almacenamiento en el archivo XML de las
+VM's para dispositivos de bloques. En el caso de NFS, una aplicación
+que usa las APIs de libvirt puede crear y eliminar SV en el SP(storage
+pool). No todos los tipos de SP soportan creación y destrucción de
+volúmenes. 
+
+Los SP y SV no son requeridos por la mayoría de las operaciones de
+las VM's. Los SP y SV proveen de un camino para libvirt para asegurar
+que una parte del almacenamiento \texttt{\textcolor{magenta}{\LARGE{}que
+cosa aegura0.....}} Note que uno de las características de libvirt
+is el protocolo remoto, entonces es posible administrar todos los
+aspectos de los ciclos de vida de las VM's así como las configuraciones
+de los recursos requeridos por las VM's. Esas operaciones deben representar
+a un host remoto con las API de libvirt. En otras palabras, un administrador
+usando aplicaciones de libvirt puede asegurar un usuario para desempeñar
+todas las tareas para configurar la maquina física para las VM's.
+Aunque el SP es un contenedor virtual, está limitado por dos factores: 
+\begin{itemize}
+\item El tamaño máximo permitido por qemu-kvm y 
+\item el tamaño del disco de la máquina física.
+\end{itemize}
+Los siguientes son los tamaños máximos permitidos:
+\begin{itemize}
+\item virtio-blk -> 8 Exabytes 
+\item Ext4 -> 16 Terabytes 
+\item XFS -> 8 Exabytes
+\end{itemize}
+Libvirt usa un directorio basado en un SP, el \texttt{/var/lib/libvirt/images},
+como el SP por defecto. Este, puede ser cambiado por otro.
+\begin{itemize}
+\item \textbf{Local storage pools:} Los LSP están directamente unidos a
+la máquina física servidor. Los LSP incluyen : Directorios locales,
+discos directamente conectados, particiones físicas y LVM. Esos SV
+almacenan las imágenes de las VM's o son unidas a la VM's como almacenamiento
+adicional. Los LSP no son apropiados para muchos entornos de producción
+dado que no soportan migración en vivo
+\item \textbf{Networked storage pools:} Loss NSP incluyen almacenamiento
+de dispositivos compartidos sobre una red usando protocolos estándar.
+NSP es requerido cuando las VM's migran entre dos máquinas físicas
+con virt-manager, pero es opcional cuando migran con virsh. Los protocolos
+soportados por los NSP incluyen: 
+\item Fibre Channel-based LUNs 
+\item iSCSI 
+\item NFS 
+\item GFS2 
+\item SCSI RDMA protocols (SCSI RCP)
+\end{itemize}
+Crear un SP basado en un disco usando virsh.
+\begin{enumerate}
+\item Crear una etiqueta GTP (GUID partition table) en el disco: 
+\end{enumerate}
+\texttt{\# }
+
+\texttt{parted /dev/sdb }
+
+\texttt{GNU Parted 2.1 }
+
+\texttt{Using /dev/sdb Welcome to GNU Parted! Type 'help' to view
+a list of commands. }
+
+\texttt{(parted) mklabel }
+
+\texttt{New disk label type? gpt }
+
+\texttt{(parted) quit }
+
+\texttt{Information: You may need to update /etc/fstab.}
+
+\texttt{\# }
+
+2. Crear archivo de configuración del SP
+
+Crear un archivo XML temporal conteniendo la información del SP requerida
+por el nuevo dispositivo. El archivo debe contener el formato mostrado
+abajo y contener los siguientes campos:
+
+\textbf{<name>guest\_images\_disk</name> }El parámetro determina el
+nombre del SP.
+
+\textbf{<device path = '/dev/sdb' />} Especifica el path donde se
+almacena el dispositivo.
+
+\textbf{<target> <path>/dev</path></target> }Determina la localización
+en el host físico donde es unido el volúmen creado con el SP.
+
+\textbf{<formattype= 'gpt'/> }Especifica el tipo de tabla de la partición. 
+
+~
+
+A modo de ejemplo se tiene:
+
+\texttt{<pool type='disk'> }
+
+\texttt{\ \ \ <name>guest\_images\_disk</name>}
+
+\texttt{\ \ \ <source> }
+
+\texttt{\ \ \ \ \ \ <device path='/dev/sdb'/> }
+
+\texttt{\ \ \ \ \ \ <format type='gpt'/> }
+
+\texttt{\ \ \ </source> }
+
+\texttt{\ \ \ <target> }
+
+\texttt{\ \ \ \ \ \ <path>/dev</path> }
+
+\texttt{\ \ \ </target>}
+
+\texttt{</pool> }
+
+\textsf{\textcolor{magenta}{\huge{}-----------------------------------------------------------------------------------------------}}{\huge \par}
+
+\textsf{\textcolor{magenta}{\huge{}COMPLETAR LO QUE FALTA}}{\huge \par}
+
+\textsf{\textcolor{magenta}{\huge{}-----------------------------------------------------------------------------------------------}}{\huge \par}
+
+
+\section{Instalación y configuración de Cobbler}
+
+Para evitar inconvenientes, se debe deshabilitar SELinux y el firewall,
+de la siguiente forma. Editar el archivo /\texttt{etc/sysconfig/selinux}
+y setear:
+
+\texttt{{[}...{]}}
+
+\texttt{SELINUX=disabled}
+
+\texttt{{[}...{]}}
+
+En el caso del firewall ejecutar ,para CentOS 6:
+
+\texttt{service iptables stop }
+
+\texttt{chkconfig iptables off}
+
+Para CentOS 7 (esta distro no utiliza iptables): 
+
+\texttt{systemctl stop firewalld.service}
+
+\texttt{systemctl mask firewalld.service }
+
+\texttt{systemctl status firewalld.service}
+
+O bien, si no se desea desactivarlo, permitir el acceso al los siguientes
+puertos de http 80/443, cobbler 69 y 25151:
+
+\texttt{{[}...{]}}
+
+\texttt{-A INPUT -m state -{}-state NEW -m tcp -p tcp -{}-dport 80
+-j ACCEPT}
+
+\texttt{-A INPUT -m state -{}-state NEW -m tcp -p tcp -{}-dport 443
+-j ACCEPT}
+
+\texttt{-A INPUT -m state -{}-state NEW -m tcp -p tcp -{}-dport 69
+-j ACCEPT }
+
+\texttt{-A INPUT -m state -{}-state NEW -m tcp -p tcp -{}-dport 25151
+-j ACCEPT}
+
+\texttt{{[}...{]}}
+
+Cerrar y guardar los cambios, luego ejecutar:
+
+\texttt{service iptables restart}
+
+
+\subsection{Pre requisitos}
+
+Primero y principal, Cobbler necesita python, alguna versión superior
+a la 2.6. Además, requiere la instalación de los siguientes paquetes:
+\begin{itemize}
+\item createrepo
+\item httpd (apache2 for Debian/Ubuntu)
+\item mkisofs mod\_wsgi (libapache2-mod-wsgi for Debian/Ubuntu)
+\item mod\_ssl (libapache2-mod-ssl)
+\item python-cheetah 
+\item python-netaddr
+\item python-simplejson 
+\item python-urlgrabber 
+\item PyYAML (python-yaml for Debian/Ubuntu) 
+\item rsync 
+\item syslinux 
+\item tftp-server (atftpd for Debian/Ubuntu) 
+\item yum-utils 
+\end{itemize}
+Mientras que cobbler web solo requiere Django (python-django para
+Debian/Ubuntu).
+
+Entonces, para instalar todos los pre requisitos en CentOS 7, ejecutar:
+
+~
+
+\texttt{yum update}
+
+\texttt{yum install {*}}
+
+~
+
+Se debe añadir los repositorios necesarios para la instalación de
+cobbler. 
+
+~
+
+\texttt{wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm}
+
+\texttt{wget http://epel.mirror.net.in/epel/6/i386/epel-release-6-8.noarch.rpm}
+
+\texttt{rpm -Uvh epel-release-6-8.noarch.rpm }
+
+~
+
+Instalar cobbler junto con: 
+
+\texttt{yum install cobbler cobbler-web dhcp debmirror pykickstart
+system-config-kickstart dhcp mod\_python tftp cman -y}
+
+\textcolor{magenta}{\LARGE{}En centos7 no se instalan mod\_python,
+debmirror, ni cman (instalar encambio fence-tools) }{\LARGE \par}
+
+
+\subsection{Habilitar TFTP y rsync}
+
+Los siguientes cambios deberían ser realizados antes de comenzar a
+usar cobbler. Editar \texttt{/etc/xinetd.d/tftp} modificando \texttt{disable
+= yes} por no.
+
+Luego editar \texttt{/etc/xinetd.d/rsync} y del mismo modo cambiar
+\texttt{disable = yes }por no.
+
+\textcolor{magenta}{\LARGE{}En centos 7 el de rsync: /etc/rsyncd.conf
+pero no está la opcion}{\LARGE \par}
+
+Configurar DHCP
+
+Copiar el archivo de configuración de ejemplo:
+
+\texttt{cp /usr/share/doc/dhcp-4.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf}
+
+o
+
+\texttt{cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf}
+
+Luego editar \texttt{/etc/dhcp/dhcpd.conf }y modificarlo como sea
+necesario, por ejemplo se tiene:
+
+\texttt{{[}...{]}}
+
+\texttt{\# A slightly different configuration for an internal subnet.}
+
+\texttt{subnet 192.168.1.0 netmask 255.255.255.0 \{ }
+
+\texttt{range 192.168.1.100 192.168.1.254; }
+
+\texttt{option domain-name-servers server.unixmen.local; }
+
+\texttt{option domain-name \textquotedbl{}unixmen.local\textquotedbl{}; }
+
+\texttt{option routers 192.168.1.1; }
+
+\texttt{option broadcast-address 192.168.1.255; }
+
+\texttt{default-lease-time 600; }
+
+\texttt{max-lease-time 7200; \} }
+
+\texttt{{[}...{]}}
+
+Ahora iniciar todos los servicios
+
+\texttt{service httpd start }
+
+\texttt{service dhcpd start }
+
+\texttt{service xinetd start }
+
+\texttt{service cobblerd start}
+
+\texttt{systemctl start httpd.service}
+
+Configurarlos para inicio automático
+
+\texttt{chkconfig httpd on }
+
+\texttt{chkconfig dhcpd on }
+
+\texttt{chkconfig xinetd on}
+
+\texttt{chkconfig cobblerd on}
+
+\texttt{systemctl enable httpd.service}
+
+Cobbler tiene varias plantillas de kickstarts ejemplo en\texttt{ /var/lib/cobbler/kickstarts/}.
+Por defecto contraseña del servidor es \textquotedblleft cobbler\textquotedblright{}
+y el comando \texttt{cobbler check} informará de esto si no se cambia.
+Para hacer esto, generar una contraseña encriptada con:
+
+\texttt{openssl passwd -1}
+
+Lo que nos dará algo similar a:
+
+\texttt{Password: Verifying - Password: \$1\$U.Svb2gw\$MNHrAmG.axVHYQaQRySR5/}
+
+Luego editamos el archivo \texttt{/etc/cobbler/settings }cambiar la
+línea \texttt{\textquotedblleft default\_password\_crypted\textquotedblright{}}
+por la nueva contraseña generada.
+
+\texttt{{[}...{]} default\_password\_crypted: \textquotedbl{}\$1\$U.Svb2gw\$MNHrAmG.axVHYQaQRySR5/\textquotedbl{}
+{[}...{]}}
+
+Luego modificar \textquotedblleft manage\_dhcp: 0\textquotedblright{}
+para habilitar que cobbler administre DHCP
+
+\texttt{{[}...{]} manage\_dhcp: 1 {[}...{]}}
+
+Configurar ahora la dirección IP de Cobbler en las variables \textquotedblleft server\textquotedblright{}
+y \textquotedblleft next\_server\textquotedblright , por ejemplo:
+
+\texttt{{[}...{]}}
+
+\texttt{next\_server: 192.168.1.200 }
+
+\texttt{{[}...{]} }
+
+\texttt{server: 192.168.1.200 }
+
+\texttt{{[}...{]}}
+
+EL siguiente paso es modificar el archivo \texttt{/etc/cobbler/dhcp.template}
+y realizar los cambios necesarios, por ejemplo:
+
+~
+
+\texttt{subnet 192.168.1.0 netmask 255.255.255.0 \{ }
+
+\texttt{option routers 192.168.1.1; }
+
+\texttt{option domain-name-servers 192.168.1.1; }
+
+\texttt{option subnet-mask 255.255.255.0; }
+
+\texttt{range dynamic-bootp 192.168.1.100 192.168.1.254; }
+
+\texttt{default-lease-time 21600; }
+
+\texttt{max-lease-time 43200; }
+
+\texttt{next-server 192.168.1.200; }
+
+\texttt{class \textquotedbl{}pxeclients\textquotedbl{} \{ match if
+substring (option vendor-class-identifier, 0, 9) = \textquotedbl{}PXEClient\textquotedbl{}; }
+
+\texttt{if option pxe-system-type = 00:02 \{}
+
+\texttt{filename \textquotedbl{}ia64/elilo.efi\textquotedbl{}; }
+
+\texttt{\} else if option pxe-system-type = 00:06 \{}
+
+\texttt{filename \textquotedbl{}grub/grub-x86.efi\textquotedbl{};
+\} }
+
+\texttt{else if option pxe-system-type = 00:07 \{}
+
+\texttt{filename \textquotedbl{}grub/grub-x86\_64.efi\textquotedbl{};
+\} }
+
+\texttt{else \{ filename \textquotedbl{}pxelinux.0\textquotedbl{}; }
+
+\texttt{\}}
+
+\texttt{\}}
+
+Para habilitar la interfaz web de Cobbler y configurar usuario y contraseña,
+modificar las siguientes líneas del archivo \texttt{/etc/cobbler/modules.conf
+}para que queden de este modo:
+
+\texttt{{[}...{]} }
+
+\texttt{{[}authentication{]} module = authn\_configfile}
+
+\texttt{{[}...{]} }
+
+\texttt{{[}authorization{]} module = authz\_allowall }
+
+\texttt{{[}...{]}}
+
+Ahora, para cambiar el usuario y la contraseña para la interfaz web,
+correr el siguiente comando e ingresar la contraseña preferida dos
+veces:
+
+\texttt{htdigest /etc/cobbler/users.digest \textquotedbl{}Cobbler\textquotedbl{}
+cobbler}
+
+En este caso el usuario es cobbler y la contraseña cobbler.
+
+El próximo paso es descargar los \textquotedblleft network boot loaders\textquotedblright{}
+con \texttt{cobbler get-loaders.} Editar el archivo \texttt{/etc/debmirror.conf}
+comentando lo siguiente:
+
+\texttt{{[}...{]} }
+
+\texttt{\#@dists=\textquotedbl{}sid\textquotedbl{}; }
+
+\texttt{{[}...{]}}
+
+\texttt{\#@arches=\textquotedbl{}i386\textquotedbl{}; }
+
+\texttt{{[}...{]}}
+
+Por último reiniciar los servicios:
+
+\texttt{service httpd restart }
+
+\texttt{service dhcpd restart }
+
+\texttt{service xinetd restart }
+
+\texttt{service cobblerd restart}
+
+Si todo va bien, al ejecutar \texttt{cobbler check}, nos devolverá
+algo similar a
+
+\texttt{No configuration problems found. All systems go. }
+
+Sincronizar cobbler \texttt{cobbler sync.}
+
+
+\subsection{Importar imágenes ISO al servidor Cobbler}
+
+Para hacer esto utilizamos el comando mount:
+
+En CentOS 6:
+
+\texttt{mount -o loop CentOS-6.5-i386-bin-DVD1.iso /mnt/ }
+
+En CentOS 7:
+
+\texttt{mount -t iso9660 -o loop,ro /path/to/isos/Fedora-17-x86\_64-DVD.iso
+/mnt}
+
+Luego ejecutar:
+
+\texttt{cobbler import cobbler import -{}-name=fedora17 -{}-arch=x86\_64
+-{}-path=/mnt }
+
+
+\section{Tópicos generales de Cobbler}
+
+
+\subsection{Modelado}
+
+Cobbler utiliza objetos para definir la configuración de aprovisionamiento.
+A medida que nos movemos hacia abajo del árbol de objetos, las variables
+se sobre escriben y se añaden a la información definida en los objetos
+superiores.
+
+
+\subsection{Distros}
+
+Distribución que se desea instalar. Importar el contenido de la distro
+ayuda a disminuir el tiempo de instalación ya que no se utilizan fuentes
+de instalación externas. Generalmente es más fácil utilizar el comando
+'import' en vez de añadir la distribución manualmente.
+
+
+\subsection{Profiles}
+
+Un profile asocia una distribución a opciones especializadas adicionales,
+como puede ser una kickstart. Los profiles son el núcleo del aprovisionamiento
+y debe existir al menos uno por cada distribución. Un profile puede
+representar, por ejemplo, una configuración de web server o de escritorio.
+
+
+\subsection{Systems }
+
+Los grabaciones de sistemas mapean una pieza de hardware (o una máquina
+virtual) con el profile asignado a correr en ella. Esto puede verse
+como una forma de asignarle un rol a un sistema específico. Cuando
+se aprovisiona vía koan y PXE, no es necesario crearlos ya que son
+útiles cuando una personalización de un sistema específico es necesaria.
+Por ejemplo, personalizar la MAC, si hay un rol específico para una
+máquina dada, se debería crear una grabación del sistema para ésta.
+
+
+\subsection{Images }
+
+Cobbler puede bootear imágenes físicamente o virtualmente. Los despliegues
+de máquinas no basadas en imágenes son generalmente más fáciles para
+trabajar y llevan a una infraestructura más sustentable. La mayoría
+de las instalaciones de cobbler están directamente basadas en la distribución
+(kernel + initrd). La siguiente página documenta algunas cosas que
+no están basadas en kernel + initrd y muestra como instalarlas con
+cobbler y koan. Por ejemplo, trata la instalación de sistemas operativos
+Windows usando qemu/KVM: 
+
+\texttt{https://fedorahosted.org/cobbler/wiki/AllAboutImages}
+
+\texttt{https://fedorahosted.org/cobbler/wiki/KoanWithIsos}
+
+
+\subsection{Repos }
+
+Espejar repositorios le permite a cobbler espejar el árbol de instalación
+(\texttt{cobbler import}) y también paquetes opcionales. Si se espeja
+todo esto localmente en la red, las instalaciones y actualizaciones
+serán más rápidas (usualmente es válido realizar esto para largos
+setups en datacenters, laboratorios, etc). Si un profile tiene un
+repo dado, este repo puede ser automáticamente configurado durante
+el aprovisionamiento y los sistemas instalados podrán usarlo como
+espejo (\texttt{yum\_post\_install\_mirror} debe estar habilitado).
+Si se especifica una lista de paquetes para \textendash rpm-list,
+se puede espejar solo esa parte del repo, más sus dependencias. Por
+ejemplo, si se espeja FC6 Extras, para descargar cobbler y koan, ponemos
+\texttt{\textendash rpm-list=\textquotedblright cobbler koan\textquotedblright{}}
+y se saltea la parte de los paquetes de juegos. Esta función sólo
+funciona para repositorios http o ftp.
+
+
+\subsection{Buildiso}
+
+Frecuentemente un entorno no puede soportar PXE porque otro grupo
+posee el control sobre las configuraciones DHCP y no entregará una
+entrada de \texttt{next-server} o sólo se están usando IPs estáticas.
+Esto se soluciona fácilmente:
+
+\texttt{\# cobbler buildiso}
+
+Este comando copia todos el kernel/initrd de la distro a una 'imagen
+de CD' booteable y genera un menú para la ISO que es esencialmente
+equivalente al menú PXE provisto para la instalación de máquinas por
+red vía Cobbler. Por defecto el menú del CD booteable va a incluir
+todos los profiles y systems.
+
+Si se necesita instalar en un laboratorio u otro ambiente que no tenga
+acceso por red al servidor cobbler, se puede copiar completamente
+el árbol de la distribución más el profile y los systems records a
+una imagen.
+
+\texttt{\# cobbler buildiso -{}-standalone \textendash distro=\textquotedbl{}distro1\textquotedbl{} }
+
+
+\subsection{Import}
+
+El propósito de \textquotedblleft \texttt{cobbler import}\textquotedblright{}
+es configurar un servidor de instalación por red para una o más distribuciones.
+Éste espeja contenido basado en un imagen DVD, un archivo ISO, un
+árbol en un filesystem, un espejo externo rsync o una ubicación SSH.
+
+\texttt{\$ cobbler import -{}-path=/path/to/distro \textendash name=F12}
+
+Este ejemplo muestra los dos argumentos requeridos para import: --path
+y \textendash name.
+
+Luego de que import es ejecutado, cobbler tratará de detectar el tipo
+de distribución y automáticamente asignar kickstarts. Por defecto,
+proveerá el sistema borrando el disco duro, configurando eth0 para
+DHCP y utilizando la contraseña por defecto \textquotedblleft cobbler\textquotedblright .
+Si esto no es deseado, editar los archivos kickstart en \texttt{/var/lib/cobbler/kickstarts}
+para hacer algo distinto o cambiar la configuración del kickstart
+después que cobbler cree el profile. El contenido espejado es guardado
+automáticamente en \texttt{/var/www/cobbler/ks\_mirror}. 
+
+Ejemplos:
+\begin{enumerate}
+\item \texttt{cobbler import -{}-path=rsync://mirrorserver.example.com/path/
+-{}-name=fedora -{}-arch=x86}
+\item \texttt{cobbler import -{}-path=root@192.168.1.10:/stuff -{}-name=bar}
+\item \texttt{cobbler import -{}-path=/mnt/dvd -{}-name=baz -{}-arch=x86\_64}
+\item \texttt{cobbler import -{}-path=/path/to/stuff \textendash name=glorp}
+\item \texttt{cobbler import -{}-path=/path/where/filer/is/mounted -{}-name=anyname
+\textbackslash{} -{}-available-as=nfs://nfs.example.org:/where/mounted/}
+\end{enumerate}
+Una vez importado, ejecutar \textquotedblleft \texttt{cobbler list}\textquotedblright{}
+o \textquotedblleft \texttt{cobbler report}\textquotedblright{} para
+ver que se ha añadido. Si se quiere forzar la utilización de una plantilla
+kickstart de cobbler para todos los profiles creados por un import,
+se puede pasar la opción \texttt{\textendash kickstart} a import para
+saltar la auto detección del kickstart.
+
+
+\subsection{Kickstarts}
+
+Los kickstarts son archivos que contienen las respuestas para el script
+de instalación del sistema operativo.
+
+
+\subsection{Firewall}
+
+Dependiendo del uso, será necesario asegurar que iptables está configurado
+para permitir el acceso a los servicios correctos. Un ejemplo de configuración
+es el siguiente:
+
+\# Firewall configuration written by system-config-securitylevel
+
+\# Manual customization of this file is not recommended. 
+
+{*}filter :INPUT ACCEPT {[}0:0{]}
+
+:FORWARD ACCEPT {[}0:0{]} 
+
+:OUTPUT ACCEPT {[}0:0{]}
+
+-A INPUT -p icmp --icmp-type any -j ACCEPT
+
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+\# LOCALHOST
+
+-A INPUT -i lo -j ACCEPT
+
+\# SSH
+
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT 
+
+\# DNS 
+
+- TCP/UDP -A INPUT -m state --state NEW -m udp -p udp --dport 53 -j
+ACCEPT -A INPUT -m state --state NEW -m tcp -p tcp --dport 53 -j ACCEPT 
+
+\# DHCP 
+
+-A INPUT -m state --state NEW -m udp -p udp --dport 68 -j ACCEPT 
+
+\# TFTP
+
+- TCP/UDP -A INPUT -m state --state NEW -m tcp -p tcp --dport 69 -j
+ACCEPT -A INPUT -m state --state NEW -m udp -p udp --dport 69 -j ACCEPT 
+
+\# NTP
+
+-A INPUT -m state --state NEW -m udp -p udp --dport 123 -j ACCEPT 
+
+\# HTTP/HTTPS
+
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT -A
+INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT 
+
+\# Syslog for cobbler
+
+-A INPUT -m state --state NEW -m udp -p udp --dport 25150 -j ACCEPT 
+
+\# Koan XMLRPC ports 
+
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 25151 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 25152 -j ACCEPT
+
+\#-A INPUT -j LOG 
+
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+
+COMMIT
+
+
+\subsection{SELinux}
+
+Para permitir el acceso del servidor web Apache por SELinux se puede
+hacer:
+
+\texttt{setsebool -P httpd\_can\_network\_connect true}
+
+o directamente deshabilitarlo.
+
+
+\subsection{Servicios}
+
+Dependiendo si se está corriendo DHCP y DNS en el mismo servidor,
+será necesario habilitar varios servicios: 
+
+/sbin/service httpd start 
+
+/sbin/service dhcpd start 
+
+/sbin/service xinetd start 
+
+/sbin/service cobblerd start
+
+~
+
+/sbin/chkconfig httpd on 
+
+/sbin/chkconfig dhcpd on 
+
+/sbin/chkconfig xinetd on 
+
+/sbin/chkconfig tftp on 
+
+/sbin/chkconfig cobblerd on
+
+~
+
+El comando \textquotedblleft \texttt{cobbler check}\textquotedblright{}
+debería informar acerca de ésto.
+
+
+\subsection{PXE}
+
+La instalación en máquinas \textquotedblleft bare metal\textquotedblright{}
+desde la red utilizando PXE es directa. Se necesita configurar DHCP: 
+\begin{itemize}
+\item Si el servidor DHCP está en otro lado y no en el servidor Cobbler,
+su administrador debe setear su \textquotedblleft \texttt{next-server}\textquotedblright{}
+para especificar el servidor Cobbler. 
+\item Si se está corriendo DHCP localmente y se quiere que Cobbler lo administre,
+se debe configurar la variable manage\_dhcp a 1 en \texttt{/etc/cobbler/settings},
+editar \texttt{/etc/cobbler/dhcp.template} para cambiar configuración
+por defecto y ejecutar \textquotedblleft \texttt{cobbler sync}\textquotedblright .
+\end{itemize}
+Una vez que se tenga el PXE configurado, todos los profiles compatibles
+aparecerá por nombre en el menú de booteo PXE. Se puede seleccionar
+uno de la lista o por defecto la máquina booteará localmente. Si se
+quiere adjuntar un sistema particular a un profile particular la próxima
+vez que reinicie, se debe ejecutar:
+
+\texttt{cobbler system add -{}-name=example -{}-mac=\$mac-address
+-{}-profile=\$profile-name }
+
+Luego la máquina booteará directamente con el profile seleccionado
+sin mostrar el menú.
+
+
+\subsection{Reinstalación}
+
+Si se necesita reinstalar un sistema operativo a una máquina que tiene
+corriendo uno distinto, se puede utilizar:
+
+\texttt{yum install koan }
+
+\texttt{koan -{}-server=bootserver.example.com -{}-list=profiles koan
+-{}-replace-self -{}-server=bootserver.example.com -{}-profile=F12-i386
+/sbin/reboot}
+
+El sistema instalará el nuevo sistema operativo luego del reinicio,
+sin interacción requerida.
+
+
+\subsection{Virtualización}
+
+Si se quiere instalar un huésped virtual (KVM o Xen) se puede hacer:
+
+\texttt{yum install koan}
+
+\texttt{koan -{}-server=bootserver.example.com -{}-virt -{}-virt-type=xenpv
+\textendash profile=F12-i386-xen}
+
+Se puede utilizar KVM u otro método de virtualización.
+
+
+\subsection{Integración con Puppet}
+
+Este ejemplo es relativamente avanzado, involucrando \textquotedblleft \texttt{mgmt-classes}\textquotedblright{}
+de Cobbler para controlar diferentes tipos de configuración inicial.
+Pero si en cambio se opta por poner la mayor parte de la configuración
+inicial en Puppet en vez de aquí, entonces podría ser más simple.
+
+
+\subsubsection{Manter class mappings en cobbler}
+
+Primero se debe asignar \textquotedblleft \texttt{management classes}\textquotedblright{}
+a la distro, profile o system.
+
+\texttt{cobbler distro edit -{}-name=distro1 -{}-mgmt-classes=\textquotedbl{}distro1\textquotedbl{} }
+
+\texttt{cobbler profile add -{}-name=webserver -{}-distro=distro1
+-{}-mgmt-classes=\textquotedbl{}webserver likes\_llamas\textquotedbl{}
+-{}-kickstart=/etc/cobbler/my.ks }
+
+\texttt{cobbler system edit -{}-name=system -{}-profile=webserver
+-{}-mgmt-classes=\textquotedbl{}orange\textquotedbl{} \textendash dns-name=system.example.org}
+
+Para Puppet el \textendash dns-name (mostrado arriba) debe estar configurado
+porque esto es lo que Puppet estará enviando a cobbler y es como encontrará
+el sistema. Puppet no tiene conocimiento sobre el nombre del sistema
+objeto en cobbler. Para hacerlo de forma segura, probablemente se
+utilice FQDN aquí (lo cual es lo que se quiere si se utiliza cobbler
+para administrar DNS). 
+
+
+\subsubsection{External Nodes }
+
+Cobbler provee uno, así configura Puppet para usar \texttt{/usr/bin/cobbler-ext-nodes}: 
+
+\texttt{{[}main{]} }
+
+\texttt{external\_nodes = /usr/bin/cobbler-ext-nodes }
+
+y también añadir lo siguiente al archivo de configuración: 
+
+\texttt{node\_terminus = exec}
+
+Ésto es un script simple que toma el información en la siguiente URL,
+la cual es una URL que siempre retorna un documento YAML en la forma
+que Puppet espera que sea retornado. Este archivo contiene todos los
+parámetros y clases que están para ser asignadas en el nodo en cuestión.
+Esta URL de Cobbler es: \texttt{http://cobbler/cblr/svc/op/puppet/hostname/foo}
+
+y esto retornará datos como: 
+
+\texttt{-{}-{}- classes: }
+
+\texttt{\ \ \ - distro1 }
+
+\texttt{\ \ \ - webserver }
+
+\texttt{\ \ \ - likes\_llamas }
+
+\texttt{\ \ \ - orange }
+
+\texttt{parameters: }
+
+\texttt{\ \ \ tree: 'http://.../x86\_64/tree'}
+
+Estos parámetros vienen de todo lo que Cobbler monitorea en \textquotedblleft \texttt{-{}-ks-meta}\textquotedblright{}
+(también es un parámetro). De este modo se puede fácilmente añadir
+parámetros como añadir clases y mantener todo organizado en un lugar.
+En caso de tener parámetros o clases globales para añadir, esto se
+puede hacer editando los siguientes campos en\texttt{ /etc/cobbler/settings}: 
+
+\texttt{mgmt\_classes: {[} {]} }
+
+\texttt{mgmt\_parameters: }
+
+\texttt{\ \ from\_cobbler: 1}
+
+
+\subsubsection{Script alternativos para External Nodes }
+
+Adjunto a \texttt{puppet\_node.py} está un script alternativo para
+nodos externos que competa todos los nodos con items de un repositorio
+de manifiesto (en \texttt{/etc/puppet/manifests/}) e información de
+red de Cobbler. Se configura como arriba del lado de Puppet y luego
+busca en \texttt{/etc/puppet/external\_node.yaml} del lado de la configuración
+de Cobbler.
+
+La configuración es la siguiente:
+
+\texttt{base: /etc/puppet/manifests/nodes }
+
+\texttt{cobbler: <\%= cobbler\_host \%> }
+
+\texttt{no\_yaml: puppet::noyaml }
+
+\texttt{no\_cobbler: network::nocobbler }
+
+\texttt{bad\_yaml: puppet::badyaml }
+
+\texttt{unmanaged: network::unmanaged}
+
+La salida de la información de red estará en la forma de pseudo estructura
+de datos que permite a Puppet dividirla y crear las interfaces de
+red en el nodo que está siendo administrado. 
+
+
+\subsection{Replicate}
+
+Este comando descarga la configuración de un servidor Cobbler a otro.
+Sirve para tener implementaciones de High Availability, recuperación
+de desastres o para balanceo de carga.
+
+\texttt{cobbler replicate -{}-master=master.example.org}
+
+Con los argumentos por defecto, solo la metadata de la distribución
+y del perfil es sincronizada. A continuación se muestra los argumentos
+que se le pueden pasar a Cobbler para que replique: 
+
+\texttt{\# cobbler replicate -{}-help }
+
+\texttt{Usage: cobbler {[}options{]}}
+
+\texttt{Options: -h, -{}-help show this help message and exit }
+
+\texttt{-{}-master=MASTER Cobbler server to replicate from. }
+
+\texttt{-{}-distros=PATTERN pattern of distros to replicate }
+
+\texttt{-{}-profiles=PATTERN pattern of profiles to replicate }
+
+\texttt{-{}-systems=PATTERN pattern of systems to replicate }
+
+\texttt{-{}-repos=PATTERN pattern of repos to replicate }
+
+\texttt{-{}-image=PATTERN pattern of images to replicate }
+
+\texttt{-{}-omit-data do not rsync data }
+
+\texttt{-{}-prune remove objects (of all types) not found on the master}
+
+
+\subsubsection{Setup}
+
+En cada servidor que será la réplica del master, instalar Cobbler
+normalmente y asegurarse que \texttt{/etc/cobbler/settings} y \texttt{/etc/cobbler/modules.conf
+}están configurados apropiadamente. Utilizar cobbler check para ver
+si existe algún error. El comando no modificará estos archivos. 
+
+Los archivos son transferidos por rsync (sobre ssh) o por scp, por
+lo que es necesario tener un agente ssh antes de utilizar el comando
+de réplica o si no, utilizar authorized\_keys en el host remoto.
+
+
+\section{Puppet}
+
+Puppet es en términos prácticos, un conjunto de proyectos como ser,
+puppet agent y server, hiera, puppetDB y Facter.
+
+Puppet funciona bajo la arquitectura cliente servidor donde un el
+puppet máster indica a sus agentes que configuraciones deben aplicar.
+Ademas, los máster pueden aplicar manifiestos así mismos. Notar que
+hay dos etapas: 
+\begin{enumerate}
+\item Compilar los catálogos 
+\item Aplicar los catálogos
+\end{enumerate}
+Un catálogo es un archivo que describe los deseos de un estado de
+sistema para una PC en especifico. Enumera todos los recursos que
+necesitan ser administrados, así como las dependencias entre esos
+recursos.
+
+En esta arquitectura, los nodos administrados corren la aplicación
+Puppet agent, usualmente en background y uno o mas servidores corren
+la aplicación Puppet máster administrada por un servidor web (como
+apache.) Periódicamente, los Puppet agent piden al puppet máster el
+catalogo. El máster, compila y corre el catalogo del nodo usando varias
+fuentes de información a las que tiene acceso. Una vez que recibe
+el catalogo, el agente chequea cada recurso descripto en el. Si encuentra
+algún recurso que no esta en el estado que se desea, se realizan los
+cambios necesarios para corregirlos. Luego de aplicar el catalogo
+el agente enviá un reporte al Máster.
+
+
+\subsection{Comunicación y seguridad}
+
+El agente y el máster se comunican vía HTTPS con client-verification
+El máster provee una interfaz HTTP con varios extremos disponibles.
+Cuando se pide o enviá cualquier cosa al máster, el agente hace un
+pedido HTPS o uno de esos extremos.
+
+Client-vefied HTTPS quiere decir que cada máster o agente tiene un
+identificador por certificado SSL y examinan los certificados de sus
+contrapartes para decidir si permite un intercambio de información.
+Puppet incluye un constructor de certificado de autorización para
+administra los certificados. Los agentes puede pedir automáticamente
+los certificados vía la API HTTP del máster. El administrador del
+máster puede usar el comando puppet cert para inspeccionar los pedidos
+y firmar nuevos certificados y los agentes pueden entonces descargar
+los certificados firmados. 
+
+
+\subsection{Tareas de pre-instalacion}
+
+Puppet usualmente corre bajo la arquitectura cliente-servidor, pero
+ademas, puede correr en una arquitectura autocontenida. La decision
+determina que paquetes serán instalados y que extra configuraciones
+necesarias se harán. Adicionalmente , usted se puede considerar usar
+la PuppetDB, la cual permite funciones extra de puppet y vuelve mas
+fácil consultar y analizar la información de la infraestructura de
+puppet.
+
+Se toma la opción de utilizar la arquitectura cliente-servidor. Se
+debe completar la instalación y configuración de todos los puppet
+masters antes de instalar cualquier agente. El máster necesariamente
+debe correr en un sistema basado en Unix
+
+
+\subsubsection{Requerimientos de sistema y chequeo de versión de SO}
+\begin{itemize}
+\item Hardware: El puppet agent no tiene requerimientos particulares de
+hardware y corre prácticamente en cualquier cosa, sin embargo, el
+servidor es un recurso intensivo y debe ser instalado en un servidor
+robusto y dedicado. Como mínimo, el servidor debe tener 2 procesadores
+y al menos 1GB de RAM, para administrar eficientemente 1000 nodos,
+debe poseer entre 2 y 4 procesadores y 4GB de RAM. 
+\item Sistemas operativos soportados: Hay una variedad importante de distribuciones
+Linux que soportan puppet, entre ellas destaca la utilizada para la
+realización del trabajo, CentOS. 
+\item Ruby: Se soportan varias versiones de Ruby, pero se recomienda el
+uso de las versiones 2.1.x 
+\item Librerías obligatorias: Facter 2.4.3 o posterior, Hiera 2.0.0 o posterior,
+json gem, cualquier versión moderna, rgen gem 0.6.6 o posterior 
+\item Librerías opcionales: msgpack gem es requerido si se utiliza msgpack
+racionalización.
+\end{itemize}
+
+\subsubsection{Chequeo de la configuración de red}
+
+En un agent/master deployment se debe preparar la red para el tráfico
+de puppet. 
+\begin{itemize}
+\item Firewall: El máster debe permitir conexiones entrantes al puerto 8140
+y los agentes deben ser capaces de conectarse a ese puerto. 
+\item Resolución de nombres: Cada nodo debe tener un nombre único.
+\end{itemize}
+
+\subsection{Instalar Puppet }
+
+Primero se debe instalar puppet master. Para ello:
+\begin{enumerate}
+\item Habilitar los paquetes de los repositorios de puppet labs: En los
+sistemas basados en yum el repositorio es soportado por las últimas
+versiones de RHEL y derivados. En el caso de REHL 7 y derivados habilitamos
+el repositorio con el siguiente comando: ~ \texttt{sudo rpm -ivh
+https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm}
+\item Instalar el puppet master con el siguiente comando: ~\texttt{ yum
+install puppetserver}
+\item Iniciar el servicio
+\end{enumerate}
+\texttt{service puppetserver start}
+
+
+\subsubsection{Asignación de memoria }
+
+Por defecto, puppet server está configurado para usar 2GB de RAM pero
+si se quiere experimentar con puppet server en una VM se puede asignar
+tan poco como 512MB de memoria. Para cambiar la asignación de memoria
+se edita el archivo de configuración, que se encuentra en \texttt{/etc/sysconfig/puppetserver}
+y modificar la siguiente línea:
+
+\texttt{\# Modify this if you'd like to change the memory allocation,
+enable JMX, etc }
+
+\texttt{\ \ \ JAVA\_ARGS=\textquotedbl{}-Xms2g -Xmx2g\textquotedbl{}}
+
+Si se desea por ejemplo, utilizar 512MB se debe reemplazar 2g por
+512m:
+
+\texttt{\ \ \ JAVA\_ARGS=\textquotedbl{}-Xms512m -Xmx512m\textquotedbl{}}
+
+Luego, para aplicar los cambios, se debe reiniciar el servicio con:
+
+\texttt{service puppetserver restart}
+
+
+\subsubsection{Instalar el paquete puppet-agent}
+
+Una vez habilitado el repositorio como se indicó anteriormente, en
+los sistemas basados en yum como CentOS el puppet-agent se instala
+con el siguiente comando:
+
+\texttt{sudo yum install puppet-agent}
+
+No se inicia el servicio aún. Por defecto, el valor del server es
+puppet, si se nombró de otra forma a la máquina servidora del puppet
+server, se debe editar esto.
+
+
+\subsubsection{Configuraciones para los agentes}
+
+Básicas:
+\begin{itemize}
+\item server \textendash{} El nombre del master server al cual se le pediran
+los manifiestos. Por defecto es Puppet 
+\item certname \textendash{} Nombre con el cual el nodo pide el certificado
+y se presenta al servidor. 
+\item Environment \textendash{} Indica el entorno solicitado cuando se contacta
+al master. De cualquier forma, el master puede configurarse para ignorar
+esta configuracion. 
+\end{itemize}
+Run Behavior: 
+\begin{itemize}
+\item noop \textendash{} Si esta habilitado, el agnete no reializara ningun
+trabajo, en cambio, mirara que cambios se haria y lo reporta al master 
+\item priority \textendash{} Permite asignar el valor \textquotedblleft nice\textquotedblright{}
+para evitar que otras aplicaciones de la CPU no mueran de hambre mientras
+se aplican los catalogos 
+\item report \textendash{} indica si se deben enviar reportes, por defecto
+es true. 
+\item Tags \textendash{} Limita a los agentes a correr recursos con ciertas
+etiquetas. 
+\item Usecacheonfailure \textendash{} se utiliza para tomar el ultimo buen
+catalog si el master no posee uno bueno. 
+\item prerun\_command and postrun\_command \textendash{} Comandos que se
+desean correr de cada lado del puppet
+\item Service Behavior: 
+\item runinterval \textendash{} indica cada cuanto tiempo el agnete se contacta
+con el servidor para pedirle los manifiestos. Por defecto es de 30minutos. 
+\item waitforcert \textendash{} Indica al agent que persista si no puede
+obtener su certificado. Por defecto esta habilitado. 
+\item Useful When Running Agent from Cron: 
+\item splay and splaylimit \textendash{} Se utiliza para sincronizar el
+agente y el server si el puppet agent utiliza un cron en lugar del
+demonio. 
+\item daemonize \textendash{} se debe colocar esta opcion en falso si se
+utiliza un cron 
+\item onetime \textendash{} sale luego de terminar el puppet actual. Debe
+ser true si se utiliza un cron.
+\end{itemize}
+Configuraciones para los master:
+
+Basics:
+\begin{itemize}
+\item dns\_alt\_names \textendash{} Una lista de los hostname de los servers
+permitidos para usar cuando actuan como masters environment
+\item path \textendash{} Indica la hubicacion del entorno. 
+\item Basemodulepath \textendash{} una lista de las hubicaciones que contienen
+modulos que pueden ser usados en todos los environments 
+\item manifest \textendash{} EL principal punto de entrada para compilar
+los catalogos. Por defecto es site.pp 
+\item reports \textendash{} que controlador de reportes se usa.
+\end{itemize}
+Rack-Related Settings:
+\begin{itemize}
+\item ssl\_client\_header and ssl\_client\_verify\_header \textendash{}
+Son utilizados cunado corre el master puppet como un rack de aplicaciones.
+\end{itemize}
+CA Settings:
+\begin{itemize}
+\item ca - si actua como un ca 
+\item ca\_ttl \textendash{} indica por cuanto tiempo son validos los certificados 
+\item autosign \textendash{} indica si los certifcados deben ser autofirmados.
+\end{itemize}
+Nota: si se recive \texttt{-{}-bash: puppet: command not found error,
+}entonces el directorio donde puppet instala sus binarios, en \texttt{/opt/puppetlabs/bin
+}no está incluido en el default \$PATH. Para incluir estos binarios
+en el default \$PATH, añadirlos ejecutando: 
+
+\texttt{PATH=/opt/puppetlabs/bin:\$PATH;export PATH.}
+
+
+\section{Tópicos generales de Puppet}
+
+
+\subsection{Module}
+
+Un módulo o module, es un conjunto de código de Puppet enpaquetado
+junto con los otros archivos y datos que se necesita administrar sobre
+algún aspecto del sistema. Consiste en una estructura predefinida
+de directorios que ayudan a Puppet a encontrar los contenidos del
+módulo. Para ver los módulos instalados se puede ejecutar:
+
+\texttt{puppet module list}
+
+Existe un repositorio público (The Puppet Forge) donde se pueden encontrar
+módulos hechos por la comunidad y también mantenidos por Puppet Labs.
+
+Los módulos son auto-contenidos y separados. Su estructura de archivo
+le da a Puppet una forma consistente de localizar cualquier clase,
+plantillas, plugins y binarios requeridos para satisfacer la funcionalidad
+del módulo.
+
+Todos los módulos accesibles por el Puppet Master están localizados
+en los directorios especificados por la variable \texttt{'modulepath'}
+en el archivo de configuración de Puppet. Para encontrar esta variable
+en cualquier sistema con Puppet, se puede ejecutar:
+
+\texttt{puppet agent -{}-configprint modulepath }
+
+
+\subsection{Node group }
+
+Los grupos de nodos o node groups permiten segmentar todos los nodos
+de la infraestructura en grupos separados configurables basados en
+la información colectada por 'facter tool'.
+
+
+\subsection{Resources}
+
+Cada recurso o resource, describe algún aspecto de un sistema y su
+estado, como por ejemplo, un servicio que debería estar ejectándose
+o un paquete que se quiere esté instalado. El bloque de código que
+describe un recurso se llama declaración de recurso (resource declaration).
+Estas declaraciones de recurso están escritas en código Puppet, un
+DLS (Domain Specific Language) construido en Ruby. El DLS de Puppet
+es un leguaje declarativo en vez de imperativo. Esto quiere decir
+que en vez de definir un proceso o un conjunto de comandos, el código
+de Puppet describe (o declara) solo el estado final deseado, y depende
+de proveedores integrados para lidiar con la implementación.
+
+\texttt{puppet resource tool -> puppet resource <type> <name> }
+
+Puppet incluye una variedad de tipos de recursos integrados, que permiten
+administrar varios aspectos de un sistema. Algunos de los tipos de
+recursos claves que generalmente se encuentran en un sistema son los
+siguientes:
+
+\texttt{user \ \ \ Un usuario }
+
+\texttt{group \ \ \ Un grupo de usuario }
+
+\texttt{file \ \ \ Un archivo específico }
+
+\texttt{package \ \ \ Un paquete de software }
+
+\texttt{service \ \ \ Un servicio corriendo}
+
+\texttt{cron \ \ \ Un trabajo pogramado de cron }
+
+\texttt{exec \ \ \ Un comando externo }
+
+\texttt{host \ \ \ Un host}
+
+Una declaración de recurso seguirá un patrón como el de abajo:
+
+\texttt{tipo \{'título': atributo => 'valor', \}}
+
+Se puede utilizar la sintaxis de declaración de recursos conla herramienta
+'\texttt{puppet apply}' con la bandera \texttt{-e (-{}-execute)} para
+hacer cambios rápidos en el sistema. Por ejemplo, para crear un usuario
+llamado 'galatea':
+
+\texttt{puppet apply -e \textquotedbl{}user \{ 'galatea': ensure =>
+'present', \}\textquotedbl{} }
+
+
+\subsection{Manifiests }
+
+Un manifiesto o manifest, es un archivo de texto que contiene código
+Puppet y posee la extensión \texttt{.pp}. Para comprobar la sintaxis
+de un manifiesto se puede utilizar:
+
+\texttt{puppet parser validate <manifiesto.pp> }
+
+El parseador no retornará nada si no hay errores, en caso de que se
+detecte un error se debe corregirlo antes de continuar. Si se trata
+de aplicar un manifiesto que no ha sido declarado, no cambiará nada
+en el sistema. Para ésto se debe crear un .pp que contenga un sentencia:
+
+\texttt{include módulo::clase}
+
+Antes de aplicar cambios en el sistema, se puede utilizar la bandera
+\texttt{\textendash noop} para compilar el catálogo (catalog) y notificar
+los cambios que Puppet habría realizado si hubiera sido ejecutado
+sin \texttt{\textendash noop}.
+
+\texttt{puppet apply -{}-noop }
+
+
+\subsection{Classes }
+
+Una clasees un bloque de código Puppet con nombre. Una clase administrará
+generalmente un conjunto de recursos relacionados a una función simple
+o un componente del sistema. Las clases usualmente contienen otras
+clases, este anidamiento provee una forma estructurada de juntar funciones
+de clases diferentes como componentes de soluciones más grandes. Para
+utilizar una clase, se necesita definirla escribiendo una definición
+de clase y guardándola en un archivo manifiesto. Cuando Puppet se
+ejecuta, parseará este manifiesto y guardará la definición de clase;
+luego ésta puede ser declarada para aplicarla en los nodos de la infraestructura.
+En Puppet las clases son singleton, lo que quiere decir que una clase
+puede ser declarada solo una vez en un nodo dado. Cuando se declara
+una clase:
+
+\texttt{include módulo::clase}
+
+\texttt{módulo} le indica a Puppet donde encontrar esa \texttt{clase}.
+Sin embargo, para la clase principal de un módulo, además de llevar
+el mismo nombre que el módulo mismo, en vez de seguir el patrón del
+manifiesto para la clase que contiene, Puppet reconoce el nombre especial
+del archivo 'init.pp' como el manifiesto que contendrá la clase principal
+de un módulo. 
+
+\pagebreak
+
+Todo esto no se si ponerlo ni dónde
+
+{*}{*}{*}{*}{*}{*} 
+
+El demonio del puppet agent se ejecuta en segundo plano en cualquier
+nodo que administre Puppet. Cada treinta minutos, el demonio pide
+un catálogo (catalog) del puppet master. Éste parsea todas las clases
+aplicadas a ese nodo y construye en catálogo que describe como ese
+nodo se supone que debe ser configurado, el cual es entregado al demonio
+del puppet agent. Luego, el demonio aplica cualquier cambio necesario
+para llevar al nodo al estado descrito en el catálogo. En vez de esperar
+a que el puppet agent realice su ejecución programada, se lo puede
+ejecutar:
+
+puppet agent \textendash test
+
+{*}{*}{*}{*}{*}{*}{*}{*} 
+
+Puppet toma las descripciones expresadas en las declaraciones de recursos
+y utiliza proveedores específicos para el sistema operativo para realizarlas.
+Estos proveedores abstraen la compejidad de administrar diversas implementaciones
+de tipos de recursos en diferentes sistemas. A todo esto se lo llama
+RAL (Resource Abstraction Layer).
+
+Puppet takes the descriptions expressed by resource declarations and
+uses providers specific to the operating system to realize them. These
+providers abstract away the complexity of managing diverse implementations
+of resource types on different systems. As a whole, we call this system
+of resource types and providers the Resource Abstraction Layer or
+RAL. In the case of users, Puppet can use providers to manage users
+with LDAP, Windows ADSI, AIX, and several other providers depending
+on a node's system. Similarly, when you wish to install a package,
+you can stand back and watch Puppet figure out whether to use 'yum',
+'apt', 'rpm', or one of several other providers for package management.
+This lets you set aside the implementation-related details of managing
+the resources, such as the names of commands (is it adduser or useradd
+?), arguments for the commands, and file formats, and lets you focus
+on the end result.
+\end{document}
