@@ -3,5 +3,5 @@
    	<hr> RAM de la virtual machine en MB: <input name="ramvm" type="text" /> <br>
 	<hr> Disco de la virtual machine expresado en GB: <input name="discovm" type="text" /> <br>
 	<hr> MAC del servidor a crear: <input name="MAC" type="text" /> <br>
-    	<hr> <input value="Crear" type="submit" /> <br>
+    	<hr> <input value="send" type="submit" /> <br>
 </form>

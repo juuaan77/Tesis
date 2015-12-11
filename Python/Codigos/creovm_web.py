@@ -13,19 +13,10 @@ def do_creaVM():
     namevm = request.forms.get('namevm')
     ramvm = request.forms.get('ramvm')
     discovm = request.forms.get('discovm')
-    IPcobbler = request.forms.get('IPcobbler')
-    IPcrear = request.forms.get('IPcrear')
-    os.system("/home/juan/Proyecto\ Integrador\ Desde\ Cero/Repositorio/Codigos\ en\ bash/CreacionVM.sh " + namevm + " " + ramvm  + " " + namevm  + " " + discovm + " " + IPcobbler  + " " + IPcrear)
-    os.system("echo $(whoami) > /home/juan/Escritorio/python")
-    os.system("echo " + namevm + " >> /home/juan/Escritorio/python")
-    os.system("echo " + ramvm + " >> /home/juan/Escritorio/python")
-    os.system("echo " + discovm + " >> /home/juan/Escritorio/python")
-    os.system("echo " + IPcrear + " >> /home/juan/Escritorio/python")
-    os.system("echo " + IPcobbler + " >> /home/juan/Escritorio/python")
+    MAC = request.forms.get('MAC')
+    os.system("/home/juan/Proyecto\ Integrador\ Desde\ Cero/Repositorio/Codigos\ en\ bash/CreacionVM.sh " + namevm + " " + ramvm  + " " + namevm  + " " + discovm + " " + MAC)
+    return '''La maquina virtual se creo corectamente'''
 
-    return'''
-        namevm, '--' ramvm, '--'discovm, '--'IPcobbler, '--',IPcrear
-        '''
 
 
 run(host='localhost', port=8080, debug=True)
