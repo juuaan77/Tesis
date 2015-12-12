@@ -6,7 +6,10 @@ then
 	echo "Necesito como parametro la direccion IP de servidor.";
 	exit;
 else
-
+	#Añado el repositorio EPEL
+	wget http://epel.mirror.net.in/epel/6/i386/epel-release-6-8.noarch.rpm
+	rpm -Uvh epel-release-6-8.noarch.rpm
+	
 	#Actualizo los repositorios
 	yum update -y;
 	
