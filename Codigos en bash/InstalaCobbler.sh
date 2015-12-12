@@ -7,6 +7,9 @@ then
 	exit;
 else
 
+	#Actualizo los repositorios
+	yum update -y;
+	
 	#Desactivo el selinux
 	sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux;
 
@@ -56,5 +59,19 @@ else
 	#Es el turno de /etc/cobbler/modules.conf
 	rm -r /etc/cobbler/modules.conf
 	cp modules.conf /etc/cobbler/modules.conf
+
+	#Obtengo los cargadores de red
+	cobbler get-loaders;
+	
+	#Coloco el ultimo archivo
+	rm -r /etc/debmirror.conf
+	cp debmirror.conf /etc/debmirror.conf
+
+	#reinicio los servicios nuevamente
+	service httpd restart
+	service dhcpd restart
+	service xinetd restart
+	service cobblerd restart
+
 
 
