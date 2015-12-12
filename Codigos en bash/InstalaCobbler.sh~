@@ -51,10 +51,5 @@ else
 
 	#Hago lo propio con el dhcp.template
 	rm -r /etc/cobbler/dhcp.template
-	cp dhcp.template /etc/cobbler/dhcp.template
-	
-	#Es el turno de /etc/cobbler/modules.conf
-	rm -r /etc/cobbler/modules.conf
-	cp modules.conf /etc/cobbler/modules.conf
 
 
