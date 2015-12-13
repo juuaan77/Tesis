@@ -2,8 +2,7 @@
 
 #Obtengo los cargadores de red
 cobbler get-loaders;
-#me muevo a la carpeta adecuada
-cd /root/configfiles;
+
 #Coloco el ultimo archivo
 rm -r /etc/debmirror.conf
 cp debmirror.conf /etc/debmirror.conf
