@@ -63,18 +63,9 @@ else
 	rm -r /etc/cobbler/modules.conf
 	cp modules.conf /etc/cobbler/modules.conf
 
-	#Obtengo los cargadores de red
-	cobbler get-loaders;
-	
-	#Coloco el ultimo archivo
-	rm -r /etc/debmirror.conf
-	cp debmirror.conf /etc/debmirror.conf
+	#En este punto, debo reiniciar para continuar,entonces descargo el script PostReinicio.sh, lo hubico en /root y edito el archivo /etc/rc.local
 
-	#reinicio los servicios nuevamente
-	service httpd restart
-	service dhcpd restart
-	service xinetd restart
-	service cobblerd restart
+	
 fi
 exit;
 

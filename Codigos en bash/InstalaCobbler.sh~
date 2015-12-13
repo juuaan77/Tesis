@@ -6,7 +6,10 @@ then
 	echo "Necesito como parametro la direccion IP de servidor.";
 	exit;
 else
-
+	#Añado el repositorio EPEL
+	wget http://epel.mirror.net.in/epel/6/i386/epel-release-6-8.noarch.rpm
+	rpm -Uvh epel-release-6-8.noarch.rpm
+	
 	#Actualizo los repositorios
 	yum update -y;
 	
@@ -75,6 +78,3 @@ else
 fi
 exit;
 
-
-curl --insecure https://github.com/pinard/Pymacs/tarball/v0.24-beta2
-<html><body>You are being <a href="https://nodeload.github.com/pinard/Pymacs/tarball/v0.24-beta2">redirected</a>.</body></html>
