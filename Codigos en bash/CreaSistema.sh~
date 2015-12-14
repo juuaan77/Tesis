@@ -14,3 +14,7 @@ then
 	exit;
 else
 	ssh root@$1 'cobbler system add  --name='$2' --profile='$3' --hostname='$4' --mac-address='$5' --ip-address='$6' --comment='$7' --gateway=192.168.122.1 --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0'
+
+fi
+
+exit;
