@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Este script crea una VM con los parametros pasados y la coloca con booteo por pxe.
-if [ $# -lt 5 ]; 
+if [ $# -lt 7 ]; 
 then
 	echo "Necesitas pasar cuatro parámetros, que significan:";
 	echo "1° -> IP del servidor Cobbler";
@@ -14,3 +14,7 @@ then
 	exit;
 else
 	ssh root@$1 'cobbler system add  --name='$2' --profile='$3' --hostname='$4' --mac-address='$5' --ip-address='$6' --comment='$7' --gateway=192.168.122.1 --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0'
+
+fi
+
+exit;
