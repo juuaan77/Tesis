@@ -13,8 +13,7 @@ cobbler get-loaders;
 #me muevo a la carpeta adecuada
 cd /root/archivos;
 #Coloco el ultimo archivo
-rm -r /etc/debmirror.conf
-cp debmirror.conf /etc/debmirror.conf
+cat debmirror.conf > /etc/debmirror.conf
 
 #reinicio los servicios nuevamente
 service httpd restart
