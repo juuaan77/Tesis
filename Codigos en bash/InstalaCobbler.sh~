@@ -40,7 +40,7 @@ else
 	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/settings
 
 	#copio el archivo ya configurado en su posicion adecuada.
-	cp dhcpd.conf /etc/dhcp/dhcpd.conf;
+	cat dhcpd.conf > /etc/dhcp/dhcpd.conf;
 	
 	#debo arreglar el problema del httpd añadiendo la siguiente linea.
 	echo "ServerName localhost" >> 	/etc/httpd/conf/httpd.conf
@@ -60,12 +60,10 @@ else
 	sed 's/server:@IP@/server:'$1'/' settings > /etc/cobbler/settings;
 
 	#Hago lo propio con el dhcp.template
-	rm -r /etc/cobbler/dhcp.template
-	cp dhcp.template /etc/cobbler/dhcp.template
+	cat dhcp.template > /etc/cobbler/dhcp.template
 	
 	#Es el turno de /etc/cobbler/modules.conf
-	rm -r /etc/cobbler/modules.conf
-	cp modules.conf /etc/cobbler/modules.conf
+	cat modules.conf > /etc/cobbler/modules.conf
 
 	#En este punto, debo reiniciar para continuar,entonces descargo el script PostReinicio.sh, lo hubico en /root y edito el archivo /etc/rc.local
 
