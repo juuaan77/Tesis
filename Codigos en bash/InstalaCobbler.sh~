@@ -43,7 +43,7 @@ else
 	cp dhcpd.conf /etc/dhcp/dhcpd.conf;
 	
 	#debo arreglar el problema del httpd añadiendo la siguiente linea.
-	#echo "ServerName localhost" >> 	
+	echo "ServerName localhost" >> 	/etc/httpd/conf/httpd.conf
 	
 	#Reinicio y activo los servicios
 	service httpd start

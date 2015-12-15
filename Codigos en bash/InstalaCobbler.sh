@@ -30,8 +30,8 @@ else
 	sed -i 's/disable.*/disable=no/g' /etc/xinetd.d/rsync;
 
 	#Me coloco en el direcotio /root/configfiles
-	mkdir /root/configfiles;
-	cd /root/configfiles;
+	mkdir /root/archivos;
+	cd /root/archivos;
 	#Descargo todos los archivos de configuracion necesarios.
 	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/dhcpd.conf
 	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/dhcp.template
