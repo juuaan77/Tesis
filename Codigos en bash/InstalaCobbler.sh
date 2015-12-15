@@ -13,8 +13,9 @@ else
 	#Actualizo los repositorios
 	yum update -y;
 	
-	#Desactivo el selinux
+	#Desactivo el selinux. La segunda linea, es porque a veces no lo deshabilita con la 1°.
 	sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux;
+	sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config;
 
 	#Desactivo el firewall
 	service iptables stop;
@@ -40,7 +41,10 @@ else
 
 	#copio el archivo ya configurado en su posicion adecuada.
 	cp dhcpd.conf /etc/dhcp/dhcpd.conf;
-
+	
+	#debo arreglar el problema del httpd añadiendo la siguiente linea.
+	echo "ServerName localhost" >> 	/etc/httpd/conf/httpd.conf
+	
 	#Reinicio y activo los servicios
 	service httpd start
 	service dhcpd start
@@ -67,10 +71,10 @@ else
 
 	cd /root
 	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Codigos%20en%20bash/PostReinicio.sh
-	chmod +x PostReincio.sh;
-	echo "/root/PostReinicio.sh" >> /etc/rc.local
+	chmod +x PostReinicio.sh;
+	#echo "/root/PostReinicio.sh" >> /etc/rc.local
 
-	reboot;
+	#reboot;
 	
 fi
 exit;
