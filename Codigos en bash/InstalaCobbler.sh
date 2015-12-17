@@ -68,12 +68,12 @@ else
 
 	#En este punto, debo reiniciar para continuar,entonces descargo el script PostReinicio.sh, lo hubico en /root y edito el archivo /etc/rc.local
 
-	#cd /root
-	#wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Codigos%20en%20bash/PostReinicio.sh
-	#chmod +x PostReinicio.sh;
-	#echo "/root/PostReinicio.sh" >> /etc/rc.local
+	cd /root
+	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Codigos%20en%20bash/PostReinicio.sh
+	chmod +x PostReinicio.sh;
+	echo "/root/PostReinicio.sh" >> /etc/rc.local
 
-	#reboot;
+	reboot;
 	
 fi
 exit;
