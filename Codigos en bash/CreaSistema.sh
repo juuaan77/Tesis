@@ -12,7 +12,13 @@ then
 	echo "6° -> IP Deseada para la VM";
 	exit;
 else
-	ssh root@$1 'cobbler system add  --name='$2' --profile='$3' --hostname='$4' --mac-address='$5' --ip-address='$6' --gateway=192.168.122.1 --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0'
+	#ssh root@$1 'cobbler system add  --name='$2' --profile='$3' --hostname='$4' --mac-address='$5' --ip-address='$6' --gateway=192.168.122.1 --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0'
+
+	#COMANDO='cobbler system add  --name='$2' --profile='$3' --hostname='$4' --mac-address='$5' --ip-address='$6' --gateway=192.168.122.1 --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0'
+	
+	#echo $COMANDO
+	/home/juan/comandosssh.sh $COMANDO
+
 
 fi
 

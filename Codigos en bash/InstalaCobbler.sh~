@@ -33,11 +33,11 @@ else
 	mkdir /root/archivos;
 	cd /root/archivos;
 	#Descargo todos los archivos de configuracion necesarios.
-	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/dhcpd.conf
-	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/dhcp.template
-	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/debmirror.conf
-	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/modules.conf
-	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Archivos%20de%20configuracion%20de%20cobbler/settings
+	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/ArchivosConfCobbler/debmirror.conf
+	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/ArchivosConfCobbler/dhcp.template
+	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/ArchivosConfCobbler/dhcpd.conf
+	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/ArchivosConfCobbler/modules.conf
+	wget https://raw.githubusercontent.com/juuaan77/Tesis/master/ArchivosConfCobbler/settings
 
 	#copio el archivo ya configurado en su posicion adecuada.
 	cat dhcpd.conf > /etc/dhcp/dhcpd.conf;

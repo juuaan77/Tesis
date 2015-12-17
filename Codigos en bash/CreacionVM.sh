@@ -16,5 +16,5 @@ else
 
 fi
 
-#virt-install --connect qemu:///system --virt-type kvm --name bashi --ram 1024 --disk path=/var/lib/libvirt/images/demo.img,size=8 --network default,mac=12:34:56:78:90:ab --pxe --os-type linux --os-variant rhel6 --noautoconsole
+#virt-install --connect qemu:///system --virt-type kvm --name bashi --ram 1024 --disk path=/var/lib/libvirt/images/demo.qcow2,size=8 --network default,mac=12:34:56:78:90:ab --pxe --os-type linux --os-variant rhel6 --noautoconsole
 exit;		

@@ -7,6 +7,12 @@
 	<hr> IP del servidor Cobbler: <input name="IPCobbler" type="text" /> <br>
 	<hr> Perfil deseado: <input name="perfil" type="text" /> <br>
 	<hr> Hostname para la VM: <input name="hostname" type="text" /> <br>
-	
+	<hr>
+	Seleccione un tipo de servidor:
+	<select name="servicio" type="text">
+	<option value=dbs>Servidor de Base de Datos
+	<option value=web>Servidor Web
+	<option value=nfs>Servidor NFS
+	</select></font><br>
     	<hr> <input value="Crear" type="submit" /> <br>
 </form>

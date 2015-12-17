@@ -1,0 +1,18 @@
+class repositorio()
+{
+	#aca indico como quiero que sea el archivo del repositorio
+	file {'repo_local.repo':#Titulo del recurso
+		ensure => file, #indico que sea un archivo
+		owner => root, #indico el dueño del archivo
+		mode => 0644, #indico los permisos de acceso al archivo.
+		source => "/etc/puppet/modules/repositorio/repo_local.repo",
+		path => "/etc/yum.repos.d/repo_local.repo", #indico la ubicacion del archivo
+	}
+
+	#Ejecuto el comandod que habilita el repositorio.
+	exec{'enablerepo' :
+		command => "/bin/yum-config-manager  --enable repo_local", #Este es el comando que deseo que se ejecute, en este caso, activa el servicio
+		cwd => "/", #indico desde que directorio se ejecuta el comando
+		require => File['repo_local.repo'],#Antes de activar el repo, el archivo de configuracion de este debe encontrarse en el direcotiro adecuado
+	}
+}
