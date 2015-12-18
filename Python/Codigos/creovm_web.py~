@@ -23,12 +23,12 @@ def do_creaVM():
     servicio = request.forms.get('servicio')
     #Una vez obtenidos todos los paramentros desde la interfaz web, debo primero, crear el sistema.
     #os.system("/home/werner/demo/bash/CreaSistema.sh " + IPCobbler + " " + namevm  + " " +  perfil  + " " +  hostname  + " " +  MAC  + " " + IPVM)
-    os.system("/home/juan/Proyecto\ Integrador\ Desde\ Cero/Repositorio/Codigos\ en\ bash/CreaSistema.sh " + IPCobbler + " " + namevm  + " " +  perfil  + " " +  hostname  + " " +  MAC  + " " + IPVM)
+    os.system("/home/juan/Proyecto Integrador Desde Cero/Repositorio/Codigos en bash/CreaSistema.sh " + IPCobbler + " " + namevm  + " " +  perfil  + " " +  hostname  + " " +  MAC  + " " + IPVM)
     print "/home/juan/Proyecto Integrador Desde Cero/Repositorio/Codigos en bash/CreaSistema.sh " + IPCobbler + " " + namevm  + " " +  perfil  + " " +  hostname  + " " +  MAC  + " " + IPVM
     #Le doy el tiempo necesario para que cree el sistema.
     time.sleep(3)
     #os.system("/home/werner/demo/bash/CreacionVM.sh " + namevm + " " + ramvm  + " " + namevm  + " " + discovm + " " + MAC)
-    os.system("/home/juan/Proyecto\ Integrador\ Desde\ Cero/Repositorio/Codigos\ en\ bash/CreacionVM.sh " + namevm + " " + ramvm  + " " + namevm  + " " + discovm + " " + MAC)
+    os.system("/home/juan/Proyecto Integrador Desde Cero/Repositorio/Codigos en bash/CreacionVM.sh " + namevm + " " + ramvm  + " " + namevm  + " " + discovm + " " + MAC)
     print "/home/juan/Proyecto Integrador Desde Cero/Repositorio/Codigos en bash/CreacionVM.sh " + namevm + " " + ramvm  + " " + namevm  + " " + discovm + " " + MAC
     #time.sleep(3)
     #puppet = {}
@@ -59,4 +59,4 @@ def estadoVM():
 #    return '''<META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost:8080/creaVM">'''
 
 
-run(host='0.0.0.0', port=8080, debug=True)
+run(host='localhost', port=8080, debug=True)
