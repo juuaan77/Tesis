@@ -16,9 +16,9 @@ firewall --enabled
 # Run the Setup Agent on first boot
 firstboot --disable
 # System keyboard
-keyboard us
+keyboard la-latin1
 # System language
-lang en_US
+lang es_AR
 # Use network installation
 url --url=$tree
 # If any cobbler repo definitions were referenced in the kickstart profile, include them here.
@@ -35,7 +35,7 @@ selinux --disabled
 # Do not configure the X Window System
 skipx
 # System timezone
-timezone  America/New_York
+timezone  America/Argentina/Cordoba
 # Install OS instead of upgrade
 install
 # Clear the Master Boot Record
@@ -71,7 +71,6 @@ $SNIPPET('download_config_files')
 $SNIPPET('koan_environment')
 $SNIPPET('redhat_register')
 $SNIPPET('cobbler_register')
-$SNIPPET('Instala_puppet')
 # Enable post-install boot notification
 $SNIPPET('post_anamon')
 # Start final steps
