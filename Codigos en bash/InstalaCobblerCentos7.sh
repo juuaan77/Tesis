@@ -13,11 +13,17 @@ else
 	#Añado el repositorio EPEL
 	wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 	rpm -ivh epel-release-7-5.noarch.rpm
+
 	#Añado repositorio para puppet
-	#rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
-	#yum install puppetserver -y
+	rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+	yum install puppetserver -y
+	#Le indico que va a funcionar con 512MB de ram
+	sed -i 's/JAVA_ARGS="-Xms2g -Xmx2g -XX:MaxPermSize=256m"/JAVA_ARGS="-Xms512m -Xmx512m -XX:MaxPermSize=256m"/g' /etc/sysconfig/puppetserver;
+	#añado puppet en el /etc/hosts
+	echo "ServerName '$1'" >> 	/etc/hosts
 	#Para actualizarlo a la ultima version de puppet
 	#puppet resource package puppet-server ensure=latest
+
 	#Actualizo los repositorios
 	yum update -y;
 	
@@ -73,14 +79,6 @@ else
 
 	#Hago lo propio con el dhcp.template
 	cat dhcp.template > /etc/cobbler/dhcp.template
-	
-
-	#En este punto, debo reiniciar para continuar,entonces descargo el script PostReinicio.sh, lo hubico en /root y edito el archivo /etc/rc.local
-
-	#cd /root
-	#wget https://raw.githubusercontent.com/juuaan77/Tesis/master/Codigos%20en%20bash/PostReinicio.sh
-	#chmod +x PostReinicio.sh;
-	#echo "/root/PostReinicio.sh" >> /etc/rc.local
 
 	reboot;
 	

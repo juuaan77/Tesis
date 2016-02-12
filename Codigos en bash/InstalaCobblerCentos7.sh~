@@ -13,7 +13,11 @@ else
 	#Añado el repositorio EPEL
 	wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 	rpm -ivh epel-release-7-5.noarch.rpm
-	
+	#Añado repositorio para puppet
+	#rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+	#yum install puppetserver -y
+	#Para actualizarlo a la ultima version de puppet
+	#puppet resource package puppet-server ensure=latest
 	#Actualizo los repositorios
 	yum update -y;
 	
