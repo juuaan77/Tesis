@@ -56,7 +56,7 @@ $SNIPPET('log_ks_post_nochroot')
 
 %post
 $SNIPPET('log_ks_post')
-$SNIPPET('Configura_red')
+$SNIPPET('Configura_redC7')
 # Start final steps
 $SNIPPET('kickstart_done')
 # End final steps

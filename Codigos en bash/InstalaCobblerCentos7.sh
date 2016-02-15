@@ -20,7 +20,7 @@ else
 	#Le indico que va a funcionar con 512MB de ram
 	sed -i 's/JAVA_ARGS="-Xms2g -Xmx2g -XX:MaxPermSize=256m"/JAVA_ARGS="-Xms512m -Xmx512m -XX:MaxPermSize=256m"/g' /etc/sysconfig/puppetserver;
 	#añado puppet en el /etc/hosts
-	echo "ServerName '$1'" >> 	/etc/hosts
+	echo "ServerName '$1'" >> /etc/hosts																																							
 	#Para actualizarlo a la ultima version de puppet
 	#puppet resource package puppet-server ensure=latest
 
@@ -67,10 +67,12 @@ else
 	systemctl start dhcpd
 	systemctl start xinetd
 	systemctl start cobblerd
+	systemctl start puppetserver
 	systemctl enable httpd
 	systemctl enable dhcpd
 	systemctl enable xinetd
 	systemctl enable cobblerd
+	systemctl enable puppetserver
 
 	
 	#Utilizo el parametro para colocar la IP correcta en el archivo settings y guardarlo en su correspondite lugar.

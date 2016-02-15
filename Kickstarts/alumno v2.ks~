@@ -19,7 +19,7 @@ url --url=$tree
 # If any cobbler repo definitions were referenced in the kickstart profile, include them here.
 $yum_repo_stanza
 # Network information
-$SNIPPET('Configura_red')
+$SNIPPET('network_config')
 # Reboot after installation
 reboot
 
@@ -56,18 +56,7 @@ $SNIPPET('log_ks_post_nochroot')
 
 %post
 $SNIPPET('log_ks_post')
-# Start yum configuration
-$yum_config_stanza
-# End yum configuration
-$SNIPPET('post_install_kernel_options')
-$SNIPPET('post_install_network_config')
-$SNIPPET('func_register_if_enabled')
-$SNIPPET('download_config_files')
-$SNIPPET('koan_environment')
-$SNIPPET('redhat_register')
-$SNIPPET('cobbler_register')
-# Enable post-install boot notification
-$SNIPPET('post_anamon')
+$SNIPPET('Configura_red')
 # Start final steps
 $SNIPPET('kickstart_done')
 # End final steps
