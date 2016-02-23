@@ -5,6 +5,7 @@ __author__ = 'juan'
 
 import commands
 import random
+import time
 
 def CreaVm (numbers_VMs,perfil):
 
@@ -33,11 +34,14 @@ def CreaVm (numbers_VMs,perfil):
         commands.getoutput("cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0")
         commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=8 --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type linux --os-variant rhel7")
 
+        #Le doy tiempo (30 segundos) para que se refrezque el archivo dhcpd.lease
+        time.sleep(60)
+
         #Una vez Creada por completo la VM llamo a la funcion parseo_IP para obtener su IPy guardarla en el /etc/hosts
-        print "voy a llamar con " + str(mac) + " y " + str(name) + " \n"
+        print "voy a llamar con #" + str(mac) + "# y #" + str(name) + "# \n"
         Parseo_IP(mac,name)
 
-        #commands.getoutput("cobbler system remove --name=" + str(name))
+        commands.getoutput("cobbler system remove --name=" + str(name))
         #print "cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0"
         #print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=8 --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type linux --os-variant rhel7"
         #print "cobbler system remove --name=" + str(name)+";"
@@ -51,6 +55,8 @@ def Parseo_IP(mac,hostname):
         return: none'''
     lista = commands.getoutput("cat /var/lib/dhcpd/dhcpd.leases")
     parseado = lista.split("lease ")
+    print mac +"\n"
+    print hostname +"\n"
     i = 0
     while i < int(len(parseado)):
         if mac in parseado[i] and hostname in parseado[i]:
@@ -62,6 +68,7 @@ def Parseo_IP(mac,hostname):
     print "me llamo\n"
     commands.getoutput("echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts" )
     print "echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts"
+
 if __name__ == '__main__':
 
     CreaVm(1,"Alumnos")

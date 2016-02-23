@@ -3,8 +3,8 @@ import sys
 
 #Obtengo la informacion del archivo dhcpd.leases, el caul contiene las direciones IP asociadas a las MAC
 lista = commands.getoutput("cat /var/lib/dhcpd/dhcpd.leases")
-mac = "52:54:00:d9:65:e5"
-hostname = "Alumno2291"
+mac = "52:54:00:fc:b9:54"
+hostname = "Alumno1881"
 parseado = lista.split("lease ")
 i = 0
 while i < int(len(parseado)):
