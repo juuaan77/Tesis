@@ -18,9 +18,9 @@ def CreaVm (numbers_VMs,perfil):
     for i in range(int(numbers_VMs)):
         #Si el perfil es alumno, la maqiuna se llamara alumno y un numero aleatorio, lo mismo para docentes.
         if perfil=="Alumnos":
-            name = "Alumno"
+            name = "alumno"
         else:
-            name = "Docente"
+            name = "docente"
 
 
         #Debo generar un nombre aleatorio para las VM
