@@ -2,11 +2,11 @@
 
 #Este script tiene como finalidad instalar y configurar puppet.
 
-#Añado el repositorio de puppet e instalo el agente
+#Aniado el repositorio de puppet e instalo el agente
 rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm;
 yum install -y puppet wget vim;
 
-#Añado la linea que indica la direccion IP del servidor puppet
+#Aniado la linea que indica la direccion IP del servidor puppet
 echo '192.168.122.1 puppet cobbler puppet.example.com' >> /etc/hosts;
 
 #Aca modifico el archivo de configuracion de puppet y coloco el mio.
