@@ -3,9 +3,13 @@
 class usuarios()
 {
 	#Aca indico los datos del usuario a crear.
-	user { 'usuario_administrador': #Este es el titulo del recurso, es el que aparecera en los LOGs
+	user { 'usuario_alumno': #Este es el titulo del recurso, es el que aparecera en los LOGs
 		name => 'alumno', #El usuario sera alumno.
 		ensure => 'present', #Debe encontrase presente.
+		password  => sha1('alumno'),
+		#password => generate('/bin/sh', '-c', "mkpasswd -m sha-512 alumno | tr -d '\n'"),#genero el password requerido
+		password_max_age => '99999', #numero de dias maximo que es valida la clave
+  		password_min_age => '0', #numero de dias minimo que es valida la clave
 		allowdupe => 'false', #No permito usuarios duplicados.
 		expiry => 'absent', #El usuario no debe expirar.
 		home => '/home/alumno' #El home del usuario
@@ -17,7 +21,7 @@ class usuarios()
 		ensure => 'directory', #Indico que sea un directorio.
 		mode => '0644', #Indico permisos del directorio
 		owner => 'alumno', #dueño del directorio
-		require => Exec['setteo_clave_root_mysql'],#Antes de intentar crear la base de datos, debo haber puesto una clave root.
+		require => User['usuario_alumno'],#Antes de crear el home del usuario, este debe existit
 	}
 
 
