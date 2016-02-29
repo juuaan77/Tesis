@@ -1,5 +1,5 @@
 #Esta clase actualiza los paquetes una vez al mes.
-class actualiza_repos()
+class update()
 {
 	#A travez de un recurso CRON me aseguro que sea una vez al mes.
 	cron { 'cron_repos':#Nombre del recurso
