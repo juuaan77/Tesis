@@ -60,9 +60,9 @@ $nfs_ip = "192.168.122.1"
 	
 	#Monto el direcotrio nfs
 	exec{'monto_nfs' :
-		command => "mount -t nfs ${nfs_ip}:/var/nfs/alumnos /mnt/nfs/",
+		command => "/usr/bin/mount -t nfs ${nfs_ip}:/var/nfs/alumnos /mnt/nfs/",
 		cwd => "/", #indico desde que directorio se ejecuta el comando
-		require => Package['paquete_nfs_utils'],#Antes de activar el servicio, los paquetes deben estar instalados.
+		#require => Package['paquete_nfs_utils'],#Antes de activar el servicio, los paquetes deben estar instalados.
 		require => File['directorioNFS'],
 	}
 }
