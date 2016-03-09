@@ -2,7 +2,19 @@
 \lyxformat 474
 \begin_document
 \begin_header
-\textclass article
+\textclass scrartcl
+\begin_preamble
+\usepackage{babel}
+\addto\captionsenglish{%
+ \renewcommand{\figurename}{Figura }%
+ \renewcommand{\contentsname}{Índice}%
+ \renewcommand{\listfigurename}{Lista de figuras}%
+ \renewcommand{\tablename}{Tabla }%
+ \renewcommand{\listtablename}{Lista de tablas}%
+ \renewcommand{\partname}{Capítulo }%
+}
+\end_preamble
+\options listitoc, tablecaptionabove, bibtotoc
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -58,12 +70,15 @@
 \bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip medskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
-\paperpagestyle default
+\paperpagestyle fancy
+\bullet 1 0 9 -1
+\bullet 2 0 15 -1
+\bullet 3 0 6 -1
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -74,7 +89,7 @@
 \begin_body
 
 \begin_layout Title
-Documentación Proyecto Integrador
+Infraestructura tecnológica virtual con automatización y orquestación.
 \end_layout
 
 \begin_layout Author
@@ -85,17 +100,6 @@ Documentación Proyecto Integrador
 	keepAspectRatio
 	rotateOrigin centerBottom
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
 \end_inset
 
 
@@ -146,6 +150,1494 @@ pagebreak
 
 \end_layout
 
+\begin_layout Part
+Introducción
+\end_layout
+
+\begin_layout Section
+Resumen del Proyecto Integrador
+\end_layout
+
+\begin_layout Standard
+El Sistema desarrollado en este Proyecto Integrador, pretende facilitar
+ algunas de las tareas que los administradores de los laboratorios realizan
+ en las salas de informática.
+ Las funcionalidades desarrolladas permiten a los administradores (o incluso
+ a cualquier persona sin conocimiento técnico) crear maquinas virtuales
+ con un solo click, dichas maquinas virtuales cuentan con todos los servicios
+ y programas necesarios para los alumnos de las diferentes carreras o inclusive
+ se pueden crear maquinas virtuales con otros perfiles, como un perfil para
+ docentes.
+ Además, permite orquestar las políticas a seguir de las diferentes máquinas
+ de la red.
+\end_layout
+
+\begin_layout Subsection
+Descripción
+\end_layout
+
+\begin_layout Standard
+El sistema de infraestructura virtual con automatización y orquestación,
+ tiene como objetivo principal brindar una herramienta a los administradores
+ de laboratorios que facilite la preparación y configuración de sus aulas
+ de manera simple.
+\end_layout
+
+\begin_layout Standard
+El sistema está dividido en dos partes.
+ Una parte de la herramienta está destinada al despliegue en masa de máquinas
+ virtuales.
+ Permite al administrador, crear múltiples máquinas virtuales con escasa
+ interacción humana, de forma automática.
+ Pudiéndose especificar el sistema operativo deseado y componentes de hardware.
+ Del mismo modo, en un laboratorio con máquinas físicas, es posible realizar
+ el despliegue a través de la red.
+\end_layout
+
+\begin_layout Standard
+La segunda parte está destinada a la administración de la configuración
+ de las máquinas virtuales.
+ El sistema permite aplicar cambios de configuración y políticas a un conjunto
+ de máquinas como también a máquinas particulares.
+ Esto evita que el administrador tenga que preparar cada estación de trabajo
+ de a una por vez, disminuyendo la carga de trabajo y el tiempo requerido
+ para llevar a cabo la tarea.
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta que las herramientas utilizadas en este sistema deben
+ ser de uso libre se utilizará como sistepa operativo base alguna distribución
+ GNU/Linux.
+\end_layout
+
+\begin_layout Standard
+El sistema incluye desarrollo en el lenguaje de programación Python, bash
+ y el lenguaje propio de Puppet, la herramienta utilizada para la orquestación.
+ El servidor de aprovisionamiento, haciendo uso del protocolo PXE, será
+ el encargado de atender las peticiones de los dispositivos para su instalación.
+\end_layout
+
+\begin_layout Standard
+Este Proyecto Integrador servirá como base para futuros Proyectos.
+\end_layout
+
+\begin_layout Subsection
+Objetivos 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Principal:
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+Desarrollar un sistema para manejar automatismos administrados de políticas
+ de una institución o empresa, para que el administrador pueda configurar
+ las máquinas virtuales o físicas que se utilizan en la misma.
+ Como caso particular se tomará un laboratorio informático de aprendizaje.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Secundarios: 
+\end_layout
+
+\begin_layout Itemize
+Estudiar Sistemas Operativos para servidor.
+\end_layout
+
+\begin_layout Itemize
+Estudiar herramientas de virtualización.
+\end_layout
+
+\begin_layout Itemize
+Estudiar herramientas de aprovisionamiento.
+ 
+\end_layout
+
+\begin_layout Itemize
+Estudiar herramientas de administración de configuración.
+\end_layout
+
+\begin_layout Itemize
+Analizar protocolos para inicio a través de la red como PXE.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Antecedentes de Proyectos similares 
+\end_layout
+
+\begin_layout Itemize
+No hay antecedentes en este tema.
+\end_layout
+
+\begin_layout Subsection
+Intereses personales 
+\end_layout
+
+\begin_layout Standard
+La principal motivación en este Proyecto Integrador es darle un final a
+ la carrera de grado de Ingeniería en Computación intentando abarcar la
+ mayor cantidad de temáticas posibles.
+ Las asignaturas que abarca principalmente son Redes de Computadoras, Sistemas
+ Operativos, Ingeniería de Software, Informática, Comunicaciones de Datos
+ y Algoritmos y estructuras de Datos.
+ Abordamos temas como sistemas operativos, sistemas de archivos, protocolos,
+ metodologías de desarrollo, redes de datos, programación en Python, Shell
+ scripting, virtualización, diagramas UML.
+\end_layout
+
+\begin_layout Subsection
+Intereses Institucionales 
+\end_layout
+
+\begin_layout Standard
+La Facultad de Ciencias Exactas, Físicas y Naturales actualmente cuenta
+ con alrededor de cinco aulas de informática, en las cuales se dictan materias
+ de todos los ciclos y especialidades de ingeniería.
+ La idea del Proyecto Integrador es desarrollar un sistema de infraestructura
+ con automatización y orquestación que permita disminuir la carga de trabajo
+ de los administradores de estas aulas y facilitar las tareas de mantenimiento
+ de las mismas, cumpliendo con las políticas del área que administra las
+ aulas.
+\end_layout
+
+\begin_layout Subsection
+Metodología 
+\end_layout
+
+\begin_layout Standard
+Para afrontar el Proyecto Integrador de la carrera se utilizó una metodología
+ de desarrollo ágil de software basado en el desarrollo iterativo e incremental.
+ El trabajo desarrollado en una unidad de tiempo es llamado una iteración,
+ las cuales constan de un corto lapso de tiempo de entre una y tres semanas.
+ Cada iteración se compone de un ciclo de vida que integra diversas etapas
+ como planificación, definición de los requerimientos, investigación, diseño,
+ codificación, pruebas y documentación.
+ En cada iteración se agrega una nueva “funcionalidad” al sistema y a medida
+ que avanzan los ciclos el sistema aumenta de tamaño, por esto lo llamamos
+ incremental.
+ Otra característica de la metodología ágil que se utilizó, es una comunicación
+ fluida con el “cliente” que en este caso son los Directores del Proyecto
+ Integrador, de los que también se obtienen los requerimientos.
+ Esto permite una buena retroalimentación, con la cual se devuelven correcciones
+ .
+ No ser estrictos con la documentación es una característica que se tomó
+ del desarrollo ágil, tener todo anotado luego facilita la generación del
+ informe.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Lugar previsto para la realización: 
+\end_layout
+
+\begin_layout Itemize
+Laboratorio de Arquitectura de Computadoras, Facultad de Ciencias Exactas,
+ Físicas y Naturales.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Requerimiento de Instrumental y Equipos: 
+\end_layout
+
+\begin_layout Itemize
+Computadora personal.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Inversión económica: 
+\end_layout
+
+\begin_layout Itemize
+Inversión provista por el alumno: ninguna
+\end_layout
+
+\begin_layout Itemize
+Apoyo económico externo a la Facultad: ninguno.
+\end_layout
+
+\begin_layout Subsection
+Requerimientos 
+\end_layout
+
+\begin_layout Standard
+Los requerimientos del sistema se obtuvieron directamente desde el Director
+ y el Codirector del Proyecto Integrador.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe poder aprovisionar distintos sistemas operativos:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+CentOS 
+\end_layout
+
+\begin_layout Standard
+Ubuntu
+\end_layout
+
+\begin_layout Standard
+Debian
+\end_layout
+
+\begin_layout Standard
+Windows 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+La herramienta debe poder aprovisionar máquinas servidores .
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe aprovisionar a través de la red.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe poder aprovisionar utilizando plantillas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe poder aprovisionar utilizando repositorios locales.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe poder actualizar los repositorios locales.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe poder setear politicas a las máquinas virtuales,utilizando
+ Puppet.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe poder monitorizar el estado de las máquinas virtuales.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe ser escalable, integrar nuevas máquinas virtuales fácilmente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe utilizar licencias de código abierto.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La herramienta debe estar implementada en la versión más actual al momento
+ de realizar el Proyecto Integrador.
+\end_layout
+
+\begin_layout Subsection
+Cronograma a seguir
+\end_layout
+
+\begin_layout Standard
+El cronograma está dividido en seis etapas diferentes:
+\end_layout
+
+\begin_layout Itemize
+Familiarización con el sistema operativo GNU/Linux elegido.
+ 
+\end_layout
+
+\begin_layout Itemize
+Investigación de diferentes herramientas de virtualización.
+ 
+\end_layout
+
+\begin_layout Itemize
+Investigación de diferentes herramientas de aprovisionamiento.
+\end_layout
+
+\begin_layout Itemize
+Pruebas de las herramientas seleccionadas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Pruebas de la herramienta de administración de configuración.
+ 
+\end_layout
+
+\begin_layout Itemize
+Preparación y desarrollo del informe del trabajo final y cierre del mismo.
+\end_layout
+
+\begin_layout Subsection
+Objetivo a alcanzar en cada etapa:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Primera etapa:
+\series default
+ conocer el sistema operativo GNU/Linux.
+ La principal motivación, es la de informarse sobre la base donde se implementar
+á el sistema desarrollado en este Proyecto Integrador.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Segunda etapa:
+\series default
+ obtener los conocimientos suficientes para crear y administrar máquinas
+ virtuales.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tercera etapa:
+\series default
+ conocer cuáles son las herramientas disponibles y utilizadas en ambientes
+ de producción para el aprovisionamieto de máquinas, teniendo en cuenta
+ que deben ser de código abierto, analizarlas y elegir la más apropiada
+ para realizar el Proyecto Integrador.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cuarta etapa: 
+\series default
+implementar las herramientas seleccionadas en conjunto.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Quinta etapa:
+\series default
+ realizar la implementación conjunta de todas las herramientas automatizando
+ la instalación y realizar configuracines pertinentes en los sistemas ya
+ instalados, por medio de Puppet.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sexta etapa: 
+\series default
+desarrollo del informe del trabajo final
+\end_layout
+
+\begin_layout Part
+Marco teórico
+\end_layout
+
+\begin_layout Standard
+Previamente al abordaje del desarrollo, requerimos conocimientos teóricos
+ que nos posibiliten comprender el entorno donde se ejecutarán las aplicaciones
+ que componen el Sistema, las herramientas que darán soporte o permitirán
+ cumplir con las funcionalidades previstas y las que se utilizarán para
+ desarrollar.
+ Algunas de las mismas fueron explícitamente solicitadas en los requerimientos.
+ El resto de las herramientas, que están implícitas en los requerimientos,
+ precisaron de investigación y pruebas para conocer si permiten cumplir
+ estos requerimientos y además, si hay varias opciones, elegir la más convenient
+e.
+ Podemos dividir esta sección del informe en cuatro áreas diferentes:
+\end_layout
+
+\begin_layout Itemize
+Sistema operativo 
+\end_layout
+
+\begin_layout Itemize
+Virtualización 
+\end_layout
+
+\begin_layout Itemize
+Aprovisionamiento 
+\end_layout
+
+\begin_layout Itemize
+Orquestación
+\end_layout
+
+\begin_layout Standard
+La información contenida en esta sección se desprende de las investigaciones
+ realizadas en cada una de las etapas del Proyecto Integrador.
+\end_layout
+
+\begin_layout Section
+Sistema operativo
+\end_layout
+
+\begin_layout Subsection
+FreeBSD
+\end_layout
+
+\begin_layout Standard
+FreeBSD es un sistema operativo basado en BSD para arquitecturas Intel (x86
+ e Itanium), AMD64, AlphaTM y UltraSPARC.
+ 
+\end_layout
+
+\begin_layout Standard
+FreeBSD viene con una excelente colección de herramientas de sistema como
+ parte del sistema base.
+ A pesar de esto, existen otras que no vienen incluidas y se necesitan instalar
+ para utilizarlas.
+ FreeBSD ofrece dos tecnologías complementarias para instalar software de
+ terceros en el sistema: la Colección de puertos o ports de FreeBSD y los
+ paquetes binarios.
+ Los paquetes binarios son archivos simples que descargamos desde repositorios.
+ Contienen una copia de los programas binarios precompilados de la aplicación
+ y se pueden manipular con las herramientas de gestión de paquetes de FreeBSD:
+ pkg_add , pkg_delete , pkg_info , etc.
+ Por otro lado, existen ciertos pasos que se deben llevar a cabo para compilar
+ un programa (descargar, desempaquetar, parchear, compilar e instalar).
+ Los ficheros que conforman un port permiten que el sistema se encargue
+ de todo esto, mediante un conjunto simple de órdenes.
+ La colección de puertos para instalar se encuentra en /usr/ports.
+\end_layout
+
+\begin_layout Standard
+FreeBSD proporciona compatibilidad binaria con muchos otros sistemas operativos
+ tipo UNIX, como Linux.
+ Esto es necesario, ya que muchos desarrolladores y compañías sólo desarrollan
+ para Linux.
+ La compatibilidad binaria permite a los usuarios utilizar en FreeBSD cerca
+ del 90% de las aplicaciones desarrolladas para Linux sin que sea necesario
+ realizar alguna modificación sobre la aplicación.
+\end_layout
+
+\begin_layout Standard
+Otras características:
+\end_layout
+
+\begin_layout Itemize
+Servicios multiusuario que permiten a mucha gente usar el sistema FreeBSD
+ simultáneamente.
+\end_layout
+
+\begin_layout Itemize
+Conexión de redes TCP/IP muy robusta, con soporte para estándares industriales.
+ 
+\end_layout
+
+\begin_layout Itemize
+La protección de memoria que garantiza que las aplicaciones (o los usuarios)
+ no se estorben los unos a los otros.
+\end_layout
+
+\begin_layout Itemize
+Compatibilidad binaria con muchos programas nativos de Linux, SCO, SVR4,
+ BSDI y NetBSD.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soporte para multiprocesamiento simétrico con múltiples CPUs.
+\end_layout
+
+\begin_layout Subsection
+Debian GNU/kFreeBSD
+\end_layout
+
+\begin_layout Standard
+Debian GNU/kFreeBSD es un sistema operativo de propósito general.
+ Es una distribución oficial de GNU Debian que usa el Kernel de FreeBSD
+ en vez del Kernel de Linux.
+ Cerca del 90% del Software de Debian está disponible para Debian GNU/kFreeBSD.
+\end_layout
+
+\begin_layout Standard
+Debian GNU/kFreeBSD soporta ZFS desde el kernel.
+ Esto también puede significar un mejor rendimiento y mayor estabilidad
+ en discos que utilicen el sistema de archivos ZFS.
+ Debian GNU/kFreeBSD podría instalarse en una jaula.
+ Esto permitiría aprovechar todas las ventajas de FreeBSD en el servidor,
+ brindándole la opción de usar Debian a los usuarios del servidor y eliminando
+ la necesidad de que se familiaricen con FreeBSD.
+\end_layout
+
+\begin_layout Subsection
+PC-BSD
+\end_layout
+
+\begin_layout Standard
+PC-BSD es un sistema operativo de escritorio basado en FreeBSD.
+ La idea principal, es agregar las características conocidas de FreeBSD
+ como sistema operativo para servidores, como lo son la estabilidad y la
+ seguridad, a un sistema operativo de escritorio amigable.
+\end_layout
+
+\begin_layout Standard
+Para la instalación, brinda una interfaz gráfica que permite la elección
+ de opciones de instalación.
+ Presenta dos perfiles de instalación, cada una con una serie de programas
+ opcionales para seleccionar.
+\end_layout
+
+\begin_layout Standard
+Un perfil de instalación es el Desktop o escritorio, orientado a computadoras
+ de usuario.
+ Básicamente esta opción es la idea de PC-BSD.
+ Instala y configura el entorno de escritorio KDE por defecto.
+ También se pueden seleccionar otros escritorios como GNOME o XFCE, herramientas
+ de virtualización, herramientas de desarrollo, etc.
+ El otro perfil de instalación está orientado a servidores.
+ No instala paquetes de interfaz gráfica y permite instalar servidores web,
+ servidores de base de datos, servidores de archivos, herramientas de virtualiza
+ción, etc.
+ PC-BSD además agrega lo que promete ser la nueva forma de administración
+ de paquetes para FreeBSD: pkgng ( pkg next generation ).
+ Esta herramienta no viene instalada por defecto en FreeBSD.
+ Su funcionamiento se asemeja al apt-get de Linux.
+\end_layout
+
+\begin_layout Standard
+Otra característica importante es que PC-BSD utiliza ZFS como sistema de
+ archivos, instalándolo casi sin intervención del usuario (si así se desea).
+ 
+\end_layout
+
+\begin_layout Subsection
+CentOS 
+\end_layout
+
+\begin_layout Standard
+CentOS es un distribución Linux empresarial, basada en Red Hat Enterprise
+ Linux.
+ CentOS concuerca con la política de distribución de Red Hat y apunta a
+ ser binariamente compatible en su totalidad.
+ Cada versión de esta distro tiene soporte por siete años en cuestiones
+ de actualizaciones de mantenimiento y seguridad, lo que se traduce en un
+ ambiente confiable, predecible, reproducible, de bajo mantenimiento y seguro.
+\end_layout
+
+\begin_layout Standard
+La principal ventaja de esta distro es que se obtiene un conjunto estable
+ de la mayoría de paquetes que por lo general solo incluyen correcciones
+ de errores.
+ En su última versión, CentOS 7 sólo está disponible para la arquitectura
+ x86_64, y representa un gran cambio frente a versiones anteriores del sistema
+ operativo, como la inclusión de systemd, Gnome 3, GRUB 2, y el sistema
+ de archivos XFS.
+ El entorno de escritorio KDE también forma parte de la oferta de CentOS
+ 7.
+ 
+\end_layout
+
+\begin_layout Standard
+Principales novedades de CentOS 7:
+\end_layout
+
+\begin_layout Itemize
+Actualización del núcleo del sistema: Kernel 3.10.0.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soporte para Linux Containers.
+ 
+\end_layout
+
+\begin_layout Itemize
+Inclusión de VMware Tools y controladores de gráficos 3D.
+ 
+\end_layout
+
+\begin_layout Itemize
+OpenJDK-7 como JDK por defecto.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cambio a systemd.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cambio a firewalld y GRUB2 .
+\end_layout
+
+\begin_layout Itemize
+XFS es el sistema de archivos por defecto y permite escalar la capacidad
+ de almacenamiento del sistema hasta 500 terabytes.
+ XFS es un sistema de archivos de 64 bits con journaling de alto rendimiento,
+ y está especialmente indicado para discos grandes (superiores a 1 TB).
+ No obstante y para necesidades menos exigentes se pueden emplear otros
+ sistemas de archivos, como Ext4.
+ 
+\end_layout
+
+\begin_layout Itemize
+iSCSI y FCoE (Fiber Channel over Ethernet) en el espacio del Kernel.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soporte para PPTv2 (Precision Time Protocol).
+\end_layout
+
+\begin_layout Itemize
+Soporte para tarjetas Ethernet 40G.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soporte UEFI.
+ 
+\end_layout
+
+\begin_layout Standard
+En cuanto a systemd, es el reemplazo de init como demonio para iniciar servicios
+, procesos y recursos del sistema.
+ Systemd es la nueva forma predeterminada de iniciar los sistemas Linux,
+ y ha sido adoptado por Red Hat, Debian y Ubuntu, entre otros.
+ CentOS 7 es compatible con Microsoft Active Directory (y obviamente con
+ Red Hat), por lo que puede trabajar con facilidad en entornos heterogéneos.
+ CentOS 7 incluye PCP (Performance Co-Pilot), un conjunto de frameworks
+ y servicios en tiempo real para supervisar y monitorizar el rendimiento
+ del sistema.
+\end_layout
+
+\begin_layout Subsection
+Solaris
+\end_layout
+
+\begin_layout Standard
+Solaris es un sistema operativo de tipo Unix desarrollado por Sun Microsystems
+ desde 1992 como sucesor de SunOs.
+ Es un sistema certificaco oficialmente como version de Unix.
+ Aunque solaris fue desarrollado como software privado, la mayor parte de
+ su codigo se ha liberado como proyecto de software libre denominado OpenSolaris.
+ Solaris es famoso por su escalabilidad, especialmente en sistemas SPARC.
+ Sun solaris se ejecuta sobre la arquitectura SPARC en 32 y 64 bits, o sobre
+ procesadores x86 (incluidos Intel y AMD).
+ Sin embargo, en agosto de 2010, Oracle decidió interrumpir la publicación
+ y distribución de OpenSolaris.
+\end_layout
+
+\begin_layout Standard
+Solaris tiene una reputación de ser muy adecuado para el multiprocesamiento
+ simétrico (SMP), soportando un gran número de CPUs.
+ Históricamente Solaris ha estado firmemente integrado con la plataforma
+ hardware de Sun, SPARC, con la cual fue diseñado y promocionado como un
+ paquete combinado.
+ Esto proporcionaba frecuentemente unos sistemas más fiables pero con un
+ coste más elevado que el del hardware de PC.
+ 
+\end_layout
+
+\begin_layout Standard
+A partir de su versión 10, Sun Microsystems ha promocionado Solarios con
+ sus propias estaciones de trabajo y servidores de 64 bits basados en procesador
+es AMD Opteron e Intel Xeon, como también en sistemas de 32 bits.
+ Esta versión añadió soporte para paravirtualización cuando es utilizada
+ como “sistema operativo invitado” en ambientes basados en Xen.
+ 
+\end_layout
+
+\begin_layout Standard
+En su última versión, 11.3, sus principales características son:
+\end_layout
+
+\begin_layout Itemize
+Inculye una nueva versión de OpenStack (Juno) con soporte para topologías
+ de red adicionales y nuevos servicios.
+ 
+\end_layout
+
+\begin_layout Itemize
+SNAT, soporte Ipv6.
+\end_layout
+
+\begin_layout Itemize
+Pools de almacenamiento.
+ 
+\end_layout
+
+\begin_layout Itemize
+Aprovisionamiento de máquinas (bare metal provisioning) como servicio .
+\end_layout
+
+\begin_layout Itemize
+Incluye soporte para desarrollo basado en la API REST utilizando el Demonio
+ de Administración Remota (permite configuración remota de los sistemas
+ Oracle usando Python, C y Java).
+ 
+\end_layout
+
+\begin_layout Itemize
+Sistema de archivos ZFS.
+\end_layout
+
+\begin_layout Itemize
+Solaris Containers
+\end_layout
+
+\begin_layout Section
+Virtualización 
+\end_layout
+
+\begin_layout Standard
+Virtualización es un término amplio para software ejecutándose, usualmente
+ sistemas operativos, de manera concurrente y aislada de otros programas
+ en el mismo sistema.
+ Muchas de las implementaciones de virtualización utilizan un “hypervisor”,
+ una capa de software que controla el harware y provee sistemas operativos
+ huéspedes con acceso a los dispositivos de hardware subyacentes.
+ El hypervisor permite ejecutar múltiples sistemas operativos en el mismo
+ sistema físico ofreciendo hardware virtualizado al sistema opertativo huésped.
+ Esta tecnología, provee un conjunto de herramientas para aumentar la flexibilid
+ad y reducir los costos, los cuales son tópicos importantes en cualquier
+ empresa o institución.
+ En escencia, la virtualización imcrementa la flexibilidad desacoplando
+ un sistema operativo y los servicios y aplicaciones soportados por él,
+ de una plataforma de hardware física específica, permitiendo el establecimiento
+ de múltiples entornos virtuales sobre una plataforma de hardware compartida.
+ Estos entornos pueden ser creados localmente o aprovisionados extrenamente.
+ La virtualización se destaca también apoyando la innovación a través del
+ uso de entornos virtuales para practicar y aprender.
+ Un estudiante puede comenzar un curso o trabajo un entorno de sistema conocido,
+ estándar y aislado del entorno de producción; si se produce algún tipo
+ de daño solo afecta al sistema virtual.
+ Además se puede establecer entornos únicos de software para el aprendizaje
+ sin demandar el uso exclusivo de recursos de hardware.
+ Aunque en comparación los costos de inversión para tener un número elevado
+ de máquinas físicas son mucho mayores que el costo para invertir en un
+ servidor con altos recursos para realizar la virtualización, se podría
+ decir que la virtualización posee inconvenientes vinculados con sus exigentes
+ requerimientos de hardware, en cuanto a capacidad de procesamiento y de
+ memoria RAM y de almacenamiento.
+ Otra desventaja es que del sistema de virtualización depende del sistema
+ operativo anfitrión.
+ Es decir, el anfitrión es el punto débil del sistema ya que se comparte
+ por todos los sistemas virtualizados, si se rompe éste, se rompen todas
+ las máquinas virtuales.
+\end_layout
+
+\begin_layout Subsection
+Tipos de virtualización
+\end_layout
+
+\begin_layout Subsubsection
+Virtualización completa 
+\end_layout
+
+\begin_layout Standard
+Consite en la virtualización de paquetes y herramientas para correr de forma
+ totalmente virtualizada, sin modificaciones, sistemas operativos huéspedes.
+ Este modo cuenta con la ventaja de consolidar sistemas viejos en hardware
+ nuevo, más eficiente y reducir el espacio físico y costos de operación
+ relativos al consumo energético y refrigeración de estos sistemas menos
+ eficientes.
+ La virtualización completa ofrece, sin embargo, menor rendimiento de entrada/sa
+lida que instalaciones nativas (también llamadas “bare-metal” o “metal-pelado”)
+ de sistemas operativos.
+ Por ejemplo el software KVM, Xen, VMware Workstation o VirtualBox hacen
+ uso de esta técnica.
+ Cabe destacar que en el caso de KVM se requiere soporte de hardware para
+ ejecutar la virtualización, ya sea con procesadores Intel o AMD.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Para-virtualización 
+\end_layout
+
+\begin_layout Standard
+Para-virtualización es un técnica de virtualización la cual implica ejecutar
+ verisiones modificadas de los sistemas opetativos.
+ El sistema operativo para-virtualizado es modificado para que se de cuenta
+ que está siendo virtualizado, ofreciendo un habilidad aumentada para la
+ optimización, ya que el huésped está al tanto de su entorno.
+ El rendimiento está generalmente muy cerca de la ejecución nativa de sistemas
+ operativos no virtualizados.
+ Por ejemplo, utilizan esta técnica KVM, XEN y VMware Server ESX.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Para-virtualización de drivers
+\end_layout
+
+\begin_layout Standard
+La para-virtualización y la virtualización completa pueden ser combinadas
+ para permitir a sistemas operativos no modificados recibir un rendimiento
+ cercano de entrada/salida al de ejecución nativa, por medio de drivers
+ para-virtualizados en sistemas opetativos completamente virtualizados.
+\end_layout
+
+\begin_layout Subsubsection
+Virtualización a nivel del sistema operativo 
+\end_layout
+
+\begin_layout Standard
+Esta técnica virtualiza un servidor físico a nivel del sistema operativo,
+ permitiendo que múltiples servidores virtuales aislados y seguros se ejecuten
+ sobre un solo servidor físico, pero con la particularidad de que tanto
+ el sistema anfitrión como el huésped, comparten sistema operativo.
+ Por ejemplo, Jaulas con Warden en FreeBSD, OpenVZ o Linux-Vserver usan
+ esta técnica.
+\end_layout
+
+\begin_layout Subsubsection
+Virtualización de aplicaciones
+\end_layout
+
+\begin_layout Standard
+La virtualización de aplicaciones consiste en correr una aplicación sobre
+ una máquina virtual usando los recursos reales.
+ Por ejemplo la máquina virtual JAVA.
+\end_layout
+
+\begin_layout Subsubsection
+Emulación 
+\end_layout
+
+\begin_layout Standard
+Un emulador es hardware o software que permite a un sistema de computación
+ comportarse como otro sistema.
+ Generalmente, un emulador permite a un sistema correr software o utilizar
+ dispositivos perisféricos dieñads para el otro sistema.
+ Por ejemplo Qemu es un emulador muy usual en ingeniería.
+ 
+\end_layout
+
+\begin_layout Subsection
+Herramientas de virtualización 
+\end_layout
+
+\begin_layout Standard
+Algunas de las herramientas más utilizadas para virtualizar son las siguientes,
+ sin embargo como uno de los requisitos es utilizar herramientas de código
+ abierto, no se indagó acerca de VMWare: 
+\end_layout
+
+\begin_layout Itemize
+VirtualBox 
+\end_layout
+
+\begin_layout Itemize
+KVM/Qemu 
+\end_layout
+
+\begin_layout Itemize
+Xen
+\end_layout
+
+\begin_layout Itemize
+OpenVZ
+\end_layout
+
+\begin_layout Itemize
+VMWare Workstation 
+\end_layout
+
+\begin_layout Subsubsection
+VirtualBox
+\end_layout
+
+\begin_layout Standard
+VirtualBox, desarrollado por Oracle, es un virtualizador completo de propósito
+ general para hardware x86, orientado al uso para servidor, escritorio y
+ embebido.
+ Como software de código abierto, se puede utilizar bajo la licencia GNU
+ General Public License 2 (GPL2) .
+ 
+\end_layout
+
+\begin_layout Standard
+AL día de la fecha, VirtualBox corre en Windows, Linux, Macintosh y Solaris
+ y soporta una amplia variedad de sistemas operativos, entre ellos RHEL(7,6,5,4)
+, Windows (NT 4.0, 2000, XP, Server 2003, Vista, Windows 7, Windows 8, Windows
+ 10), DOS/Windows 3.x, Linux (2.4, 2.6, 3.x and 4.x), Solaris y OpenSolaris,
+ OS/2, y OpenBSD.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+KVM/Qemu 
+\end_layout
+
+\begin_layout Standard
+KVM (Kernel-based Virtual Machine), desarrollado por Red Hat Enterprise
+ Linux, es una infraestructura de virtualización completa para el kernel
+ de Linux que lo transforma en un hypervisor.
+ Fue incorporado a la línea principal del kernel Linux en la versión 2.6.20.
+ KVM requiere un procesador con hardware que permita extensión para virtualizaci
+ón (Intel VT o AMD-V).
+ También está disponible para instalarlo desde los “ports” de FreeBSD en
+ la forma de módulos de kernel.
+ 
+\end_layout
+
+\begin_layout Standard
+La para-virtualización tiene soporte para ciertos dispositivos en Linux,
+ OpenBSD, FreeBSD y Windows (entre otros) utilizando la API VirtIO.
+ Se tiene placa Ethernet, un controlador de entrada/salida de disco paravirtual,
+ gráficos VGA.
+ 
+\end_layout
+
+\begin_layout Standard
+Qemu puede utilizarse como emulador y como virtualizador.
+ Cuando se utiliza como virtualizador, Qemu toma un rendimiento cercano
+ al nativo.
+ Para ello, debe ejecutarse bajo el hypervisor Xen o KVM.
+ En conjunto KVM/Qemu, KVM es quien hace las veces de árbitro del acceso
+ al CPU y memoria, y Qemu emula los recursos de hardware.
+ 
+\end_layout
+
+\begin_layout Standard
+Una lista de los sistemas operativos soportados por esta herramienta se
+ puede econtrar aquí : http://www.linux-kvm.org/page/Guest_Support_Status
+\end_layout
+
+\begin_layout Subsubsection
+Xen 
+\end_layout
+
+\begin_layout Standard
+Xen, desarrollado por University of Cambridge Computer Laboratory y mantenido
+ por IBM, HP, Intel, AMD, RedHat, es una herramienta de virtualización que
+ se ejecuta por debajo del sistema operativo y actúa como hypervisor.
+\end_layout
+
+\begin_layout Standard
+Esta herramienta permite trabajar con virtualización completa y con paravirtuali
+zación.
+ Como KVM y VirtualBox, también posee una larga lista de sistemas operativos
+ soportados.
+\end_layout
+
+\begin_layout Subsubsection
+OpenVZ 
+\end_layout
+
+\begin_layout Standard
+OpenVZ es una herramienta de virtualización para Linux basada en contenedores.
+ OpenVZ crea múltiples contenedores aislados en un servidor físico y asegurando
+ que las aplicaciones no entren en conflicto.
+ Utiliza un kernel de Linux modificado y por consiguiente sólo puede correr
+ Linux.
+ Todos los contenedores comparten la misma arquitectura y versión del kernel.
+ Cada contenedor se comporta como un servidor autónomo.
+ Ya que OpenVZ emplea un modelo de kernel único, es tan escalable como kernel
+ Linux 2.6, lo que significa que soporta hasta 64 CPUs y hasta 64 GiB de
+ RAM.
+ Un entorno virtual único se puede escalar hasta el equipo físico entero.
+ También cuenta con migración en vivo que posibilita mover un contenedor
+ de in servidor físico a otro sin apagar el contenedor.
+ Un propietario (root) de un servidor físico OpenVZ (conocido como Nodo
+ de Hardware) puede ver todos los procesos y archivos de los contenedores.
+ Esto hace la administración masiva de escenarios posible: se puede ejecutar
+ un simple script de intérprete de comandos que actualice todos (o sólo
+ algunos seleccionados) los contenedores a la vez.
+\end_layout
+
+\begin_layout Section
+Aprovisionamiento 
+\end_layout
+
+\begin_layout Standard
+En general, aprovisionamiento, significa proveer o hacer que algo esté disponibl
+e.
+ El término es utilizado en un gran variedad de contextos en el área de
+ Tecnologías de Información.
+ En este Proyecto Integrador, el término hace referencia a lo siguiente:
+ Aprovisionamiento es el conjunto de acciones para preparar una máquina
+ virtual, con el sistema apropiado, datos y software, y dejarla lista para
+ su operación.
+ 
+\end_layout
+
+\begin_layout Itemize
+Tareas típicas que se tienen que llevar a cabo para que esto suceda son:
+ 
+\end_layout
+
+\begin_layout Itemize
+Seleccionar el conjunto de hardware virtualizado (memoria RAM, disco, cantidad
+ de procesadores asignados, placa de red, etc) para crear una máquina virtual
+ bare-metal.
+\end_layout
+
+\begin_layout Itemize
+Cargar el sistema operativo adecuado.
+\end_layout
+
+\begin_layout Itemize
+Configurar el sistema (dirección IP, gateway, DNS, hostname, MAC, etc).
+\end_layout
+
+\begin_layout Itemize
+Actualizar el sistema y aplicar parches.
+\end_layout
+
+\begin_layout Itemize
+Cargar el conjunto de aplicaciones necesarias.
+\end_layout
+
+\begin_layout Itemize
+Configurar el sistema para adaptarlo a las políticas definidas de la institución.
+\end_layout
+
+\begin_layout Standard
+En resumen, el aprovisionamiento de máquinas virtuales se realiza basado
+ en los recursos disponibles y en los requisitos específicos de cada máquina
+ virtual, según sea la funcionalidad que se le vaya a dar.
+\end_layout
+
+\begin_layout Subsection
+Herramientas de aprovisionamiento 
+\end_layout
+
+\begin_layout Standard
+Algunas de las herramientas de código abierto más utilizadas para aprovisionar
+ son las siguientes: 
+\end_layout
+
+\begin_layout Itemize
+Cobbler
+\end_layout
+
+\begin_layout Itemize
+FAI
+\end_layout
+
+\begin_layout Itemize
+Vagrant 
+\end_layout
+
+\begin_layout Itemize
+Foreman
+\end_layout
+
+\begin_layout Subsubsection
+Cobbler 
+\end_layout
+
+\begin_layout Standard
+Cobbler es un servidor Linux de aprovisionamiento que centraliza y simplifica
+ el control de los servicios incluyendo DHCP, TFTP y DNS con el propósito
+ de realizar installaciones de sistemas operativos basadas en la red.
+ Puede ser configurado para PXE, reinstalaciones y huéspedes virtualizados
+ utilizando Xen, KVM o VMWare como también dispositivos físicos.
+ Está dirigido especialmente a Red Hat Linux y sus derivados, pero es posible
+ configurarlo para que inicie con PXE otras distribuciones de Linux como
+ Debian, Ubuntu o Knoppix.
+ Es una herramienta que se ecuentra en creciente desarrollo y cada vez añade
+ más soporte a distintas distros e incluso a FreeBSD y a futuro Windows.
+ Actualmente cuenta con poco soporte para el sistema operativo de Microsoft.
+ 
+\end_layout
+
+\begin_layout Standard
+Cuenta con un sistema integrado para administración de configuración pero
+ también cuenta con soporte para la integrar la herramienta de administración
+ de configuración Puppet.
+ Cobbler se basa en el mecanismo de Kickstart y ofrece perfiles de instalación
+ que pueden ser aplicados a una o muchas máquinas.
+ La información de contenida en un plantilla kickstart puede ser modificada
+ dinámicamente pasando variables (llamadas ksmeta) o utilizando snippets,
+ donde se puede mantener el código comúm simplificando la lectura y minimizando
+ el tamaño del archivo kickstart.
+\end_layout
+
+\begin_layout Subsubsection
+Fully Automatic Installation (FAI)
+\end_layout
+
+\begin_layout Standard
+FAI es un sistema no interactivo para instalar, personalizar y administrar
+ sistemas Linux y configuraiones de software en computadoras como también
+ en máquinas virtuales y entornos chroot, desde pequeñas redes hasta una
+ infraestructura grande escalable y clusters.
+ Es una herramienta para la instalación totalmente automáica de Debian y
+ otras distros de Linux como Suse, Red Hat, Solaris, vía red, DVDs personalizado
+s de instalación o en entornos chroot.
+ 
+\end_layout
+
+\begin_layout Standard
+Algunas de las características más importantes:
+\end_layout
+
+\begin_layout Itemize
+Instalar y actualizar Debian, Ubuntu, SUSE, Red Hat, etc.
+\end_layout
+
+\begin_layout Itemize
+Despliegue centralizado y administración de configuración.
+\end_layout
+
+\begin_layout Itemize
+Recuperació de desastre integrado.
+\end_layout
+
+\begin_layout Itemize
+Fácil configuración de software RAID y LVM.
+\end_layout
+
+\begin_layout Itemize
+Instalar máquinas virtuales usando KVM, Xen y VirtualBox.
+\end_layout
+
+\begin_layout Itemize
+Control remoto vía SSH durante la instalación.
+\end_layout
+
+\begin_layout Subsubsection
+Vagrant
+\end_layout
+
+\begin_layout Standard
+Vagrant provee entornos fáciles de reproducir, configurar construidos sobre
+ tecnología industrial estándar.
+ Vagrant es un software que crea y configura entornos de desarrollo virtuales
+ aprovisionando sobre VirtualBox, VMware, KVM y contenedores Linux.
+ Es una software que se encuentra una capa encima de estas herramientas.
+ Luego herramientas de administración de configuración como Ansible, Chef,
+ Salt, y Puppet pueden ser utilizadas para instalar y configurar automáticamente
+ el software en la máquina.
+\end_layout
+
+\begin_layout Subsubsection
+Foreman 
+\end_layout
+
+\begin_layout Standard
+Foreman es una herramienta para el aprovisionamiento, configuración y monitoriza
+ción de servidores físicos y virtuales.
+ Puede aprovisionar máquinas bare-metal, virtualizadas y en la nube a través
+ de installaciones desatendidas por medio de DHCP, DNS, TFTP y PXE .
+ Tiene una gran integración con software de administración de configuración
+ como Puppet, Chef, Salt y otros por medio de plugins.
+\end_layout
+
+\begin_layout Standard
+Algunas de sus características son:
+\end_layout
+
+\begin_layout Itemize
+Descubrir, aprovisioinar y actualizar toda la infraestructura bare-metal.
+\end_layout
+
+\begin_layout Itemize
+Crear y gestionar instancias entre nubes privadas y públicas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Agrupar hosts y dirigirlos en conjunto, sin importar la ubicación.
+ 
+\end_layout
+
+\begin_layout Itemize
+Reveer cambios históricos para auditoría y resolución de problemas.
+\end_layout
+
+\begin_layout Section
+Orquestación
+\end_layout
+
+\begin_layout Standard
+La orquestación describe el alineamiento automatizado, la coordinación y
+ la administración de complejos sistemas de computadoras, middleware y servicios.
+ En este sentido, la orquestaciónse trata de alinear los requisitos de negocio
+ con las aplicaciones, datos e infraestructura.
+ Define las políticas y niveles de servicio a través de flujos de trabajo
+ automatizados, aprovisionamiento y gestión de cambio.
+ Esto crea una infraestructura alineada con la aplicación que puede ser
+ escalada hacia arriba o abajo basándose en las necesidades de cada aplicación.
+\end_layout
+
+\begin_layout Standard
+La orquestación también provee la gestión centralizada de los recursos.
+ Por ejemplo, reduce el tiempo y esfuerzo para desplegar múltiples instancias
+ de una sola aplicación.
+ Cuando es necesario que se creen más instacias de diferentes aplicaciones,
+ herramientas automatizadas pueden realizar tareas que, previamente, podían
+ ser llevadas a cabo sólo por múltiples administradores.
+\end_layout
+
+\begin_layout Standard
+Un escenario que se puede encontrar, por ejemplo, un administrador necesita
+ desplegar una aplicación web, pero para hacerlo, primero debe crear lel
+ servidor de base de datos.
+ Luego debe incluir en la base de datos todas las direcciones IP que pueden
+ conectarse al servidor, y también agregar este nuevo servidor a la herramienta
+ que lo monitorea, o abrir un puerto particular antes de proceder.
+ Cada tarea expuesta puede ser automatizada, pero el conjunto de estas automatiz
+aciones, junto con la coordinación secuencial de las mismas, realizada sin
+ tener en cuenta el tipo de sistema operativo en el que corren, describen
+ un proceso, en el cual actúa la orquestación.
+\end_layout
+
+\begin_layout Standard
+No hay que confundir los términos automatización y orquestación.
+ Éstos se podrían comparar con tarea y proceso.
+ 
+\end_layout
+
+\begin_layout Standard
+La optimización de un proceso, por ejemplo, no se puede conseguir cimplemente
+ por la automatización.
+ A la automatización le concierne una tarea: ejecutar un servidor web, configura
+r un servidor web, detener un servicio.
+ A la orquestación, sin embargo, le concierne la ejecución de un flujo de
+ trabajo (si se quiere automatizado) de un proceso.
+ Un porceso de aprovisionamiento lleva a cabo múltiples tareas e involucrar
+ múltiples sistemas.
+ El objetivo de la orquestación no es sólo ejecutar automáticamente un servidor,
+ lo cual aumenta la velocidad en el proceso de despliegue y lleva las aplicacion
+es a producción más rápido.
+ También permite una oportunidad para optimizar aquellos procesos para mejorar
+ aún más la velocidad de despliegue.
+\end_layout
+
+\begin_layout Standard
+Una de las maneras más simples de optimizar un proceso es eliminar los pasos
+ repetitivos.
+\end_layout
+
+\begin_layout Standard
+Entonces, automatización trata acerca de codificar tareas y orquestación
+ acerca de codificar procesos.
+ Esta última toma ventaja de la automatización para reutilizar bloques básicos.
+\end_layout
+
+\begin_layout Subsection
+Herramientas de orquestación
+\end_layout
+
+\begin_layout Standard
+Algunas de las herramientas de código abierto más utilizadas para orquestar
+ son las siguientes: 
+\end_layout
+
+\begin_layout Itemize
+Puppet 
+\end_layout
+
+\begin_layout Itemize
+Chef 
+\end_layout
+
+\begin_layout Itemize
+Ansible
+\end_layout
+
+\begin_layout Subsubsection
+Puppet 
+\end_layout
+
+\begin_layout Standard
+Es un sistema de orquestación que permite definir el estado de la infraestructur
+a, forzando automáticamente que se llegue al estado correcto definido.
+\end_layout
+
+\begin_layout Standard
+Puppet es una herramienta diseñada para administrar la configuración de
+ sistemas similares a Unix y a Microsoft Windows de forma declarativa, es
+ decir, se establece el estado requerido en vez como llegar al mismo..
+ El usuario describe los recursos del sistema y sus estados utilizando el
+ lenguaje declarativo que proporciona Puppet.
+ Esta información es almacenada en archivos denominados “manifiestos”.
+ Puppet descubre la información del sistema a través de una utilidad llamada
+ Facter, y compila los manifiestos en un catálogo específico del sistema
+ que contiene los recursos y la dependencia de dichos recursos, estos catálogos
+ son ejecutados en los sistemas de destino.
+ La capa de abstracción de recursos permite a los administradores describir
+ la configuración en términos de alto nivel, tales como usuarios, servicios
+ y paquetes sin necesidad de especificar los comandos específicos del sistema
+ operativo (como rpm, yum, apt).
+\end_layout
+
+\begin_layout Standard
+Una vez instalado el servidor masetro Puppet, todos los nodos en la infraestruct
+ura deben tener instalado un agente Puppet.
+\end_layout
+
+\begin_layout Standard
+Los sistemas soportados son Linux (Red Hat Enterprise y derivados, Debian,
+ Ubuntu, Fedora), Unix (BSD, Mac OS X, Oracle Solaris, AIX) y Windows.
+\end_layout
+
+\begin_layout Subsubsection
+Chef 
+\end_layout
+
+\begin_layout Standard
+Es una herramienta de automatización de infraestructura de sistemas o administra
+ción de configuraciones.
+ Se enfoca en seguir un conjunto de pasos (llamados recetas) con el propósito
+ de presentar un producto final ya listo para trabajar y/o probar.
+\end_layout
+
+\begin_layout Standard
+Existen 2 tipos de versiones: 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Chef Server
+\series default
+ está enfocado a ser el servidor central que permite suministrar a los diferente
+s nodos clientes con las diversas configuraciones necesarias, las cuales
+ se mantienen alojadas en el servidor.
+ El cliente sondea periódicamente al Chef Server para corroborar las últimas
+ políticas y estado de la red, en caso que haya algún parámetro desactualizado,
+ el cliente lo actualiza.
+ Además ofrece balanceo de carga, escalabilidad, búsquedas rápidas ente
+ otros.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Chef Solo
+\series default
+ es la versión de código abierto y reside localmente en el nodo, esto quiere
+ decir que toda la información y recetas necesarias para configurar el nodo
+ deben estar presentes en su disco duro.
+ Esta herramienta utiliza Ruby-DLS para escribir las “recetas” (configuraciones
+ de sistemas que describen como son manejadas las aplicaciones).
+ Estas recetas, que pueden ser agrupadas para facilitar la administración,
+ describen de forma secuencial una serie de recursos que deben estar en
+ un estado particular.
+\end_layout
+
+\begin_layout Standard
+Chef Server es soportado sobre RHEL/CentOS/Oracle Linux, y Ubuntu.
+ Mientras que el soporte para los clients es AIX, RHEL/CentOS, FreeBSD,
+ Mac OS X, Solaris (OS), Microsoft Windows, Ubuntu, ArchLinux, Debian, Fedora,
+ y otros.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Ansible 
+\end_layout
+
+\begin_layout Standard
+Es una plataforma para configurar y administrar computadoras.
+ Combina instalación multi-nodo, ejecuciones de tareas ad hoc y administración
+ de configuraciones.
+ 
+\end_layout
+
+\begin_layout Standard
+Ansible distingue dos tipos: controladores y nodos.
+ Primero, existe una única máquina de control donde la orquestación comienza.
+ Los nodos son manejados desde esa máquina por OpenSSH.
+ La máquina de control conoce a los nodos a través de un inventario.
+ Esta herramienta usa una arquitectura sin agentes, es decir, los nodos
+ no necesitan instalar ni ejecutar en segundo plano ningún proceso que se
+ comunique con la máquina de control.
+ Sin embargo, los nodos deben contar con Python >= 2.4 y las máquinas de
+ control con Python 2.6.
+\end_layout
+
+\begin_layout Standard
+Dispone de módulos que trabajan sobre JSON y la salida estándar puede ser
+ escrita en cualquier lenguaje.
+ Nativamente utiliza YAML para describir configuraciones de los sistemas.
+\end_layout
+
+\begin_layout Standard
+Los sistemas operativos soportados en las máquinas de control son la mayoría
+ de las distribuciones Linux y Unix (Red Hat, Debian, CentOS, OSX, y BSD)
+ entre otros excepto Windows.
+\end_layout
+
+\begin_layout Standard
+Ansible puede instalarse en ambientes virtualizados, nubes públicas y privadas,
+ incluyendo VMWare, OpenStack, AWS, Eucalyptus, KVM y CloudStack.
+\end_layout
+
+\begin_layout Part
+Desarrollo
+\end_layout
+
+\begin_layout Section
+Elección de la plataforma
+\end_layout
+
+\begin_layout Standard
+Una vez realizada la interiorización de las diferentes herramientas utilizadas
+ en el mercado, se decidió unificar la plataforma para el desarrollo del
+ Proyecto Integrador.
+ 
+\end_layout
+
+\begin_layout Standard
+Al principio se había comenzado a trabajar con FreeBSD, de manera remota
+ con un servidor que dispone el Laboratorio de Arquitectura de Computadoras.
+ Sin embargo, no se encontraron herramientas de aprovisionamiento y orquestación
+ con la suficiente documentación o soporte para este sistema operativo.
+ Por lo tanto, como sistema operativo base fue elegido CentOS 7, su última
+ versión al día de la fecha.
+ Esto es debido a que junto con su versión empresarial, es un sistema operativo
+ muy robusto y confiable orientado a servidores y tal vez sea el más utilizado
+ en el mercado.
+ Además, se tuvo en cuenta la nueva estandarización del iniciador de sistemas,
+ systemd, para esta versión del sistema operativo y para gran parte de las
+ futuras entregas en diferentes distribuciones Linux, orientadas a servidor
+ y también de escritorio.
+\end_layout
+
+\begin_layout Standard
+Habiendo elegido CentOS 7, se optó por virtualizar haciendo uso de KVM,
+ la cual fue desarrollada nativamente para esta distribución de Linux y
+ que cuenta con una extensa documentación.
+ A su vez, en el Laboratorio de Computación, existe un servidor que utiliza
+ esta herramienta para servir a las terminales de ciertas aulas de informática.
+ Consultando con los Directores del Proyecto, a profesionales en el tema
+ se llegó a la conclusión que KVM es una herramienta estable y apta para
+ un entorno de producción.
+\end_layout
+
+\begin_layout Standard
+Para el aprovisionamiento de máquinas virtuales también por motivos de desarroll
+o nativo, recomendación de profesionales que la han utilizado y en base
+ a lecturas en foros que tratan este tema, se eligió a Cobbler, ya que es
+ la más estable y fiable para entornos de producción.
+ También cuenta con soporte integrado para orquestación con Puppet, herramienta
+ que fue elegida por ser parte de los requerimientos del Proyecto.
+\end_layout
+
 \begin_layout Section
 KVM
 \end_layout
@@ -155,7 +1647,7 @@ Requerimientos de KVM
 \end_layout
 
 \begin_layout Standard
-El Hipervisor KVM requiere que el microprocesador cuente con VT-x para procesado
+El hipervisor KVM requiere que el microprocesador cuente con VT-x para procesado
 res de Intel o con AMD -V para los propios de AMD.
  Para poder confirmar que un un procesador cuenta con esto, en los sistemas
  basados en Linux, se debe ejecutar el siguiente comando:
@@ -1274,7 +2766,7 @@ virbr0
  
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Pools de almacenamiento
 \end_layout
 
@@ -1320,16 +2812,6 @@ nfs.example.com:/path/to/share
 
 \begin_layout Standard
 Los SP y SV no son requeridos por la mayoría de las operaciones de las VM's.
- Los SP y SV proveen de un camino para libvirt para asegurar que una parte
- del almacenamiento 
-\family typewriter
-\size largest
-\color magenta
-que cosa aegura0.....
-
-\family default
-\size default
-\color inherit
  Note que uno de las características de libvirt is el protocolo remoto,
  entonces es posible administrar todos los aspectos de los ciclos de vida
  de las VM's así como las configuraciones de los recursos requeridos por
@@ -3650,7 +5132,7 @@ Borrar un storage pool utilizando virsh
 \end_layout
 
 \begin_layout Section
-Instalación y configuración de Cobbler
+Cobbler
 \end_layout
 
 \begin_layout Standard
@@ -3773,7 +5255,8 @@ service iptables restart
 \end_layout
 
 \begin_layout Subsection
-Pre requisitos
+Pre requisitos.
+ Instalación.
 \end_layout
 
 \begin_layout Standard
@@ -3974,7 +5457,7 @@ En centos7 no se instalan mod_python, debmirror, ni cman (instalar encambio
 \end_layout
 
 \begin_layout Subsection
-Habilitar TFTP y rsync
+Configuración.
 \end_layout
 
 \begin_layout Standard
@@ -4741,11 +6224,11 @@ Luego ejecutar:
 cobbler import --name=CentOS_6 --arch=x86_64 --path=/mnt/centos 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Tópicos generales de Cobbler
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Modelado
 \end_layout
 
@@ -4811,7 +6294,7 @@ end{figure}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Distros
 \end_layout
 
@@ -4823,7 +6306,7 @@ Distribución que se desea instalar.
  la distribución manualmente.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Profiles
 \end_layout
 
@@ -4836,7 +6319,7 @@ Un profile asocia una distribución a opciones especializadas adicionales,
  o de escritorio.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Systems 
 \end_layout
 
@@ -4850,7 +6333,7 @@ Los grabaciones de sistemas mapean una pieza de hardware (o una máquina
  dada, se debería crear una grabación del sistema para ésta.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Images 
 \end_layout
 
@@ -4878,12 +6361,12 @@ https://fedorahosted.org/cobbler/wiki/AllAboutImages
 https://fedorahosted.org/cobbler/wiki/KoanWithIsos
 \end_layout
 
-\begin_layout Subsection
-Repos 
+\begin_layout Subsubsection
+Repositorios 
 \end_layout
 
 \begin_layout Standard
-Espejar repositorios le permite a cobbler espejar el árbol de instalación
+Espejar repositorios le permite a Cobbler espejar el árbol de instalación
  (
 \family typewriter
 cobbler import
@@ -4892,16 +6375,16 @@ cobbler import
  Si se espeja todo esto localmente en la red, las instalaciones y actualizacione
 s serán más rápidas (usualmente es válido realizar esto para largos setups
  en datacenters, laboratorios, etc).
- Si un profile tiene un repo dado, este repo puede ser automáticamente configura
-do durante el aprovisionamiento y los sistemas instalados podrán usarlo
- como espejo (
+ Si un profile tiene un repositorio dado, este repositorio puede ser automáticam
+ente configurado durante el aprovisionamiento y los sistemas instalados
+ podrán usarlo como espejo (
 \family typewriter
 yum_post_install_mirror
 \family default
  debe estar habilitado).
  Si se especifica una lista de paquetes para –rpm-list, se puede espejar
- solo esa parte del repo, más sus dependencias.
- Por ejemplo, si se espeja FC6 Extras, para descargar cobbler y koan, ponemos
+ solo esa parte del repositorio, más sus dependencias.
+ Por ejemplo, si se espeja FC6 Extras, para descargar Cobbler y Koan, ponemos
  
 \family typewriter
 –rpm-list=”cobbler koan”
@@ -5255,7 +6738,7 @@ cobbler profile edit --name=centos --repos=puppet
 \end_layout
 
 \begin_layout Standard
-Para ver información acerca del mismo:
+Se muestra la información acerca del mismo con:
 \end_layout
 
 \begin_layout Standard
@@ -5283,13 +6766,13 @@ cobbler repo report --name=puppet
 \end_layout
 
 \begin_layout Subsubsection
-Repositorio local separado de cobbler.
+Repositorio local separado de Cobbler.
 \end_layout
 
 \begin_layout Standard
 En el caso que se desee crear un repositorio local que no dependa del servidor
- cobbler se debe primeramente instalar los servicios necesarios para el
- correcto funcionamiento del servicio de repositorios.
+ Cobbler, se debe primero instalar los servicios necesarios para el funcionamien
+to del servicio de repositorios:
 \end_layout
 
 \begin_layout Standard
@@ -5313,20 +6796,24 @@ sudo yum install -y createrepo vsftpd lftp
 \end_layout
 
 \begin_layout Standard
-Una vez hecho esto, tenemos que crear el arbol de directorios adecuado segun
- nuestra aplicacion, este puede estar divido segun deseemos, por ejemplo
- por sistema operativo o por distribucion, etc
+Una vez hecho ésto, se tiene que crear el árbol de directorios adecuado
+ de acuerdo a la aplicación.
+ Éste puede estar divido según deseemos, por ejemplo, por sistema operativo,
+ por distribución, por arquitectura, etc.
 \end_layout
 
 \begin_layout Standard
-Se recomienda que se utilice como base el directorio /var/ftp dado que se
- utilizara este sistema de transmision de archivos utilizados.
+Se recomienda que se utilice como base el directorio 
+\family typewriter
+/var/ftp 
+\family default
+dado que se utilizará este sistema de transmisión de archivos utilizados.
 \end_layout
 
 \begin_layout Standard
 Una vez creado el sistema de archivos, se guardan los correspondientes archivos
- rpm en los lugares adecaudos segun se haya creado el arbol de archivos
- y se ejecuta el comando
+ rpm en los lugares adecaudos acordes a cómo se haya creado el árbol de
+ archivos y se ejecuta el siguiente comando:
 \end_layout
 
 \begin_layout Standard
@@ -5339,7 +6826,7 @@ Una vez creado el sistema de archivos, se guardan los correspondientes archivos
 \begin_layout Standard
 
 \family typewriter
-creterepo -v /var/ftp/nombre_repo
+creterepo -v /var/ftp/nombre_repo.repo
 \end_layout
 
 \begin_layout Standard
@@ -5350,28 +6837,71 @@ creterepo -v /var/ftp/nombre_repo
 \end_layout
 
 \begin_layout Standard
-Debemos configurar el vsftpd editando el archivo /etc/vsftpd/vsftpd.conf,
- hay diversas configuraciones posibles segun la aplicacion particular deseada,
- pero debemos asegurarnos que haya dos puntos importantes:
+Debemos configurar el demonio 
+\family typewriter
+vsftpd
+\family default
+ editando el archivo 
+\family typewriter
+/etc/vsftpd/vsftpd.conf
+\family default
+.
+ Hay diversas configuraciones posibles, pero debemos asegurarnos de que
+ haya dos puntos importantes:
 \end_layout
 
 \begin_layout Enumerate
-anonymous_enable=YES #Indica que se puede acceder via ftp de manera anonima
+
+\family typewriter
+anonymous_enable=YES
+\family default
+: Indica que se puede acceder vía ftp de manera anónima.
 \end_layout
 
 \begin_layout Enumerate
-anon_root=/var/ftp #Indica la raiz del directorio al cual se puede acceder
- de manera anonima.
+
+\family typewriter
+anon_root=/var/ftp
+\family default
+:Indica la raíz del directorio al cual se puede acceder de manera anónima.
 \end_layout
 
 \begin_layout Standard
-Ademas, debemos asegurarnos de añadir la regla adecuada al firewall para
+Además, debemos asegurarnos de añadir la regla adecuada al firewall para
  permitir el acceso al puerto 21 o en su defecto, desactivar el firewall.
 \end_layout
 
 \begin_layout Standard
-En el lado del cliente se crea un archivo en /etc/yum.repos.d/ con el siguiente
- contenido
+Por último, iniciar el servicio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+systemctl start vsftpd
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el lado del cliente es necesario informar del nuevo repositorio.
+ Para ésto, crear un archivo en 
+\family typewriter
+/etc/yum.repos.d/nombredelrepo.repo 
+\family default
+con el siguiente contenido:
 \end_layout
 
 \begin_layout Standard
@@ -5402,7 +6932,7 @@ comment ="Repositorio local para proyecto integrador"
 \begin_layout Standard
 
 \family typewriter
-baseurl=ftp://IPservidor/nombre_de_tu_sistema_de_Arhivos
+baseurl=ftp://IP_servidor/nombre_del_sistema_de_archivos
 \end_layout
 
 \begin_layout Standard
@@ -5425,7 +6955,7 @@ enabled=1
 \end_layout
 
 \begin_layout Standard
-Para utilizar este repositorio hay que habilitarlo con:
+Para utilizar este repositorio hay que habilitarlo, entonces:
 \end_layout
 
 \begin_layout Standard
@@ -5438,7 +6968,7 @@ Para utilizar este repositorio hay que habilitarlo con:
 \begin_layout Standard
 
 \family typewriter
-yum --enablerepo="paquetes"
+yum --enablerepo="nombredelrepo.repo"
 \end_layout
 
 \begin_layout Standard
@@ -5449,7 +6979,8 @@ yum --enablerepo="paquetes"
 \end_layout
 
 \begin_layout Standard
-actualizar base de datos de repositorios en CENTOS: 
+Luego es necesario actualizar base de datos de repositorios con el commando:
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5472,7 +7003,61 @@ yum makecache
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+Al momento de instalar un paquete, yum pedirá la clave pública GPG, si no
+ se tiene instalada, se puede importar con el comando:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+rpm --import public.gpg.key
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En caso de no se tenga clave pública alguna, es posible desactivar la verificaci
+ón de la misma en 
+\family typewriter
+/etc/yum.conf
+\family default
+ poniendo a cero el valor de 
+\family typewriter
+gpgcheck.
+\end_layout
+
+\begin_layout Standard
+Es posible utilizar solo el repositorio recién creado y excluir los demás,
+ para ello:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+yum --disablerepo=* --enablerepo=nombredelrepo install paquete
+\end_layout
+
+\begin_layout Subsubsection
 Buildiso
 \end_layout
 
@@ -5513,7 +7098,7 @@ Si se necesita instalar en un laboratorio u otro ambiente que no tenga acceso
 # cobbler buildiso --standalone –distro="distro1" 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Import
 \end_layout
 
@@ -5613,7 +7198,7 @@ cobbler report
  a import para saltar la auto detección del kickstart.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Kickstarts
 \end_layout
 
@@ -5629,7 +7214,7 @@ Algunas Keywords son opcionales, mientras que otras son necesarias para
  la instalacion.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Keywords
 \end_layout
 
@@ -6101,7 +7686,7 @@ Si se especifica zerombr , y sí es su único argumento , cualquier tabla
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Firewall
 \end_layout
 
@@ -6228,7 +7813,7 @@ Dependiendo del uso, será necesario asegurar que iptables está configurado
 COMMIT
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 SELinux
 \end_layout
 
@@ -6246,7 +7831,7 @@ setsebool -P httpd_can_network_connect true
 o directamente deshabilitarlo.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Servicios
 \end_layout
 
@@ -6313,7 +7898,7 @@ cobbler check
 ” debería informar acerca de ésto.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 PXE
 \end_layout
 
@@ -6370,7 +7955,7 @@ Luego la máquina booteará directamente con el profile seleccionado sin mostrar
  el menú.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Reinstalación
 \end_layout
 
@@ -6397,7 +7982,7 @@ El sistema instalará el nuevo sistema operativo luego del reinicio, sin
  interacción requerida.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Virtualización
 \end_layout
 
@@ -6422,7 +8007,7 @@ n
 Se puede utilizar KVM u otro método de virtualización.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Integración con Puppet
 \end_layout
 
@@ -6436,7 +8021,7 @@ mgmt-classes
  inicial en Puppet en vez de aquí, entonces podría ser más simple.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Manter class mappings en cobbler
 \end_layout
 
@@ -6478,7 +8063,7 @@ Para Puppet el –dns-name (mostrado arriba) debe estar configurado porque
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 External Nodes 
 \end_layout
 
@@ -6666,75 +8251,6 @@ from_cobbler: 1
 \end_layout
 
 \begin_layout Subsubsection
-Script alternativos para External Nodes 
-\end_layout
-
-\begin_layout Standard
-Adjunto a 
-\family typewriter
-puppet_node.py
-\family default
- está un script alternativo para nodos externos que competa todos los nodos
- con items de un repositorio de manifiesto (en 
-\family typewriter
-/etc/puppet/manifests/
-\family default
-) e información de red de Cobbler.
- Se configura como arriba del lado de Puppet y luego busca en 
-\family typewriter
-/etc/puppet/external_node.yaml
-\family default
- del lado de la configuración de Cobbler.
-\end_layout
-
-\begin_layout Standard
-La configuración es la siguiente:
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-base: /etc/puppet/manifests/nodes 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-cobbler: <%= cobbler_host %> 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-no_yaml: puppet::noyaml 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-no_cobbler: network::nocobbler 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-bad_yaml: puppet::badyaml 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-unmanaged: network::unmanaged
-\end_layout
-
-\begin_layout Standard
-La salida de la información de red estará en la forma de pseudo estructura
- de datos que permite a Puppet dividirla y crear las interfaces de red en
- el nodo que está siendo administrado.
- 
-\end_layout
-
-\begin_layout Subsection
 Replicate
 \end_layout
 
@@ -6824,7 +8340,7 @@ Options: -h, --help show this help message and exit
 --prune remove objects (of all types) not found on the master
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Setup
 \end_layout
 
@@ -6942,7 +8458,7 @@ Se toma la opción de utilizar la arquitectura cliente-servidor.
 \end_layout
 
 \begin_layout Subsubsection
-Requerimientos de sistema y chequeo de versión de SO
+Requerimientos de sistema y chequeo de versión de sistema operativo
 \end_layout
 
 \begin_layout Itemize
@@ -7535,11 +9051,11 @@ y no está incluido en el default $PATH.
 PATH=/opt/puppetlabs/bin:$PATH;export PATH.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Tópicos generales de Puppet
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Module
 \end_layout
 
@@ -7587,7 +9103,7 @@ Todos los módulos accesibles por el Puppet Master están localizados en los
 puppet agent --configprint modulepath 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Node group 
 \end_layout
 
@@ -7597,7 +9113,7 @@ Los grupos de nodos o node groups permiten segmentar todos los nodos de
  colectada por 'facter tool'.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resources
 \end_layout
 
@@ -7802,7 +9318,7 @@ puppet apply
 puppet apply -e "user { 'galatea': ensure => 'present', }" 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Manifiests 
 \end_layout
 
@@ -7855,7 +9371,7 @@ Antes de aplicar cambios en el sistema, se puede utilizar la bandera
 puppet apply --noop 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Catálogos
 \end_layout
 
@@ -7880,7 +9396,7 @@ En la arquitectura estándar agent/master, los nodos requieren los catálogos
  cacheado.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Classes 
 \end_layout
 
@@ -7924,7 +9440,7 @@ clase
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Referencias de tipo
 \end_layout
 
@@ -8430,7 +9946,7 @@ Administración de zpools.
  Soporta vdevs con espejos, raidz, logs y spares
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 \begin_inset space ~
 \end_inset
 
@@ -8877,12 +10393,12 @@ with:
  para que las variables no sean visibles fuera de la clase.
 \end_layout
 
-\begin_layout Subsection
-Referencia de metaparametros
+\begin_layout Subsubsection
+Referencia de metaparámetros
 \end_layout
 
 \begin_layout Standard
-Metaparametros son atributos que trabajan con cualquier tipo de recurso,
+Metaparámetros son atributos que trabajan con cualquier tipo de recurso,
  incluido los tipos personalizados y los tipos definidos.
 \end_layout
 
@@ -8899,7 +10415,7 @@ Los metaparametros hacen cosas como agregar metadata a un recurso (alias,tag),
  (loglevel).
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Metaparametros disponibles
 \end_layout
 
@@ -9722,11 +11238,11 @@ tag => ['bootstrap', 'minimumrun', 'mediumrun'],
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
+\begin_layout Subsubsection
 Lenguaje
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Variables
 \end_layout
 
@@ -9753,7 +11269,7 @@ Puppet tiene muchas variables pre-definidas que pueden ser utilizadas en
 http://docs.puppetlabs.com/puppet/4.2/reference/lang_facts_and_builtin_vars.html
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Sintaxis
 \end_layout
 
@@ -9779,7 +11295,7 @@ Las variables solo pueden ser asignadas utilizando su nombre corto.
  Esto es, un alcance dado no puede asignar a variables en un ámbito exterior.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Asignar múltiples variables
 \end_layout
 
@@ -9787,7 +11303,7 @@ Asignar múltiples variables
 Se pueden asignar múltiples variables de una vez desde un array o hash.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Arrays
@@ -9838,7 +11354,7 @@ Cuando se asignan múltiples variables desde un array, debe haber un número
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Hashes
@@ -9869,7 +11385,7 @@ Cuando se asignan múltiples variables con un hash, las variables son listadas
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Resolución
 \end_layout
 
@@ -9920,7 +11436,7 @@ El nombre de la variable puede ser usado en cualquier lugar donde un valor
  Por defecto, variables sin asignar tienen el valor undef.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Interpolación
 \end_layout
 
@@ -9972,7 +11488,7 @@ Puppet puede resolver variables en strings entre comillas dobles, esto es
  Estas llaves opcionales, están permitidas solo dentro de strings.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Comportamiento
 \end_layout
 
@@ -10004,7 +11520,7 @@ mbito su alcance hijo, y cualquier alcance local puede sobre escribir localmente
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Acceso a variables fuera de alcance
@@ -10035,7 +11551,7 @@ $vhostdir = $apache::params::vhostdir
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Variables sin asignar y Modo Estricto (Strict Mode)
@@ -10082,7 +11598,7 @@ en el Puppet master y cualquier nodo que ejecuta Puppet aplica.
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Dependencia del orden de evaluación 
@@ -10109,7 +11625,7 @@ A diferencia de las declaraciones de recursos, las asignaciones de variables
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Nombramiento
@@ -10153,7 +11669,7 @@ Si el primer carácter es un guión bajo, esa variable debería ser accedida
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Nombres de variables calificados
@@ -10194,7 +11710,7 @@ Opcionalmente el nombre del primer namespace puede estár vacío, representando
  $::is_virtual.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Recursos
 \end_layout
 
@@ -10444,77 +11960,5 @@ Esto generalmente maneja el aspecto mas importante de un recurso en el sistema
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pagebreak
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Todo esto no se si ponerlo ni dónde
-\end_layout
-
-\begin_layout Standard
-****** 
-\end_layout
-
-\begin_layout Standard
-El demonio del puppet agent se ejecuta en segundo plano en cualquier nodo
- que administre Puppet.
- Cada treinta minutos, el demonio pide un catálogo (catálogo) del puppet
- master.
- Éste parsea todas las clases aplicadas a ese nodo y construye en catálogo
- que describe como ese nodo se supone que debe ser configurado, el cual
- es entregado al demonio del puppet agent.
- Luego, el demonio aplica cualquier cambio necesario para llevar al nodo
- al estado descrito en el catálogo.
- En vez de esperar a que el puppet agent realice su ejecución programada,
- se lo puede ejecutar:
-\end_layout
-
-\begin_layout Standard
-puppet agent –test
-\end_layout
-
-\begin_layout Standard
-******** 
-\end_layout
-
-\begin_layout Standard
-Puppet toma las descripciones expresadas en las declaraciones de recursos
- y utiliza proveedores específicos para el sistema operativo para realizarlas.
- Estos proveedores abstraen la complejidad de administrar diversas implementacio
-nes de tipos de recursos en diferentes sistemas.
- A todo esto se lo llama RAL (Resource Abstraction Layer).
-\end_layout
-
-\begin_layout Standard
-Puppet takes the descriptions expressed by resource declarations and uses
- providers specific to the operating system to realize them.
- These providers abstract away the complexity of managing diverse implementation
-s of resource types on different systems.
- As a whole, we call this system of resource types and providers the Resource
- Abstraction Layer or RAL.
- In the case of users, Puppet can use providers to manage users with LDAP,
- Windows ADSI, AIX, and several other providers depending on a node's system.
- Similarly, when you wish to install a package, you can stand back and watch
- Puppet figure out whether to use 'yum', 'apt', 'rpm', or one of several
- other providers for package management.
- This lets you set aside the implementation-related details of managing
- the resources, such as the names of commands (is it adduser or useradd
- ?), arguments for the commands, and file formats, and lets you focus on
- the end result.
-\end_layout
-
 \end_body
 \end_document
