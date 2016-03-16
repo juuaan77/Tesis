@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Script que instala puppet en los sistemas Ubuntu.
+
+cd /root/
+
+wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+
+dpkg -i /root/puppetlabs-release-pc1-trusty.deb
+
+apt-get update
+
+apt-get install puppet-agent
