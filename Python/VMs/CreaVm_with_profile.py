@@ -6,6 +6,7 @@ __author__ = 'juan'
 import commands
 import random
 import time
+import sys
 
 def CreaVm (numbers_VMs,perfil):
 
@@ -15,16 +16,12 @@ def CreaVm (numbers_VMs,perfil):
         perfil -> indico de que tipo de perfil deseo que sea la maquina
 
         return: none'''
-    for i in range(int(numbers_VMs)):
-        #Si el perfil es alumno, la maqiuna se llamara alumno y un numero aleatorio, lo mismo para docentes.
-        if perfil=="Alumnos":
-            name = "alumno"
-        else:
-            name = "docente"
 
+    for i in range(int(numbers_VMs)):
+        #Si el perfil es alumno, la maqiuna se llamara alumno y un numero aleatorio, lo mismo para docentes y GUI
 
         #Debo generar un nombre aleatorio para las VM
-        name = name + str(random.randrange(0,10000))
+        name = perfil + str(random.randrange(0,10000))
         #Debo generar una mac aleatoria.
         hexadecimal=[1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"]
         mac = "52:54:00:" + str(random.choice(hexadecimal)) + str(random.choice(hexadecimal))
@@ -71,4 +68,10 @@ def Parseo_IP(mac,hostname):
 
 if __name__ == '__main__':
 
-    CreaVm(1,"Alumnos")
+    print  "Ingrese la cantidad de maquinas alumnos, docentes, GUI que desea instalar"
+    nalumnos = int(input("¿Cuantas VM alumno desea crear?:"))
+    ndocentes = int(input("¿Cuantas VM docentes desea crear?:"))
+    nGUI = int(input("¿Cuantas VM GUI desea crear?:"))
+    CreaVm(nalumnos,"alumno")
+    CreaVm(ndocentes,"docente")
+    CreaVm(nGUI,"gui")

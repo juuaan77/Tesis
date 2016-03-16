@@ -1,0 +1,7 @@
+[proyectointegrador]
+name=proyecto integrador Arese-Diers
+comment ="Repositorio local para proyecto integrador"
+baseurl=ftp://192.168.122.1/proyectointegrador
+gpgcheck=0
+enabled=1
+priority=1
