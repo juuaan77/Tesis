@@ -89,14 +89,19 @@
 \begin_body
 
 \begin_layout Title
-Infraestructura tecnológica virtual con automatización y orquestación.
+\noindent
+
+\family sans
+\series bold
+\size huge
+Universidad Nacional de Córdoba
 \end_layout
 
 \begin_layout Author
 \begin_inset Graphics
-	filename Escudo_UNC_modernoo.png
-	width 4in
-	height 4in
+	filename Imagenes/Escudo_UNC_modernoo.png
+	width 10cm
+	height 10cm
 	keepAspectRatio
 	rotateOrigin centerBottom
 
@@ -112,8 +117,83 @@ Infraestructura tecnológica virtual con automatización y orquestación.
 
 \end_layout
 
-\begin_layout Author
-Juan Arese, Werner Diers
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\series bold
+\size largest
+Facultad de Ciencias Exactas, Físicas y Naturales
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\series bold
+\size larger
+Infraestructura tecnológica virtual con automatización y orquestación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\family sans
+\series bold
+Alumnos:
+\series default
+ Juan Arese, Werner Diers
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\family sans
+\series bold
+Director de PI: 
+\series default
+Eschoyez, Maximiliano Andrés 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\family sans
+\series bold
+Co-director de PI:
+\series default
+ Migliazzo, Oscar Andrés
 \end_layout
 
 \begin_layout Standard
@@ -135,6 +215,14 @@ pagebreak
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
 
 \end_inset
 
@@ -609,6 +697,46 @@ FreeBSD
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/sistemas operativos/sistemas_operativos_freebsd.png
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+FreeBSD logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 FreeBSD es un sistema operativo basado en BSD para arquitecturas Intel (x86
  e Itanium), AMD64, AlphaTM y UltraSPARC.
  
@@ -673,7 +801,146 @@ Soporte para multiprocesamiento simétrico con múltiples CPUs.
 \end_layout
 
 \begin_layout Subsection
+Debian
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/sistemas operativos/sistemas_operativos_debian.gif
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debian logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debian es una distribución libre, por completo manejada por la comunidad,
+ no está basada en ninguna otra distribución y por el contrario gran parte
+ de las distribuciones actuales están basadas en ella.
+ Debian es famoso por filosofía de estabilidad ante todo, por eso mismo,
+ no tiene un cronograma de lanzamiento de nuevas versiones.
+ Estas se liberán cuando estén realmente listas.
+ Es una distribución ampliamente utilizada tanto como escritorio como en
+ su versión para servidor.
+\end_layout
+
+\begin_layout Standard
+En su última versión, Debian 8 Jessie, las siguientes arquitecturas tienen
+ soporte: x32 (i386), x86-64 (amd64), Motorola/IBM PowerPC, MIPS, IBM S/390
+ y ARM.
+ 
+\end_layout
+
+\begin_layout Standard
+Este release incluye el nuevo estándar sistema de inicio 
+\emph on
+systemd.
+\end_layout
+
+\begin_layout Standard
+Principales características de Jessie:
+\end_layout
+
+\begin_layout Itemize
+Actualización de administrador de paquetes: apt 1.0.9.8.1 
+\end_layout
+
+\begin_layout Itemize
+Núcleo del sistema: Linux kernel 3.16 
+\end_layout
+
+\begin_layout Itemize
+Cambio a systemd.
+ 
+\end_layout
+
+\begin_layout Itemize
+Entornos gráficos : Gnome 3.14, KDE 4.14, 
+\end_layout
+
+\begin_layout Itemize
+Los puertos para el kernel de FreeBSD (kfreebsd-amd64 y kfreebsd-i386),
+ incluídos para versiones anteriores no son parte de esta versión.
+\end_layout
+
+\begin_layout Itemize
+Soporte UEFI para amd64, i386 y arm64.
+\end_layout
+
+\begin_layout Subsection
 Debian GNU/kFreeBSD
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/sistemas operativos/sistemas_operativos_debian_kfreebsd.png
+	lyxscale 5
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Debian/kFreeBSD logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -695,6 +962,46 @@ Debian GNU/kFreeBSD soporta ZFS desde el kernel.
 
 \begin_layout Subsection
 PC-BSD
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/sistemas operativos/sistemas_operativos_pcbsd.png
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PC-BSD logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -739,9 +1046,49 @@ CentOS
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/sistemas operativos/sistemas_operativos_centos.png
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CentOS logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 CentOS es un distribución Linux empresarial, basada en Red Hat Enterprise
  Linux.
- CentOS concuerca con la política de distribución de Red Hat y apunta a
+ CentOS concuerda con la política de distribución de Red Hat y apunta a
  ser binariamente compatible en su totalidad.
  Cada versión de esta distro tiene soporte por siete años en cuestiones
  de actualizaciones de mantenimiento y seguridad, lo que se traduce en un
@@ -750,9 +1097,9 @@ CentOS es un distribución Linux empresarial, basada en Red Hat Enterprise
 
 \begin_layout Standard
 La principal ventaja de esta distro es que se obtiene un conjunto estable
- de la mayoría de paquetes que por lo general solo incluyen correcciones
+ de la mayoría de paquetes que por lo general sólo incluyen correcciones
  de errores.
- En su última versión, CentOS 7 sólo está disponible para la arquitectura
+ En su última versión, CentOS 7 solo está disponible para la arquitectura
  x86_64, y representa un gran cambio frente a versiones anteriores del sistema
  operativo, como la inclusión de systemd, Gnome 3, GRUB 2, y el sistema
  de archivos XFS.
@@ -837,6 +1184,46 @@ En cuanto a systemd, es el reemplazo de init como demonio para iniciar servicios
 
 \begin_layout Subsection
 Solaris
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/sistemas operativos/sistemas_operativos_solaris.gif
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solaris logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -976,6 +1363,46 @@ lida que instalaciones nativas (también llamadas “bare-metal” o “metal-pe
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_tipos_3.png
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de virtualización completa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Para-virtualización 
 \end_layout
@@ -990,6 +1417,46 @@ Para-virtualización es un técnica de virtualización la cual implica ejecutar
  operativos no virtualizados.
  Por ejemplo, utilizan esta técnica KVM, XEN y VMware Server ESX.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_tipos_1.png
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de paravirtualización
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1008,12 +1475,60 @@ Virtualización a nivel del sistema operativo
 \end_layout
 
 \begin_layout Standard
-Esta técnica virtualiza un servidor físico a nivel del sistema operativo,
- permitiendo que múltiples servidores virtuales aislados y seguros se ejecuten
- sobre un solo servidor físico, pero con la particularidad de que tanto
- el sistema anfitrión como el huésped, comparten sistema operativo.
+También llamada virtualización basada enc ontenedores, esta técnica virtualiza
+ un servidor físico a nivel del sistema operativo, permitiendo que múltiples
+ servidores virtuales aislados y seguros se ejecuten sobre un solo servidor
+ físico.
+ Con la virtualización basada en contenedores, no existe la sobrecarga asociada
+ con tener a cada huésped ejecutando un sistema operativo completamente
+ instalado.
+ Este enfoque también puede mejorar el rendimiento porque hay un solo sistema
+ operativo encargándose de los avisos de hardware.
+ Una desventaja de la virtualización basada en contenedores, sin embargo,
+ es que cada invitado debe utilizar el mismo sistema operativo que utiliza
+ el host.
  Por ejemplo, Jaulas con Warden en FreeBSD, OpenVZ o Linux-Vserver usan
  esta técnica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_tipos_2.png
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de virtualización a nivel de SO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1066,11 +1581,55 @@ OpenVZ
 \end_layout
 
 \begin_layout Itemize
+Docker
+\end_layout
+
+\begin_layout Itemize
 VMWare Workstation 
 \end_layout
 
 \begin_layout Subsubsection
 VirtualBox
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_herramientas_virtualbox.png
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+VirtualBox logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1093,6 +1652,53 @@ AL día de la fecha, VirtualBox corre en Windows, Linux, Macintosh y Solaris
 
 \begin_layout Subsubsection
 KVM/Qemu 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_herramientas_kvm.png
+	height 3cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_herramientas_qemu.png
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+KVM/Qemu logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1125,13 +1731,48 @@ Qemu puede utilizarse como emulador y como virtualizador.
  
 \end_layout
 
-\begin_layout Standard
-Una lista de los sistemas operativos soportados por esta herramienta se
- puede econtrar aquí : http://www.linux-kvm.org/page/Guest_Support_Status
-\end_layout
-
 \begin_layout Subsubsection
 Xen 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_herramientas_xen.gif
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Xen logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1149,6 +1790,47 @@ zación.
 
 \begin_layout Subsubsection
 OpenVZ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_herramientas_openvz.png
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+OpenVZ logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1170,6 +1852,51 @@ OpenVZ es una herramienta de virtualización para Linux basada en contenedores.
  Esto hace la administración masiva de escenarios posible: se puede ejecutar
  un simple script de intérprete de comandos que actualice todos (o sólo
  algunos seleccionados) los contenedores a la vez.
+\end_layout
+
+\begin_layout Subsubsection
+Docker
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_herramientas_docker_2.jpg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Docker logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1255,6 +1982,45 @@ Cobbler
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/aprovisionamiento/aprovisionamiento_cobbler.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cobbler logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Cobbler es un servidor Linux de aprovisionamiento que centraliza y simplifica
  el control de los servicios incluyendo DHCP, TFTP y DNS con el propósito
  de realizar installaciones de sistemas operativos basadas en la red.
@@ -1283,6 +2049,47 @@ Cuenta con un sistema integrado para administración de configuración pero
 
 \begin_layout Subsubsection
 Fully Automatic Installation (FAI)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/aprovisionamiento/aprovisionamiento_fai.png
+	lyxscale 75
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+FAI logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1329,6 +2136,47 @@ Vagrant
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/aprovisionamiento/aprovisionamiento_vagrant.png
+	lyxscale 15
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Vagrant logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Vagrant provee entornos fáciles de reproducir, configurar construidos sobre
  tecnología industrial estándar.
  Vagrant es un software que crea y configura entornos de desarrollo virtuales
@@ -1341,6 +2189,47 @@ Vagrant provee entornos fáciles de reproducir, configurar construidos sobre
 
 \begin_layout Subsubsection
 Foreman 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/aprovisionamiento/aprovisionamiento_foreman.png
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Foreman logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1372,6 +2261,337 @@ Agrupar hosts y dirigirlos en conjunto, sin importar la ubicación.
 
 \begin_layout Itemize
 Reveer cambios históricos para auditoría y resolución de problemas.
+\end_layout
+
+\begin_layout Subsection
+Protocolo PXE
+\end_layout
+
+\begin_layout Standard
+El protocolo PXE (Preboot Execution Enviroment) es un estándar que les permite
+ a computadoras, dentro de una red, que todavía no fueron cargadas con un
+ sistema opetativo, ser configuradas e iniciadas remotamente por un administrado
+r.
+ Utiliza una extensión de opciones del protocolo DHCP.
+\end_layout
+
+\begin_layout Standard
+En resumen, PXE funciona del siguiente modo:
+\end_layout
+
+\begin_layout Standard
+El cliente inicializa el protocolo realizando un broadcast de DHCPDISCOVER,
+ conteniendo una extensión que identifica la solicitud como la de un cliente
+ que utiliza PXE.
+ Asumiendo que un servidor DHCP que implementa este protocolo extendido,
+ luego de algunos pasos intermedios, el servidor envía al cliente una lista
+ de Boot Servers.
+ El cliente descubre un Boot Server del tipo seleccionado y recibe el nombre
+ de un archivo ejecutable en dicho servidor.
+ El cliente utiliza TFTP (Trivial File Transfer Protocol) para descargar
+ el ejecutable.
+ Finalmente, el cliente inicia la ejecución del la imágen seleccionada.
+\end_layout
+
+\begin_layout Standard
+Si un cliente es utiliza PXE y el servidor no, el servidor ignoa el código
+ PXE previniendo la discontinuidad en las operaciones de DHCP y del Bootstrap
+ Protocol.
+\end_layout
+
+\begin_layout Standard
+PXE especifica los protocoles por los cuales un cliete solicita y descarga
+ una imágen ejecutable desde un Boot Server y los mínimos requisitos para
+ el entorno de ejecución cuando la imágen es corrida.
+\end_layout
+
+\begin_layout Standard
+Las ventajas de utilizar PXE incluyen:
+\end_layout
+
+\begin_layout Itemize
+La máquina cliente no necesariamente necesita un sistema opetarivo o un
+ disco rígido.
+ 
+\end_layout
+
+\begin_layout Itemize
+Como este protocolo es independiente del vendedor nuevos tipos de computadoras
+ pueden ser añadidos a la red.
+\end_layout
+
+\begin_layout Subsubsection
+PXE APIs
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Preboot Services API:
+\series default
+ Contiene muchas funciones de control e información.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Trivial File Transport Protocol (TFTP) API:
+\series default
+ Habilita la apertura y cierre de conexiones TFPT, la lectura desde una
+ conexión TFTP y la escritura en otra.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+User Datagram Protocol (UDP) API:
+\series default
+ Habilita la apertura y cierre de conexiones TFPT, la lectura desde una
+ conexión UDP y la escritura en otra.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Universal Network Driver Interface (UNDI) API:
+\series default
+ Habilita el control básico de entrada/salida a través de la interfaz de
+ red del cliente.
+ Esto permite la utilización de protocolos universales de controladores
+ para que el mismo controlador pueda ser usado en cualquier interfaz que
+ soporte esta API.
+\end_layout
+
+\begin_layout Standard
+El siguiente diagrama ilustra la relación entre los NBP y las APIs de PXE:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/pxe/pxe_api_1.png
+	lyxscale 50
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+APIs de PXE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Funcionamiento de PXE
+\end_layout
+
+\begin_layout Enumerate
+El cliente realiza un broadcast de un mensaje DHCPDISCOVER al puerto estándar
+ DHCP (UDP 67).
+ Un campo de opciones en este mensaje contiene:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Etiqueta para el identificador del cliente UUID.
+\end_layout
+
+\begin_layout Enumerate
+Etiqueta para la versión de UNDI (Universal Network Device Interface) del
+ cliente.
+\end_layout
+
+\begin_layout Enumerate
+Etiqueta para la arquitectura del cliente.
+\end_layout
+
+\begin_layout Enumerate
+La opción 60, Class ID, puesta a to “PXEClient:Arch:xxxxx:UNDI:yyyzzz”.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El servidor DHCP responde enviando un mensaje DHCPOFFER al cliente en el
+ puerto estándar DHCP (UDP 68).
+ El mensaje contiene parámetros estándar DHCP:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Una dirección IP para el cliente.
+\end_layout
+
+\begin_layout Enumerate
+Parámetros configurados por el administrador.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Del DHCPOFFER que es recivido, el cliente guarda:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+La dirección IP.
+\end_layout
+
+\begin_layout Enumerate
+Parámetros configurados por el administrador.
+\end_layout
+
+\begin_layout Enumerate
+Una lista de Boot Servers del campo “Boot Server” en las etiquetas PXE del
+ DHCPOFFER.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El cliente debe enviar una solicitud por la dirección del Boot Server al
+ servidor y esperar por el acuse de recibo (acknowledgment – ACK).
+\end_layout
+
+\begin_layout Enumerate
+El cliente selecciona y descubre un Boot Server.
+ Este paquete puede ser enviado por broadcast al puerto 67.
+ Este paquete es el mismo que el DHCPDISCOVER inicial en el paso uno,excepto
+ que es codificado como DHCPREQUEST y ahora contiene lo siguiente:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+La IP asignada al cliente por el servidor DHCP.
+\end_layout
+
+\begin_layout Enumerate
+Una etiqueta con el identificador del cliente (UUID).
+\end_layout
+
+\begin_layout Enumerate
+Una etiqueta con la versión de UNDI del cliente.
+\end_layout
+
+\begin_layout Enumerate
+Una etiqueta con la arquitectura del cliente.
+\end_layout
+
+\begin_layout Enumerate
+La opción 60, Class ID, puesta a to “PXEClient:Arch:xxxxx:UNDI:yyyzzz”.
+\end_layout
+
+\begin_layout Enumerate
+El tipo de Boot Server en el campo de opciones de PXE.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El Boot Server envía un paquete DHCPACK unicast al cliente.
+ Este ACK contiene:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El nombre del archivo ejecutable.
+\end_layout
+
+\begin_layout Enumerate
+Parámetros de configuración MTFTP.
+\end_layout
+
+\begin_layout Enumerate
+Otras opciones necesarias para que el NBP pueda ser ejecutado.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El cliente descarga el archivo ejecutable utilizando TFTP (puerto 69).
+ El archivo descargado y la ubicación del código descargado en memoria depende
+ de la arquitectura de la CPU del cliente.
+\end_layout
+
+\begin_layout Enumerate
+El cliente PXE determina si es necesaria la verificación de autenticidad
+ del archivo descargado.
+ Si se requiere se envía otro DHCPREQUEST preguntando por credenciales.
+\end_layout
+
+\begin_layout Enumerate
+El cliente inicia la ejecución del código descargado.
+\end_layout
+
+\begin_layout Standard
+El cliente PXE esperará por la información necesaria unos 60 segundos.
+ La etapa DHCPDISCOVER puede repetirse hasta cuatro veces, con tiempos de
+ espera de 4,8,16 y 32 segundos respectivamente.
+ Si el cliente recive la DHCPOFFER dentro de esl tiempo, se procederá con
+ DHCPREQUEST.
+ Si no, se detendrá con un error de PXE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/pxe/pxe_proceso.png
+	lyxscale 50
+	width 15.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Proceso de PXE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1470,6 +2690,47 @@ Puppet
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/orquestacion/orquestacion_puppet.png
+	lyxscale 75
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Puppet logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Es un sistema de orquestación que permite definir el estado de la infraestructur
 a, forzando automáticamente que se llegue al estado correcto definido.
 \end_layout
@@ -1537,6 +2798,46 @@ Chef
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/orquestacion/orquestacion_chef.png
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Chef logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Es una herramienta de automatización de infraestructura de sistemas o administra
 ción de configuraciones.
  Se enfoca en seguir un conjunto de pasos (llamados recetas) con el propósito
@@ -1587,6 +2888,46 @@ Chef Server es soportado sobre RHEL/CentOS/Oracle Linux, y Ubuntu.
 
 \begin_layout Subsubsection
 Ansible 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/orquestacion/orquestacion_ansible.png
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ansible logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1677,7 +3018,57 @@ o nativo, recomendación de profesionales que la han utilizado y en base
 \end_layout
 
 \begin_layout Section
-KVM
+KVM/Qemu
+\end_layout
+
+\begin_layout Subsection
+Arquitectura
+\end_layout
+
+\begin_layout Standard
+En este Proyecto se utiliza la técnica de virtualización completa.
+ En particular, la arquitectura que utiliza KVM es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/kvm/kvm_arquitectura_1.png
+	lyxscale 50
+	width 15.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de arquitecura de KVM/Qemu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1860,18 +3251,11 @@ KVM no soporta kernels de real time.
 \end_layout
 
 \begin_layout Subsection
-Instalación de paquetes de virtualización en CentOS 7 existente 
+Instalación de paquetes de virtualización
 \end_layout
 
 \begin_layout Standard
 Se deben ejecutar los siguientes comandos:
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1887,22 +3271,8 @@ yum install qemu-kvm qemu-img
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Y se recomienda la instalación de los siguientes paquetes, con el siguiente
  comando:
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1911,13 +3281,6 @@ Y se recomienda la instalación de los siguientes paquetes, con el siguiente
 yum install kvm libvirt python-virtinst qemu-kvm virt-manager libvirt qemu-syste
 m-x86 qemu-img libvirt-python libvirt-client virt-install virt-viewer python-vir
 tinst
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -1929,23 +3292,9 @@ Para conocer como utilizar virt-install revisar el man del mismo con:
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \family typewriter
 man virt-install
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1958,23 +3307,9 @@ Se puede automatizar la instalación de un sistema operativo utilizando un
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \family typewriter
---extra-args="ks=http://192.168.122.1/ks.cfg 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
+--extra-args="ks=http://192.168.100.1/ks.cfg 
 \end_layout
 
 \begin_layout Standard
@@ -1982,7 +3317,7 @@ Como se ve, el archivo se llama (en este caso)
 \family typewriter
 ks.cfg 
 \family default
-y est alojado en un host con la direccioón IP 192.18.122.1
+y est alojado en un host con la direccioón IP 192.18.100.1
 \end_layout
 
 \begin_layout Subsection
@@ -2331,13 +3666,6 @@ Para marcar la red por defecto para iniciar automáticamente:
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \family typewriter
 # virsh net-autostart default
@@ -2358,13 +3686,6 @@ Network default marked as autostarted
 
 \begin_layout Standard
 Para iniciar la red por defecto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2393,13 +3714,6 @@ Una vez que la red por defecto de libvirt está corriendo, se verá un dispositi
  El nuevo dispositivo utiliza NAT e IP forwarding para conectarse a la red
  física.
  No añadir nuevas interfaces.
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2561,23 +3875,9 @@ libvirt añade reglas de iptables las cuales permiten el tráfico desde y
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \family typewriter
 net.ipv4.ip_forward = 1 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -2632,14 +3932,7 @@ Una vez que la configuración del host está completa, una máquina virtual
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-NOTA: Definir la dirección MAC es opcional.
+Definir la dirección MAC es opcional.
  Si no se define una, una dirección MAC es automáticamente generada y usada
  como la dirección MAC del dispositivo bridge utilizado por la red.
  Definirla manualmente es útil para mantener la consistencia o la facilidad
@@ -2687,13 +3980,6 @@ NOTA: Definir la dirección MAC es opcional.
 
 \family typewriter
 </interface>
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -5948,59 +7234,46 @@ Modelado
 
 \begin_layout Standard
 Cobbler utiliza objetos para definir la configuración de aprovisionamiento.
- A medida que nos movemos hacia abajo del árbol de objetos, las variables
- se sobre escriben y se añaden a la información definida en los objetos
- superiores.
+ A medida que se desciende por el árbol de objetos, las variables se sobre
+ escriben y se añaden a la información definida en los objetos superiores.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset Float figure
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/cobbler/cobbler_modelado.png
+	lyxscale 50
+	width 15.5cm
+	height 10cm
+	keepAspectRatio
+
+\end_inset
 
 
-\backslash
-begin{figure}[h] 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelado de Cobbler
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
 
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-includegraphics[width=4in,height=4in,keepaspectratio]{cobbler_modelado}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-protect
-\backslash
-caption{Modelado de Cobbler} 
-\backslash
-label{cobbler_modelado}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{figure}
 \end_layout
 
 \end_inset
@@ -6016,8 +7289,13 @@ Distros
 Distribución que se desea instalar.
  Importar el contenido de la distro ayuda a disminuir el tiempo de instalación
  ya que no se utilizan fuentes de instalación externas.
- Generalmente es más fácil utilizar el comando 'import' en vez de añadir
- la distribución manualmente.
+ Generalmente es más fácil utilizar el comando 
+\family typewriter
+\emph on
+import 
+\family default
+\emph default
+en vez de añadir la distribución manualmente.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6025,11 +7303,11 @@ Profiles
 \end_layout
 
 \begin_layout Standard
-Un profile asocia una distribución a opciones especializadas adicionales,
- como puede ser una kickstart.
- Los profiles son el núcleo del aprovisionamiento y debe existir al menos
+Un perfil o profile asocia una distribución a opciones especializadas adicionale
+s, como puede ser un kickstart.
+ Los perfiles son el núcleo del aprovisionamiento y debe existir al menos
  uno por cada distribución.
- Un profile puede representar, por ejemplo, una configuración de web server
+ Un perfil puede representar, por ejemplo, una configuración de web server
  o de escritorio.
 \end_layout
 
@@ -7168,6 +8446,73 @@ Si se especifica zerombr, y si es su único argumento, cualquier tabla de
 \end_layout
 
 \begin_layout Subsubsection
+Snippets
+\end_layout
+
+\begin_layout Standard
+Los snippets son una forma de reutilizar bloques de código entre kickstarts
+ (también funcionan en otros tipos de archivos).
+ Esto quiere decir que cada vez que el texto SNIPPET aparezca en un archivo
+ kickstart será reemplazado por los contenidos en el archivo correspondiente
+ dentro de 
+\emph on
+/var/lib/cobbler/snippets/.
+ 
+\emph default
+Esto permite la reutilización de código en cada plantilla, aliviando también
+ la lectura de las mismas.
+\end_layout
+
+\begin_layout Standard
+Para utilizar un snippet, es necesario crear un archivo en el directorio
+ 
+\emph on
+/var/lib/cobbler/snippets/nuevo_snippet 
+\emph default
+y, en un archivo kickstart, al momento de llamar a esta porción de código
+ se utiliza:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\emph on
+$SNIPPET('nuevo_snippet')
+\end_layout
+
+\begin_layout Standard
+Los snippets pueden ser guardados en subdirectorios para una mejor organización.
+ El orden de precedencia será como sigue:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\emph on
+/var/lib/cobbler/snippets/$subdirectorio/$nombre_del_snippet 
+\end_layout
+
+\begin_layout Standard
+Para referenciarlo desde el archivo kickstart, ahora se tiene:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\emph on
+$SNIPPET('direcorio/nuevo_snippet ')
+\end_layout
+
+\begin_layout Standard
+Cobbler no reconoce caracteres que no estén en el alfabeto inglés, por este
+ motivo se recomienda no utilizar caracteres especiales como 
+\emph on
+ñ
+\emph default
+ u otros que lleven tilde.
+\end_layout
+
+\begin_layout Subsubsection
 Firewall
 \end_layout
 
@@ -7782,20 +9127,21 @@ Puppet
 \end_layout
 
 \begin_layout Standard
-El agente y el master se comunican vía HTTPS con client-verification.
- El nodo maestro provee una interfaz HTTPS con varios extremos disponibles.
- Cuando se pide o enviá cualquier cosa al master, el agente hace un pedido
+El agente y el servidor se comunican vía HTTPS con verificación de cliente.
+ El nodo maestro (servidor) provee una interfaz HTTPS con varios extremos
+ disponibles.
+ Cuando se pide o enviá cualquier cosa al servidor, el agente hace un pedido
  HTTPS o a uno de esos extremos.
 \end_layout
 
 \begin_layout Standard
-Client-vefied HTTPS quiere decir que cada master o agente tiene un identificador
- por certificado SSL y examinan los certificados de sus contrapartes para
+Client-vefied HTTPS quiere decir que cada maestro o agente tiene un identificado
+r por certificado SSL y examinan los certificados de sus contrapartes para
  decidir si permite un intercambio de información.
  Puppet incluye un constructor de certificado de autorización para administrar
  los certificados.
  Los agentes puede pedir automáticamente los certificados vía la API HTTP
- del master.
+ del maestro.
  El administrador del nodo maestro puede usar el comando 
 \family typewriter
 puppet cert
@@ -7814,16 +9160,14 @@ Puppet usualmente corre bajo la arquitectura cliente-servidor, pero además,
  puede correr en una arquitectura autocontenida.
  La decisión determina que paquetes serán instalados y que configuraciones
  extra necesarias se harán.
- Adicionalmente, usted se puede considerar usar la PuppetDB, la cual permite
- funciones extra de puppet y vuelve mas fácil consultar y analizar la informació
-n de la infraestructura de puppet.
+ 
 \end_layout
 
 \begin_layout Standard
 Se toma la opción de utilizar la arquitectura cliente-servidor.
- Se debe completar la instalación y configuración de todos los puppet masters
+ Se debe completar la instalación y configuración de todos los puppet servers
  antes de instalar cualquier agente.
- El master necesariamente debe correr en un sistema basado en Unix.
+ El servidor necesariamente debe correr en un sistema basado en Unix.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7831,35 +9175,53 @@ Requerimientos de sistema y chequeo de versión de sistema operativo
 \end_layout
 
 \begin_layout Itemize
-Hardware: El puppet agent no tiene requerimientos particulares de hardware
- y corre prácticamente en cualquier cosa, sin embargo, el servidor es un
+
+\series bold
+Hardware:
+\series default
+ El agente Puppet no tiene requerimientos particulares de hardware y corre
+ prácticamente en cualquier computadora, sin embargo, el servidor es un
  recurso intensivo y debe ser instalado en un servidor robusto y dedicado.
- Como mínimo, el servidor debe tener 2 procesadores y al menos 1GB de RAM,
- para administrar eficientemente 1000 nodos, debe poseer entre 2 y 4 procesadore
-s y 4GB de RAM.
+ Como mínimo, el servidor debe tener dos procesadores y al menos 2GB de
+ RAM, para administrar eficientemente mil nodos, debe poseer entre 2 y 4
+ procesadores y 4GB de RAM.
  
 \end_layout
 
 \begin_layout Itemize
-Sistemas operativos soportados: Hay una variedad importante de distribuciones
- Linux que soportan puppet, entre ellas destaca la utilizada para la realización
- del trabajo, CentOS.
+
+\series bold
+Sistemas operativos soportados:
+\series default
+ Hay una gran variedad de distribuciones Linux que soportan puppet, entre
+ ellas destaca la utilizada para la realización del Proyecto, CentOS 7.
  
 \end_layout
 
 \begin_layout Itemize
-Ruby: Se soportan varias versiones de Ruby, pero se recomienda el uso de
- las versiones 2.1.x 
+
+\series bold
+Ruby:
+\series default
+ Se soportan varias versiones de Ruby, pero se recomienda el uso de las
+ versiones 2.1.x.
 \end_layout
 
 \begin_layout Itemize
-Librerías obligatorias: Facter 2.4.3 o posterior, Hiera 2.0.0 o posterior, json
- gem, cualquier versión moderna, rgen gem 0.6.6 o posterior 
+
+\series bold
+Librerías obligatorias:
+\series default
+ Facter 2.4.3 o posterior, Hiera 2.0.0 o posterior, json gem cualquier versión
+ moderna, rgen gem 0.6.6 o posterior.
 \end_layout
 
 \begin_layout Itemize
-Librerías opcionales: msgpack gem es requerido si se utiliza msgpack racionaliza
-ción.
+
+\series bold
+Librerías opcionales:
+\series default
+ msgpack gem es requerido si se utiliza msgpack racionalización.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7873,13 +9235,21 @@ En un agent/master deployment se debe preparar la red para el tráfico de
 \end_layout
 
 \begin_layout Itemize
-Firewall: El master debe permitir conexiones entrantes al puerto 8140 y
- los agentes deben ser capaces de conectarse a ese puerto.
+
+\series bold
+Firewall:
+\series default
+ Si no se deshabilita, el servidor debe permitir conexiones entrantes al
+ puerto 8140 y los agentes deben ser capaces de conectarse a ese puerto.
  
 \end_layout
 
 \begin_layout Itemize
-Resolución de nombres: Cada nodo debe tener un nombre único.
+
+\series bold
+Resolución de nombres:
+\series default
+ Cada nodo debe tener un nombre único.
 \end_layout
 
 \begin_layout Subsection
@@ -7887,23 +9257,10 @@ Instalación
 \end_layout
 
 \begin_layout Standard
-Primero se debe instalar puppet master.
- Para ello:
+Primero se debe instalar puppetserver.
+ Para ello habilitar los paquetes de los repositorios de Puppet Labs:
 \end_layout
 
-\begin_layout Enumerate
-Habilitar los paquetes de los repositorios de puppet labs: En los sistemas
- basados en yum el repositorio es soportado por las últimas versiones de
- RHEL y derivados.
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-En el caso de REHL 7 y derivados habilitamos el repositorio con el siguiente
- comando (versión 4.2.2):
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 
 \family typewriter
@@ -7911,51 +9268,18 @@ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
  
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Para versiones anteriores, como la 3.8 utilizar el siguiente:
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
-
-\family typewriter
-sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
- 
+Instalar el puppet master con el siguiente comando:
 \end_layout
 
-\begin_layout Standard
-En el caso de RHEL 6 y derivados:
-\family typewriter
-
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-Instalar el puppet master con el siguiente comando: 
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 
 \family typewriter
 yum install puppetserver
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-No iniciar el servicio aún
+\begin_layout Standard
+No iniciar el servicio aún.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7999,7 +9323,7 @@ JAVA_ARGS="-Xms2g -Xmx2g"
 \end_layout
 
 \begin_layout Standard
-Si se desea por ejemplo, utilizar 512MB se debe reemplazar 2g por 512m:
+Si se desea por ejemplo, utilizar 1536MB se debe reemplazar 2g por 1536m:
 \end_layout
 
 \begin_layout Standard
@@ -8016,17 +9340,20 @@ Si se desea por ejemplo, utilizar 512MB se debe reemplazar 2g por 512m:
 \begin_inset space \space{}
 \end_inset
 
-JAVA_ARGS="-Xms512m -Xmx512m"
-\end_layout
-
-\begin_layout Standard
-Luego, para aplicar los cambios, se debe reiniciar el servicio con:
-\end_layout
-
-\begin_layout Standard
-
+JAVA_ARGS="-Xms
+\family default
+1536
 \family typewriter
-service puppetserver restart
+m -Xmx
+\family default
+1536
+\family typewriter
+m"
+\end_layout
+
+\begin_layout Standard
+Luego, para aplicar los cambios, se debe reiniciar el servicio.
+ No obstante, no se recomienda utilizar puppetmaster con menos de 2GB.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8034,9 +9361,23 @@ Instalar el paquete puppet-agent
 \end_layout
 
 \begin_layout Standard
-Una vez habilitado el repositorio como se indicó anteriormente, en los sistemas
- basados en yum como CentOS el puppet-agent se instala con el siguiente
- comando:
+Según sea el sistema operativo sobre el que se instalará, se tiene:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Centos y derivados:
+\series default
+ Del mismo modo que para el servidor, es necesario añadir el repositorio
+ y luego instalar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+ 
 \end_layout
 
 \begin_layout Standard
@@ -8046,167 +9387,286 @@ sudo yum install puppet-agent
 \end_layout
 
 \begin_layout Standard
-No se inicia el servicio aún.
- Por defecto, el valor del server es puppet, si se nombró de otra forma
- a la máquina servidora del puppet server, se debe editar esto.
+
+\series bold
+Ubuntu y derivados: 
+\series default
+Habilitar el repositorio según sea el caso como el siguiente ejemplo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+wget https://apt.puppetlabs.com/puppetlabs-release-pc1-wheezy.deb
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo dpkg -i puppetlabs-release-pc1-wheezy.deb
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo apt-get update
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+sudo apt-get install puppet-agent
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Windows: 
+\series default
+Descargar el paquete instalador desde https://downloads.puppetlabs.com/windows/?_g
+a=1.232745247.1868267244.1457442550
+\end_layout
+
+\begin_layout Itemize
+Arquitectura x64: Se recomienda el uso de 
+\family typewriter
+puppet-agent-<VERSION>-x64.msi 
+\family default
+o 
+\family typewriter
+puppet-agent-<VERSION>-x86.msi
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Arquitectura x86: Debe utilizar 
+\family typewriter
+puppet-agent-<VERSION>-x86.msi
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+La instalación puede ser gráfica o automática.
+ Para la última, desde el cuadro 
+\begin_inset Quotes eld
+\end_inset
+
+Ejecutar
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+msiexec /qn /norestart /i puppet-agent-<VERSION>-x64.msi PUPPET_MASTER_SERVER=pup
+pet
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No iniciar el servicio aún.
+ 
+\end_layout
+
+\begin_layout Standard
+Por defecto, el valor del hostname de servidor es puppet, si se nombró de
+ otra forma a la máquina servidora del puppet server, se debe editar esto.
 \end_layout
 
 \begin_layout Subsubsection
 Configuraciones para los agentes
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph
 Básicas:
 \end_layout
 
 \begin_layout Itemize
-server – El nombre del master server al cual se le pediran los manifiestos.
- Por defecto es Puppet 
+server: El nombre del nodo maestro al cual se le pedirán los manifiestos.
+ Por defecto es puppet 
 \end_layout
 
 \begin_layout Itemize
-certname – Nombre con el cual el nodo pide el certificado y se presenta
+certname: Nombre con el cual el nodo agente pide el certificado y se presenta
  al servidor.
  
 \end_layout
 
 \begin_layout Itemize
-environment – Indica el entorno solicitado cuando se contacta al master.
- De cualquier forma, el master puede configurarse para ignorar esta configuració
-n.
+environment: Indica el entorno solicitado cuando se contacta al maestro.
+ De cualquier forma, el maestro puede configurarse para ignorar esta configuraci
+ón.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph
 Comportamiento de la ejecución: 
 \end_layout
 
 \begin_layout Itemize
-noop – Si esta habilitado, el agnete no reializara ningun trabajo, en cambio,
- mirara que cambios se haria y lo reporta al master 
-\end_layout
-
-\begin_layout Itemize
-priority – Permite asignar el valor “nice” para evitar que otras aplicaciones
- de la CPU no mueran de hambre mientras se aplican los catálogos 
-\end_layout
-
-\begin_layout Itemize
-report – indica si se deben enviar reportes, por defecto es true.
+noop: Si está habilitado, el agente no reializará ningún trabajo, en cambio
+ mirará qué cambios tendría que realizar y lo reporta al servidor.
  
 \end_layout
 
 \begin_layout Itemize
-tags – Limita a los agentes a correr recursos con ciertas etiquetas.
+priority: Permite asignar el valor “nice” para evitar que otras aplicaciones
+ de la CPU no mueran por inanición mientras se aplican los catálogos.
+\end_layout
+
+\begin_layout Itemize
+report: Indica si se deben enviar reportes, por defecto es 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Itemize
+tags: Limita a los agentes a correr recursos con ciertas etiquetas.
  
 \end_layout
 
 \begin_layout Itemize
-usecacheonfailure – se utiliza para tomar el ultimo buen catálogo si el
- master no posee uno bueno.
+usecacheonfailure: Se utiliza para tomar el último buen catálogo si el master
+ no posee uno bueno.
  
 \end_layout
 
 \begin_layout Itemize
-prerun_command and postrun_command – Comandos que se desean correr de cada
- lado del puppet
+prerun_command y postrun_command: Comandos que se desean correr de cada
+ lado de puppet
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph
 Comportamiento del servicio: 
 \end_layout
 
 \begin_layout Itemize
-runinterval – indica cada cuanto tiempo el agnete se contacta con el servidor
+runinterval: Indica cada cuanto tiempo el agente se contacta con el servidor
  para pedirle los manifiestos.
- Por defecto es de 30minutos.
+ Por defecto es 30 minutos.
  
 \end_layout
 
 \begin_layout Itemize
-waitforcert – Indica al agent que persista si no puede obtener su certificado.
- Por defecto esta habilitado.
+waitforcert: Indica al agente que persista si no puede obtener su certificado.
+ Por defecto está habilitado.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph
 Útilies cuando se ejecutan los agentes desde Cron: 
 \end_layout
 
 \begin_layout Itemize
-splay and splaylimit – Se utiliza para sincronizar el agente y el server
- si el puppet agent utiliza un cron en lugar del demonio.
+splay y splaylimit: Se utiliza para sincronizar el agente y el servidor
+ si el primero utiliza un cron en lugar del demonio.
  
 \end_layout
 
 \begin_layout Itemize
-daemonize – se debe colocar esta opción en falso si se utiliza un cron 
+daemonize: Se debe colocar esta opción en falso si se utiliza un cron.
 \end_layout
 
 \begin_layout Itemize
-onetime – sale luego de terminar el puppet actual.
- Debe ser true si se utiliza un cron.
+onetime: Sale luego de terminar el puppet actual.
+ Debe ser 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+ si se utiliza un cron.
 \end_layout
 
-\begin_layout Standard
-Configuraciones para los master:
+\begin_layout Subsubsection
+Configuraciones para los servidores:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph
 Básicas:
 \end_layout
 
 \begin_layout Itemize
-dns_alt_names – Una lista de los hostname de los servers permitidos para
- usar cuando actuan como masters environment
+dns_alt_names: Una lista de los hostnames de los servidores permitidos para
+ usar cuando actúan como 
+\begin_inset Quotes eld
+\end_inset
+
+masters environment
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
-path – Indica la hubicacion del entorno.
+path: Indica la ubicación del entorno.
  
 \end_layout
 
 \begin_layout Itemize
-basemodulepath – una lista de las hubicaciones que contienen modulos que
- pueden ser usados en todos los environments 
+basemodulepath: Una lista de las ubicaciones que contienen módulos que pueden
+ ser usados en todos los entornos.
 \end_layout
 
 \begin_layout Itemize
-manifest – EL principal punto de entrada para compilar los catálogos.
- Por defecto es site.pp 
+manifest: El principal punto de entrada para compilar los catálogos.
+ Por defecto es 
+\begin_inset Quotes eld
+\end_inset
+
+site.pp
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
-reports – que controlador de reportes se usa.
+reports: Controlador de reportes que se usa.
 \end_layout
 
-\begin_layout Standard
-Configuraciones relacionadas a Rack:
-\end_layout
-
-\begin_layout Itemize
-ssl_client_header and ssl_client_verify_header – Son utilizados cunado corre
- el master puppet como un rack de aplicaciones.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Paragraph
 Configuraciones de CA:
 \end_layout
 
 \begin_layout Itemize
-ca - si actua como un ca 
+ca: Si actúa como un autoridad de certificación.
 \end_layout
 
 \begin_layout Itemize
-ca_ttl – indica por cuanto tiempo son validos los certificados 
+ca_ttl: Indica por cuánto tiempo son válidos los certificados.
 \end_layout
 
 \begin_layout Itemize
-autosign – indica si los certifcados deben ser autofirmados.
+autosign: Indica si los certifcados deben ser firmados de forma automática
+ o manual.
 \end_layout
 
 \begin_layout Standard
-Como ejemplo de configuración se tiene:
+Como ejemplo de configuración se tiene, en el nodo que corre puppetserver,
+ a la configuración por defecto, añadir:
 \end_layout
 
 \begin_layout Standard
@@ -8214,21 +9674,6 @@ Como ejemplo de configuración se tiene:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-En el nodo que corre puppetserver, a la configuración por defecto, añadir:
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-[...]
 \end_layout
 
 \begin_layout Standard
@@ -8249,47 +9694,20 @@ server = puppet
 runinterval = 2m
 \end_layout
 
-\begin_layout Standard
-
-\family typewriter
-[...]
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Ejecutar puppet
 \end_layout
 
 \begin_layout Standard
-Para el Puppet master, si es el único master en el deployment, o si actuará
- como el servidor de CA para un sitio con múltiples masters, se debe ejecutar
+Para el puppet server, si es el único maestro en el deployment, o si actuará
+ como el servidor de CA para un sitio con múltiples maestros, se debe ejecutar
  puppet como sigue:
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
 sudo puppet master --verbose --no-daemonize
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -8307,13 +9725,6 @@ Para corroborar la creación y firmado del servicio:
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \family typewriter
 sudo puppet cert list --all
@@ -8327,37 +9738,18 @@ sudo puppet cert list --all
 \end_layout
 
 \begin_layout Standard
-En caso que el master no haga las veces de CA, parasolicitar un certificado,
+En caso que el maestro no haga las veces de CA, para solicitar un certificado,
  ejecutar:
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+\family typewriter
 sudo puppet agent --test --ca_server=<SERVER> 
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Luego en el master que oficia de CA:
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
+Luego en el nodo maestro que sí oficia de CA:
 \end_layout
 
 \begin_layout Standard
@@ -8373,51 +9765,12 @@ sudo puppet cert --allow-dns-alt-names sign <NAME>
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Este último es para firmar el certificado.
- Luego en el nuevo master, ejecutar nuevamente 
+ Luego en el nuevo maestro, ejecutar nuevamente 
 \family typewriter
 sudo puppet agent --test --ca_server=<SERVER> 
 \family default
 para recibir el certificado.
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Nota:
-\series default
- si se recive 
-\family typewriter
---bash: puppet: command not found error, 
-\family default
-entonces se tiene instalada la versión 4.X de Puppet.
- El directorio donde en esta versión se instalan los binarios, es 
-\family typewriter
-/opt/puppetlabs/bin 
-\family default
-y no está incluido en el default $PATH.
- Para incluir estos binarios en el default $PATH, añadirlos ejecutando:
- 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-PATH=/opt/puppetlabs/bin:$PATH;export PATH.
 \end_layout
 
 \begin_layout Subsection
@@ -8430,7 +9783,7 @@ Module
 
 \begin_layout Standard
 Un módulo o module, es un conjunto de código de Puppet enpaquetado junto
- con los otros archivos y datos que se necesita administrar sobre algún
+ con los otros archivos y datos, que se necesita administrar sobre algún
  aspecto del sistema.
  Consiste en una estructura predefinida de directorios que ayudan a Puppet
  a encontrar los contenidos del módulo.
@@ -8456,7 +9809,7 @@ Los módulos son auto-contenidos y separados.
 \end_layout
 
 \begin_layout Standard
-Todos los módulos accesibles por el Puppet Master están localizados en los
+Todos los módulos accesibles por el puppet master están localizados en los
  directorios especificados por la variable 
 \family typewriter
 'modulepath'
@@ -8488,8 +9841,8 @@ Resources
 
 \begin_layout Standard
 Cada recurso o resource, describe algún aspecto de un sistema y su estado,
- como por ejemplo, un servicio que debería estar ejectándose o un paquete
- que se quiere esté instalado.
+ como por ejemplo, un servicio que debería estar ejecutándose o un paquete
+ que se quiere instalado.
  El bloque de código que describe un recurso se llama declaración de recurso
  (resource declaration).
  Estas declaraciones de recurso están escritas en código Puppet, un DLS
@@ -8664,174 +10017,234 @@ Una declaración de recurso seguirá un patrón como el de abajo:
 \begin_layout Standard
 
 \family typewriter
-tipo {'título': atributo => 'valor', }
-\end_layout
-
-\begin_layout Standard
-Se puede utilizar la sintaxis de declaración de recursos conla herramienta
- '
-\family typewriter
-puppet apply
-\family default
-' con la bandera 
-\family typewriter
--e (--execute)
-\family default
- para hacer cambios rápidos en el sistema.
- Por ejemplo, para crear un usuario llamado 'galatea':
+tipo {'título': 
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
-puppet apply -e "user { 'galatea': ensure => 'present', }" 
-\end_layout
-
-\begin_layout Subsubsection
-Manifiests 
-\end_layout
-
-\begin_layout Standard
-Un manifiesto o manifest, es un archivo de texto que contiene código Puppet
- y posee la extensión 
-\family typewriter
-.pp
-\family default
-.
- Para comprobar la sintaxis de un manifiesto se puede utilizar:
+atributo => 'valor', 
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
-puppet parser validate <manifiesto.pp> 
+}
 \end_layout
 
+\begin_layout Itemize
+
+\series bold
+Título: 
+\series default
+Es un string que identifica un recurso para el compilador de Puppet.
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-El parseador no retornará nada si no hay errores, en caso de que se detecte
- un error se debe corregirlo antes de continuar.
- Si se trata de aplicar un manifiesto que no ha sido declarado, no cambiará
- nada en el sistema.
- Para ésto se debe crear un .pp que contenga un sentencia:
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-include módulo::clase
-\end_layout
-
-\begin_layout Standard
-Antes de aplicar cambios en el sistema, se puede utilizar la bandera 
-\family typewriter
-–noop
-\family default
- para compilar el catálogo (catálogo) y notificar los cambios que Puppet
- habría realizado si hubiera sido ejecutado sin 
-\family typewriter
-–noop
-\family default
-.
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-puppet apply --noop 
-\end_layout
-
-\begin_layout Subsubsection
-Catálogos
-\end_layout
-
-\begin_layout Standard
-Los manifiestos de Puppet pueden usar lógica condicional para describir
- muchas configuraciones de nodos como una.
- Antes de configurar un nodo, Puppet compila los manifiestos en un catálogo,
- el cual solo es valido para un único nodo y no contiene lógica ambigua.
-\end_layout
-
-\begin_layout Standard
-Los catálogos son documentos estáticos los cuales contienen recursos y relacione
-s.
+El título no tiene que coincidir con lo que va a administrar en el sistema,
+ pero a menudo se desea eso.
  
 \end_layout
 
 \begin_layout Standard
-En la arquitectura estándar agent/master, los nodos requieren los catálogos
- al Puppet Server, el cual los compila cuando se lo requieren.
- Los agentes mantienen en cache sus mas recientes catálogos, si al pedir
- el catálogo, el master falla al compilarlo, ellos reusaran su catálogo
- cacheado.
+Los títulos deben ser únicos por tipos de recursos, se puede tener un paquete
+ y un servicios ambos con el mismo título, pero no dos servicios con ese
+ título.
 \end_layout
 
-\begin_layout Subsubsection
-Classes 
-\end_layout
+\end_deeper
+\begin_layout Itemize
 
-\begin_layout Standard
-Una clasees un bloque de código Puppet con nombre.
- Una clase administrará generalmente un conjunto de recursos relacionados
- a una función simple o un componente del sistema.
- Las clases usualmente contienen otras clases, este anidamiento provee una
- forma estructurada de juntar funciones de clases diferentes como componentes
- de soluciones más grandes.
- Para utilizar una clase, se necesita definirla escribiendo una definición
- de clase y guardándola en un archivo manifiesto.
- Cuando Puppet se ejecuta, parseará este manifiesto y guardará la definición
- de clase; luego ésta puede ser declarada para aplicarla en los nodos de
- la infraestructura.
- En Puppet las clases son singleton, lo que quiere decir que una clase puede
- ser declarada solo una vez en un nodo dado.
- Cuando se declara una clase:
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-include módulo::clase
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-módulo
-\family default
- le indica a Puppet donde encontrar esa 
-\family typewriter
-clase
-\family default
-.
- Sin embargo, para la clase principal de un módulo, además de llevar el
- mismo nombre que el módulo mismo, en vez de seguir el patrón del manifiesto
- para la clase que contiene, Puppet reconoce el nombre especial del archivo
- 'init.pp' como el manifiesto que contendrá la clase principal de un módulo.
+\series bold
+Atributos: 
+\series default
+Los atributos describen el estado deseado para un recurso; cada atributo
+ maneja algún aspecto del recurso.
  
 \end_layout
 
-\begin_layout Subsubsection
-Referencias de tipo
+\begin_deeper
+\begin_layout Standard
+Cada tipo de recurso tiene su propio juego de atributos.
+ Muchos tipos de recursos tienen atributos claves y una gran cantidad de
+ opcionales.
 \end_layout
 
 \begin_layout Standard
-Todos los tipos tiene un atributo especial llamado namevar.
+Todos los atributos declarados deben tener un valor; el tipo de dato del
+ valor depende de los que acepte el atributo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Comportamiento: 
+\series default
+Una declaración de recurso agrega un recurso al catálogo y le dice a Puppet
+ que administre el estado del recurso.
+ Cuando Puppet aplica el catálogo compilado, lo que hará es:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Leer el estado actual del recurso en el sistema objetivo.
+\end_layout
+
+\begin_layout Itemize
+Comprar el estado actual con el deseado
+\end_layout
+
+\begin_layout Itemize
+Si es necesario, realizar cambios para llevar el estado actual al deseado.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Recursos no administrados: 
+\series default
+Si el catálogo no contiene un recurso, implica que Puppet ya no lo administra,
+ pero no que lo 
+\begin_inset Quotes eld
+\end_inset
+
+elimina
+\begin_inset Quotes erd
+\end_inset
+
+, si se desea eliminarlo, se debe aclararlo en su estado deseado.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+ensure => absent
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Singularidad: 
+\series default
+Puppet no permite que se declare un mismo recurso dos veces.
+ Esto prevee conflictos de valores.
+ Si múltiples clases requieren el mismo recurso se puede usar una clase
+ o un recurso virtual para añadirlo al catálogo en múltiples lugares sin
+ duplicar.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Relaciones y orden: 
+\series default
+Por defecto, Puppet aplica los recursos sin seguir el orden en que fueron
+ escritos.
+ Esto, se puede desactivar con la opción de ordenado.
+ Sin embargo, si un recurso debe ser aplicado antes o después de otro, se
+ puede indicar una relación entre ellos.
+ Incluso se puede indicar que cambios en un recurso causen que otro se refresque.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cambios, eventos y reportes: 
+\series default
+Si Puppet realiza cambios, en un recurso, registra esos cambios como eventos.
+ Esos eventos aparecerán en el 
+\emph on
+log
+\emph default
+ y en el reporte de ejecución de puppet.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Independencia de alcance: 
+\series default
+Los recursos no están sujetos a los alcances.
+ Un recurso, en cualquier ámbito, se puede referenciar desde cualquier otro
+ ámbito.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Atributos especiales de los recursos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Name/Namevar: 
+\series default
+Define un recurso en el sistema objetivo.
+
+\emph on
+ 
+\emph default
+Por ejemplo, el 
+\emph on
+name
+\emph default
+ de un servicio o paquete es el nombre por el cual las herramientas de paquetes
+ o servicios lo reconocen o en el caso de un archivo, su namevar es el path.
+ Esto es diferente al título, el cual identifica un recurso para el compilador
+ de Puppet.
+ Sin embargo, ellos a veces tienen el mismo valor.
+
+\series bold
+ 
+\series default
+La separación de nombre y título permite administrar un recurso que mantiene
+ su título, pero que tiene diferente nombre en diferentes plataformas.
+ Por ejemplo, un servicio 
+\emph on
+ntp 
+\emph default
+en sistemas Red Hat tiene por nombre 
+\emph on
+ntpd 
+\emph default
+y en sistemas debian
+\emph on
+ ntp .
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ensure: 
+\series default
+Esto generalmente maneja el aspecto más importante de un recurso en el sistema
+ objetivo.
+ Indica si el archivo existe, si el servicio está corriendo o parado, si
+ el paquete está instalado, etc.
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph*
+Tipos de recursos
+\end_layout
+
+\begin_layout Standard
+Todos los tipos tienen un atributo especial llamado namevar.
  Este es el atributo usado para identificar univocamente un recurso en el
  sistema de destino.
  Si no se especifica un valor para el namevar, este valor es tomado por
- defecto según el titulo del recurso.
+ defecto según el título del recurso.
 \end_layout
 
 \begin_layout Standard
 Ejemplo:
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -8911,7 +10324,7 @@ En este código,
 \family typewriter
 /etc/passwd
 \family default
- es el titulo del recurso 
+ es el título del recurso 
 \emph on
 file
 \emph default
@@ -8921,33 +10334,36 @@ swd'] para declarar relación.
 \emph on
 namevar
 \emph default
- para el tipo file y si nosotros no le proveemos un valor, toma el por defecto
- que es 
+ para el tipo file y si no se le provee un valor, toma uno por defecto que
+ es 
 \emph on
 /etc/passwd.
 \end_layout
 
 \begin_layout Standard
-Los 
+
 \series bold
-atributos
+Atributos
 \series default
-, a veces llamados parámetros, de un recurso, determinan el estado deseado
- para el.
+: A veces llamados parámetros, determinan el estado deseado para un recurso.
  Cualquiera de ellos modifica directamente el sistema (internamente, las
- llamadas “propiedades”) o afectan como el recurso se comporta.
+ llamadas “propiedades”) o afectan cómo el recurso se comporta.
  
 \end_layout
 
 \begin_layout Standard
 
 \series bold
-Providers
+Proveedores (providers
 \series default
- implementan el mismo tipo de recursos en diferentes tipos de sistemas,
+): Implementan el mismo tipo de recursos en diferentes tipos de sistemas,
  ellos suelen hacer esto llamando a comandos externos.
- Aunque Puppet seleccionara automáticamente un provider apropiado por defecto,
- se puede sobrescribir este con el provider attribute.
+ Aunque Puppet seleccionará automáticamente un proveedor apropiado por defecto,
+ se lo puede sobrescribir con el atributo 
+\emph on
+provider
+\emph default
+.
  Por ejemplo, el recurso 
 \emph on
 package
@@ -8956,28 +10372,20 @@ package
 \emph on
 provider
 \emph default
-, pero se puede especificar p
+, pero se puede especificar 
 \family typewriter
-rovider => gem
+provider => gem 
 \family default
- para instalar librerías de Ruby con el comando gem.
- 
-\end_layout
-
-\begin_layout Standard
-Frecuentemente los providers especifican binarios que ellos necesitan.
- Los binarios calificados indican que el binario debe existir en ese path
- especifico y los no calificados, indican que puppet los buscara usando
- la ruta del shell.
+para instalar librerías de Ruby con gem.
  
 \end_layout
 
 \begin_layout Standard
 
 \series bold
-Features
+Características (features):
 \series default
- son habilidades que algunos providers pueden no soportar.
+ Son habilidades que algunos proveedores pueden no soportar.
  Generalmente una característica corresponderá con algunos valores permitidos
  por un recurso de un atributo, por ejemplo, si un paquete soporta la caracterís
 tica 
@@ -8992,19 +10400,8 @@ para borrar los archivos de configuración instalados por el paquete.
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Augeas:
-\series default
- Aplica un cambio o un arreglo de cambios en el archivo de sistemas usando
- Auges 
+Algunas de las referencias de tipo más importantes son las explicadas a
+ continuación:
 \end_layout
 
 \begin_layout Itemize
@@ -9012,8 +10409,9 @@ Augeas:
 \series bold
 Computer:
 \series default
- Manejo de objetos de la computadora usando DirectyoryService en un SO X.
- 
+ Manejo de objetos de la computadora usando DirectyoryService en un Mac
+ OS X.
+ Sirve para adjuntar políticas MCX a los objetos localhost creados.
 \end_layout
 
 \begin_layout Itemize
@@ -9021,12 +10419,18 @@ Computer:
 \series bold
 Cron:
 \series default
- Instale y maneje trabajos Cron.
- Todo cron creado por Puppet requiere un comando y al menos un atributo
+ Instalar y manejar trabajos Cron.
+ Todo Cron creado por Puppet requiere un comando y al menos un atributo
  de un periodo (horas, minutos,meses, etc).
- Mientras el nombre del Cron no es para del trabajo actual, el nombre es
- almacenado en un comentario comenzando con #Puppet Name:.
- Ese comentario es usado para machear entadas crontab creadas por Puppet
+ Mientras el nombre del Cron no es parte del trabajo actual, el nombre es
+ almacenado en un comentario comenzando con 
+\family typewriter
+\emph on
+#Puppet Name:
+\family default
+\emph default
+.
+ Ese comentario es usado para conicidir entadas crontab creadas por Puppet
  con un recurso Cron.
  
 \end_layout
@@ -9047,7 +10451,7 @@ Exec:
 \series bold
 File:
 \series default
- El manejo de archivos incluye su contenido, dueño, y permisos.
+ El manejo de archivos incluye contenido, dueño, y permisos.
  El tipo archivo puede manejar archivos, directorios y enlaces simbólicos.
  
 \end_layout
@@ -9059,7 +10463,7 @@ Filebucket:
 \series default
  Un repositorio para almacenar y recuperar archivos conformados por MD5
  checksum.
- Puede ser local a cada nodo agente o centralizado en un master Puppet.
+ Puede ser local a cada nodo agente o centralizado en un servidor Puppet.
  Todos los Puppet Master proveen un servicio filebucket que los agentes
  pueden acceder vía HTTP.
  
@@ -9071,8 +10475,9 @@ Filebucket:
 Group:
 \series default
  Manejo de grupos.
- En muchas plataformas esto solo puede crear grpos.
- Ingresar a los grupos debe ser administrado por los usuarios individuales.
+ En muchas plataformas esto sólo puede crear grupos.
+ La membresía de los grupos debe ser administrada por cada usuario individual
+ .
  
 \end_layout
 
@@ -9093,7 +10498,7 @@ Host:
 Interface:
 \series default
  Esto representa una interfaz de router o switch.
- Es posible gestiona el modo interfaz y las características switchport.
+ Es posible gestionar el modo interfaz y las características switchport.
  
 \end_layout
 
@@ -9131,7 +10536,7 @@ Maillist:
 \series bold
 Mcx:
 \series default
- Manejo de objetos MCX usando DirectoryService en SO X.
+ Manejo de objetos MCX usando DirectoryService en MAC OS X.
  
 \end_layout
 
@@ -9140,9 +10545,11 @@ Mcx:
 \series bold
 Mount:
 \series default
- Manejo de filesystem montued, incluyen la colocación de informacion de
- montaje el la tabla de montaje.
- El comportamiento actual depende de el valor de el parámetro “ensure” 
+ Maneja de filesystems montados, incluyendo agregar la informacion de montaje
+ a la tabla de montaje.
+ El comportamiento actual depende de el valor de el parámetro 
+\emph on
+ensure.
 \end_layout
 
 \begin_layout Itemize
@@ -9160,11 +10567,14 @@ Notify:
 Package:
 \series default
  Manejo de paquetes.
- Hay una dicótoma básica en los paquetes soportados correctamente ahora:
- Algunos tipos de paquetes como yum y apt pueden recuperar sus propios archivos
+ Hay una bifurcación básica en los paquetes soportados correctamente: Algunos
+ tipos de paquetes como yum y apt pueden recuperar sus propios archivos
  de paquetes, mientras que otros no pueden.
- Para esos paquetes, se puede usar el parametro source para poner el archivo
- adecuado.
+ Para esos paquetes, se puede usar el parametro 
+\emph on
+source
+\emph default
+ para poner el archivo adecuado.
  
 \end_layout
 
@@ -9174,17 +10584,8 @@ Package:
 Resources:
 \series default
  Este es un metatipo que puede controlar otro tipo de recursos.
- Cualquier metaparametro especificado aquí sera pasado a los recursos generados,
+ Cualquier metaparámetro especificado aquí sera pasado a los recursos generados,
  por lo que puede purgar recursos no administrados.
- 
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Router:
-\series default
- Control de routers conectados.
  
 \end_layout
 
@@ -9194,7 +10595,7 @@ Router:
 Schedule:
 \series default
  Define el programa para Puppet.
- Los recursos pueden ser limitados por un programa usando el metaparametro
+ Los recursos pueden ser limitados por un programa usando el metaparámetro
  schedule.
  
 \end_layout
@@ -9222,10 +10623,9 @@ Manejo de carga y descarga de modulos de política de SELinux en el sistema.
 \series bold
 Service: 
 \series default
-Controla servicios en marcha.
- Desafortunadamente service soporta una amplia variedad por plataforma.
- Algunas tienen una variedad muy pequeña de concepto de servicio en ejecución.
- y algunos tienen un concepto muy poderoso.
+Controla servicios en ejecución.
+ El soporte de este recurso varía ampliamente según el concepto de servicio
+ de la plataforma.
  
 \end_layout
 
@@ -9262,7 +10662,7 @@ Un tipo de recurso para crear nuevos escenarios.
 \series bold
 Tidy: 
 \series default
-Remueve archivos base indeseados con criterios específicos.
+Remueve archivos base no deseados con criterios específicos.
  
 \end_layout
 
@@ -9289,8 +10689,15 @@ Administra VLANs en un router o switch
 Yumrepo: 
 \series default
 La descripción del lado del cliente de un repositorio YUM.
- La configuración de un repositorio se encuentra en /etc/yum.conf y el archivo
- indicado por la opción reposdir en el archivo.
+ La configuración de un repositorio se encuentra en 
+\emph on
+/etc/yum.conf 
+\emph default
+y el archivo indicado por la opción 
+\emph on
+reposdir
+\emph default
+ en ese archivo.
  
 \end_layout
 
@@ -9300,7 +10707,7 @@ La descripción del lado del cliente de un repositorio YUM.
 Zfs: 
 \series default
 Administración de ZFS.
- Crea, destruye y pone propiedades en instancias ZFS.
+ Crea, destruye y configura las propiedades en instancias ZFS.
  
 \end_layout
 
@@ -9316,10 +10723,132 @@ Administración de zpools.
 \end_layout
 
 \begin_layout Subsubsection
-\begin_inset space ~
-\end_inset
+Manifiests 
+\end_layout
 
-Referencia de funciones
+\begin_layout Standard
+Un manifiesto o manifest, es un archivo de texto que contiene código Puppet
+ y posee la extensión .pp.
+ Para comprobar la sintaxis de un manifiesto se puede utilizar:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet parser validate <manifiesto.pp> 
+\end_layout
+
+\begin_layout Standard
+El parseador no retornará nada si no hay errores, en caso de que se detecte
+ un error debe ser corregido antes de continuar.
+ Si se trata de aplicar un manifiesto que no ha sido declarado, no cambiará
+ nada en el sistema.
+ Para ésto se debe crear un 
+\family typewriter
+.pp
+\family default
+ que contenga un sentencia:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include módulo::clase
+\end_layout
+
+\begin_layout Standard
+Antes de aplicar cambios en el sistema, se puede utilizar la bandera 
+\family typewriter
+–noop
+\family default
+ para compilar el catálogo (catálogo) y notificar los cambios que Puppet
+ habría realizado si hubiera sido ejecutado sin 
+\family typewriter
+–noop
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+puppet apply --noop 
+\end_layout
+
+\begin_layout Subsubsection
+Catálogos
+\end_layout
+
+\begin_layout Standard
+Los manifiestos de Puppet pueden usar lógica condicional para describir
+ muchas configuraciones de nodos como una.
+ Antes de configurar un nodo, Puppet compila los manifiestos en un catálogo,
+ el cual solo es válido para un único nodo y no contiene lógica ambigua.
+\end_layout
+
+\begin_layout Standard
+Los catálogos son documentos estáticos los cuales contienen recursos y relacione
+s.
+ 
+\end_layout
+
+\begin_layout Standard
+En la arquitectura estándar maestro/agente, los nodos solicitan los catálogos
+ al Puppet Server, el cual los compila cuando son solicitados.
+ Los agentes mantienen en caché sus más recientes catálogos, si al pedir
+ el catálogo, el master falla al compilarlo, ellos reusaran su catálogo
+ cacheado.
+\end_layout
+
+\begin_layout Subsubsection
+Classes 
+\end_layout
+
+\begin_layout Standard
+Una clase es un bloque de código Puppet con nombre.
+ Una clase administrará generalmente un conjunto de recursos relacionados
+ a una función simple o un componente del sistema.
+ Las clases usualmente contienen otras clases; este anidamiento provee una
+ forma estructurada de juntar funciones de clases diferentes como componentes
+ de soluciones más grandes.
+ Para utilizar una clase, se necesita definirla escribiendo una definición
+ de clase y guardándola en un archivo manifiesto.
+ Cuando Puppet se ejecuta, parseará este manifiesto y guardará la definición
+ de clase; luego ésta puede ser declarada para aplicarla en los nodos de
+ la infraestructura.
+ En Puppet las clases son singleton, lo que quiere decir que una clase puede
+ ser declarada sólo una vez en un nodo dado.
+ Cuando se declara una clase:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include módulo::clase
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+módulo
+\family default
+ le indica a Puppet donde encontrar esa 
+\family typewriter
+clase
+\family default
+.
+ Sin embargo, para la clase principal de un módulo, además de llevar el
+ mismo nombre que el módulo mismo, Puppet reconoce el nombre especial del
+ archivo '
+\family typewriter
+init.pp
+\family default
+' como el manifiesto que contendrá la clase principal de un módulo.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Funciones
 \end_layout
 
 \begin_layout Standard
@@ -9333,7 +10862,7 @@ Hay dos tipos de funciones en Puppet, statements (declaraciones) y rvalues.
 \begin_layout Standard
 Las funciones se ejecutan en el Puppet master, no se ejecutan en el agente.
  Por lo tanto sólo tienen acceso a los comandos y datos disponibles en el
- host master.
+ nodo maestro.
 \end_layout
 
 \begin_layout Standard
@@ -9345,7 +10874,7 @@ Algunas de las funciones disponibles son:
 \series bold
 alert:
 \series default
- (statement) deja un mensaje en el log del servidor en el nivel de alerta.
+ (statement) Deja un mensaje en el log del servidor en el nivel de alerta.
 \end_layout
 
 \begin_layout Itemize
@@ -9353,8 +10882,8 @@ alert:
 \series bold
 assert_type:
 \series default
-(rvalue) retorna el valor dado si este es una instancia del tipo dado, y
- levanta un error en caso contrario.
+ (rvalue) Retorna el valor dado si este es una instancia del tipo dado,
+ y levanta un error en caso contrario.
  
 \end_layout
 
@@ -9363,7 +10892,7 @@ assert_type:
 \series bold
 contatin:
 \series default
- (statement) contiene una o más clases dentro de la clase actual.
+ (statement) Contiene una o más clases dentro de la clase actual.
  Si alguna de estas clases están sin declarar, serán declaradas como si
  fueran llamadas con la función 
 \emph on
@@ -9378,7 +10907,7 @@ include
 \series bold
 create_resources:
 \series default
- (statement) convierte un hash en un conjunto de recursos y los añade al
+ (statement) Convierte un hash en un conjunto de recursos y los añade al
  catálogo.
 \end_layout
 
@@ -9387,7 +10916,7 @@ create_resources:
 \series bold
 crit: 
 \series default
-(statement) deja un mensaje en el log del servidor en el nivel crítico.
+(statement) Deja un mensaje en el log del servidor en el nivel crítico.
 \end_layout
 
 \begin_layout Itemize
@@ -9395,7 +10924,7 @@ crit:
 \series bold
 debug: 
 \series default
-(statement) deja un mensaje en el log del servidor en el nivel de debug.
+(statement) Deja un mensaje en el log del servidor en el nivel debug.
 \end_layout
 
 \begin_layout Itemize
@@ -9403,7 +10932,7 @@ debug:
 \series bold
 defined: 
 \series default
-(rvalue) determina si una clase dada o un tipo de recurso está definido.
+(rvalue) Determina si una clase dada o un tipo de recurso está definido.
  También puede determinar si un recurso específico está definido o si una
  variable ha sido asignada con un valor.
 \end_layout
@@ -9413,7 +10942,7 @@ defined:
 \series bold
 digest:
 \series default
- (rvalue) retorna un valor de hash de un string dado usando la configuración
+ (rvalue) Retorna el valor de hash de un string dado usando la configuración
  digest_algorithm del archivo de configuración de Puppet.
 \end_layout
 
@@ -9422,7 +10951,7 @@ digest:
 \series bold
 each:
 \series default
- (rvalue) aplica un bloque parametrizado a cada elemento en una secuencia
+ (rvalue) Aplica un bloque parametrizado a cada elemento en una secuencia
  de entradas seleccionadas del primer argumento y retorna el primero argumento.
 \end_layout
 
@@ -9431,7 +10960,7 @@ each:
 \series bold
 emerg:
 \series default
- (statement) deja un mensaje en el log del servidor en el nivel de emergencia.
+ (statement) Deja un mensaje en el log del servidor en el nivel emergencia.
 \end_layout
 
 \begin_layout Itemize
@@ -9439,7 +10968,7 @@ emerg:
 \series bold
 epp:
 \series default
- (rvalue) evalúa una plantilla Embedded Puppet y retorna el texto renderizado
+ (rvalue) Evalúa una plantilla Embedded Puppet y retorna el texto renderizado
  resultante como un string.
 \end_layout
 
@@ -9448,7 +10977,7 @@ epp:
 \series bold
 err:
 \series default
- (statement) deja un mensaje en el log del servidor en el nivel de error.
+ (statement) Deja un mensaje en el log del servidor en el nivel error.
 \end_layout
 
 \begin_layout Itemize
@@ -9456,7 +10985,7 @@ err:
 \series bold
 fail:
 \series default
- (statement) fallo con un error del parser.
+ (statement) Fallo con un error del parser.
 \end_layout
 
 \begin_layout Itemize
@@ -9464,7 +10993,7 @@ fail:
 \series bold
 file: 
 \series default
-(rvalue) carga un archivo desde un módulo y retorna sus contenidos como
+(rvalue) Carga un archivo desde un módulo y retorna sus contenidos como
  un string.
 \end_layout
 
@@ -9473,9 +11002,13 @@ file:
 \series bold
 filter:
 \series default
- (statement) aplica un bloque parametrizado a cada elemento en una secuencia
+ (statement) Aplica un bloque parametrizado a cada elemento en una secuencia
  de entradas del primer argumento y retorna un array o un hash con las entradas
- para cada bloque evalúa a true.
+ para cada bloque evalúa a 
+\emph on
+true
+\emph default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -9483,15 +11016,15 @@ filter:
 \series bold
 fqdn_rand:
 \series default
- (rvalue) genera un número Integer aleatorio mayor o igual a cero y menor
+ (rvalue) genera un número entero aleatorio mayor o igual a cero y menor
  a MAX, combinando 
 \emph on
 $fqdn
 \emph default
  y el valor de SEED para aleatoriedad repetible.
  Ésto quiere decir que cada nodo obtendrá un número aleatorio diferente
- de esta función pero el resultadod e un nodo dado será el mismo cada vez
- a menos que su hostname cambie (uso: fqdn_rand(MAX, [SEED])).
+ de esta función, pero, el resultado de un nodo dado, será el mismo cada
+ vez a menos que su hostname cambie (uso: fqdn_rand(MAX, [SEED])).
 \end_layout
 
 \begin_layout Itemize
@@ -9499,7 +11032,7 @@ $fqdn
 \series bold
 generate: 
 \series default
-(rvalue) llama a un comando externo en el Puppet master y retorna los resultados
+(rvalue) Llama a un comando externo en el Puppet master y retorna los resultados
  del comando.
  
 \end_layout
@@ -9509,7 +11042,7 @@ generate:
 \series bold
 hiera:
 \series default
- (rvalue) realiza una búsqueda de prioridad estándar y retorna el valor
+ (rvalue) Realiza una búsqueda de prioridad estándar y retorna el valor
  más específico para una clave dada.
 \end_layout
 
@@ -9518,7 +11051,7 @@ hiera:
 \series bold
 hiera_array:
 \series default
- (rvalue) retorna todas las coincidencias a través de la jerarquía como
+ (rvalue) Retorna todas las coincidencias a través de la jerarquía como
  un array plano de valores únicos.
 \end_layout
 
@@ -9527,7 +11060,7 @@ hiera_array:
 \series bold
 hiera_hash: 
 \series default
-(rvalue) retorna un hash mezclado de coincidencias a través de la jerarquía.
+(rvalue) Retorna un hash mezclado de coincidencias a través de la jerarquía.
  
 \end_layout
 
@@ -9536,7 +11069,7 @@ hiera_hash:
 \series bold
 hiera_include: 
 \series default
-(rvalue) asigna clases a un nodo usando un array de búsqueda (array merge
+(rvalue) Asigna clases a un nodo usando un array de búsqueda (array merge
  lookup ) que retorna el valor para una clave de usuario-específico de la
  fuente de datos de Hiera.
 \end_layout
@@ -9555,7 +11088,7 @@ include:
 \series bold
 info: 
 \series default
-(statement) deja un mensaje en el log del servidor en el nivel info.
+(statement) Deja un mensaje en el log del servidor en el nivel info.
 \end_layout
 
 \begin_layout Itemize
@@ -9563,7 +11096,7 @@ info:
 \series bold
 inline_epp: 
 \series default
-(rvalue) evalúa una plantilla Embedded Puppet y retorna el texto renderizado
+(rvalue) Evalúa una plantilla Embedded Puppet y retorna el texto renderizado
  resultante como un string.
 \end_layout
 
@@ -9572,7 +11105,7 @@ inline_epp:
 \series bold
 inline_template:
 \series default
- (rvalue) evalúa un string plantilla y retorna su valor.
+ (rvalue) Evalúa un string plantilla y retorna su valor.
 \end_layout
 
 \begin_layout Itemize
@@ -9580,7 +11113,7 @@ inline_template:
 \series bold
 lookup:
 \series default
- (rvalue) busca datos definidos usando Data Binding y Data Providers utilizando
+ (rvalue) Busca datos definidos usando Data Binding y Data Providers utilizando
  diferentes estrategias.
 \end_layout
 
@@ -9589,7 +11122,7 @@ lookup:
 \series bold
 match: 
 \series default
-(statement) retorna el resultado de coincidir un string o un array[string]
+(statement) Retorna el resultado de coincidir un string o un array[string]
  con regexp, string (transformado a regexp, tipo pattern o tipo regexp).
 \end_layout
 
@@ -9598,7 +11131,7 @@ match:
 \series bold
 md5: 
 \series default
-(rvalue) retorna un valor de hash MD5 de un string dado.
+(rvalue) Retorna un valor de hash MD5 de un string dado.
 \end_layout
 
 \begin_layout Itemize
@@ -9606,17 +11139,7 @@ md5:
 \series bold
 notice: 
 \series default
-(statement) deja un mensaje en el log del servidor en el nivel noticia.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-realize: 
-\series default
-(statement) hace un objeto virtual, real.
- Es útil cuando se quiere saber el nombre del objeto virtual y no se quiere
- utilizar una colección entera.
+(statement) Deja un mensaje en el log del servidor en el nivel noticia.
 \end_layout
 
 \begin_layout Itemize
@@ -9624,7 +11147,7 @@ realize:
 \series bold
 reduce: 
 \series default
-(rvalue) aplica un bloque parametrizado a cada elemento en una secuencia
+(rvalue) Aplica un bloque parametrizado a cada elemento en una secuencia
  de entradas del primer argumento (
 \emph on
 el enumerable
@@ -9637,7 +11160,7 @@ el enumerable
 \series bold
 regsubst: 
 \series default
-(rvalue) realiza un reemplazo regexp en un string o array de strings.
+(rvalue) Realiza un reemplazo regexp en un string o array de strings.
 \end_layout
 
 \begin_layout Itemize
@@ -9645,7 +11168,7 @@ regsubst:
 \series bold
 requiere: 
 \series default
-(statement) evalúa una o más clases, añadiendo la clase requerida como dependenc
+(statement) Evalúa una o más clases, añadiendo la clase requerida como dependenc
 ia.
 \end_layout
 
@@ -9654,7 +11177,7 @@ ia.
 \series bold
 scanf: 
 \series default
-(rvalue) escanea un string y retorna un array de uno o más valores convertidos
+(rvalue) Escanea un string y retorna un array de uno o más valores convertidos
  dirigidos por un formato dado string.args.
 \end_layout
 
@@ -9663,7 +11186,7 @@ scanf:
 \series bold
 sha1: 
 \series default
-(rvalue) retorna un valor hash SHA1 de un string dado.
+(rvalue) Retorna un valor hash SHA1 de un string dado.
 \end_layout
 
 \begin_layout Itemize
@@ -9671,21 +11194,7 @@ sha1:
 \series bold
 shellquote: 
 \series default
-(rvalue) cita y concatena argumentos para usar en Bourne Shell.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-slice:
-\series default
- (rvalue) aplica un bloque parametrizado a cada 
-\emph on
-slice 
-\emph default
-de elementos en una secuencia de entradas seleccionadas del primer argumento
- y retorna el primer argumento, o si ningún bloque es dado, retorna un nuevo
- array con una concatenación de los slices.
+(rvalue) Cita y concatena argumentos para usar en Bourne Shell.
 \end_layout
 
 \begin_layout Itemize
@@ -9693,7 +11202,7 @@ de elementos en una secuencia de entradas seleccionadas del primer argumento
 \series bold
 split:
 \series default
- (rvalue) divide una variable string en un array usando el divisor regexp
+ (rvalue) Divide una variable string en un array usando el divisor regexp
  especificado.
 \end_layout
 
@@ -9702,7 +11211,7 @@ split:
 \series bold
 sprintf: 
 \series default
-(rvalue) realiza un formateo de texto con estilo printf.
+(rvalue) Realiza un formateo de texto con estilo printf.
 \end_layout
 
 \begin_layout Itemize
@@ -9710,9 +11219,9 @@ sprintf:
 \series bold
 tag: 
 \series default
-(statement) añade las etiquetas especificadas a la clase o definición que
+(statement) Añade las etiquetas especificadas a la clase o definición que
  la contiene.
- Todos los objetos también adquirirán luego esa etiqueta.
+ Luego todos los objetos también adquirirán esa etiqueta.
 \end_layout
 
 \begin_layout Itemize
@@ -9720,7 +11229,7 @@ tag:
 \series bold
 tagged:
 \series default
- (rvalue) una función booleana que dice si el contenedor actual está etiquetado
+ (rvalue) Una función booleana que dice si el contenedor actual está etiquetado
  con las etiquetas especificadas.
  Las etiquetas son operadas con AND, así que todas deben ser incluidas para
  que la función retorne true.
@@ -9729,18 +11238,9 @@ tagged:
 \begin_layout Itemize
 
 \series bold
-template:
-\series default
- (rvalue) carga una plantilla ERB de un módulo, la evalúa y retorna el valor
- resultante como un string.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
 versioncmp:
 \series default
- (rvalue) compara dos números de versión.
+ (rvalue) Compara dos números de versión.
 \end_layout
 
 \begin_layout Itemize
@@ -9748,7 +11248,7 @@ versioncmp:
 \series bold
 warning: 
 \series default
-(statement) deja un mensaje en el log del servidor en el nivel advertencia.
+(statement) Deja un mensaje en el log del servidor en el nivel advertencia.
 \end_layout
 
 \begin_layout Itemize
@@ -9756,18 +11256,18 @@ warning:
 \series bold
 with: 
 \series default
-(rvalue) llama a un bloque de código lambda con los argumentos dados.
+(rvalue) Llama a un bloque de código lambda con los argumentos dados.
  Como los parámetros de lambda son locales para el alcance de ella, esto
  puede ser utilizado para crear secciones privadas de lógica en una clase
  para que las variables no sean visibles fuera de la clase.
 \end_layout
 
 \begin_layout Subsubsection
-Referencia de metaparámetros
+Metaparámetros
 \end_layout
 
 \begin_layout Standard
-Metaparámetros son atributos que trabajan con cualquier tipo de recurso,
+Los metaparámetros son atributos que trabajan con cualquier tipo de recurso,
  incluido los tipos personalizados y los tipos definidos.
 \end_layout
 
@@ -9778,14 +11278,14 @@ En general, ellos afectan el comportamiento de Puppet en preferencia a el
 \end_layout
 
 \begin_layout Standard
-Los metaparametros hacen cosas como agregar metadata a un recurso (alias,tag),
- poner limites cuando el recurso debe ser sincronizado(require,schedule,etc.),
- evita que Puppet realice cambios (noop), y cambia la verborrea del log
- (loglevel).
+Los metaparámetros hacen cosas como agregar metadata a un recurso (alias,
+ tag), poner límites cuando el recurso debe ser sincronizado (require, schedule,
+ etc.), evita que Puppet realice cambios (noop), y cambia la verborrea del
+ log (loglevel).
 \end_layout
 
 \begin_layout Paragraph
-Metaparametros disponibles
+Metaparámetros disponibles:
 \end_layout
 
 \begin_layout Itemize
@@ -9794,12 +11294,12 @@ Metaparametros disponibles
 Alias: 
 \series default
 Crea un alias para el recurso.
- Puppet usa esto internamente cuando se provee un titulo simbólico y un
+ Puppet usa esto internamente cuando se provee un título simbólico y un
  valor de 
 \emph on
 namevar 
 \emph default
-explicito.
+explícito.
 \end_layout
 
 \begin_deeper
@@ -9981,24 +11481,36 @@ subscribe => File['sshdconfig'],
 \end_layout
 
 \begin_layout Standard
-Cuando se usa esta característica, el parser pone sshdconfig como el titulo,
- y la librería pone que es como un alias para el archivo entonces la dependencia
- trabaja hacia arriba en 
+Cuando se usa esta característica, el parseador pone 
 \family typewriter
-Service['sshd'].
+\emph on
+sshdconfig
+\family default
+\emph default
+ como el título, y la librería pone que es un alias para el archivo, entonces
+ funciona la dependencia de búsqueda en 
+\family typewriter
+\emph on
+Service['sshd']
+\emph default
+.
  
 \family default
-Se puede usar este metaparametro uno mismo, pero note que el aliases generalment
-e solo trabaja creando relaciones; cualquier cosa mas que referirse a un
- recurso existente debe usar el titulo exacto del recurso.
- Por ejemplo, el siguiente código no funciona.
+Se puede usar este metaparámetro, pero note que el alias generalmente solo
+ trabaja para crear relaciones; cualquier cosa que se refiera a un recurso
+ existente debe usar el título exacto del recurso.
+ Por ejemplo, el siguiente código no funciona:
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 file { '/etc/ssh/sshd_config': 
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 \begin_inset space \space{}
 \end_inset
 
@@ -10014,6 +11526,8 @@ owner => root,
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 \begin_inset space \space{}
 \end_inset
 
@@ -10029,6 +11543,8 @@ group => root,
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 \begin_inset space \space{}
 \end_inset
 
@@ -10044,10 +11560,14 @@ alias => 'sshdconfig',
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 }
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 \begin_inset space ~
 \end_inset
 
@@ -10055,10 +11575,14 @@ alias => 'sshdconfig',
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 File['sshdconfig'] { 
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 \begin_inset space \space{}
 \end_inset
 
@@ -10074,63 +11598,13 @@ mode => '0644',
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 }
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Puppet no tiene forma de saber que esas dos estrofas deben afectar el mismo
- archivo.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-audit:
-\series default
-Marca un subconjunto de atributos sin administrar de recurso para auditar.
- Acepta un atributo nombre, un array de atributos nombre o todos.
-
-\series bold
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Auditar un atributo de un recurso tiene dos efectos: Primero, cuando un
- catálogo es aplicado con 
-\family typewriter
-puppet apply 
-\family default
-or 
-\family typewriter
-puppet agent,
-\family default
- Puppet chequeara si ese atributo del recurso ha sido modificado, comparando
- el valor actual con el previo a la ejecución; cualquier cambio sera registrado
- junto a cualquier acción realizada por Puppet mientras aplica el catálogo
-\end_layout
-
-\begin_layout Standard
-Segundo, marcar atributos de un recurso para auditar incluirá ese atributo
- en reportes de inspección generados por Puppet inspect.
-\end_layout
-
-\begin_layout Standard
-Los atributos administrados para un recurso también pueden ser auditados,
- pero esos cambios serán realizados por puppet registrados como modificaciones
- adicionales.(Ej: Si un usuario manualmente edita un archivo cuyo contenido
- era auditado y administrado, en la próxima ejecución de puppet agent registrara
- ambas noticias: La primer ejecución registra la edición del usuario y luego
- revierte al estado deseado el archivo y segundo, registrara lo editado
- por Puppet.)
+Puppet no tiene forma de saber que ésto debe afectar el mismo archivo.
 \end_layout
 
 \end_deeper
@@ -10139,32 +11613,26 @@ Los atributos administrados para un recurso también pueden ser auditados,
 \series bold
 before: 
 \series default
-Uno o mas recursos que depende de este recurso, expresados como referencia
- de recursos.
- Múltiples recursos pueden ser especificados como un conjunto de referencias.
- Cuando este atributo esta presente: 
+Cuando este atributo está presente, este recurso se aplicará 
+\emph on
+luego 
+\emph default
+del recurso o los recursos de los cuales depende.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Este recurso se aplicara luego del recurso o los recursos de los cuales
- depende.
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \series bold
 loglevel: 
 \series default
-Coloca el nivel de informacion que sera registrada.
- Los niveles de registro tienen un gran impacto cuando los registros son
- enviados al syslog(que es el caso por defecto)
+Coloca el nivel de información que será registrada.
+ Los niveles de log tienen el mayor impacto cuando los eventos a registrar
+ son enviados al syslog (así es por defecto).
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-El orden por de los niveles, en prioridad decreciente, es:
+El orden de los niveles, en prioridad decreciente, es:
 \end_layout
 
 \begin_layout Itemize
@@ -10210,12 +11678,12 @@ Es para aplicar este recurso en modo noop.
 
 \begin_deeper
 \begin_layout Standard
-Cuando aplica un recurso en modo noop, Puppet chequera si esta sincronizado,
+Cuando aplica un recurso en modo noop, Puppet verificará si está sincronizado,
  como cuando corre normalmente.
- Sin embargo, si un atributo de un recurso no esta en el estado deseado
- (como lo declara el catálogo), Puppet no realizara ninguna acción, y en
- su lugar, reportara los cambios que habría de hecho.
- Esos cambios simulados aparecen e el reporte enviado al Puppet Master,
+ Sin embargo, si un atributo de un recurso no está en el estado deseado
+ (como lo declara el catálogo), Puppet no realizará ninguna acción, y en
+ su lugar, reportará los cambios que habría hecho.
+ Esos cambios simulados aparecen en el reporte enviado al Puppet Master,
  o serán mostrados en consola si 
 \family typewriter
 puppet agent
@@ -10233,20 +11701,18 @@ corren en primer plano.
 \series bold
 notify: 
 \series default
-Uno o mas recursos que depende de este recurso, expresados como referencia
- de recursos.
- Múltiples recursos pueden ser especificados como un conjunto de referencias.
- Cuando este atributo esta presente: 
+Cuando este atributo está presente, este recurso será aplicado antes que
+ el recurso notificado.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Este recurso sera aplicado antes que el recurso notificado
-\end_layout
-
-\begin_layout Itemize
-Si Puppet hace cambios en este recurso, causara que todos los recursos notificad
-os se refresquen
+Si Puppet hace cambios en este recurso, causará que todos los recursos notificad
+os se refresquen.
+ Este comportamiento varía según el tipo de recurso, po ejemplo, los servicios
+ se reiniciarán, objetos montados se desmontarán y montarán nuevamente,
+ etc.
+ 
 \end_layout
 
 \end_deeper
@@ -10255,27 +11721,26 @@ os se refresquen
 \series bold
 require: 
 \series default
-Uno o mas recursos que depende de este recurso, expresados como referencia
- de recursos.
- Múltiples recursos pueden ser especificados como un conjunto de referencias.
- Cuando este atributo esta presente: 
+Cuando este atributo está presente, el recurso o los recursos requeridos
+ serán aplicados 
+\emph on
+antes 
+\emph default
+que este recurso.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-El recurso o los recursos requeridos con anterioridad para aplicar este
- recurso.
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \series bold
 schedule: 
 \series default
-Un programa para gobernar cuando Puppet tiene permitido administrar este
+Un programa para gestionar cuándo Puppet tiene permitido administrar este
  recurso.
- El valor de este metaparametro debe ser el nombre de un recurso 
+ El valor de este metaparámetro debe ser el 
+\emph on
+nombre
+\emph default
+ de un recurso 
 \emph on
 schedule.
 
@@ -10289,7 +11754,7 @@ Esto significa que se debe declarar un recurso schedule
  
 \series default
 \emph default
-y luego referirse a el por su nombre
+y luego referirse a él por su nombre
 \series bold
 .
 \end_layout
@@ -10392,33 +11857,46 @@ schedule => 'everyday'
 \series bold
 stage: 
 \series default
-En cual estado de ejecución esta clase debería residir.
+En cuál estado de ejecución esta clase debería residir.
+ Este metaparámetro sólo puede ser usado con clases, y solo declarándolo
+ con la sintaxis de recursos.
+ No se puede usar con recursos normales o en clases declaradas con 
+\emph on
+include
+\emph default
+.
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-Note que este metaparametro solo puede ser usado con clases, y solo declarándolo
-s como recursos de sintaxis.
- No se puede usar con recursos normales o en clases declaradas con include.
-\end_layout
-
 \begin_layout Standard
 Por defecto, todas las clases son declaradas en el estado principal.
  Para asignar una clase a un estado diferente, se debe:
 \end_layout
 
 \begin_layout Itemize
-Declarar un nuevo estado como un recurso estado.
+Declarar un nuevo estado como un recurso 
+\emph on
+stage
+\emph default
+.
  
 \end_layout
 
 \begin_layout Itemize
 Declarar un orden de relación entre el nuevo el nuevo estado y el estado
- principal
+ 
+\emph on
+main
+\emph default
+.
 \end_layout
 
 \begin_layout Itemize
-Usar la sintaxis de recurso para declarar la clase y poner el estado deseado
+Usar la sintaxis de recurso para declarar la clase y poner el 
+\emph on
+stage
+\emph default
+ deseado.
 \end_layout
 
 \begin_layout Standard
@@ -10485,32 +11963,23 @@ stage => 'pre',
 }
 \end_layout
 
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 
 \series bold
 subscribe: 
 \series default
-Uno o mas recursos que depende de este recurso, expresados como referencia
- de recursos.
- Múltiples recursos pueden ser especificados como un conjunto de referencias.
- Cuando este atributo esta presente: 
+Cuando este atributo está presente, el recurso suscripto aplicara los cambios
+ 
+\emph on
+antes
+\emph default
+ que este recurso.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-El recurso suscripto aplicara los cambios antes que este recurso.
-\end_layout
-
-\begin_layout Itemize
-Si Puppet realiza cambios a cualquier recurso subscripto, esto causara que
+Si Puppet realiza cambios a cualquier recurso subscripto, esto causará que
  este recurso se refresque.
 \end_layout
 
@@ -10619,26 +12088,30 @@ Variables
 Las variables guardan valores para que sean accedidos más tarde.
  En Puppet, las variables son en realidad constantes ya que no pueden ser
  reasignadas.
- 
+ Los nombres de variables comienzan con el signo $ y son sensibles a mayúsculas.
+ La mayoría de los nombres deben comenzar con una letra en minúscula o un
+ guión bajo.
+ Los nombres pueden incluir:
+\end_layout
+
+\begin_layout Itemize
+Mayúsculas y minúsculas
+\end_layout
+
+\begin_layout Itemize
+Números
+\end_layout
+
+\begin_layout Itemize
+Guión bajo
 \end_layout
 
 \begin_layout Standard
-Facts y variables incorporadas
+Si el primer carácter es un guión bajo, esa variable debería ser accedida
+ solo desde su propio alcance.
 \end_layout
 
-\begin_layout Standard
-Puppet tiene muchas variables pre-definidas que pueden ser utilizadas en
- los manifiestos.
- Para ver una lista de ellas ver :
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-http://docs.puppetlabs.com/puppet/4.2/reference/lang_facts_and_builtin_vars.html
-\end_layout
-
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Sintaxis
 \end_layout
 
@@ -10686,13 +12159,6 @@ Cuando se asignan múltiples variables desde un array, debe haber un número
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \family typewriter
 [$a, $b, $c] = [1,2,3] # $a = 1, $b = 2, $c = 3
@@ -10716,13 +12182,6 @@ Cuando se asignan múltiples variables desde un array, debe haber un número
 [$a, [$b]] = [1, [2]] # $a = 1, $b = 2
 \end_layout
 
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subparagraph
 
 \series bold
@@ -10737,21 +12196,7 @@ Cuando se asignan múltiples variables con un hash, las variables son listadas
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 [$a, $b] = {a => 10, b => 20} # $a = 10, $b = 20 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Paragraph
@@ -10802,7 +12247,11 @@ El nombre de la variable puede ser usado en cualquier lugar donde un valor
  de su tipo de dato fuera aceptado, incluyendo expresiones, funciones y
  atributos de recursos.
  Puppet reemplazará el nombre de la variable por su valor.
- Por defecto, variables sin asignar tienen el valor undef.
+ Por defecto, variables sin asignar tienen el valor 
+\emph on
+undef
+\emph default
+.
 \end_layout
 
 \begin_layout Paragraph
@@ -10830,21 +12279,7 @@ ensure => directory,
 \begin_layout Standard
 
 \family typewriter
-...
- 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
 }
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -10861,17 +12296,10 @@ Puppet puede resolver variables en strings entre comillas dobles, esto es
 Comportamiento
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Alcance
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -10882,13 +12310,6 @@ mbito su alcance hijo, y cualquier alcance local puede sobre escribir localmente
  las variables que recibe de sus padres.
 \end_layout
 
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subparagraph
 
 \series bold
@@ -10897,14 +12318,7 @@ Acceso a variables fuera de alcance
 
 \begin_layout Standard
 Se puede acceder a variables fuera de alcance utilizando su nombre completo
- (qualified name)
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
+ (qualified name).
 \end_layout
 
 \begin_layout Standard
@@ -10913,421 +12327,501 @@ Se puede acceder a variables fuera de alcance utilizando su nombre completo
 $vhostdir = $apache::params::vhostdir
 \end_layout
 
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subparagraph
-
-\series bold
-Variables sin asignar y Modo Estricto (Strict Mode)
+\begin_layout Subsubsection
+Orden y relaciones
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Por defecto, se pueden acceder a variables a las que nunca se les han asignado
- valores.
- Su valor será 
+Por defecto, Puppet aplica los recursos en el orden en que son declarados
+ en el manifiesto.
+ Sin embargo, si un grupo de recursos deben siempre ser administrados en
+ un orden específicom se debe explicitar declarando tales relaciones con
+ metaparámetros de relación, flechas y la función 
 \family typewriter
-undef
+\emph on
+require
 \family default
+\emph default
 .
- Usualmente esto no es algo deseado, ya que una variable sin asignar es
- usualmente un accidente o error de tipografía.
- 
-\end_layout
-
-\begin_layout Standard
-Si se desea que las variables sin asignar tiren un mensaje de error, para
- notificar ésto, se puede habilitar el modo estricto.
- Configurar 
-\family typewriter
-strict_variables = true
-\family default
- en 
-\family typewriter
-puppet.conf 
-\family default
-en el Puppet master y cualquier nodo que ejecuta Puppet aplica.
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subparagraph
-
-\series bold
-Dependencia del orden de evaluación 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A diferencia de las declaraciones de recursos, las asignaciones de variables
- son dependientes del orden de evaluación.
- Esto quiere decir que no se puede resolver una variable antes que haya
- sido asignada.
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subparagraph
-
-\series bold
-Nombramiento
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Los nombres de variables comienzan con el signo $ y son sensibles a mayúsculas.
- La mayoría de los nombres deben comenzar con una letra en minúscula o un
- guión bajo.
- Los nombres pueden incluir:
-\end_layout
-
-\begin_layout Itemize
-Mayúsculas y minúsculas
-\end_layout
-
-\begin_layout Itemize
-Números
-\end_layout
-
-\begin_layout Itemize
-Guión bajo
-\end_layout
-
-\begin_layout Standard
-Si el primer carácter es un guión bajo, esa variable debería ser accedida
- solo desde su propio alcance.
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subparagraph
-
-\series bold
-Nombres de variables calificados
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Los nombres calificados de variables tienen un prefijo con el nombre de
- su alcance y el :: separados de 
-\family typewriter
-namespace
-\family default
-.
- Por ejemplo, la variable 
-\family typewriter
-$vhostdir
-\family default
- de la clase 
-\family typewriter
-apache::params
-\family default
- sería 
-\family typewriter
-$apache::params::vhostdir.
-\end_layout
-
-\begin_layout Standard
-Opcionalmente el nombre del primer namespace puede estár vacío, representando
- el namespace superior.
- Por ejemplo
-\family typewriter
- $::is_virtual.
 \end_layout
 
 \begin_layout Paragraph
-Recursos
+Utilizando metaparámetros
 \end_layout
 
 \begin_layout Standard
-Los recursos son la unidad fundamental para modelar la configuración del
- sistema.
- Cada recurso describe algún aspecto de un sistema, como un servicio o paquete
- especifico.
+El valor de todas las relaciones debe ser una referencia a un recurso, apuntando
+ a uno o más recursos objetivos.
 \end_layout
 
 \begin_layout Standard
-Cada recurso es asociado con un tipo de recurso el cual determina su tipo
- de configuración.
- Puppet tiene muchos tipos de recursos como archivos, cron, services, etc,
- Pero, ademas, se pueden agregar nuevos tipos, pudiendo escribir tipos nuevos
- o personalizando los existentes.
+before: Aplica un recurso 
+\emph on
+antes 
+\emph default
+que el recurso objetivo.
 \end_layout
 
 \begin_layout Standard
-Cada recurso tiene un tipo de recurso, un titulo y un conjunto de atributos.
+requiere: Aplica un recurso 
+\emph on
+después 
+\emph default
+que el recurso objetivo.
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
+notify: Aplica un recurso 
+\emph on
+antes
+\emph default
+ que el recurso objetivo.
+ El recurso objetivo se refresca si el recurso que notifica cambia.
 \end_layout
 
 \begin_layout Standard
-<TYPE> { '<TITLE>': 
+subscribe: Aplica un recurso 
+\emph on
+después
+\emph default
+ que el recurso objetivo.
+ El recurso suscripto se refresca si el recurso cambia.
 \end_layout
 
 \begin_layout Standard
-<ATTRIBUTE> => <VALUE>, 
+Estos dos ejemplos crean la misma relación de orden:
+\end_layout
+
+\begin_layout Itemize
+Ejemplo uno:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+package { 'openssh-server':
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
+ensure => present,
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+before => File['/etc/ssh/sshd_config'],
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ejemplo dos:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+file { '/etc/ssh/sshd_config':
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+ensure => file, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mode => '0600',
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+source => 'puppet:///modules/sshd/sshd_config',
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+require => Package['openssh-server'], 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Utilizando flechas
+\end_layout
+
+\begin_layout Standard
+Se pueden cear relaciones entre dos recursos o grupos de recursos usando
+ los operadores
+\family typewriter
+->
+\family default
+ y 
+\family typewriter
+~>
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\emph on
+-> 
+\family default
+\emph default
+: Flecha de ordnamiento.
+ Aplica el recurso izquierdo 
+\emph on
+antes 
+\emph default
+que el recurso derecho.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\emph on
+~>
+\family default
+\emph default
+ : Flecha de notificación.
+ Aplica el recurso izquierdo primero.
+ Si este cambia, el recurso derecho se refrescará.
+\end_layout
+
+\begin_layout Itemize
+Ejemplo uno:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+Package['ntp'] -> File['/etc/ntp.conf'] ~> Service['ntpd']
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ejemplo dos:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+# Primero tener:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+package{ 'openssh-server':
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+ensure => present,
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}-> # Luego tener:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+file { '/etc/ssh/sshd_config': 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+ensure => file, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mode => '0600',
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+source => 'puppet:///modules/sshd/sshd_config', 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+} ~> # Y por último:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+service { 'sshd': 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+ensure => running, 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+enable => true,
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Definición de nodos
+\end_layout
+
+\begin_layout Standard
+Una definición o declaración de nodo es un bloque de código Puppet que sólo
+ será incluido en catálogos de nodos que coincidan.
+ Esta característica permite asignar configuraciones específicas a nodos
+ específicos.
+\end_layout
+
+\begin_layout Standard
+Las declaraciones de nodos sólo coinciden con los nombres de los nodos.
+ Por defecto, el nombre de un nodo es su 
+\emph on
+certname.
+\end_layout
+
+\begin_layout Standard
+# node 'www1.example.com' { include common include apache include squid }
+ node 'db1.example.com' { include common include mysql }
+\end_layout
+
+\begin_layout Paragraph
+Ubicación
+\end_layout
+
+\begin_layout Standard
+Las definiciones de los nodos deben estar en el manifiesto principal.
+ Éste puede ser un archivo o un directorio conteniendo muchos archivos.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+# /etc/puppetlabs/puppet/manifests/site.pp 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+node 'www1.example.com' {
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include common
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include apache
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include squid 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+} 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+node 'db1.example.com' {
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include common 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include mysql 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
 }
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
-\end_inset
+En este ejemplo, solo el primero nodo obtendrá las clases 
+\emph on
+apache
+\emph default
+ y 
+\emph on
+squid
+\emph default
+ mientas que el segundo tendrá 
+\emph on
+mysql
+\emph default
+.
+ Ambos recibirán la clase 
+\emph on
+common
+\emph default
+.
+\end_layout
 
-
+\begin_layout Paragraph
+Nombramiento
 \end_layout
 
 \begin_layout Standard
-Nótese que se puede utilizar cualquier cantidad de espacios en blancos en
- el lenguaje de Puppet
+Una declaración de nodo debe realizarse según:
 \end_layout
 
 \begin_layout Itemize
-
-\series bold
-Titulo: 
-\series default
-Es un string que identifica un recurso para el compilador de Puppet.
+Un string entre comillas conteniendo sólo letras, números, guiones bajos,
+ guiones medios y puntos.
 \end_layout
 
-\begin_deeper
+\begin_layout Itemize
+Expresiones regulares.
+\end_layout
+
+\begin_layout Itemize
+La palabra 
+\emph on
+default, 
+\emph default
+sin comillas.
+\end_layout
+
 \begin_layout Standard
-El titulo no tiene que coincidir con lo que va a administrar en el sistema,
- pero a menudo se desea eso.
+Se pueden utilizar listas de nombres separados por comas para crear grupos
+ de nodos son una sola declaración de nodo:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+node 'www1.example.com', 'www2.example.com', 'www3.example.com' { 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include common 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+include apache, squid 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+}
+\end_layout
+
+\begin_layout Paragraph
+El nodo default
+\end_layout
+
+\begin_layout Standard
+Si ninguna declaración de nodo es dad o no puede ser encontrada, el nodo
  
+\emph on
+default 
+\emph default
+será utilizado.
+\end_layout
+
+\begin_layout Paragraph
+Expresines regulares
 \end_layout
 
 \begin_layout Standard
-Los títulos deben ser únicos por tipos de recursos, se puede tener un paquete
- y un servicios ambos con el mismo titulo, pero no dos servicios con ese
- titulo.
+Pueden ser utilizadas como nombres de nodo.
+ Este es otro método para escribir una sola definición de nodo que coincida
+ con múltiples nodos.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Atributos: 
-\series default
-Los atributos describen el estado deseado para un recurso; cada atributo
- maneja algún aspecto del recurso.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Cada tipo de recurso tiene su propio juego de atributos.
- Muchos tipos de recursos tienen un puñado de atributos claves y una gran
- cantidad de opcionales.
+\begin_layout Subparagraph
+Coindidencias
 \end_layout
 
 \begin_layout Standard
-Todos los atributos declarados deben tener un valor; el tipo de dato del
- valor depende de los que acepte el atributo.
+Un nodo dado sólo obtendrá los contenidos de una definición de nodo, incluso
+ si dos declaraciones de nodo pueden coincidir con el nombre del mismo.
+ Puppet realizará las verificaciones para decidir cual definición utilizar:
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Comportamiento: 
-\series default
-Una declaración de recurso agrega un recurso al catálogo y le dice a Puppet
- que administre el estado del recurso.
- Cuando Puppet aplica el catálogo compilado, lo que hará es:
+\begin_layout Enumerate
+Si hay una definición de nodo que contenga el nombre exacto del nodo, entonces
+ utilizará esta.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Leer el estado actual del recurso en el sistema objetivo.
+\begin_layout Enumerate
+Si hay una expresión regular que coincida cone el nombre del nodo, entonces
+ utilizará esta.
 \end_layout
 
-\begin_layout Itemize
-Comprar el estado actual con el deseado
+\begin_layout Enumerate
+Si el nombre de nodo es del tipo FQDN (Fully Qualified Domain Name), Puppet
+ cortará el grupo final y comenzará nuevamente desde el punto uno.
 \end_layout
 
-\begin_layout Itemize
-Si es necesario, realizar cambios para llevar el estado actual al deseado
+\begin_layout Enumerate
+Puppet utilizará el nodo default.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Recursos no administrados: 
-\series default
-Si el catálogo no contiene un recurso, implica que Puppet ya no lo administra,
- pero no que lo 
-\begin_inset Quotes eld
-\end_inset
-
-elimina
-\begin_inset Quotes erd
-\end_inset
-
-, si se desea eliminarlo, se debe aclararlo en su estado deseado.
- ensure => absent
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Singularidad: 
-\series default
-Puppet no permite que se declare un mismo recurso dos veces.
- Esto prevee conflictos de valores.
- Si múltiples clases requieren el mismo recurso se puede usar una clase
- o un recurso virtual para añadirlo al catálogo en múltiples lugares sin
- duplicar.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Relaciones y orden: 
-\series default
-Por defecto, Puppet aplica los recursos sin seguir el orden en que fueron
- escritos.
- Esto, se puede desactivar con la opción de ordenado.
- Sin embargo, si un recurso debe ser aplicado antes o después de otro, se
- puede indicar una relación entre ellos.
- Incluso se puede indicar que cambios en un recurso causen que otro se refresque.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Cambios, eventos y reportes: 
-\series default
-Si Puppet realiza cambios, en un recurso, registra esos cambios como eventos.
- Esos eventos aparecerán en el 
-\emph on
-log
-\emph default
- y en el reporte de ejecución de puppet.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Independencia de alcance: 
-\series default
-Los recursos no están sujetos a los alcances.
- Un recurso, en cualquier ámbito, se puede referenciar desde cualquier otro
- ámbito.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Atributos especiales de los recursos.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-Name/Namevar: 
-\series default
-Muchos tipos de recursos tiene un atributo el cual define un recurso en
- el sistema objetivo.
- Este atributo especial es el 
-\emph on
-namevar o name.
- 
-\emph default
-Por ejemplo, el 
-\emph on
-name
-\emph default
- de un servicio o paquete es el nombre por el cual las herramientas de paquetes
- o servicios lo reconocen o en el caso de un archivo, su namevar es el path.
- Esto es diferente al titulo, el cual identifica un recurso para el compilador
- de Puppet.
- Sin embargo, ellos a veces tienen el mismo valor.
-
-\series bold
- 
-\series default
-La separación de nombre y titulo permite administrar un recurso que mantiene
- su titulo, pero que tiene diferente nombre en diferentes plataformas.
- Por ejemplo, un servicio 
-\emph on
-ntp 
-\emph default
-en sistemas Red Hat tiene por nombre 
-\emph on
-ntpd 
-\emph default
-y 
-\emph on
-ntp 
-\emph default
-en sistemas debian.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Ensure: 
-\series default
-Esto generalmente maneja el aspecto mas importante de un recurso en el sistema
- objetivo.
- Indica si el archivo existe, si el servicio esta corriendo o parado, si
- el paquete esta instalado, etc.
-\end_layout
-
-\end_deeper
 \end_body
 \end_document
