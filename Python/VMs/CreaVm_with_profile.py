@@ -27,9 +27,16 @@ def CreaVm (numbers_VMs,perfil):
         mac = "52:54:00:" + str(random.choice(hexadecimal)) + str(random.choice(hexadecimal))
         mac = mac + ":" + str(random.choice(hexadecimal)) + str(random.choice(hexadecimal))
         mac = mac + ":" + str(random.choice(hexadecimal)) + str(random.choice(hexadecimal))
+
+        if perfil == "ubuntu":
+            os = "generic"
+        else:
+            os = "rhel7"
+
         #Ejecuto la linea que crea la VM
         commands.getoutput("cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0")
-        commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=8 --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type linux --os-variant rhel7")
+        print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=8 --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type linux --os-variant "+ str(os)
+        commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=8 --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type linux --os-variant "+ str(os))
 
         #Le doy tiempo (30 segundos) para que se refrezque el archivo dhcpd.lease
         time.sleep(60)
@@ -72,6 +79,8 @@ if __name__ == '__main__':
     nalumnos = int(input("¿Cuantas VM alumno desea crear?:"))
     ndocentes = int(input("¿Cuantas VM docentes desea crear?:"))
     nGUI = int(input("¿Cuantas VM GUI desea crear?:"))
+    nubuntu = int(input("¿Cuantas VM ubuntu desea crear?:"))
     CreaVm(nalumnos,"alumno")
     CreaVm(ndocentes,"docente")
     CreaVm(nGUI,"gui")
+    CreaVm(nubuntu,"ubuntu")

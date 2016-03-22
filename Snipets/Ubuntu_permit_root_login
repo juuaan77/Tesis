@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#Script que configura el servidor ssh para permitr root login con password
+
+sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+
+mkdir /root/fruta
+
