@@ -1,0 +1,9 @@
+yum install -y yum-priorities yum-utils
+
+curl ftp://192.168.122.1/files/proyectointegrador.repo -o etc/yum.repos.d/proyectointegrador.repo
+
+/bin/yum-config-manager  --enable proyectointegrador
+
+yum update -y
+
+

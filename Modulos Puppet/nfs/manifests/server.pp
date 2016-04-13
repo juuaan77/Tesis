@@ -1,15 +1,16 @@
+#Esta clase instala y configura un servidor nfs.
 class nfs::server()
 {
 
 	if $osfamily == "RedHat"
 	{
-		#Aca indico que el paquete nfs debe estar instalado, como son dos, indico ambos paquetes.
+		#Aca indico que el paquete nfs debe estar instalado.
 		package { 'paquete_nfs_utils': #Este es el titulo del recurso, es el que aparecera en los LOGs
 			ensure => installed, #aca le indico que quiero que el recurso este instalado
 			name => "nfs-utils", #indico el nombre del paquete	
 		}
 
-		#Ejecuto el comandod de activacion del servicio
+		#Ejecuto el comando de activacion del servicio
 		exec{'enable_servicio_rpcbind' :
 			command => '/usr/bin/systemctl enable rpcbind', #Este es el comando que deseo que se ejecute, en este caso, activa el servicio
 			cwd => "/", #indico desde que directorio se ejecuta el comando
@@ -23,7 +24,7 @@ class nfs::server()
 			require => Package['paquete_nfs_utils'],#Antes de activar el servicio, los paquetes deben estar instalados.
 		}
 
-		#aca creo el directorio nfs que es el que compartire
+		#aca creo el directorio nfs que contendra los archivos a compartir
 		file {'directorioNFS':#Titulo del recurso
 			ensure => directory, #indico que es un directorio
 			owner => root, #indico el dueño del directorio
@@ -85,7 +86,7 @@ class nfs::server()
 	}
 	elsif $osfamily == "Debian"
 	{
-		#Aca indico que el paquete nfs debe estar instalado, como son dos, indico ambos paquetes.
+		#Aca indico que el paquete nfs debe estar instalado.
 		package { 'paquete_nfs-common': #Este es el titulo del recurso, es el que aparecera en los LOGs
 			ensure => installed, #aca le indico que quiero que el recurso este instalado
 			name => "nfs-common", #indico el nombre del paquete	
