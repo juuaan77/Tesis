@@ -2,12 +2,42 @@
 
 #Script que instala puppet en los sistemas Ubuntu.
 
-cd /root/
+cd /root
 
-wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+#wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
 
+#dpkg -i /root/puppetlabs-release-pc1-trusty.deb
+
+#apt-get update
+curl ftp://192.168.122.1/proyectointegrador/Ubuntu14/puppet-agent_1.4.1-1trusty_amd64.deb -o /root/puppet-agent_1.4.1-1trusty_amd64.deb
+curl ftp://192.168.122.1/proyectointegrador/Ubuntu14/puppetlabs-release-pc1-trusty.deb -o /root/puppetlabs-release-pc1-trusty.deb
+
+dpkg -i /root/puppet-agent_1.4.1-1trusty_amd64.deb
 dpkg -i /root/puppetlabs-release-pc1-trusty.deb
 
-apt-get update
+#Obtengo el hostname de la maquina
+var=$(cat /etc/hostname)
 
-apt-get install puppet-agent
+#Aca modifico el archivo de configuracion de puppet y coloco el mio.
+echo '[main]' > /etc/puppetlabs/puppet/puppet.conf;
+echo 'logdir = /var/log/puppet' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'rundir = /var/run/puppet' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'ssldir = $vardir/ssl' >> /etc/puppetlabs/puppet/puppet.conf;
+echo "certname = $var" >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'server = puppet' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'runinterval = 2m' >> /etc/puppetlabs/puppet/puppet.conf;
+echo '[agent]' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'classfile = $vardir/classes.txt' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'localconfig = $vardir/localconfig' >> /etc/puppetlabs/puppet/puppet.conf;
+
+echo '192.168.122.1 puppet' >> /etc/hosts;
+#service puppet start
+
+#/opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+
+#Esta linea me va a permitir el root login via ssh
+sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+
+#Llamo a otros snippets
+$SNIPPET('ubuntu_repositorio')
+

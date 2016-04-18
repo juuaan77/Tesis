@@ -1,9 +1,24 @@
-yum install -y yum-priorities yum-utils
+#yum install -y yum-priorities yum-utils
+#Obtengo los paquetes necesarios para que funcione el repositorio correctamente
+mkdir /root/rpms
+curl ftp://192.168.122.1/proyectointegrador/Centos7/yum-utils-1.1.31-29.el7.noarch.rpm -o /root/rpms/yum-utils-1.1.31-29.el7.noarch.rpm
+curl ftp://192.168.122.1/proyectointegrador/Centos7/python-chardet-2.0.1-7.el7.noarch.rpm -o /root/rpms/python-chardet-2.0.1-7.el7.noarch.rpm
+curl ftp://192.168.122.1/proyectointegrador/Centos7/python-kitchen-1.1.1-5.el7.noarch.rpm -o /root/rpms/python-kitchen-1.1.1-5.el7.noarch.rpm
+curl ftp://192.168.122.1/proyectointegrador/Centos7/yum-plugin-priorities-1.1.31-34.el7.noarch.rpm -o /root/rpms/yum-plugin-priorities-1.1.31-34.el7.noarch.rpm
 
-curl ftp://192.168.122.1/files/proyectointegrador.repo -o etc/yum.repos.d/proyectointegrador.repo
+#Instalo dichos paquetes
+rpm -ivh /root/rpms/python-chardet-2.0.1-7.el7.noarch.rpm
+rpm -ivh /root/rpms/python-kitchen-1.1.1-5.el7.noarch.rpm
+rpm -ivh /root/rpms/yum-utils-1.1.31-29.el7.noarch.rpm
+rpm -ivh /root/rpms/yum-plugin-priorities-1.1.31-34.el7.noarch.rpm
 
+#Obtengo el archivo que habilita el repositorio 
+curl ftp://192.168.122.1/files/proyectointegrador.repo -o /etc/yum.repos.d/proyectointegrador.repo
+
+#habilito el repositorio
 /bin/yum-config-manager  --enable proyectointegrador
 
+#Actualizo el sistemas.
 yum update -y
 
 

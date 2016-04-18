@@ -1,8 +1,3 @@
-# kickstart template for Fedora 8 and later.
-# (includes %end blocks)
-# do not use with earlier distros
-
-#platform=x86, AMD64, or Intel EM64T
 # System authorization information
 auth  --useshadow  --enablemd5
 # System bootloader configuration
@@ -12,13 +7,13 @@ clearpart --all --initlabel
 # Use text mode install
 text
 # Firewall configuration
-firewall --enabled
+firewall --disable
 # Run the Setup Agent on first boot
 firstboot --disable
 # System keyboard
-keyboard us
+keyboard la-latin1
 # System language
-lang en_US
+lang es_AR
 # Use network installation
 url --url=$tree
 # If any cobbler repo definitions were referenced in the kickstart profile, include them here.
@@ -35,7 +30,7 @@ selinux --disabled
 # Do not configure the X Window System
 skipx
 # System timezone
-timezone  America/New_York
+timezone  America/Argentina/Cordoba
 # Install OS instead of upgrade
 install
 # Clear the Master Boot Record
@@ -61,19 +56,12 @@ $SNIPPET('log_ks_post_nochroot')
 
 %post
 $SNIPPET('log_ks_post')
-# Start yum configuration
-$yum_config_stanza
-# End yum configuration
-$SNIPPET('post_install_kernel_options')
-$SNIPPET('post_install_network_config')
-$SNIPPET('func_register_if_enabled')
-$SNIPPET('download_config_files')
-$SNIPPET('koan_environment')
-$SNIPPET('redhat_register')
-$SNIPPET('cobbler_register')
-# Enable post-install boot notification
-$SNIPPET('post_anamon')
+$SNIPPET('Centos_repositorio')
+$SNIPPET('Centos_instala_puppet')
 # Start final steps
 $SNIPPET('kickstart_done')
+# End final steps
+%end
+
 # End final steps
 %end

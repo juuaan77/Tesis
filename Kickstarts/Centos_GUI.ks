@@ -87,6 +87,8 @@ $SNIPPET('download_config_files')
 $SNIPPET('koan_environment')
 $SNIPPET('redhat_register')
 $SNIPPET('cobbler_register')
+$SNIPPET('Centos_repositorio')
+$SNIPPET('Centos_instala_puppet')
 # Enable post-install boot notification
 $SNIPPET('post_anamon')
 # Start final steps
