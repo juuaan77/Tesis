@@ -7,16 +7,22 @@ then
 	exit;
 else
 
+	#Desactivo el selinux. La segunda linea, es porque a veces no lo deshabilita con la 1°.
+	sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux;
+	sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config;
+
 	#Instalo paquetes base, que a veces no estan instalados por defecto
 	yum install wget vim -y
 	
 	#Añado el repositorio EPEL
-	wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm
-	rpm -ivh epel-release-7-6.noarch.rpm
+	wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm;
+	rpm -ivh epel-release-7-6.noarch.rpm;
 
 	#Añado repositorio para puppet
-	rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
-	yum install puppetserver -y
+	wget https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm;
+	rpm -ivh puppetlabs-release-pc1-el-7.noarch.rpm;
+	yum install -y puppetserver;
+
 	#Le indico que va a funcionar con 512MB de ram
 	sed -i 's/JAVA_ARGS="-Xms2g -Xmx2g -XX:MaxPermSize=256m"/JAVA_ARGS="-Xms512m -Xmx512m -XX:MaxPermSize=256m"/g' /etc/sysconfig/puppetserver;
 	#añado puppet en el /etc/hosts
@@ -27,16 +33,12 @@ else
 	#Actualizo los repositorios
 	yum update -y;
 	
-	#Desactivo el selinux. La segunda linea, es porque a veces no lo deshabilita con la 1°.
-	sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux;
-	sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config;
-
 	#Desactivo el firewall
 	systemctl stop firewalld
 	systemctl disable firewalld
 
 	#Instalo los servicios necesarios
-	yum install cobbler cobbler-web dhcp pykickstart system-config-kickstart dhcp tftp httpd xinetd -y;
+	yum install -y cobbler cobbler-web dhcp pykickstart system-config-kickstart dhcp tftp httpd xinetd;
 
 	#Activo el ftp
 	sed -i 's/disable.*/disable=no/g' /etc/xinetd.d/tftp;
@@ -81,6 +83,8 @@ else
 
 	#Hago lo propio con el dhcp.template
 	cat dhcp.template > /etc/cobbler/dhcp.template
+
+	yum install -y kvm libvirt qemu-kvm virt-manager libvirt qemu-system-x86 qemu-img libvirt-python libvirt-client virt-install virt-viewer;
 
 	reboot;
 	

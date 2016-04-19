@@ -16,6 +16,4 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 touch Templates/NewDocument
 
-yum install -y kvm libvirt qemu-kvm virt-manager libvirt qemu-system-x86 qemu-img libvirt-python libvirt-client virt-install virt-viewer
-
 exit
