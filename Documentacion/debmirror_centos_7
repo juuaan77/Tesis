@@ -1,0 +1,9 @@
+cd /root/
+wget https://depots.global-sp.net/CentOS/7/x86_64/debmirror-2.16-4.el7.centos.noarch.rpm
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm -Uvh epel-release-latest-7.noarch.rpm
+yum install bzip2 perl-Digest-SHA1 perl-Compress-Zlib rsync ed patch fence-agents setroubleshoot-server perl-LockFile-Simple perl-IO-Compress perl-Compress-Raw-Zlib perl-Digest-MD5 perl-Digest-SHA perl-Net-INET6Glue perl-LWP-Protocol-https -y
+rpm -ivh debmirror-2.16-4.el7.centos.noarch.rpm
+vim /etc/debmirror.conf
+	@dist   -> #@dist
+	@arches -> #@arches
