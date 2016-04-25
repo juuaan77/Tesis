@@ -28,15 +28,23 @@ def CreaVm (numbers_VMs,perfil):
         mac = mac + ":" + str(random.choice(hexadecimal)) + str(random.choice(hexadecimal))
         mac = mac + ":" + str(random.choice(hexadecimal)) + str(random.choice(hexadecimal))
 
-        if perfil == "ubuntu":
-            os = "generic"
+	if perfil == "windows":
+		os = "win7"
+		ostype = "windows"
+		disco = 25
+        elif perfil == "ubuntugui":
+            	os = "generic"
+		ostype = "linux"
+		disco = 15
         else:
-            os = "rhel7"
+            	os = "rhel7"
+		ostype = "linux"
+		disco = 15
 
         #Ejecuto la linea que crea la VM
         commands.getoutput("cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0")
-        print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=8 --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type linux --os-variant "+ str(os)
-        commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=8 --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type linux --os-variant "+ str(os))
+        print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=puppet,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os)
+        commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=puppet,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os))
 
         #Le doy tiempo (30 segundos) para que se refrezque el archivo dhcpd.lease
         time.sleep(60)
@@ -77,11 +85,12 @@ if __name__ == '__main__':
 
     print  "Ingrese la cantidad de maquinas alumnos, docentes, GUI que desea instalar"
     nalumnos = int(input("¿Cuantas VM alumno desea crear?:"))
-    ndocentes = int(input("¿Cuantas VM docentes desea crear?:"))
     nGUI = int(input("¿Cuantas VM GUI desea crear?:"))
     nubuntu = int(input("¿Cuantas VM ubuntu desea crear?:"))
+    nwindows = int(input("¿Cuantas VM windows desea crear?:"))
     CreaVm(nalumnos,"alumno")
-    CreaVm(ndocentes,"docente")
     CreaVm(nGUI,"gui")
-    CreaVm(nubuntu,"ubuntu")
+    CreaVm(nubuntu,"ubuntugui")
+    CreaVm(nwindows,"windows")
+
 
