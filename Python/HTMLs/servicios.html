@@ -1,28 +1,47 @@
-<form action="/servicios" method="post">
-
-	<H2>Marque las opciones que desea segun cada sistema operativo.</H2>
-	<hr> CentOS <br/> <br/>
-		<INPUT type="checkbox" name="c_eclipse">eclipse<BR>
-		<INPUT type="checkbox" name="c_idle">idle<BR>
-		<INPUT type="checkbox" name="c_repositorio">repositorio<BR>
-		<INPUT type="checkbox" name="c_update">update<BR>
-		<INPUT type="checkbox" name="c_usuarios">usuarios<BR>
-	<br>
-
-	<hr> Ubuntu <br/> <br/>
-		<INPUT type="checkbox" name="u_eclipse">eclipse<BR>
-		<INPUT type="checkbox" name="u_idle">idle<BR>
-		<INPUT type="checkbox" name="u_repositorio">repositorio<BR>
-		<INPUT type="checkbox" name="u_ubuntugui">ubuntugui<BR>
-		<INPUT type="checkbox" name="u_update">update<BR>		
-		<INPUT type="checkbox" name="u_usuarios">usuarios<BR>		
-	<br>
-
-	<hr> Windows <br/> <br/>
-		<INPUT type="checkbox" name="w_windowsus">windowsus<BR>	
-	<br>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	  <title>Servidor de maquinas virtuales</title>
+		<!-- Aca empieza la parte de css que va a formatear la pagina para que quede de la forma deseada -->
+		  <link rel="stylesheet" href="estilo1.css">
+	</head>
 	
-	<!--<INPUT type="checkbox" name="estandard" checked>Parametros estandard<BR>-->
+	<body>
+
+		<form action="/servicios" method="post">
+
+			<H2>Marque las opciones que desea segun cada sistema operativo.</H2>
+			<hr> CentOS <br/> <br/>
+				<INPUT type="checkbox" name="c_eclipse">eclipse<BR>
+				<INPUT type="checkbox" name="c_idle">idle<BR>
+				<INPUT type="checkbox" name="c_repositorio">repositorio<BR>
+				<INPUT type="checkbox" name="c_update">update<BR>
+				<INPUT type="checkbox" name="c_usuarios">usuarios<BR>
+			<br>
+
+			<hr> Ubuntu <br/> <br/>
+				<INPUT type="checkbox" name="u_eclipse">eclipse<BR>
+				<INPUT type="checkbox" name="u_idle">idle<BR>
+				<INPUT type="checkbox" name="u_repositorio">repositorio<BR>
+				<INPUT type="checkbox" name="u_ubuntugui">ubuntugui<BR>
+				<INPUT type="checkbox" name="u_update">update<BR>		
+				<INPUT type="checkbox" name="u_usuarios">usuarios<BR>		
+			<br>
+
+			<hr> Windows <br/> <br/>
+				<INPUT type="checkbox" name="w_windowsus">windowsus<BR>	
+			<br>
 	
-    	<hr> <input value="Aceptar" type="submit" /> <br>
-</form>
+			<!--<INPUT type="checkbox" name="estandard" checked>Parametros estandard<BR>-->
+	
+		    	<hr> <input value="Aceptar" type="submit" /> <br>
+		</form>
+
+		<!-- Menú de navegación del sitio -->
+		<ul class="navbar">
+		  <li><a href="Servidor_de_maquinas_virtuales.html">Crear maquinas virtuales.</a>
+		</ul>
+
+
+	</body>
+</html>

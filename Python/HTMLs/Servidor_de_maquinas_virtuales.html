@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	  <title>Servidor de maquinas virtuales</title>
+		<!-- Aca empieza la parte de css que va a formatear la pagina para que quede de la forma deseada -->
+		  <link rel="stylesheet" href="estilo1.css">
+	</head>
+	<body>
+		<form action="/virtual_machine" method="post">
+
+			<H2>Indique la cantidad de VMs de con cada SO a crear.</H2>
+			<hr> CentOS: <input name="ncentos" type="text" /> <br>
+			<hr> Ubuntu: <input name="nubuntu" type="text" /> <br>
+			<hr> Windows: <input name="nwindows" type="text" /> <br>
+	
+	
+			<!--<INPUT type="checkbox" name="estandard" checked>Parametros estandard<BR>-->
+	
+		    	<hr> <input value="Crear" type="submit" /> <br>
+		</form>
+
+		<!-- Menú de navegación del sitio -->
+		<ul class="navbar">
+		  <li><a href="servicios.html">Editar configuraciones de las maquinas virtuales.</a>
+		</ul>
+
+	</body>
+</html>

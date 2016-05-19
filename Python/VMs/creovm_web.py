@@ -1,13 +1,13 @@
 __author__ = 'juan'
 
 import os, time, commands,re
-from CreaVm_with_profile_v2 import CreaVm
+from CreaVm_with_profile_v2 import CreaVm, CreaVm_parametrizada
 from bottle import get, post, request, run,route
 
 @get('/virtual_machine') #Pagina principal, la cual pide los datos necesarios para crear la VM.
 def creaVM():
     #peticionhtml = open("/home/werner/demo/HTMLs/Peticion_parametros_CreacionVM.html","r", 0)
-    peticionhtml = open("/home/juan/Tesis/Python/HTMLs/SO_estandar.html","r", 0)
+    peticionhtml = open("/home/juan/Tesis/Python/HTMLs/virtual_machine.html","r", 0)
     return peticionhtml
     #return '''fruta'''
 
@@ -20,6 +20,22 @@ def do_creaVM():
     #CreaVm(ncentos,"ubuntugui")
     #CreaVm(nwindows,"ubuntugui")
 
+
+@get('/virtual_machine_parametrizada') #Pagina principal, la cual pide los datos necesarios para crear la VM.
+def creaVM():
+    #peticionhtml = open("/home/werner/demo/HTMLs/Peticion_parametros_CreacionVM.html","r", 0)
+    peticionhtml = open("/home/juan/Tesis/Python/HTMLs/virtual_machine_parametrizada.html","r", 0)
+    return peticionhtml
+    #return '''fruta'''
+
+@post('/virtual_machine_parametrizada') #toma los parametros ingresados e indica si se creo o no la VM con exito.
+def do_creaVM():
+    ncentos = request.forms.get('ncentos')
+    nubuntu = request.forms.get('nubuntu')
+    nwindows = request.forms.get('nwindows')
+    CreaVm(nubuntu,"ubuntugui")
+    #CreaVm(ncentos,"ubuntugui")
+    #CreaVm(nwindows,"ubuntugui")
 
 @get('/servicios')
 def servicios():
