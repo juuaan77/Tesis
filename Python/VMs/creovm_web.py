@@ -22,18 +22,19 @@ def do_creaVM():
 
 
 @get('/virtual_machine_parametrizada') #Pagina principal, la cual pide los datos necesarios para crear la VM.
-def creaVM():
+def creaVM_parametrizado():
     #peticionhtml = open("/home/werner/demo/HTMLs/Peticion_parametros_CreacionVM.html","r", 0)
     peticionhtml = open("/home/juan/Tesis/Python/HTMLs/virtual_machine_parametrizada.html","r", 0)
     return peticionhtml
     #return '''fruta'''
 
 @post('/virtual_machine_parametrizada') #toma los parametros ingresados e indica si se creo o no la VM con exito.
-def do_creaVM():
-    ncentos = request.forms.get('ncentos')
-    nubuntu = request.forms.get('nubuntu')
-    nwindows = request.forms.get('nwindows')
-    CreaVm(nubuntu,"ubuntugui")
+def do_creaVM_parametrizado():
+    perfil = request.forms.get('boton1')
+    ram = request.forms.get('ram')
+    disco = request.forms.get('disco')
+
+    CreaVm_parametrizada(perfil,ram,disco)
     #CreaVm(ncentos,"ubuntugui")
     #CreaVm(nwindows,"ubuntugui")
 

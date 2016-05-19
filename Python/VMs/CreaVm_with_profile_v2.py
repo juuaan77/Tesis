@@ -138,7 +138,7 @@ def Parseo_IP(mac,hostname):
     commands.getoutput("echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts" )
     print "echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts"
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
 
     #print  "Ingrese la cantidad de maquinas alumnos, docentes, GUI que desea instalar"
     #nalumnos = int(input("¿Cuantas VM alumno desea crear?:"))
@@ -150,5 +150,5 @@ if __name__ == '__main__':
     #CreaVm(nubuntu,"ubuntugui")
     #CreaVm(nwindows,"windows")
 
-    CreaVm_parametrizada ("ubuntugui",1024, 20)
+    #CreaVm_parametrizada ("ubuntugui",1024, 20)
 

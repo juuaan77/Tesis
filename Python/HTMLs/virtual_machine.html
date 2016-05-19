@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	  <title>Servidor de maquinas virtuales</title>
+		<!-- Aca empieza la parte de css que va a formatear la pagina para que quede de la forma deseada -->
+		<!-- Deberia ser una unica linea, que es la siguiente, pero con el bottle no anda y no se porque -->
+		<!--<link rel="stylesheet" href="estilo1.css"> --> 
+		<style type="text/css">
+			/*Esta seccion indica como debe ser el cuerpo de la pagina*/
+			  body {
+				padding-left: 14em;/*debe ubicarse a la derecha, para dejar espacio a la izquierda para el menu*/
+				color: black;/*Indico letras negras*/
+				background-color: #dcffff }/*indico color de fondo celeste*/
+
+			/*Esta seccion indica como debe el menu, su ubicacion presisa*/
+			ul.navbar {
+				list-style-type: none;/*Sin el item y que no deje espacio vacio*/
+				padding: 0;
+				margin: 0;
+				position: absolute;/*posicion independiente del cuerpo de la pagina*/
+				top: 2em;/*ubicacion*/
+				left: 1em;
+				width: 11em }
+
+			/*El menu tiene recuadros blancos*/
+			ul.navbar li {
+				background: white;
+				margin: 0.5em 0;
+				padding: 0.3em;
+				border-right: 1em solid black }/*linea negra a la derecha*/
+
+			/*si aun no se ingreso al enlace esta azul, sino purpura*/
+			ul.navbar a {
+				text-decoration: none }
+				a:link {
+					color: blue }
+				a:visited {
+					color: purple }
+		</style>
+		
+	</head>
+	<body>
+		<form action="/virtual_machine" method="post">
+
+			<H2>Indique la cantidad de VMs de con cada SO a crear.</H2>
+			<hr> CentOS: <input name="ncentos" type="text" /> <br>
+			<hr> Ubuntu: <input name="nubuntu" type="text" /> <br>
+			<hr> Windows: <input name="nwindows" type="text" /> <br>
+	
+	
+			<!--<INPUT type="checkbox" name="estandard" checked>Parametros estandard<BR>-->
+	
+		    	<hr> <input value="Crear" type="submit" /> <br>
+		</form>
+
+		<!-- Menú de navegación del sitio -->
+		<ul class="navbar">
+			<li><a href="virtual_machine_parametrizada">Crear virtual machine con parametros.</a>
+			<li><a href="servicios">Editar configuraciones de las maquinas virtuales.</a>
+		</ul>
+
+	</body>
+</html>
