@@ -6,12 +6,13 @@ __author__ = 'juan'
 import commands
 import sys
 
-print sys.argv[0]
-print sys.argv[1]
-print sys.argv[2]
-print sys.argv[3]
+ram = 512
+disco = 10
 
+try:
+    if int(ram)<1024:
+        print "exito"
+except ValueError:
+    print "error"
 
-
-
-
+print type(ram)

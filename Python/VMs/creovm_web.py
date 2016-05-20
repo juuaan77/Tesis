@@ -2,7 +2,29 @@ __author__ = 'juan'
 
 import os, time, commands,re
 from CreaVm_with_profile_v2 import CreaVm, CreaVm_parametrizada
+from EstadoVM import genera_estado_html,estado
 from bottle import get, post, request, run,route
+
+@get('/estados') #Pagina principal, la cual pide los datos necesarios para crear la VM.
+def estadosVM():
+    #peticionhtml = open("/home/werner/demo/HTMLs/Peticion_parametros_CreacionVM.html","r", 0)
+    return genera_estado_html()
+    #return '''fruta'''
+
+@post('/estados') #Pagina principal, la cual pide los datos necesarios para crear la VM.
+def do_estadosVM():
+    estados = estado()
+    encendido = ""
+    apagado = ""
+    for i in range(0,len(estados)-1,2):
+        if request.forms.get("Prender-"+estados[i])=="on":
+            #encendido = encendido + "prendo" + estados[i]
+            encendido= encendido + "\n" + commands.getoutput("virsh start "+estados[i])
+        elif request.forms.get("Apagar-"+estados[i])=="on":
+            #apagado = apagado +"apago" + estados[i]
+            apagado = apagado + "\n" + commands.getoutput("virsh shutdown "+estados[i])
+
+    return encendido + apagado + estadosVM()
 
 @get('/virtual_machine') #Pagina principal, la cual pide los datos necesarios para crear la VM.
 def creaVM():
@@ -16,10 +38,13 @@ def do_creaVM():
     ncentos = request.forms.get('ncentos')
     nubuntu = request.forms.get('nubuntu')
     nwindows = request.forms.get('nwindows')
-    CreaVm(nubuntu,"ubuntugui")
+
+    if CreaVm(nubuntu,"ubuntugui")=="error" or CreaVm(ncentos,"ubuntugui")=="error" or CreaVm(nwindows,"ubuntugui")=="error":
+        return'''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
+
     #CreaVm(ncentos,"ubuntugui")
     #CreaVm(nwindows,"ubuntugui")
-
+    return estadosVM()
 
 @get('/virtual_machine_parametrizada') #Pagina principal, la cual pide los datos necesarios para crear la VM.
 def creaVM_parametrizado():
@@ -33,10 +58,13 @@ def do_creaVM_parametrizado():
     perfil = request.forms.get('boton1')
     ram = request.forms.get('ram')
     disco = request.forms.get('disco')
-
-    CreaVm_parametrizada(perfil,ram,disco)
+    if str(perfil)=="None":
+        return '''Por favor, seleccione un perfil\n'''
+    if CreaVm_parametrizada(perfil,ram,disco)=="error":
+        return'''Por favor, ingrese solo el NUMERO en la cantidad de ram y disco\n'''
     #CreaVm(ncentos,"ubuntugui")
     #CreaVm(nwindows,"ubuntugui")
+    return estadosVM()
 
 @get('/servicios')
 def servicios():
