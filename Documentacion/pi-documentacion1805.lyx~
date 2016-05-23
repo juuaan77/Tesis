@@ -14227,10 +14227,10 @@ Creamos dos ejemplos muy simples que luego utilizamos en la aplicación para
 
 \begin_layout Standard
 Con las siguientes funciones definimos de qué modo procederá el servidor
- Bottle cuando recibe peticiones get y post enviadas a la URL /creavm.
+ Bottle cuando recibe peticiones get y post enviadas a la URL /virtual_machine.
  En la siguiente figura vemos el decorador get, lo que indica que la función
  definida a continuación se ejecutara cuando una solicitud get a la URL
- /creavm llegue al servidor.
+ /virtual_machine llegue al servidor.
  La función devuelve el HTML de un formulario al navegador, que el usuario
  rellenará para indicar la cantidad de maquinas virtuales con cada SO que
  desea crear.
@@ -14239,13 +14239,49 @@ Con las siguientes funciones definimos de qué modo procederá el servidor
 \end_layout
 
 \begin_layout Standard
-INSERTAR AQUI IMAGEN PYCHARM CON LA SECCION INDICADA DEL PYTHON
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/Interfaz web/Metodo_get.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Metodo get
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 En la siguiente figura, tenemos el decorador post .
  Luego del decorador se encuentra la función que se ejecutará cuando una
- solicitud post a la URL /creavm llegue al servidor.
+ solicitud post a la URL /virtual_machine llegue al servidor.
  Este caso se dará, por ejemplo, cuando el usuario rellene el formulario
  devuelto en la función de la figura anterior.
  Esta función tomará los parámetros presentes en el formulario y realizará
@@ -14255,7 +14291,42 @@ En la siguiente figura, tenemos el decorador post .
 \end_layout
 
 \begin_layout Standard
-INSERTAR AQUI LA SIGUIENTE IMAGEN DEL PYCHARM
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/Interfaz web/Metodo_post.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Metodo post
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14266,7 +14337,39 @@ La última línea que pondremos en el código, será la que nos permita iniciar
 \end_layout
 
 \begin_layout Standard
-INSERTAR IMAGEN DEL COMANDO RUN
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/Interfaz web/metodo_run.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Metodo run
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14276,6 +14379,10 @@ Si declaramos la función run como en la figura anterior, solo podremos acceder
  Si queremos que el servidor se pueda acceder desde otras direcciones IP,
  reemplazamos localhost por la IP que deseamos o reemplazamos por 0.0.0.0 para
  habilitar, toda la red.
+ Finalmente, vemos que esta activada la opción de debug, esta nos permite
+ ver a través de la pagina web el retorno de los errores que nos entrega
+ python, facilitando el debuguer.
+ Una vez puesto en producción en sistema, esta opción debe ser desactivada.
 \end_layout
 
 \begin_layout Standard

@@ -1,0 +1,4601 @@
+1.9.3 Planificación de riesgos%% LyX 2.1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,spanish,listitoc, tablecaptionabove, bibtotoc]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{color}
+\usepackage{array}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{babel}
+\usepackage{colortbl}
+\addto\captionsenglish{%
+ \renewcommand{\figurename}{Figura }%
+ \renewcommand{\contentsname}{Índice}%
+ \renewcommand{\listfigurename}{Lista de figuras}%
+ \renewcommand{\tablename}{Tabla }%
+ \renewcommand{\listtablename}{Lista de tablas}%
+ \renewcommand{\partname}{Capítulo }% 
+}
+
+\AtBeginDocument{
+  \def\labelitemii{\(\circ\)}
+  \def\labelitemiii{\(\triangleright\)}
+  \def\labelitemiv{\(\ast\)}
+}
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\begin{document}
+
+\title{\noindent {\huge{}Universidad Nacional de Córdoba}}
+
+
+\author{\includegraphics[width=10cm,height=10cm,keepaspectratio]{Imagenes/Escudo_UNC_modernoo}}
+
+\maketitle
+~
+
+\noindent \begin{center}
+\textsf{\textbf{\LARGE{}Facultad de Ciencias Exactas, Físicas y Naturales}}
+\par\end{center}{\LARGE \par}
+
+\noindent \begin{center}
+\textsf{~~}
+\par\end{center}
+
+\noindent \begin{center}
+\textsf{\textbf{\Large{}Infraestructura tecnológica virtual con automatización
+y orquestación.}}
+\par\end{center}{\Large \par}
+
+~~
+
+\noindent \begin{flushright}
+\textsf{\textbf{Alumnos:}}\textsf{ Juan Arese, Werner Diers}
+\par\end{flushright}
+
+\noindent \begin{flushright}
+\textsf{\textbf{Director de PI: }}\textsf{Eschoyez, Maximiliano Andrés }
+\par\end{flushright}
+
+\noindent \begin{flushright}
+\textsf{\textbf{Co-director de PI:}}\textsf{ Migliazzo, Oscar Andrés}
+\par\end{flushright}
+
+\pagebreak
+
+\tableofcontents{}
+
+\listoftables
+
+
+\listoffigures
+
+
+\pagebreak
+
+
+\part{Introducción}
+
+
+\section{Resumen del Proyecto Integrador}
+
+El Sistema desarrollado en este Proyecto Integrador, pretende facilitar
+algunas de las tareas que los administradores de los laboratorios
+realizan en las salas de informática. Las funcionalidades desarrolladas
+permiten a los administradores (o incluso a cualquier persona sin
+conocimiento técnico) crear maquinas virtuales con un solo click,
+dichas maquinas virtuales cuentan con todos los servicios y programas
+necesarios para los alumnos de las diferentes carreras o inclusive
+se pueden crear maquinas virtuales con otros perfiles, como un perfil
+para docentes. Además, permite orquestar las políticas a seguir de
+las diferentes máquinas de la red.
+
+
+\subsection{Descripción}
+
+El sistema de infraestructura virtual con automatización y orquestación,
+tiene como objetivo principal brindar una herramienta a los administradores
+de laboratorios que facilite la preparación y configuración de sus
+aulas de manera simple.
+
+El sistema está dividido en dos partes. Una parte de la herramienta
+está destinada al despliegue en masa de máquinas virtuales. Permite
+al administrador, crear múltiples máquinas virtuales con escasa interacción
+humana, de forma automática. Pudiéndose especificar el sistema operativo
+deseado y componentes de hardware. Del mismo modo, en un laboratorio
+con máquinas físicas, es posible realizar el despliegue a través de
+la red.
+
+La segunda parte está destinada a la administración de la configuración
+de las máquinas virtuales. El sistema permite aplicar cambios de configuración
+y políticas a un conjunto de máquinas como también a máquinas particulares.
+Esto evita que el administrador tenga que preparar cada estación de
+trabajo de a una por vez, disminuyendo la carga de trabajo y el tiempo
+requerido para llevar a cabo la tarea.
+
+El sistema incluye desarrollo en el lenguaje de programación Python,
+bash y el lenguaje propio de Puppet, la herramienta utilizada para
+la orquestación. El servidor de aprovisionamiento, haciendo uso del
+protocolo PXE, será el encargado de atender las peticiones de los
+dispositivos para su instalación.
+
+Este Proyecto Integrador servirá como base para futuros Proyectos.
+
+
+\subsection{Objetivos }
+
+\textbf{Principal:} 
+\begin{itemize}
+\item Desarrollar un sistema para manejar automatismos administrados de
+políticas de una institución o empresa, para que el administrador
+pueda configurar las máquinas virtuales o físicas que se utilizan
+en la misma. Como caso particular se tomará un laboratorio informático
+de aprendizaje.
+\end{itemize}
+\textbf{Secundarios: }
+\begin{itemize}
+\item Estudiar Sistemas Operativos para servidor.
+\item Estudiar herramientas de virtualización.
+\item Estudiar herramientas de aprovisionamiento. 
+\item Estudiar herramientas de administración de configuración.
+\item Analizar protocolos para inicio a través de la red como PXE.
+\end{itemize}
+\textbf{Antecedentes de Proyectos similares }
+\begin{itemize}
+\item No hay antecedentes en este tema.
+\end{itemize}
+
+\subsection{Intereses personales }
+
+La principal motivación en este Proyecto Integrador es darle un final
+a la carrera de grado de Ingeniería en Computación realizando un proyecto
+que nos de más herramientas para nuestro futuro laboral. Abordamos
+temas como sistemas operativos, sistemas de archivos, protocolos,
+metodologías de desarrollo, redes de datos, programación en Python,
+Shell scripting, virtualización, diagramas UML.
+
+
+\subsection{Intereses Institucionales }
+
+La Facultad de Ciencias Exactas, Físicas y Naturales actualmente cuenta
+con alrededor de cinco aulas de informática, en las cuales se dictan
+materias de todos los ciclos y especialidades de ingeniería. La idea
+del Proyecto Integrador es desarrollar un sistema de infraestructura
+con automatización y orquestación que permita disminuir la carga de
+trabajo de los administradores de estas aulas y facilitar las tareas
+de mantenimiento de las mismas, cumpliendo con las políticas del área
+que administra las aulas.
+
+
+\subsection{Metodología }
+
+Para afrontar el Proyecto Integrador de la carrera se utilizó una
+metodología de desarrollo ágil de software basado en el desarrollo
+iterativo e incremental. El trabajo desarrollado en una unidad de
+tiempo es llamado una iteración, las cuales constan de un corto lapso
+de tiempo de entre una y tres semanas. Cada iteración se compone de
+un ciclo de vida que integra diversas etapas como planificación, definición
+de los requerimientos, investigación, diseño, codificación, pruebas
+y documentación. En cada iteración se agrega una nueva \textquotedblleft funcionalidad\textquotedblright{}
+al sistema y a medida que avanzan los ciclos el sistema aumenta de
+tamaño, por esto lo llamamos incremental. Otra característica de la
+metodología ágil que se utilizó, es una comunicación fluida con el
+\textquotedblleft cliente\textquotedblright{} que en este caso son
+los Directores del Proyecto Integrador, de los que también se obtienen
+los requerimientos. Esto permite una buena retro-alimentación, con
+la cual se devuelven correcciones . No ser estrictos con la documentación
+es una característica que se tomó del desarrollo ágil, tener todo
+anotado luego facilita la generación del informe. 
+
+\textbf{Lugar previsto para la realización: }
+\begin{itemize}
+\item Laboratorio de Arquitectura de Computadoras, Facultad de Ciencias
+Exactas, Físicas y Naturales. 
+\end{itemize}
+\textbf{Requerimiento de Instrumental y Equipos: }
+\begin{itemize}
+\item Computadora personal.
+\end{itemize}
+\textbf{Inversión económica: }
+\begin{itemize}
+\item Inversión provista por el alumno: ninguna
+\item Apoyo económico externo a la Facultad: ninguno.
+\end{itemize}
+
+\subsection{Requerimientos }
+
+Los requerimientos del sistema se obtuvieron directamente desde el
+Director y el Codirector del Proyecto Integrador. 
+
+Separamos los requerimientos del Proyecto Integrador en funcionales
+y no funcionales.
+
+~
+
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular}{|c||>{\centering}p{10cm}|}
+\hline 
+\rowcolor{cyan}ID & Requerimiento \tabularnewline
+\hline 
+\hline 
+RF01 & La herramienta debe poder aprovisionar distintos sistemas operativos: \tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF02 & La herramienta debe poder aprovisionar máquinas virtuales con o sin
+GUI . \tabularnewline
+\hline 
+\hline 
+RF03 & La herramienta debe aprovisionar a través de la red. \tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF04 & La herramienta debe poder aprovisionar utilizando plantillas. \tabularnewline
+\hline 
+\hline 
+RF05 & La herramienta debe poder aprovisionar utilizando repositorios locales.\tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF06 & La herramienta debe poder actualizar los repositorios locales (de
+CentOS). \tabularnewline
+\hline 
+\hline 
+RF07 & La herramienta debe poder setear políticas a las máquinas virtuales,utilizando
+Puppet. \tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF08 & La herramienta debe ser escalable, integrar nuevas máquinas virtuales
+fácilmente. \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Requerimientos Funcionales}
+\end{table}
+
+
+~
+
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular}{|c||>{\centering}p{10cm}|}
+\hline 
+\rowcolor{cyan}ID & Requerimiento \tabularnewline
+\hline 
+\hline 
+RNF01 & La herramienta debe utilizar licencias de código abierto. \tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RNF02 & La herramienta debe estar implementada en la versión más actual al
+momento de realizar el Proyecto Integrador. \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Requerimientos No Funcionales}
+\end{table}
+
+
+
+\subsubsection{Importancia de los requerimientos}
+
+Durante la etapa de obtención de requerimientos, se les asignaron
+niveles de importancia, definiendo cuáles son más necesarios para
+el cumplimiento del objetivo del Proyecto Integrador.
+
+De este modo, se han definido cinco niveles de importancia, siendo
+el número 5 el que representa la mayor importancia, disminuyendo sucesivamente
+hasta el nivel 1, el menor nivel de importancia.
+
+\textbf{~}
+
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular*}{15cm}{@{\extracolsep{\fill}}|c||>{\centering}p{10cm}||c|}
+\hline 
+\rowcolor{cyan}ID & Requerimiento  & Importancia \tabularnewline
+\hline 
+\hline 
+RF01 & La herramienta debe poder aprovisionar distintos sistemas operativos:  & 3\tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF02 & La herramienta debe poder aprovisionar máquinas virtuales con o sin
+GUI .  & 1\tabularnewline
+\hline 
+\hline 
+RF03 & La herramienta debe aprovisionar a través de la red.  & 5\tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF04 & La herramienta debe poder aprovisionar utilizando plantillas.  & 3\tabularnewline
+\hline 
+\hline 
+RF05 & La herramienta debe poder aprovisionar utilizando repositorios locales. & 5\tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF06 & La herramienta debe poder actualizar los repositorios locales (de
+CentOS).  & 4\tabularnewline
+\hline 
+\hline 
+RF07 & La herramienta debe poder setear políticas a las máquinas virtuales,utilizando
+Puppet.  & 5\tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RF08 & La herramienta debe ser escalable, integrar nuevas máquinas virtuales
+fácilmente.  & 5\tabularnewline
+\hline 
+\hline 
+RNF01 & La herramienta debe utilizar licencias de código abierto.  & 5\tabularnewline
+\hline 
+\hline 
+\rowcolor[rgb]{0.9,1,1}RNF02 & La herramienta debe estar implementada en la versión más actual al
+momento de realizar el Proyecto Integrador.  & 4\tabularnewline
+\hline 
+\end{tabular*}
+\par\end{centering}
+
+\protect\caption{Importancia de los Requerimientos}
+\end{table}
+
+
+~
+
+Los siguientes diagramas de casos de uso ilustran los requerimientos
+mas importantes
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/Casos de uso/Crea VM mismo servidor\string".eps}
+\par\end{centering}
+
+\protect\caption{Caso de uso en un mismo servidor}
+\end{figure}
+
+
+También se puede dar el caso de que el servidor de maquinas virtuales
+se encuentre en otro servidor físico.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/Casos de uso/Crea VM servidor externo\string".eps}
+\par\end{centering}
+
+\protect\caption{Servidor de maquinas virtuales separado}
+
+
+\end{figure}
+
+
+
+\subsection{Cronograma a seguir}
+
+El cronograma está dividido en siete etapas diferentes:
+\begin{itemize}
+\item Investigar y seleccionar el sistema operativo base elegido. 
+\item Investigación y seleccionar herramientas de virtualización. 
+\item Investigación y seleccionar herramientas de aprovisionamiento.
+\item Investigación y seleccionar herramientas de orquestación.
+\item Desarrollo de un sistema que una las herramientas seleccionadas para
+que funcionen en conjunto 
+\item Desarrollo de perfiles y scripts que permitan obtener un abanico de
+posibilidades a la hora de crear maquinas virtuales.
+\item Desarrollo de una interfaz web simple para una administración base
+del sistema.
+\end{itemize}
+
+\subsection{Objetivo a alcanzar en cada etapa:}
+\begin{itemize}
+\item \textbf{Primera etapa:} conocer diferentes sistemas operativos y seleccionar
+el mas apto. La principal motivación, es la de informarse sobre la
+base donde se implementará el sistema desarrollado en este Proyecto
+Integrador. 
+\item \textbf{Segunda etapa:} conocer diferentes herramientas de virtualización
+y seleccionar la mas adecuada.
+\item \textbf{Tercera etapa:} conocer cuáles son las herramientas disponibles
+y utilizadas en ambientes de producción para el aprovisionamiento
+de máquinas, teniendo en cuenta que deben ser de código abierto, analizarlas
+y elegir la más apropiada para realizar el Proyecto Integrador. 
+\item \textbf{Cuarta etapa: }Conocer las herramientas libres de orquestación
+que se encuentran en el mercado seleccionar la adecuada.
+\item \textbf{Quinta etapa: }implementar las herramientas seleccionadas
+en conjunto. 
+\item \textbf{Sexta etapa:} Realizar la implementación conjunta de todas
+las herramientas automatizando la instalación y realizar configuraciones
+pertinentes en los sistemas ya instalados, por medio de scripts y
+la herramienta de orquestación, obteniendo diferentes perfiles. 
+\item \textbf{Séptima etapa: }Desarrollo de una interfaz web simple que
+permita crear maquinas virtuales y asignarles el perfil deseado de
+manera fácil y sin necesidad de conocimientos técnicos.
+\end{itemize}
+
+\subsection{Gestión de riesgos}
+
+Para la gestión de riesgos de nuestro proyecto, introducimos un pequeño
+resumen basado en la bibliografía.
+
+Los riesgos se pueden definir como una probabilidad de que una circunstancia
+adversa ocurra. La gestión de riesgos permite identificar los riesgos
+de un proyecto y crear planes para minimizar el efecto de los mismos
+sobre el proyecto.
+
+En este tipo de proyectos, la gestión de riesgos es importante dado
+a las incertidumbres inherentes con las que se encuentran. Por ejemplo:
+requerimientos ambiguamente definidos, dificultades en las estimaciones
+de los tiempos y recursos, etc. 
+
+El proceso de gestión de riesgos comprende varias etapas:
+\begin{enumerate}
+\item \textbf{Identificación de riesgos:} Consiste en identificar los posibles
+riesgos para el proyecto, el producto y los negocios.
+\item \textbf{Análisis de riesgos:} Consiste en evaluar las probabilidades
+y las consecuencias de los riesgos.
+\item \textbf{Planificación de los riesgos:} Se crean planes para abordar
+los riesgos.
+\item \textbf{Supervisión de riesgos: }Proceso continuo en el que se evalúa
+cada riesgo y se analiza si han cambiado sus probabilidades o efectos.
+\end{enumerate}
+
+\subsubsection{Identificación de riesgos}
+
+En esta etapa debemos descubrir los posibles riesgos del proyecto.
+Clasificaremos los riesgos con los siguientes tipos:
+\begin{itemize}
+\item \textbf{Riesgos de tecnología:} Derivan de las tecnologías de software
+o hardware utilizadas en el sistema que se está desarrollando.
+\item \textbf{Riesgos organizacionales:} Derivan del entorno organizacional
+donde el software se está desarrollando.
+\item \textbf{Riesgos de estimación:} Derivan de los estimados administrativos
+de las características del sistema y los recursos requeridos para
+construir dicho sistema.
+\end{itemize}
+La siguiente tabla muestra los riesgos encontrados.
+
+~
+
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular}{|c|>{\centering}p{10cm}|c|}
+\hline 
+\rowcolor{cyan}ID & Riesgo & Tipo \tabularnewline
+\hline 
+\hline 
+RS01 & Falta de infraestructura para llevar a cabo el proyecto  & Organizacional \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS02 & Incompatibilidad de funciones del sistema operativo con el Hardware
+disponible  & Tecnológicas \tabularnewline
+\hline 
+RS03 & Dificultades en la interacción entre la aplicación y el sistema operativo  & Tecnológicas \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS04 & Diferencias de paquetes disponibles entre los Sistemas operativo  & Tecnológicas \tabularnewline
+\hline 
+RS05 & Diferencias entre funciones disponibles entre los Sistemas operativo  & Tecnológicas \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS06 & Disponibilidad de información sobre las herramientas  & Tecnológicas \tabularnewline
+\hline 
+RS07 & Miembro del grupo de desarrollo abandona el proyecto  & Organizacional \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS08 & Conflictos por el tiempo dedicado a otros trabajos/proyectos  & Organizacional \tabularnewline
+\hline 
+RS09 & Cambios de requerimientos que impliquen modificar lo ya realizado  & Organizacional \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS10 & Tiempos de aprendizaje o de desarrollo subestimados  & Estimación \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Riesgos del Proyecto}
+\end{table}
+
+
+~
+
+
+\subsubsection{Análisis de riesgos}
+
+En esta etapa, consideramos cada riesgo por separado, para analizar
+las probabilidades de que se concreten, además de la severidad del
+efecto que producen. Luego de este análisis, se evalúa la importancia
+de cada riesgo, con el objetivo de decidir cuáles son los riesgos
+que deben tenerse en cuenta durante el desarrollo del proyecto. Esta
+importancia, depende de las probabilidades y del efecto asignado a
+cada riesgo. No existe una metodología definida para realizar este
+proceso, por lo que depende en gran medida de la opinión y de la experiencia
+previa de quien realice el análisis.
+
+En nuestro caso, definimos tres niveles de probabilidad (alta, moderada,
+baja) y tres niveles de seriedad del efecto (grave, tolerable, insignificante)
+que producen los riesgos. Cada combinación de probabilidad y efecto,
+se traduce en un nivel de importancia del requerimiento.
+
+\textbf{~}
+
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\rowcolor{cyan}Probabilidad /Impacto  & Insignificante  & Tolerable  & Grave \tabularnewline
+\hline 
+\hline 
+\cellcolor{cyan}Baja  & \cellcolor{green}Baja  & \cellcolor{green}Baja  & \cellcolor{red}Alta \tabularnewline
+\hline 
+\cellcolor{cyan}Moderada  & \cellcolor{green}Baja  & \cellcolor[rgb]{1,0.4,.1}Moderada  & \cellcolor{red}Alta \tabularnewline
+\hline 
+\cellcolor{cyan}Alta  & \cellcolor[rgb]{1,0.4,.1}Moderada  & \cellcolor{red}Alta  & \cellcolor{red}Alta \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\noindent \protect\caption{Matriz de importancia de los riesgos}
+\end{table}
+
+
+\textbf{~}
+
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular}{|c|>{\centering}p{7cm}|c|c|c|}
+\hline 
+\rowcolor{cyan}ID & Riesgo & Probabilidad & Impacto  & Importancia \tabularnewline
+\hline 
+\hline 
+RS01 & Falta de infraestructura para llevar a cabo el proyecto  & Baja & Tolerable & \cellcolor{green}Baja\tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS02 & Incompatibilidad de funciones del sistema operativo con el Hardware
+disponible  & Baja & Grave & \cellcolor{red}Alta\tabularnewline
+\hline 
+RS03 & Dificultades en la interacción entre la aplicación y el sistema operativo  & Baja & Grave & \cellcolor{red}Alta\tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS04 & Diferencias de paquetes disponibles entre los Sistemas operativo  & Moderada & Tolerable & \cellcolor[rgb]{1,0.4,.1}Moderada\tabularnewline
+\hline 
+RS05 & Diferencias entre funciones disponibles entre los Sistemas operativo  & Baja & Tolerable & \cellcolor{green}Baja\tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS06 & Disponibilidad de información sobre las herramientas  & Moderada & Tolerable & \cellcolor[rgb]{1,0.4,.1}Moderada\tabularnewline
+\hline 
+RS07 & Miembro del grupo de desarrollo abandona el proyecto  & Baja & Grave & \cellcolor{red}Alta\tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS08 & Conflictos por el tiempo dedicado a otros trabajos/proyectos  & Moderada & Tolerable & \cellcolor[rgb]{1,0.4,.1}Moderada\tabularnewline
+\hline 
+RS09 & Cambios de requerimientos que impliquen modificar lo ya realizado  & Baja & Tolerable & \cellcolor{green}Baja\tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS10 & Tiempos de aprendizaje o de desarrollo subestimados  & Moderada & Tolerable & \cellcolor[rgb]{1,0.4,.1}Moderada\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Implicación de los riesgos}
+\end{table}
+
+
+\textbf{~}
+
+
+\subsubsection{Planificación de riesgos}
+
+Una vez que analizamos los riesgos, podemos interpretar cuales son
+los más importantes, para tenerlos en cuenta durante el resto del
+desarrollo del proyecto. Debemos plantear las estrategias que nos
+permitirán gestionar esos riesgos. Tampoco existe una metodología
+definida para llevar a cabo este paso.
+
+A continuación describiremos estrategias para cada uno de los riesgos:
+
+\textbf{~}
+\noindent\resizebox{\textwidth}{!}{% 
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular}{|c|>{\centering}p{4cm}||>{\centering}p{4cm}||>{\centering}p{4cm}||>{\centering}p{4cm}|}
+\hline 
+\rowcolor{cyan}ID & Riesgo & Consecuencias  & Solución  & Mitigación \tabularnewline
+\hline 
+\hline 
+RS01 & Falta de infraestructura para llevar a cabo el proyecto  & Complicaciones para desarrollar, realizar pruebas y realizar puestas
+en común entre los integrantes del proyecto y los directores  & Encontrar una nueva infraestructura donde realizar el proyecto  & Planificación del uso de la infraestructura \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS02 & Incompatibilidad de funciones del sistema operativo con el Hardware
+disponible  & Dificultades para integrar varios Sistemas Operativos al desarrollo  & Conseguir Hardware compatible  & Desarrollar la parte del proyecto que tenga que ver con la funcionalidad
+en conflicto en un Hardware compatible \tabularnewline
+\hline 
+RS03 & Dificultades en la interacción entre la aplicación y el sistema operativo  & Dificultades para la integracion entre las Herramientas y los Sistemas
+Operativos  & Utilizar Aplicaciones y herramientas desarrolladas para dicho Sistema
+Operativo  & Utilizar Aplicaciones y Sistemas Operativos compatibles \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS04 & Diferencias de paquetes disponibles entre los Sistemas operativo  & Mayor dificultad para que la aplicación soporte varios Sistemas Operativos  & Eliminar del desarrollo la funcionalidad relacionada con el paquete  & Buscar paquetes con funcionalidades similares y adaptar el desarrollo \tabularnewline
+\hline 
+RS05 & Diferencias entre funciones disponibles entre los Sistemas operativo  & Mayor dificultad para que la aplicación soporte varios Sistemas Operativos  & Si la funcionalidad es importante para el desarrollo, eliminar la
+compatibilidad con el sistema operativo o eliminar la función del
+proyecto  & Buscar funcionalidades similares o hacer que el proyecto presente
+opciones diferentes para cada sistema operativo \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS06 & Disponibilidad de información sobre las herramientas  & Mayor tiempo de aprendizaje sobre las herramientas  & Utilizar herramientas que dispongan de una documentación más completa  & Analizar si la información que se brinda es suficiente para utilizarla
+en el proyecto \tabularnewline
+\hline 
+RS07 & Miembro del grupo de desarrollo abandona el proyecto  & Extensión de los tiempos de desarrollo, posibles cambios de requerimientos  & Eliminar objetivos secundarios o requerimientos para acortar el tiempo
+de desarrollo  & Rever los requerimientos para limitarse a los esenciales \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS08 & Conflictos por el tiempo dedicado a otros trabajos/proyectos  & Extensión de los tiempos de desarrollo  & Dedicación de horas semanales exclusivas al proyecto  & Rever los requerimientos para eliminar los pocos importantes \tabularnewline
+\hline 
+RS09 & Cambios de requerimientos que impliquen modificar lo ya realizado  & Extensión en los tiempos de desarrollo.  & Realizar correcciones en la planificación y en las metas para cumplir
+con los requerimientos sin un aumento de los tiempos de desarrollo  & Analizar la necesidad de los nuevos requerimientos y enfocarse en
+los principales \tabularnewline
+\hline 
+\rowcolor[rgb]{0.9,1,1}RS10 & Tiempos de aprendizaje o de desarrollo subestimados  & Extensión en los tiempos de desarrollo.  & Cambiar requerimientos para disminuir el tiempo requerido para completar
+el proyecto  & Aumentar la dedicación de tiempo al proyecto. \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Planificación de riesgos}
+\end{table}
+
+}
+~
+
+
+\part{Marco teórico}
+
+Previamente al abordaje del desarrollo, requerimos conocimientos teóricos
+que nos posibiliten comprender el entorno donde se ejecutarán las
+aplicaciones que componen el Sistema, las herramientas que darán soporte
+o permitirán cumplir con las funcionalidades previstas y las que se
+utilizarán para desarrollar. Algunas de las mismas fueron explícitamente
+solicitadas en los requerimientos. El resto de las herramientas, que
+están implícitas en los requerimientos, precisaron de investigación
+y pruebas para conocer si permiten cumplir estos requerimientos y
+además, si hay varias opciones, elegir la más conveniente. Podemos
+dividir esta sección del informe en áreas diferentes:
+\begin{itemize}
+\item Sistema operativo 
+\item Virtualización 
+\item Aprovisionamiento 
+\item Orquestación
+\item Protocolo PXE
+\item SAMBA
+\end{itemize}
+La información contenida en esta sección se desprende de las investigaciones
+realizadas en cada una de las etapas del Proyecto Integrador.
+
+
+\section{Sistema operativo}
+
+
+\subsection{CentOS }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{\string"Imagenes/sistemas operativos/sistemas_operativos_centos\string".eps}
+\par\end{centering}
+
+\protect\caption{CentOS logo}
+\end{figure}
+
+
+CentOS es un distribución Linux empresarial, basada en Red Hat Enterprise
+Linux. CentOS concuerda con la política de distribución de Red Hat
+y apunta a ser binariamente compatible en su totalidad. Cada versión
+de esta distro tiene soporte por siete años en cuestiones de actualizaciones
+de mantenimiento y seguridad, lo que se traduce en un ambiente confiable,
+predecible, reproducible, de bajo mantenimiento y seguro.
+
+La principal ventaja de esta distro es que se obtiene un conjunto
+estable de la mayoría de paquetes que por lo general sólo incluyen
+correcciones de errores. En su última versión, CentOS 7 solo está
+disponible para la arquitectura x86\_64, y representa un gran cambio
+frente a versiones anteriores del sistema operativo, como la inclusión
+de systemd, Gnome 3, GRUB 2, y el sistema de archivos XFS. El entorno
+de escritorio KDE también forma parte de la oferta de CentOS 7. 
+
+Principales novedades de CentOS 7:
+\begin{itemize}
+\item Actualización del núcleo del sistema: Kernel 3.10.0. 
+\item Soporte para Linux Containers. 
+\item Inclusión de VMware Tools y controladores de gráficos 3D. 
+\item OpenJDK-7 como JDK por defecto. 
+\item Cambio a systemd. 
+\item Cambio a firewalld y GRUB2 .
+\item XFS es el sistema de archivos por defecto y permite escalar la capacidad
+de almacenamiento del sistema hasta 500 terabytes. XFS es un sistema
+de archivos de 64 bits con journaling de alto rendimiento, y está
+especialmente indicado para discos grandes (superiores a 1 TB). No
+obstante y para necesidades menos exigentes se pueden emplear otros
+sistemas de archivos, como Ext4. 
+\item iSCSI y FCoE (Fiber Channel over Ethernet) en el espacio del Kernel. 
+\item Soporte para PPTv2 (Precisión Time Protocol).
+\item Soporte para tarjetas Ethernet 40G. 
+\item Soporte UEFI. 
+\end{itemize}
+En cuanto a systemd, es el reemplazo de init como demonio para iniciar
+servicios, procesos y recursos del sistema. Systemd es la nueva forma
+predeterminada de iniciar los sistemas Linux, y ha sido adoptado por
+Red Hat, Debian y Ubuntu, entre otros. CentOS 7 es compatible con
+Microsoft Active Directory (y obviamente con Red Hat), por lo que
+puede trabajar con facilidad en entornos heterogéneos. CentOS 7 incluye
+PCP (Performance Co-Pilot), un conjunto de frameworks y servicios
+en tiempo real para supervisar y monitorizar el rendimiento del sistema.
+
+
+\subsection{Debian}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{\string"Imagenes/sistemas operativos/sistemas_operativos_debian\string".eps}
+\par\end{centering}
+
+\protect\caption{Debian logo}
+
+
+\end{figure}
+
+
+Debian es una distribución libre, por completo manejada por la comunidad,
+no está basada en ninguna otra distribución y por el contrario gran
+parte de las distribuciones actuales están basadas en ella. Debian
+es famoso por filosofía de estabilidad ante todo, por eso mismo, no
+tiene un cronograma de lanzamiento de nuevas versiones. Estas se liberan
+cuando estén realmente listas. Es una distribución ampliamente utilizada.
+
+En su última versión, Debian 8 Jessie, las siguientes arquitecturas
+tienen soporte: x32 (i386), x86-64 (amd64), Motorola/IBM PowerPC,
+MIPS, IBM S/390 y ARM. 
+
+Este release incluye el nuevo estándar sistema de inicio \emph{systemd.}
+
+Principales características de Jessie:
+\begin{itemize}
+\item Actualización de administrador de paquetes: apt 1.0.9.8.1 
+\item Núcleo del sistema: Linux kernel 3.16 
+\item Cambio a systemd. 
+\item Entornos gráficos : Gnome 3.14, KDE 4.14, 
+\item Los puertos para el kernel de FreeBSD (kfreebsd-amd64 y kfreebsd-i386),
+incluidos para versiones anteriores no son parte de esta versión.
+\item Soporte UEFI para amd64, i386 y arm64.
+\end{itemize}
+Esto permitiría aprovechar todas las ventajas de FreeBSD en el servidor,
+brindándole la opción de usar Debian a los usuarios del servidor y
+eliminando la necesidad de que se familiaricen con FreeBSD.
+
+
+\subsection{FreeBSD}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{\string"Imagenes/sistemas operativos/sistemas_operativos_freebsd\string".eps}
+\par\end{centering}
+
+\protect\caption{FreeBSD logo}
+\end{figure}
+
+
+FreeBSD es un sistema operativo basado en BSD para arquitecturas Intel
+(x86 e Itanium), AMD64, AlphaTM y UltraSPARC. 
+
+FreeBSD viene con una excelente colección de herramientas de sistema
+como parte del sistema base. A pesar de esto, existen otras que no
+vienen incluidas y se necesitan instalar para utilizarlas. FreeBSD
+ofrece dos tecnologías complementarias para instalar software de terceros
+en el sistema: la Colección de puertos o ports de FreeBSD y los paquetes
+binarios. Los paquetes binarios son archivos simples que descargamos
+desde repositorios. Contienen una copia de los programas binarios
+precompilados de la aplicación y se pueden manipular con las herramientas
+de gestión de paquetes de FreeBSD: pkg\_add , pkg\_delete , pkg\_info
+, etc. Por otro lado, existen ciertos pasos que se deben llevar a
+cabo para compilar un programa (descargar, desempaquetar, parchear,
+compilar e instalar). Los ficheros que conforman un port permiten
+que el sistema se encargue de todo esto, mediante un conjunto simple
+de órdenes. La colección de puertos para instalar se encuentra en
+/usr/ports.
+
+FreeBSD proporciona compatibilidad binaria con muchos otros sistemas
+operativos tipo UNIX, como Linux. Esto es necesario, ya que muchos
+desarrolladores y compañías sólo desarrollan para Linux. La compatibilidad
+binaria permite a los usuarios utilizar en FreeBSD cerca del 90\%
+de las aplicaciones desarrolladas para Linux sin que sea necesario
+realizar alguna modificación sobre la aplicación.
+
+Otras características:
+\begin{itemize}
+\item Servicios multiusuario que permiten a mucha gente usar el sistema
+FreeBSD simultáneamente.
+\item Conexión de redes TCP/IP muy robusta, con soporte para estándares
+industriales. 
+\item La protección de memoria que garantiza que las aplicaciones (o los
+usuarios) no se estorben los unos a los otros.
+\item Compatibilidad binaria con muchos programas nativos de Linux, SCO,
+SVR4, BSDI y NetBSD. 
+\item Soporte para multiprocesamiento simétrico con múltiples CPUs.
+\end{itemize}
+
+\subsection{Solaris}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{\string"Imagenes/sistemas operativos/sistemas_operativos_solaris\string".eps}
+\par\end{centering}
+
+\protect\caption{Solaris logo}
+
+
+\end{figure}
+
+
+Solaris es un sistema operativo de tipo Unix desarrollado por Sun
+Microsystems desde 1992 como sucesor de SunOs. Es un sistema certificado
+oficialmente como versión de Unix. Aunque solaris fue desarrollado
+como software privado, la mayor parte de su código se ha liberado
+como proyecto de software libre denominado OpenSolaris. Solaris es
+famoso por su escalabilidad, especialmente en sistemas SPARC. Sun
+solaris se ejecuta sobre la arquitectura SPARC en 32 y 64 bits, o
+sobre procesadores x86 (incluidos Intel y AMD). Sin embargo, en agosto
+de 2010, Oracle decidió interrumpir la publicación y distribución
+de OpenSolaris.
+
+Solaris tiene una reputación de ser muy adecuado para el multiprocesamiento
+simétrico (SMP), soportando un gran número de CPUs. Históricamente
+Solaris ha estado firmemente integrado con la plataforma hardware
+de Sun, SPARC, con la cual fue diseñado y promocionado como un paquete
+combinado. Esto proporcionaba frecuentemente unos sistemas más fiables
+pero con un coste más elevado que el del hardware de PC. 
+
+A partir de su versión 10, Sun Microsystems ha promocionado Solarios
+con sus propias estaciones de trabajo y servidores de 64 bits basados
+en procesadores AMD Opteron e Intel Xeon, como también en sistemas
+de 32 bits. Esta versión añadió soporte para para-virtualización cuando
+es utilizada como \textquotedblleft sistema operativo invitado\textquotedblright{}
+en ambientes basados en Xen. 
+
+En su última versión, 11.3, sus principales características son:
+\begin{itemize}
+\item Incluye una nueva versión de OpenStack (Juno) con soporte para topologías
+de red adicionales y nuevos servicios. 
+\item SNAT, soporte Ipv6.
+\item Pools de almacenamiento. 
+\item Aprovisionamiento de máquinas (bare metal provisioning) como servicio
+.
+\item Incluye soporte para desarrollo basado en la API REST utilizando el
+Demonio de Administración Remota (permite configuración remota de
+los sistemas Oracle usando Python, C y Java). 
+\item Sistema de archivos ZFS.
+\item Solaris Containers
+\end{itemize}
+
+\subsection{Selección del Sistema Operativo Base.}
+
+Para seleccionar el sistema operativo base, nos basamos esencialmente
+en las siguientes cosas:
+\begin{itemize}
+\item Buena penetración de mercado: De esta manera, obtendremos una experiencia
+útil a futuro
+\item Sistema operativo estable y vigente.
+\item Buena integración del SO con las herramientas a utilizar.
+\end{itemize}
+Analizando estos aspectos, se opto por utilizar como sistema operativo
+base a CentOS 7 dado que es la ultima version de este sistema operativo,
+es uno de los sistemas con mas penetración en el mercado informático
+y cuenta con el respaldo de Red Hat Enterprise dado que es la versión
+libre de esta.. 
+
+También se tuvo en cuenta la inclusión de systemd y que una gran cantidad
+de herramientas tanto de virtualización como aprovisionamiento y orquestación
+están diseñadas para Red Hat Enterprise y por ende CentOS
+
+
+\section{Virtualización }
+
+Virtualización es un término amplio para software ejecutándose, usualmente
+sistemas operativos, de manera concurrente y aislada de otros programas
+en el mismo sistema. Muchas de las implementaciones de virtualización
+utilizan un \textquotedblleft hypervisor\textquotedblright , una capa
+de software que controla el hardware y provee sistemas operativos
+huéspedes con acceso a los dispositivos de hardware subyacentes. El
+hypervisor permite ejecutar múltiples sistemas operativos en el mismo
+sistema físico ofreciendo hardware virtualizado al sistema operativo
+huésped. Esta tecnología, provee un conjunto de herramientas para
+aumentar la flexibilidad y reducir los costos, los cuales son tópicos
+importantes en cualquier empresa o institución. En esencia, la virtualización
+incrementa la flexibilidad desacoplando un sistema operativo y los
+servicios y aplicaciones soportados por él, de una plataforma de hardware
+física específica, permitiendo el establecimiento de múltiples entornos
+virtuales sobre una plataforma de hardware compartida. Estos entornos
+pueden ser creados localmente o aprovisionados externamente. La virtualización
+se destaca también apoyando la innovación a través del uso de entornos
+virtuales para practicar y aprender. Un estudiante puede comenzar
+un curso o trabajo un entorno de sistema conocido, estándar y aislado
+del entorno de producción; si se produce algún tipo de daño solo afecta
+al sistema virtual. Además se puede establecer entornos únicos de
+software para el aprendizaje sin demandar el uso exclusivo de recursos
+de hardware. Aunque en comparación los costos de inversión para tener
+un número elevado de máquinas físicas son mucho mayores que el costo
+para invertir en un servidor con altos recursos para realizar la virtualización,
+se podría decir que la virtualización posee inconvenientes vinculados
+con sus exigentes requerimientos de hardware, en cuanto a capacidad
+de procesamiento y de memoria RAM y de almacenamiento. Otra desventaja
+es que del sistema de virtualización depende del sistema operativo
+anfitrión. Es decir, el anfitrión es el punto débil del sistema ya
+que se comparte por todos los sistemas virtualizados, si se rompe
+éste, se rompen todas las máquinas virtuales.
+
+
+\subsection{Tipos de virtualización}
+
+
+\subsubsection{Virtualización completa }
+
+Consiste en la virtualización de paquetes y herramientas para correr
+de forma totalmente virtualizada, sin modificaciones, sistemas operativos
+huéspedes. Este modo cuenta con la ventaja de consolidar sistemas
+viejos en hardware nuevo, más eficiente y reducir el espacio físico
+y costos de operación relativos al consumo energético y refrigeración
+de estos sistemas menos eficientes. La virtualización completa ofrece,
+sin embargo, menor rendimiento de entrada/salida que instalaciones
+nativas (también llamadas \textquotedblleft bare-metal\textquotedblright{}
+o \textquotedblleft metal-pelado\textquotedblright ) de sistemas operativos.
+Por ejemplo el software KVM, Xen, VMware Workstation o VirtualBox
+hacen uso de esta técnica. Cabe destacar que en el caso de KVM se
+requiere soporte de hardware para ejecutar la virtualización, ya sea
+con procesadores Intel o AMD. 
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=5cm]{Imagenes/virtualizacion/virtualizacion_tipos_3}
+\par\end{centering}
+
+\protect\caption{Diagrama de virtualización completa}
+
+
+\end{figure}
+
+
+
+\subsubsection{Para-virtualización }
+
+Para-virtualización es un técnica de virtualización la cual implica
+ejecutar versiones modificadas de los sistemas operativos. El sistema
+operativo para-virtualizado es modificado para que se de cuenta que
+está siendo virtualizado, ofreciendo un habilidad aumentada para la
+optimización, ya que el huésped está al tanto de su entorno. El rendimiento
+está generalmente muy cerca de la ejecución nativa de sistemas operativos
+no virtualizados. Por ejemplo, utilizan esta técnica KVM, XEN y VMware
+Server ESX. 
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=5cm]{Imagenes/virtualizacion/virtualizacion_tipos_1}
+\par\end{centering}
+
+\protect\caption{Diagrama de para-virtualización}
+
+
+\end{figure}
+
+
+
+\subsubsection{Para-virtualización de drivers}
+
+La para-virtualización y la virtualización completa pueden ser combinadas
+para permitir a sistemas operativos no modificados recibir un rendimiento
+cercano de entrada/salida al de ejecución nativa, por medio de drivers
+para-virtualizados en sistemas operativos completamente virtualizados.
+
+
+\subsubsection{Virtualización a nivel del sistema operativo }
+
+También llamada virtualización basada en contenedores, esta técnica
+virtualiza un servidor físico a nivel del sistema operativo, permitiendo
+que múltiples servidores virtuales aislados y seguros se ejecuten
+sobre un solo servidor físico. Con la virtualización basada en contenedores,
+no existe la sobrecarga asociada con tener a cada huésped ejecutando
+un sistema operativo completamente instalado. Este enfoque también
+puede mejorar el rendimiento porque hay un solo sistema operativo
+encargándose de los avisos de hardware. Una desventaja de la virtualización
+basada en contenedores, sin embargo, es que cada invitado debe utilizar
+el mismo sistema operativo que utiliza el host. Por ejemplo, Jaulas
+con Warden en FreeBSD, OpenVZ o Linux-Vserver usan esta técnica.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=5cm]{Imagenes/virtualizacion/virtualizacion_tipos_2}
+\par\end{centering}
+
+\protect\caption{Diagrama de virtualización a nivel de SO}
+
+
+\end{figure}
+
+
+
+\subsubsection{Emulación }
+
+Un emulador es hardware o software que permite a un sistema de computación
+comportarse como otro sistema. Generalmente, un emulador permite a
+un sistema correr software o utilizar dispositivos periféricos diseñados
+para el otro sistema. Por ejemplo Qemu es un emulador muy usual en
+ingeniería. 
+
+
+\subsection{Herramientas de virtualización }
+
+Algunas de las herramientas más utilizadas para virtualizar son las
+siguientes, sin embargo como uno de los requisitos es utilizar herramientas
+de código abierto, no se indagó acerca de VMWare: 
+\begin{itemize}
+\item Docker
+\item KVM/Qemu 
+\item OpenVZ
+\item VirtualBox 
+\item VMWare Workstation 
+\end{itemize}
+
+\subsubsection{Docker}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/virtualizacion/virtualizacion_herramientas_docker_2}
+\par\end{centering}
+
+\protect\caption{Docker logo}
+\end{figure}
+Docker es otra herramienta de virtualización para Linux basada en
+contenedores. La idea detrás de Docker es crear contenedores ligeros
+y portables para las aplicaciones de software que puedan ejecutarse
+en cualquier máquina con Docker instalado, independientemente del
+sistema operativo que la máquina tenga por debajo, facilitando así
+también los despliegues.
+
+El contenedor Docker se puede desplegar en cualquier otro sistema
+(que soporte esta tecnología), con lo que se ahorra el tener que instalar
+en este nuevo entorno todas aquellas aplicaciones que normalmente
+se utilicen.
+
+Un contenedor Docker no contiene todo un sistema completo, sino únicamente
+aquellas librerías, archivos y configuraciones necesarias para desplegar
+las funcionalidades que contenga. Asimismo Docker se encarga de la
+gestión del contenedor y de las aplicaciones que contenga.
+
+Para obtener esta fluidez Docker extiende LXC (LinuX Containers),
+un sistema de virtualización ligero que permite crear múltiples sistemas
+totalmente aislados entre si sobre la misma máquina o sistema anfitrión.
+Y todo dado que no se emula un sistema operativo completo, sólo las
+librerías y sistemas de archivos necesarios para la utilización de
+las aplicaciones que se tengan instaladas en cada contenedor.
+
+En las últimas versiones de Docker se ha introducido drivers de Docker
+y una librería llamada libcontainer, que ayuda a que Docker sea totalmente
+multiplataforma, teniendo compatibilidad con Windows y Mac OS X, además
+de Linux.
+
+
+\subsubsection{KVM/Qemu }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/virtualizacion/virtualizacion_herramientas_kvm}\includegraphics[height=3cm]{Imagenes/virtualizacion/virtualizacion_herramientas_qemu}
+\par\end{centering}
+
+\protect\caption{KVM/Qemu logo}
+
+
+\end{figure}
+
+
+KVM (Kernel-based Virtual Machine), desarrollado por Red Hat Enterprise
+Linux, es una infraestructura de virtualización completa para el kernel
+de Linux que lo transforma en un hypervisor. Fue incorporado a la
+línea principal del kernel Linux en la versión 2.6.20. KVM requiere
+un procesador con hardware que permita extensión para virtualización
+(Intel VT o AMD-V). También está disponible para instalarlo desde
+los \textquotedblleft ports\textquotedblright{} de FreeBSD en la forma
+de módulos de kernel. 
+
+La para-virtualización tiene soporte para ciertos dispositivos en
+Linux, OpenBSD, FreeBSD y Windows (entre otros) utilizando la API
+VirtIO. Se tiene placa Ethernet, un controlador de entrada/salida
+de disco paravirtual, gráficos VGA. 
+
+Qemu puede utilizarse como emulador y como virtualizador. Cuando se
+utiliza como virtualizador, Qemu toma un rendimiento cercano al nativo.
+Para ello, debe ejecutarse bajo el hypervisor Xen o KVM. En conjunto
+KVM/Qemu, KVM es quien hace las veces de árbitro del acceso al CPU
+y memoria, y Qemu emula los recursos de hardware. 
+
+
+\subsubsection{OpenVZ }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/virtualizacion/virtualizacion_herramientas_openvz}
+\par\end{centering}
+
+\protect\caption{OpenVZ logo}
+\end{figure}
+
+
+OpenVZ es una herramienta de virtualización para Linux basada en contenedores.
+OpenVZ crea múltiples contenedores aislados en un servidor físico
+y asegurando que las aplicaciones no entren en conflicto. Utiliza
+un kernel de Linux modificado y por consiguiente sólo puede correr
+Linux. Todos los contenedores comparten la misma arquitectura y versión
+del kernel. Cada contenedor se comporta como un servidor autónomo.
+Ya que OpenVZ emplea un modelo de kernel único, es tan escalable como
+kernel Linux 2.6, lo que significa que soporta hasta 64 CPUs y hasta
+64 GiB de RAM. Un entorno virtual único se puede escalar hasta el
+equipo físico entero. También cuenta con migración en vivo que posibilita
+mover un contenedor de in servidor físico a otro sin apagar el contenedor.
+Un propietario (root) de un servidor físico OpenVZ (conocido como
+Nodo de Hardware) puede ver todos los procesos y archivos de los contenedores.
+Esto hace la administración masiva de escenarios posible: se puede
+ejecutar un simple script de intérprete de comandos que actualice
+todos (o sólo algunos seleccionados) los contenedores a la vez.
+
+
+\subsubsection{VirtualBox}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/virtualizacion/virtualizacion_herramientas_virtualbox}
+\par\end{centering}
+
+\protect\caption{VirtualBox logo}
+\end{figure}
+
+
+VirtualBox, desarrollado por Oracle, es un virtualizador completo
+de propósito general para hardware x86, orientado al uso para servidor,
+escritorio y embebido. Como software de código abierto, se puede utilizar
+bajo la licencia GNU General Public License 2 (GPL2) . 
+
+AL día de la fecha, VirtualBox corre en Windows, Linux, Macintosh
+y Solaris y soporta una amplia variedad de sistemas operativos, entre
+ellos RHEL(7,6,5,4), Windows (NT 4.0, 2000, XP, Server 2003, Vista,
+Windows 7, Windows 8, Windows 10), DOS/Windows 3.x, Linux (2.4, 2.6,
+3.x and 4.x), Solaris y OpenSolaris, OS/2, y OpenBSD. 
+
+
+\subsection{Selección de la herramienta de virtualización.}
+
+Para seleccionar la herramienta de virtualización nos centramos en:
+\begin{itemize}
+\item Penetración y uso en el mercado.
+\item Documentación y uso en el ámbito universitario.
+\item Integración con el sistema operativo.
+\end{itemize}
+Teniendo en cuenta los puntos enunciados antes, el conjunto KVM/Qemu
+es la herramienta mas apta dado que posee una amplia documentación
+y escalabilidad, esta desarrollada para Red Hat Enterprise y es usada
+en el mercado ademas que es utilizada en el laboratorio de computación
+de la FCEFyN.
+
+
+\section{Aprovisionamiento }
+
+En general, aprovisionamiento, significa proveer o hacer que algo
+esté disponible. El término es utilizado en un gran variedad de contextos
+en el área de Tecnologías de Información. En este Proyecto Integrador,
+el término hace referencia a lo siguiente: Aprovisionamiento es el
+conjunto de acciones para preparar una máquina virtual, con el sistema
+apropiado, datos y software, y dejarla lista para su operación. 
+\begin{itemize}
+\item Tareas típicas que se tienen que llevar a cabo para que esto suceda
+son: 
+\item Seleccionar el conjunto de hardware virtualizado (memoria RAM, disco,
+cantidad de procesadores asignados, placa de red, etc) para crear
+una máquina virtual bare-metal.
+\item Cargar el sistema operativo adecuado.
+\item Configurar el sistema (dirección IP, gateway, DNS, hostname, MAC,
+etc).
+\item Actualizar el sistema y aplicar parches.
+\item Cargar el conjunto de aplicaciones necesarias.
+\item Configurar el sistema para adaptarlo a las políticas definidas de
+la institución.
+\end{itemize}
+En resumen, el aprovisionamiento de máquinas virtuales se realiza
+basado en los recursos disponibles y en los requisitos específicos
+de cada máquina virtual, según sea la funcionalidad que se le vaya
+a dar.
+
+
+\subsection{Herramientas de aprovisionamiento }
+
+Algunas de las herramientas de código abierto más utilizadas para
+aprovisionar son las siguientes: 
+\begin{itemize}
+\item Cobbler
+\item FAI
+\item Foreman
+\item Vagrant 
+\end{itemize}
+
+\subsubsection{Cobbler }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics{Imagenes/aprovisionamiento/aprovisionamiento_cobbler}
+\par\end{centering}
+
+\protect\caption{Cobbler logo}
+
+
+\end{figure}
+
+
+Cobbler es un servidor Linux de aprovisionamiento que centraliza y
+simplifica el control de los servicios incluyendo DHCP, TFTP y DNS
+con el propósito de realizar instalaciones de sistemas operativos
+basadas en la red. Puede ser configurado para PXE, reinstalaciónes
+y huéspedes virtualizados utilizando Xen, KVM o VMWare como también
+dispositivos físicos. Está dirigido especialmente a Red Hat Linux
+y sus derivados, pero es posible configurarlo para que inicie con
+PXE otras distribuciones de Linux como Debian, Ubuntu o Knoppix. Es
+una herramienta que se encuentra en creciente desarrollo y cada vez
+añade más soporte a distintas distros e incluso a FreeBSD y a futuro
+Windows. Actualmente cuenta con poco soporte para el sistema operativo
+de Microsoft. 
+
+Cuenta con un sistema integrado para administración de configuración
+pero también cuenta con soporte para la integrar la herramienta de
+administración de configuración Puppet. Cobbler se basa en el mecanismo
+de Kickstart y ofrece perfiles de instalación que pueden ser aplicados
+a una o muchas máquinas. La información de contenida en un plantilla
+kickstart puede ser modificada dinámicamente pasando variables (llamadas
+ksmeta) o utilizando snippets, donde se puede mantener el código común
+simplificando la lectura y minimizando el tamaño del archivo kickstart.
+
+
+\subsubsection{Fully Automatic Installation (FAI)}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/aprovisionamiento/aprovisionamiento_fai}
+\par\end{centering}
+
+\protect\caption{FAI logo}
+
+
+\end{figure}
+
+
+FAI es un sistema no interactivo para instalar, personalizar y administrar
+sistemas Linux y configuraciones de software en computadoras como
+también en máquinas virtuales y entornos chroot, desde pequeñas redes
+hasta una infraestructura grande escalable y clusters. Es una herramienta
+para la instalación totalmente automática de Debian y otras distros
+de Linux como Suse, Red Hat, Solaris, vía red, DVDs personalizados
+de instalación o en entornos chroot. 
+
+Algunas de las características más importantes:
+\begin{itemize}
+\item Instalar y actualizar Debian, Ubuntu, SUSE, Red Hat, etc.
+\item Despliegue centralizado y administración de configuración.
+\item Recuperación de desastre integrado.
+\item Fácil configuración de software RAID y LVM.
+\item Instalar máquinas virtuales usando KVM, Xen y VirtualBox.
+\item Control remoto vía SSH durante la instalación.
+\end{itemize}
+
+\subsubsection{Foreman }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/aprovisionamiento/aprovisionamiento_foreman}
+\par\end{centering}
+
+\protect\caption{Foreman logo}
+
+
+\end{figure}
+
+
+Foreman es una herramienta para el aprovisionamiento, configuración
+y monitorización de servidores físicos y virtuales. Puede aprovisionar
+máquinas bare-metal, virtualizadas y en la nube a través de instalaciones
+desatendidas por medio de DHCP, DNS, TFTP y PXE . Tiene una gran integración
+con software de administración de configuración como Puppet, Chef,
+Salt y otros por medio de plugins.
+
+Algunas de sus características son:
+\begin{itemize}
+\item Descubrir, aprovisionar y actualizar toda la infraestructura bare-metal.
+\item Crear y gestionar instancias entre nubes privadas y públicas. 
+\item Agrupar hosts y dirigirlos en conjunto, sin importar la ubicación. 
+\item Rever cambios históricos para auditoría y resolución de problemas.
+\end{itemize}
+
+\subsubsection{Vagrant}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/aprovisionamiento/aprovisionamiento_vagrant}
+\par\end{centering}
+
+\protect\caption{Vagrant logo}
+\end{figure}
+
+
+Vagrant provee entornos fáciles de reproducir, configurar construidos
+sobre tecnología industrial estándar. Vagrant es un software que crea
+y configura entornos de desarrollo virtuales aprovisionando sobre
+VirtualBox, VMware, KVM y contenedores Linux. Es una software que
+se encuentra una capa encima de estas herramientas. Luego herramientas
+de administración de configuración como Ansible, Chef, Salt, y Puppet
+pueden ser utilizadas para instalar y configurar automáticamente el
+software en la máquina.
+
+
+\subsection{Selección de la herramienta de aprovisionamiento.}
+
+Se tuvo en cuenta para seleccionar esta herramienta:
+\begin{itemize}
+\item Penetración y uso en el mercado
+\item Documentación y soporte
+\item Integración con el Sistema operativo
+\end{itemize}
+La herramienta seleccionada fue Cobbler dado que soportada por la
+comunidad, esta continuamente actualizada, posee una buena documentación
+y por sobre todo, tiene una excelente integración con el sistema operativo
+seleccionado y con la herramienta de virtualización. También tiene
+interesantes funcionalidades como la posibilidad de crear diferentes
+perfiles (requisito funcional) y la capacidad de funcionar con un
+servidor DHCP externo a la aplicación.
+
+
+\section{Orquestación}
+
+La orquestación describe el alineamiento automatizado, la coordinación
+y la administración de complejos sistemas de computadoras, middleware
+y servicios. En este sentido, la orquestación se trata de alinear
+los requisitos de negocio con las aplicaciones, datos e infraestructura.
+Define las políticas y niveles de servicio a través de flujos de trabajo
+automatizados, aprovisionamiento y gestión de cambio. Esto crea una
+infraestructura alineada con la aplicación que puede ser escalada
+hacia arriba o abajo basándose en las necesidades de cada aplicación.
+
+La orquestación también provee la gestión centralizada de los recursos.
+Por ejemplo, reduce el tiempo y esfuerzo para desplegar múltiples
+instancias de una sola aplicación. Cuando es necesario que se creen
+más instancias de diferentes aplicaciones, herramientas automatizadas
+pueden realizar tareas que, previamente, podían ser llevadas a cabo
+sólo por múltiples administradores.
+
+Un escenario que se puede encontrar, por ejemplo, un administrador
+necesita desplegar una aplicación web, pero para hacerlo, primero
+debe crear el servidor de base de datos. Luego debe incluir en la
+base de datos todas las direcciones IP que pueden conectarse al servidor,
+y también agregar este nuevo servidor a la herramienta que lo monitorea,
+o abrir un puerto particular antes de proceder. Cada tarea expuesta
+puede ser automatizada, pero el conjunto de estas automatizaciones,
+junto con la coordinación secuencial de las mismas, realizada sin
+tener en cuenta el tipo de sistema operativo en el que corren, describen
+un proceso, en el cual actúa la orquestación.
+
+No hay que confundir los términos automatización y orquestación. Éstos
+se podrían comparar con tarea y proceso. 
+
+La optimización de un proceso, por ejemplo, no se puede conseguir
+simplemente por la automatización. A la automatización le concierne
+una tarea: ejecutar un servidor web, configurar un servidor web, detener
+un servicio. A la orquestación, sin embargo, le concierne la ejecución
+de un flujo de trabajo (si se quiere automatizado) de un proceso.
+Un proceso de aprovisionamiento lleva a cabo múltiples tareas e involucrar
+múltiples sistemas. El objetivo de la orquestación no es sólo ejecutar
+automáticamente un servidor, lo cual aumenta la velocidad en el proceso
+de despliegue y lleva las aplicaciones a producción más rápido. También
+permite una oportunidad para optimizar aquellos procesos para mejorar
+aún más la velocidad de despliegue.
+
+Una de las maneras más simples de optimizar un proceso es eliminar
+los pasos repetitivos.
+
+Entonces, automatización trata acerca de codificar tareas y orquestación
+acerca de codificar procesos. Esta última toma ventaja de la automatización
+para reutilizar bloques básicos.
+
+
+\subsection{Herramientas de orquestación}
+
+Algunas de las herramientas de código abierto más utilizadas para
+orquestar son las siguientes: 
+\begin{itemize}
+\item Ansible
+\item Chef 
+\item Puppet 
+\end{itemize}
+
+\subsubsection{Ansible }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/orquestacion/orquestacion_ansible}
+\par\end{centering}
+
+\protect\caption{Ansible logo}
+\end{figure}
+
+
+Es una plataforma para configurar y administrar computadoras. Combina
+instalación multi-nodo, ejecuciones de tareas ad hoc y administración
+de configuraciones. 
+
+Ansible distingue dos tipos: controladores y nodos. Primero, existe
+una única máquina de control donde la orquestación comienza. Los nodos
+son manejados desde esa máquina por el servicio OpenSSH. La máquina
+de control conoce a los nodos a través de un inventario. Esta herramienta
+usa una arquitectura sin agentes, es decir, los nodos no necesitan
+instalar ni ejecutar en segundo plano ningún proceso que se comunique
+con la máquina de control. Sin embargo, los nodos deben contar con
+Python >= 2.4 y las máquinas de control con Python 2.6.
+
+Dispone de módulos que trabajan sobre JSON y la salida estándar puede
+ser escrita en cualquier lenguaje. Nativamente utiliza YAML para describir
+configuraciones de los sistemas.
+
+Los sistemas operativos soportados en las máquinas de control son
+la mayoría de las distribuciones Linux y Unix (Red Hat, Debian, CentOS,
+OSX, y BSD) entre otros excepto Windows.
+
+Ansible puede instalarse en ambientes virtualizados, nubes públicas
+y privadas, incluyendo VMWare, OpenStack, AWS, Eucalyptus, KVM y CloudStack.
+
+
+\subsubsection{Chef }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/orquestacion/orquestacion_chef}
+\par\end{centering}
+
+\protect\caption{Chef logo}
+
+
+\end{figure}
+
+
+Es una herramienta de automatización de infraestructura de sistemas
+o administración de configuraciones. Se enfoca en seguir un conjunto
+de pasos (llamados recetas) con el propósito de presentar un producto
+final ya listo para trabajar y/o probar.
+
+Existen 2 tipos de versiones: 
+
+\textbf{Chef Server} está enfocado a ser el servidor central que permite
+suministrar a los diferentes nodos clientes con las diversas configuraciones
+necesarias, las cuales se mantienen alojadas en el servidor. El cliente
+sondea periódicamente al Chef Server para corroborar las últimas políticas
+y estado de la red, en caso que haya algún parámetro desactualizado,
+el cliente lo actualiza. Además ofrece balanceo de carga, escalabilidad,
+búsquedas rápidas ente otros.
+
+\textbf{Chef Solo} es la versión de código abierto y reside localmente
+en el nodo, esto quiere decir que toda la información y recetas necesarias
+para configurar el nodo deben estar presentes en su disco duro. Esta
+herramienta utiliza Ruby-DLS para escribir las \textquotedblleft recetas\textquotedblright{}
+(configuraciones de sistemas que describen como son manejadas las
+aplicaciones). Estas recetas, que pueden ser agrupadas para facilitar
+la administración, describen de forma secuencial una serie de recursos
+que deben estar en un estado particular.
+
+Chef Server es soportado sobre RHEL/CentOS/Oracle Linux, y Ubuntu.
+Mientras que el soporte para los clients es AIX, RHEL/CentOS, FreeBSD,
+Mac OS X, Solaris (OS), Microsoft Windows, Ubuntu, ArchLinux, Debian,
+Fedora, y otros. 
+
+
+\subsubsection{Puppet }
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=3cm]{Imagenes/orquestacion/orquestacion_puppet}
+\par\end{centering}
+
+\protect\caption{Puppet logo}
+\end{figure}
+
+
+Es un sistema de orquestación que permite definir el estado de la
+infraestructura, forzando automáticamente que se llegue al estado
+correcto definido.
+
+Puppet es una herramienta diseñada para administrar la configuración
+de sistemas similares a Unix y a Microsoft Windows de forma declarativa,
+es decir, se establece el estado requerido en vez como llegar al mismo..
+El usuario describe los recursos del sistema y sus estados utilizando
+el lenguaje declarativo que proporciona Puppet. Esta información es
+almacenada en archivos denominados \textquotedblleft manifiestos\textquotedblright .
+Puppet descubre la información del sistema a través de una utilidad
+llamada Facter, y compila los manifiestos en un catálogo específico
+del sistema que contiene los recursos y la dependencia de dichos recursos,
+estos catálogos son ejecutados en los sistemas de destino. La capa
+de abstracción de recursos permite a los administradores describir
+la configuración en términos de alto nivel, tales como usuarios, servicios
+y paquetes sin necesidad de especificar los comandos específicos del
+sistema operativo (como rpm, yum, apt).
+
+Puppet funciona bajo la arquitectura cliente servidor donde un puppet
+master indica a sus agentes las configuraciones que deben aplicar.
+Además, los masters pueden aplicar manifiestos a sí mismos. Notar
+que hay dos etapas: 
+\begin{enumerate}
+\item Compilar los catálogos 
+\item Aplicar los catálogos
+\end{enumerate}
+Un catálogo es un archivo que describe los deseos de un estado de
+sistema para un nodo en particular. Enumera todos los recursos que
+necesitan ser administrados, así como las dependencias entre esos
+recursos.
+
+En esta arquitectura, los nodos administrados corren la aplicación
+puppet-agent, usualmente en segundo plano y uno o más servidores corren
+la aplicación puppetmaster administrada por un servidor web (como
+Apache.) Periódicamente, los agentes piden al master el catálogo.
+El master, compila y corre el catálogo del nodo usando varias fuentes
+de información a las que tiene acceso. Una vez que recibe el catálogo,
+el agente chequea cada recurso descrito en él. Si encuentra algún
+recurso que no está en el estado deseado, se realizan los cambios
+necesarios para corregirlos. Luego de aplicar el catálogo, el agente
+enviá un reporte al master.
+
+Los sistemas soportados son Linux (Red Hat Enterprise y derivados,
+Debian, Ubuntu, Fedora), Unix (BSD, Mac OS X, Oracle Solaris, AIX)
+y Windows.
+
+
+\subsection{Selección de la herramienta de Orquestación.}
+
+Esta selección se baso en una recomendación de los directores del
+proyecto. Dado que Puppet es la herramienta con mas penetración de
+mercado y por ende la que brinda la mejor experiencia a futuro. Pero
+ademas, como todas las herramientas seleccionadas.
+
+Puppet cuenta con dos versiones, Enterprise y Open Source, por lo
+cual siguiendo el requerimiento no funcional RNF01 se escogió la versión
+Open Source
+
+
+\section{Protocolo PXE}
+
+El protocolo PXE (Preboot Execution Enviroment) es un estándar que
+les permite a computadoras, dentro de una red, que todavía no fueron
+cargadas con un sistema operativo, ser configuradas e iniciadas remotamente
+por un administrador. Utiliza una extensión de opciones del protocolo
+DHCP.
+
+Las ventajas de utilizar PXE incluyen:
+\begin{itemize}
+\item La máquina cliente no necesariamente necesita un sistema operativo
+o un disco rígido. 
+\item Como este protocolo es independiente del vendedor nuevos tipos de
+computadoras pueden ser añadidos a la red.
+\end{itemize}
+
+\subsubsection{PXE APIs}
+
+\textbf{Preboot Services API:} Contiene muchas funciones de control
+e información.
+
+\textbf{Trivial File Transport Protocol (TFTP) API:} Habilita la apertura
+y cierre de conexiones TFPT, la lectura desde una conexión TFTP y
+la escritura en otra.
+
+\textbf{User Datagram Protocol (UDP) API:} Habilita la apertura y
+cierre de conexiones TFPT, la lectura desde una conexión UDP y la
+escritura en otra.
+
+\textbf{Universal Network Driver Interface (UNDI) API:} Habilita el
+control básico de entrada/salida a través de la interfaz de red del
+cliente. Esto permite la utilización de protocolos universales de
+controladores para que el mismo controlador pueda ser usado en cualquier
+interfaz que soporte esta API.
+
+El siguiente diagrama ilustra la relación entre los NBP y las APIs
+de PXE:
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[height=5cm]{Imagenes/pxe/pxe_api_1}
+\par\end{centering}
+
+\protect\caption{APIs de PXE}
+\end{figure}
+
+
+
+\subsubsection{Funcionamiento de PXE}
+\begin{enumerate}
+\item El cliente realiza un broadcast de un mensaje DHCPDISCOVER al puerto
+estándar DHCP (UDP 67). Un campo de opciones en este mensaje contiene:
+
+\begin{enumerate}
+\item Etiqueta para el identificador del cliente UUID.
+\item Etiqueta para la versión de UNDI (Universal Network Device Interface)
+del cliente.
+\item Etiqueta para la arquitectura del cliente.
+\item La opción 60, Class ID, puesta a to \textquotedblleft PXEClient:Arch:xxxxx:UNDI:yyyzzz\textquotedblright .
+\end{enumerate}
+\item El servidor DHCP responde enviando un mensaje DHCPOFFER al cliente
+en el puerto estándar DHCP (UDP 68). El mensaje contiene parámetros
+estándar DHCP:
+
+\begin{enumerate}
+\item Una dirección IP para el cliente.
+\item Parámetros configurados por el administrador.
+\end{enumerate}
+\item Del DHCPOFFER que es recibido, el cliente guarda:
+
+\begin{enumerate}
+\item La dirección IP.
+\item Parámetros configurados por el administrador.
+\item Una lista de Boot Servers del campo \textquotedblleft Boot Server\textquotedblright{}
+en las etiquetas PXE del DHCPOFFER.
+\end{enumerate}
+\item El cliente debe enviar una solicitud por la dirección del Boot Server
+al servidor y esperar por el acuse de recibo (acknowledgment \textendash{}
+ACK).
+\item El cliente selecciona y descubre un Boot Server. Este paquete puede
+ser enviado por broadcast al puerto 67. Este paquete es el mismo que
+el DHCPDISCOVER inicial en el paso uno,excepto que es codificado como
+DHCPREQUEST y ahora contiene lo siguiente:
+
+\begin{enumerate}
+\item La IP asignada al cliente por el servidor DHCP.
+\item Una etiqueta con el identificador del cliente (UUID).
+\item Una etiqueta con la versión de UNDI del cliente.
+\item Una etiqueta con la arquitectura del cliente.
+\item La opción 60, Class ID, puesta a to \textquotedblleft PXEClient:Arch:xxxxx:UNDI:yyyzzz\textquotedblright .
+\item El tipo de Boot Server en el campo de opciones de PXE.
+\end{enumerate}
+\item El Boot Server envía un paquete DHCPACK unicast al cliente. Este ACK
+contiene:
+
+\begin{enumerate}
+\item El nombre del archivo ejecutable.
+\item Parámetros de configuración MTFTP.
+\item Otras opciones necesarias para que el NBP pueda ser ejecutado.
+\end{enumerate}
+\item El cliente descarga el archivo ejecutable utilizando TFTP (puerto
+69). El archivo descargado y la ubicación del código descargado en
+memoria depende de la arquitectura de la CPU del cliente.
+\item El cliente PXE determina si es necesaria la verificación de autenticidad
+del archivo descargado. Si se requiere se envía otro DHCPREQUEST preguntando
+por credenciales.
+\item El cliente inicia la ejecución del código descargado.
+\end{enumerate}
+El cliente PXE esperará por la información necesaria unos 60 segundos.
+La etapa DHCPDISCOVER puede repetirse hasta cuatro veces, con tiempos
+de espera de 4,8,16 y 32 segundos respectivamente. Si el cliente recibe
+la DHCPOFFER dentro de ese tiempo, se procederá con DHCPREQUEST. Si
+no, se detendrá con un error de PXE.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15.5cm]{Imagenes/pxe/pxe_proceso}
+\par\end{centering}
+
+\protect\caption{Proceso de PXE}
+\end{figure}
+
+
+
+\section{SAMBA}
+
+SAMBA es un servidor SMB (Server Message Block) libre, desarrollado
+por Andrew Tridgell y que en la actualidad es mantenido por un grupo
+de personas de todo el mundo, como casi todos los proyectos distribuidos
+bajo la Licencia Publica General de GNU. SAMBA es capaz de ejecutarse
+en una gran cantidad de variantes Unix, como Linux, Solaris, SunOS,
+HP-UX, ULTRIX, Unix de Digital, SCO Open Server y AIX por nombrar
+tan sólo algunas. Con SAMBA podremos hacer que nuestro sistema Linux
+actúe como servidor SMB dentro de la red.
+
+SAMBA es en sí un paquete muy complejo, que brinda a los usuarios
+Linux de un sin fin de posibilidades a la hora de interactuar con
+equipos Windows y Linux que estén coexistiendo en redes heterogéneas.
+
+Los beneficios al instalar un servidor SAMBA en Linux son los siguientes:
+\begin{itemize}
+\item Compartir uno o más sistemas de archivos. 
+\item Compartir impresoras, instaladas tanto en el servidor como en los
+clientes. 
+\item SAMBA permite compartir entre máquinas Windows y Linux recursos. 
+\item Siendo un recurso una carpeta o la impresora.
+\end{itemize}
+
+\subsection{Arquitectura SAMBA}
+
+SAMBA está compuesta de un servidor y un cliente, así como de algunas
+herramientas que permiten realizar servicios prácticos o hacer un
+test de la configuración.
+
+El servidor está compuesto de dos aplicaciones (llamadas demonios):
+smbd, núcleo del servidor, provee los servicios de autenticación y
+acceso a los recursos. nmbd, permite mostrar los servicios disponibles
+en SAMBA (visualización de los servidores SAMBA en la red, etc).
+
+El cliente: smbclient es un cliente para Linux que provee una interfaz
+que permite la transferencia de archivos, el acceso a impresoras,
+etc.
+
+smbtar: permite transferir de o hacia un archivo TAR bajo Linux.
+
+testparm: comprueba la sintaxis del archivo smb.conf, el archivo de
+configuración de SAMBA.
+
+El protocolo de comunicación que permite esta comunicación entre Windows
+y Linux se llama SMB (Server Message Block). Puesto a punto por Microsoft
+en 1987, retomando un concepto desarrollado por IBM en 1985 (NetBIOS),
+este protocolo se apoya sobre NetBEUI (así como sobre TCP/IP). El
+interés de TCP/IP proviene del hecho que es ampliamente adoptado.
+Por ello TCP/IP ya ha sido implementado en la mayoría de sistemas
+operativos (Unix, Linux, AmigaOS, MacOS, OS/2, etc) según el esquema
+siguiente:
+\begin{itemize}
+\item Aplicación 
+\item SMB 
+\item NetBios 
+\item TCP/IP 
+\item NetBeui 
+\item IPX/SPX 
+\item Controladores de red
+\end{itemize}
+
+\part{Desarrollo}
+
+
+\section{Elección de la plataforma}
+
+Una vez realizada la interiorización de las diferentes herramientas
+utilizadas en el mercado, se decidió unificar la plataforma para el
+desarrollo del Proyecto Integrador. 
+
+El sistema operativo base elegido fue CentOS 7, su última versión
+al día de la fecha. Esto es debido a que junto con su versión empresarial,
+es un sistema operativo muy robusto y confiable, orientado a servidores
+y uno de los más utilizado en el mercado. Además, la mayoría de las
+herramientas de virtualización, aprovisionamiento y orquestación son
+nativas de RedHat y por ende de CentOS. Finalmente se tuvo en cuenta
+la nueva estandarización del iniciador de sistemas, systemd, para
+esta versión del sistema operativo y para gran parte de las futuras
+entregas en diferentes distribuciones Linux, orientadas a servidor
+y también de escritorio.
+
+Como herramienta de virtualización se optó por KVM, la cual fue, como
+se menciono antes, desarrollada nativamente para esta distribución
+de Linux y que cuenta con una extensa documentación. A su vez, en
+el Laboratorio de Computación, existe un servidor que utiliza esta
+herramienta para servir a las terminales de ciertas aulas de informática.
+Consultando con los Directores del Proyecto, a profesionales en el
+tema se llegó a la conclusión que KVM es una herramienta estable y
+apta para un entorno de producción.
+
+Para el aprovisionamiento de máquinas virtuales también por motivos
+de desarrollo nativo y recomendación de profesionales que la han utilizado
+se eligió a Cobbler, ya que es la más estable y fiable para entornos
+de producción. También cuenta con soporte integrado para orquestación
+con Puppet, herramienta que fue elegida por ser parte de los requerimientos
+del Proyecto.
+
+
+\subsection{Arquitectura de desarrollo}
+
+El siguiente esque representa la arquitectura de desarrollo utilizada
+para todas las pruebas.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{Imagenes/arquitectura_trabajo/Arquitectura}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Arquitectura de desarrollo}
+\end{figure}
+
+
+Sin embargo, como también se puede aplicar para máquinas de escritorio
+o un entorno mixto, con equipos virtualizados y reales, se realizaron
+pruebas como se muestra en el siguiente esquema.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/arquitectura_trabajo/Arquitectura del Sistema\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Arquitectura de desarrollo en un entorno mixto.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+
+\section{KVM/Qemu}
+
+
+\subsection{Arquitectura}
+
+En este Proyecto se utiliza la técnica de virtualización completa.
+En particular, la arquitectura que utiliza KVM es la siguiente:
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15.5cm]{Imagenes/kvm/kvm_arquitectura_1}
+\par\end{centering}
+
+\protect\caption{Diagrama de arquitectura de KVM/Qemu}
+
+
+\end{figure}
+
+
+
+\subsection{Requerimientos de hardware}
+
+El hipervisor KVM requiere que el microprocesador cuente con VT-x
+para procesadores de Intel o con AMD -V para los propios de AMD. Para
+poder confirmar que un un procesador cuenta con esto, en los sistemas
+basados en Linux, se debe ejecutar el siguiente comando:
+
+~
+
+\texttt{grep -E 'svm|vmx' /proc/cpuinfo }
+
+~
+
+La salida de este comando es una porción del archivo /proc/cpuinfo
+en el cual se detallan las diferentes flags que contiene el procesador,
+entre ellas, la svm (AMD) o vmx (Intel). En caso de no poseer esas
+flags, el procesador no soporta hiper-virtualización y la salida será
+vacía.
+
+La siguiente, es la salida obtenida con un AMD Athlon(tm) II P360
+Dual-Core Processor de 1,7GHz:
+
+~
+
+\texttt{flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge
+mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext
+fxsr\_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant\_tsc rep\_good
+nopl nonstop\_tsc extd\_apicid pni monitor cx16 popcnt lahf\_lm cmp\_legacy
+svm extapic cr8\_legacy abm sse4a 3dnowprefetch osvw ibs skinit wdt
+nodeid\_msr hw\_pstate npt lbrv svm\_lock nrip\_save }
+
+~
+
+Se debe asegurar que el módulo de KVM este cargado, para esto ejecutamos
+:
+
+~
+
+\texttt{lsmod | grep kvm }
+
+~
+
+La salida obtenida, nuevamente en la misma máquina que en el caso
+anterior es:
+
+~
+
+\texttt{kvm\_amd 60554 0 kvm 448375 1 kvm\_amd }
+
+~
+
+En caso de no estar cargados los módulos, se deben cargar manualmente,
+de la siguiente manera.
+
+~
+
+modprobe kvm\_amd
+
+
+\subsection{Limitaciones de KVM}
+\begin{itemize}
+\item El número máximo de CPUs por huésped es elevado (240 para RHE 7.1)
+por lo que no aplica en este trabajo. 
+\item La virtualización anidada no está soportada. 
+\item Sobre utilización de memoria es soportada por KVM utilizando el disco
+de swap. 
+\item Sobre utilización de CPUs es soportada por KVM, se recomienda no utilizar
+más de diez CPUs virtuales por cada CPU físico.
+\item Virtualización de dispositivos SCSI no está soportada. Virtualización
+de dispositivos IDE en KVM es limitada a cuatro por huésped. 
+\item Soporta 32 slots para dispositivos PCI (para-virtualizados) y 8 de
+estos por cada slot (datos RHE7) 
+\item La asignación de dispositivos referenciados a dispositivos físicos
+son de uso exclusivo a la VM .
+\item La migración y salvado, o restauración de la VM no está soportada
+mientras el dispositivo esté en uso. 
+\item KVM no soporta kernels de real time. 
+\end{itemize}
+
+\subsection{Configuración de la red}
+
+KVM soporta las siguientes configuraciones de red para la virtualización:
+\begin{itemize}
+\item Redes virtuales usando NAT (Network Address Translation) 
+\item Dispositivos físicos distribuidos usando la asignación de dispositivos
+PCI
+\item Redes puenteadas (bridge)
+\end{itemize}
+
+\subsection{Creación del sistema de virtualización qemu-KVM}
+
+
+\subsubsection{Instalación de paquetes}
+
+Se ejecutan los siguientes comandos, el primero actualiza los paquetes
+actuales del sistema a la ultima versión, mientras que el segundo
+instala los paquetes seleccionados, estos paquetes entre otras cosas
+proveen la herramienta qemu-KVM, una interfaz gráfica como es el virt-manager
+para administrar y crear las maquinas virtuales, y un conjunto de
+comandos donde se destaca el comando virt-install que es el utilizado
+para crear las maquina virtuales.
+
+\texttt{yum update }
+
+\texttt{yum install -y kvm libvirt qemu-kvm virt-manager libvirt qemu-system-x86
+}~\\
+\texttt{qemu-img libvirt-python libvirt-client virt-install virt-viewer}
+
+Se añade el usuario que va a utilizar KVM al grupo KVM, en este caso
+el usuario es admin.
+
+\texttt{usrermod -G kvm -a admin}
+
+
+\subsubsection{Creación de una red NAT}
+
+KVM soporta tres tipos de configuraciones de redes
+\begin{itemize}
+\item Redes virtuales usando NAT (Network Address Traslation)
+\item Dispositivos físicos distribuidos usando la asignación de dispositivos
+PCI
+\item Redes puenteadas (bridge)
+\end{itemize}
+Aprovechamos la interfaz gráfica del virt-manager para crear la red.
+Primero nos dirigimos a Editar>Detalles de la conexión. Se abre el
+siguiente menú.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/kvm/Desarrollo del sistema/QEMU-KVM Detalles de conexión_003\string".eps}\protect\caption{Detalles de conexión}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Se añade una nueva red, clickeando en el signo mas.
+
+La ventana que se abre, cuenta con 4 etapas. En la primera se selecciona
+el nombre de la red, puppet. Luego indicamos la red deseada (En este
+proyecto se uso 192.168.122.0/24) y se deshabilita el DHCP dado que
+utilizaremos un servidor para esto. En la tercer etapa esta la opción
+de habilitar IPV6 y finalmente en la ultima etapa se indica que la
+red debe ser NAT y se elige el dispositivo al cual se reenvía.
+
+\begin{figure}
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/kvm/Desarrollo del sistema/Crear una red virtual nueva_001\string".eps}\protect\caption{Crear red virtual}
+
+\par\end{centering}
+
+\end{figure}
+
+
+
+\subsubsection{Creación de VMs}
+
+Las maquinas virtuales se pueden crear tanto siguiendo al GUI como
+por linea de comandos, este ultimo tiene la ventaja de poder ser utilizada
+para scripting. 
+
+Entre la gran cantidad opciones del comando virt-install se destacan:
+\begin{itemize}
+\item \textbf{--connct: }Con esta opción se indica que se trabajara con
+el emulador qemu
+\item \textbf{--virt-type: }Con esta opción se indica que la virtualización
+la realizara KVM
+\item \textbf{--name:} Seleccionamos un nombre único para la VM. Este nombre
+no es del host sino es el nombre para identificarlo dentro del campo
+de qemu-KVM
+\item \textbf{--ram} Indicamos la cantidad de memoria ram en MB que dispondrá
+la VM 
+\item \textbf{--disk: }Ubicamos el path absoluto donde se encontrara la
+imagen creada e indicamos el tamaño en GB de la misma.
+\item \textbf{--network: }Si se trabaja con una red virtual, se le indica
+a la VM a cual debe conectarse
+\item \textbf{--pxe}:\textbf{ }Esta opción es muy importante dado que indica
+que el SO a instalar se obtiene vía red.
+\item \textbf{--os-type y --os-variant: }Para aumentar el rendimiento se
+le indica a la VM que tipo de SO contendrá (Linux, Windows, etc) y
+la variante del mismo (Entre los Linux puede ser: Centos, Debian,
+Ubuntu, etc.)
+\end{itemize}
+Un ejemplo utilizado en el desarrollo del proyecto es:
+
+virt-install --connect qemu:///system --virt-type kvm --name centos1025
+--ram 1024 --disk path=/var/lib/libvirt/images/centos1025.qcow2,size=15
+--network network=puppet --pxe --os-type linux --os-variant rhel7
+
+
+\section{Cobbler}
+
+El servidor cobbler debe contener los paquetes necesarios para poder
+instalar cada SO (CentOS, Ubuntu y Windows) Por lo cual debe contar
+con un espacio en disco mínimo para soportar esto. Ademas, dado que
+el mismo servidor contiene el sistema de automatización y orquestación,
+se estima que debe contar con un mínimo de 30GB de disco.
+
+El proyecto se desarrollo sin tener en cuenta SELinux ni Firewall,
+por lo cual ambos son deshabilitados de la siguiente forma.
+
+Editar el archivo /\texttt{etc/sysconfig/selinux} y setear:
+
+\texttt{SELINUX=disabled}
+
+En el caso del firewall ejecutar: 
+
+\texttt{systemctl stop firewalld.service}
+
+\texttt{systemctl disabled firewalld.service}
+
+\texttt{systemctl mask firewalld.service }
+
+\texttt{systemctl status firewalld.service}
+
+
+\subsection{Tópicos generales de Cobbler}
+
+
+\subsubsection{Modelado}
+
+Cobbler utiliza objetos para definir la configuración de aprovisionamiento.
+A medida que se desciende por el árbol de objetos, las variables se
+sobre escriben y se añaden a la información definida en los objetos
+superiores.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15.5cm,height=10cm,keepaspectratio]{Imagenes/cobbler/cobbler_modelado}
+\par\end{centering}
+
+\protect\caption{Modelado de Cobbler}
+
+
+\end{figure}
+
+
+
+\subsubsection{Distros}
+
+Distribución que se desea instalar. Importar el contenido de la distro
+ayuda a disminuir el tiempo de instalación ya que no se utilizan fuentes
+de instalación externas. Generalmente es más fácil utilizar el comando
+\texttt{\emph{import }}en vez de añadir la distribución manualmente.
+
+
+\subsubsection{Profiles}
+
+Un perfil o profile asocia una distribución a opciones especializadas
+adicionales, como puede ser un kickstart. Los perfiles son el núcleo
+del aprovisionamiento y debe existir al menos uno por cada distribución.
+Un perfil puede representar, por ejemplo, una configuración de web
+server o de escritorio.
+
+
+\subsubsection{Systems }
+
+Los grabaciones de sistemas mapean una pieza de hardware (o una máquina
+virtual) con el profile asignado a correr en ella. Esto puede verse
+como una forma de asignarle un rol a un sistema específico. Cuando
+se aprovisiona vía koan y PXE, no es necesario crearlos ya que son
+útiles cuando una personalización de un sistema específico es necesaria.
+Por ejemplo, personalizar la MAC, si hay un rol específico para una
+máquina dada, se debería crear una grabación del sistema para ésta.
+
+
+\subsubsection{Images }
+
+Cobbler puede bootear imágenes físicamente o virtualmente. Los despliegues
+de máquinas no basadas en imágenes son generalmente más fáciles para
+trabajar y llevan a una infraestructura más sustentable. La mayoría
+de las instalaciones de cobbler están directamente basadas en la distribución
+(kernel + initrd). La siguiente página documenta algunas cosas que
+no están basadas en kernel + initrd y muestra como instalarlas con
+cobbler y koan. Por ejemplo, trata la instalación de sistemas operativos
+Windows usando qemu/KVM: 
+
+\texttt{https://fedorahosted.org/cobbler/wiki/AllAboutImages}
+
+\texttt{https://fedorahosted.org/cobbler/wiki/KoanWithIsos}
+
+
+\subsubsection{Repositorios }
+
+Espejar repositorios le permite a Cobbler espejar el árbol de instalación
+(\texttt{cobbler import}) y también paquetes opcionales. Si se espeja
+todo esto localmente en la red, las instalaciones y actualizaciones
+serán más rápidas (usualmente es válido realizar esto para largos
+setups en datacenters, laboratorios, etc). Si un profile tiene un
+repositorio dado, este repositorio puede ser automáticamente configurado
+durante el aprovisionamiento y los sistemas instalados podrán usarlo
+como espejo (\texttt{yum\_post\_install\_mirror} debe estar habilitado).
+Si se especifica una lista de paquetes para \textendash rpm-list,
+se puede espejar solo esa parte del repositorio, más sus dependencias.
+Por ejemplo, si se espeja FC6 Extras, para descargar Cobbler y Koan,
+ponemos \texttt{\textendash rpm-list=\textquotedblright cobbler koan\textquotedblright{}}
+y se saltea la parte de los paquetes de juegos. Esta función sólo
+funciona para repositorios http o ftp.
+
+Los repositorios pueden ser creados del siguiente modo:
+
+\texttt{cobbler repo add -{}-mirror=url -{}-name=string {[}-{}-rpmlist=list{]}
+\\ {[}-{}-creatrepo-flags=string{]} {[}-{}-keep-updated=Y/N{]} {[}-{}-priority=number{]}
+}~\\
+\texttt{{[}-{}-arch=string{]} {[}-{}-mirror-locally=Y/N{]} {[}-{}-breed=yum|rsync|rhn{]}}
+
+\texttt{~}
+
+Donde
+
+\textbf{mirror:} Es la dirección del espejo yum. Puede ser una URL
+rsync:// , una ubicación ssh o una ubicación http:// o ftp:// de un
+espejo. Direcciones del filesystem también funcionan. Esta dirección
+debe especificar un repositorio exacto a espejar, solo una arquitectura
+y una distribución.
+
+\textbf{name: }Este nombre es el usado para guardar la ubicación del
+espejo.
+
+\textbf{rpm-list:} Con esta opción se puede decidir espejar solo una
+parte de un repositorio (la lista de paquetes dados más dependencias).
+Por ejemplo : \texttt{-{}-rpm-list=\textquotedbl{}paquete\_1 paquete\_2\textquotedbl{}}.
+Esta opción sólo funciona con repositorios http:// y ftp:// para espejos
+de otros tipos esta opción será ignorada.
+
+\textbf{createrepo-flags:} Especifica banderas opcionales para añadir
+a la herramienta \texttt{createrepo} la cual es llamada cuando se
+ejecuta \texttt{cobbler reposync} para el repositorio dado. Por defecto
+se tiene \texttt{\textquoteright -c cache\textquoteright }.
+
+\textbf{keep-updated: }Especifica si el repositorio debería ser o
+no actualizado durante una ejecución normal de \texttt{cobbler reposync}.
+El repositorio puede seguir siendo actualizado por el nombre.
+
+\textbf{mirror-locally: }Cuando se configura a N, especifica que este
+repositorio yum se utiliza para ser referenciado directamente por
+kickstarts y no para ser espejado localmente en el servidor cobbler.
+Solo espejos con URLs http:// y ftp:// son soportados cuando se utiliza
+\texttt{-{}-mirror-locally=N}, no se puede usar URLs del filesystem.
+
+\textbf{priority: }Especifica la prioridad del repositorio (menor
+número, mayor prioridad) que se aplica a máquinas instaladas usando
+los repositorios que tienen el plugin yum priorities instalado. Por
+defecto se tiene 99.
+
+\textbf{arch: }Especifica la arquitectura que el repositorio debería
+utilizar. Por defecto se utiliza la arquitectura del servidor cobbler.
+
+\textbf{breed: }Usualmente cobbler comprenderá este parámetro si no
+se entrega.
+
+~
+
+Para crear un repositorio local, por ejemplo para instalar Puppet
+en una instalación desde cero, y sin una conexión a Internet, primero
+es necesario tener los paquetes necesarios y sus dependencias, para
+ello se ejecuta:
+
+\texttt{sudo yum install -{}-downloadonly -{}-downloaddir=<directory>
+<package>}
+
+Donde se debe reemplazar \texttt{<directory> }por el directorio donde
+se descargará el paquete con sus dependencias y \texttt{<package>}
+por el \texttt{puppet.}
+
+Una vez obtenidos, crear una carpeta con el nombre del repositorio
+en\\
+ \texttt{/var/www/cobbler/repo\_mirror }por ejemplo:
+
+\texttt{sudo mkdir /var/www/cobbler/repo\_mirror/puppet}
+
+Luego es necesario añadirlo al servidor:
+
+\texttt{cobbler repo add -{}-name=puppet -{}-keep-updated=N -{}-arch=x86\_64
+}~\\
+\texttt{-{}-mirror-locally=Y -{}-breed=yum}
+
+Donde \texttt{-{}-name }debe ser el mismo que el de la carpeta creada
+anteriormente. Acto seguido ejecutar:
+
+\texttt{createrepo /var/www/cobbler/repo\_mirror/puppet}
+
+\texttt{cobbler reposync}
+
+Para añadir este nuevo repositorio a un profile de instalación existente:
+
+\texttt{cobbler profile edit -{}-name=centos7 -{}-repos=puppet }
+
+Se muestra la información acerca del mismo con:
+
+\texttt{cobbler repo report -{}-name=puppet}
+
+
+\subsubsection{Import}
+
+El propósito de \textquotedblleft \texttt{cobbler import}\textquotedblright{}
+es configurar un servidor de instalación por red para una o más distribuciones.
+Éste espeja contenido basado en una imagen DVD, un archivo ISO, un
+árbol en un filesystem, un espejo externo rsync o una ubicación SSH.
+
+\texttt{\$ cobbler import -{}-path=/path/to/distro \textendash name=F12}
+
+Este ejemplo muestra los dos argumentos requeridos para import: --path
+y \textendash name.
+
+Luego de que import es ejecutado, cobbler tratará de detectar el tipo
+de distribución y automáticamente asignar kickstarts. Por defecto,
+proveerá el sistema borrando el disco duro, configurando eth0 para
+DHCP y utilizando la contraseña por defecto \textquotedblleft cobbler\textquotedblright .
+Si esto no es deseado, editar los archivos kickstart en \texttt{/var/lib/cobbler/kickstarts}
+para hacer algo distinto o cambiar la configuración del kickstart
+después que cobbler cree el profile. El contenido espejado es guardado
+automáticamente en \texttt{/var/www/cobbler/ks\_mirror}. 
+
+Ejemplos:
+\begin{enumerate}
+\item \texttt{cobbler import -{}-path=rsync://mirrorserver.example.com/path/
+}~\\
+\texttt{-{}-name=centos -{}-arch=x86}
+\item \texttt{cobbler import -{}-path=root@192.168.1.10:/stuff -{}-name=bar}
+\item \texttt{cobbler import -{}-path=/mnt/dvd -{}-name=baz -{}-arch=x86\_64}
+\item \texttt{cobbler import -{}-path=/path/to/stuff \textendash name=glorp}
+\item \texttt{cobbler import -{}-path=/path/where/filer/is/mounted -{}-name=anyname
+\textbackslash{} }~\\
+\texttt{-{}-available-as=nfs://nfs.example.org:/where/mounted/}
+\end{enumerate}
+Una vez importado, ejecutar \textquotedblleft \texttt{cobbler list}\textquotedblright{}
+o \textquotedblleft \texttt{cobbler report}\textquotedblright{} para
+ver que se ha añadido. Si se quiere forzar la utilización de una plantilla
+kickstart de cobbler para todos los profiles creados por un import,
+se puede pasar la opción \texttt{\textendash kickstart} a import para
+saltar la auto detección del kickstart.
+
+
+\subsubsection{Kickstarts}
+
+Los kickstarts son archivos que indican cómo debe ser configurado
+el sistema operativo, el archivo contiene palabras claves, valores
+y en otros casos solo contienen la palabra clave que en sí misma es
+una configuración especifica. 
+
+Algunas palabras clave (keywords) son opcionales, mientras que otras
+son necesarias para la instalación.
+
+
+\paragraph{Keywords}
+\begin{itemize}
+\item \textbf{autopart (optional)} : Creación automática de particiones,
+1 GB o más para el directorio raíz ( / ), una partición de intercambio
+y una partición de arranque apropiada para la arquitectura . Uno o
+más de los tamaños de las particiones por defecto puede ser re-definido
+con la zona de directivas.
+\item \textbf{auth or authconfig (required):} Establece las opciones de
+autenticación para el sistema. Es similar al comando authconfig ,
+que se puede ejecutar después de la instalación . Por defecto, las
+contraseñas son encriptadas y no utilizan shadow .
+\item \textbf{bootloader (required): }Especifica cómo se debe instalar el
+gestor de arranque.
+\item \textbf{clearpart (optional):} Elimina las particiones del sistema,
+antes de la creación de nuevas particiones . Por defecto no se eliminan
+las particiones .
+\item \textbf{cmdline (optional): }Realiza la instalación en un modo de
+línea de comandos completamente no interactivo. Cualquier solicitud
+por interacciones detendrá la instalación.
+\item \textbf{firewall (optional): }Esta opción corresponde a la pantalla
+de configuración de firewall en el programa de instalación.
+\item \textbf{firstboot (optional):} Determinar si el agente de configuración
+se inicia la primera vez que se arranca el sistema . Si se activa,
+el paquete firstboot debe estar instalado. Si no se especifica, esta
+opción está desactivada por defecto.
+\item \textbf{halt (optional): }Detiene el sistema después de que la instalación
+se ha completado con éxito . Esto es similar a una instalación manual,
+en donde Aanaconda muestra un mensaje y espera a que el usuario presione
+una tecla antes de reiniciar. Durante una instalación Kickstart, si
+no se especifica el método de terminación, la opción reboot se utiliza
+como predeterminado.
+\item \textbf{graphical (optional): }Realice la instalación kickstart en
+modo gráfico . Este es el valor predeterminado .
+\item \textbf{install (optional): }Le dice al sistema para instalar un sistema
+nuevo en lugar de actualizar un sistema existente. Este es el modo
+por defecto. 
+\item \textbf{interactive (optional): }Utiliza la información proporcionada
+en el archivo kickstart durante la instalación, pero permite la inspección
+y modificación de los valores dados . Se le presentará con cada pantalla
+del programa de instalación con los valores del archivo kickstart
+. Puede aceptar los valores haciendo clic en Siguiente o cambiar los
+valores y haga clic en Siguiente para continuar.
+\item \textbf{keyboard (required): }Establece el tipo de teclado.
+\item \textbf{lang (required): }Establece el idioma que desea utilizar durante
+la instalación y el idioma predeterminado para utilizar en el sistema
+instalado.
+\item \textbf{network (optional): }Configura la información de red para
+el sistema.Si la instalación no requiere redes y la información de
+la red no se proporciona en el archivo kickstart, el programa de instalación
+asume que la instalación debe hacerse sobre eth0 a través de una dirección
+IP dinámica ( BOOTP / DHCP), y configura el sistema final, instalado
+para determinar su dirección IP de forma dinámica. 
+\item \textbf{part or partition (required) : }Crea una partición en el sistema.
+\item \textbf{poweroff (optional): }Apaga el sistema luego de que la instalación
+se complete exitosamente.
+\item \textbf{raid (optional): }Monta un sistema RAID.
+\item \textbf{reboot (optional): }Reinicia el sistema después de una instalación
+exitosa.
+\item \textbf{repo (optional): }Configura un repositorio adicional YUM que
+puede ser utilizado como fuente para la instalación de paquetes.
+\item \textbf{rootpw (required): }Establece la contraseña de root.
+\item \textbf{selinux (optional): }Establece el estado del SElinux en el
+sistema instalado.
+\item \textbf{shutdown (optional): }Apaga el sistema después de una instalación
+exitosa.
+\item \textbf{text (optional): }Realiza la instalación kickstart en modo
+texto. Las instalaciones Kickstart se ejecutan en modo gráfico por
+defecto.
+\item \textbf{timezone (required): }Selecciona la zona horaria del sistema.
+\item \textbf{upgrade (optional): }Indica que se realiza una actualización
+del sistema instalado.
+\item \textbf{user (optional):} Crea usuario en el sistema.
+\item \textbf{zerombr (optional): }Si se especifica zerombr, y si es su
+único argumento, cualquier tabla de partición no válidas que se encuentran
+en los discos son inicializadas. Esto destruye todos los contenidos
+de discos con tablas de partición inválidas. 
+\end{itemize}
+
+\subsubsection{Snippets}
+
+Los snippets son una forma de reutilizar bloques de código entre kickstarts
+(también funcionan en otros tipos de archivos). Esto quiere decir
+que cada vez que el texto SNIPPET aparezca en un archivo kickstart
+será reemplazado por los contenidos en el archivo correspondiente
+dentro de \emph{/var/lib/cobbler/snippets/. }Esto permite la re-utilización
+de código en cada plantilla, aliviando también la lectura de las mismas.
+
+Para utilizar un snippet, es necesario crear un archivo en el directorio
+\emph{}\\
+\emph{/var/lib/cobbler/snippets/nuevo\_snippet }y, en un archivo kickstart,
+al momento de llamar a esta porción de código se utiliza:
+
+\texttt{\emph{\$SNIPPET('nuevo\_snippet')}}
+
+Los snippets pueden ser guardados en subdirectorios para una mejor
+organización. El orden de precedencia será como sigue:
+
+\texttt{\emph{/var/lib/cobbler/snippets/\$subdirectorio/\$nombre\_del\_snippet }}
+
+Para referenciarlo desde el archivo kickstart, ahora se tiene:
+
+\texttt{\emph{\$SNIPPET('direcorio/nuevo\_snippet ')}}
+
+Cobbler no reconoce caracteres que no estén en el alfabeto inglés,
+por este motivo se recomienda no utilizar caracteres especiales como
+\emph{ñ} u otros que lleven tilde.
+
+
+\subsubsection{Replicate}
+
+Este comando descarga la configuración de un servidor Cobbler a otro.
+Sirve para tener implementaciones de High Availability, recuperación
+de desastres o para balanceo de carga.
+
+\texttt{cobbler replicate -{}-master=master.example.org}
+
+Con los argumentos por defecto, solo la metadata de la distribución
+y del perfil es sincronizada. A continuación se muestra los argumentos
+que se le pueden pasar a Cobbler para que replique: 
+
+\texttt{\# cobbler replicate -{}-help }
+
+\texttt{Usage: cobbler {[}options{]}}
+
+\texttt{Options: -h, -{}-help show this help message and exit }
+
+\texttt{-{}-master=MASTER Cobbler server to replicate from. }
+
+\texttt{-{}-distros=PATTERN pattern of distros to replicate }
+
+\texttt{-{}-profiles=PATTERN pattern of profiles to replicate }
+
+\texttt{-{}-systems=PATTERN pattern of systems to replicate }
+
+\texttt{-{}-repos=PATTERN pattern of repos to replicate }
+
+\texttt{-{}-image=PATTERN pattern of images to replicate }
+
+\texttt{-{}-omit-data do not rsync data }
+
+\texttt{-{}-prune remove objects (of all types) not found on the master}
+
+
+\paragraph{Setup}
+
+En cada servidor que será la réplica del master, instalar Cobbler
+normalmente y asegurarse que \texttt{/etc/cobbler/settings} y \texttt{/etc/cobbler/modules.conf
+}están configurados apropiadamente. Utilizar cobbler check para ver
+si existe algún error. El comando no modificará estos archivos. 
+
+Los archivos son transferidos por rsync (sobre ssh) o por scp, por
+lo que es necesario tener un agente ssh antes de utilizar el comando
+de réplica o si no, utilizar authorized\_keys en el host remoto.
+
+
+\subsection{Sistema de aprovisionamiento y automatización Cobbler}
+
+
+\subsubsection{\textrm{Instalación}}
+
+Primero y principal, Cobbler necesita Python, alguna versión superior
+a la 2.6. Además, requiere de un servidor DHCP, FTP, HTTP y Rsync
+y una serie de paquetes.
+\begin{itemize}
+\item createrepo
+\item httpd 
+\item mkisofs mod\_wsgi
+\item mod\_ssl 
+\item python-cheetah 
+\item python-netaddr
+\item python-simplejson 
+\item python-urlgrabber 
+\item PyYAML 
+\item rsync 
+\item syslinux 
+\item tftp-server 
+\item yum-utils 
+\end{itemize}
+La interfaz web de cobbler requiere Django.
+
+Se añade el repositorio Epel de CentOS 7
+
+\texttt{wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm}
+
+\texttt{rpm -Uvh epel-release-{*}}
+
+Se instalan los paquetes necesarios para cobbler, el servidor DHCP,
+FTP, HTTP, etc.
+
+\texttt{yum install cobbler cobbler-web dhcp pykickstart system-config-kickstarttftp
+httpd xinetd fence-agents-all -y}
+
+
+\subsubsection{Configuración de servicios}
+
+Se deben configurar los servios que requiere cobbler (DHCP, FTP. HTTP,
+etc)
+
+\textbf{Configurar FTP y activación de RSYNCD}
+
+Editar /etc/xinetd.d/tftp modificando disable = yes por no. Luego
+ejecutar:
+
+~
+
+\texttt{systemctl start rsyncd }
+
+\texttt{systemctl enable rsyncd}
+
+\textbf{Configurar DHCP}
+
+Copiar el archivo de configuración de ejemplo:
+
+~
+
+\texttt{cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf}
+
+Verificar en cada caso la versión de dhcp.
+
+Luego editar /etc/dhcp/dhcpd.conf, la configuracion utilizada en este
+trabajo se adecua la red ``puppet'' creada.
+
+~
+
+\texttt{\# A slightly different configuration for an internal subnet.}
+
+\texttt{subnet 192.168.122.0 netmask 255.255.255.0 \{ }
+
+\texttt{range 192.168.122.1 192.168.100.254; }
+
+\texttt{option domain-name-servers puppet; }
+
+\texttt{option domain-name \textquotedbl{}localdomain\textquotedbl{}; }
+
+\texttt{option routers 192.168.122.1; }
+
+\texttt{option broadcast-address 192.168.122.255; }
+
+\texttt{default-lease-time 600; }
+
+\texttt{max-lease-time 7200; \} }
+
+~
+
+De la misma forma se configura el archivo \texttt{/etc/cobbler/dhcp.template.}
+
+~
+
+\texttt{subnet 192.168.122.0 netmask 255.255.255.0 \{ }
+
+\texttt{option routers 192.168.122.1; }
+
+\texttt{option domain-name-servers 192.168.122.1; }
+
+\texttt{option subnet-mask 255.255.255.0; }
+
+\texttt{range dynamic-bootp 192.168.122.1 192.168.122.254; }
+
+\texttt{default-lease-time 21600; }
+
+\texttt{max-lease-time 43200; }
+
+\texttt{next-server \$next-server; }
+
+\texttt{class \textquotedbl{}pxeclients\textquotedbl{} \{ match if
+substring (option vendor-class-identifier, 0, 9) = \textquotedbl{}PXEClient\textquotedbl{}; }
+
+\texttt{if option pxe-system-type = 00:02 \{}
+
+\texttt{filename \textquotedbl{}ia64/elilo.efi\textquotedbl{}; }
+
+\texttt{\} else if option pxe-system-type = 00:06 \{}
+
+\texttt{filename \textquotedbl{}grub/grub-x86.efi\textquotedbl{};
+\} }
+
+\texttt{else if option pxe-system-type = 00:07 \{}
+
+\texttt{filename \textquotedbl{}grub/grub-x86\_64.efi\textquotedbl{};
+\} }
+
+\texttt{else \{ filename \textquotedbl{}pxelinux.0\textquotedbl{}; }
+
+\texttt{\}}
+
+\texttt{\}}
+
+~
+
+Añadir a /etc/hosts la dirección del servidor y su hostname (puppet).
+Luego configurar el parámetro ServerName en /etc/httpd/conf/httpd.conf
+con el nombre del host, en este caso será puppet.
+
+ServerName puppet 
+
+Los servicios ya están listos para funcionar, se los inicia e indica
+que se inicien automáticamente al prender la maquina
+
+\texttt{systemctl start httpd.service}
+
+\texttt{systemctl start dhcpd.service}
+
+\texttt{systemctl start xinetd.service }
+
+\texttt{systemctl start cobblerd.service }
+
+\texttt{~ }
+
+\texttt{systemctl enable httpd.service }
+
+\texttt{systemctl enable dhcpd.service }
+
+\texttt{systemctl enable xinetd.service }
+
+\texttt{systemctl enable cobblerd.service}
+
+~
+
+Configuramos el servidor de cobbler, para ello se edito el archivo
+/etc/cobbler/settings.
+
+La clave de los usuarios root de las VMs por defecto se decidió que
+sea ``qwerty''. Se encripta esta clave con el comando 
+
+~
+
+\texttt{openssl passwd -1}
+
+~
+
+Lo que dará algo similar a:
+
+\texttt{Password: Verifying - Password: \$1\$U.Svb2gw\$MNHrAmG.axVHYQaQRySR5/}
+
+y se coloca en la seccion correspondiente del archivo de configuración
+de cobbler
+
+~
+
+\texttt{default\_password\_crypted: \textquotedbl{}\$1\$U.Svb2gw\$MNHrAmG.axVHYQaQRySR5/\textquotedbl{} }
+
+~
+
+Dado que se desea utilizar un servidor DHCP en la misma maquina que
+contiene el servidor Cobbler, se modificar la seccion \textquotedblleft manage\_dhcp:
+0\textquotedblright{} para habilitar el administrador del DHCP.
+
+~
+
+\texttt{manage\_dhcp: 1 }
+
+~
+
+Configurar ahora la dirección IP del servidor Cobbler en las variables
+\textquotedblleft server\textquotedblright{} y \textquotedblleft next\_server\textquotedblright{}
+colocando la interfaz virtual que conecta a la maquina física con
+las maquinas virtuales,virbr0:
+
+~
+
+\texttt{next\_server: 192.168.122.1}
+
+\texttt{server: 192.168.122.1}
+
+~
+
+Para habilitar la interfaz web de Cobbler y configurar usuario y contraseña,
+se modificaron las siguientes líneas del archivo /etc/cobbler/modules.conf
+para que queden de este modo:
+
+~
+
+\texttt{{[}authentication{]} module = authn\_configfile}
+
+\texttt{{[}authorization{]} module = authz\_allowall }
+
+~
+
+El usuario y la contraseña para la interfaz web que por defecto tiene
+tanto a usuario como contraseña a \textquotedblleft cobbler\textquotedblright ,se
+utiliza correr el siguiente comando e ingresar la contraseña preferida
+dos veces:
+
+~
+
+\texttt{htdigest /etc/cobbler/users.digest \textquotedbl{}Cobbler\textquotedbl{}
+admin}
+
+~
+
+\begin{figure}[H]
+
+
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/cobbler/Cobbler Web Interface - Mozilla Firefox_001\string".eps}\protect\caption{Cobbler Web}
+
+\par\end{centering}
+
+\end{figure}
+
+
+~
+
+En el proyecto se utilizo admin como el usuario para ingresar a la
+interfaz web y la clave es ``qwerty''
+
+Se reinician todos los servicios para asegurarse de que todos tomen
+su nueva configuración 
+
+~
+
+\texttt{systemctl restart httpd.service}
+
+\texttt{systemctl restart dhcpd.service}
+
+\texttt{systemctl restart xinetd.service }
+
+\texttt{systemctl restart cobblerd.service }
+
+~
+
+El próximo paso es descargar los \textquotedblleft network boot loaders\textquotedblright{}
+con el comando \texttt{cobbler get-loaders y }se sincroniza el servidor
+de cobbler.
+
+~
+
+\texttt{systemctl restart cobblerd.service }
+
+\texttt{Sincronizar cobbler cobbler sync}
+
+~
+
+
+\subsubsection{Repositorio local separado de Cobbler}
+
+En el caso que se desee crear un repositorio local que no dependa
+del servidor Cobbler, se debe primero instalar los servicios necesarios
+para el funcionamiento del servicio de repositorios, estos servicios
+son \texttt{vsftpd} que asegura una conexión segura y createrepo que
+es el encargado de generar las bases de datos necesarias para el correcto
+funcionamiento del repositorio.
+
+~
+
+\texttt{sudo yum install -y createrepo vsftpd lftp}
+
+~
+
+Una vez hecho ésto, se tiene que crear el árbol de directorios adecuado
+de acuerdo a la aplicación. Éste puede estar divido como se desee,
+por ejemplo, por sistema operativo, por distribución, por arquitectura,
+etc.
+
+Se recomienda utilizar como base el directorio\texttt{ /var/ftp/pub}
+dado que se utilizará este sistema de transmisión de archivos.
+
+Una vez creado el sistema de archivos, se guardan los correspondientes
+paquetes rpm en los lugares adecuados, acordes a cómo se haya creado
+el árbol de archivos, y se ejecuta el siguiente comando:
+
+~
+
+\texttt{creterepo -v /var/ftp/pub/nombre\_repo}
+
+~
+
+Es necesario entonces configurar el demonio vsftpd editando el archivo
+\\
+/etc/vsftpd/vsftpd.conf. Hay diversas configuraciones posibles, pero
+hay dos puntos importantes que deben existir:
+\begin{enumerate}
+\item \texttt{anonymous\_enable=YES \#Indica que se puede acceder vía ftp
+de }~\\
+\texttt{manera anónima.}
+\item \texttt{anon\_root=/var/ftp/pub \#Indica la raíz del directorio al
+cual se puede acceder de manera anónima.}
+\end{enumerate}
+Por último, iniciar el servicio:
+
+~
+
+\texttt{systemctl start vsftpd}
+
+~ 
+
+En el lado del cliente es necesario informar del nuevo repositorio.
+Para ésto, crear un archivo en /etc/yum.repos.d/nombredelrepo.repo
+con el siguiente contenido:
+
+~
+
+\texttt{{[}nombredelrepo{]} }
+
+\texttt{name=nombredelrepo}
+
+\texttt{comment =\textquotedbl{}Repositorio local para proyecto integrador\textquotedbl{} }
+
+\texttt{baseurl=ftp://IP\_servidor/nombre\_del\_sistema\_de\_archivos
+\#Notar que el path es absoluto, partiendo desde el path permitido
+para los usuarios anonimos.}
+
+\texttt{gpgcheck=0 }
+
+\texttt{enabled=1}
+
+\texttt{priority=1}
+
+~ 
+
+Los paquetes yum-priorities e yum-utils deben estar instalados en
+el cliente, para poder utilizar sus funcionalidades (dar prioridad
+a los repositorios y habilitarlos fácilmente.)
+
+Para utilizar este repositorio primero hay que habilitarlo:
+
+~
+
+\texttt{yum-config-manager -{}-enable proyectointegrador}
+
+~
+
+Luego es necesario actualizar base de datos de repositorios:
+
+~
+
+\texttt{yum makecache}
+
+~
+
+Es posible utilizar sólo el repositorio recién creado y excluir los
+demás, para ello:
+
+~
+
+\texttt{yum-config-manager -{}-disable {*} -{}-enable proyectointegrador}
+
+
+\subsubsection{Importar imágenes ISO al servidor Cobbler}
+
+De esta forma, se puede generar una distribución que se utilizara
+para instalar los SO sin necesidad de acceder a internet de una forma
+fácil y rápida.
+
+Se utiliza el comando mount. Primero crear un directorio y luego montar
+el archivo ISO:
+
+\texttt{mkdir /mnt/centos}
+
+\texttt{mount -t iso9660 -o loop,ro /directorio/isos/CentOS-7-x86\_64-DVD-1503-01.iso
+/mnt/centos}
+
+Luego ejecutar:
+
+\texttt{cobbler import -{}-name=centos7 -{}-arch=x86\_64 -{}-path=/mnt/centos}
+
+Ésto creará una copia local en el servidor, dando lugar a un nuevo
+objeto \textquotedblleft distro\textquotedblright{} y \textquotedblleft profile\textquotedblright .
+Los cuales se pueden verificar con:
+
+\texttt{cobbler distro list}
+
+\texttt{cobbler profile list}
+
+
+\section{Puppet}
+
+El agente y el servidor se comunican vía HTTPS con verificación de
+cliente. El nodo maestro (servidor) provee una interfaz HTTPS con
+varios extremos disponibles. Cuando se pide o enviá cualquier cosa
+al servidor, el agente hace un pedido HTTPS o a uno de esos extremos.
+
+Client-vefied HTTPS quiere decir que cada maestro o agente tiene un
+identificador por certificado SSL y examinan los certificados de sus
+contrapartes para decidir si permite un intercambio de información.
+Puppet incluye un constructor de certificado de autorización para
+administrar los certificados. Los agentes puede pedir automáticamente
+los certificados vía la API HTTP del maestro. El administrador del
+nodo maestro puede usar el comando \texttt{puppet cert} para inspeccionar
+los pedidos y firmar nuevos certificados; los agentes pueden entonces
+descargar los certificados firmados. 
+
+
+\subsection{Tópicos generales de Puppet}
+
+
+\subsubsection{Module}
+
+Un módulo o module, es un conjunto de código de Puppet empaquetado
+junto con los otros archivos y datos, que se necesita administrar
+sobre algún aspecto del sistema. Consiste en una estructura predefinida
+de directorios que ayudan a Puppet a encontrar los contenidos del
+módulo. 
+
+Existe un repositorio público (The Puppet Forge) donde se pueden encontrar
+módulos hechos por la comunidad y también mantenidos por Puppet Labs.Estos
+módulos se pueden instalar en un servidor-pupper para utilizarlos.
+
+Para ver los módulos instalados se puede ejecutar:
+
+\texttt{puppet module list}
+
+Los módulos son auto-contenidos y separados. Su estructura de archivo
+le da a Puppet una forma consistente de localizar cualquier clase,
+plantillas, plugins y binarios requeridos para satisfacer la funcionalidad
+del módulo.
+
+Todos los módulos accesibles por el puppet master están localizados
+en los directorios especificados por la variable \texttt{'modulepath'}
+en el archivo de configuración de Puppet. Para encontrar esta variable
+en cualquier sistema con Puppet, se puede ejecutar:
+
+\texttt{puppet agent -{}-configprint modulepath }
+
+
+\subsubsection{Resources}
+
+Cada recurso o resource, describe algún aspecto de un sistema y su
+estado, como por ejemplo, un servicio que debería estar ejecutándose
+o un paquete que se quiere instalado. El bloque de código que describe
+un recurso se llama declaración de recurso (resource declaration).
+Estas declaraciones de recurso están escritas en código Puppet, un
+DLS (Domain Specific Language) construido en Ruby. El DLS de Puppet
+es un lenguaje declarativo en vez de imperativo. Esto quiere decir
+que en vez de definir un proceso o un conjunto de comandos, el código
+de Puppet describe (o declara) solo el estado final deseado, y depende
+de proveedores integrados para lidiar con la implementación.
+
+\texttt{puppet resource tool -> puppet resource <type> <name> }
+
+Puppet incluye una variedad de tipos de recursos integrados, que permiten
+administrar varios aspectos de un sistema. Algunos de los tipos de
+recursos claves que generalmente se encuentran en un sistema son los
+siguientes:
+\begin{itemize}
+\item \texttt{\textbf{user:}}\texttt{ \ \ \ Un usuario }
+\item \texttt{\textbf{group:}}\texttt{ \ \ \ Un grupo de usuario }
+\item \texttt{\textbf{file:}}\texttt{ \ \ \ Un archivo específico }
+\item \texttt{\textbf{package:}}\texttt{ \ \ \ Un paquete de software }
+\item \texttt{\textbf{service:}}\texttt{ \ \ \ Un servicio corriendo}
+\item \texttt{\textbf{cron:}}\texttt{ \ \ \ Un trabajo programado de
+cron }
+\item \texttt{\textbf{exec:}}\texttt{ \ \ \ Un comando externo }
+\item \texttt{\textbf{host:}}\texttt{ \ \ \ Un host}
+\end{itemize}
+Una declaración de recurso seguirá un patrón como el de abajo:
+
+\texttt{tipo \{'título': }
+
+\texttt{atributo => 'valor', }
+
+\texttt{\}}
+\begin{itemize}
+\item \textbf{Título: }Es un string que identifica un recurso para el compilador
+de Puppet.
+
+
+El título no tiene que coincidir con lo que va a administrar en el
+sistema, pero a menudo se desea eso. 
+
+
+Los títulos deben ser únicos por tipos de recursos, se puede tener
+un paquete y un servicios ambos con el mismo título, pero no dos servicios
+con ese título.
+
+\item \textbf{Atributos: }Los atributos describen el estado deseado para
+un recurso; cada atributo maneja algún aspecto del recurso. 
+
+
+Cada tipo de recurso tiene su propio juego de atributos. Muchos tipos
+de recursos tienen atributos claves y una gran cantidad de opcionales.
+
+
+Todos los atributos declarados deben tener un valor; el tipo de dato
+del valor depende de los que acepte el atributo.
+
+\item \textbf{Comportamiento: }Una declaración de recurso agrega un recurso
+al catálogo y le dice a Puppet que administre el estado del recurso.
+Cuando Puppet aplica el catálogo compilado, lo que hará es:
+
+\begin{itemize}
+\item Leer el estado actual del recurso en el sistema objetivo.
+\item Comprar el estado actual con el deseado
+\item Si es necesario, realizar cambios para llevar el estado actual al
+deseado.
+\end{itemize}
+\item \textbf{Recursos no administrados: }Si el catálogo no contiene un
+recurso, implica que Puppet ya no lo administra, pero no que lo ``elimina'',
+si se desea eliminarlo, se debe aclararlo en su estado deseado.
+
+\begin{itemize}
+\item \texttt{ensure => absent}
+\end{itemize}
+\item \textbf{Singularidad: }Puppet no permite que se declare un mismo recurso
+dos veces. Esto prevee conflictos de valores. Si múltiples clases
+requieren el mismo recurso se puede usar una clase o un recurso virtual
+para añadirlo al catálogo en múltiples lugares sin duplicar.
+\item \textbf{Relaciones y orden: }Por defecto, Puppet aplica los recursos
+sin seguir el orden en que fueron escritos. Esto, se puede desactivar
+con la opción de ordenado. Sin embargo, si un recurso debe ser aplicado
+antes o después de otro, se puede indicar una relación entre ellos.
+Incluso se puede indicar que cambios en un recurso causen que otro
+se refresque.
+\item \textbf{Cambios, eventos y reportes: }Si Puppet realiza cambios, en
+un recurso, registra esos cambios como eventos. Esos eventos aparecerán
+en el \emph{log} y en el reporte de ejecución de puppet.
+\item \textbf{Independencia de alcance: }Los recursos no están sujetos a
+los alcances. Un recurso, en cualquier ámbito, se puede referenciar
+desde cualquier otro ámbito.
+\item \textbf{Atributos especiales de los recursos.}
+
+\begin{itemize}
+\item \textbf{Name/Namevar: }Define un recurso en el sistema objetivo.\emph{
+}Por ejemplo, el \emph{name} de un servicio o paquete es el nombre
+por el cual las herramientas de paquetes o servicios lo reconocen
+o en el caso de un archivo, su namevar es el path. Esto es diferente
+al título, el cual identifica un recurso para el compilador de Puppet.
+Sin embargo, ellos a veces tienen el mismo valor.\textbf{ }La separación
+de nombre y título permite administrar un recurso que mantiene su
+título, pero que tiene diferente nombre en diferentes plataformas.
+Por ejemplo, un servicio \emph{ntp }en sistemas Red Hat tiene por
+nombre \emph{ntpd }y en sistemas debian\emph{ ntp .}
+\item \textbf{Ensure: }Esto generalmente maneja el aspecto más importante
+de un recurso en el sistema objetivo. Indica si el archivo existe,
+si el servicio está corriendo o parado, si el paquete está instalado,
+etc.
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Tipos de recursos}
+
+Todos los tipos tienen un atributo especial llamado namevar. Este
+es el atributo usado para identificar univocamente un recurso en el
+sistema de destino. Si no se especifica un valor para el namevar,
+este valor es tomado por defecto según el título del recurso.
+
+Ejemplo:
+
+\texttt{file \{ '/etc/passwd': }
+
+\texttt{\ \ \ owner => root, }
+
+\texttt{\ \ \ group => root, }
+
+\texttt{\ \ \ mode => 644 }
+
+\texttt{\} }
+
+\texttt{~}
+
+En este código, \texttt{/etc/passwd} es el título del recurso \emph{file},
+otros códigos de Puppet pueden hacer referencia al recurso como File{[}'/etc/passwd'{]}
+para declarar relación. Porque el path es el \emph{namevar} para el
+tipo file y si no se le provee un valor, toma uno por defecto que
+es \emph{/etc/passwd.}
+
+\textbf{Atributos}: A veces llamados parámetros, determinan el estado
+deseado para un recurso. Cualquiera de ellos modifica directamente
+el sistema (internamente, las llamadas \textquotedblleft propiedades\textquotedblright )
+o afectan cómo el recurso se comporta. 
+
+\textbf{Proveedores (providers}): Implementan el mismo tipo de recursos
+en diferentes tipos de sistemas, ellos suelen hacer esto llamando
+a comandos externos. Aunque Puppet seleccionará automáticamente un
+proveedor apropiado por defecto, se lo puede sobrescribir con el atributo
+\emph{provider}. Por ejemplo, el recurso \emph{package} de sistemas
+Red Hat tiene por defecto YUM como \emph{provider}, pero se puede
+especificar \texttt{provider => gem }para instalar librerías de Ruby
+con gem. 
+
+\textbf{Características (features):} Son habilidades que algunos proveedores
+pueden no soportar. Generalmente una característica corresponderá
+con algunos valores permitidos por un recurso de un atributo, por
+ejemplo, si un paquete soporta la característica \emph{purgeable},
+se puede especificar \texttt{ensure => purged }para borrar los archivos
+de configuración instalados por el paquete.
+
+Algunas de las referencias de tipo más importantes son las explicadas
+a continuación:
+\begin{itemize}
+\item \textbf{Cron:} Instalar y manejar trabajos Cron. Todo Cron creado
+por Puppet requiere un comando y al menos un atributo de un periodo
+(horas, minutos,meses, etc). Mientras el nombre del Cron no es parte
+del trabajo actual, el nombre es almacenado en un comentario comenzando
+con \texttt{\emph{\#Puppet Name:}}. Ese comentario es usado para coincidir
+entadas crontab creadas por Puppet con un recurso Cron. 
+\item \textbf{Exec:} Ejecuta comandos externos. Cualquier comando en un
+recurso Exec debe poder correr múltiples veces sin causar daños. 
+\item \textbf{File:} El manejo de archivos incluye contenido, dueño, y permisos.
+El tipo archivo puede manejar archivos, directorios y enlaces simbólicos. 
+\item \textbf{Group:} Manejo de grupos. En muchas plataformas esto sólo
+puede crear grupos. La membresía de los grupos debe ser administrada
+por cada usuario individual . 
+\item \textbf{Host:} Instalar y manejar entradas de hosts. Para muchos sistemas,
+esas entradas deben estar solo en /etc/hosts, pero algunos SO tienen
+diferentes soluciones. 
+\item \textbf{Mount:} Maneja de filesystems montados, incluyendo agregar
+la información de montaje a la tabla de montaje. El comportamiento
+actual depende de el valor de el parámetro \emph{ensure.}
+\item \textbf{Notify:} Envió de un mensaje arbitrario a el log del agente
+en tiempo de ejecución. 
+\item \textbf{Package:} Manejo de paquetes. Hay una bifurcación básica en
+los paquetes soportados correctamente: Algunos tipos de paquetes como
+yum y apt pueden recuperar sus propios archivos de paquetes, mientras
+que otros no pueden. Para esos paquetes, se puede usar el parámetro
+\emph{source} para poner el archivo adecuado. 
+\item \textbf{Resources:} Este es un metatipo que puede controlar otro tipo
+de recursos. Cualquier metaparámetro especificado aquí sera pasado
+a los recursos generados, por lo que puede purgar recursos no administrados. 
+\item \textbf{Service: }Controla servicios en ejecución. El soporte de este
+recurso varía ampliamente según el concepto de servicio de la plataforma. 
+\item \textbf{User: }Administración de usuarios. 
+\end{itemize}
+
+\subsubsection{Manifiests }
+
+Un manifiesto o manifest, es un archivo de texto que contiene código
+Puppet y posee la extensión .pp. Para comprobar la sintaxis de un
+manifiesto se puede utilizar:
+
+\texttt{puppet parser validate <manifiesto.pp> }
+
+El parseador no retornará nada si no hay errores, en caso de que se
+detecte un error debe ser corregido antes de continuar. Si se trata
+de aplicar un manifiesto que no ha sido declarado, no cambiará nada
+en el sistema. Para ésto se debe crear un \texttt{.pp} que contenga
+un sentencia:
+
+\texttt{include módulo::clase}
+
+Antes de aplicar cambios en el sistema, se puede utilizar la bandera
+\texttt{\textendash noop} para compilar el catálogo (catálogo) y notificar
+los cambios que Puppet habría realizado si hubiera sido ejecutado
+sin \texttt{\textendash noop}.
+
+\texttt{puppet apply -{}-noop }
+
+
+\subsubsection{Catálogos}
+
+Los manifiestos de Puppet pueden usar lógica condicional para describir
+muchas configuraciones de nodos como una. Antes de configurar un nodo,
+Puppet compila los manifiestos en un catálogo, el cual solo es válido
+para un único nodo y no contiene lógica ambigua.
+
+Los catálogos son documentos estáticos los cuales contienen recursos
+y relaciones. 
+
+En la arquitectura estándar maestro/agente, los nodos solicitan los
+catálogos al Puppet Server, el cual los compila cuando son solicitados.
+Los agentes mantienen en caché sus más recientes catálogos, si al
+pedir el catálogo, el master falla al compilarlo, ellos re-usaran
+su catálogo cacheado.
+
+
+\subsubsection{Classes }
+
+Una clase es un bloque de código Puppet con nombre. Una clase administrará
+generalmente un conjunto de recursos relacionados a una función simple
+o un componente del sistema. Las clases usualmente contienen otras
+clases; este anidamiento provee una forma estructurada de juntar funciones
+de clases diferentes como componentes de soluciones más grandes. Para
+utilizar una clase, se necesita definirla escribiendo una definición
+de clase y guardándola en un archivo manifiesto. Cuando Puppet se
+ejecuta, parseará este manifiesto y guardará la definición de clase;
+luego ésta puede ser declarada para aplicarla en los nodos de la infraestructura.
+En Puppet las clases son singleton, lo que quiere decir que una clase
+puede ser declarada sólo una vez en un nodo dado. Cuando se declara
+una clase:
+
+\texttt{include módulo::clase}
+
+\texttt{módulo} le indica a Puppet donde encontrar esa \texttt{clase}.
+Sin embargo, para la clase principal de un módulo, además de llevar
+el mismo nombre que el módulo mismo, Puppet reconoce el nombre especial
+del archivo '\texttt{init.pp}' como el manifiesto que contendrá la
+clase principal de un módulo. 
+
+
+\subsubsection{Funciones}
+
+Hay dos tipos de funciones en Puppet, statements (declaraciones) y
+rvalues. Las statements no retornan argumentos, son utilizadas para
+hacer trabajos independientes como importar. Rvalues retornan valores
+y pueden ser usadas solo en un statement requiriendo un valor, como
+una asignación o una declaración case.
+
+Las funciones se ejecutan en el Puppet master, no se ejecutan en el
+agente. Por lo tanto sólo tienen acceso a los comandos y datos disponibles
+en el nodo maestro.
+
+
+\subsubsection{Metaparámetros}
+
+Los metaparámetros son atributos que trabajan con cualquier tipo de
+recurso, incluido los tipos personalizados y los tipos definidos.
+
+En general, ellos afectan el comportamiento de Puppet en preferencia
+a el deseo del estado del recurso. 
+
+Los metaparámetros hacen cosas como agregar metadata a un recurso
+(alias, tag), poner límites cuando el recurso debe ser sincronizado
+(require, schedule, etc.), evita que Puppet realice cambios (noop),
+y cambia la verborrea del log (loglevel).
+
+
+\subsubsection{Definición de nodos}
+
+Una definición o declaración de nodo es un bloque de código Puppet
+que sólo será incluido en catálogos de nodos que coincidan. Esta característica
+permite asignar configuraciones específicas a nodos específicos.
+
+Las declaraciones de nodos sólo coinciden con los nombres de los nodos.
+Por defecto, el nombre de un nodo es su \emph{certname.}
+
+\# node 'www1.example.com' \{ include common include apache include
+squid \} node 'db1.example.com' \{ include common include mysql \}
+
+
+\paragraph{Ubicación}
+
+Las definiciones de los nodos deben estar en el manifiesto principal.
+Éste puede ser un archivo o un directorio conteniendo muchos archivos.
+
+\texttt{\# /etc/puppetlabs/code/enviroment/production/manifests/site.pp }
+
+\texttt{node 'www1.example.com' \{}
+
+\texttt{include common}
+
+\texttt{include apache}
+
+\texttt{include squid }
+
+\texttt{\} }
+
+\texttt{node 'db1.example.com' \{}
+
+\texttt{include common }
+
+\texttt{include mysql }
+
+\texttt{\}}
+
+En este ejemplo, solo el primero nodo obtendrá las clases \emph{apache}
+y \emph{squid} mientas que el segundo tendrá \emph{mysql}. Ambos recibirán
+la clase \emph{common}.
+
+
+\paragraph{Nombramiento}
+
+Una declaración de nodo debe realizarse según:
+\begin{itemize}
+\item Un string entre comillas conteniendo sólo letras, números, guiones
+bajos, guiones medios y puntos.
+\item Expresiones regulares.
+\item La palabra \emph{default, }sin comillas.
+\end{itemize}
+Se pueden utilizar listas de nombres separados por comas para crear
+grupos de nodos son una sola declaración de nodo:
+
+\texttt{node 'www1.example.com', 'www2.example.com', 'www3.example.com'
+\{ }
+
+\texttt{include common }
+
+\texttt{include apache, squid }
+
+\texttt{\}}
+
+
+\paragraph{El nodo default}
+
+Si ninguna declaración de nodo coincide  o no puede ser encontrada,
+el nodo \emph{default }será utilizado.
+
+
+\paragraph{Expresiones regulares}
+
+Pueden ser utilizadas como nombres de nodo. Este es otro método para
+escribir una sola definición de nodo que coincida con múltiples nodos.
+
+
+\subparagraph{Coincidencias}
+
+Un nodo dado sólo obtendrá los contenidos de una definición de nodo,
+incluso si dos declaraciones de nodo pueden coincidir con el nombre
+del mismo. Puppet realizará las verificaciones para decidir cual definición
+utilizar:
+\begin{enumerate}
+\item Si hay una definición de nodo que contenga el nombre exacto del nodo,
+entonces utilizará esta.
+\item Si hay una expresión regular que coincida cone el nombre del nodo,
+entonces utilizará esta.
+\item Si el nombre de nodo es del tipo FQDN (Fully Qualified Domain Name),
+Puppet cortará el grupo final y comenzará nuevamente desde el punto
+uno.
+\item Puppet utilizará el nodo default.
+\end{enumerate}
+
+\subsubsection{Node group }
+
+Los grupos de nodos o node groups permiten segmentar todos los nodos
+de la infraestructura en grupos separados configurables basados en
+la información colectada por 'facter tool'.
+
+
+\subsection{Creación del sistema de orquestación Puppet.}
+
+Puppet usualmente corre bajo la arquitectura cliente-servidor, pero
+además, puede correr en una arquitectura autocontenida. La decisión
+determina que paquetes serán instalados y que configuraciones extra
+necesarias se harán. 
+
+Se toma la opción de utilizar la arquitectura cliente-servidor. Se
+debe completar la instalación y configuración de todos los puppet
+servers antes de instalar cualquier agente. El servidor necesariamente
+debe correr en un sistema basado en Unix.
+
+
+\subsubsection{Requerimientos de sistema y chequeo de versión de sistema operativo}
+\begin{itemize}
+\item Hardware: El agente Puppet no tiene requerimientos particulares de
+hardware y corre prácticamente en cualquier computadora, sin embargo,
+el servidor es un recurso intensivo y debe ser instalado en un servidor
+robusto y dedicado. Como mínimo, el servidor debe tener dos procesadores
+y al menos 2GB de RAM, para administrar eficientemente mil nodos,
+debe poseer entre 2 y 4 procesadores y 4GB de RAM. 
+\item Sistemas operativos soportados: Hay una gran variedad de distribuciones
+Linux que soportan puppet, entre ellas destaca la utilizada para la
+realización del Proyecto, CentOS 7. 
+\item Ruby: Se soportan varias versiones de Ruby, pero se recomienda el
+uso de las versiones 2.1.x.
+\item Librerías obligatorias: Facter 2.4.3 o posterior, Hiera 2.0.0 o posterior,
+json gem cualquier versión moderna, rgen gem 0.6.6 o posterior.
+\item Librerías opcionales: msgpack gem es requerido si se utiliza msgpack
+racionalización.
+\end{itemize}
+
+\subsubsection{Chequeo de la configuración de red}
+
+En un agent/master deployment se debe preparar la red para el tráfico
+de puppet. 
+\begin{itemize}
+\item Firewall: En el desarrollo de este pryecto se trabajo sin firewall,
+por lo tanto este debe estar desactivado.
+\item Resolución de nombres: Cada nodo debe tener un nombre único.
+\end{itemize}
+Para cumplir con este ultimo apartado, se decidió editar el archivo
+\texttt{/etc/hosts} de cada maquina virtual creada utilizando cobbler
+para añadir el host del puppetserver que corresponde a la primer dirección
+IP de la red virtual creada por KVM. Así mismo, como el servidor puppet
+también tiene la necesidad de conocer a que dirección IP corresponde
+a cada maquina, se realizo un pequeño codigo de python que es capaz
+de obtener la dirección IP de una maquina en particular revisando
+el archivo \texttt{/var/lib/dhcpd/dhcpd.leases}. Este archivo, es
+utilizado por el servidor DHCP para saber a que maquina corresponde
+cada dirección IP.
+
+
+\subsubsection{Instalación de puppetserver}
+
+Primero se debe instalar puppetserver. Para ello habilitar los paquetes
+de los repositorios de Puppet Labs:
+
+\texttt{\# rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm} 
+
+\texttt{\# yum install puppetserver}
+
+No se debe iniciar el servicio aún, dado que los no se ha configurado
+correctamente.
+
+Como se menciono, puppetserver tiene ciertos requerimientos de HW
+donde se destaca los 2GB de memoria RAM pero esto no es exactamente
+así, lo que realmente sucede es que esa es la cantidad de memoria
+``recomendada'' para que funcione correctamente un sistema en producción
+y puppet mientras exista ese HW se ``apropiara'' de el. 
+
+Si lo que se desea es experimentar con un pequeño servidor puppet
+y unos pocos clientes se puede configurar para que utilice menor cantidad
+de memoria, esto se hace editando el archivo \texttt{/etc/sysconfig/puppetserver
+y modificando la siguiente linea:}
+
+\texttt{\# Modify this if you'd like to change the memory allocation,
+enable JMX, etc }
+
+\texttt{JAVA\_ARGS=\textquotedbl{}-Xms2g -Xmx2g\textquotedbl{}}
+
+Si se desea por ejemplo, utilizar 1536MB se debe reemplazar 2g por
+1536m:
+
+\texttt{JAVA\_ARGS=\textquotedbl{}-Xms1536m -Xmx1536m\textquotedbl{}}
+
+
+\subsubsection{Configuraciones para los servidores:}
+
+Básicas:
+\begin{itemize}
+\item dns\_alt\_names: Una lista de los hostnames de los servidores permitidos
+para usar cuando actúan como \textquotedblleft masters environment\textquotedblright .
+\item path: Indica la ubicación del entorno. 
+\item basemodulepath: Una lista de las ubicaciones que contienen módulos
+que pueden ser usados en todos los entornos.
+\item manifest: El principal punto de entrada para compilar los catálogos.
+Por defecto es \textquotedblleft site.pp\textquotedblright .
+\item reports: Controlador de reportes que se usa.
+\end{itemize}
+Configuraciones de CA:
+\begin{itemize}
+\item ca: Si actúa como un autoridad de certificación.
+\item ca\_ttl: Indica por cuánto tiempo son válidos los certificados.
+\item autosign: Indica si los certificados deben ser firmados de forma automática
+o manual.
+\end{itemize}
+El archivo de configuración utilizado en la realización del proyecto
+es el siguiente:
+
+\texttt{{[}master{]} }
+
+\texttt{vardir = /opt/puppetlabs/server/data/puppetserver }
+
+\texttt{logdir = /var/log/puppetlabs/puppetserver }
+
+\texttt{rundir = /var/run/puppetlabs/puppetserver }
+
+\texttt{pidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid }
+
+\texttt{codedir = /etc/puppetlabs/code }
+
+\texttt{autosign = true }
+
+\texttt{runinterval = 2m}
+
+
+\subsubsection{Instalar el paquete puppet-agent}
+
+Según sea el sistema operativo sobre el que se instalará, se tiene:
+
+\textbf{Centos y derivados: }
+
+Del mismo modo que para el servidor, es necesario añadir el repositorio
+y luego instalar:
+
+\texttt{\# rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm }
+
+\texttt{\# yum install puppet-agent}
+
+\textbf{Ubuntu y derivados: }
+
+Habilitar el repositorio según sea el caso como el siguiente ejemplo:
+
+\texttt{wget https://apt.puppetlabs.com/puppetlabs-release-pc1-wheezy.deb}
+
+\texttt{sudo dpkg -i puppetlabs-release-pc1-wheezy.deb}
+
+\texttt{sudo apt-get update}
+
+\texttt{sudo apt-get install puppet-agent}
+
+\textbf{Windows 7: }
+
+Descargar el paquete instalador desde\texttt{ https://downloads.puppetlabs.com/windows/}
+\begin{itemize}
+\item Arquitectura x64: Se recomienda el uso de puppet-agent-<VERSION>-x64.msi
+o puppet-agent-<VERSION>-x86.msi. 
+\item Arquitectura x86: Debe utilizar puppet-agent-<VERSION>-x86.msi. 
+\end{itemize}
+La instalación puede ser gráfica o automática. Para la última, desde
+el cuadro \textquotedblleft Ejecutar\textquotedblright :
+
+msiexec /qn /norestart /i puppet-agent-<VERSION>-x64.msi PUPPET\_MASTER\_SERVER=puppet
+
+Este tipo de instalación por comando tiene la ventaja de proveer una
+mayor cantidad de opciones a editar que en la instalación gráfica.
+La opción que se destaca es PUPPET\_AGENT\_ACCOUNT\_USER el cual permite
+indicar que usuario es que ejecutara los manifiestos de puppet agent
+en windows. Esta es una opción importante, porque el usuario debe
+poseer permisos de administrador para poder llevar a los recursos
+al estado deseado.
+
+No se debe iniciar el servicio aún. 
+
+Por defecto, el valor del hostname de servidor es puppet, si se nombró
+de otra forma a la máquina servidora del puppet server, se debe editar
+esto.
+
+
+\subsubsection{Configuraciones para los agentes}
+
+Básicas:
+\begin{itemize}
+\item server: El nombre del nodo maestro al cual se le pedirán los manifiestos.
+Por defecto es puppet 
+\item certname: Nombre con el cual el nodo agente pide el certificado y
+se presenta al servidor. 
+\item environment: Indica el entorno solicitado cuando se contacta al maestro.
+De cualquier forma, el maestro puede configurarse para ignorar esta
+configuración. 
+\end{itemize}
+Comportamiento de la ejecución: 
+\begin{itemize}
+\item noop: Si está habilitado, el agente no realizará ningún trabajo, en
+cambio mirará qué cambios tendría que realizar y lo reporta al servidor. 
+\item priority: Permite asignar el valor \textquotedblleft nice\textquotedblright{}
+para evitar que otras aplicaciones de la CPU no mueran por inanición
+mientras se aplican los catálogos.
+\item report: Indica si se deben enviar reportes, por defecto es \textquotedblleft true\textquotedblright{}
+.
+\item tags: Limita a los agentes a correr recursos con ciertas etiquetas. 
+\item usecacheonfailure: Se utiliza para tomar el último buen catálogo si
+el master no posee uno bueno. 
+\item prerun\_command y postrun\_command: Comandos que se desean correr
+de cada lado de puppet
+\end{itemize}
+Comportamiento del servicio: 
+\begin{itemize}
+\item runinterval: Indica cada cuanto tiempo el agente se contacta con el
+servidor para pedirle los manifiestos. Por defecto es 30 minutos. 
+\item waitforcert: Indica al agente que persista si no puede obtener su
+certificado. Por defecto está habilitado. 
+\end{itemize}
+El archivo de configuración utilizado en la realización del proyecto
+es el siguiente:
+
+\texttt{{[}main{]}}
+
+\texttt{logdir = /var/log/puppet}
+
+\texttt{rundir = /var/run/puppet}
+
+\texttt{ssldir = \$vardir/ssl}
+
+\texttt{certname = \$HOSTNAME \#Aquí nos valemos de una variable que
+el mismo Snippet es capaz de resolver para insertar el hostname de
+la maquina.}
+
+\texttt{server = puppet}
+
+\texttt{runinterval = 2m}
+
+\texttt{{[}agent{]}}
+
+\texttt{classfile = \$vardir/classes.txt}
+
+\texttt{localconfig = \$vardir/localconfig}
+
+
+\subsubsection{Ejecutar puppet}
+
+Para iniciar el servicio de puppet una vez configurado correctamente
+basta con iniciarlo a través de systemctl
+
+\texttt{sudo systemctl start puppetserver}
+
+\texttt{sudo systemctl enable puppetserver}
+
+En el caso de los clientes, tenemos variedad de comandos para iniciar
+los agentes de puppet puesto que son diferentes los SO donde funcionan.
+
+En el caso de Centos es similar:
+
+\texttt{sudo systemctl start puppet}
+
+\texttt{sudo systemctl enable puppet}
+
+En el caso de Ubuntu se debe ejecutar:
+
+\texttt{sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running
+}~\\
+\texttt{enable=true}
+
+Finalmente en windows, puede hacer por consola o por interfaz gráfica.
+
+Cualquier sea el SO que ejecute el agente de puppet, lo primero que
+hará es comunicarse con su servidor, esto podrá hacerlo buscando al
+dirección IP del servidor ``puppet'' como se lo llamo en el archivo
+de configuración en el archivo hosts que su ubicación difiere en los
+sistemas Linux y los Windows.
+
+Se genera un certificado sll y el servidor puede firmarlo automáticamente,
+como en la configuración de este proyecto o de forma manual.
+
+Para corroborar la creación y firmado del servicio:
+
+\texttt{sudo puppet cert list -{}-all }
+
+
+\section{Automatización de Windows 7}
+
+La instalación automatizada de Windows 7 requiere su preparación sobre
+un sistema Windows 7 pero su despliegue se realiza desde el servidor
+Cobbler, bajo Linux.
+
+
+\subsection{El lado de Windows}
+
+Para automatizar la instalación de Windows 7, utilizando el método
+de imágen estándar personalizada, se realiza en siete pasos principales.
+Para ello es necesario contar con:
+\begin{itemize}
+\item \textbf{Máquina técnica:} Con este término, Microsoft se refiere a
+un sistema Windows utilizado para correr las herramientas y otras
+operaciones que forman parte de la automatización automatizada. En
+esta máquina es necesario contar con cualquier versión de Windows
+7 que cuente con las herramientas de WAIK (Windows Automated Installation
+Kit).
+\item \textbf{Máquina de referencia:} Con este término, Microsoft se refiere
+al equipo sobre el cual se instalará el sistema operativo a partir
+del cual se extraerá la imágen personalizada con las configuraciones
+y programas deseados.
+\item \textbf{Windows Automated Installation Kit:} El kit de instalación
+automatizada de Windows es un conjunto de herramientas y documentación
+compatible con la configuración y la implementación de los sistemas
+operativos Windows. Mediante el WAIK, puede automatizar las instalaciones
+de Windows, capturar imágenes de Windows con ImageX, configurar y
+modificar imágenes usando Administración y mantenimiento de imágenes
+de implementación (DISM), crear imágenes de Windows PE, entre otras
+características.
+\item \textbf{Imágen de instalación de Windows 7:} Ya sea un DVD o un archivo
+ISO que provea la fuente de instalación del sistema operativo.
+\end{itemize}
+La siguiente tabla contiene una columna para cada equipo. Los pasos
+de la columna en la máquina técnica se realizan en su ese equipo.
+Los pasos de la columna del equipo de referencia se realizan en el
+equipo en el que se cree la imágen personalizada.
+
+\begin{table}[H]
+\noindent \begin{centering}
+\begin{tabular}{|>{\centering}p{1.2cm}>{\centering}p{6cm}>{\centering}p{6cm}|}
+\hline 
+\textbf{Paso} & \textbf{Máquina técnica} & \textbf{Máquina referencia}\tabularnewline
+\hline 
+\textbf{1} & Instalar WAIK  & \tabularnewline
+\hline 
+\textbf{2} & Crear un disco de inicio del Entorno de Preinstalación de Windows
+(WinPE)  & \tabularnewline
+\hline 
+\textbf{3} &  & Instalar y personalizar Windows 7\tabularnewline
+\hline 
+\textbf{4} &  & Generalizar el equipo de referencia para preparar la imágen para la
+duplicación\tabularnewline
+\hline 
+\textbf{5} &  & Capturar el equipo de referencia a un archivo de imágen mediante ImageX\tabularnewline
+\hline 
+\textbf{6} & Crear archivo Autounattend.xml  & \tabularnewline
+\hline 
+\textbf{7} & Crear nuevos medios de instalación de Windows 7 para la imágen personalizada & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Pasos automatización Windows 7}
+
+\par\end{centering}
+
+\end{table}
+
+
+
+\subsubsection{Instalar WAIK}
+
+Desde la página oficial de Microsoft descargar el archivo KB3AIK\_EN.iso,
+grabarlo en un DVD o montarlo en una unidad virtual e instalarlo.
+
+
+\subsubsection{WinPE}
+
+WinPE o Windows Preinstallation Environment es un Sistema operativo
+mínimo designado para preparar una computadora para la instalación
+de Windows. Puede ser utilizado para iniciar una computadora sin sistema
+operativo, para particionar y formatear discos rígidos, para copiar
+imágenes de discos y para iniciar la instalación de Windows desde
+una ubicación compartida en la red. WinPE se carga directamente en
+memoria y permite utilizar herramientas como ImageX para capturar,
+modificar y crear imágenes de instalación basadas en archivos.
+
+Para crear una imágen ISO de WinPE es necesario ejecutar Deployment
+Tools Command Prompt como administrador.
+
+Se debe copiar a una ubicación elegida los archivos necesarios. Como
+se ha utilizado una versión de 64 bits se especifica amd64, si no
+i386.
+
+\texttt{copype amd64 d:\textbackslash{}directorio\textbackslash{}winpe }
+
+Montar el archivo .WIM con:
+
+\texttt{imagex /mountrw d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}winpe.wim
+1 d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}mount }
+
+Cuando se carga en memoria el entorno de preinstalación, es ejecutado
+un script llamado Startnet.cmd el cual de forma predeterminada inicia
+Wpeinit.exe, que precisamente sirve para instalar dispositivos Plug
+and Play, procesar configuraciones de Autounattend.xml y cargar recursos
+de red. Se debe asegurar que se incluye una llamada a wpeinit en el
+script Startnet.cmd personalizado:
+
+\emph{d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}mount\textbackslash{}Windows\textbackslash{}System32\textbackslash{}startnet.cmd}
+
+Utilizar un editor de texto y dejarlo como se muestra a continuación,
+reemplazando los valores correspondientes:
+
+~
+
+\texttt{wpeinit }
+
+\texttt{echo Conectando con servidor... }
+
+\texttt{net use y: \textbackslash{}\textbackslash{}IP\_del\_servidor\_Cobbler\textbackslash{}entrada\_SAMBA }
+
+\texttt{y: }
+
+\texttt{echo Preparando instalacion... }
+
+\texttt{setup.exe /unattend:Autounattend.}
+
+~
+
+Una vez modificado los valores del script, desmontar winpe.wim. Para
+ello es necesario cerrar el explorador de Windows y cualquier programa
+que esté haciendo uso de directorio anterior, caso contrario dará
+error. Luego:
+
+\texttt{imagex /unmount d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}mount
+/commit }
+
+Se copia entonces winpe.wim al directorio renombrándolo como boot.wim:
+
+\texttt{copy d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}winpe.wim
+d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}ISO\textbackslash{}sources\textbackslash{}boot.wim }
+
+Por último es necesario crear una imágen ISO de WinPE.
+
+\texttt{oscdimg -nt -m -h -bd:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}etfsboot.com
+d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}ISO
+d:\textbackslash{}directorio\textbackslash{}winpe\textbackslash{}winpe\_cobbler\_amd64.iso }
+
+Las opciones especificadas son las siguientes: 
+
+\textbf{-nt:} Permite nombres largos de archivo que sean compatibles
+con Windows NT 3.51.
+
+\textbf{-m:} Pasa por alto el límite de tamaño máximo de una imágen.
+
+\textbf{-h: }Incluye todos los directorios y archivos ocultos bajo
+el d:\textbackslash{}directorio\textbackslash{} para esta imágen. 
+
+\textbf{-b:} Esta opción se utiliza para especificar el archivo que
+se escribirá en el sector de arranque del disco. No debe existir espacio
+alguno entre esta opción y el valor pasado.
+
+\textbf{-u2}: Genera una imágen que sólo incluye el sistema de archivos
+UDF. Los sistemas que no sean capaces de leer UDF, sólo verán un archivo
+de texto predeterminado donde se alerta al usuario de que esa imágen
+sólo está disponible en equipos compatibles con UDF. Esta opción no
+puede combinarse con las opciones -nt.
+
+
+\subsubsection{Instalar y personalizar Windows 7}
+
+Una máquina de referencia tiene una instalación personalizada de Windows
+que se planea replicar en uno o más computadoras. Se puede crear utilizando
+un DVD o archivo ISO de Windows.
+
+Este punto conviene realizarlo manualmente y de la forma usual. Sin
+embargo, cuando en el proceso de instalación, se llega a la pantalla
+de bienvenida de Windows (diálogo de creación de usuario y hostname)
+se debe presionar \emph{Ctrl + Shift + F3} para ingresar en modo auditoría.
+Ahora la máquina debería reiniciarse e ingresar automáticamente en
+una cuenta temporal en modo administrador. Esto permanecerá así por
+más que se reinicie el equipo hasta que el comando Sysprep sea ejecutado
+luego de realizar todas las actualizaciones, los controladores de
+dispositivo e instalación de las aplicaciones.
+
+Cada vez que sea reiniciado el equipo estando en este modo, aparecerá
+un cuadro de diálogo del modo auditoría. Simplemente ignorarlo hasta
+terminar de preparar la imágen.
+
+Para pasarle los programas a instalar, alojados en el servidor en
+\emph{/windows/PROGRAMAS/}, desde la máquina de referencia ir a \emph{Equipo
+\textrightarrow{} Conectar a unidad de red} e ingresar la dirección
+IP del servidor con el formato:
+
+\texttt{\textbackslash{}\textbackslash{}IP\_del\_servidor\_Cobbler\textbackslash{}entrada\_SAMBA}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows samba share 1\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Paso de archivos a Windows}
+
+\par\end{centering}
+
+\noindent \centering{}
+\end{figure}
+
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows samba share 2\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Paso de archivos a Windows}
+
+\par\end{centering}
+
+\end{figure}
+
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows samba share 3\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Paso de archivos a Windows}
+
+\par\end{centering}
+
+\noindent \centering{}
+\end{figure}
+
+
+
+\subsubsection{Generalizar el equipo de referencia para preparar la imágen }
+
+En este paso, se generaliza la imágen y se prepara para su inicio
+en Bienvenida de Windows después de haberla instalado en cada equipo.
+Al generalizar la imágen, se elimina de ella la información que depende
+de hardware, se restablece el temporizador de activación y se limpia
+Windows 7 para que se pueda duplicar la imágen en otros equipos.
+
+Para esto se hace uso de la herramienta Sysprep, la cual limpia las
+configuraciones específicas de usuario y del hardware.
+
+De forma gráfica, cuando inicia el sistema operativo en modo auditoría,
+Windows 7 ejecuta Sysprep de forma automática.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=10cm]{\string"Imagenes/capturas-windows/windows modo auditoria pantalla sysprep\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Modo auditoría}
+
+\par\end{centering}
+
+\noindent \centering{}
+\end{figure}
+
+\begin{itemize}
+\item En la lista Acción de limpieza del sistema, seleccionar Iniciar la
+configuración rápida (OOBE) del sistema.
+\item Activar la casilla Generalizar.
+\item En la lista Opciones de apagado, seleccionar Apagar.
+\item Aceptar para ejecutar Sysprep y apagar el equipo.
+\end{itemize}
+En este caso particular se decidió realizar la generalización del
+sistema por consola. Para ello es necesario cargar un WinPE.iso sin
+modificaciones.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image capture 1\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Carga WinPE.iso para extraer imágen}
+\end{figure}
+
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image capture 2\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Prioridad de inicio en máquina virtual}
+\end{figure}
+
+
+Desde la consola, ejecutar por línea de comando desde C\emph{:\textbackslash{}Windows\textbackslash{}System32\textbackslash{}Sysprep\textbackslash{}:}
+
+\texttt{sysprep /generalize /oobe /shutdown}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image capture 4\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Ejecución sysprep}
+\end{figure}
+
+
+Donde las opciones más importantes son:
+
+\textbf{/generalize:} Prepara a la instalación de Windows para crear
+una imágen. Si esta opción es especificada, toda la información única
+del sistema es removida. El SID (ID de Seguridad) se resetea, cualquier
+punto de restauración que exista es quitado y todos los logs son eliminados.
+La próxima vez que la computadora inicia,la fase de configuración
+especial es ejecutada y se asigna un nuevo SID y el reloj de activación
+de Windows se resetea si no ha sido reseteado ya tres veces, esto
+es, este proceso no puede repetirse más de tres veces por instalación
+de Windows. En ese caso, se debe comenzar con una nueva instalación
+desde cero.
+
+\textbf{/oobe: }El término OOBE significa Out Of Box Experience y
+es la experiencia que un usuario tiene cuando se prepara para usar
+por primera vez un producto. Cuando esta opción es seleccionada, reicinia
+el quipo en modo Bienvenida de Windows. Este modo permite a los usuarios
+personalizar el sistema operativo, crear cuentas de usuario, cambiar
+el hostname y demás. Cualquier configuración pasada al oobeSystem
+por medio de un archivo de respuestas de instalación es procesada
+inmediatamente antes que la Bienvenida de Windows inicie.
+
+\textbf{/shutdown: }Apaga la máquina luego que el comando sysprep
+finaliza.
+
+\textbf{/unattend:answerfile: }Aplica las configuraciones dentro de
+un archivo de respuestas de instalación sobre el sistema operativo
+durante una instalación desatendida; answerfile especifíca el path
+y el nombre del archivo que contiene las respuestas. Esta opción se
+puede ignorar, ya que como se verá más adelante basta con agregar
+este archivo en el directorio principal de instalación para que sea
+tomado por el instalador de Windows.
+
+A esta altura del proceso, ha instalado Windows 7 en el equipo de
+referencia y está listo para capturar una imágen del mismo.
+
+
+\subsubsection{Capturar el equipo de referencia }
+
+En este paso se captura una imágen de la máquina de referencia utilizando
+la herramienta ImageX, que está en el WinPE anteriormente creado.
+La imágen será guardada en el directorio compartido SAMBA. Se carga
+nuevamente el disco WinPE y se obtiene una consola. 
+
+Verificar que la máquina ve al servidor que tiene SAMBA configurado
+y corroborar que se tiene acceso a la ubicación compartida:
+
+~
+
+\texttt{net use y: \textbackslash{}\textbackslash{}IP\_del\_servidor\_Cobbler\textbackslash{}entrada\_SAMBA }
+
+\texttt{y:}
+
+\texttt{dir}
+
+~
+
+Verificar la letra asignada al disco WinPE, usualmente es \emph{e:}
+y verificar la letra de la partición donde está instalado Windows
+ya personalizado, usualmente \emph{c:}.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image capture 5\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Verificación de letras de unidad}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Desde la unidad que contiene a WinPE:
+
+\texttt{e:\textbackslash{}imagex.exe /capture d y:\textbackslash{}windows\textbackslash{}imagenPersonalizada.wim
+\textquotedbl{}Win7\textquotedbl{} /verify}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image capture 6\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{ImageX capturando imágen}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Donde se tiene:
+
+\textbf{/capture c:} Indica al programa que se quiere capturar la
+imagen ubicada en esa unidad de partición.
+
+\textbf{y:\textbackslash{}windows\textbackslash{}imagenPersonalizada.wim
+}Es el path completo donde se guardará la imagen en SAMBA.
+
+\textbf{\textquotedbl{}Win7\textquotedbl{}} Es una etiqueta para el
+archivo imagen creado.
+
+\textbf{/verify }Indica al programa que se desea verificar la consistencia
+de la imagen creada.
+
+
+\subsubsection{Autounattend.xml}
+
+El archivo \emph{Autounattend.xml }es donde se guardan los valores
+correspondientes a los diálogos de instalación del sistema operativo
+elegido. Ítems como creación de cuentas de usuario, idioma, configuraciones
+regionales, configuraciones de red, particionado de discos, etc. son
+los que se automatizarán. Para generarlo, una vez instalado el WAIK,
+se debe abrir el modo Administrador el programa Windows System Image
+Manager desde el menú Inicio.
+
+Bajo la sección \emph{Windows Image} seleccionar \emph{Select a Windows
+image or catalog file}. En este punto se debe buscar en el directorio
+de la imagen del sistema operativo ya descomprimida, un archivo \emph{.clg}
+que en este caso particular es \emph{install\_Windows 7 ULTIMATE.clg}.
+Acto seguido crear el archivo de respuestas de instalación \emph{Create
+a New Answer File}.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image manager en blanco\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Windows System Image Manager }
+
+\par\end{centering}
+
+\end{figure}
+
+
+Se muestra a continuación una configuración personalizada completa
+utilizando Windows AIK.
+
+Se ha configurado la entrada de texto, interfaz gráfica y ayuda del
+sistema en idioma español.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 1\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Idioma y teclado.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 2\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Idioma .}
+\end{figure}
+
+
+Se ha configurado el firewall para que esté habilitado, valor por
+defecto.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 3\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Firewall activado por defecto.}
+\end{figure}
+
+
+Se han configurado los discos para que existan dos particiones. Una
+donde se instalará el MBR y otra donde se copiarán los archivos del
+sistema operativo.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 4\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Discos.}
+
+\par\end{centering}
+
+\end{figure}
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 5\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Configuración discos. Disco 0.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Partición de 300 MB, donde será instlado el MBR.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 6\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Discos. Particionamiento.}
+
+\par\end{centering}
+
+\end{figure}
+Partición que utilizará el espacio restante del disco, donde se copiarán
+los archivos de Windows.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 7\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Discos. Particionamiento.}
+
+\par\end{centering}
+
+\end{figure}
+Formato de la partición.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 8\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Discos. Particionamiento.}
+
+\par\end{centering}
+
+\end{figure}
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 9\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Discos. Particionamiento.}
+
+\par\end{centering}
+
+\end{figure}
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 10\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Instalación del SO.}
+
+\par\end{centering}
+
+\end{figure}
+En el caso de contar con una imágen de instalción multiversión, Windows
+Home, Basic, Professional y Ultimate y/o con ambas arquitecturas,
+i386 y amd64, es necesario seleccionar cuál de ellas se desea instalar.
+La opción más fácil y efectiva es contar la posición de la versión
+que se quiere instalar y seleccionarla como se muestra a continuación,
+donde se ve que en este caso es la primera opción.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 11\string".eps}\protect\caption{Instalación del SO. Elección de la versión.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Selección de la partición de instalación de Windows.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 12\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Elección de partición de instalación.}
+\end{figure}
+
+
+Aceptación de las condiciones de privacidad y uso del sistema operativo.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 13\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Aceptación de las condiciones de privacidad y uso.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+La clave de producto, para poder realizar instalaciones desatendidas
+debe ser del tipo de Volúmen, esto es, una clave para realizar instalación
+en masa. A modo de ejemplo y para pruebas, Microsoft entrega una serie
+de claves para ésto: https://technet.microsoft.com/en-us/library/jj612867.aspx
+
+Entonces, la clave de producto utilizada en este caso es: \textbf{FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4}.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 14\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Clave de producto.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Saltar activación del producto.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 15\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Activación del producto.}
+\end{figure}
+
+
+Para solucionar el problema de asignar un hostname único a cada máquina
+que sea instalada con este \emph{Autounattend.xml }se dió con la siguiente
+solución. Utilizando un string representativo en el campo RegisteredOwner
+y un asterísco en el campo ComputerName, se obtiene un hostname pseudo-aleatorio,
+ya que estará compuesto por máximo ocho caracteres de RegisteredOwner
+y/o RegisteredOrganization concatenado con caracteres aleatorios.
+El campo ComputerName es un string con un tamaño máximo de quince
+caracteres.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 16\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Hostname, organización, propietario y zona horaria.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Se debe ingresar nuevamente la configuración deseada.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 17\string".eps}
+\par\end{centering}
+
+\noindent \centering{}\protect\caption{Idioma, teclado, regional.}
+\end{figure}
+
+
+Se debe ingresar nuevamente la configuración deseada.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 18\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Organización, propietario y zona horaria.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Selección de la configuración rápida de red.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 19\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Configuración de red.}
+
+\par\end{centering}
+
+\end{figure}
+Configuración de contraseñas de administrador.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 20\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Contraseña administrador.}
+
+\par\end{centering}
+
+\end{figure}
+Creación de cuentas de usuario.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 21\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Cuentas de usuario, administrador.}
+
+\par\end{centering}
+
+\end{figure}
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/capturas-windows/windows image configuracion 22\string".eps}
+\par\end{centering}
+
+\noindent \begin{centering}
+\protect\caption{Cuentas de usuario, invitado.}
+
+\par\end{centering}
+
+\end{figure}
+
+
+
+\subsubsection{Crear nuevos medios de instalación de Windows 7 para la imagen personalizada}
+
+En la máquina técnica realizar las siguientes operaciones:
+\begin{itemize}
+\item Descomprimir todo el contenido de la imagen de instalación sin modificar
+de Windows 7 en \textbackslash{}path-directorio-instalacion\textbackslash{}.
+\item En el sub-directorio Sources (\textbackslash{}path-directorio-instalacion\textbackslash{}Sources\textbackslash{}),
+substituir la imagen install.wim, por la recientemente imágen capturada
+imagenPersonalizada.wim, renombrándola como install.wim.
+\item En el directorio principal de donde ha sido extraída la imagen, copiar
+el archivo de respuestas de instalación Autounattend.xml.
+\item Abrir Deployment Tools Command Prompt como administrador, y ejecutar:
+
+\begin{itemize}
+\item oscdimg -m -h -u2 -bd:\textbackslash{}path-directorio-instalacion\textbackslash{}boot\textbackslash{}etfsboot.com
+d:\textbackslash{}path-directorio-instalacion\textbackslash{} d:\textbackslash{}path-directorio-destino\textbackslash{}Win7-personalizado.iso
+\end{itemize}
+\end{itemize}
+En este punto se tiene una imagen de instalación personalizada y automatizada
+lista para ser instalada en cualquier equipo. A continuación, se verá
+la preparación necesaria del servidor Linux para poder instalar y
+configurar SAMBA y la integración de Windows 7 con Cobbler para el
+posterior despliegue a través de la red.
+
+
+\subsection{El lado de Linux}
+
+Lo primero que se debe hacer es copiar todos los archivos necesarios,
+anteriormente generados en Windows, al servidor de despliegue, Cobbler.
+
+En el servidor crear el siguiente directorio, donde se colocarán los
+archivos \\
+winpe\_cobbler\_amd64.iso y Win7-personalizado.iso:
+
+\texttt{sudo mkdir /var/lib/cobbler/isos}
+
+Darle los permisos necesarios:
+
+\texttt{sudo chmod -R 777 /var/lib/cobbler/isos/{*}.iso}
+
+También es necesario crear un directorio que se utilizará como zona
+de intercambio entre Linux y Windows:
+
+\texttt{sudo mkdir /windows/}
+
+En este directorio se debe copiar el contenido de la imagen de instalación
+de Windows personalizada, para ello:
+
+\texttt{sudo mkdir /mnt/windows }
+
+\texttt{sudo mount -o loop /root/isos/WIN7\_X64.iso /mnt/windows }
+
+\texttt{sudo cp -rf /mnt/windows /windows }
+
+\texttt{sudo umount /mnt/windows}
+
+La zona de intercambio entre ambos sistemas operativos se logra utilizando
+SAMBA. 
+
+Para instalar SAMBA en CentOS 7 ejecutar:
+
+\texttt{sudo yum install -y SAMBA SAMBA-client SAMBA-common SAMBA-winbind }
+
+Una vez finalizada la instalación agregar una ubicación compartida
+en el archivo de configuración \emph{/etc/SAMBA/smb.conf} como se
+muestra a continuación:
+
+~
+
+\texttt{{[}global{]}}
+
+\texttt{workgroup = PXESERVER}
+
+\texttt{server string = SAMBA Server Version \%v}
+
+\texttt{log file = /var/log/SAMBA/log.\%m}
+
+\texttt{max log size = 50}
+
+\texttt{idmap config {*} : backend = tdb}
+
+\texttt{cups options = raw}
+
+\texttt{netbios name = pxe}
+
+\texttt{map to guest = bad user}
+
+\texttt{dns proxy = no}
+
+\texttt{public = yes}
+
+\texttt{\#\# Para instalaciones multiples no bloquear el kernel}
+
+\texttt{kernel oplocks = no}
+
+\texttt{nt acl support = no}
+
+\texttt{security = user}
+
+\texttt{guest account = nobody}
+
+\texttt{~}
+
+\texttt{{[}imagen{]}}
+
+\texttt{comment = Windows 7 }
+
+\texttt{path = /windows}
+
+\texttt{read only = no}
+
+\texttt{browseable = yes}
+
+\texttt{public = yes}
+
+\texttt{printable = no}
+
+\texttt{guest ok = yes}
+
+\texttt{oplocks = no}
+
+\texttt{level2 oplocks = no}
+
+\texttt{locking = no}
+
+\texttt{~}
+
+Habiendo modificado la configuración reiniciar el servicio: 
+
+\texttt{sudo systemctl restart smb}
+
+Corroborar que se pueden compartir archivos, si se hace desde otra
+pc Linux, es necesario tener los siguientes paquetes:
+
+\texttt{sudo yum install SAMBA SAMBA-client SAMBA-common cifs-utils}
+
+Luego ejecutar:
+
+\texttt{sudo smbclient -L IP\_del\_servidor\_Cobbler }
+
+\texttt{sudo mkdir /media/SAMBA }
+
+\texttt{sudo mount // IP\_del\_servidor\_Cobbler /imagen/media/SAMBA/ }
+
+\texttt{sudo ls /media/SAMBA/}
+
+Deberían aparecer ya los archivos compartidos en esa ubicación.
+
+
+\subsubsection{Integración con Cobbler}
+
+Para integrar la imagen de instalación Windows al servidor Cobbler
+se debe añadir una entrada distro y una entrada de perfil a Cobbler.
+
+\texttt{sudo cobbler distro add -{}-name=windows7-x86\_64 }~\\
+\texttt{-{}-kernel=/usr/share/syslinux/memdisk }~\\
+\texttt{-{}-initrd=/var/lib/cobbler/isos/winpe\_cobbler\_amd64.iso
+}~\\
+\texttt{-{}-kopts=\textquotedbl{}raw iso\textquotedbl{} -{}-arch=x86\_64
+-{}-breed=windows}
+
+~
+
+\texttt{sudo cobbler profile add -{}-name=windows7-x86\_64 -{}-distro=windows7-x86\_64}
+
+\texttt{sudo cobbler sync }
+
+\texttt{sudo systemctl restart cobblerd}
+
+
+\section{Interfaz Web}
+
+Se decidió realizar la interfaz web en Python, dado que el paquete
+Bottle nos provee un servidor web fácil de utilizar y fue recomendado
+por el director del proyecto. A su vez, se utilizo la IDE pycharm,
+en su versión libre, dado que funciona correctamente y ademas ya tuvimos
+experiencias con ella. Instalar Bottle es muy simple, simplemente
+se realiza a travez del siguiente comando
+
+~
+
+\texttt{sudo easy-install bottle}
+
+~
+
+Mientras que la IDE pycharm se descarga desde la pagina oficial de
+Jetbrains \\
+\emph{\small{}https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux\&code=PCC}\\
+Una vez descargado, se descomprime y se ejecuta el script de bash
+pycharm.sh que se encuentra en la carpeta bin del archivo descomprimido
+y este que se encarga de la instalación.
+
+Creamos dos ejemplos muy simples que luego utilizamos en la aplicación
+para realizar la recolección de parámetros que serán utilizados para
+crear las Maquinas Virtuales. Mas concretamente, este ejemplo pide
+el ingreso de 3 números que representan las cantidad de maquinas virtuales
+a crear (el primero corresponde a CentOS, el segundo a Ubuntu y el
+ultimo a la cantidad de maquinas que correrán Windows7), y luego los
+utilizara para crear dichas maquinas virtuales.
+
+Con las siguientes funciones definimos de qué modo procederá el servidor
+Bottle cuando recibe peticiones get y post enviadas a la URL /virtual\_machine.
+En la siguiente figura vemos el decorador get, lo que indica que la
+función definida a continuación se ejecutara cuando una solicitud
+get a la URL /virtual\_machine llegue al servidor. La función devuelve
+el HTML de un formulario al navegador, que el usuario rellenará para
+indicar la cantidad de maquinas virtuales con cada SO que desea crear.
+Los datos ingresados en el formulario se enviarán al servidor con
+el método post .
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/Interfaz web/Metodo_get\string".eps}
+\par\end{centering}
+
+\protect\caption{Metodo get}
+
+
+\end{figure}
+
+
+En la siguiente figura, tenemos el decorador post . Luego del decorador
+se encuentra la función que se ejecutará cuando una solicitud post
+a la URL /virtual\_machine llegue al servidor. Este caso se dará,
+por ejemplo, cuando el usuario rellene el formulario devuelto en la
+función de la figura anterior. Esta función tomará los parámetros
+presentes en el formulario y realizará el proceso para crear las maquinas
+virtuales deseadas. Ademas, la función devuelve el HTML que indica
+que se están instalando las maquinas virtuales.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=15cm]{\string"Imagenes/Interfaz web/Metodo_post\string".eps}
+\par\end{centering}
+
+\protect\caption{Metodo post}
+
+
+\end{figure}
+
+
+La última línea que pondremos en el código, será la que nos permita
+iniciar el servidor web de Bottle, es decir, la función run . Recibirá
+cada petición a la dirección y puerto que definimos hasta que detengamos
+la ejecución de la aplicación.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[width=8cm]{\string"Imagenes/Interfaz web/metodo_run\string".eps}\protect\caption{Metodo run}
+
+\par\end{centering}
+
+\end{figure}
+
+
+Si declaramos la función run como en la figura anterior, solo podremos
+acceder al servidor web Bottle desde la misma PC que lo ejecuta (
+localhost ) y utilizando el puerto 8080. Si queremos que el servidor
+se pueda acceder desde otras direcciones IP, reemplazamos localhost
+por la IP que deseamos o reemplazamos por 0.0.0.0 para habilitar,
+toda la red. Finalmente, vemos que esta activada la opción de debug,
+esta nos permite ver a través de la pagina web el retorno de los errores
+que nos entrega python, facilitando el debuguer. Una vez puesto en
+producción en sistema, esta opción debe ser desactivada.
+
+Las siguientes capturas corresponden a la sencilla interfaz web
+
+\textcolor{red}{\Huge{}INSERTAR INMAGEN DE LA INTERFAZ WEB}{\Huge \par}
+
+
+\subsection{Validación de las Herramientas}
+
+Realizamos una etapa de pruebas para validar el correcto funcionamiento
+de cada herramienta (KVM, Cobbler, Puppet) por separado.
+\end{document}
