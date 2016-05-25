@@ -22,8 +22,3 @@ for i in range(1, len(dominio), 2):
         print "no esta!\n"
         commands.getstatusoutput("echo \"`sed '/" + dominio[i] +"$/d' /etc/hosts`\" > /etc/hosts")
         print "echo \"`sed '/" + dominio[i] +"$/d' /etc/hosts`\" > /etc/hosts"
-
-
-#for i in range(0, len(maquinas), 1):
-
-#echo "`sed '/generic$/d' /etc/hosts`" > /etc/hosts
