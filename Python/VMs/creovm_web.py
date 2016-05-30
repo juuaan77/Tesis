@@ -39,7 +39,7 @@ def do_creaVM():
     nubuntu = request.forms.get('nubuntu')
     nwindows = request.forms.get('nwindows')
 
-    if CreaVm(nubuntu,"ubuntugui")=="error" or CreaVm(ncentos,"ubuntugui")=="error" or CreaVm(nwindows,"ubuntugui")=="error":
+    if CreaVm(nubuntu,"ubuntugui")=="error" or CreaVm(ncentos,"centos")=="error" or CreaVm(nwindows,"windows")=="error":
         return'''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
 
     return estadosVM()
@@ -89,31 +89,31 @@ def do_servicios():
     key = {'None': "#", 'on': ""}
 
     #Elimino el viejo site
-    commands.getoutput("rm -f /home/juan/site.pp")
+    commands.getoutput("rm -f /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     #coloco los nodos
-    commands.getoutput("echo \"node /centos*/{\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(c_eclipse)]+"include eclipse\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(c_idle)]+"include idle\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(c_repositorio)]+"include repositorio\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(c_update)]+"include update\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(c_usuarios)]+"include usuarios\" >> /home/juan/site.pp")
+    commands.getoutput("echo \"node /centos*/{\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(c_eclipse)]+"include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(c_idle)]+"include idle\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(c_repositorio)]+"include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(c_update)]+"include update\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(c_usuarios)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+
+    commands.getoutput("echo \"node /ubuntu*/{\" > /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(u_eclipse)]+"include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(u_idle)]+"include idle\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(u_repositorio)]+"include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(u_ubuntugui)]+"include ubuntugui\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(u_update)]+"include update\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(u_usuarios)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
     commands.getoutput("echo \"}\" >> /home/juan/site.pp")
 
-    commands.getoutput("echo \"node /ubuntu*/{\" > /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(u_eclipse)]+"include eclipse\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(u_idle)]+"include idle\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(u_repositorio)]+"include repositorio\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(u_ubuntugui)]+"include ubuntugui\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(u_update)]+"include update\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(u_usuarios)]+"include usuarios\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"}\" >> /home/juan/site.pp")
+    commands.getoutput("echo \"node /windows*/{\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"" + key[str(w_windowsus)]+"include windowsus\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
 
-    commands.getoutput("echo \"node /windows*/{\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"" + key[str(w_windowsus)]+"include windowsus\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"}\" >> /home/juan/site.pp")
-
-    commands.getoutput("echo \"node /default*/{\" >> /home/juan/site.pp")
-    commands.getoutput("echo \"}\" >> /home/juan/site.pp")
+    commands.getoutput("echo \"node /default*/{\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
 
     return servicios()
     #return str(c_eclipse) + "-" + str(c_idle) + "-" + str(c_repositorio) + "-" + str(c_update) + "-" + str(c_usuarios)
@@ -138,13 +138,13 @@ def do_politicas():
     commands.getoutput("rm -f /home/juan/"+maquina)
     commands.getoutput("touch /home/juan/" + maquina)
     # coloco los nodos
-    commands.getoutput("echo \"node" + maquina + "{\" >> /home/juan/" + maquina)
-    commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /home/juan/" + maquina)
-    commands.getoutput("echo \"" + key[str(idle)] + "include idle\" >> /home/juan/" + maquina)
-    commands.getoutput("echo \"" + key[str(repositorio)] + "include repositorio\" >> /home/juan/" + maquina)
-    commands.getoutput("echo \"" + key[str(update)] + "include update\" >> /home/juan/" + maquina)
-    commands.getoutput("echo \"" + key[str(usuarios)] + "include usuarios\" >> /home/juan/" + maquina)
-    commands.getoutput("echo \"}\" >> /home/juan/" + maquina)
+    commands.getoutput("echo \"node" + maquina + "{\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"" + key[str(idle)] + "include idle\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"" + key[str(repositorio)] + "include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"" + key[str(update)] + "include update\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"" + key[str(usuarios)] + "include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
 
     return politicas()
 
