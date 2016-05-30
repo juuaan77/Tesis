@@ -14783,7 +14783,7 @@ Usuario
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+OK
 \end_layout
 
 \end_inset
@@ -14876,7 +14876,7 @@ Usuario
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+OK
 \end_layout
 
 \end_inset
@@ -14981,7 +14981,7 @@ Usuario
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+OK
 \end_layout
 
 \end_inset
@@ -15143,7 +15143,7 @@ Creación de VMs parametrizadas
 \begin_inset Text
 
 \begin_layout Plain Layout
-SO = Ubuntu RAM=1024 Disco = 15
+SO = Ubuntu RAM=2048 Disco = 25
 \end_layout
 
 \end_inset

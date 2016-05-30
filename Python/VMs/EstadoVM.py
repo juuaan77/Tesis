@@ -97,6 +97,7 @@ def genera_estado_html():
 			<li><a href="virtual_machine">Crear virtual machine sin parametros.</a>
 			<li><a href="virtual_machine_parametrizada">Crear virtual machine con parametros.</a>
 			<li><a href="servicios">Editar configuraciones de las maquinas virtuales.</a>
+			<li><a href="politicas_maquinas">Editar politica de una VM.</a>
 		</ul>
         </body>
     </html>'''

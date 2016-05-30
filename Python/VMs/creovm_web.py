@@ -24,7 +24,7 @@ def do_estadosVM():
             #apagado = apagado +"apago" + estados[i]
             apagado = apagado + "\n" + commands.getoutput("virsh shutdown "+estados[i])
 
-    return encendido + apagado + estadosVM()
+    return encendido +"\n"+ apagado +"\n"+ estadosVM()
 
 @get('/virtual_machine') #Pagina principal, la cual pide los datos necesarios para crear la VM.
 def creaVM():
