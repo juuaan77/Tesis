@@ -32,20 +32,23 @@ def CreaVm (numbers_VMs,perfil):
                 os = "win7"
                 ostype = "windows"
                 disco = 25
+                ram = 2048
             elif perfil == "ubuntugui":
                 os = "generic"
                 ostype = "linux"
                 disco = 15
+                ram = 1024
             else:
                 os = "rhel7"
                 ostype = "linux"
                 disco = 15
+                ram = 1024
 
             #Ejecuto la linea que crea la VM
             print "cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0"
             commands.getoutput("cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0")
-            print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os)
-            commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram 1024 --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os))
+            print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram "+ str(ram) +" --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=puppet,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os)
+            commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram "+ str(ram) +" --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=puppet,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os))
 
             #Le doy tiempo (30 segundos) para que se refrezque el archivo dhcpd.lease
             time.sleep(60)
@@ -100,6 +103,8 @@ def CreaVm_parametrizada (perfil, ram, disco):
         ostype = "windows"
         if (int(disco) < 25):
             disco = 25
+        if (int(ram) < 2048):
+            ram = 2048
     elif perfil == "ubuntugui":
         os = "generic"
         ostype = "linux"

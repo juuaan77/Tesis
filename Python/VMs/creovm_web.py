@@ -35,9 +35,12 @@ def creaVM():
 
 @post('/virtual_machine') #toma los parametros ingresados e indica si se creo o no la VM con exito.
 def do_creaVM():
-    ncentos = request.forms.get('ncentos')
-    nubuntu = request.forms.get('nubuntu')
-    nwindows = request.forms.get('nwindows')
+    try:
+        ncentos = int(request.forms.get('ncentos'))
+        nubuntu = int(request.forms.get('nubuntu'))
+        nwindows = int(request.forms.get('nwindows'))
+    except ValueError:
+        return '''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
 
     if CreaVm(nubuntu,"ubuntugui")=="error" or CreaVm(ncentos,"centos")=="error" or CreaVm(nwindows,"windows")=="error":
         return'''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
@@ -60,8 +63,6 @@ def do_creaVM_parametrizado():
         return '''Por favor, seleccione un perfil\n'''
     if CreaVm_parametrizada(perfil,ram,disco)=="error":
         return'''Por favor, ingrese solo el NUMERO en la cantidad de ram y disco\n'''
-    #CreaVm(ncentos,"ubuntugui")
-    #CreaVm(nwindows,"ubuntugui")
     return estadosVM()
 
 @get('/servicios')
@@ -91,29 +92,29 @@ def do_servicios():
     #Elimino el viejo site
     commands.getoutput("rm -f /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     #coloco los nodos
-    commands.getoutput("echo \"node /centos*/{\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(c_eclipse)]+"include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(c_idle)]+"include idle\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(c_repositorio)]+"include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(c_update)]+"include update\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(c_usuarios)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"node /centos*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(c_eclipse)]+"include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(c_idle)]+"include idle\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(c_repositorio)]+"include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(c_update)]+"include update\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(c_usuarios)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
-    commands.getoutput("echo \"node /ubuntu*/{\" > /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(u_eclipse)]+"include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(u_idle)]+"include idle\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(u_repositorio)]+"include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(u_ubuntugui)]+"include ubuntugui\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(u_update)]+"include update\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(u_usuarios)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"}\" >> /home/juan/site.pp")
+    commands.getoutput("echo \"node /ubuntu*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(u_eclipse)]+"include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(u_idle)]+"include idle\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(u_repositorio)]+"include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(u_ubuntugui)]+"include ubuntugui\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(u_update)]+"include update\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(u_usuarios)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
-    commands.getoutput("echo \"node /windows*/{\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"" + key[str(w_windowsus)]+"include windowsus\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"node /windows*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(w_windowsus)]+"include windowsus\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
-    commands.getoutput("echo \"node /default*/{\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
-    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/site.pp")
+    commands.getoutput("echo \"node /default*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
     return servicios()
     #return str(c_eclipse) + "-" + str(c_idle) + "-" + str(c_repositorio) + "-" + str(c_update) + "-" + str(c_usuarios)
@@ -135,10 +136,10 @@ def do_politicas():
     key = {'None': "#", 'on': ""}
 
     # Elimino el viejo site
-    commands.getoutput("rm -f /home/juan/"+maquina)
-    commands.getoutput("touch /home/juan/" + maquina)
+    commands.getoutput("rm -f /home/juan/"+maquina + ".pp")
+    commands.getoutput("touch /home/juan/" + maquina + ".pp")
     # coloco los nodos
-    commands.getoutput("echo \"node" + maquina + "{\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"node " + maquina + "{\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
     commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
     commands.getoutput("echo \"" + key[str(idle)] + "include idle\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
     commands.getoutput("echo \"" + key[str(repositorio)] + "include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
@@ -225,4 +226,4 @@ def genera_html_politicas(maquinas):
     return html
 
 #run(host='192.168.0.101', port=8080, debug=True)
-run(host='localhost', port=8080, debug=True)
+run(host='0.0.0.0', port=8080, debug=True)
