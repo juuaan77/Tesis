@@ -42,8 +42,6 @@ def do_creaVM():
     if CreaVm(nubuntu,"ubuntugui")=="error" or CreaVm(ncentos,"ubuntugui")=="error" or CreaVm(nwindows,"ubuntugui")=="error":
         return'''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
 
-    #CreaVm(ncentos,"ubuntugui")
-    #CreaVm(nwindows,"ubuntugui")
     return estadosVM()
 
 @get('/virtual_machine_parametrizada') #Pagina principal, la cual pide los datos necesarios para crear la VM.
@@ -140,7 +138,7 @@ def do_politicas():
     commands.getoutput("rm -f /home/juan/"+maquina)
     commands.getoutput("touch /home/juan/" + maquina)
     # coloco los nodos
-    commands.getoutput("echo \"node /centos*/{\" >> /home/juan/" + maquina)
+    commands.getoutput("echo \"node" + maquina + "{\" >> /home/juan/" + maquina)
     commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /home/juan/" + maquina)
     commands.getoutput("echo \"" + key[str(idle)] + "include idle\" >> /home/juan/" + maquina)
     commands.getoutput("echo \"" + key[str(repositorio)] + "include repositorio\" >> /home/juan/" + maquina)

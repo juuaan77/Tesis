@@ -19,6 +19,6 @@ for i in range(0, len(salida), 1):
 #print maquinas
 for i in range(1, len(dominio), 2):
     if not (dominio[i] in maquinas):
-        print "no esta!\n"
+        #print "no esta!\n"
         commands.getstatusoutput("echo \"`sed '/" + dominio[i] +"$/d' /etc/hosts`\" > /etc/hosts")
-        print "echo \"`sed '/" + dominio[i] +"$/d' /etc/hosts`\" > /etc/hosts"
+        #print "echo \"`sed '/" + dominio[i] +"$/d' /etc/hosts`\" > /etc/hosts"
