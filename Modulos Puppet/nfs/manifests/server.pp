@@ -12,14 +12,14 @@ class nfs::server()
 
 		#Ejecuto el comando de activacion del servicio
 		exec{'enable_servicio_rpcbind' :
-			command => '/usr/bin/systemctl enable rpcbind', #Este es el comando que deseo que se ejecute, en este caso, activa el servicio
+			command => '/usr/bin/systemctl enable rpcbind', 
 			cwd => "/", #indico desde que directorio se ejecuta el comando
 			require => Package['paquete_nfs_utils'],#Antes de activar el servicio, los paquetes deben estar instalados.
 		}
 
 		#Ejecuto el comandod de activacion del servicio
 		exec{'enable_servicio_nfs_server' :
-			command => '/usr/bin/systemctl enable nfs-server', #Este es el comando que deseo que se ejecute, en este caso, activa el servicio
+			command => '/usr/bin/systemctl enable nfs-server',
 			cwd => "/", #indico desde que directorio se ejecuta el comando
 			require => Package['paquete_nfs_utils'],#Antes de activar el servicio, los paquetes deben estar instalados.
 		}

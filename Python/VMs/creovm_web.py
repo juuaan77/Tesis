@@ -5,36 +5,36 @@ from CreaVm_with_profile_v2 import CreaVm, CreaVm_parametrizada
 from EstadoVM import genera_estado_html,estado
 from bottle import get, post, request, run,route
 
-@get('/estados') #Pagina principal, la cual pide los datos necesarios para crear la VM.
-def estadosVM():
-    #peticionhtml = open("/home/werner/demo/HTMLs/Peticion_parametros_CreacionVM.html","r", 0)
-    return genera_estado_html()
-    #return '''fruta'''
 
-@post('/estados') #Pagina principal, la cual pide los datos necesarios para crear la VM.
+#Pagina que muestra el estado actual (encendido/apagado) de las VMs
+@get('/estados')
+def estadosVM():
+    return genera_estado_html()
+
+#Metodo encargado de ejecutar el encendido o apagado de las VMs
+@post('/estados')
 def do_estadosVM():
     estados = estado()
     encendido = ""
     apagado = ""
     for i in range(0,len(estados)-1,2):
         if request.forms.get("Prender-"+estados[i])=="on":
-            #encendido = encendido + "prendo" + estados[i]
             encendido= encendido + "\n" + commands.getoutput("virsh start "+estados[i])
         elif request.forms.get("Apagar-"+estados[i])=="on":
-            #apagado = apagado +"apago" + estados[i]
             apagado = apagado + "\n" + commands.getoutput("virsh shutdown "+estados[i])
 
     return encendido +"\n"+ apagado +"\n"+ estadosVM()
 
-@get('/virtual_machine') #Pagina principal, la cual pide los datos necesarios para crear la VM.
+#Pagina que recibe datos sobre la cantidad de VMs de cada perfil que se desean crear
+@get('/virtual_machine')
 def creaVM():
-    #peticionhtml = open("/home/werner/demo/HTMLs/Peticion_parametros_CreacionVM.html","r", 0)
     peticionhtml = open("/home/juan/Tesis/Python/HTMLs/virtual_machine.html","r", 0)
     return peticionhtml
-    #return '''fruta'''
 
-@post('/virtual_machine') #toma los parametros ingresados e indica si se creo o no la VM con exito.
+#Toma los parametros ingresados e indica si se creo o no la VM con exito.
+@post('/virtual_machine')
 def do_creaVM():
+    #Control de error que indica si se colocaron parametros invalidos.
     try:
         ncentos = int(request.forms.get('ncentos'))
         nubuntu = int(request.forms.get('nubuntu'))
@@ -47,29 +47,32 @@ def do_creaVM():
 
     return estadosVM()
 
-@get('/virtual_machine_parametrizada') #Pagina principal, la cual pide los datos necesarios para crear la VM.
+#Pagina que recibe los parametros para crear una VM con disco y memoria a a eleccion
+@get('/virtual_machine_parametrizada')
 def creaVM_parametrizado():
-    #peticionhtml = open("/home/werner/demo/HTMLs/Peticion_parametros_CreacionVM.html","r", 0)
     peticionhtml = open("/home/juan/Tesis/Python/HTMLs/virtual_machine_parametrizada.html","r", 0)
     return peticionhtml
-    #return '''fruta'''
 
-@post('/virtual_machine_parametrizada') #toma los parametros ingresados e indica si se creo o no la VM con exito.
+#Toma los parametros ingresados para crear la VMs parametrizada
+@post('/virtual_machine_parametrizada')
 def do_creaVM_parametrizado():
     perfil = request.forms.get('boton1')
     ram = request.forms.get('ram')
     disco = request.forms.get('disco')
+    #reviso que los parametros sean adecuados
     if str(perfil)=="None":
         return '''Por favor, seleccione un perfil\n'''
     if CreaVm_parametrizada(perfil,ram,disco)=="error":
         return'''Por favor, ingrese solo el NUMERO en la cantidad de ram y disco\n'''
     return estadosVM()
 
+#Pagina que permite seleccionar los servicios deseados.
 @get('/servicios')
 def servicios():
     peticionhtml = open("/home/juan/Tesis/Python/HTMLs/servicios.html","r", 0)
     return peticionhtml
 
+#Toma los servicios deseados y genera el correspondiente archivo de puppet para su correcto funcionamiento
 @post('/servicios')
 def do_servicios():
     c_eclipse = request.forms.get('c_eclipse')
@@ -89,7 +92,7 @@ def do_servicios():
 
     key = {'None': "#", 'on': ""}
 
-    #Elimino el viejo site
+    #Elimino el viejo archivo
     commands.getoutput("rm -f /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     #coloco los nodos
     commands.getoutput("echo \"node /centos*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
@@ -110,20 +113,21 @@ def do_servicios():
     commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
     commands.getoutput("echo \"node /windows*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
-    commands.getoutput("echo \"" + key[str(w_windowsus)]+"include windowsus\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"" + key[str(w_windowsus)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
     commands.getoutput("echo \"node /default*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
     return servicios()
-    #return str(c_eclipse) + "-" + str(c_idle) + "-" + str(c_repositorio) + "-" + str(c_update) + "-" + str(c_usuarios)
 
+#Pagina que muestra las maquinas existentes y permite setear servicios a maquinas individuales.
 @get('/politicas_maquinas')
 def politicas():
     maquinas = estado()
     return genera_html_politicas(maquinas)
 
+#Toma los servicios deseados y crea un archivo individual para esa VM
 @post('/politicas_maquinas')
 def do_politicas():
     eclipse = request.forms.get('eclipse')
@@ -135,7 +139,7 @@ def do_politicas():
 
     key = {'None': "#", 'on': ""}
 
-    # Elimino el viejo site
+    # Elimino el viejo archivo
     commands.getoutput("rm -f /home/juan/"+maquina + ".pp")
     commands.getoutput("touch /home/juan/" + maquina + ".pp")
     # coloco los nodos
@@ -149,6 +153,7 @@ def do_politicas():
 
     return politicas()
 
+#Genera el HTML de las politicas de las maquinas.
 def genera_html_politicas(maquinas):
     html = '''<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
@@ -225,5 +230,4 @@ def genera_html_politicas(maquinas):
 
     return html
 
-#run(host='192.168.0.101', port=8080, debug=True)
 run(host='0.0.0.0', port=8080, debug=True)

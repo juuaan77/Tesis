@@ -2,7 +2,14 @@ __author__ = 'juan'
 
 import commands,re,fnmatch
 
+
 def estado():
+    '''Obtiene el estado (encendido o apagado) de las VMs
+
+        parametros: none.
+
+        return: Lista Nombre_VM - estado'''
+
     salida = commands.getstatusoutput("virsh list --all")
     salida = re.split("\n", salida[1])
     dominio=""
@@ -22,6 +29,7 @@ def estado():
 
     return dominio
 
+#Genera dinamicamente el archivo HTML queindica el estado de las maquinas virtuales.
 def genera_estado_html():
 
     dominio = estado()

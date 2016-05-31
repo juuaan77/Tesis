@@ -5,14 +5,14 @@ class idle()
 	{
 		#Obtengo los .deb para evitar usar internet.
 		exec{'descarga_idle' :
-                	command => "/usr/bin/curl ftp://192.168.122.1/proyectointegrador/Ubuntu14/idle.tar -o /var/cache/apt/archives/idle.tar", #Este es el comando que deseo que se ejecute
-                	cwd => "/", #indico desde que directorio se ejecuta el comando
-                	unless => "/bin/ls /var/cache/apt/archives/idle.tar",
+                	command => "/usr/bin/curl ftp://192.168.122.1/proyectointegrador/Ubuntu14/idle.tar -o /var/cache/apt/archives/idle.tar", 
+                	cwd => "/", #indico desde que directorio se ejecuta el comando.
+                	unless => "/bin/ls /var/cache/apt/archives/idle.tar",#Ejecuta a menos que este comando sea exitoso.
         	}		
 
 		#Desempaqueto los .deb
         	exec{'desempaqueta_idle' :
-                	command => "/bin/tar -xvf /var/cache/apt/archives/idle.tar -C /var/cache/apt/archives/", #Este es el comando que deseo que se ejecute
+                	command => "/bin/tar -xvf /var/cache/apt/archives/idle.tar -C /var/cache/apt/archives/", 
                 	cwd => "/", #indico desde que directorio se ejecuta el comando
                 	require => Exec['descarga_idle'],#Requiere este recurso
                 	unless => '/bin/grep "desempaqueta_idle]/returns) executed successfully" /var/log/syslog',
