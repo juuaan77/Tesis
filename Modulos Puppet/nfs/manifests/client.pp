@@ -1,5 +1,5 @@
 #Instala y confugura un cliente nfs que toma 2 parametros
-#dueio -> Es el duenio de la carpeta /mnt donde so montara el sistema nfs
+#duenio -> Es el duenio de la carpeta /mnt donde so montara el sistema nfs
 #nfs_ip -> IP del servidor nfs al cual se conecta el cliente.
 class nfs::client(
 #Duenio del direcotrio donde se montara el sistema nfs

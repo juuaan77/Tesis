@@ -40,10 +40,15 @@ def do_creaVM():
         nubuntu = int(request.forms.get('nubuntu'))
         nwindows = int(request.forms.get('nwindows'))
     except ValueError:
-        return '''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
+        frace = '''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
+        peticionhtml = commands.getoutput("cat /home/juan/Tesis/Python/HTMLs/virtual_machine.html")
+        frace = frace + ''' ''' + peticionhtml
+        return frace
 
-    if CreaVm(nubuntu,"ubuntugui")=="error" or CreaVm(ncentos,"centos")=="error" or CreaVm(nwindows,"windows")=="error":
-        return'''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
+    CreaVm(ncentos, "centos")
+    CreaVm(nubuntu,"ubuntugui")
+    CreaVm(nwindows,"windows")
+
 
     return estadosVM()
 
