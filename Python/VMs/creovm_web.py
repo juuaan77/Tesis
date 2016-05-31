@@ -42,8 +42,7 @@ def do_creaVM():
     except ValueError:
         frace = '''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
         peticionhtml = commands.getoutput("cat /home/juan/Tesis/Python/HTMLs/virtual_machine.html")
-        frace = frace + ''' ''' + peticionhtml
-        return frace
+        return frace + peticionhtml
 
     CreaVm(ncentos, "centos")
     CreaVm(nubuntu,"ubuntugui")
