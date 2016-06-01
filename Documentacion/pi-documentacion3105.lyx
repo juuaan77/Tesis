@@ -513,6 +513,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -861,6 +878,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -1012,6 +1046,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
 <features rotate="0" tabularvalignment="middle" tabularwidth="15cm">
@@ -1934,6 +1985,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -2409,6 +2477,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -2768,6 +2853,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="5">
 <features rotate="0" tabularvalignment="middle">
@@ -3573,6 +3675,23 @@ textwidth}{!}{%
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="5">
 <features rotate="0" tabularvalignment="middle">
@@ -11590,6 +11709,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -11601,6 +11737,18 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{cyan}
+\end_layout
+
+\end_inset
+
 
 \series bold
 Paso
@@ -11667,6 +11815,18 @@ Instalar WAIK
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 
 \series bold
 2
@@ -11730,6 +11890,18 @@ Instalar y personalizar Windows 7
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 
 \series bold
 4
@@ -11793,6 +11965,18 @@ Capturar el equipo de referencia a un archivo de imágen mediante ImageX
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 
 \series bold
 6
@@ -15873,6 +16057,23 @@ status open
 \begin_layout Plain Layout
 
 }
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash}{
+\backslash
+arraybackslash}}
 \end_layout
 
 \end_inset

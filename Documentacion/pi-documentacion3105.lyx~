@@ -513,6 +513,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -861,6 +878,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -1012,6 +1046,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
 <features rotate="0" tabularvalignment="middle" tabularwidth="15cm">
@@ -1934,6 +1985,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -2409,6 +2477,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -2768,6 +2853,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="5">
 <features rotate="0" tabularvalignment="middle">
@@ -3573,6 +3675,23 @@ textwidth}{!}{%
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="5">
 <features rotate="0" tabularvalignment="middle">
@@ -11590,6 +11709,23 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{{
+\backslash
+centering
+\backslash
+arraybackslash} {
+\backslash
+arraybackslash}}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -11601,6 +11737,18 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{cyan}
+\end_layout
+
+\end_inset
+
 
 \series bold
 Paso
@@ -11667,6 +11815,18 @@ Instalar WAIK
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 
 \series bold
 2
@@ -11730,6 +11890,18 @@ Instalar y personalizar Windows 7
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 
 \series bold
 4
@@ -11793,6 +11965,18 @@ Capturar el equipo de referencia a un archivo de imágen mediante ImageX
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 
 \series bold
 6
@@ -14586,6 +14770,16 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/Interfaz_web/Estados.png
+	lyxscale 90
+	width 15cm
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -14606,14 +14800,7 @@ Estado de las Virtual Machine
 
 \end_layout
 
-\begin_layout Standard
-
-\size giant
-\color red
-INSERTAR INMAGEN DE LA INTERFAZ WEB
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Section
 Validación de las Herramientas
 \end_layout
 
@@ -14654,6 +14841,23 @@ textwidth}{!}{%
 \begin_layout Plain Layout
 \noindent
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{>{
+\backslash
+centering
+\backslash
+arraybackslash}m{2cm} >{
+\backslash
+arraybackslash}m{5cm} }
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="10">
 <features rotate="0" tabularvalignment="middle">
@@ -15896,6 +16100,76 @@ Casos de prueba del usuario del sistema
 
 \begin_layout Subsection
 Trabajos Futuros
+\end_layout
+
+\begin_layout Standard
+Como en todo proyecto, existen recursos que limitan sus dimensiones.
+ En este proyecto, la principal limitación fue el tiempo.
+ Es por esta limitación que existen mejoras que se le pueden aplicar en
+ un futuro, en un Proyecto Integrador o Práctica Profesional de otro alumno,
+ por ejemplo.
+\end_layout
+
+\begin_layout Standard
+Los siguientes son algunos de los trabajos futuros que se podrían llevar
+ a cabo.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Protección:
+\series default
+ Valoración de la probabilidad de que el sistema pueda resistir intrusiones
+ accidentales o premeditadas.
+ Para mejorar esta probabilidad proponemos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Modificar el sistema para que funcione con firewall y SELinux .
+\end_layout
+
+\begin_layout Itemize
+Incluir validación por usuario en la interfaz web.
+ 
+\end_layout
+
+\begin_layout Itemize
+Incluir un log de cambios al sistema que permita saber quien y que cambio
+ realizo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Tolerancia a errores: 
+\series default
+La tolerancia a errores refleja hasta qué punto el sistema se diseñó para
+ evitar y tolerar errores.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La tolerancia a errores refleja hasta qué punto el sistema se diseñó para
+ evitar y tolerar errores.
+ En las aplicaciones desarrolladas introdujimos porciones de código que
+ las protegen del mal funcionamiento.
+ Sin embargo, esto esta lejos de ser perfectos y muchos errores quedan sin
+ ser reconocidos, por lo cual, incluir mas secciones dedicadas a subsanar
+ errores es una interesante mejora.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Las pruebas realizadas sobre las herramientas, y las pruebas de los resultados
+ finales de las aplicaciones no fueron ejecutadas sobre equipos servidores
+ dado que no teníamos acceso a ellos.
+ Las mismas se efectuaron sobre nuestros equipos de escritorio y notebooks,
+ quedando como tema pendiente la realización de estos pasos en un equipo
+ servidor.
+ 
 \end_layout
 
 \begin_layout Subsection
