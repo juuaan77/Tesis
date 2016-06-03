@@ -3,6 +3,7 @@ class idle()
 {
 	if $osfamily == "Debian"
 	{
+		include ubuntugui 
 		#Obtengo los .deb para evitar usar internet.
 		exec{'descarga_idle' :
                 	command => "/usr/bin/curl ftp://192.168.122.1/proyectointegrador/Ubuntu14/idle.tar -o /var/cache/apt/archives/idle.tar", 
