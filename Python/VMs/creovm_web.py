@@ -28,7 +28,7 @@ def do_estadosVM():
 #Pagina que recibe datos sobre la cantidad de VMs de cada perfil que se desean crear
 @get('/virtual_machine')
 def creaVM():
-    peticionhtml = open("/home/juan/Tesis/Python/HTMLs/virtual_machine.html","r", 0)
+    peticionhtml = open("/root/tesis/Tesis/Python/HTMLs/virtual_machine.html","r", 0)
     return peticionhtml
 
 #Toma los parametros ingresados e indica si se creo o no la VM con exito.
@@ -41,7 +41,7 @@ def do_creaVM():
         nwindows = int(request.forms.get('nwindows'))
     except ValueError:
         frace = '''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
-        peticionhtml = commands.getoutput("cat /home/juan/Tesis/Python/HTMLs/virtual_machine.html")
+        peticionhtml = commands.getoutput("cat /root/tesis/Tesis/Python/HTMLs/virtual_machine.html")
         return frace + peticionhtml
 
     CreaVm(ncentos, "centos")
@@ -54,7 +54,7 @@ def do_creaVM():
 #Pagina que recibe los parametros para crear una VM con disco y memoria a a eleccion
 @get('/virtual_machine_parametrizada')
 def creaVM_parametrizado():
-    peticionhtml = open("/home/juan/Tesis/Python/HTMLs/virtual_machine_parametrizada.html","r", 0)
+    peticionhtml = open("/root/tesis/Tesis/Python/HTMLs/virtual_machine_parametrizada.html","r", 0)
     return peticionhtml
 
 #Toma los parametros ingresados para crear la VMs parametrizada
@@ -73,7 +73,7 @@ def do_creaVM_parametrizado():
 #Pagina que permite seleccionar los servicios deseados.
 @get('/servicios')
 def servicios():
-    peticionhtml = open("/home/juan/Tesis/Python/HTMLs/servicios.html","r", 0)
+    peticionhtml = open("/root/tesis/Tesis/Python/HTMLs/servicios.html","r", 0)
     return peticionhtml
 
 #Toma los servicios deseados y genera el correspondiente archivo de puppet para su correcto funcionamiento
@@ -144,8 +144,8 @@ def do_politicas():
     key = {'None': "#", 'on': ""}
 
     # Elimino el viejo archivo
-    commands.getoutput("rm -f /home/juan/"+maquina + ".pp")
-    commands.getoutput("touch /home/juan/" + maquina + ".pp")
+    commands.getoutput("rm -f /root/tesis/"+maquina + ".pp")
+    commands.getoutput("touch /root/tesis/" + maquina + ".pp")
     # coloco los nodos
     commands.getoutput("echo \"node " + maquina + "{\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
     commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)

@@ -105,6 +105,9 @@ def CreaVm_parametrizada (perfil, ram, disco):
             disco = 25
         if (int(ram) < 2048):
             ram = 2048
+        #si es una maquina de windows debo editar un archivo para que modifique dinamicamente el  hostname
+        commands.getoutput("sed -i 's/\*/" + str(name )+"/g' /windows/Autounattend.xml")
+
     elif perfil == "ubuntugui":
         os = "generic"
         ostype = "linux"
@@ -115,8 +118,8 @@ def CreaVm_parametrizada (perfil, ram, disco):
     #Ejecuto la linea que crea la VM
     print "cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0"
     commands.getoutput("cobbler system add --name=" + str(name) + " --profile=" + str(perfil) + " --hostname=" + str(name) + " --mac-address=" + str(mac) + " --gateway=192.168.122.1  --static --name-servers=8.8.8.8 8.8.4.4 --interface=eth0")
-    print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram " + str(ram) + " --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os)
-    commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram " + str(ram) + " --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=Cobbler,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os))
+    print "virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram " + str(ram) + " --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=puppet,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os)
+    commands.getoutput("virt-install --connect qemu:///system --virt-type kvm --name " + str(name) + " --ram " + str(ram) + " --disk path=/var/lib/libvirt/images/" + str(name) + ".qcow2,size=" + str(disco) + " --network network=puppet,mac=" + str(mac) + " --pxe --os-type " + str(ostype) +" --os-variant "+ str(os))
 
     #Le doy tiempo (60 segundos) para que se refrezque el archivo dhcpd.lease
     time.sleep(60)

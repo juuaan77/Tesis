@@ -16,9 +16,9 @@ firewall --enabled
 # Run the Setup Agent on first boot
 firstboot --disable
 # System keyboard
-keyboard us
+keyboard es_ES
 # System language
-lang en_US
+lang es_AR
 # Use network installation
 url --url=$tree
 # If any cobbler repo definitions were referenced in the kickstart profile, include them here.
@@ -36,7 +36,7 @@ selinux --disabled
 #xconfig  --startxonboot
 xconfig --startxonboot --defaultdesktop=GNOME
 # System timezone
-timezone  America/New_York
+timezone  America/Argentina/Cordoba
 user --groups=wheel --name=admin --password=$6$srkfPEM5iM8rJh0f$3wbMSPA0yxZ8NBFAdpqLRBsWoY83yI0fsCU0DsteeoxpdzpCT2QSHe63ZXGZPB/j.lDwEOexnfQDYwGy9H9rl1 --iscrypted --gecos="admin"
 # Install OS instead of upgrade
 install
