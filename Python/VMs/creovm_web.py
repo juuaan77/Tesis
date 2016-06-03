@@ -144,16 +144,16 @@ def do_politicas():
     key = {'None': "#", 'on': ""}
 
     # Elimino el viejo archivo
-    commands.getoutput("rm -f /root/tesis/"+maquina + ".pp")
-    commands.getoutput("touch /root/tesis/" + maquina + ".pp")
+    commands.getoutput("rm -f /etc/puppetlabs/code/environments/production/manifests/"+maquina + ".pp")
+    commands.getoutput("touch /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
     # coloco los nodos
-    commands.getoutput("echo \"node " + maquina + "{\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
-    commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
-    commands.getoutput("echo \"" + key[str(idle)] + "include idle\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
-    commands.getoutput("echo \"" + key[str(repositorio)] + "include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
-    commands.getoutput("echo \"" + key[str(update)] + "include update\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
-    commands.getoutput("echo \"" + key[str(usuarios)] + "include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
-    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina)
+    commands.getoutput("echo \"node " + maquina + "{\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
+    commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
+    commands.getoutput("echo \"" + key[str(idle)] + "include idle\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
+    commands.getoutput("echo \"" + key[str(repositorio)] + "include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
+    commands.getoutput("echo \"" + key[str(update)] + "include update\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
+    commands.getoutput("echo \"" + key[str(usuarios)] + "include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
+    commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
 
     return politicas()
 
