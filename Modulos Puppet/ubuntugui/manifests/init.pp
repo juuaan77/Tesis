@@ -1,41 +1,51 @@
-#Clase que instala la interfaz grafica gnome en ubuntu.
-class ubuntugui{
-
-	#Este IF es para evitar errores si se comete el error de colocar este manifiesto en una maquina no apta, por ej Centos.
-	if $osfamily == "Debian"
-	{
-		#Obtengo los paquetes de gui, asi evito descargarlos
-		exec{'descarga_gui' :
-			command => "/usr/bin/curl ftp://192.168.122.1/proyectointegrador/Ubuntu14/ubuntu_gui.tar -o /var/cache/apt/archives/ubuntu_gui.tar", #Este es el comando que deseo que se ejecute
-			cwd => "/", #indico desde que directorio se ejecuta el comando
-			unless => "/bin/ls /var/cache/apt/archives/ubuntu_gui.tar",
+#Clase que creara un usuario sin permisos.
+#usuario -> nombre del usuario creado
+class usuarios(
+$usuario = "alumno"
+)
+{
+	if $osfamily == "Windows"
+	{		
+		#Aca indico los datos del usuario a crear.
+		user { 'creo_usuario': #Este es el titulo del recurso, es el que aparecera en los LOGs
+			name => $usuario, #El usuario sera alumno.
+			ensure => present, #Debe encontrase presente.
+			groups    => ['Usuarios'],
+			managehome => true,
+			password  => 'alumno', #En windows la clave debe estar en texto plano.
 		}
-
-		#Descomprimo el paquete.
-		exec{'desempaqueta_gui' :
-			command => "/bin/tar -xvf /var/cache/apt/archives/ubuntu_gui.tar -C /var/cache/apt/archives/", #Este es el comando que deseo que se ejecute
-			cwd => "/", #indico desde que directorio se ejecuta el comando
-			require => Exec['descarga_gui'],#Requiere este recurso
-			unless => '/bin/grep "desempaqueta_gui]/returns) executed successfully" /var/log/syslog',
+	}
+	else
+	{
+		#Aca indico los datos del usuario a crear.
+		user { 'creo_usuario': #Este es el titulo del recurso, es el que aparecera en los LOGs
+			name => $usuario, #El usuario sera alumno.
+			ensure => 'present', #Debe encontrase presente.
+			password  => '$1$t059HC0X$N/J0Km9dJQEGmwSnjDrW0/', #para encriptar la clave deseada, se usa "openssl passwd -1", esta es "alumno"
+			password_max_age => '99999', #numero de dias maximo que es valida la clave
+	  		password_min_age => '0', #numero de dias minimo que es valida la clave
+			allowdupe => 'false', #No permito usuarios duplicados.
+			expiry => 'absent', #El usuario no debe expirar.
+			home => '/home/${usuario}' #El home del usuario
 		}
 	
-		#Estos paquetes son los necesarios para que funcione la GUI
-		package { 'paquete_xinit': #Este es el titulo del recurso, es el que aparecera en los LOGs
-			ensure => installed, #aca le indico que quiero que el recurso este instalado
-			name => "xinit", #indico el nombre del paquete
-			require => Exec['desempaqueta_gui'],#Requiere este recurso	
+		#Aca creo el grupo al que pertenecera el usuario.
+		group { 'grupo_usuario': #Titulo del recurso, aparece en los LOGs
+			name => $usuario, #nombre del grupo
+			ensure => 'present', #Debe encontrase presente.
+			allowdupe => 'false', #No permito grupos duplicados.
+			members => $usuario, #mimbros del grupo 
+			require => User['creo_usuario'],#Antes de crear el grupo del usuario, este debe existit
 		}
 
-		package { 'paquete_xorg': #Este es el titulo del recurso, es el que aparecera en los LOGs
-			ensure => installed, #aca le indico que quiero que el recurso este instalado
-			name => "xorg", #indico el nombre del paquete
-			require => Exec['desempaqueta_gui'],#Requiere este recurso	
-		}
-
-		package { 'paquete_gnome-core': #Este es el titulo del recurso, es el que aparecera en los LOGs
-			ensure => installed, #aca le indico que quiero que el recurso este instalado
-			name => "gnome-core", #indico el nombre del paquete
-			require => Exec['desempaqueta_gui'],#Requiere este recurso	
+		#Creo el directorio de usuario ALUMNO
+		file { 'home_usuario': #Titulo del recurso, aparece en los LOGs
+			path => '/home/${usuario}', #path del directorio.
+			ensure => 'directory', #Indico que sea un directorio.
+			mode => '0644', #Indico permisos del directorio
+			owner => 'alumno', #dueño del directorio
+			group => 'alumno', #grupo del directorio
+			require => Group['grupo_usuario'],#Antes de crear el home del usuario, este debe existit
 		}
 	}
 }
