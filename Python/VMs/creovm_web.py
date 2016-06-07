@@ -1,6 +1,6 @@
 __author__ = 'juan'
 
-import os, time, commands,re
+import os, time, commands,re,threading
 from CreaVm_with_profile_v2 import CreaVm, CreaVm_parametrizada
 from EstadoVM import genera_estado_html,estado
 from bottle import get, post, request, run,route
@@ -44,10 +44,21 @@ def do_creaVM():
         peticionhtml = commands.getoutput("cat /root/tesis/Tesis/Python/HTMLs/virtual_machine.html")
         return frace + peticionhtml
 
-    CreaVm(ncentos, "centos")
-    CreaVm(nubuntu,"ubuntugui")
-    CreaVm(nwindows,"windows")
-
+    #CreaVm(ncentos, "centos")
+    #CreaVm(nubuntu,"ubuntugui")
+    #CreaVm(nwindows,"windows")
+    threads = []
+    t1 = threading.Thread(target=CreaVm, args=(ncentos,"centos"))
+    t2 = threading.Thread(target=CreaVm, args=(nubuntu,"ubuntugui"))
+    t3 = threading.Thread(target=CreaVm, args=(nwindows, "windows"))
+    threads.append(t1)
+    threads.append(t2)
+    threads.append(t3)
+    t1.start()
+    time.sleep(5)
+    t2.start()
+    time.sleep(5)
+    t3.start()
 
     return estadosVM()
 

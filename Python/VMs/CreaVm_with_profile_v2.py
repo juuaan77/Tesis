@@ -7,6 +7,8 @@ import commands
 import random
 import time
 import sys
+import threading
+mutex = threading.Lock()
 
 def CreaVm (numbers_VMs,perfil):
 
@@ -34,6 +36,8 @@ def CreaVm (numbers_VMs,perfil):
                 ostype = "windows"
                 disco = 25
                 ram = 2048
+                commands.getoutput("sed -i  '/ComputerName/c\            <ComputerName>"+str(name)+"<\/ComputerName>/' /windows/Autounattend.xml")
+                commands.getoutput("sed -i 's/\r$//g' Autounattend.xml")
             elif perfil == "ubuntugui":
                 os = "generic"
                 ostype = "linux"
@@ -106,7 +110,8 @@ def CreaVm_parametrizada (perfil, ram, disco):
         if (int(ram) < 2048):
             ram = 2048
         #si es una maquina de windows debo editar un archivo para que modifique dinamicamente el  hostname
-        commands.getoutput("sed -i 's/\*/" + str(name )+"/g' /windows/Autounattend.xml")
+        commands.getoutput("sed -i  '/ComputerName/c\            <ComputerName>"+str(name)+"<\/ComputerName>/' /windows/Autounattend.xml")
+        commands.getoutput("sed -i 's/\r$//g' Autounattend.xml")
 
     elif perfil == "ubuntugui":
         os = "generic"
@@ -152,10 +157,15 @@ def Parseo_IP(mac,hostname):
             ip = parseado[i].split(" ")
             break
         else:
-            ip = "-"
+            ip = " "
         i = i+1
-    commands.getoutput("echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts" )
-    print "echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts"
+    try:
+        mutex.acquire()
+        commands.getoutput("echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts" )
+        print "echo '" + str(ip[0]) + " " + str(hostname) +"' >>  /etc/hosts"
+        mutex.release()
+    except IndexError:
+        print "no\n"
 
 #if __name__ == '__main__':
 

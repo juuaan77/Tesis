@@ -2,9 +2,19 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'juan'
-import commands,re,fnmatch
-from EstadoVM import genera_estado_html,estado
 
+import threading,commands
+mutex = threading.Lock()
+def worker(num):
+    """thread worker function"""
 
-name = "windows123456"
-commands.getoutput("sed -i 's/\*/" + str(name) +"/g' /home/juan/Autounattend.xml")
+    mutex.acquire()
+    commands.getoutput("echo 'Worker: %s' >> /home/juan/hilos" % num)
+    mutex.release()
+    return
+
+threads = []
+for i in range(5):
+    t = threading.Thread(target=worker, args=(i,))
+    threads.append(t)
+    t.start()
