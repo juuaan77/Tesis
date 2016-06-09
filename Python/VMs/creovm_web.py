@@ -119,10 +119,10 @@ def do_servicios():
     commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
 
     commands.getoutput("echo \"node /ubuntu*/{\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
+    commands.getoutput("echo \"include ubuntugui\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"" + key[str(u_eclipse)]+"include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"" + key[str(u_idle)]+"include idle\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"" + key[str(u_repositorio)]+"include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
-    commands.getoutput("echo \"" + key[str(u_ubuntugui)]+"include ubuntugui\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"" + key[str(u_update)]+"include update\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"" + key[str(u_usuarios)]+"include usuarios\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
     commands.getoutput("echo \"}\" >> /etc/puppetlabs/code/environments/production/manifests/z_genericos.pp")
@@ -159,6 +159,7 @@ def do_politicas():
     commands.getoutput("touch /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
     # coloco los nodos
     commands.getoutput("echo \"node " + maquina + "{\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
+    commands.getoutput("echo \"include ubuntugui\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
     commands.getoutput("echo \"" + key[str(eclipse)] + "include eclipse\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
     commands.getoutput("echo \"" + key[str(idle)] + "include idle\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
     commands.getoutput("echo \"" + key[str(repositorio)] + "include repositorio\" >> /etc/puppetlabs/code/environments/production/manifests/" + maquina + ".pp")
