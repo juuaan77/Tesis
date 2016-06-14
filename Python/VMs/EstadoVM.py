@@ -95,7 +95,7 @@ def genera_estado_html():
         html=html+'''<TR>
                     <TD>'''+dominio[i]+'''</TD>
                 <TD BGCOLOR='''+color[dominio[i+1]]+'''> '''+dominio[i+1]+'''</TD>
-                <TD><INPUT type="checkbox" name="Prender-'''+dominio[i]+'''">Prender<BR></TD>
+                <TD><INPUT type="checkbox" name="Prender-'''+dominio[i]+'''">Encender<BR></TD>
 				<TD><INPUT type="checkbox" name="Apagar-'''+dominio[i]+'''">Apagar<BR></TD>
             </TR>'''
 
