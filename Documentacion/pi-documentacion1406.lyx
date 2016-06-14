@@ -266,6 +266,37 @@ El sistema de infraestructura virtual automatizado y con orquestación, tiene
 \end_layout
 
 \begin_layout Standard
+Implementar un servicio en una sola máquina puede ser simple, existen muchas
+ soluciones para ello pero, hoy en día nadie implementa un solo servicio
+ en una máquina.
+ Cada día los despliegues son más complejos, es necesario trabajar con aplicacio
+nes clusterizadas, múltiples datacenters, redes privadas, públicas y nubes
+ híbridas, como también aplicaciones con distintas dependencias.
+ Este tipo de tareas ya no pueden realizarse individualmente para cada máquina
+ y menos aún en entornos escalables donde se pueden llegar a tener cientos
+ de nodos.
+ Para ello es necesario contar con herramientas profesionales para orquestar
+ estas tareas complejas, de manera sencilla.
+ 
+\end_layout
+
+\begin_layout Standard
+Hablar de orquestación implica eficiencia en los recursos, tanto humanos
+ como computacionales, y por ello implica hablar de virtualización, aprovisionam
+iento y datacenters dinámicos.
+ En este sentido, virtualización puede aplicar a computadoras, sistemas
+ operativos, dispositivos de almacenamiento, aplicaciones o redes, sin embargo
+ la virtualización de servidores es el núcleo de ésta.
+ Las limitaciones que imponen los servidores x86, que están diseñados para
+ correr un solo sistema operativo a la vez, resultan en una gran ineficiencia
+ pudiendo alcanzar entre el cinco y quince porciento de su capacidad.
+ Ésto desafía a los administradores a utilizar software para simular la
+ existencia de hardware y crear un sistema de cómputo virtual, permitiendo
+ ejecutar más de una máquina virtual y múltiples sistemas operativos en
+ un mismo servidor, mejorando la eficiencia del mismo y reduciendo costos.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -338,30 +369,104 @@ pagebreak
 
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Introducción
 \end_layout
 
-\begin_layout Section
-Resumen del Proyecto Integrador
+\begin_layout Standard
+El sistema de infraestructura virtual automatizado y con orquestación, tiene
+ como objetivo principal brindar una herramienta a los administradores de
+ servidores que facilite la preparación y configuración de sus sistemas
+ de manera simple.
+ 
 \end_layout
 
 \begin_layout Standard
-El Sistema desarrollado en este Proyecto Integrador, pretende facilitar
- algunas de las tareas que los administradores de los laboratorios realizan
- en las salas de informática.
- Las funcionalidades desarrolladas permiten a los administradores (o incluso
- a cualquier persona sin conocimiento técnico) crear maquinas virtuales
- con un solo click, dichas maquinas virtuales cuentan con todos los servicios
- y programas necesarios para los alumnos de las diferentes carreras o inclusive
- se pueden crear maquinas virtuales con otros perfiles, como un perfil para
- docentes.
- Además, permite orquestar las políticas a seguir de las diferentes máquinas
- de la red.
+Hoy en día no se concibe la implementación de un solo servidor con un servicio.
+ Múltiples servicios virtuales dan paso a mejoras significativas en la produccón
+, aplicando técnicas de balanceo de carga, servidores redundantes, etc,
+ y por ello es necesario trabajar con aplicaciones clusterizadas, múltiples
+ datacenters, redes privadas, públicas y nubes híbridas, como también aplicacion
+es con distintas dependencias.
+ En sectores con cientos de nodos administrables, alrededor de quinientos
+ o más, esta tarea debe ser realizada por una persona que cuente con los
+ conocimientos técnicos y de los procesos de producción, como también los
+ métodos para asegurar la estabilidad y continuidad del sistema.
+ Para ello es necesario contar con herramientas profesionales para orquestar
+ estas tareas complejas, de manera sencilla.
+ En el área de cómputos, la orquestación trata de alinear los requerimientos
+ de las organizaciones con las aplicaciones, datos e infraestructura.
+ Define las políticas y los niveles de servicios a través de flujos de trabajo
+ automatizados, aprovisionamiento y administración de cambios.
+ Ésto crea una infraestructura que puede ser escalada hacia arriba o abajo
+ basándose en las necesidades de cada aplicación.
+\end_layout
+
+\begin_layout Standard
+La orquestación reduce el tiempo y el esfuerzo necesario para desplegar
+ múltiples instancias de una sola aplicación, y a medida que se requieren
+ más recursos, herramientas de automatización pueden ejecutar tareas que,
+ previamente, sólo podían ser realizadas por múltiples administradores cada
+ uno en su estación de trabajo física.
+\end_layout
+
+\begin_layout Standard
+De la mano con la orquestación, se encuentra la virtualización de computadoras,
+ sistemas operativos, dispositivos de almacenamiento, aplicaciones o redes,
+ entre otros..
+ Las limitaciones que imponen los servidores x86, que están diseñados para
+ correr un solo sistema operativo a la vez, resultan en una gran ineficiencia
+ pudiendo alcanzar entre el cinco y quince porciento de su capacidad.
+ Ésto desafía a los administradores a utilizar software para simular la
+ existencia de hardware y crear un sistema de cómputo virtual, permitiendo
+ ejecutar más de una máquina virtual y múltiples sistemas operativos en
+ un mismo servidor, mejorando la eficiencia del mismo y reduciendo costos.
+\end_layout
+
+\begin_layout Standard
+Cloud Computing o nube computacional no es lo mismo que virtualizar, en
+ realizada hace uso de la virtualización.
+ Describe el envío de recursos computacionales compartidos (software o datos)
+ bajo demanda a través de Internet.
+ Se esté o no en la nube, se puede comenzar virtualizando los servidores
+ locales y luego moverlos a ella para obtener aún más agilidad.
+ Así, la orquestación es crucial al momento de desplegar servicios en la
+ nube porque éstos:
+\end_layout
+
+\begin_layout Itemize
+Están pensados para escalar hacia arriba arbitraria y dinámicamente, sin
+ requerir intervención humana directa para hacerlo.
+\end_layout
+
+\begin_layout Itemize
+Forman parte de flujos de trabajo en varios dominos técnicos y de negocio.
+\end_layout
+
+\begin_layout Standard
+La virtualización se destaca también apoyando la innovación a través del
+ uso de entornos virtuales para desarrollar, practicar y aprender.
+ Un practicante puede comenzar un curso o trabajo un entorno de sistema
+ conocido, estándar y aislado del entorno de producción; si se produce algún
+ tipo de daño solo afecta al sistema virtual.
+ Además se puede establecer entornos únicos de software para el aprendizaje
+ sin demandar el uso exclusivo de recursos de hardware.
+ 
 \end_layout
 
 \begin_layout Subsection
 Descripción
+\end_layout
+
+\begin_layout Standard
+Implementar un servicio o instalar programas en una sola máquina, ya sea
+ física o virtual, puede ser simple, existen muchas soluciones para ello
+ pero en sectores con cientos de nodos administrables, alrededor de quinientos
+ o más, esta tarea debe ser realizada por una persona que cuente con los
+ conocimientos técnicos y de los procesos de producción, como también los
+ métodos para asegurar la estabilidad y continuidad del sistema.
+ Para ello es necesario contar con herramientas profesionales para orquestar
+ estas tareas complejas, de manera sencilla.
 \end_layout
 
 \begin_layout Standard
@@ -383,13 +488,6 @@ La segunda parte está destinada a la administración de la configuración
  Esto evita que el administrador tenga que preparar cada estación de trabajo
  de a una por vez, disminuyendo la carga de trabajo y el tiempo requerido
  para llevar a cabo la tarea.
-\end_layout
-
-\begin_layout Standard
-El sistema incluye desarrollo en el lenguaje de programación Python, bash
- y el lenguaje propio de Puppet, la herramienta utilizada para la orquestación.
- El servidor de aprovisionamiento, haciendo uso del protocolo PXE, será
- el encargado de atender las peticiones de los dispositivos para su instalación.
 \end_layout
 
 \begin_layout Subsection
@@ -462,7 +560,7 @@ La principal motivación en este Proyecto Integrador es darle un cierre a
 \end_layout
 
 \begin_layout Subsection
-Intereses Institucionales 
+Intereses institucionales 
 \end_layout
 
 \begin_layout Standard
@@ -500,6 +598,13 @@ s .
  del desarrollo ágil, tener todo anotado luego facilita la generación del
  informe.
  
+\end_layout
+
+\begin_layout Standard
+El sistema incluye desarrollo en el lenguaje de programación Python, Bash
+ y el lenguaje propio de Puppet, la herramienta utilizada para la orquestación.
+ El servidor de aprovisionamiento, haciendo uso del protocolo PXE, será
+ el encargado de atender las peticiones de los dispositivos para su instalación.
 \end_layout
 
 \begin_layout Standard
@@ -586,7 +691,7 @@ status open
 <column alignment="center" valignment="top" width="10cm">
 <column alignment="center" valignment="top" width="0pt">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -602,16 +707,63 @@ rowcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 ID
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Requerimiento 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -620,14 +772,37 @@ Requerimiento
 \begin_inset Text
 
 \begin_layout Plain Layout
-Importancia 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
+Importancia
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -636,7 +811,7 @@ RF01
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -645,7 +820,7 @@ La herramienta debe poder aprovisionar máquinas virtuales.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -656,7 +831,7 @@ La herramienta debe poder aprovisionar máquinas virtuales.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -677,7 +852,7 @@ RF02
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -686,7 +861,7 @@ La herramienta debe poder aprovisionar distintos sistemas operativos.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -697,7 +872,7 @@ La herramienta debe poder aprovisionar distintos sistemas operativos.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -706,7 +881,7 @@ RF03
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -716,7 +891,7 @@ La herramienta debe aprovisionar software y configuraciones a las máquinas.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -727,7 +902,7 @@ La herramienta debe aprovisionar software y configuraciones a las máquinas.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -748,7 +923,7 @@ RF04
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -758,7 +933,7 @@ La herramienta debe poder aprovisionar utilizando plantillas en los deferentes
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -769,7 +944,7 @@ La herramienta debe poder aprovisionar utilizando plantillas en los deferentes
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -778,7 +953,7 @@ RF05
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -787,7 +962,7 @@ La herramienta debe poder aprovisionar utilizando repositorios locales.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -798,7 +973,7 @@ La herramienta debe poder aprovisionar utilizando repositorios locales.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -819,7 +994,7 @@ RF06
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -829,7 +1004,7 @@ La herramienta debe poder actualizar los repositorios locales.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -840,7 +1015,7 @@ La herramienta debe poder actualizar los repositorios locales.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -849,7 +1024,7 @@ RF07
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -860,7 +1035,7 @@ La herramienta debe poder setear políticas a las máquinas virtuales,utilizando
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -871,7 +1046,7 @@ La herramienta debe poder setear políticas a las máquinas virtuales,utilizando
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -892,7 +1067,7 @@ RF08
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -913,7 +1088,7 @@ La herramienta debe ser escalable, integrar nuevas máquinas virtuales fácilmen
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -922,7 +1097,7 @@ RF09
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -943,7 +1118,7 @@ La herramienta debe poseer una interfaz web que permita utilizar todas sus
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -964,7 +1139,7 @@ RF10
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -974,7 +1149,7 @@ La herramienta debe permitir visualizar y modificar el estado de las máquinas
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -985,7 +1160,7 @@ La herramienta debe permitir visualizar y modificar el estado de las máquinas
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -994,7 +1169,7 @@ RNF01
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1004,7 +1179,7 @@ La herramienta debe utilizar licencias de código abierto.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1015,7 +1190,7 @@ La herramienta debe utilizar licencias de código abierto.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1036,7 +1211,7 @@ RNF02
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1104,7 +1279,7 @@ status open
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="10cm">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1120,7 +1295,31 @@ rowcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 ID
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1129,14 +1328,37 @@ ID
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Requerimiento 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1145,7 +1367,7 @@ RNF01
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1157,7 +1379,7 @@ La herramienta debe utilizar licencias de código abierto.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1295,10 +1517,6 @@ Servidor de maquinas virtuales separado
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1344,10 +1562,6 @@ Creación de VMs
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1366,19 +1580,19 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename Imagenes/Diagramas de secuencia/Modifica Politicas.png
 	width 15cm
-	BoundingBox 0bp 10cm 744bp 644bp
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1656,7 +1870,31 @@ rowcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 ID
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1665,7 +1903,30 @@ ID
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Riesgo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1674,7 +1935,30 @@ Riesgo
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Tipo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2161,7 +2445,31 @@ rowcolor{cyan}
 
 \end_inset
 
-Probabilidad /Impacto 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
+Probabilidad /Impacto
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
@@ -2170,7 +2478,30 @@ Probabilidad /Impacto
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Insignificante 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2179,7 +2510,30 @@ Insignificante
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Tolerable 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2188,7 +2542,30 @@ Tolerable
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Grave 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2211,7 +2588,31 @@ cellcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Baja 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2297,7 +2698,31 @@ cellcolor{cyan}
 
 \end_inset
 
-Moderada 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
+Moderada
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
@@ -2383,7 +2808,31 @@ cellcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Alta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2521,7 +2970,31 @@ rowcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 ID
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2530,7 +3003,30 @@ ID
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Riesgo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2539,7 +3035,30 @@ Riesgo
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Probabilidad
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2548,7 +3067,30 @@ Probabilidad
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Impacto 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2557,7 +3099,30 @@ Impacto
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Importancia 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3361,7 +3926,7 @@ textwidth}{!}{%
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="5">
+<lyxtabular version="3" rows="12" columns="5">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top" width="4cm">
@@ -3385,7 +3950,31 @@ rowcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 ID
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3394,7 +3983,30 @@ ID
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Riesgo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3403,7 +4015,30 @@ Riesgo
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Consecuencias 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3412,7 +4047,30 @@ Consecuencias
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Solución 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3421,7 +4079,30 @@ Solución
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Mitigación 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3437,7 +4118,7 @@ RS01
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3446,7 +4127,7 @@ Falta de infraestructura para llevar a cabo el proyecto
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3456,7 +4137,7 @@ Complicaciones para desarrollar, realizar pruebas y realizar puestas en
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3497,7 +4178,7 @@ RS02
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3507,7 +4188,7 @@ Incompatibilidad de funciones del sistema operativo con el Hardware disponible
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3516,7 +4197,7 @@ Dificultades para integrar varios Sistemas Operativos al desarrollo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3546,7 +4227,7 @@ RS03
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3556,7 +4237,7 @@ Dificultades en la interacción entre la aplicación y el sistema operativo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3566,7 +4247,7 @@ s
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3608,7 +4289,7 @@ RS04
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3617,7 +4298,7 @@ Diferencias de paquetes disponibles entre los Sistemas operativo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3627,7 +4308,7 @@ Mayor dificultad para que la aplicación soporte varios Sistemas Operativos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3656,7 +4337,7 @@ RS05
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3665,7 +4346,7 @@ Diferencias entre funciones disponibles entre los Sistemas operativo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3675,7 +4356,7 @@ Mayor dificultad para que la aplicación soporte varios Sistemas Operativos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3718,7 +4399,7 @@ RS06
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3727,7 +4408,7 @@ Disponibilidad de información sobre las herramientas
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3736,7 +4417,7 @@ Mayor tiempo de aprendizaje sobre las herramientas
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3766,7 +4447,7 @@ RS07
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3775,7 +4456,7 @@ Miembro del grupo de desarrollo abandona el proyecto
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3785,7 +4466,7 @@ Extensión de los tiempos de desarrollo, posibles cambios de requerimientos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3799,7 +4480,7 @@ Eliminar objetivos secundarios o requerimientos para acortar el tiempo de
 \begin_inset Text
 
 \begin_layout Plain Layout
-Rever los requerimientos para limitarse a los esenciales 
+Reveer los requerimientos para limitarse a los esenciales 
 \end_layout
 
 \end_inset
@@ -3827,7 +4508,7 @@ RS08
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3836,7 +4517,7 @@ Conflictos por el tiempo dedicado a otros trabajos/proyectos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3845,7 +4526,7 @@ Extensión de los tiempos de desarrollo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3858,7 +4539,7 @@ Dedicación de horas semanales exclusivas al proyecto
 \begin_inset Text
 
 \begin_layout Plain Layout
-Rever los requerimientos para eliminar los pocos importantes 
+Reveer los requerimientos para eliminar los pocos importantes 
 \end_layout
 
 \end_inset
@@ -3874,7 +4555,7 @@ RS09
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3883,7 +4564,7 @@ Cambios de requerimientos que impliquen modificar lo ya realizado
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3893,7 +4574,7 @@ Extensión en los tiempos de desarrollo.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3915,7 +4596,7 @@ s
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3936,7 +4617,7 @@ RS10
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3945,7 +4626,7 @@ Tiempos de aprendizaje o de desarrollo subestimados
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3955,7 +4636,7 @@ Extensión en los tiempos de desarrollo.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3965,12 +4646,59 @@ Cambiar requerimientos para disminuir el tiempo requerido para completar
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Aumentar la dedicación de tiempo al proyecto.
  
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RS11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Compatibilidad de las herramientas con los distintos sistemas operativos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Impedimento en la continuación del proyecto.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cambiar las herramientas incompatibles.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Utilización de herramientas específicas para cada sistema operativo.
 \end_layout
 
 \end_inset
@@ -4037,7 +4765,7 @@ pagebreak
 
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Marco teórico
 \end_layout
 
@@ -4080,11 +4808,11 @@ La información contenida en esta sección se desprende de las investigaciones
  realizadas en cada una de las etapas del Proyecto Integrador.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Sistema operativo
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 CentOS 
 \end_layout
 
@@ -4221,7 +4949,7 @@ En cuanto a systemd, es el reemplazo de init como demonio para iniciar servicios
  del sistema.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Debian
 \end_layout
 
@@ -4253,10 +4981,6 @@ Debian logo
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4324,7 +5048,7 @@ Esto permitiría aprovechar todas las ventajas de FreeBSD en el servidor,
  la necesidad de que se familiaricen con FreeBSD.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 FreeBSD
 \end_layout
 
@@ -4428,7 +5152,7 @@ Compatibilidad binaria con muchos programas nativos de Linux, SCO, SVR4,
 Soporte para multiprocesamiento simétrico con múltiples CPUs.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Solaris
 \end_layout
 
@@ -4460,10 +5184,6 @@ Solaris logo
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4543,8 +5263,8 @@ Sistema de archivos ZFS.
 Solaris Containers
 \end_layout
 
-\begin_layout Subsection
-Selección del Sistema Operativo Base.
+\begin_layout Subsubsection
+Selección del sistema operativo base.
 \end_layout
 
 \begin_layout Standard
@@ -4579,7 +5299,7 @@ También se tuvo en cuenta la inclusión de systemd y que una gran cantidad
  están diseñadas para Red Hat Enterprise y por ende CentOS
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Virtualización 
 \end_layout
 
@@ -4620,11 +5340,22 @@ ad y reducir los costos, los cuales son tópicos importantes en cualquier
  las máquinas virtuales.
 \end_layout
 
-\begin_layout Subsection
-Tipos de virtualización
+\begin_layout Standard
+En resumen, una máquina virtual (“virtual machine” - VM) es un contenedor
+ de software altamente aislado con un sistema operativo y aplicaciones adentro.
+ Cada VM es completamente independiente.
+ Poner múltiples VMs en una misma computadora habilita a varias aplicaciones
+ y sistemas operativos correr en un solo servidor virtual, o host.
+ Una fina capa de software, llamado hypervisor, desacopla las máquinas virtuales
+ del host y dinámicamente asigna recursos computacionales a cada VM como
+ sea necesario.
 \end_layout
 
 \begin_layout Subsubsection
+Tipos de virtualización
+\end_layout
+
+\begin_layout Paragraph
 Virtualización completa 
 \end_layout
 
@@ -4677,16 +5408,12 @@ Diagrama de virtualización completa
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Para-virtualización 
 \end_layout
 
@@ -4733,16 +5460,12 @@ Diagrama de para-virtualización
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Para-virtualización de drivers
 \end_layout
 
@@ -4753,7 +5476,7 @@ La para-virtualización y la virtualización completa pueden ser combinadas
  para-virtualizados en sistemas operativos completamente virtualizados.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Virtualización a nivel del sistema operativo 
 \end_layout
 
@@ -4805,16 +5528,12 @@ Diagrama de virtualización a nivel de SO
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Emulación 
 \end_layout
 
@@ -4827,7 +5546,7 @@ Un emulador es hardware o software que permite a un sistema de computación
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Herramientas de virtualización 
 \end_layout
 
@@ -4857,7 +5576,7 @@ VirtualBox
 VMWare Workstation 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Docker
 \end_layout
 
@@ -4932,7 +5651,7 @@ En las últimas versiones de Docker se ha introducido drivers de Docker y
  de Linux.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 KVM/Qemu 
 \end_layout
 
@@ -5013,7 +5732,7 @@ Qemu puede utilizarse como emulador y como virtualizador.
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 OpenVZ 
 \end_layout
 
@@ -5075,7 +5794,7 @@ OpenVZ es una herramienta de virtualización para Linux basada en contenedores.
  algunos seleccionados) los contenedores a la vez.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 VirtualBox
 \end_layout
 
@@ -5133,7 +5852,7 @@ AL día de la fecha, VirtualBox corre en Windows, Linux, Macintosh y Solaris
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Selección de la herramienta de virtualización.
 \end_layout
 
@@ -5160,7 +5879,7 @@ Teniendo en cuenta los puntos enunciados antes, el conjunto KVM/Qemu es
  que es utilizada en el laboratorio de computación de la FCEFyN.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Aprovisionamiento 
 \end_layout
 
@@ -5213,7 +5932,7 @@ En resumen, el aprovisionamiento de máquinas virtuales se realiza basado
  virtual, según sea la funcionalidad que se le vaya a dar.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Herramientas de aprovisionamiento 
 \end_layout
 
@@ -5238,7 +5957,7 @@ Foreman
 Vagrant 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Cobbler 
 \end_layout
 
@@ -5308,7 +6027,7 @@ Cuenta con un sistema integrado para administración de configuración pero
  el tamaño del archivo kickstart.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Fully Automatic Installation (FAI)
 \end_layout
 
@@ -5341,10 +6060,6 @@ FAI logo
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -5392,7 +6107,7 @@ Instalar máquinas virtuales usando KVM, Xen y VirtualBox.
 Control remoto vía SSH durante la instalación.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Foreman 
 \end_layout
 
@@ -5468,7 +6183,7 @@ Agrupar hosts y dirigirlos en conjunto, sin importar la ubicación.
 Rever cambios históricos para auditoría y resolución de problemas.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Vagrant
 \end_layout
 
@@ -5520,7 +6235,7 @@ Vagrant provee entornos fáciles de reproducir, configurar construidos sobre
  el software en la máquina.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Selección de la herramienta de aprovisionamiento.
 \end_layout
 
@@ -5550,7 +6265,7 @@ La herramienta seleccionada fue Cobbler dado que soportada por la comunidad,
  un servidor DHCP externo a la aplicación.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Orquestación
 \end_layout
 
@@ -5620,7 +6335,7 @@ Entonces, automatización trata acerca de codificar tareas y orquestación
  Esta última toma ventaja de la automatización para reutilizar bloques básicos.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Herramientas de orquestación
 \end_layout
 
@@ -5641,7 +6356,7 @@ Chef
 Puppet 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Ansible 
 \end_layout
 
@@ -5717,7 +6432,7 @@ Ansible puede instalarse en ambientes virtualizados, nubes públicas y privadas,
  incluyendo VMWare, OpenStack, AWS, Eucalyptus, KVM y CloudStack.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Chef 
 \end_layout
 
@@ -5810,7 +6525,7 @@ Chef Server es soportado sobre RHEL/CentOS/Oracle Linux, y Ubuntu.
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Puppet 
 \end_layout
 
@@ -5914,7 +6629,7 @@ Los sistemas soportados son Linux (Red Hat Enterprise y derivados, Debian,
  Ubuntu, Fedora), Unix (BSD, Mac OS X, Oracle Solaris, AIX) y Windows.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Selección de la herramienta de Orquestación.
 \end_layout
 
@@ -5930,7 +6645,7 @@ Puppet cuenta con dos versiones, Enterprise y Open Source, por lo cual siguiendo
  el requerimiento no funcional RNF01 se escogió la versión Open Source
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Protocolo PXE
 \end_layout
 
@@ -6239,7 +6954,7 @@ pagebreak
 
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Desarrollo
 \end_layout
 
@@ -6291,7 +7006,7 @@ Al día de la fecha, Ubuntu 16.04 LTS y Windows 10 no tienen soporte de la
  
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Elección de la plataforma
 \end_layout
 
@@ -6421,20 +7136,16 @@ Arquitectura de desarrollo en un entorno mixto.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 KVM/Qemu
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Arquitectura
 \end_layout
 
@@ -6475,16 +7186,12 @@ Diagrama de arquitectura de KVM/Qemu
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Requerimientos de hardware
 \end_layout
 
@@ -6619,7 +7326,7 @@ En caso de no estar cargados los módulos, se deben cargar manualmente, de
 modprobe kvm_amd
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Limitaciones de KVM
 \end_layout
 
@@ -6672,7 +7379,7 @@ KVM no soporta kernels de real time.
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Configuración de la red
 \end_layout
 
@@ -6692,11 +7399,11 @@ Dispositivos físicos distribuidos usando la asignación de dispositivos PCI
 Redes puenteadas (bridge)
 \end_layout
 
-\begin_layout Subsection
-Creación del sistema de virtualización qemu-KVM
+\begin_layout Subsubsection
+Creación del sistema de virtualización KVM/Qemu
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Instalación de paquetes
 \end_layout
 
@@ -6737,7 +7444,7 @@ Se añade el usuario que va a utilizar KVM al grupo KVM, en este caso el
 usrermod -G kvm -a admin
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Creación de una red NAT
 \end_layout
 
@@ -6792,10 +7499,6 @@ Detalles de conexión
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -6842,16 +7545,12 @@ Crear red virtual
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Creación de VMs
 \end_layout
 
@@ -6949,7 +7648,7 @@ virt-install --connect qemu:///system --virt-type kvm --name centos1025
  --network network=puppet --pxe --os-type linux --os-variant rhel7
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Cobbler
 \end_layout
 
@@ -7008,11 +7707,11 @@ systemctl mask firewalld.service
 systemctl status firewalld.service
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Tópicos generales de Cobbler
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Modelado
 \end_layout
 
@@ -7056,16 +7755,12 @@ Modelado de Cobbler
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Distros
 \end_layout
 
@@ -7082,7 +7777,7 @@ import
 en vez de añadir la distribución manualmente.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Profiles
 \end_layout
 
@@ -7095,7 +7790,7 @@ s, como puede ser un kickstart.
  o de escritorio.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Systems 
 \end_layout
 
@@ -7109,7 +7804,7 @@ Los grabaciones de sistemas mapean una pieza de hardware (o una máquina
  dada, se debería crear una grabación del sistema para ésta.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Images 
 \end_layout
 
@@ -7137,7 +7832,7 @@ https://fedorahosted.org/cobbler/wiki/AllAboutImages
 https://fedorahosted.org/cobbler/wiki/KoanWithIsos
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Repositorios 
 \end_layout
 
@@ -7434,7 +8129,7 @@ Se muestra la información acerca del mismo con:
 cobbler repo report --name=puppet
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Import
 \end_layout
 
@@ -7541,7 +8236,7 @@ cobbler report
  a import para saltar la auto detección del kickstart.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Kickstarts
 \end_layout
 
@@ -7557,7 +8252,7 @@ Algunas palabras clave (keywords) son opcionales, mientras que otras son
  necesarias para la instalación.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Keywords
 \end_layout
 
@@ -7818,7 +8513,7 @@ Si se especifica zerombr, y si es su único argumento, cualquier tabla de
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Snippets
 \end_layout
 
@@ -7889,7 +8584,7 @@ Cobbler no reconoce caracteres que no estén en el alfabeto inglés, por este
  u otros que lleven tilde.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Replicate
 \end_layout
 
@@ -8005,11 +8700,11 @@ Los archivos son transferidos por rsync (sobre ssh) o por scp, por lo que
  o si no, utilizar authorized_keys en el host remoto.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Sistema de aprovisionamiento y automatización Cobbler
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 
 \family roman
 Instalación
@@ -8106,7 +8801,7 @@ yum install cobbler cobbler-web dhcp pykickstart system-config-kickstarttftp
  httpd xinetd fence-agents-all -y
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Configuración de servicios
 \end_layout
 
@@ -8115,7 +8810,7 @@ Se deben configurar los servios que requiere cobbler (DHCP, FTP.
  HTTP, etc)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Configurar FTP y activación de RSYNCD
@@ -8145,7 +8840,7 @@ systemctl start rsyncd
 systemctl enable rsyncd
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Configurar DHCP
@@ -9107,7 +9802,7 @@ cobbler distro list
 cobbler profile list
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Puppet
 \end_layout
 
@@ -9136,11 +9831,11 @@ puppet cert
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Tópicos generales de Puppet
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Module
 \end_layout
 
@@ -9193,7 +9888,7 @@ Todos los módulos accesibles por el puppet master están localizados en los
 puppet agent --configprint modulepath 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Resources
 \end_layout
 
@@ -9613,7 +10308,7 @@ Esto generalmente maneja el aspecto más importante de un recurso en el sistema
 \end_layout
 
 \end_deeper
-\begin_layout Paragraph*
+\begin_layout Paragraph
 Tipos de recursos
 \end_layout
 
@@ -9920,7 +10615,7 @@ Administración de usuarios.
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Manifiests 
 \end_layout
 
@@ -9973,7 +10668,7 @@ Antes de aplicar cambios en el sistema, se puede utilizar la bandera
 puppet apply --noop 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Catálogos
 \end_layout
 
@@ -9998,7 +10693,7 @@ En la arquitectura estándar maestro/agente, los nodos solicitan los catálogos
  cacheado.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Classes 
 \end_layout
 
@@ -10045,7 +10740,7 @@ init.pp
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Funciones
 \end_layout
 
@@ -10063,7 +10758,7 @@ Las funciones se ejecutan en el Puppet master, no se ejecutan en el agente.
  nodo maestro.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Metaparámetros
 \end_layout
 
@@ -10085,7 +10780,7 @@ Los metaparámetros hacen cosas como agregar metadata a un recurso (alias,
  log (loglevel).
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Definición de nodos
 \end_layout
 
@@ -10108,7 +10803,7 @@ certname.
  node 'db1.example.com' { include common include mysql }
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Ubicación
 \end_layout
 
@@ -10198,7 +10893,7 @@ common
 .
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Nombramiento
 \end_layout
 
@@ -10252,7 +10947,7 @@ include apache, squid
 }
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 El nodo default
 \end_layout
 
@@ -10265,7 +10960,7 @@ default
 será utilizado.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Expresiones regulares
 \end_layout
 
@@ -10304,7 +10999,7 @@ Si el nombre de nodo es del tipo FQDN (Fully Qualified Domain Name), Puppet
 Puppet utilizará el nodo default.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Node group 
 \end_layout
 
@@ -10314,7 +11009,7 @@ Los grupos de nodos o node groups permiten segmentar todos los nodos de
  colectada por 'facter tool'.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Creación del sistema de orquestación Puppet.
 \end_layout
 
@@ -10333,7 +11028,7 @@ Se toma la opción de utilizar la arquitectura cliente-servidor.
  El servidor necesariamente debe correr en un sistema basado en Unix.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Requerimientos de sistema y chequeo de versión de sistema operativo
 \end_layout
 
@@ -10369,7 +11064,7 @@ Librerías opcionales: msgpack gem es requerido si se utiliza msgpack racionaliz
 ción.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Chequeo de la configuración de red
 \end_layout
 
@@ -10408,7 +11103,7 @@ Para cumplir con este ultimo apartado, se decidió editar el archivo
  corresponde cada dirección IP.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Instalación de puppetserver
 \end_layout
 
@@ -10491,7 +11186,7 @@ Si se desea por ejemplo, utilizar 1536MB se debe reemplazar 2g por 1536m:
 JAVA_ARGS="-Xms1536m -Xmx1536m"
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Configuraciones para los servidores:
 \end_layout
 
@@ -10593,7 +11288,7 @@ autosign = true
 runinterval = 2m
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Instalar el paquete puppet-agent
 \end_layout
 
@@ -10601,7 +11296,7 @@ Instalar el paquete puppet-agent
 Según sea el sistema operativo sobre el que se instalará, se tiene:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Centos y derivados: 
@@ -10625,7 +11320,7 @@ Del mismo modo que para el servidor, es necesario añadir el repositorio
 # yum install puppet-agent
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Ubuntu y derivados: 
@@ -10659,7 +11354,7 @@ sudo apt-get update
 sudo apt-get install puppet-agent
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subparagraph
 
 \series bold
 Windows 7: 
@@ -10684,12 +11379,27 @@ Arquitectura x86: Debe utilizar puppet-agent-<VERSION>-x86.msi.
 
 \begin_layout Standard
 La instalación puede ser gráfica o automática.
- Para la última, desde el cuadro “Ejecutar”:
+ Para la última, desde el cuadro “Ejecutar”: 
 \end_layout
 
 \begin_layout Standard
-msiexec /qn /norestart /i puppet-agent-<VERSION>-x64.msi PUPPET_MASTER_SERVER=pup
-pet
+msiexec /qn /norestart /i puppet-agent-<VERSION>-x64.msi 
+\begin_inset Newline newline
+\end_inset
+
+PUPPET_MASTER_SERVER=puppet 
+\begin_inset Newline newline
+\end_inset
+
+PUPPET_AGENT_ACCOUNT_USER=Administrador 
+\begin_inset Newline newline
+\end_inset
+
+PUPPET_AGENT_ACCOUNT_PASSWORD=qwerty 
+\begin_inset Newline newline
+\end_inset
+
+PUPPET_AGENT_ACCOUNT_DOMAIN=example.com
 \end_layout
 
 \begin_layout Standard
@@ -10711,7 +11421,7 @@ Por defecto, el valor del hostname de servidor es puppet, si se nombró de
  otra forma a la máquina servidora del puppet server, se debe editar esto.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Configuraciones para los agentes
 \end_layout
 
@@ -10855,8 +11565,8 @@ classfile = $vardir/classes.txt
 localconfig = $vardir/localconfig
 \end_layout
 
-\begin_layout Subsubsection
-Ejecutar puppet
+\begin_layout Paragraph
+Ejecutar Puppet
 \end_layout
 
 \begin_layout Standard
@@ -10945,7 +11655,7 @@ Para corroborar la creación y firmado del servicio:
 sudo puppet cert list --all 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Windows 7
 \end_layout
 
@@ -10955,7 +11665,7 @@ La instalación automatizada de Windows 7 requiere su preparación sobre un
  bajo Linux.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 El lado de Windows
 \end_layout
 
@@ -11010,7 +11720,7 @@ Imágen de instalación de Windows 7:
  sistema operativo.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Fases de preinstalación de Windows
 \end_layout
 
@@ -11019,7 +11729,7 @@ En esta sección se presenta una serie de conceptos entre los que se incluyen
  la terminología, las tecnologías principales y los métodos de implementación.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Windows SIM (System Image Manager)
 \end_layout
 
@@ -11033,7 +11743,7 @@ Herramienta que permite crear archivos de respuesta para la instalación
  Esta herramienta se instala junto con Windows Automated Installation Kit.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Archivo de respuesta
 \end_layout
 
@@ -11050,7 +11760,7 @@ Un archivo XML en el que se escriben las respuestas para una serie de cuadros
  Image Manager).
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Minisec
 Contenido del archivo de respuesta
 \end_layout
 
@@ -11088,7 +11798,7 @@ Microsoft usa los paquetes para distribuir actualizaciones de software,
  En este proyecto no se ha utilizado esta sección.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Entorno de preinstalación de Windows (Windows PE)
 \end_layout
 
@@ -11104,7 +11814,7 @@ WinPE o Windows Preinstallation Environment es un Sistema operativo mínimo
  en archivos.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 ImageX
 \end_layout
 
@@ -11158,7 +11868,7 @@ Es el path completo donde se guardará la imagen en SAMBA.
 Indica al programa que se desea verificar la consistencia de la imagen creada.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Sysprep
 \end_layout
 
@@ -11238,7 +11948,7 @@ Aplica las configuraciones dentro de un archivo de respuestas de instalación
  sea tomado por el instalador de Windows.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Startnet.cmd
 \end_layout
 
@@ -11250,7 +11960,7 @@ Startnet.cmd de forma predeterminada inicia wpeinit.exe, cuando se carga en
  Es necesario para montar SAMBA.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 Oscdimg
 \end_layout
 
@@ -11431,7 +12141,7 @@ IPX/SPX
 Controladores de red
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Creación de la imágen de instalación Windows 7
 \end_layout
 
@@ -11464,9 +12174,43 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
-\series bold
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{cyan}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Paso
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11475,9 +12219,30 @@ Paso
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
-\series bold
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Máquina técnica
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11486,9 +12251,30 @@ Máquina técnica
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
-\series bold
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Máquina referencia
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11499,8 +12285,6 @@ Máquina referencia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
 1
 \end_layout
 
@@ -11530,8 +12314,18 @@ Instalar WAIK
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
-\series bold
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 2
 \end_layout
 
@@ -11562,8 +12356,6 @@ Crear un disco de inicio del Entorno de Preinstalación de Windows (WinPE)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
 3
 \end_layout
 
@@ -11593,8 +12385,18 @@ Instalar y personalizar Windows 7
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
-\series bold
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 4
 \end_layout
 
@@ -11625,8 +12427,6 @@ Generalizar el equipo de referencia con Sysprep preparando la imágen para
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
 5
 \end_layout
 
@@ -11656,8 +12456,18 @@ Capturar el equipo de referencia a un archivo de imágen mediante ImageX
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
-\series bold
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 6
 \end_layout
 
@@ -11687,8 +12497,6 @@ Crear archivo Autounattend.xml
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
 7
 \end_layout
 
@@ -11739,7 +12547,7 @@ Pasos automatización Windows 7
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Instalar WAIK
 \end_layout
 
@@ -11753,7 +12561,7 @@ Desde la página oficial de Microsoft descargar el archivo KB3AIK_EN.iso,
 https://www.microsoft.com/es-ar/download/details.aspx?id=5753
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 WinPE
 \end_layout
 
@@ -11949,7 +12757,7 @@ winpe
 winpe_cobbler_amd64.iso 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Instalar y personalizar Windows 7
 \end_layout
 
@@ -12038,12 +12846,6 @@ Paso de archivos a Windows
 
 \end_layout
 
-\begin_layout Plain Layout
-\noindent
-\align center
-
-\end_layout
-
 \end_inset
 
 
@@ -12124,12 +12926,6 @@ Paso de archivos a Windows
 
 \end_layout
 
-\begin_layout Plain Layout
-\noindent
-\align center
-
-\end_layout
-
 \end_inset
 
 
@@ -12161,7 +12957,7 @@ etc
 hosts
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Generalizar el equipo de referencia para preparar la imágen 
 \end_layout
 
@@ -12206,12 +13002,6 @@ Modo auditoría
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
 
 \end_layout
 
@@ -12565,7 +13355,7 @@ ImageX capturando imágen
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Autounattend.xml
 \end_layout
 
@@ -12631,10 +13421,6 @@ Windows System Image Manager
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -12854,10 +13640,6 @@ Configuración discos.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -13028,10 +13810,6 @@ Discos.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -13064,10 +13842,6 @@ Instalación del SO.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -13628,7 +14402,7 @@ Cuentas de usuario, invitado.
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Crear nuevos medios de instalación de Windows 7 para la imagen personalizada
 \end_layout
 
@@ -13693,7 +14467,7 @@ En este punto se tiene una imagen de instalación personalizada y automatizada
  para el posterior despliegue a través de la red.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 El lado de Linux
 \end_layout
 
@@ -14032,7 +14806,7 @@ sudo ls /media/SAMBA/
 Deberían aparecer ya los archivos compartidos en esa ubicación.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Integración con Cobbler
 \end_layout
 
@@ -14084,7 +14858,7 @@ sudo cobbler sync
 sudo systemctl restart cobblerd
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Interfaz Web
 \end_layout
 
@@ -14194,10 +14968,6 @@ Metodo get
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -14246,10 +15016,6 @@ Metodo post
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -14287,10 +15053,6 @@ Metodo run
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -14343,10 +15105,6 @@ Crear Virtual Machine
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -14428,10 +15186,6 @@ Editar politicas
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -14443,10 +15197,6 @@ placement H
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \noindent
@@ -14470,16 +15220,12 @@ Estado de las Virtual Machine
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Validación de las Herramientas
 \end_layout
 
@@ -14547,7 +15293,31 @@ rowcolor{cyan}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 ID
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14556,7 +15326,30 @@ ID
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Requerimiento asociado 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14565,7 +15358,30 @@ Requerimiento asociado
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Casos de prueba 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14574,7 +15390,30 @@ Casos de prueba
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Pasos de la prueba 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14583,7 +15422,30 @@ Pasos de la prueba
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Datos de la prueba 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14592,7 +15454,30 @@ Datos de la prueba
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Resultado esperado 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14601,7 +15486,30 @@ Resultado esperado
 \begin_inset Text
 
 \begin_layout Plain Layout
-Prioridad 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
+Prioridad
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
@@ -14610,7 +15518,30 @@ Prioridad
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Ejecutante 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14619,7 +15550,30 @@ Ejecutante
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
 Resultado obtenido 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14711,7 +15665,7 @@ OK
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14732,7 +15686,7 @@ PU_02
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14741,7 +15695,7 @@ RF01 RF02 RF03 RF04 RF05 RF08 RF09
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14750,7 +15704,7 @@ Crear varias maquina virtual con el mismo perfil
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14760,7 +15714,7 @@ Crear varias maquina virtual con el mismo perfil
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14769,7 +15723,7 @@ Centos = 0 Ubuntu = 3 Windows = 0
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14778,7 +15732,7 @@ Correcta Creación de 3 maquinas virtuales, cada una con el SO Ubuntu14
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14787,7 +15741,7 @@ Alta
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14796,7 +15750,7 @@ Usuario
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14807,7 +15761,7 @@ OK
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14816,7 +15770,7 @@ PU_03
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14825,7 +15779,7 @@ RF09
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14834,7 +15788,7 @@ Tipo de dato incorrecto en la creación de VM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14844,7 +15798,7 @@ Tipo de dato incorrecto en la creación de VM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14853,7 +15807,7 @@ Centos = hola Ubuntu = 1 Windows = 1
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14862,7 +15816,7 @@ Mensaje indicando que se deben utilizar números
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14871,7 +15825,7 @@ Baja
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14880,7 +15834,7 @@ Usuario
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14891,7 +15845,7 @@ OK
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14912,7 +15866,7 @@ PU_04
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14921,7 +15875,7 @@ RF09
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14930,7 +15884,7 @@ Ausencia de dato
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14940,7 +15894,7 @@ Ausencia de dato
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14949,7 +15903,7 @@ Centos = Ubuntu = 1 Windows = 1
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14958,7 +15912,7 @@ Mensaje indicando que se deben utilizar números como datos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14967,7 +15921,7 @@ Baja
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14976,7 +15930,7 @@ Usuario
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15047,6 +16001,11 @@ begin{turn}{90}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="9">
 <features rotate="0" tabularvalignment="middle">
@@ -15424,6 +16383,9 @@ OK
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -15445,10 +16407,6 @@ Casos de prueba del usuario del sistema - Parte 2
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -15480,6 +16438,8 @@ begin{turn}{90}
 \end_layout
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="9">
 <features rotate="0" tabularvalignment="middle">
@@ -15493,7 +16453,7 @@ begin{turn}{90}
 <column alignment="center" valignment="top" width="1.9cm">
 <column alignment="center" valignment="top" width="1.5cm">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15502,7 +16462,7 @@ PU_09
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15511,7 +16471,7 @@ RF09 RF10
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15520,7 +16480,7 @@ Modificar estado de una VM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15530,7 +16490,7 @@ Modificar estado de una VM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15539,7 +16499,7 @@ encender/apagar
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15548,7 +16508,7 @@ Correcto encendido y apagado de la VM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15557,7 +16517,7 @@ Media
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15566,7 +16526,7 @@ Usuario
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15577,7 +16537,7 @@ OK
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15598,7 +16558,7 @@ PU_10
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15607,7 +16567,7 @@ RF06 RF07 RF09
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15616,7 +16576,7 @@ Añadir políticas de las VM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15626,7 +16586,7 @@ Añadir políticas de las VM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15636,7 +16596,7 @@ Marcar las siguientes opciones en la sección Centos: Eclipse idle repositorio
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15646,7 +16606,7 @@ Adecuación correcta del estado de la maquina virtual Centos de acuerdo a
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15655,7 +16615,7 @@ Alta
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15664,7 +16624,7 @@ Usuario
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15762,6 +16722,9 @@ OK
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -15791,11 +16754,53 @@ Casos de prueba del usuario del sistema - Parte 3
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Conclusión
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+La idea de realizar este proyecto surge luego de finalizar la Práctica Profesion
+al Supervisada, donde se tuvo una primera inserción a temas relacionados
+ con servidores y recursos de red, implentando un sistema de monitorización
+ de estos dispositivos.
+ 
+\end_layout
+
+\begin_layout Standard
+Se comenzó este proyecto con escazos conocimientos acerca de virtualización,
+ programación web, programación en Python, orquestación, etc.
+ Sin embargo, para lograr un desarrollo exitoso no es imprescindible conocer
+ profundamente los aspectos técnicos, sino que se debe saber cómo enfrentarse
+ al proceso, usar una metodología eficiente, tener una excelente comunicación
+ con el cliente, contar con un buen equipo de trabajo, saber enfrentarse
+ a temas desconocidos y ser proactivo.
+ 
+\end_layout
+
+\begin_layout Standard
+El análisis formal del problema para la obtención de los requerimientos,
+ y los riesgos del proyecto, es algo que también debe destacarse.
+ Esta es una fase imprescindible para poder llevar a cabo las estimaciones
+ pertinentes a los tiempos de desarrollo e investigación de cualquier proyecto.
+ En muchas ocasiones se cuenta con diferentes herramientas para llevar a
+ cabo una misma tarea.
+ El análisis de cada una de ellas y su elección, utilizando factores de
+ decisión ponderados, es fundamental para el trabajo como ingeniero.
+ De quí también se puede hacer notar que la utilización de soluciones de
+ código abierto no siempre permiten estar en la cresta de la ola tecnológica
+ y muchas veces es necesario contar con software privativo para sacar la
+ máxima producción.
+\end_layout
+
+\begin_layout Standard
+Este Proyecto Integrador ha consolidado buena parte de los conocimientos
+ adquiridos y, por su puesto, ha añadido muchos otros.
+ La posibilidad de poner en práctica e integrar material de diversas materias
+ ha sido beneficioso para el ejercicio de nuestra profesión en el ámbito
+ académico y laboral.
+\end_layout
+
+\begin_layout Section
 Trabajos Futuros
 \end_layout
 
@@ -15986,6 +16991,10 @@ https://technet.microsoft.com/es-es/library/dd744317%28v=ws.10%29.aspx
 https://support.microsoft.com/es-ar/kb/973289
 \end_layout
 
+\begin_layout Itemize
+http://www.letifer.org/2014/03/26/cobbler-and-windows/
+\end_layout
+
 \begin_layout Standard
 
 \series bold
@@ -15994,6 +17003,101 @@ https://support.microsoft.com/es-ar/kb/973289
 
 \begin_layout Itemize
 ftp://download.intel.com/design/archives/wfm/downloads/pxespec.pdf
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[8] Ingeniería de Software: 
+\end_layout
+
+\begin_layout Itemize
+http://www.slideshare.net/noriver/desarrollo-iterativo-e-incremental
+\end_layout
+
+\begin_layout Itemize
+http://www.javiergarzas.com/metodologias-agiles
+\end_layout
+
+\begin_layout Itemize
+http://es.wikipedia.org/wiki/Desarrollo_%C3%A1gil_de_software
+\end_layout
+
+\begin_layout Itemize
+http://ocw.unican.es/ensenanzas-tecnicas/ingenieria-del-software-ii/materiales/tem
+a7- gestionRiesgos.pdf 
+\end_layout
+
+\begin_layout Itemize
+http://www.dlsiis.fi.upm.es/docto_lsiis/Trabajos20052006/Gasca.pdf http://www.leobravo.
+cl/programas/recursos/Aprendiendo-uml-en-24-horas.pdf
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[9] Python: 
+\end_layout
+
+\begin_layout Itemize
+http://campuscurico.utalca.cl/~rgarrido/recursos/python2.pdf
+\end_layout
+
+\begin_layout Itemize
+http://stackoverflow.com/questions/3730964/python-script-execute-commands-in-
+ terminal 
+\end_layout
+
+\begin_layout Itemize
+http://www.cyberciti.biz/faq/python-execute-unix-linux-command-examples/
+\end_layout
+
+\begin_layout Itemize
+http://docs.python.org/dev/library/subprocess.html#module-subprocess
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[10] SAMBA:
+\end_layout
+
+\begin_layout Itemize
+https://es.wikipedia.org/wiki/Samba_%28programa%29
+\end_layout
+
+\begin_layout Itemize
+https://www.samba.org/
+\end_layout
+
+\begin_layout Itemize
+http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m4/servidor_samba.html
+\end_layout
+
+\begin_layout Itemize
+http://www.techbrown.com/samba-server-configuration-centos-7-rhel-7.shtml
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[11] Ubuntu:
+\end_layout
+
+\begin_layout Itemize
+https://wiki.debian.org/AutomatedInstallation
+\end_layout
+
+\begin_layout Itemize
+https://help.ubuntu.com/14.04/installation-guide/amd64/index.html
+\end_layout
+
+\begin_layout Itemize
+http://www.sanitarium.net/golug/netboot.html
+\end_layout
+
+\begin_layout Itemize
+https://help.ubuntu.com/12.04/installation-guide/example-preseed.txt
 \end_layout
 
 \end_body
