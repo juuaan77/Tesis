@@ -12314,6 +12314,18 @@ Instalar WAIK
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 2
 \end_layout
 
@@ -12373,6 +12385,18 @@ Instalar y personalizar Windows 7
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 4
 \end_layout
 
@@ -12432,6 +12456,18 @@ Capturar el equipo de referencia a un archivo de imágen mediante ImageX
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor[rgb]{0.9,1,1}
+\end_layout
+
+\end_inset
+
 6
 \end_layout
 

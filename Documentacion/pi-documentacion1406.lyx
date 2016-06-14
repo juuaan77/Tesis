@@ -7070,7 +7070,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename Imagenes/arquitectura_trabajo/Arquitectura.png
+	filename Imagenes/arquitectura_trabajo/overview diagram2.png
 	width 15cm
 
 \end_inset
@@ -7114,7 +7114,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename Imagenes/arquitectura_trabajo/Arquitectura del Sistema.png
+	filename Imagenes/arquitectura_trabajo/overview diagram.png
 	width 15cm
 
 \end_inset
