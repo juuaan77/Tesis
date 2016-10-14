@@ -4,7 +4,7 @@
 \begin_header
 \textclass scrartcl
 \begin_preamble
-\usepackage[spanish,es-tabla]{babel}
+\usepackage{babel}
 \usepackage{colortbl}
 \usepackage{graphicx}
 \usepackage{rotating}
