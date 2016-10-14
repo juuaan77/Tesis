@@ -266,8 +266,8 @@ El sistema de infraestructura virtual automatizado y con orquestación, tiene
 \end_layout
 
 \begin_layout Standard
-La cantidad de servidores y servicios necesarios en cualquier organización
- es mayor es cada vez mayor.
+La cantidad de servicios y servidores necesarios en las organizaciones tiende
+ a ser cada vez mayor.
  Cada día los despliegues son más complejos, es necesario trabajar con aplicacio
 nes clusterizadas, múltiples datacenters, redes privadas, públicas y nubes
  híbridas, como también aplicaciones con distintas dependencias.
@@ -285,7 +285,7 @@ Hablar de orquestación implica eficiencia en los recursos, tanto humanos
 iento y datacenters dinámicos.
  En este sentido, virtualización puede aplicar a computadoras, sistemas
  operativos, dispositivos de almacenamiento, aplicaciones o redes, sin embargo
- la virtualización de servidores es el núcleo de ésta.
+ la virtualización de servidores es el objetivo principal en este proyecto.
  Las limitaciones que imponen los servidores x86, que están diseñados para
  correr un solo sistema operativo a la vez, resultan en una gran ineficiencia
  pudiendo alcanzar entre el cinco y quince porciento de su capacidad.
@@ -375,6 +375,11 @@ Introducción
 
 \begin_layout Standard
 Hoy en día no se concibe la implementación de un solo servidor con un servicio.
+ Múltiples servicios virtuales dan paso a mejoras significativas en la produccón
+, aplicando técnicas de balanceo de carga, servidores redundantes, etc.
+ Por ello es necesario trabajar con aplicaciones clusterizadas, múltiples
+ datacenters, redes privadas, públicas y nubes híbridas, como también aplicacion
+es con distintas dependencias.
  En sectores con cientos de nodos administrables, alrededor de quinientos
  o más, esta tarea debe realizarse por una persona que cuente con los conocimien
 tos técnicos y los procesos de producción, como también los métodos para
@@ -391,10 +396,10 @@ tos técnicos y los procesos de producción, como también los métodos para
 
 \begin_layout Standard
 La orquestación reduce el tiempo y el esfuerzo necesario para desplegar
- múltiples instancias de una sola aplicación, y a medida que se requieren
- más recursos, herramientas de automatización pueden ejecutar tareas que,
- previamente, sólo podían ser realizadas por múltiples administradores cada
- uno en su estación de trabajo física.
+ múltiples instancias de una sola aplicación.
+ A medida que se requieren más recursos, las herramientas de automatización
+ pueden ejecutar tareas que, previamente, sólo podían realizarlas por múltiples
+ administradores cada uno en su estación de trabajo física.
 \end_layout
 
 \begin_layout Standard
@@ -411,8 +416,8 @@ De la mano de la orquestación, se encuentra la virtualización de computadoras,
 \end_layout
 
 \begin_layout Standard
-Cloud Computing o nube computacional no es lo mismo que virtualizar, sino
- que hace uso de la virtualización.
+Cloud Computing o nube computacional no es lo mismo que virtualización,
+ internamente en esta arquitectura puede existir la virtualización.
  Describe el envío de recursos computacionales compartidos (software o datos)
  bajo demanda a través de Internet.
  Se esté o no en la nube, se puede comenzar virtualizando los servidores
@@ -433,7 +438,7 @@ Forman parte de flujos de trabajo en varios dominios técnicos y de negocio.
 \begin_layout Standard
 La virtualización se destaca también apoyando la innovación a través del
  uso de entornos virtuales para desarrollar, practicar y aprender.
- Además se puede establecer entornos únicos de software para el aprendizaje
+ Además, se puede establecer entornos únicos de software para el aprendizaje
  sin demandar el uso exclusivo de recursos de hardware.
  
 \end_layout
@@ -447,7 +452,7 @@ El sistema está dividido en dos partes.
  Una parte de la herramienta está destinada al despliegue en masa de máquinas
  virtuales.
  Permite al administrador crear de forma automática múltiples máquinas virtuales
- con escasa interacción humana permitiendo especificar el sistema operativo
+ con escasa interacción humana, posibilitando especificar el sistema operativo
  deseado y componentes de hardware.
  Del mismo modo, en un laboratorio con máquinas físicas, es posible realizar
  el despliegue a través de la red de datos.
@@ -477,8 +482,8 @@ Principal:
 
 \begin_layout Itemize
 Desarrollar un sistema que integre diferentes tecnologías para implementar
- orquestación, visualización y configuración automática para facilitar la
- gestión de servidores virtuales y sus servicios
+ las técnicas de orquestación, virtualización y configuración automática
+ para facilitar la gestión de servidores virtuales y sus servicios asociados.
 \end_layout
 
 \begin_layout Standard
@@ -523,9 +528,9 @@ Intereses personales
 \end_layout
 
 \begin_layout Standard
-La principal motivación en este Proyecto Integrador es darle un cierre a
- la carrera de grado de Ingeniería en Computación realizando un proyecto
- que nos permita aplicar los conocimientos obtenidos a lo largo de la misma.
+La principal motivación en este Proyecto Integrador es realizar un proyecto
+ que nos permita aplicar los conocimientos obtenidos a lo largo de la carrera
+ de grado de Ingeniería en Computación.
  Abordamos temas como sistemas operativos, sistemas de archivos, protocolos,
  metodologías de desarrollo, redes de datos, programación en Python, Shell
  scripting, virtualización, diagramas UML.
@@ -539,10 +544,11 @@ Intereses institucionales
 La Facultad de Ciencias Exactas, Físicas y Naturales actualmente cuenta
  con alrededor de cinco aulas de informática, en las cuales se dictan materias
  de todos los ciclos y especialidades de ingeniería.
- Desarrollar un sistema de infraestructura con automatización y orquestación
- que permita disminuir la carga de trabajo de los administradores de estas
- aulas y facilitar las tareas de mantenimiento, cumpliendo con las políticas
- del área que administra las aulas.
+ Una posible implementación del proyecto es desarrollar un sistema de infraestru
+ctura con automatización y orquestación que permita disminuir la carga de
+ trabajo de los administradores de estas aulas y facilitar las tareas de
+ mantenimiento de las aulas, cumpliendo con las políticas del área que las
+ administra.
 \end_layout
 
 \begin_layout Subsection
@@ -570,7 +576,7 @@ s.
 
 \begin_layout Standard
 El sistema incluye desarrollo en los lenguaje de programación Python, Bash
- y el lenguaje propio de Puppet, la herramienta utilizada para la orquestación.
+ y el lenguaje descriptivo propio de la herramienta de orquestación.
  El servidor de aprovisionamiento será el encargado de atender las peticiones
  de los dispositivos para su instalación.
 \end_layout
@@ -604,7 +610,7 @@ Inversión económica:
 \end_layout
 
 \begin_layout Itemize
-Inversión provista por el alumno: ninguna
+Inversión provista por el alumno: ninguna.
 \end_layout
 
 \begin_layout Itemize
@@ -1140,7 +1146,7 @@ RNF01
 \begin_inset Text
 
 \begin_layout Plain Layout
-Las herramientas a integrar deben poseer licencias libres.
+Las herramientas a integrar deben poseer licencias de uso libre.
  
 \end_layout
 
@@ -1182,8 +1188,8 @@ RNF02
 \begin_inset Text
 
 \begin_layout Plain Layout
-La herramienta debe estar implementada en la versión estable más actual
- al momento de realizar el Proyecto Integrador.
+La herramienta debe estar implementada en una versión estable al momento
+ de realizar el Proyecto Integrador.
  
 \end_layout
 
@@ -1435,7 +1441,7 @@ Investigar y seleccionar herramientas de orquestación.
 
 \begin_layout Itemize
 Desarrollo de un sistema que integre las herramientas seleccionadas para
- que trabajen en conjunto 
+ que trabajen en conjunto.
 \end_layout
 
 \begin_layout Itemize
@@ -1456,7 +1462,7 @@ Objetivo a alcanzar en cada etapa:
 \series bold
 Primera etapa:
 \series default
- conocer diferentes sistemas operativos y seleccionar el más adecuado para
+ Conocer diferentes sistemas operativos y seleccionar el más adecuado para
  el desarrollo de sistema.
 \end_layout
 
@@ -1465,7 +1471,7 @@ Primera etapa:
 \series bold
 Segunda etapa:
 \series default
- conocer diferentes herramientas de virtualización y seleccionar la más
+ Conocer diferentes herramientas de virtualización y seleccionar la más
  adecuada.
 \end_layout
 
@@ -1474,10 +1480,10 @@ Segunda etapa:
 \series bold
 Tercera etapa:
 \series default
- conocer cuáles son las herramientas disponibles y utilizadas en ambientes
+ Conocer cuáles son las herramientas disponibles y utilizadas en ambientes
  de producción para el aprovisionamiento de máquinas virtuales, teniendo
- en cuenta que deben ser de código abierto, analizarlas y elegir la más
- apropiada para realizar el Proyecto Integrador.
+ en cuenta que deben ser de uso libre, analizarlas y elegir la más apropiada
+ para realizar el Proyecto Integrador.
  
 \end_layout
 
@@ -1486,8 +1492,8 @@ Tercera etapa:
 \series bold
 Cuarta etapa: 
 \series default
-Conocer las herramientas libres de orquestación que se encuentran en el
- mercado seleccionar la adecuada.
+Conocer las herramientas de uso libre de orquestación que se encuentran
+ en el mercado seleccionar la adecuada.
 \end_layout
 
 \begin_layout Itemize
@@ -1495,7 +1501,7 @@ Conocer las herramientas libres de orquestación que se encuentran en el
 \series bold
 Quinta etapa: 
 \series default
-implementar las herramientas seleccionadas en conjunto.
+Implementar las herramientas seleccionadas en conjunto.
  
 \end_layout
 
@@ -1538,9 +1544,9 @@ Los riesgos se pueden definir como una probabilidad de que una circunstancia
 \end_layout
 
 \begin_layout Standard
-Dado la inexperiencia de los desarrolladores del proyecto, la gestión de
- riesgos es importante dado a las incertidumbres inherentes con las que
- se encuentran.
+Dado la falta de experiencia de los desarrolladores del proyecto en esta
+ temática, la gestión de riesgos es importante dado a las incertidumbres
+ inherentes con las que se encuentran.
  Por ejemplo: requerimientos ambiguos, dificultades en las estimaciones
  de los tiempos y recursos, etc.
  
