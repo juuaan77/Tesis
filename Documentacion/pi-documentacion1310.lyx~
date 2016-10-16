@@ -4,7 +4,7 @@
 \begin_header
 \textclass scrartcl
 \begin_preamble
-\usepackage{babel}
+\usepackage[spanish,es-tabla]{babel}
 \usepackage{colortbl}
 \usepackage{graphicx}
 \usepackage{rotating}
@@ -1282,7 +1282,7 @@ Caso de uso en un mismo servidor
 \end_layout
 
 \begin_layout Standard
-También se puede dar el caso de que el servidor de maquinas virtuales se
+También se puede dar el caso de que el servidor de máquinas virtuales se
  encuentre en otro servidor físico.
 \end_layout
 
@@ -1446,7 +1446,7 @@ Desarrollo de un sistema que integre las herramientas seleccionadas para
 
 \begin_layout Itemize
 Desarrollo de perfiles que permitan obtener un abanico de posibilidad para
- la creacion de maquinas virtuales.
+ la creacion de máquinas virtuales.
 \end_layout
 
 \begin_layout Itemize
@@ -4566,37 +4566,38 @@ Marco teórico
 \end_layout
 
 \begin_layout Standard
-Previamente al abordaje del desarrollo, requerimos conocimientos teóricos
- que nos posibiliten comprender el entorno donde se ejecutarán las aplicaciones
- que componen el Sistema, las herramientas que darán soporte o permitirán
+Previamente al abordaje del desarrollo, se requieren conocimientos teóricos
+ que posibiliten comprender el entorno donde se ejecutarán las aplicaciones
+ que componen el sistema, las herramientas que darán soporte o permitirán
  cumplir con las funcionalidades previstas y las que se utilizarán para
  desarrollar.
- Algunas de las mismas fueron explícitamente solicitadas en los requerimientos.
+ Algunas de ellas fueron solicitadas en los requerimientos.
  El resto de las herramientas, que están implícitas en los requerimientos,
  precisaron de investigación y pruebas para conocer si permiten cumplir
  estos requerimientos y además, si hay varias opciones, elegir la más convenient
 e.
- Podemos dividir esta sección del informe en áreas diferentes:
+ Se puede dividir esta sección del informe en áreas diferentes:
 \end_layout
 
 \begin_layout Itemize
-sistema operativo 
+Sistema operativo.
 \end_layout
 
 \begin_layout Itemize
-Virtualización 
+Virtualización.
 \end_layout
 
 \begin_layout Itemize
-Aprovisionamiento 
+Aprovisionamiento.
+ 
 \end_layout
 
 \begin_layout Itemize
-Orquestación
+Orquestación.
 \end_layout
 
 \begin_layout Itemize
-Protocolo PXE
+Protocolo PXE.
 \end_layout
 
 \begin_layout Standard
@@ -4653,14 +4654,14 @@ CentOS es un distribución Linux empresarial, basada en Red Hat Enterprise
  Linux.
  CentOS concuerda con la política de distribución de Red Hat y apunta a
  ser binariamente compatible en su totalidad.
- Cada versión de esta distro tiene soporte por siete años en cuestiones
+ Cada versión de esta distribución tiene soporte por siete años en cuestiones
  de actualizaciones de mantenimiento y seguridad, lo que se traduce en un
  ambiente confiable, predecible, reproducible, de bajo mantenimiento y seguro.
 \end_layout
 
 \begin_layout Standard
-La principal ventaja de esta distro es que se obtiene un conjunto estable
- de la mayoría de paquetes que por lo general sólo incluyen correcciones
+La principal ventaja de esta distribución es que se obtiene un conjunto
+ estable de la mayoría de paquetes que por lo general sólo incluyen correcciones
  de errores.
  En su última versión, CentOS 7 solo está disponible para la arquitectura
  x86_64, y representa un gran cambio frente a versiones anteriores del sistema
@@ -4734,8 +4735,8 @@ Soporte UEFI.
 \end_layout
 
 \begin_layout Standard
-En cuanto a systemd, es el reemplazo de init como demonio para iniciar servicios
-, procesos y recursos del sistema.
+En cuanto a systemd es el reemplazo de init como demonio para iniciar servicios,
+ procesos y recursos del sistema.
  Systemd es la nueva forma predeterminada de iniciar los sistemas Linux,
  y ha sido adoptado por Red Hat, Debian y Ubuntu, entre otros.
  CentOS 7 es compatible con Microsoft Active Directory (y obviamente con
@@ -4789,9 +4790,9 @@ Debian logo
 Debian es una distribución libre, por completo manejada por la comunidad,
  no está basada en ninguna otra distribución y por el contrario gran parte
  de las distribuciones actuales están basadas en ella.
- Debian es famoso por filosofía de estabilidad ante todo, por eso mismo,
+ Debian es famoso por su filosofía de estabilidad ante todo, por eso mismo,
  no tiene un cronograma de lanzamiento de nuevas versiones.
- Estas se liberan cuando estén realmente listas.
+ Estas se liberan cuando están realmente listas.
  Es una distribución ampliamente utilizada.
 \end_layout
 
@@ -4803,9 +4804,9 @@ En su última versión, Debian 8 Jessie, las siguientes arquitecturas tienen
 \end_layout
 
 \begin_layout Standard
-Este release incluye el nuevo estándar sistema de inicio 
+Este release incluye el nuevo estándar sistema de inicio systemd
 \emph on
-systemd.
+.
 \end_layout
 
 \begin_layout Standard
@@ -4896,15 +4897,15 @@ FreeBSD viene con una excelente colección de herramientas de sistema como
  A pesar de esto, existen otras que no vienen incluidas y se necesitan instalar
  para utilizarlas.
  FreeBSD ofrece dos tecnologías complementarias para instalar software de
- terceros en el sistema: la Colección de puertos o ports de FreeBSD y los
- paquetes binarios.
+ terceros en el sistema: la colección de puertos o ”ports” de FreeBSD y
+ los paquetes binarios.
  Los paquetes binarios son archivos simples que descargamos desde repositorios.
  Contienen una copia de los programas binarios precompilados de la aplicación
  y se pueden manipular con las herramientas de gestión de paquetes de FreeBSD:
  pkg_add , pkg_delete , pkg_info , etc.
  Por otro lado, existen ciertos pasos que se deben llevar a cabo para compilar
  un programa (descargar, desempaquetar, parchear, compilar e instalar).
- Los ficheros que conforman un port permiten que el sistema se encargue
+ Los ficheros que conforman un puerto permiten que el sistema se encargue
  de todo esto, mediante un conjunto simple de órdenes.
  La colección de puertos para instalar se encuentra en /usr/ports.
 \end_layout
@@ -5064,35 +5065,36 @@ Selección del sistema operativo base.
 \end_layout
 
 \begin_layout Standard
-Para seleccionar el sistema operativo base, nos basamos esencialmente en
- las siguientes cosas:
+La selección del sistema operativo base, se basó esencialmente en las siguientes
+ cosas:
 \end_layout
 
 \begin_layout Itemize
-Buena penetración de mercado: De esta manera, obtendremos una experiencia
- útil a futuro
+Buena penetración de mercado: De esta manera, se obtiene una experiencia
+ útil a futuro.
 \end_layout
 
 \begin_layout Itemize
-sistema operativo estable y vigente.
+Sistema operativo estable y vigente.
 \end_layout
 
 \begin_layout Itemize
-Buena integración del SO con las herramientas a utilizar.
+Buena integración del sistema operativo con las herramientas a utilizar.
 \end_layout
 
 \begin_layout Standard
-Analizando estos aspectos, se opto por utilizar como sistema operativo base
- a CentOS 7 dado que es la ultima version de este sistema operativo, es
- uno de los sistemas con mas penetración en el mercado informático y cuenta
- con el respaldo de Red Hat Enterprise dado que es la versión libre de esta..
+Analizando estos aspectos, se optó por utilizar como sistema operativo base
+ a CentOS 7.
+ Siendo la última versión de este sistema al día de la fecha, es uno de
+ los sistemas con mas penetración en el mercado informático y cuenta con
+ el respaldo de Red Hat Enterprise dado que su versión libre.
  
 \end_layout
 
 \begin_layout Standard
 También se tuvo en cuenta la inclusión de systemd y que una gran cantidad
  de herramientas tanto de virtualización como aprovisionamiento y orquestación
- están diseñadas para Red Hat Enterprise y por ende CentOS
+ están diseñadas para Red Hat Enterprise y por consiguiente CentOS.
 \end_layout
 
 \begin_layout Subsection
@@ -5113,22 +5115,20 @@ ad y reducir los costos, los cuales son tópicos importantes en cualquier
  empresa o institución.
  En esencia, la virtualización incrementa la flexibilidad desacoplando un
  sistema operativo y los servicios y aplicaciones soportados por él, de
- una plataforma de hardware física específica, permitiendo el establecimiento
- de múltiples entornos virtuales sobre una plataforma de hardware compartida.
+ una plataforma de hardware física específica.
+ Posibilita el establecimiento de múltiples entornos virtuales sobre una
+ plataforma de hardware compartida.
  Estos entornos pueden ser creados localmente o aprovisionados externamente.
  La virtualización se destaca también apoyando la innovación a través del
  uso de entornos virtuales para practicar y aprender.
- Un estudiante puede comenzar un curso o trabajo un entorno de sistema conocido,
- estándar y aislado del entorno de producción; si se produce algún tipo
- de daño solo afecta al sistema virtual.
- Además se puede establecer entornos únicos de software para el aprendizaje
+ Además, se puede establecer entornos únicos de software para el aprendizaje
  sin demandar el uso exclusivo de recursos de hardware.
  Aunque en comparación los costos de inversión para tener un número elevado
  de máquinas físicas son mucho mayores que el costo para invertir en un
  servidor con altos recursos para realizar la virtualización, se podría
  decir que la virtualización posee inconvenientes vinculados con sus exigentes
- requerimientos de hardware, en cuanto a capacidad de procesamiento y de
- memoria RAM y de almacenamiento.
+ requerimientos de hardware, en cuanto a capacidad de procesamiento, memoria
+ RAM y almacenamiento.
  Otra desventaja es que del sistema de virtualización depende del sistema
  operativo anfitrión.
  Es decir, el anfitrión es el punto débil del sistema ya que se comparte
@@ -5137,11 +5137,11 @@ ad y reducir los costos, los cuales son tópicos importantes en cualquier
 \end_layout
 
 \begin_layout Standard
-En resumen, una máquina virtual (“virtual machine” - VM) es un contenedor
+En resumen, una máquina virtual (“virtual machine” - VM) es un conjunto
  de software altamente aislado con un sistema operativo y aplicaciones adentro.
  Cada VM es completamente independiente.
  Poner múltiples VMs en una misma computadora habilita a varias aplicaciones
- y sistemas operativos correr en un solo servidor virtual, o host.
+ y sistemas operativos correr en un solo servidor virtual o ”host”.
  Una fina capa de software, llamado hypervisor, desacopla las máquinas virtuales
  del host y dinámicamente asigna recursos computacionales a cada VM como
  sea necesario.
@@ -5214,7 +5214,7 @@ Para-virtualización
 \end_layout
 
 \begin_layout Standard
-Para-virtualización es un técnica de virtualización la cual implica ejecutar
+Para-virtualización es un técnica de virtualización que implica ejecutar
  versiones modificadas de los sistemas operativos.
  El sistema operativo para-virtualizado es modificado para que se de cuenta
  que está siendo virtualizado, ofreciendo un habilidad aumentada para la
@@ -5289,8 +5289,8 @@ También llamada virtualización basada en contenedores, esta técnica virtualiz
  Una desventaja de la virtualización basada en contenedores, sin embargo,
  es que cada invitado debe utilizar el mismo sistema operativo que utiliza
  el host.
- Por ejemplo, Jaulas con Warden en FreeBSD, OpenVZ o Linux-Vserver usan
- esta técnica.
+ Por ejemplo, Jaulas con Warden en FreeBSD, OpenVZ, Docker o Linux-Vserver
+ usan esta técnica.
 \end_layout
 
 \begin_layout Standard
@@ -5347,9 +5347,8 @@ Herramientas de virtualización
 \end_layout
 
 \begin_layout Standard
-Algunas de las herramientas más utilizadas para virtualizar son las siguientes,
- sin embargo como uno de los requisitos es utilizar herramientas de código
- abierto, no se indagó acerca de VMWare: 
+Algunas de las herramientas más utilizadas para virtualizar son las siguientes:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -5370,6 +5369,11 @@ VirtualBox
 
 \begin_layout Itemize
 VMWare Workstation 
+\end_layout
+
+\begin_layout Standard
+Como uno de los requisitos es utilizar herramientas de código abierto, no
+ se indagó acerca de VMWare.
 \end_layout
 
 \begin_layout Paragraph
@@ -5410,7 +5414,7 @@ Docker logo
 
 \end_inset
 
-Docker es otra herramienta de virtualización para Linux basada en contenedores.
+Docker es una herramienta de virtualización para Linux basada en contenedores.
  La idea detrás de Docker es crear contenedores ligeros y portables para
  las aplicaciones de software que puedan ejecutarse en cualquier máquina
  con Docker instalado, independientemente del sistema operativo que la máquina
@@ -5427,7 +5431,7 @@ El contenedor Docker se puede desplegar en cualquier otro sistema (que soporte
 Un contenedor Docker no contiene todo un sistema completo, sino únicamente
  aquellas librerías, archivos y configuraciones necesarias para desplegar
  las funcionalidades que contenga.
- Asimismo Docker se encarga de la gestión del contenedor y de las aplicaciones
+ Así mismo, Docker se encarga de la gestión del contenedor y de las aplicaciones
  que contenga.
 \end_layout
 
@@ -5505,7 +5509,7 @@ KVM (Kernel-based Virtual Machine), desarrollado por Red Hat Enterprise
  Fue incorporado a la línea principal del kernel Linux en la versión 2.6.20.
  KVM requiere un procesador con hardware que permita extensión para virtualizaci
 ón (Intel VT o AMD-V).
- También está disponible para instalarlo desde los “ports” de FreeBSD en
+ También está disponible para instalarlo desde los puertos de FreeBSD en
  la forma de módulos de kernel.
  
 \end_layout
@@ -5653,7 +5657,7 @@ Selección de la herramienta de virtualización.
 \end_layout
 
 \begin_layout Standard
-Para seleccionar la herramienta de virtualización nos centramos en:
+Para la selección de la herramienta de virtualización se tomó foco en:
 \end_layout
 
 \begin_layout Itemize
@@ -5670,9 +5674,9 @@ Integración con el sistema operativo.
 
 \begin_layout Standard
 Teniendo en cuenta los puntos enunciados antes, el conjunto KVM/Qemu es
- la herramienta mas apta dado que posee una amplia documentación y escalabilidad
-, esta desarrollada para Red Hat Enterprise y es usada en el mercado ademas
- que es utilizada en el laboratorio de computación de la FCEFyN.
+ la herramienta más apta dado que posee una amplia documentación y escalabilidad
+, está desarrollada para Red Hat Enterprise y se utiliza en el mercado.
+ Además, se usa en el laboratorio de computación de la FCEFyN.
 \end_layout
 
 \begin_layout Subsection
@@ -5691,9 +5695,8 @@ e.
  
 \end_layout
 
-\begin_layout Itemize
-Tareas típicas que se tienen que llevar a cabo para que esto suceda son:
- 
+\begin_layout Standard
+Tareas típicas que se llevan a cabo para que ésto suceda son: 
 \end_layout
 
 \begin_layout Itemize
@@ -5715,7 +5718,7 @@ Actualizar el sistema y aplicar parches.
 \end_layout
 
 \begin_layout Itemize
-Cargar el conjunto de aplicaciones necesarias.
+Cargar el conjunto de servicios necesarios..
 \end_layout
 
 \begin_layout Itemize
@@ -5806,7 +5809,8 @@ Cobbler es un servidor Linux de aprovisionamiento que centraliza y simplifica
  configurarlo para que inicie con PXE otras distribuciones de Linux como
  Debian, Ubuntu o Knoppix.
  Es una herramienta que se encuentra en creciente desarrollo y cada vez
- añade más soporte a distintas distros e incluso a FreeBSD y a futuro Windows.
+ añade más soporte a distintas distribuciones e incluso a FreeBSD y a futuro
+ Windows.
  Actualmente cuenta con poco soporte para el sistema operativo de Microsoft.
  
 \end_layout
@@ -5817,7 +5821,7 @@ Cuenta con un sistema integrado para administración de configuración pero
  de configuración Puppet.
  Cobbler se basa en el mecanismo de Kickstart y ofrece perfiles de instalación
  que pueden ser aplicados a una o muchas máquinas.
- La información de contenida en un plantilla kickstart puede ser modificada
+ La información contenida en un plantilla kickstart puede ser modificada
  dinámicamente pasando variables (llamadas ksmeta) o utilizando snippets,
  donde se puede mantener el código común simplificando la lectura y minimizando
  el tamaño del archivo kickstart.
@@ -5870,8 +5874,8 @@ FAI es un sistema no interactivo para instalar, personalizar y administrar
  en máquinas virtuales y entornos chroot, desde pequeñas redes hasta una
  infraestructura grande escalable y clusters.
  Es una herramienta para la instalación totalmente automática de Debian
- y otras distros de Linux como Suse, Red Hat, Solaris, vía red, DVDs personaliza
-dos de instalación o en entornos chroot.
+ y otras distribuciones de Linux como Suse, Red Hat, Solaris, ya sea vía
+ red, DVDs personalizados de instalación o en entornos chroot.
  
 \end_layout
 
@@ -5952,7 +5956,7 @@ Foreman logo
 Foreman es una herramienta para el aprovisionamiento, configuración y monitoriza
 ción de servidores físicos y virtuales.
  Puede aprovisionar máquinas bare-metal, virtualizadas y en la nube a través
- de instalaciones desatendidas por medio de DHCP, DNS, TFTP y PXE .
+ de instalaciones desatendidas por medio de DHCP, DNS, TFTP y PXE.
  Tiene una gran integración con software de administración de configuración
  como Puppet, Chef, Salt y otros por medio de plugins.
 \end_layout
@@ -5976,7 +5980,7 @@ Agrupar hosts y dirigirlos en conjunto, sin importar la ubicación.
 \end_layout
 
 \begin_layout Itemize
-Rever cambios históricos para auditoría y resolución de problemas.
+Revisar cambios históricos para auditoría y resolución de problemas.
 \end_layout
 
 \begin_layout Paragraph
@@ -6040,20 +6044,20 @@ Se tuvo en cuenta para seleccionar esta herramienta:
 \end_layout
 
 \begin_layout Itemize
-Penetración y uso en el mercado
+Penetración y uso en el mercado.
 \end_layout
 
 \begin_layout Itemize
-Documentación y soporte
+Documentación y soporte.
 \end_layout
 
 \begin_layout Itemize
-Integración con el sistema operativo
+Integración con el sistema operativo.
 \end_layout
 
 \begin_layout Standard
-La herramienta seleccionada fue Cobbler dado que soportada por la comunidad,
- esta continuamente actualizada, posee una buena documentación y por sobre
+La herramienta seleccionada fue Cobbler dado que, soportada por la comunidad,
+ está continuamente actualizada, posee una buena documentación y por sobre
  todo, tiene una excelente integración con el sistema operativo seleccionado
  y con la herramienta de virtualización.
  También tiene interesantes funcionalidades como la posibilidad de crear
@@ -6073,7 +6077,7 @@ La orquestación describe el alineamiento automatizado, la coordinación y
  Define las políticas y niveles de servicio a través de flujos de trabajo
  automatizados, aprovisionamiento y gestión de cambio.
  Esto crea una infraestructura alineada con la aplicación que puede ser
- escalada hacia arriba o abajo basándose en las necesidades de cada aplicación.
+ escalada basándose en las necesidades de cada aplicación.
 \end_layout
 
 \begin_layout Standard
@@ -6081,12 +6085,12 @@ La orquestación también provee la gestión centralizada de los recursos.
  Por ejemplo, reduce el tiempo y esfuerzo para desplegar múltiples instancias
  de una sola aplicación.
  Cuando es necesario que se creen más instancias de diferentes aplicaciones,
- herramientas automatizadas pueden realizar tareas que, previamente, podían
+ herramientas automatizadas pueden realizar tareas que previamente, podían
  ser llevadas a cabo sólo por múltiples administradores.
 \end_layout
 
 \begin_layout Standard
-Un escenario que se puede encontrar, por ejemplo, un administrador necesita
+Un escenario que se puede encontrar es por ejemplo: Un administrador necesita
  desplegar una aplicación web, pero para hacerlo, primero debe crear el
  servidor de base de datos.
  Luego debe incluir en la base de datos todas las direcciones IP que pueden
@@ -6105,7 +6109,7 @@ No hay que confundir los términos automatización y orquestación.
 \end_layout
 
 \begin_layout Standard
-La optimización de un proceso, por ejemplo, no se puede conseguir simplemente
+La optimización de un proceso por ejemplo, no se puede conseguir simplemente
  por la automatización.
  A la automatización le concierne una tarea: ejecutar un servidor web, configura
 r un servidor web, detener un servicio.
@@ -6194,13 +6198,13 @@ Ansible logo
 
 \begin_layout Standard
 Es una plataforma para configurar y administrar computadoras.
- Combina instalación multi-nodo, ejecuciones de tareas ad hoc y administración
+ Combina instalación multi-nodo, ejecuciones de tareas ad-hoc y administración
  de configuraciones.
  
 \end_layout
 
 \begin_layout Standard
-Ansible distingue dos tipos: controladores y nodos.
+Ansible distingue dos tipos de máquinas: controladores y nodos.
  Primero, existe una única máquina de control donde la orquestación comienza.
  Los nodos son manejados desde esa máquina por el servicio OpenSSH.
  La máquina de control conoce a los nodos a través de un inventario.
@@ -6304,13 +6308,13 @@ s nodos clientes con las diversas configuraciones necesarias, las cuales
 Chef Solo
 \series default
  es la versión de código abierto y reside localmente en el nodo, esto quiere
- decir que toda la información y recetas necesarias para configurar el nodo
- deben estar presentes en su disco duro.
- Esta herramienta utiliza Ruby-DLS para escribir las “recetas” (configuraciones
- de sistemas que describen como son manejadas las aplicaciones).
- Estas recetas, que pueden ser agrupadas para facilitar la administración,
- describen de forma secuencial una serie de recursos que deben estar en
- un estado particular.
+ decir que toda la información y “recetas“ (configuraciones de sistemas
+ que describen como son manejadas las aplicaciones) necesarias para configurar
+ el nodo deben estar presentes en su disco duro.
+ Esta herramienta utiliza Ruby-DLS para escribir las recetas.
+ Éstas, que pueden ser agrupadas para facilitar la administración, describen
+ de forma secuencial una serie de recursos que deben estar en un estado
+ particular.
 \end_layout
 
 \begin_layout Standard
@@ -6370,14 +6374,14 @@ a, forzando automáticamente que se llegue al estado correcto definido.
 \begin_layout Standard
 Puppet es una herramienta diseñada para administrar la configuración de
  sistemas similares a Unix y a Microsoft Windows de forma declarativa, es
- decir, se establece el estado requerido en vez como llegar al mismo..
+ decir, se establece el estado requerido en vez cómo llegar al mismo..
  El usuario describe los recursos del sistema y sus estados utilizando el
  lenguaje declarativo que proporciona Puppet.
  Esta información es almacenada en archivos denominados “manifiestos”.
  Puppet descubre la información del sistema a través de una utilidad llamada
  Facter, y compila los manifiestos en un catálogo específico del sistema
- que contiene los recursos y la dependencia de dichos recursos, estos catálogos
- son ejecutados en los sistemas de destino.
+ que contiene los recursos y la dependencia de dichos recursos.
+ Estos catálogos son ejecutados en los sistemas de destino.
  La capa de abstracción de recursos permite a los administradores describir
  la configuración en términos de alto nivel, tales como usuarios, servicios
  y paquetes sin necesidad de especificar los comandos específicos del sistema
@@ -6409,8 +6413,8 @@ Un catálogo es un archivo que describe los deseos de un estado de sistema
 \begin_layout Standard
 En esta arquitectura, los nodos administrados corren la aplicación puppet-agent,
  usualmente en segundo plano y uno o más servidores corren la aplicación
- puppetmaster administrada por un servidor web (como Apache.) Periódicamente,
- los agentes piden al master el catálogo.
+ puppetmaster administrada por un servidor web (como Apache).
+ Periódicamente, los agentes piden al master el catálogo.
  El master, compila y corre el catálogo del nodo usando varias fuentes de
  información a las que tiene acceso.
  Una vez que recibe el catálogo, el agente chequea cada recurso descrito
@@ -6430,15 +6434,12 @@ Selección de la herramienta de Orquestación.
 \end_layout
 
 \begin_layout Standard
-Esta selección se baso en una recomendación de los directores del proyecto.
- Dado que Puppet es la herramienta con mas penetración de mercado y por
- ende la que brinda la mejor experiencia a futuro.
- Pero ademas, como todas las herramientas seleccionadas.
-\end_layout
-
-\begin_layout Standard
-Puppet cuenta con dos versiones, Enterprise y Open Source, por lo cual siguiendo
- el requerimiento no funcional RNF01 se escogió la versión Open Source
+Esta selección se basó en una recomendación de los directores del proyecto.
+ Se escogió Puppet ya que es una herramienta con gran penetración de mercado
+ y por ende brinda una mejor experiencia para futuras aplicaciones.
+ Además, como todas las herramientas seleccionadas, Puppet cuenta con dos
+ versiones, Enterprise y Open Source, por lo cual siguiendo el requerimiento
+ no funcional RNF01 se escogió la versión Open Source.
 \end_layout
 
 \begin_layout Subsection
@@ -6617,7 +6618,7 @@ Una lista de Boot Servers del campo “Boot Server” en las etiquetas PXE del
 \end_deeper
 \begin_layout Enumerate
 El cliente debe enviar una solicitud por la dirección del Boot Server al
- servidor y esperar por el acuse de recibo (acknowledgment – ACK).
+ servidor y esperar por el acuse de recibo (”acknowledgment” – ACK).
 \end_layout
 
 \begin_layout Enumerate
@@ -6755,10 +6756,10 @@ Desarrollo
 \end_layout
 
 \begin_layout Standard
-Por facilidad de lectura y comprensión de las herramientas utilizadas, el
- presente informe no refleja las iteraciones del proyecto aún cuando éstas
- fueron implementadas acorde a la metodología empleada, realizado entregas
- iterativas.
+Para facilitar la lectura y comprensión de las herramientas utilizadas,
+ el presente informe no refleja las iteraciones del proyecto aún cuando
+ éstas fueron implementadas acorde a la metodología empleada, realizado
+ entregas iterativas.
 \end_layout
 
 \begin_layout Standard
@@ -6767,10 +6768,10 @@ Como caso particular en la implementación se tomará un laboratorio informátic
  Las funcionalidades desarrolladas permiten orquestar las políticas a seguir
  de las diferentes máquinas de la red al mismo tiempo que posibilitan a
  los administradores (o incluso a cualquier persona sin conocimiento técnico)
- crear maquinas virtuales con pocos click, dichas máquinas virtuales cuentan
- con todos los servicios y programas necesarios para los alumnos de las
- diferentes carreras como también se pueden crear maquinas virtuales con
- otros perfiles, por ejemeplo, un perfil para docentes.
+ crear máquinas virtuales con pocos ”clicks”, dichas máquinas virtuales
+ cuentan con todos los servicios y programas necesarios para los alumnos
+ de las diferentes carreras como también se pueden crear máquinas virtuales
+ con otros perfiles, por ejemeplo, un perfil para docentes.
  
 \end_layout
 
@@ -6789,14 +6790,14 @@ Debido a lo anterior, la interfaz web no cuenta con autentificación.
 
 \begin_layout Itemize
 A partir de la última versión de CentOS, ha quedado descontinuado el paquete
- necesario para dar soporte a repositorios locales de Ubuntu sobre dicha
- distribución, por lo que parael despliegue de éste se necesita contar con
+ necesario para dar soporte a repositorios locales de Ubuntu sobre una distribuc
+ión CentOS, por lo que para el despliegue de éste se necesita contar con
  una conexión a Internet.
 \end_layout
 
 \begin_layout Itemize
 Al día de la fecha, Ubuntu 16.04 LTS y Windows 10 no tienen soporte de la
- herramienta de deployment utilizada.
+ herramienta de despliegue utilizada.
  A su vez, Windows 10 tampoco cuenta con soporte de la herramienta de orquestaci
 ón.
  
@@ -6851,8 +6852,8 @@ Arquitectura de desarrollo
 \end_layout
 
 \begin_layout Standard
-El siguiente esque representa la arquitectura de desarrollo utilizada para
- todas las pruebas.
+El siguiente esquema representa la arquitectura de desarrollo utilizada
+ para todas las pruebas.
 \end_layout
 
 \begin_layout Standard
@@ -7208,8 +7209,8 @@ Se ejecutan los siguientes comandos, el primero actualiza los paquetes actuales
  del sistema a la ultima versión, mientras que el segundo instala los paquetes
  seleccionados, estos paquetes entre otras cosas proveen la herramienta
  qemu-KVM, una interfaz gráfica como es el virt-manager para administrar
- y crear las maquinas virtuales, y un conjunto de comandos donde se destaca
- el comando virt-install que es el utilizado para crear las maquina virtuales.
+ y crear las máquinas virtuales, y un conjunto de comandos donde se destaca
+ el comando virt-install que es el utilizado para crear las máquina virtuales.
 \end_layout
 
 \begin_layout Standard
@@ -7351,7 +7352,7 @@ Creación de VMs
 \end_layout
 
 \begin_layout Standard
-Las maquinas virtuales se pueden crear tanto siguiendo al GUI como por linea
+Las máquinas virtuales se pueden crear tanto siguiendo al GUI como por linea
  de comandos, este ultimo tiene la ventaja de poder ser utilizada para scripting.
  
 \end_layout
@@ -7562,8 +7563,8 @@ Distros
 
 \begin_layout Standard
 Distribución que se desea instalar.
- Importar el contenido de la distro ayuda a disminuir el tiempo de instalación
- ya que no se utilizan fuentes de instalación externas.
+ Importar el contenido de la distribución ayuda a disminuir el tiempo de
+ instalación ya que no se utilizan fuentes de instalación externas.
  Generalmente es más fácil utilizar el comando 
 \family typewriter
 \emph on
@@ -8885,7 +8886,7 @@ ServerName puppet
 
 \begin_layout Standard
 Los servicios ya están listos para funcionar, se los inicia e indica que
- se inicien automáticamente al prender la maquina
+ se inicien automáticamente al prender la máquina
 \end_layout
 
 \begin_layout Standard
@@ -9027,7 +9028,7 @@ default_password_crypted: "$1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/"
 \end_layout
 
 \begin_layout Standard
-Dado que se desea utilizar un servidor DHCP en la misma maquina que contiene
+Dado que se desea utilizar un servidor DHCP en la misma máquina que contiene
  el servidor Cobbler, se modificar la seccion “manage_dhcp: 0” para habilitar
  el administrador del DHCP.
 \end_layout
@@ -9054,8 +9055,8 @@ manage_dhcp: 1
 
 \begin_layout Standard
 Configurar ahora la dirección IP del servidor Cobbler en las variables “server”
- y “next_server” colocando la interfaz virtual que conecta a la maquina
- física con las maquinas virtuales,virbr0:
+ y “next_server” colocando la interfaz virtual que conecta a la máquina
+ física con las máquinas virtuales,virbr0:
 \end_layout
 
 \begin_layout Standard
@@ -10884,18 +10885,18 @@ Para cumplir con este ultimo apartado, se decidió editar el archivo
 \family typewriter
 /etc/hosts
 \family default
- de cada maquina virtual creada utilizando cobbler para añadir el host del
+ de cada máquina virtual creada utilizando cobbler para añadir el host del
  puppetserver que corresponde a la primer dirección IP de la red virtual
  creada por KVM.
  Así mismo, como el servidor puppet también tiene la necesidad de conocer
- a que dirección IP corresponde a cada maquina, se realizo un pequeño codigo
- de python que es capaz de obtener la dirección IP de una maquina en particular
+ a que dirección IP corresponde a cada máquina, se realizo un pequeño codigo
+ de python que es capaz de obtener la dirección IP de una máquina en particular
  revisando el archivo 
 \family typewriter
 /var/lib/dhcpd/dhcpd.leases
 \family default
 .
- Este archivo, es utilizado por el servidor DHCP para saber a que maquina
+ Este archivo, es utilizado por el servidor DHCP para saber a que máquina
  corresponde cada dirección IP.
 \end_layout
 
@@ -11328,7 +11329,7 @@ ssldir = $vardir/ssl
 
 \family typewriter
 certname = $HOSTNAME #Aquí nos valemos de una variable que el mismo Snippet
- es capaz de resolver para insertar el hostname de la maquina.
+ es capaz de resolver para insertar el hostname de la máquina.
 \end_layout
 
 \begin_layout Standard
@@ -14713,11 +14714,11 @@ Una vez descargado, se descomprime y se ejecuta el script de bash pycharm.sh
 \begin_layout Standard
 Creamos dos ejemplos muy simples que luego utilizamos en la aplicación para
  realizar la recolección de parámetros que serán utilizados para crear las
- Maquinas Virtuales.
+ Máquinas Virtuales.
  Mas concretamente, este ejemplo pide el ingreso de 3 números que representan
- las cantidad de maquinas virtuales a crear (el primero corresponde a CentOS,
- el segundo a Ubuntu y el ultimo a la cantidad de maquinas que correrán
- Windows7), y luego los utilizara para crear dichas maquinas virtuales.
+ las cantidad de máquinas virtuales a crear (el primero corresponde a CentOS,
+ el segundo a Ubuntu y el ultimo a la cantidad de máquinas que correrán
+ Windows7), y luego los utilizara para crear dichas máquinas virtuales.
 \end_layout
 
 \begin_layout Standard
@@ -14727,7 +14728,7 @@ Con las siguientes funciones definimos de qué modo procederá el servidor
  definida a continuación se ejecutara cuando una solicitud get a la URL
  /virtual_machine llegue al servidor.
  La función devuelve el HTML de un formulario al navegador, que el usuario
- rellenará para indicar la cantidad de maquinas virtuales con cada SO que
+ rellenará para indicar la cantidad de máquinas virtuales con cada SO que
  desea crear.
  Los datos ingresados en el formulario se enviarán al servidor con el método
  post .
@@ -14776,9 +14777,9 @@ En la siguiente figura, tenemos el decorador post .
  Este caso se dará, por ejemplo, cuando el usuario rellene el formulario
  devuelto en la función de la figura anterior.
  Esta función tomará los parámetros presentes en el formulario y realizará
- el proceso para crear las maquinas virtuales deseadas.
+ el proceso para crear las máquinas virtuales deseadas.
  Ademas, la función devuelve el HTML que indica que se están instalando
- las maquinas virtuales.
+ las máquinas virtuales.
 \end_layout
 
 \begin_layout Standard
@@ -15398,7 +15399,7 @@ RF01 RF02 RF03 RF04 RF05 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-Crear maquina virtual con cada perfil 
+Crear máquina virtual con cada perfil 
 \end_layout
 
 \end_inset
@@ -15408,7 +15409,7 @@ Crear maquina virtual con cada perfil
 
 \begin_layout Plain Layout
 1- Ingresar a la web http://localhost:8080/ virtual_machine 2- Introducir
- X cantidad de maquinas a crear
+ X cantidad de máquinas a crear
 \end_layout
 
 \end_inset
@@ -15426,7 +15427,7 @@ Centos = 1 Ubuntu = 1 Windows = 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-Correcta Creación de 3 maquinas virtuales, cada una con un diferente SO
+Correcta Creación de 3 máquinas virtuales, cada una con un diferente SO
  
 \end_layout
 
@@ -15495,7 +15496,7 @@ RF01 RF02 RF03 RF04 RF05 RF08 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-Crear varias maquina virtual con el mismo perfil 
+Crear varias máquina virtual con el mismo perfil 
 \end_layout
 
 \end_inset
@@ -15505,7 +15506,7 @@ Crear varias maquina virtual con el mismo perfil
 
 \begin_layout Plain Layout
 1- Ingresar a la web http://localhost:8080/ virtual_machine 2- Introducir
- X>1 cantidad de maquinas a crear
+ X>1 cantidad de máquinas a crear
 \end_layout
 
 \end_inset
@@ -15523,7 +15524,7 @@ Centos = 0 Ubuntu = 3 Windows = 0
 \begin_inset Text
 
 \begin_layout Plain Layout
-Correcta Creación de 3 maquinas virtuales, cada una con el SO Ubuntu14 
+Correcta Creación de 3 máquinas virtuales, cada una con el SO Ubuntu14 
 \end_layout
 
 \end_inset
@@ -15589,7 +15590,7 @@ Tipo de dato incorrecto en la creación de VM
 
 \begin_layout Plain Layout
 1- Ingresar a la web http://localhost:8080/ virtual_machine 2- Introducir
- un string en la cantidad de maquinas a crear
+ un string en la cantidad de máquinas a crear
 \end_layout
 
 \end_inset
@@ -15933,7 +15934,7 @@ RF01 RF02 RF03 RF04 RF05 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-Crear maquinas virtuales parametrizadas 
+Crear máquinas virtuales parametrizadas 
 \end_layout
 
 \end_inset
@@ -16396,7 +16397,7 @@ Marcar las siguientes opciones en la sección Centos: Eclipse idle repositorio
 \begin_inset Text
 
 \begin_layout Plain Layout
-Adecuación correcta del estado de la maquina virtual Centos de acuerdo a
+Adecuación correcta del estado de la máquina virtual Centos de acuerdo a
  lo pedido 
 \end_layout
 
@@ -16453,7 +16454,7 @@ RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ingreso Interfaz web desde maquinas en red 
+Ingreso Interfaz web desde máquinas en red 
 \end_layout
 
 \end_inset
