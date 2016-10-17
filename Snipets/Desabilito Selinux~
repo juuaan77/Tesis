@@ -1,0 +1,6 @@
+#!bin/bash
+
+#Este codigo desabilita el selinux.
+sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux;
+
+exit;

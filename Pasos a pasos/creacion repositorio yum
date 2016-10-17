@@ -1,0 +1,24 @@
+sudo yum install -y createrepo vsftpd lftp
+
+Crear la carpeta deseada en la direccion /var/ftp/nombre_de_tu_repo y añadir los rpm
+
+sudo createrepo /var/ftp/nombre_de_tu_repo
+
+En el archivo de configuracion de vsftpd asegurate que esten estas lineas
+anonymous_enable=YES
+anon_root=/var/ftp
+
+El resto segun tu aplicacion
+
+Desactivar selinux y desactivar o añadir las reglas necesarias de abrir los puertos del iptables.
+
+Crear el archivo nombre_repo.repo en la maquina que lo va a utilizar en /etc/yum.repos.d/ con el siguiente contenido
+
+[repojuan]
+name=repojuan
+comment ="Repositorio local para proyecto integrador"
+baseurl=ftp://IPservidor/nombre_de_tu_repo
+gpgcheck=0
+enabled=1
+
+yum --enablerepo=nombre_de_tu_repo --disablerepo=base info paquete.rpm

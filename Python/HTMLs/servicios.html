@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	  <title>Servidor de maquinas virtuales</title>
+		<!-- Aca empieza la parte de css que va a formatear la pagina para que quede de la forma deseada -->
+		<!-- Deberia ser una unica linea, que es la siguiente, pero con el bottle no anda y no se porque -->
+		<!--<link rel="stylesheet" href="estilo1.css"> --> 
+		<style type="text/css">
+			/*Esta seccion indica como debe ser el cuerpo de la pagina*/
+			  body {
+				padding-left: 14em;/*debe ubicarse a la derecha, para dejar espacio a la izquierda para el menu*/
+				color: black;/*Indico letras negras*/
+				background-color: #dcffff }/*indico color de fondo celeste*/
+
+			/*Esta seccion indica como debe el menu, su ubicacion presisa*/
+			ul.navbar {
+				list-style-type: none;/*Sin el item y que no deje espacio vacio*/
+				padding: 0;
+				margin: 0;
+				position: absolute;/*posicion independiente del cuerpo de la pagina*/
+				top: 2em;/*ubicacion*/
+				left: 1em;
+				width: 11em }
+
+			/*El menu tiene recuadros blancos*/
+			ul.navbar li {
+				background: white;
+				margin: 0.5em 0;
+				padding: 0.3em;
+				border-right: 1em solid black }/*linea negra a la derecha*/
+
+			/*si aun no se ingreso al enlace esta azul, sino purpura*/
+			ul.navbar a {
+				text-decoration: none }
+				a:link {
+					color: blue }
+				a:visited {
+					color: purple }
+		</style>
+		
+	</head>
+	
+	<body>
+
+		<form action="/servicios" method="post">
+
+			<H2>Marque las opciones que desea segun cada sistema operativo.</H2>
+			<hr> CentOS <br/> <br/>
+				<INPUT type="checkbox" name="c_eclipse">eclipse<BR>
+				<INPUT type="checkbox" name="c_idle">idle<BR>
+				<INPUT type="checkbox" name="c_repositorio">repositorio<BR>
+				<INPUT type="checkbox" name="c_update">update<BR>
+				<INPUT type="checkbox" name="c_usuarios">usuarios<BR>
+			<br>
+
+			<hr> Ubuntu <br/> <br/>
+				<INPUT type="checkbox" name="u_eclipse">eclipse<BR>
+				<INPUT type="checkbox" name="u_idle">idle<BR>
+				<INPUT type="checkbox" name="u_repositorio">repositorio<BR>
+				<INPUT type="checkbox" name="u_ubuntugui">ubuntugui<BR>
+				<INPUT type="checkbox" name="u_update">update<BR>		
+				<INPUT type="checkbox" name="u_usuarios">usuarios<BR>		
+			<br>
+
+			<hr> Windows <br/> <br/>
+				<INPUT type="checkbox" name="w_windowsus">usuarios<BR>	
+			<br>
+	
+			<!--<INPUT type="checkbox" name="estandard" checked>Parametros estandard<BR>-->
+	
+		    	<hr> <input value="Aceptar" type="submit" /> <br>
+		</form>
+
+		<!-- Menú de navegación del sitio -->
+		<ul class="navbar">
+			<li><a href="virtual_machine">Crear virtual machine sin parametros.</a>
+			<li><a href="virtual_machine_parametrizada">Crear virtual machine con parametros.</a>
+			<li><a href="estados">Ver estado actual de las maquinas virtuales.</a>
+			<li><a href="politicas_maquinas">Editar politica de una VM.</a>
+		</ul>
+
+
+	</body>
+</html>

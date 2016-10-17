@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	  <title>Estado de las maquinas virtuales</title>
+	</head>
+	
+	<body>
+		<form action="/estados" method="post">
+			<TABLE BORDERCOLOR="040404" BORDER="1" cellpadding="1" cellspacing="1">
+				<TR>
+					<TH>Nombre de la VM</TH>
+					<TH>Estado</TH>
+					<TH colspan="2">Accion</TH>
+				</TR>
+				<TR>
+					<TD>windows</TD>
+					<TD BGCOLOR=F91111> Apagado</TD>
+					<TD><INPUT type="checkbox" name="Prender">Prender<BR></TD>		
+					<TD><INPUT type="checkbox" name="Apagar">Apagar<BR></TD>
+				</TR>
+				<TR>
+					<TD>centos</TD>
+					<TD BGCOLOR=21F911> Ejecutnado</TD>
+					<TD><INPUT type="checkbox" name="Prender">Prender<BR></TD>		
+					<TD><INPUT type="checkbox" name="Apagar">Apagar<BR></TD>
+				</TR>
+			</TABLE>
+		<TD><input value="Ejecutar accion" type="submit" /></TD>
+	</body>
+</html>

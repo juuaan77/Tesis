@@ -1,0 +1,22 @@
+1) Se crea la maquina virtual con el script CreacionVM.sh, toma 6 parametros:
+	1 -> nombre de la VM
+	2 -> RAM de la  VM en MB
+	3 -> Nombre de la imagen de la VM
+	4 -> Tamaño del disco asignado en GB
+	5 -> Direccion IP del servidor Cobbler
+	6 -> Direccion IP del servidor creado
+
+Los 4 primeros parametros son para definir la maquina virtual, mientras que los utimos dos son para crear un acceso al servidor cobbler y editar el script Configura_red para indicarle al servidor cobbler que IP se desea tenga la VM una vez finalizada la instalacion.
+
+Al comenzar la instalacion, el servidor sigue las instrucciones del archivo kickstart, en el cual, primeramente, se indican la configuracion necesaria durante la instalacion. 
+En ella se detallan entre otras cosas, que el firewall y el selinux estan desactivados.
+
+Una vez finalizada la instalacion del SO comienza la instalacion de servicios escenciales, a travez del repositorio que se encuentra en el servidor Cobbler.
+
+(ENTRE ESOS PAQUETES SE PODRIA INSTALAR EL PAQUETE PUPPET DESDE ESTE REPOSITORIO, ASI, EVITAMOS TENER QUE SALIR A INTERNET.)
+
+Una vez finalizada esta etapa, comienzan a ejecutarse los diferentes scripts o snippets de post instalacion, entre ellos se destacan uno que configura el servicio de Puppet y el que configura la red segun la IP dada al script inicial. (RECORDAR CONFIGURAR AMBOS SCRIPTS ADECUADAMENTE)
+
+Una vez finalizada la instalacion de la VM, el agente Puppet instalado se comunica con el servidor Puppet (que comparte con el servidor Cobbler) y se firma el sertificado del mismo (HAY QUE ANALIZAR SI SE DESEA QUE SE FIRMEN LOS CERTIFICADOS AUTOMATICAMENTE O MANUALMENTE.)
+
+En este punto, el sistema esta listo para pedir los catalogos correspondiente y comenzar la isntalacion y puesta en marcha de servicios indicados. 

@@ -1,0 +1,9 @@
+1) Guardar la imagen iso en un direcotorio adecuado, utilizar siempre isos completas DVD, no minimal ni live porque no andan ya que les faltan ciertos archivos.
+
+2) Montar la iso
+
+	mount -o loop CentOS-6.5-i386-bin-DVD1.iso /mnt/
+
+3) Importarla
+
+	cobbler import --path=/mnt/ --name=CentOS_6.5

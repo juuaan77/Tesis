@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#Este script tiene como finalidad instalar y configurar puppet.
+
+#Aniado el repositorio de puppet e instalo el agente
+rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm;
+yum install -y puppet wget vim;
+
+#Aniado la linea que indica la direccion IP del servidor puppet
+echo '192.168.122.1 puppet cobbler puppet.example.com' >> /etc/hosts;
+
+#Aca modifico el archivo de configuracion de puppet y coloco el mio.
+echo '[main]' > /etc/puppetlabs/puppet/puppet.conf;
+echo 'logdir = /var/log/puppet' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'rundir = /var/run/puppet' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'ssldir = $vardir/ssl' >> /etc/puppetlabs/puppet/puppet.conf;
+echo "certname = $HOSTNAME" >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'server = puppet' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'runinterval = 2m' >> /etc/puppetlabs/puppet/puppet.conf;
+echo '[agent]' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'classfile = $vardir/classes.txt' >> /etc/puppetlabs/puppet/puppet.conf;
+echo 'localconfig = $vardir/localconfig' >> /etc/puppetlabs/puppet/puppet.conf;
+
+systemctl start puppet;
+systemctl enable puppet;
+

@@ -1,0 +1,9 @@
+1) Se crea la maquina virtual con el script CreacionVM.sh, toma 6 parametros:
+	1 -> nombre de la VM
+	2 -> RAM de la  VM en MB
+	3 -> Nombre de la imagen de la VM
+	4 -> Tamaño del disco asignado en GB
+	5 -> Direccion IP del servidor Cobbler
+	6 -> Direccion IP del servidor creado
+
+

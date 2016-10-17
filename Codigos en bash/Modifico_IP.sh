@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#este script modifica el valor de la direccion ip que configura el sniper Configura_red del sevido cobbler.
+
+#Me aseguro qu se envien los dosarmetros requeridos.
+if [ $# -lt 2 ]; 
+then
+	echo "Necesitas pasar dos parámetros, que significan:";
+	echo "1° -> Direccion IP del servidor Cobbler.";
+	echo "2° -> Direccion IP deceada para el nuevo servidor.";
+	exit;
+else
+#Ejecuto la linea que modifica el configurador de red.
+	echo "ssh root@$1 sed -i 's/IPADDR.*/IPADDR=$2/g' /var/lib/cobbler/snippets/Configura;"
+
+fi
+
+exit
