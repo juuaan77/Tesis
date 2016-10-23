@@ -1,0 +1,19 @@
+Corregir introduccion INEFICIENCIA - poner correciones ya hechas
+Reveer
+journaling
+release
+palabras en ingles entre ”
+hypervisor
+host
+hardware
+bare-metal - bare metal
+flag
+import
+
+preguntar como corregir
+
+• La sobre utilización de memoria tiene soporte de KVM utilizando el disco de swap. 
+
+• La sobre utilización de CPUs tiene soporte de KVM, pero se recomienda no utilizar más de diez CPUs virtuales por cada CPU físico.
+
+overcommiting

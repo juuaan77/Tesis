@@ -270,8 +270,12 @@ El sistema de infraestructura virtual automatizado y con orquestación, tiene
 La cantidad de servicios y servidores necesarios en las organizaciones tiende
  a ser cada vez mayor.
  Cada día los despliegues son más complejos, es necesario trabajar con aplicacio
-nes clusterizadas, múltiples datacenters, redes privadas, públicas y nubes
- híbridas, como también aplicaciones con distintas dependencias.
+nes clusterizadas, múltiples 
+\shape italic
+datacenters
+\shape default
+, redes privadas, públicas y nubes híbridas, como también aplicaciones con
+ distintas dependencias.
  Este tipo de tareas ya no pueden realizarse individualmente para cada máquina
  y menos aún en entornos escalables donde se pueden llegar a tener cientos
  de nodos.
@@ -283,7 +287,11 @@ nes clusterizadas, múltiples datacenters, redes privadas, públicas y nubes
 \begin_layout Standard
 Hablar de orquestación implica eficiencia en los recursos, tanto humanos
  como computacionales, y por ello implica hablar de virtualización, aprovisionam
-iento y datacenters dinámicos.
+iento y 
+\shape italic
+datacenters
+\shape default
+ dinámicos.
  En este sentido, virtualización puede aplicar a computadoras, sistemas
  operativos, dispositivos de almacenamiento, aplicaciones o redes, sin embargo
  la virtualización de servidores es el objetivo principal en este proyecto.
@@ -376,11 +384,15 @@ Introducción
 
 \begin_layout Standard
 Hoy en día no se concibe la implementación de un solo servidor con un servicio.
- Múltiples servicios virtuales dan paso a mejoras significativas en la produccón
-, aplicando técnicas de balanceo de carga, servidores redundantes, etc.
+ Múltiples servicios virtuales dan paso a mejoras significativas en la producció
+n, aplicando técnicas de balanceo de carga, servidores redundantes, etc.
  Por ello es necesario trabajar con aplicaciones clusterizadas, múltiples
- datacenters, redes privadas, públicas y nubes híbridas, como también aplicacion
-es con distintas dependencias.
+ 
+\shape italic
+datacenters
+\shape default
+, redes privadas, públicas y nubes híbridas, como también aplicaciones con
+ distintas dependencias.
  En sectores con cientos de nodos administrables, alrededor de quinientos
  o más, esta tarea debe realizarse por una persona que cuente con los conocimien
 tos técnicos y los procesos de producción, como también los métodos para
@@ -409,7 +421,7 @@ De la mano de la orquestación, se encuentra la virtualización de computadoras,
  entre otros.
  Las limitaciones que imponen los servidores x86, que están diseñados para
  correr un solo sistema operativo a la vez, resultan en una gran ineficiencia,
- alcanzando entre el cinco y quince porciento de su capacidad.
+ alcanzando entre el cinco y quince por-ciento de su capacidad.
  Ésto desafía a los administradores a utilizar software para simular la
  existencia de hardware y crear un sistema de cómputo virtual, permitiendo
  ejecutar más de una máquina virtual y múltiples sistemas operativos en
@@ -493,7 +505,7 @@ Secundarios:
 \end_layout
 
 \begin_layout Itemize
-Instalar y utilzar sistemas operativos para servidor.
+Instalar y utilizar sistemas operativos para servidor.
 \end_layout
 
 \begin_layout Itemize
@@ -623,7 +635,7 @@ Requerimientos
 
 \begin_layout Standard
 Los requerimientos del sistema se obtuvieron directamente desde el Director
- y el Codirector.
+ y el Co-director.
  Se separaron los requerimientos en funcionales y no funcionales.
 \end_layout
 
@@ -1428,7 +1440,7 @@ Desarrollo de un sistema que integre las herramientas seleccionadas para
 
 \begin_layout Itemize
 Desarrollo de perfiles que permitan obtener un abanico de posibilidad para
- la creacion de máquinas virtuales.
+ la creación de máquinas virtuales.
 \end_layout
 
 \begin_layout Itemize
@@ -1800,7 +1812,7 @@ RS02
 \begin_inset Text
 
 \begin_layout Plain Layout
-Incompatibilidad de funciones del sistema operativo con el Hardware disponible
+Incompatibilidad de funciones del sistema operativo con el hardware disponible
  
 \end_layout
 
@@ -4634,8 +4646,8 @@ CentOS logo
 \begin_layout Standard
 CentOS es un distribución Linux empresarial, basada en Red Hat Enterprise
  Linux.
- CentOS concuerda con la política de distribución de Red Hat y apunta a
- ser binariamente compatible en su totalidad.
+ CentOS concuerda con la política de distribución de Red Hat y es binariamente
+ compatible en su totalidad.
  Cada versión de esta distribución tiene soporte por siete años en cuestiones
  de actualizaciones de mantenimiento y seguridad, lo que se traduce en un
  ambiente confiable, predecible, reproducible, de bajo mantenimiento y seguro.
@@ -4643,12 +4655,14 @@ CentOS es un distribución Linux empresarial, basada en Red Hat Enterprise
 
 \begin_layout Standard
 La principal ventaja de esta distribución es que se obtiene un conjunto
- estable de la mayoría de paquetes que por lo general sólo incluyen correcciones
- de errores.
- En su última versión, CentOS 7 solo está disponible para la arquitectura
- x86_64, y representa un gran cambio frente a versiones anteriores del sistema
- operativo, como la inclusión de systemd, Gnome 3, GRUB 2, y el sistema
- de archivos XFS.
+ estable de paquetes que por lo general sólo incluyen correcciones de errores.
+ CentOS 7 solo está disponible para la arquitectura x86_64, y representa
+ un gran cambio frente a versiones anteriores del sistema operativo, como
+ la inclusión de 
+\family typewriter
+systemd
+\family default
+, Gnome 3, GRUB 2, y el sistema de archivos XFS.
  El entorno de escritorio KDE también forma parte de la oferta de CentOS
  7.
  
@@ -4679,17 +4693,25 @@ OpenJDK-7 como JDK por defecto.
 \end_layout
 
 \begin_layout Itemize
-Cambio a systemd.
+Cambio a 
+\family typewriter
+systemd
+\family default
+.
  
 \end_layout
 
 \begin_layout Itemize
-Cambio a firewalld y GRUB2.
+Cambio a 
+\family typewriter
+firewalld
+\family default
+ y GRUB2.
 \end_layout
 
 \begin_layout Itemize
 XFS es el sistema de archivos por defecto y permite escalar la capacidad
- de almacenamiento del sistema hasta 500 terabytes.
+ de almacenamiento del sistema hasta 500 TB.
  XFS es un sistema de archivos de 64 bits con journaling de alto rendimiento,
  y está especialmente indicado para discos grandes (superiores a 1 TB).
  No obstante y para necesidades menos exigentes se pueden emplear otros
@@ -4717,13 +4739,27 @@ Soporte UEFI.
 \end_layout
 
 \begin_layout Standard
-En cuanto a systemd es el reemplazo de init como demonio para iniciar servicios,
- procesos y recursos del sistema.
- Systemd es la nueva forma predeterminada de iniciar los sistemas Linux,
- y ha sido adoptado por Red Hat, Debian y Ubuntu, entre otros.
+En cuanto a 
+\family typewriter
+systemd
+\family default
+ es el reemplazo de 
+\family typewriter
+init
+\family default
+ como demonio para iniciar servicios, procesos y recursos del sistema.
+ 
+\family typewriter
+systemd
+\family default
+ es la nueva forma predeterminada de iniciar los sistemas Linux, y la adoptaron
+ Red Hat, Debian y Ubuntu, entre otros.
  CentOS 7 es compatible con Microsoft Active Directory (y obviamente con
  Red Hat), por lo que puede trabajar con facilidad en entornos heterogéneos.
- CentOS 7 incluye PCP (Performance Co-Pilot), un conjunto de frameworks
+ CentOS 7 incluye PCP (Performance Co-Pilot), un conjunto de 
+\shape italic
+frameworks
+\shape default
  y servicios en tiempo real para supervisar y monitorizar el rendimiento
  del sistema.
 \end_layout
@@ -4779,15 +4815,22 @@ Debian es una distribución libre, por completo manejada por la comunidad,
 \end_layout
 
 \begin_layout Standard
-En su última versión, Debian 8 Jessie, soporta las siguientes arquitecturas:
- x32 (i386), x86-64 (amd64), Motorola/IBM PowerPC, MIPS, IBM S/390 y ARM.
+Debian 8 Jessie, tiene soporte para las siguientes arquitecturas: x32 (i386),
+ x86-64 (amd64), Motorola/IBM PowerPC, MIPS, IBM S/390 y ARM.
  
 \end_layout
 
 \begin_layout Standard
-Este release incluye el nuevo estándar sistema de inicio 
+Este 
+\shape italic
+release
+\shape default
+ incluye el nuevo estándar sistema de inicio 
+\family typewriter
+systemd
+\family default
 \emph on
-systemd.
+.
 \end_layout
 
 \begin_layout Standard
@@ -4803,7 +4846,11 @@ Núcleo del sistema: Linux kernel 3.16
 \end_layout
 
 \begin_layout Itemize
-Cambio a systemd.
+Cambio a 
+\family typewriter
+systemd
+\family default
+.
  
 \end_layout
 
@@ -4813,7 +4860,7 @@ Entornos gráficos: Gnome 3.14, KDE 4.14,
 
 \begin_layout Itemize
 Los puertos para el kernel de FreeBSD (kfreebsd-amd64 y kfreebsd-i386),
- incluidos para versiones anteriores no son parte de esta versión.
+ incluidos para versiones anteriores, no son parte de esta versión.
 \end_layout
 
 \begin_layout Itemize
@@ -4872,17 +4919,28 @@ FreeBSD viene con una excelente colección de herramientas de sistema como
  A pesar de esto, existen otras que no vienen incluidas y se necesitan instalar
  para utilizarlas.
  FreeBSD ofrece dos tecnologías complementarias para instalar software de
- terceros en el sistema: la colección de puertos o ”ports” de FreeBSD y
- los paquetes binarios.
+ terceros en el sistema: la colección de puertos o 
+\family typewriter
+ports
+\family default
+ de FreeBSD y los paquetes binarios.
  Los paquetes binarios son archivos simples que descargamos desde repositorios.
- Contienen una copia de los programas binarios precompilados de la aplicación
- y se pueden manipular con las herramientas de gestión de paquetes de FreeBSD:
- pkg_add, pkg_delete, pkg_info, etc.
+ Contienen una copia de los programas binarios pre-compilados de la aplicación
+ y se pueden administrar con las herramientas de gestión de paquetes de
+ FreeBSD: 
+\family typewriter
+pkg_add, pkg_delete, pkg_info,
+\family default
+ etc.
  Por otro lado, existen ciertos pasos que se deben llevar a cabo para compilar
  un programa (descargar, desempaquetar, parchear, compilar e instalar).
  Los ficheros que conforman un puerto permiten que el sistema se encargue
  de todo esto, mediante un conjunto simple de órdenes.
- La colección de puertos para instalar se encuentra en /usr/ports.
+ La colección de puertos para instalar se encuentra en 
+\family typewriter
+/usr/ports
+\family default
+.
 \end_layout
 
 \begin_layout Standard
@@ -4921,7 +4979,7 @@ Compatibilidad binaria con muchos programas nativos de Linux, SCO, SVR4,
 \end_layout
 
 \begin_layout Itemize
-Soporte para multiprocesamiento simétrico con múltiples CPUs.
+Soporte para multi-procesamiento simétrico con múltiples CPUs.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4968,8 +5026,8 @@ Solaris logo
 Solaris es un sistema operativo de tipo Unix desarrollado por Sun Microsystems
  desde 1992 como sucesor de SunOs.
  Es un sistema certificado oficialmente como versión de Unix.
- Aunque solaris fue desarrollado como software privado, la mayor parte de
- su código se ha liberado como proyecto de software libre denominado OpenSolaris.
+ Aunque Solaris se desarrolló como software privado, la mayor parte de su
+ código se ha liberado como proyecto de software libre denominado OpenSolaris.
  Solaris es famoso por su escalabilidad, especialmente en sistemas SPARC.
  Sun solaris se ejecuta sobre la arquitectura SPARC en 32 y 64 bits, o sobre
  procesadores x86 (incluidos Intel y AMD).
@@ -4978,22 +5036,22 @@ Solaris es un sistema operativo de tipo Unix desarrollado por Sun Microsystems
 \end_layout
 
 \begin_layout Standard
-Solaris tiene una reputación de ser muy adecuado para el multiprocesamiento
+Solaris tiene una reputación de ser muy adecuado para el multi-procesamiento
  simétrico (SMP), soportando un gran número de CPUs.
- Históricamente Solaris ha estado firmemente integrado con la plataforma
- hardware de Sun, SPARC, con la cual fue diseñado y promocionado como un
- paquete combinado.
+ Sun desarrolló el sistema operativo Solaris poniendo énfasis en su integración
+ con la plataforma de hardware SPARC.
+ Ambos productos se ofrecían como un paquete combinado.
  Esto proporcionaba frecuentemente unos sistemas más fiables pero con un
  coste más elevado que el del hardware de PC.
  
 \end_layout
 
 \begin_layout Standard
-A partir de su versión 10, Sun Microsystems ha promocionado Solarios con
+A partir de su versión 10, Sun Microsystems ha promocionado Solaris con
  sus propias estaciones de trabajo y servidores de 64 bits basados en procesador
 es AMD Opteron e Intel Xeon, como también en sistemas de 32 bits.
- Esta versión añadió soporte para para-virtualización cuando es utilizada
- como “sistema operativo invitado” en ambientes basados en Xen.
+ Esta versión añadió soporte de para-virtualización cuando se utiliza como
+ “sistema operativo invitado” en ambientes basados en Xen.
  
 \end_layout
 
@@ -5017,7 +5075,11 @@ Pools de almacenamiento.
 \end_layout
 
 \begin_layout Itemize
-Aprovisionamiento de máquinas (bare metal provisioning) como servicio.
+Aprovisionamiento de máquinas (
+\shape italic
+bare metal provisioning
+\shape default
+) como servicio.
 \end_layout
 
 \begin_layout Itemize
@@ -5043,11 +5105,18 @@ Virtualización
 Virtualización es un término amplio para software ejecutándose, usualmente
  sistemas operativos, de manera concurrente y aislada de otros programas
  en el mismo sistema.
- Muchas de las implementaciones de virtualización utilizan un “hypervisor”,
- una capa de software que controla el hardware y provee sistemas operativos
+ Muchas de las implementaciones de virtualización utilizan un 
+\family typewriter
+hypervisor
+\family default
+, una capa de software que controla el hardware y provee sistemas operativos
  huéspedes con acceso a los dispositivos de hardware subyacentes.
- El hypervisor permite ejecutar múltiples sistemas operativos en el mismo
- sistema físico ofreciendo hardware virtualizado al sistema operativo huésped.
+ El 
+\family typewriter
+hypervisor
+\family default
+ permite ejecutar múltiples sistemas operativos en el mismo sistema físico
+ ofreciendo hardware virtualizado al sistema operativo huésped.
  Esta tecnología, provee un conjunto de herramientas para aumentar la flexibilid
 ad y reducir los costos, los cuales son tópicos importantes en cualquier
  empresa o institución.
@@ -5070,19 +5139,33 @@ ad y reducir los costos, los cuales son tópicos importantes en cualquier
  Otra desventaja es que del sistema de virtualización depende del sistema
  operativo anfitrión.
  Es decir, el anfitrión es el punto débil del sistema ya que se comparte
- por todos los sistemas virtualizados, si se rompe éste, se rompen todas
- las máquinas virtuales.
+ entre todos los sistemas virtualizados.
+ Si se rompe éste, se rompen todas las máquinas virtuales.
 \end_layout
 
 \begin_layout Standard
-En resumen, una máquina virtual (“virtual machine” - VM) es un conjunto
- de software altamente aislado con un sistema operativo y aplicaciones adentro.
+En resumen, una máquina virtual (
+\shape italic
+virtual machine
+\shape default
+ - VM) es un conjunto de software altamente aislado con un sistema operativo
+ y aplicaciones adentro.
  Cada VM es completamente independiente.
  Poner múltiples VMs en una misma computadora habilita a varias aplicaciones
- y sistemas operativos correr en un solo servidor virtual o ”host”.
- Una fina capa de software, llamado hypervisor, desacopla las máquinas virtuales
- del host y dinámicamente asigna recursos computacionales a cada VM como
- sea necesario.
+ y sistemas operativos correr en un solo servidor virtual o 
+\family typewriter
+host
+\family default
+.
+ Una fina capa de software, llamado 
+\shape italic
+hypervisor
+\shape default
+, desacopla las máquinas virtuales del 
+\family typewriter
+host
+\family default
+ y asigna dinámicamente recursos computacionales a cada VM.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5102,9 +5185,12 @@ Consiste en la virtualización de paquetes y herramientas para correr de
  relativos al consumo energético y refrigeración de estos sistemas menos
  eficientes.
  La virtualización completa ofrece, sin embargo, menor rendimiento de entrada/sa
-lida que instalaciones nativas (también llamadas “bare-metal” o “metal-pelado”)
- de sistemas operativos.
- Por ejemplo el software KVM, Xen, VMware Workstation o VirtualBox hacen
+lida que instalaciones nativas (también llamadas 
+\shape italic
+bare-metal
+\shape default
+ o “metal-pelado”) de sistemas operativos.
+ Por ejemplo, el software KVM, Xen, VMware Workstation o VirtualBox hacen
  uso de esta técnica.
  Cabe destacar que en el caso de KVM se requiere soporte de hardware para
  ejecutar la virtualización, ya sea con procesadores Intel o AMD.
@@ -5154,9 +5240,9 @@ Para-virtualización
 \begin_layout Standard
 Para-virtualización es un técnica de virtualización que implica ejecutar
  versiones modificadas de los sistemas operativos.
- El sistema operativo para-virtualizado es modificado para que se de cuenta
- que está siendo virtualizado, ofreciendo un habilidad aumentada para la
- optimización, ya que el huésped está al tanto de su entorno.
+ El sistema operativo para-virtualizado se encuentra modificado para que
+ se de cuenta que está siendo virtualizado, ofreciendo un habilidad aumentada
+ para la optimización, ya que el huésped está al tanto de su entorno.
  El rendimiento está generalmente muy cerca de la ejecución nativa de sistemas
  operativos no virtualizados.
  Por ejemplo, utilizan esta técnica KVM, XEN y VMware Server ESX.
@@ -5206,8 +5292,11 @@ Para-virtualización de drivers
 \begin_layout Standard
 La para-virtualización y la virtualización completa pueden combinarse para
  permitir a sistemas operativos no modificados recibir un rendimiento cercano
- de entrada/salida al de ejecución nativa, por medio de drivers para-virtualizad
-os en sistemas operativos completamente virtualizados.
+ de entrada/salida al de ejecución nativa, por medio de 
+\shape italic
+drivers
+\shape default
+ para-virtualizados en sistemas operativos completamente virtualizados.
 \end_layout
 
 \begin_layout Paragraph
@@ -5215,20 +5304,24 @@ Virtualización a nivel del sistema operativo
 \end_layout
 
 \begin_layout Standard
-También llamada virtualización basada en contenedores, esta técnica virtualiza
- un servidor físico a nivel del sistema operativo, permitiendo que múltiples
- servidores virtuales aislados y seguros se ejecuten sobre un solo servidor
- físico.
+También llamada virtualización basada en contenedores.
+ Esta técnica virtualiza un servidor físico a nivel del sistema operativo,
+ permitiendo que múltiples servidores virtuales aislados y seguros se ejecuten
+ sobre un solo servidor físico.
  Con la virtualización basada en contenedores, no existe la sobrecarga asociada
- con tener a cada huésped ejecutando un sistema operativo completamente
- instalado.
+ a cada huésped ejecutando un sistema operativo completamente instalado.
  Este enfoque también puede mejorar el rendimiento porque hay un solo sistema
  operativo encargándose de los avisos de hardware.
  Una desventaja de la virtualización basada en contenedores, sin embargo,
  es que cada invitado debe utilizar el mismo sistema operativo que utiliza
- el host.
- Por ejemplo, Jaulas con Warden en FreeBSD, OpenVZ, Docker o Linux-Vserver
- usan esta técnica.
+ el 
+\family typewriter
+host
+\family default
+.
+ Por ejemplo, Jaulas con Warden en FreeBSD (en este caso la variante Debian/KFre
+eBSD puede correr en jaulas Warden sobre FreeBSD), OpenVZ, Docker o Linux-Vserve
+r usan esta técnica.
 \end_layout
 
 \begin_layout Standard
@@ -5254,7 +5347,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de virtualización a nivel de SO
+Diagrama de virtualización a nivel de sistema operativo
 \end_layout
 
 \end_inset
@@ -5276,8 +5369,7 @@ Un emulador es hardware o software que permite a un sistema de computación
  comportarse como otro sistema.
  Generalmente, un emulador permite a un sistema correr software o utilizar
  dispositivos periféricos diseñados para el otro sistema.
- Por ejemplo Qemu es un emulador muy usual en ingeniería.
- 
+ Como ejemplo de emulador el principal referente es Qemu.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5361,12 +5453,8 @@ Docker es una herramienta de virtualización para Linux basada en contenedores.
 
 \begin_layout Standard
 El contenedor Docker se puede desplegar en cualquier otro sistema (que soporte
- esta tecnología), con lo que se ahorra el tener que instalar en este nuevo
- entorno todas aquellas aplicaciones que normalmente se utilicen.
-\end_layout
-
-\begin_layout Standard
-Un contenedor Docker no contiene todo un sistema completo, sino únicamente
+ esta tecnología).
+ Un contenedor Docker no incluye todo un sistema completo, sino únicamente
  aquellas librerías, archivos y configuraciones necesarias para desplegar
  las funcionalidades que contenga.
  Así mismo, Docker se encarga de la gestión del contenedor y de las aplicaciones
@@ -5374,19 +5462,22 @@ Un contenedor Docker no contiene todo un sistema completo, sino únicamente
 \end_layout
 
 \begin_layout Standard
-Para obtener esta fluidez Docker extiende LXC (LinuX Containers), un sistema
+Para obtener esta fluidez, Docker extiende LXC (LinuX Containers), un sistema
  de virtualización ligero que permite crear múltiples sistemas totalmente
- aislados entre si sobre la misma máquina o sistema anfitrión.
- Y todo dado que no se emula un sistema operativo completo, sólo las librerías
- y sistemas de archivos necesarios para la utilización de las aplicaciones
- que se tengan instaladas en cada contenedor.
+ aislados entre sí sobre la misma máquina o sistema anfitrión.
 \end_layout
 
 \begin_layout Standard
-En las últimas versiones de Docker se ha introducido drivers de Docker y
- una librería llamada libcontainer, que ayuda a que Docker sea totalmente
- multiplataforma, teniendo compatibilidad con Windows y Mac OS X, además
- de Linux.
+En las últimas versiones de Docker se ha introducido 
+\shape italic
+drivers
+\shape default
+ de Docker y una librería llamada 
+\family typewriter
+libcontainer
+\family default
+, que ayuda a que Docker sea totalmente multiplataforma, teniendo compatibilidad
+ con Windows, Mac OS X y FreeBSD además de Linux.
 \end_layout
 
 \begin_layout Paragraph
@@ -5439,7 +5530,11 @@ KVM/Qemu logo
 \begin_layout Standard
 KVM (Kernel-based Virtual Machine), desarrollado por Red Hat Enterprise
  Linux, es una infraestructura de virtualización completa para el kernel
- de Linux que lo transforma en un hypervisor.
+ de Linux que lo transforma en un 
+\shape italic
+hypervisor
+\shape default
+.
  Fue incorporado a la línea principal del kernel Linux en la versión 2.6.20.
  KVM requiere un procesador con hardware que permita extensión para virtualizaci
 ón (Intel VT o AMD-V).
@@ -5460,7 +5555,11 @@ La para-virtualización tiene soporte para ciertos dispositivos en Linux,
 Qemu puede utilizarse como emulador y como virtualizador.
  Cuando se utiliza como virtualizador, Qemu toma un rendimiento cercano
  al nativo.
- Para ello, debe ejecutarse bajo el hypervisor Xen o KVM.
+ Para ello, debe ejecutarse bajo el 
+\shape italic
+hypervisor
+\shape default
+ Xen o KVM.
  En conjunto KVM/Qemu, KVM es quien hace las veces de árbitro del acceso
  al CPU y memoria, y Qemu emula los recursos de hardware.
  
@@ -5520,7 +5619,7 @@ OpenVZ es una herramienta de virtualización para Linux basada en contenedores.
  RAM.
  Un entorno virtual único se puede escalar hasta el equipo físico entero.
  También cuenta con migración en vivo que posibilita mover un contenedor
- de in servidor físico a otro sin apagar el contenedor.
+ de un servidor físico a otro sin apagar el contenedor.
  Un propietario (root) de un servidor físico OpenVZ (conocido como Nodo
  de Hardware) puede ver todos los procesos y archivos de los contenedores.
  Esto hace la administración masiva de escenarios posible: se puede ejecutar
@@ -5578,11 +5677,10 @@ VirtualBox, desarrollado por Oracle, es un virtualizador completo de propósito
 \end_layout
 
 \begin_layout Standard
-AL día de la fecha, VirtualBox corre en Windows, Linux, Macintosh y Solaris
- y soporta una amplia variedad de sistemas operativos, entre ellos RHEL(7,6,5,4)
-, Windows (NT 4.0, 2000, XP, Server 2003, Vista, Windows 7, Windows 8, Windows
- 10), DOS/Windows 3.x, Linux (2.4, 2.6, 3.x and 4.x), Solaris y OpenSolaris,
- OS/2, y OpenBSD.
+VirtualBox corre en Windows, Linux, Macintosh y Solaris y soporta una amplia
+ variedad de sistemas operativos, entre ellos RHEL(7,6,5,4), Windows (NT
+ 4.0, 2000, XP, Server 2003, Vista, Windows 7, Windows 8, Windows 10), DOS/Window
+s 3.x, Linux (2.4, 2.6, 3.x and 4.x), Solaris y OpenSolaris, OS/2, y FreeBSD.
  
 \end_layout
 
@@ -5609,7 +5707,11 @@ Tareas típicas que se llevan a cabo para que ésto suceda son:
 \begin_layout Itemize
 Seleccionar el conjunto de hardware virtualizado (memoria RAM, disco, cantidad
  de procesadores asignados, placa de red, etc) para crear una máquina virtual
- bare-metal.
+ 
+\shape italic
+bare-metal
+\shape default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -5617,7 +5719,15 @@ Cargar el sistema operativo adecuado.
 \end_layout
 
 \begin_layout Itemize
-Configurar el sistema (dirección IP, gateway, DNS, hostname, MAC, etc).
+Configurar el sistema (dirección IP, 
+\shape italic
+gateway
+\shape default
+, DNS, 
+\shape italic
+hostname
+\shape default
+, MAC, etc).
 \end_layout
 
 \begin_layout Itemize
@@ -5625,7 +5735,7 @@ Actualizar el sistema y aplicar parches.
 \end_layout
 
 \begin_layout Itemize
-Cargar el conjunto de servicios necesarios..
+Cargar el conjunto de servicios necesarios.
 \end_layout
 
 \begin_layout Itemize
@@ -5710,7 +5820,7 @@ Cobbler logo
 Cobbler es un servidor Linux de aprovisionamiento que centraliza y simplifica
  el control de los servicios incluyendo DHCP, TFTP y DNS con el propósito
  de realizar instalaciones de sistemas operativos basadas en la red.
- Puede configurarse para PXE, reinstalaciónes y huéspedes virtualizados
+ Puede configurarse para PXE, re-instalaciones y huéspedes virtualizados
  utilizando Xen, KVM o VMWare como también dispositivos físicos.
  Está dirigido especialmente a Red Hat Linux y sus derivados, pero es posible
  configurarlo para que inicie con PXE otras distribuciones de Linux como
@@ -5718,20 +5828,37 @@ Cobbler es un servidor Linux de aprovisionamiento que centraliza y simplifica
  Es una herramienta que se encuentra en creciente desarrollo y cada vez
  añade más soporte a distintas distribuciones e incluso a FreeBSD y a futuro
  Windows.
- Actualmente cuenta con poco soporte para el sistema operativo de Microsoft.
+ Actualmente, cuenta con poco soporte para el sistema operativo de Microsoft.
  
 \end_layout
 
 \begin_layout Standard
 Cuenta con un sistema integrado para administración de configuración pero
- también cuenta con soporte para la integrar la herramienta de administración
+ también cuenta con soporte para integrar la herramienta de administración
  de configuración Puppet.
- Cobbler se basa en el mecanismo de Kickstart y ofrece perfiles de instalación
- que pueden aplicarse a una o muchas máquinas.
- La información contenida en un plantilla kickstart puede modificarse dinámicame
-nte pasando variables (llamadas ksmeta) o utilizando snippets, donde se
- puede mantener el código común simplificando la lectura y minimizando el
- tamaño del archivo kickstart.
+ Cobbler se basa en el mecanismo de 
+\shape italic
+kickstart
+\shape default
+ y ofrece perfiles de instalación que pueden aplicarse a una o muchas máquinas.
+ La información contenida en una plantilla 
+\shape italic
+kickstart
+\shape default
+ puede modificarse dinámicamente pasando variables (llamadas 
+\shape italic
+ksmeta
+\shape default
+) o utilizando 
+\shape italic
+snippets
+\shape default
+, donde se puede mantener el código común simplificando la lectura y minimizando
+ el tamaño del archivo 
+\shape italic
+kickstart
+\shape default
+.
 \end_layout
 
 \begin_layout Paragraph
@@ -5778,11 +5905,18 @@ FAI logo
 \begin_layout Standard
 FAI es un sistema no interactivo para instalar, personalizar y administrar
  sistemas Linux y configuraciones de software en computadoras como también
- en máquinas virtuales y entornos chroot, desde pequeñas redes hasta una
- infraestructura grande escalable y clusters.
+ en máquinas virtuales y entornos 
+\family typewriter
+chroot
+\family default
+, desde pequeñas redes hasta una infraestructura grande escalable y clusters.
  Es una herramienta para la instalación totalmente automática de Debian
  y otras distribuciones de Linux como Suse, Red Hat, Solaris, ya sea vía
- red, DVDs personalizados de instalación o en entornos chroot.
+ red, DVDs personalizados de instalación o en entornos 
+\family typewriter
+chroot
+\family default
+.
  
 \end_layout
 
@@ -5862,10 +5996,18 @@ Foreman logo
 \begin_layout Standard
 Foreman es una herramienta para el aprovisionamiento, configuración y monitoriza
 ción de servidores físicos y virtuales.
- Puede aprovisionar máquinas bare-metal, virtualizadas y en la nube a través
- de instalaciones desatendidas por medio de DHCP, DNS, TFTP y PXE.
+ Puede aprovisionar máquinas 
+\shape italic
+bare-metal
+\shape default
+, virtualizadas y en la nube a través de instalaciones desatendidas por
+ medio de DHCP, DNS, TFTP y PXE.
  Tiene una gran integración con software de administración de configuración
- como Puppet, Chef, Salt y otros por medio de plugins.
+ como Puppet, Chef, Salt y otros por medio de 
+\shape italic
+plugins
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -5873,7 +6015,11 @@ Algunas de sus características son:
 \end_layout
 
 \begin_layout Itemize
-Descubrir, aprovisionar y actualizar toda la infraestructura bare-metal.
+Descubrir, aprovisionar y actualizar toda la infraestructura 
+\shape italic
+bare-metal
+\shape default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -5882,7 +6028,11 @@ Crear y gestionar instancias entre nubes privadas y públicas.
 \end_layout
 
 \begin_layout Itemize
-Agrupar hosts y dirigirlos en conjunto, sin importar la ubicación.
+Agrupar 
+\shape italic
+hosts
+\shape default
+ y dirigirlos en conjunto, sin importar la ubicación.
  
 \end_layout
 
@@ -5953,8 +6103,8 @@ La orquestación describe el alineamiento automatizado, la coordinación y
  negocio con las aplicaciones, datos e infraestructura.
  Define las políticas y niveles de servicio a través de flujos de trabajo
  automatizados, aprovisionamiento y gestión de cambio.
- Esto crea una infraestructura alineada con la aplicación que puede ser
- escalada basándose en las necesidades de cada aplicación.
+ Esto crea una infraestructura alineada con la aplicación que escala basándose
+ en las necesidades de cada aplicación.
 \end_layout
 
 \begin_layout Standard
@@ -5962,21 +6112,21 @@ La orquestación también provee la gestión centralizada de los recursos.
  Por ejemplo, reduce el tiempo y esfuerzo para desplegar múltiples instancias
  de una sola aplicación.
  Cuando es necesario que se creen más instancias de diferentes aplicaciones,
- herramientas automatizadas pueden realizar tareas que previamente, podían
- llevarse a cabo sólo por múltiples administradores.
+ herramientas automatizadas realizan tareas que previamente podían llevarse
+ a cabo sólo por múltiples administradores.
 \end_layout
 
 \begin_layout Standard
 Un escenario que se puede encontrar es por ejemplo: Un administrador necesita
  desplegar una aplicación web, pero para hacerlo, primero debe crear el
  servidor de base de datos.
- Luego debe incluir en la base de datos todas las direcciones IP que pueden
+ Luego, debe incluir en la base de datos todas las direcciones IP que pueden
  conectarse al servidor, y también agregar este nuevo servidor a la herramienta
  que lo monitorea, o abrir un puerto particular antes de proceder.
- Cada tarea expuesta puede automatizada, pero el conjunto de estas automatizacio
-nes, junto con la coordinación secuencial de las mismas, realizada sin tener
- en cuenta el tipo de sistema operativo en el que corren, describen un proceso,
- en el cual actúa la orquestación.
+ Cada tarea expuesta puede automatizarse, pero el conjunto de estas automatizaci
+ones, junto con la coordinación secuencial de las mismas, realizada sin
+ tener en cuenta el tipo de sistema operativo en el que corren, describen
+ un proceso en el cual actúa la orquestación.
 \end_layout
 
 \begin_layout Standard
@@ -5986,13 +6136,13 @@ No hay que confundir los términos automatización y orquestación.
 \end_layout
 
 \begin_layout Standard
-La optimización de un proceso por ejemplo, no se puede conseguir simplemente
+La optimización de un proceso, por ejemplo, no se puede conseguir simplemente
  por la automatización.
  A la automatización le concierne una tarea: ejecutar un servidor web, configura
 r un servidor web, detener un servicio.
  A la orquestación, sin embargo, le concierne la ejecución de un flujo de
  trabajo (si se quiere automatizado) de un proceso.
- Un proceso de aprovisionamiento lleva a cabo múltiples tareas e involucrar
+ Un proceso de aprovisionamiento lleva a cabo múltiples tareas e involucra
  múltiples sistemas.
  El objetivo de la orquestación no es sólo ejecutar automáticamente un servidor,
  lo cual aumenta la velocidad en el proceso de despliegue y lleva las aplicacion
@@ -6083,7 +6233,7 @@ Es una plataforma para configurar y administrar computadoras.
 \begin_layout Standard
 Ansible distingue dos tipos de máquinas: controladores y nodos.
  Primero, existe una única máquina de control donde la orquestación comienza.
- Los nodos son manejados desde esa máquina por el servicio OpenSSH.
+ Los nodos se manejan desde esa máquina por el servicio OpenSSH.
  La máquina de control conoce a los nodos a través de un inventario.
  Esta herramienta usa una arquitectura sin agentes, es decir, los nodos
  no necesitan instalar ni ejecutar en segundo plano ningún proceso que se
@@ -6186,7 +6336,7 @@ Chef Solo
 \series default
  es la versión de código abierto y reside localmente en el nodo, esto quiere
  decir que toda la información y “recetas“ (configuraciones de sistemas
- que describen como son manejadas las aplicaciones) necesarias para configurar
+ que describen cómo están manejadas las aplicaciones) necesarias para configurar
  el nodo deben estar presentes en su disco duro.
  Esta herramienta utiliza Ruby-DLS para escribir las recetas.
  Éstas, que pueden agruparse para facilitar la administración, describen
@@ -6195,8 +6345,8 @@ Chef Solo
 \end_layout
 
 \begin_layout Standard
-Chef Server es soportado sobre RHEL/CentOS/Oracle Linux, y Ubuntu.
- Mientras que el soporte para los clients es AIX, RHEL/CentOS, FreeBSD,
+Chef Server está soportado en RHEL/CentOS/Oracle Linux, y Ubuntu.
+ Mientras que el soporte para los clientes es AIX, RHEL/CentOS, FreeBSD,
  Mac OS X, Solaris (OS), Microsoft Windows, Ubuntu, ArchLinux, Debian, Fedora,
  y otros.
  
@@ -6251,24 +6401,43 @@ a, forzando automáticamente que se llegue al estado correcto definido.
 \begin_layout Standard
 Puppet es una herramienta diseñada para administrar la configuración de
  sistemas similares a Unix y a Microsoft Windows de forma declarativa, es
- decir, se establece el estado requerido en vez cómo llegar al mismo..
+ decir, se establece el estado requerido en vez de cómo llegar al mismo.
  El usuario describe los recursos del sistema y sus estados utilizando el
  lenguaje declarativo que proporciona Puppet.
  Esta información es almacenada en archivos denominados “manifiestos”.
  Puppet descubre la información del sistema a través de una utilidad llamada
  Facter, y compila los manifiestos en un catálogo específico del sistema
  que contiene los recursos y la dependencia de dichos recursos.
- Estos catálogos son ejecutados en los sistemas de destino.
+ Estos catálogos se ejecutan en los sistemas de destino.
  La capa de abstracción de recursos permite a los administradores describir
  la configuración en términos de alto nivel, tales como usuarios, servicios
  y paquetes sin necesidad de especificar los comandos específicos del sistema
- operativo (como rpm, yum, apt).
+ operativo (como 
+\family typewriter
+rpm
+\family default
+, 
+\family typewriter
+yum
+\family default
+, 
+\family typewriter
+apt
+\family default
+).
 \end_layout
 
 \begin_layout Standard
-Puppet funciona bajo la arquitectura cliente servidor donde un puppet master
- indica a sus agentes las configuraciones que deben aplicar.
- Además, los masters pueden aplicar manifiestos a sí mismos.
+Puppet funciona bajo la arquitectura cliente servidor donde un 
+\shape italic
+puppet-master 
+\shape default
+indica a sus agentes las configuraciones que deben aplicar.
+ Además, los 
+\shape italic
+masters
+\shape default
+ pueden aplicar manifiestos a sí mismos.
  Notar que hay dos etapas: 
 \end_layout
 
@@ -6288,17 +6457,36 @@ ias entre esos recursos.
 \end_layout
 
 \begin_layout Standard
-En esta arquitectura, los nodos administrados corren la aplicación puppet-agent,
- usualmente en segundo plano y uno o más servidores corren la aplicación
- puppetmaster administrada por un servidor web (como Apache).
- Periódicamente, los agentes piden al master el catálogo.
- El master, compila y corre el catálogo del nodo usando varias fuentes de
- información a las que tiene acceso.
+En esta arquitectura, los nodos administrados corren la aplicación 
+\shape italic
+puppet-agent
+\shape default
+, usualmente en segundo plano y uno o más servidores corren la aplicación
+ 
+\shape italic
+puppet-master
+\shape default
+ administrada por un servidor web (como Apache).
+ Periódicamente, los agentes piden al 
+\shape italic
+master
+\shape default
+ el catálogo.
+ El 
+\shape italic
+master
+\shape default
+, compila y corre el catálogo del nodo usando varias fuentes de información
+ a las que tiene acceso.
  Una vez que recibe el catálogo, el agente chequea cada recurso descrito
  en él.
- Si encuentra algún recurso que no está en el estado deseado, se realizan
- los cambios necesarios para corregirlos.
- Luego de aplicar el catálogo, el agente enviá un reporte al master.
+ Entonces, si el agente encuentra algún recurso que no se ecuentre en el
+ estado deseado, realiza los cambios necesarios para corregirlo.
+ Luego de aplicar el catálogo, el agente enviá un reporte al 
+\shape italic
+master
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -6312,8 +6500,8 @@ Protocolo PXE
 
 \begin_layout Standard
 El protocolo PXE (Preboot Execution Enviroment) es un estándar que les permite
- a computadoras, dentro de una red, que todavía no fueron cargadas con un
- sistema operativo, configurarse e iniciarse remotamente por un administrador.
+ a computadoras, dentro de una red, que todavía no tienen instalado un sistema
+ operativo, configurarse e iniciarse remotamente por un administrador.
  Utiliza una extensión de opciones del protocolo DHCP.
 \end_layout
 
@@ -6328,8 +6516,8 @@ La máquina cliente no necesariamente necesita un sistema operativo o un
 \end_layout
 
 \begin_layout Itemize
-Como este protocolo es independiente del vendedor nuevos tipos de computadoras
- pueden añadirse a la red.
+Al ser independiente del fabricante, nuevos tipos de computadoras pueden
+ añadirse a la red.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6402,7 +6590,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-APIs de PXE
+APIs de PXE [7]
 \end_layout
 
 \end_inset
@@ -6424,8 +6612,11 @@ En la figura 24 se puede observar el funcionamiento del protocolo PXE.
 \end_layout
 
 \begin_layout Enumerate
-El cliente realiza un broadcast de un mensaje DHCPDISCOVER al puerto estándar
- DHCP (UDP 67).
+El cliente realiza un 
+\shape italic
+broadcast
+\shape default
+ de un mensaje DHCPDISCOVER al puerto estándar DHCP (UDP 67).
  Un campo de opciones en este mensaje contiene:
 \end_layout
 
@@ -6444,7 +6635,7 @@ Etiqueta para la arquitectura del cliente.
 \end_layout
 
 \begin_layout Enumerate
-La opción 60, Class ID, puesta a to “PXEClient:Arch:xxxxx:UNDI:yyyzzz”.
+La opción 60, Class ID, puesta a “PXEClient:Arch:xxxxx:UNDI:yyyzzz”.
 \end_layout
 
 \end_deeper
@@ -6465,7 +6656,7 @@ Parámetros configurados por el administrador.
 
 \end_deeper
 \begin_layout Enumerate
-Del DHCPOFFER que es recibido, el cliente guarda:
+Del DHCPOFFER recibido, el cliente guarda:
 \end_layout
 
 \begin_deeper
@@ -6490,9 +6681,13 @@ El cliente debe enviar una solicitud por la dirección del Boot Server al
 
 \begin_layout Enumerate
 El cliente selecciona y descubre un Boot Server.
- Este paquete puede enviarse por broadcast al puerto 67.
- Este paquete es el mismo que el DHCPDISCOVER inicial en el paso uno,excepto
- que es codificado como DHCPREQUEST y ahora contiene lo siguiente:
+ Este paquete puede enviarse por 
+\shape italic
+broadcast
+\shape default
+ al puerto 67.
+ Este paquete es el mismo que el DHCPDISCOVER inicial en el paso uno, excepto
+ que está codificado como DHCPREQUEST y ahora contiene lo siguiente:
 \end_layout
 
 \begin_deeper
@@ -6589,7 +6784,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Proceso de PXE
+Proceso de PXE [7]
 \end_layout
 
 \end_inset
@@ -6625,20 +6820,24 @@ Desarrollo
 \begin_layout Standard
 Para facilitar la lectura y comprensión de las herramientas utilizadas,
  el presente informe no refleja las iteraciones del proyecto aún cuando
- éstas fueron implementadas acorde a la metodología empleada, realizado
- entregas iterativas.
+ éstas se implementaron acorde a la metodología empleada, realizando entregas
+ iterativas.
 \end_layout
 
 \begin_layout Standard
-Como caso particular en la implementación se tomará un laboratorio informático
+Como caso particular, en la implementación se tomará un laboratorio informático
  de aprendizaje.
  Las funcionalidades desarrolladas permiten orquestar las políticas a seguir
  de las diferentes máquinas de la red al mismo tiempo que posibilitan a
  los administradores (o incluso a cualquier persona sin conocimiento técnico)
- crear máquinas virtuales con pocos ”clicks”, dichas máquinas virtuales
- cuentan con todos los servicios y programas necesarios para los alumnos
- de las diferentes carreras como también se pueden crear máquinas virtuales
- con otros perfiles, por ejemeplo, un perfil para docentes.
+ crear máquinas virtuales con pocos 
+\shape italic
+clicks
+\shape default
+, dichas máquinas virtuales cuentan con todos los servicios y programas
+ necesarios para los alumnos de las diferentes carreras.
+ También se pueden crear máquinas virtuales con otros perfiles, por ejemplo,
+ un perfil para docentes.
  
 \end_layout
 
@@ -6647,8 +6846,11 @@ Algunas de las limitaciones del proyecto se presentan a continuación:
 \end_layout
 
 \begin_layout Itemize
-Pensado para utilizarlo dentro de una red segura, tanto SELinux como el
- firewall se han desactivado.
+Tanto SELinux como el 
+\shape italic
+firewall
+\shape default
+ están desactivados.
 \end_layout
 
 \begin_layout Itemize
@@ -6656,15 +6858,15 @@ Debido a lo anterior, la interfaz web no cuenta con autentificación.
 \end_layout
 
 \begin_layout Itemize
-A partir de la última versión de CentOS, ha quedado descontinuado el paquete
- necesario para dar soporte a repositorios locales de Ubuntu sobre una distribuc
-ión CentOS, por lo que para el despliegue de éste se necesita contar con
- una conexión a Internet.
+A partir de CentOS 7, quedó descontinuado el paquete necesario para dar
+ soporte a repositorios locales de Ubuntu sobre una distribución CentOS.
+ Entonces, se necesita contar con una conexión a Internet para el despliegue
+ de Ubuntu.
 \end_layout
 
 \begin_layout Itemize
-Al día de la fecha, Ubuntu 16.04 LTS y Windows 10 no tienen soporte de la
- herramienta de despliegue utilizada.
+Ubuntu 16.04 LTS y Windows 10 no tienen soporte de la herramienta de despliegue
+ utilizada.
  A su vez, Windows 10 tampoco cuenta con soporte de la herramienta de orquestaci
 ón.
  
@@ -6711,9 +6913,13 @@ Analizando estos aspectos, se optó por utilizar como sistema operativo base
 \end_layout
 
 \begin_layout Standard
-También se tuvo en cuenta la inclusión de systemd y que una gran cantidad
- de herramientas tanto de virtualización como aprovisionamiento y orquestación
- están diseñadas para Red Hat Enterprise y por ende CentOS.
+También, se tuvo en cuenta la inclusión de 
+\family typewriter
+systemd
+\family default
+ y que una gran cantidad de herramientas, tanto de virtualización como aprovisio
+namiento y orquestación, están diseñadas para Red Hat Enterprise y por ende
+ CentOS.
 \end_layout
 
 \begin_layout Paragraph
@@ -6740,9 +6946,9 @@ Para seleccionar la herramienta de virtualización, se tomaron en cuenta
 \begin_layout Standard
 Teniendo en cuenta los puntos enunciados antes, el conjunto KVM/Qemu es
  la herramienta más apta dado que posee una amplia documentación y escalabilidad
-; a su vez está desarrollada para Red Hat Enterprise y es utilizada en ambientes
+; a su vez está desarrollada para Red Hat Enterprise y se utiliza en ambientes
  de producción.
- Además, es usada en el Laboratorio de Computación de la FCEFyN.
+ Además, se usa en el Laboratorio de Computación de la FCEFyN.
  
 \end_layout
 
@@ -6769,7 +6975,7 @@ Se tuvo en cuenta para seleccionar esta herramienta:
 \begin_layout Standard
 La herramienta seleccionada fue Cobbler porque se mantiene continuamente
  actualizada, tiene soporte de la comunidad, posee una buena documentación
- y por sobre todo, tiene una excelente integración con el sistema operativo
+ y, por sobre todo, tiene una excelente integración con el sistema operativo
  seleccionado y con la herramienta de virtualización.
  También tiene interesantes funcionalidades como la posibilidad de crear
  diferentes perfiles de instalación (requisito funcional) y la capacidad
@@ -6937,9 +7143,13 @@ Requerimientos de hardware
 \end_layout
 
 \begin_layout Standard
-El hypervisor KVM requiere que el microprocesador cuente con VT-X para procesado
-res de Intel o con AMD -V para los propios de AMD.
- Para poder confirmar que un un procesador cuenta con esto, en los sistemas
+El 
+\shape italic
+hypervisor
+\shape default
+ KVM requiere que el microprocesador cuente con VT-X para procesadores de
+ Intel o con AMD -V para los propios de AMD.
+ Para poder confirmar que un procesador cuenta con esto, en los sistemas
  basados en Linux, se debe ejecutar el siguiente comando:
 \end_layout
 
@@ -6964,10 +7174,21 @@ grep -E 'svm|vmx' /proc/cpuinfo
 \end_layout
 
 \begin_layout Standard
-La salida de este comando es una porción del archivo /proc/cpuinfo en el
- cual se detallan las diferentes flags que contiene el procesador, entre
- ellas, la svm (AMD) o vmx (Intel).
- En caso de no poseer esas flags, el procesador no soporta virtualización
+La salida de este comando es una porción del archivo 
+\family typewriter
+/proc/cpuinfo 
+\family default
+en el cual se detallan las diferentes banderas que contiene el procesador,
+ entre ellas, la 
+\family typewriter
+svm
+\family default
+ (AMD) o 
+\family typewriter
+vmx
+\family default
+ (Intel).
+ En caso de no poseer esas banderas, el procesador no soporta virtualización
  y la salida será vacía.
 \end_layout
 
@@ -7026,8 +7247,7 @@ lsmod | grep kvm
 \end_layout
 
 \begin_layout Standard
-La salida obtenida, nuevamente en la misma máquina que en el caso anterior
- es:
+La salida obtenida, en la misma máquina que en el caso anterior es:
 \end_layout
 
 \begin_layout Standard
@@ -7051,7 +7271,7 @@ kvm_amd 60554 0 kvm 448375 1 kvm_amd
 \end_layout
 
 \begin_layout Standard
-En caso de no estar cargados los módulos, se deben cargar manualmente, de
+En caso de no estar cargados los módulos, se deben cargar manualmente de
  la siguiente manera:
 \end_layout
 
@@ -7063,6 +7283,8 @@ En caso de no estar cargados los módulos, se deben cargar manualmente, de
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 modprobe kvm_amd
 \end_layout
 
@@ -7082,14 +7304,14 @@ La virtualización anidada no está soportada.
 \end_layout
 
 \begin_layout Itemize
-Sobre utilización de memoria es soportada por KVM utilizando el disco de
- swap.
+La sobre utilización de memoria tiene soporte de KVM utilizando el disco
+ de swap.
  
 \end_layout
 
 \begin_layout Itemize
-Sobre utilización de CPUs es soportada por KVM, se recomienda no utilizar
- más de diez CPUs virtuales por cada CPU físico.
+La sobre utilización de CPUs tiene soporte de KVM, pero se recomienda no
+ utilizar más de diez CPUs virtuales por cada CPU físico.
 \end_layout
 
 \begin_layout Itemize
@@ -7137,7 +7359,11 @@ Dispositivos físicos distribuidos usando la asignación de dispositivos PCI.
 \end_layout
 
 \begin_layout Itemize
-Redes puenteadas (bridge).
+Redes puenteadas (
+\shape italic
+bridge
+\shape default
+).
 \end_layout
 
 \begin_layout Subsubsection
@@ -7151,10 +7377,18 @@ Instalación de paquetes
 \begin_layout Standard
 Se ejecutan los siguientes comandos, el primero actualiza los paquetes actuales
  del sistema a la ultima versión, mientras que el segundo instala los paquetes
- seleccionados, estos paquetes entre otras cosas proveen la herramienta
- qemu-KVM, una interfaz gráfica como es el virt-manager para administrar
- y crear las máquinas virtuales, y un conjunto de comandos donde se destaca
- el comando virt-install que es el utilizado para crear las máquina virtuales.
+ seleccionados.
+ Estos paquetes entre otras cosas proveen la herramienta qemu-KVM, una interfaz
+ gráfica como es el 
+\family typewriter
+virt-manager
+\family default
+ para administrar y crear las máquinas virtuales, y un conjunto de comandos
+ donde se destaca el comando 
+\family typewriter
+virt-install
+\family default
+ que es el utilizado para crear las máquina virtuales.
 \end_layout
 
 \begin_layout Standard
@@ -7190,9 +7424,28 @@ Creación de una red NAT
 \end_layout
 
 \begin_layout Standard
-Aprovechamos la interfaz gráfica del virt-manager para crear la red.
- Primero nos dirigimos a Editar>Detalles de la conexión.
- Se abre el siguiente menú.
+Aprovechando la interfaz gráfica 
+\family typewriter
+virt-manager
+\family default
+ para crear la red, primero ir a:
+\end_layout
+
+\begin_layout Enumerate
+Editar
+\end_layout
+
+\begin_layout Enumerate
+Detalles de la conexión.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Redes virtuales.
+\end_layout
+
+\begin_layout Standard
+Se abre el menú de la figura 28.
 \end_layout
 
 \begin_layout Standard
@@ -7230,21 +7483,42 @@ Detalles de conexión
 \end_layout
 
 \begin_layout Standard
-Se añade una nueva red, clickeando en el signo 
+Se añade una nueva red, haciendo 
+\shape italic
+click
+\shape default
+ en el signo 
 \series bold
 +
 \series default
 .
+ La ventana que aparece cuenta con cuatro etapas:
 \end_layout
 
-\begin_layout Standard
-La ventana que se abre, cuenta con cuatro etapas.
- En la primera se selecciona el nombre de la red, puppet.
- Luego indicamos la red deseada (en este proyecto se usó 192.168.122.0/24)
+\begin_layout Enumerate
+Se selecciona el nombre de la red, 
+\shape italic
+puppet
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Luego, se indica la red deseada (en este proyecto se usó 192.168.122.0/24)
  y se deshabilita el DHCP dado que se utilizará un servidor para esto.
- En la tercer etapa esta la opción de habilitar IPv6.
- Finalmente se indica que la red debe ser NAT y se elige el dispositivo
+ 
+\end_layout
+
+\begin_layout Enumerate
+Se encuentra la opción de habilitar IPv6.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Finalmente, se indica que la red debe ser NAT y se elige el dispositivo
  al cual se reenvía.
+ Ver figura 29.
 \end_layout
 
 \begin_layout Standard
@@ -7258,7 +7532,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Imagenes/kvm/Desarrollo del sistema/Crear una red virtual nueva_001.png
-	width 15cm
+	height 10cm
 
 \end_inset
 
@@ -7284,20 +7558,28 @@ Creación de VMs
 \end_layout
 
 \begin_layout Standard
-Las máquinas virtuales se pueden crear tanto siguiendo la GUI como por linea
- de comandos, este último método tiene la ventaja de poder utilizarse para
- scripting.
+Las máquinas virtuales se pueden crear tanto siguiendo la GUI como por línea
+ de comandos.
+ Este último método tiene la ventaja de poder utilizarse para 
+\shape italic
+scripting
+\shape default
+.
  
 \end_layout
 
 \begin_layout Standard
-Entre la gran cantidad opciones del comando virt-install se destacan:
+Entre la gran cantidad opciones del comando 
+\family typewriter
+virt-install
+\family default
+ se destacan:
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
---connct: 
+--connect: 
 \series default
 Con esta opción se indica que se trabajará con el emulador qemu.
 \end_layout
@@ -7315,9 +7597,9 @@ Con esta opción se indica que la virtualización la realizará KVM.
 \series bold
 --name:
 \series default
- Seleccionamos un nombre único para la VM.
- Este nombre no es del host sino es el nombre para identificarlo dentro
- del campo de qemu-KVM.
+ Con esta opción se indica un nombre único para la VM.
+ Este nombre no es del sistema operativo sino es el nombre para identificarlo
+ dentro del campo de qemu-KVM.
 \end_layout
 
 \begin_layout Itemize
@@ -7325,7 +7607,8 @@ Con esta opción se indica que la virtualización la realizará KVM.
 \series bold
 --ram
 \series default
- Indicamos la cantidad de memoria RAM en MB que dispondrá la VM.
+ Con esta opción se indica la cantidad de memoria RAM en MB que dispondrá
+ la VM.
 \end_layout
 
 \begin_layout Itemize
@@ -7333,8 +7616,11 @@ Con esta opción se indica que la virtualización la realizará KVM.
 \series bold
 --disk: 
 \series default
-Ubicamos el path absoluto donde se encontrará la imágen creada e indicamos
- el tamaño en GB de la misma.
+Con esta opción se indica el 
+\shape italic
+path
+\shape default
+ absoluto donde se encontrará la imagen creada y el tamaño en GB de la misma.
 \end_layout
 
 \begin_layout Itemize
@@ -7342,7 +7628,8 @@ Ubicamos el path absoluto donde se encontrará la imágen creada e indicamos
 \series bold
 --network: 
 \series default
-Si se trabaja con una red virtual, se le indica a la VM a cuál debe conectarse.
+Si se trabaja con una red virtual de datos, con esta opción se indica a
+ la VM a cuál red debe conectarse.
 \end_layout
 
 \begin_layout Itemize
@@ -7354,8 +7641,8 @@ Si se trabaja con una red virtual, se le indica a la VM a cuál debe conectarse.
 \series bold
  
 \series default
-Esta opción es muy importante dado que indica que el SO a instalar se obtiene
- vía red.
+Esta opción es muy importante porque indica que el sistema operativo a instalar
+ se obtiene a través de la red de datos.
 \end_layout
 
 \begin_layout Itemize
@@ -7363,9 +7650,9 @@ Esta opción es muy importante dado que indica que el SO a instalar se obtiene
 \series bold
 --os-type y --os-variant: 
 \series default
-Para aumentar el rendimiento se le indica a la VM qué tipo de SO contendrá
+Con esta opción se le indica a la VM qué tipo de sistema operativo contendrá
  (Linux, Windows, etc) y la variante del mismo (Centos, Debian, Ubuntu,
- Windows 8, Windows 7, etc.)
+ Windows 8, Windows 7, etc.) para aumentar el rendimiento.
 \end_layout
 
 \begin_layout Standard
@@ -7373,6 +7660,8 @@ Un ejemplo utilizado en el desarrollo del proyecto es:
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 virt-install --connect qemu:///system --virt-type kvm --name centos1025
  --ram 1024 --disk path=/var/lib/libvirt/images/centos1025.qcow2,size=15
  --network network=puppet --pxe --os-type linux --os-variant rhel7
@@ -7383,16 +7672,19 @@ Cobbler
 \end_layout
 
 \begin_layout Standard
-El servidor cobbler debe contener los paquetes necesarios para poder instalar
- cada SO (CentOS, Ubuntu y Windows).
- Por lo cual debe contar con un espacio en disco mínimo para soportar esto.
+El servidor Cobbler debe contener los paquetes necesarios para poder instalar
+ cada sistema operativo (CentOS, Ubuntu y Windows).
+ Por lo cual, debe contar con un espacio en disco mínimo para soportar esto.
  Además, dado que el mismo servidor contiene el sistema de automatización
  y orquestación, se estima que debe contar con un mínimo de 30GB de disco.
 \end_layout
 
 \begin_layout Standard
-El proyecto se desarrolló sin tener en cuenta SELinux ni Firewall, por lo
- cual ambos son deshabilitados de la siguiente forma.
+El proyecto se desarrolló sin tener en cuenta SELinux ni 
+\shape italic
+firewall
+\shape default
+, por lo cual, ambos se deshabilitan de la siguiente forma.
 \end_layout
 
 \begin_layout Standard
@@ -7400,7 +7692,7 @@ Editar el archivo /
 \family typewriter
 etc/sysconfig/selinux
 \family default
- y setear:
+ y configurar:
 \end_layout
 
 \begin_layout Standard
@@ -7410,7 +7702,11 @@ SELINUX=disabled
 \end_layout
 
 \begin_layout Standard
-En el caso del firewall ejecutar: 
+En el caso del 
+\shape italic
+firewall
+\shape default
+ ejecutar: 
 \end_layout
 
 \begin_layout Standard
@@ -7496,12 +7792,13 @@ Distros
 
 \begin_layout Standard
 Distribución que se desea instalar.
- Importar el contenido de la distro ayuda a disminuir el tiempo de instalación
- ya que no se utilizan fuentes de instalación externas.
- Generalmente es más fácil utilizar el comando 
+ Importar el contenido de la distribución ayuda a disminuir el tiempo de
+ instalación ya que no se utilizan fuentes de instalación externas.
+ Generalmente, es más fácil utilizar el comando 
 \family typewriter
+import
 \emph on
-import 
+ 
 \family default
 \emph default
 en vez de añadir la distribución manualmente.
@@ -7512,12 +7809,20 @@ Profiles
 \end_layout
 
 \begin_layout Standard
-Un profile o perfil asocia una distribución a opciones especializadas adicionale
-s, como puede ser un kickstart.
+Un 
+\shape italic
+profile
+\shape default
+ o perfil asocia una distribución a opciones especializadas adicionales,
+ como puede ser un 
+\shape italic
+kickstart
+\shape default
+.
  Los perfiles son el núcleo del aprovisionamiento y debe existir al menos
  uno por cada distribución.
- Un perfil puede representar, por ejemplo, una configuración de web server
- o de escritorio.
+ Un perfil puede representar, por ejemplo, una configuración de servidor
+ web o de escritorio.
 \end_layout
 
 \begin_layout Paragraph
@@ -7526,7 +7831,11 @@ Systems
 
 \begin_layout Standard
 Los grabaciones de sistemas mapean una pieza de hardware (o una máquina
- virtual) con el profile asignado a correr en ella.
+ virtual) con el 
+\shape italic
+profile
+\shape default
+ asignado a correr en ella.
  Esto puede verse como una forma de asignarle un rol a un sistema específico.
  Cuando se aprovisiona vía PXE, no es necesario crearlos ya que son útiles
  cuando una personalización de un sistema específico es necesaria.
@@ -7539,13 +7848,21 @@ Images
 \end_layout
 
 \begin_layout Standard
-Cobbler puede bootear imágenes físicamente o virtualmente.
+Cobbler puede arrancar imágenes físicamente o virtualmente.
  Los despliegues de máquinas no basadas en imágenes son generalmente más
  fáciles para trabajar y llevan a una infraestructura más sustentable.
- La mayoría de las instalaciones de cobbler están directamente basadas en
- la distribución (kernel + initrd).
+ La mayoría de las instalaciones de Cobbler están directamente basadas en
+ la distribución (kernel + 
+\family typewriter
+initrd
+\family default
+).
  La siguiente página documenta algunas cosas que no están basadas en kernel
- + initrd y muestra cómo instalarlas con Cobbler.
+ + 
+\family typewriter
+initrd
+\family default
+ y muestra cómo instalarlas con Cobbler.
  Por ejemplo, trata la instalación de sistemas operativos Windows usando
  qemu/KVM: 
 \end_layout
@@ -7574,17 +7891,28 @@ cobbler import
 \family default
 ) y también paquetes opcionales.
  Si se espeja todo esto localmente en la red, las instalaciones y actualizacione
-s serán más rápidas (usualmente es válido realizar esto para largos setups
- en datacenters, laboratorios, etc).
- Si un profile tiene un repositorio dado, este repositorio puede configurarse
- automáticamente durante el aprovisionamiento y los sistemas instalados
- podrán usarlo como espejo (
+s serán más rápidas (usualmente es válido realizar esto para grandes configuraci
+ones en 
+\shape italic
+datacenters
+\shape default
+, laboratorios, etc).
+ Si un 
+\shape italic
+profile
+\shape default
+ tiene un repositorio dado, este repositorio puede configurarse automáticamente
+ durante el aprovisionamiento y los sistemas instalados podrán usarlo como
+ espejo (
 \family typewriter
 yum_post_install_mirror
 \family default
  debe estar habilitado).
- Si se especifica una lista de paquetes para –rpm-list, se puede espejar
- solo esa parte del repositorio, más sus dependencias.
+ Si se especifica una lista de paquetes para 
+\family typewriter
+–rpm-list
+\family default
+, se puede espejar solo esa parte del repositorio, más sus dependencias.
  Esta función sólo funciona para repositorios http o ftp.
 \end_layout
 
@@ -7627,7 +7955,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Donde
+Donde se tiene:
 \end_layout
 
 \begin_layout Standard
@@ -7636,9 +7964,24 @@ Donde
 mirror:
 \series default
  Es la dirección del espejo yum.
- Puede ser una URL rsync://, una ubicación ssh o una ubicación http:// o
- ftp:// de un espejo.
- Direcciones del filesystem también funcionan.
+ Puede ser una URL 
+\family typewriter
+rsync://
+\family default
+, una ubicación ssh o una ubicación 
+\family typewriter
+http://
+\family default
+ o 
+\family typewriter
+ftp://
+\family default
+ de un espejo.
+ Direcciones del 
+\shape italic
+filesystem
+\shape default
+ también funcionan.
  Esta dirección debe especificar un repositorio exacto a espejar, solo una
  arquitectura y una distribución.
 \end_layout
@@ -7648,7 +7991,7 @@ mirror:
 \series bold
 name: 
 \series default
-Este nombre es el usado para guardar la ubicación del espejo.
+Este nombre se usa para guardar la ubicación del espejo.
 \end_layout
 
 \begin_layout Standard
@@ -7663,8 +8006,15 @@ rpm-list:
 --rpm-list="paquete_1 paquete_2"
 \family default
 .
- Esta opción sólo funciona con repositorios http:// y ftp:// para espejos
- de otros tipos esta opción será ignorada.
+ Esta opción sólo funciona con repositorios 
+\family typewriter
+http://
+\family default
+ y 
+\family typewriter
+ftp://
+\family default
+ para espejos de otros tipos esta opción será ignorada.
 \end_layout
 
 \begin_layout Standard
@@ -7676,7 +8026,7 @@ createrepo-flags:
 \family typewriter
 createrepo
 \family default
- la cual es llamada cuando se ejecuta 
+ la cual se llama cuando se ejecuta 
 \family typewriter
 cobbler reposync
 \family default
@@ -7699,7 +8049,7 @@ Especifica si el repositorio debería o no actualizarse durante una ejecución
 cobbler reposync
 \family default
 .
- El repositorio puede seguir siendo actualizado por el nombre.
+ El repositorio puede mantenerse actualizado por el nombre.
 \end_layout
 
 \begin_layout Standard
@@ -7707,15 +8057,32 @@ cobbler reposync
 \series bold
 mirror-locally: 
 \series default
-Cuando se configura a N, especifica que este repositorio yum se utiliza
- para referenciarse directamente por kickstarts y no para espejarse localmente
- en el servidor cobbler.
- Sólo espejos con URLs http:// y ftp:// son soportados cuando se utiliza
- 
+Cuando se configura a N, especifica que este repositorio 
+\family typewriter
+yum
+\family default
+ se utiliza para referenciarse directamente por 
+\shape italic
+kickstarts
+\shape default
+ y no para espejarse localmente en el servidor Cobbler.
+ Sólo espejos con URLs 
+\family typewriter
+http://
+\family default
+ y 
+\family typewriter
+ftp://
+\family default
+ son soportados cuando se utiliza 
 \family typewriter
 --mirror-locally=N
 \family default
-, no se puede usar URLs del filesystem.
+, no se puede usar URLs del 
+\shape italic
+filesystem
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -7725,7 +8092,11 @@ priority:
 \series default
 Especifica la prioridad del repositorio (menor número, mayor prioridad)
  que se aplica a máquinas instaladas usando los repositorios que tienen
- el plugin yum priorities instalado.
+ el plugin 
+\family typewriter
+yum priorities
+\family default
+ instalado.
  Por defecto se tiene 99.
 \end_layout
 
@@ -7735,7 +8106,7 @@ Especifica la prioridad del repositorio (menor número, mayor prioridad)
 arch: 
 \series default
 Especifica la arquitectura que el repositorio debería utilizar.
- Por defecto se utiliza la arquitectura del servidor cobbler.
+ Por defecto se utiliza la arquitectura del servidor Cobbler.
 \end_layout
 
 \begin_layout Standard
@@ -7743,8 +8114,8 @@ Especifica la arquitectura que el repositorio debería utilizar.
 \series bold
 breed: 
 \series default
-Especifíca la versión de la distro.
- Usualmente cobbler comprenderá este parámetro si no se entrega.
+Especifíca la versión de la distribución.
+ Usualmente Cobbler detectará este parámetro si no se especifica.
 \end_layout
 
 \begin_layout Standard
@@ -7756,8 +8127,9 @@ Especifíca la versión de la distro.
 
 \begin_layout Standard
 Para crear un repositorio local, por ejemplo para instalar Puppet en una
- instalación desde cero, y sin una conexión a Internet, primero es necesario
- tener los paquetes necesarios y sus dependencias, para ello se ejecuta:
+ instalación desde cero y sin una conexión a Internet, primero es necesario
+ tener los paquetes necesarios y sus dependencias.
+ Para ello se ejecuta:
 \end_layout
 
 \begin_layout Standard
@@ -7859,13 +8231,21 @@ Import
 \end_layout
 
 \begin_layout Standard
-El propósito de “
+El propósito de 
 \family typewriter
 cobbler import
 \family default
-” es configurar un servidor de instalación por red para una o más distribuciones.
- Éste espeja contenido basado en una imágen DVD, un archivo ISO, un árbol
- en un filesystem, un espejo externo rsync o una ubicación SSH.
+ es configurar un servidor de instalación por red para una o más distribuciones.
+ Espeja contenido basado en una imágen DVD, un archivo ISO, un árbol en
+ un 
+\shape italic
+filesystem
+\shape default
+, un espejo externo 
+\family typewriter
+rsync
+\family default
+ o una ubicación SSH.
 \end_layout
 
 \begin_layout Standard
@@ -7875,22 +8255,59 @@ $ cobbler import --path=/path/to/distro --name=F12
 \end_layout
 
 \begin_layout Standard
-Este ejemplo muestra los dos argumentos requeridos para import: --path y
- --name.
+Este ejemplo muestra los dos argumentos requeridos para 
+\family typewriter
+import
+\family default
+: 
+\family typewriter
+--path
+\family default
+ y 
+\family typewriter
+--name
+\family default
+.
 \end_layout
 
 \begin_layout Standard
-Luego de que import es ejecutado, cobbler tratará de detectar el tipo de
- distribución y automáticamente asignar kickstarts.
- Por defecto, proveerá el sistema borrando el disco duro, configurando eth0
- para DHCP y utilizando la contraseña por defecto “cobbler”.
- Si esto no es deseado, editar los archivos kickstart en 
+Luego de que se ejecuta 
+\family typewriter
+import
+\family default
+, Cobbler tratará de detectar el tipo de distribución y automáticamente
+ asignar 
+\shape italic
+kickstarts
+\shape default
+.
+ Por defecto, proveerá el sistema borrando el disco duro, configurando 
+\family typewriter
+eth0
+\family default
+ para DHCP y utilizando la contraseña por defecto “
+\family typewriter
+cobbler
+\family default
+”.
+ Si esto no es deseado, editar los archivos 
+\shape italic
+kickstart
+\shape default
+ en 
 \family typewriter
 /var/lib/cobbler/kickstarts
 \family default
- para hacer algo distinto o cambiar la configuración del kickstart después
- que cobbler cree el profile.
- El contenido espejado es guardado automáticamente en 
+ para hacer algo distinto o cambiar la configuración del 
+\shape italic
+kickstart
+\shape default
+ después que Cobbler cree el 
+\shape italic
+profile
+\shape default
+.
+ El contenido espejado se guarda automáticamente en 
 \family typewriter
 /var/www/cobbler/ks_mirror
 \family default
@@ -7935,7 +8352,7 @@ cobbler import --path=/path/to/stuff –name=glorp
 \family typewriter
 cobbler import --path=/path/where/filer/is/mounted --name=anyname 
 \backslash
- 
+ z
 \begin_inset Newline newline
 \end_inset
 
@@ -7943,22 +8360,36 @@ cobbler import --path=/path/where/filer/is/mounted --name=anyname
 \end_layout
 
 \begin_layout Standard
-Una vez importado, ejecutar “
+Una vez importado, ejecutar 
 \family typewriter
 cobbler list
 \family default
-” o “
+ o 
 \family typewriter
 cobbler report
 \family default
-” para ver que se ha añadido.
- Si se quiere forzar la utilización de una plantilla kickstart de cobbler
- para todos los profiles creados por un import, se puede pasar la opción
- 
+ para ver que se ha añadido.
+ Si se quiere forzar la utilización de una plantilla 
+\shape italic
+kickstart
+\shape default
+ de Cobbler para todos los profiles creados por un 
+\family typewriter
+import
+\family default
+, se puede pasar la opción 
 \family typewriter
 --kickstart
 \family default
- a import para saltar la auto detección del kickstart.
+ a 
+\family typewriter
+import
+\family default
+ para saltar la auto detección del 
+\shape italic
+kickstart
+\shape default
+.
 \end_layout
 
 \begin_layout Paragraph
@@ -7966,15 +8397,26 @@ Kickstarts
 \end_layout
 
 \begin_layout Standard
-Los kickstarts son archivos que indican cómo debe configurarse el sistema
- operativo, el archivo contiene palabras claves, valores y en otros casos
- sólo contienen la palabra clave que en sí misma es una configuración especifica.
+Los 
+\shape italic
+kickstarts
+\shape default
+ son archivos que indican cómo debe configurarse el sistema operativo.
+ Un archivo 
+\shape italic
+kickstart 
+\shape default
+contiene palabras claves, valores y en otros casos, sólo contiene la palabra
+ clave que en sí misma es una configuración específica.
  
 \end_layout
 
 \begin_layout Standard
-Algunas palabras clave (keywords) son opcionales, mientras que otras son
- necesarias para la instalación.
+Algunas palabras clave (
+\shape italic
+keywords
+\shape default
+) son opcionales, mientras que otras son necesarias para la instalación.
 \end_layout
 
 \begin_layout Subparagraph
@@ -7984,30 +8426,36 @@ Keywords
 \begin_layout Itemize
 
 \series bold
-autopart (optional)
+autopart (opcional)
 \series default
 : Creación automática de particiones, 1 GB o más para el directorio raíz
  ( / ), una partición de intercambio y una partición de arranque apropiada
  para la arquitectura.
- Uno o más de los tamaños de las particiones por defecto puede re-definirse
- con la zona de directivas.
+ Uno o más de los tamaños de las particiones por defecto pueden re-definirse.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-auth or authconfig (required):
+auth or authconfig (requerida):
 \series default
- Establece las opciones de autenticación para el sistema.
- Es similar al comando authconfig, que se puede ejecutar después de la instalaci
-ón.
- Por defecto, las contraseñas son encriptadas y no utilizan shadow.
+ Establece las opciones de autentificación para el sistema.
+ Es similar al comando 
+\shape italic
+authconfig
+\shape default
+, que se puede ejecutar después de la instalación.
+ Por defecto, las contraseñas se encriptan y no utilizan 
+\family typewriter
+shadow
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-bootloader (required): 
+bootloader (requerida): 
 \series default
 Especifica cómo se debe instalar el gestor de arranque.
 \end_layout
@@ -8015,7 +8463,7 @@ Especifica cómo se debe instalar el gestor de arranque.
 \begin_layout Itemize
 
 \series bold
-clearpart (optional):
+clearpart (opcional):
 \series default
  Elimina las particiones del sistema, antes de la creación de nuevas particiones.
  Por defecto no se eliminan las particiones.
@@ -8024,7 +8472,7 @@ clearpart (optional):
 \begin_layout Itemize
 
 \series bold
-cmdline (optional): 
+cmdline (opcional): 
 \series default
 Realiza la instalación en un modo de línea de comandos completamente no
  interactivo.
@@ -8034,51 +8482,72 @@ Realiza la instalación en un modo de línea de comandos completamente no
 \begin_layout Itemize
 
 \series bold
-firewall (optional): 
+firewall (opcional): 
 \series default
-Esta opción corresponde a la pantalla de configuración de firewall en el
- programa de instalación.
+Esta opción corresponde a la pantalla de configuración de 
+\shape italic
+firewall
+\shape default
+ en el programa de instalación.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-firstboot (optional):
+firstboot (opcional):
 \series default
  Determinar si el agente de configuración se inicia la primera vez que se
  arranca el sistema.
- Si se activa, el paquete firstboot debe estar instalado.
+ Si se activa, el paquete 
+\shape italic
+firstboot
+\shape default
+ debe estar instalado.
  Si no se especifica, esta opción está desactivada por defecto.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-halt (optional): 
+halt (opcional): 
 \series default
 Detiene el sistema después de que la instalación se ha completado con éxito.
- Esto es similar a una instalación manual, en donde Aanaconda muestra un
- mensaje y espera a que el usuario presione una tecla antes de reiniciar.
- Durante una instalación Kickstart, si no se especifica el método de terminación
-, la opción reboot se utiliza como predeterminado.
+ Esto es similar a una instalación manual, en donde 
+\family typewriter
+Anaconda
+\family default
+ muestra un mensaje y espera a que el usuario presione una tecla antes de
+ reiniciar.
+ Durante una instalación con 
+\shape italic
+kickstart
+\shape default
+, si no se especifica el método de terminación, la opción 
+\shape italic
+reboot
+\shape default
+ se utiliza como predeterminado.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-graphical (optional): 
+graphical (opcional): 
 \series default
-Realice la instalación kickstart en modo gráfico.
+Realiza la instalación 
+\shape italic
+kickstart
+\shape default
+ en modo gráfico.
  Este es el valor predeterminado.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-install (optional): 
+install (opcional): 
 \series default
-Le dice al sistema para instalar un sistema nuevo en lugar de actualizar
- un sistema existente.
+Indica instalar un sistema nuevo en lugar de actualizar un sistema existente.
  Este es el modo por defecto.
  
 \end_layout
@@ -8086,28 +8555,34 @@ Le dice al sistema para instalar un sistema nuevo en lugar de actualizar
 \begin_layout Itemize
 
 \series bold
-interactive (optional): 
+interactive (opcional): 
 \series default
-Utiliza la información proporcionada en el archivo kickstart durante la
- instalación, pero permite la inspección y modificación de los valores dados.
+Utiliza la información proporcionada en el archivo 
+\shape italic
+kickstart
+\shape default
+ durante la instalación, pero permite la inspección y modificación de los
+ valores dados.
  Se le presentará con cada pantalla del programa de instalación con los
- valores del archivo kickstart.
- Puede aceptar los valores haciendo clic en Siguiente o cambiar los valores
- y haga clic en Siguiente para continuar.
+ valores del archivo 
+\shape italic
+kickstart
+\shape default
+.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-keyboard (required): 
+keyboard (requerida): 
 \series default
-Establece el tipo de teclado.
+Establece la distribución del teclado.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-lang (required): 
+lang (requerida): 
 \series default
 Establece el idioma que desea utilizar durante la instalación y el idioma
  predeterminado para utilizar en el sistema instalado.
@@ -8116,20 +8591,27 @@ Establece el idioma que desea utilizar durante la instalación y el idioma
 \begin_layout Itemize
 
 \series bold
-network (optional): 
+network (opcional): 
 \series default
 Configura la información de red para el sistema.Si la instalación no requiere
- redes y la información de la red no se proporciona en el archivo kickstart,
- el programa de instalación asume que la instalación debe hacerse sobre
- eth0 a través de una dirección IP dinámica ( BOOTP / DHCP), y configura
- el sistema final, instalado para determinar su dirección IP de forma dinámica.
+ redes y la información de la red no se proporciona en el archivo 
+\shape italic
+kickstart
+\shape default
+, el programa de instalación asume que la instalación debe hacerse sobre
+ 
+\family typewriter
+eth0
+\family default
+ a través de una dirección IP dinámica ( BOOTP / DHCP), y configura el sistema
+ final, instalado para determinar su dirección IP de forma dinámica.
  
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-part or partition (required): 
+part or partition (requerida): 
 \series default
 Crea una partición en el sistema.
 \end_layout
@@ -8137,7 +8619,7 @@ Crea una partición en el sistema.
 \begin_layout Itemize
 
 \series bold
-poweroff (optional): 
+poweroff (opcional): 
 \series default
 Apaga el sistema luego de que la instalación se complete exitosamente.
 \end_layout
@@ -8145,7 +8627,7 @@ Apaga el sistema luego de que la instalación se complete exitosamente.
 \begin_layout Itemize
 
 \series bold
-raid (optional): 
+raid (opcional): 
 \series default
 Monta un sistema RAID.
 \end_layout
@@ -8153,7 +8635,7 @@ Monta un sistema RAID.
 \begin_layout Itemize
 
 \series bold
-reboot (optional): 
+reboot (opcional): 
 \series default
 Reinicia el sistema después de una instalación exitosa.
 \end_layout
@@ -8161,7 +8643,7 @@ Reinicia el sistema después de una instalación exitosa.
 \begin_layout Itemize
 
 \series bold
-repo (optional): 
+repo (opcional): 
 \series default
 Configura un repositorio adicional YUM que puede utilizarse como fuente
  para la instalación de paquetes.
@@ -8170,7 +8652,7 @@ Configura un repositorio adicional YUM que puede utilizarse como fuente
 \begin_layout Itemize
 
 \series bold
-rootpw (required): 
+rootpw (requerida): 
 \series default
 Establece la contraseña de root.
 \end_layout
@@ -8178,7 +8660,7 @@ Establece la contraseña de root.
 \begin_layout Itemize
 
 \series bold
-selinux (optional): 
+selinux (opcional): 
 \series default
 Establece el estado del SElinux en el sistema instalado.
 \end_layout
@@ -8186,7 +8668,7 @@ Establece el estado del SElinux en el sistema instalado.
 \begin_layout Itemize
 
 \series bold
-shutdown (optional): 
+shutdown (opcional): 
 \series default
 Apaga el sistema después de una instalación exitosa.
 \end_layout
@@ -8194,16 +8676,24 @@ Apaga el sistema después de una instalación exitosa.
 \begin_layout Itemize
 
 \series bold
-text (optional): 
+text (opcional): 
 \series default
-Realiza la instalación kickstart en modo texto.
- Las instalaciones Kickstart se ejecutan en modo gráfico por defecto.
+Realiza la instalación 
+\shape italic
+kickstart
+\shape default
+ en modo texto.
+ Las instalaciones con 
+\shape italic
+kickstart
+\shape default
+ se ejecutan en modo gráfico por defecto.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-timezone (required): 
+timezone (requerida): 
 \series default
 Selecciona la zona horaria del sistema.
 \end_layout
@@ -8211,7 +8701,7 @@ Selecciona la zona horaria del sistema.
 \begin_layout Itemize
 
 \series bold
-upgrade (optional): 
+upgrade (opcional): 
 \series default
 Indica que se realiza una actualización del sistema instalado.
 \end_layout
@@ -8219,7 +8709,7 @@ Indica que se realiza una actualización del sistema instalado.
 \begin_layout Itemize
 
 \series bold
-user (optional):
+user (opcional):
 \series default
  Crea usuario en el sistema.
 \end_layout
@@ -8227,7 +8717,7 @@ user (optional):
 \begin_layout Itemize
 
 \series bold
-zerombr (optional): 
+zerombr (opcional): 
 \series default
 Si se especifica zerombr, y si es su único argumento, cualquier tabla de
  partición no válidas que se encuentran en los discos son inicializadas.
@@ -8240,13 +8730,27 @@ Snippets
 \end_layout
 
 \begin_layout Standard
-Los snippets son una forma de reutilizar bloques de código entre kickstarts
+Los 
+\shape italic
+snippets
+\shape default
+ son una forma de reutilizar bloques de código entre 
+\shape italic
+kickstarts
+\shape default
  (también funcionan en otros tipos de archivos).
  Esto quiere decir que cada vez que el texto SNIPPET aparezca en un archivo
- kickstart será reemplazado por los contenidos en el archivo correspondiente
- dentro de 
+ 
+\shape italic
+kickstart
+\shape default
+ será reemplazado por los contenidos en el archivo correspondiente dentro
+ de 
+\family typewriter
+/var/lib/cobbler/snippets/
+\family default
 \emph on
-/var/lib/cobbler/snippets/.
+.
  
 \emph default
 Esto permite la re-utilización de código en cada plantilla, aliviando también
@@ -8254,46 +8758,65 @@ Esto permite la re-utilización de código en cada plantilla, aliviando también
 \end_layout
 
 \begin_layout Standard
-Para utilizar un snippet, es necesario crear un archivo en el directorio
- 
+Para utilizar un 
+\shape italic
+snippet
+\shape default
+, es necesario crear un archivo en el directorio 
 \emph on
 
 \begin_inset Newline newline
 \end_inset
 
-/var/lib/cobbler/snippets/nuevo_snippet 
+
+\family typewriter
 \emph default
-y, en un archivo kickstart, al momento de llamar a esta porción de código
- se utiliza:
+/var/lib/cobbler/snippets/nuevo_snippet
+\family default
+\emph on
+ 
+\emph default
+y, en un archivo 
+\shape italic
+kickstart
+\shape default
+, al momento de llamar a esta porción de código se utiliza:
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
-\emph on
 $SNIPPET('nuevo_snippet')
 \end_layout
 
 \begin_layout Standard
-Los snippets pueden guardarse en subdirectorios para una mejor organización.
+Los 
+\shape italic
+snippets
+\shape default
+ pueden guardarse en subdirectorios para una mejor organización.
  El orden de precedencia será como sigue:
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
+/var/lib/cobbler/snippets/$subdirectorio/$nombre_del_snippet
 \emph on
-/var/lib/cobbler/snippets/$subdirectorio/$nombre_del_snippet 
+ 
 \end_layout
 
 \begin_layout Standard
-Para referenciarlo desde el archivo kickstart, ahora se tiene:
+Para referenciarlo desde el archivo 
+\shape italic
+kickstart
+\shape default
+, ahora se tiene:
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
-\emph on
 $SNIPPET('direcorio/nuevo_snippet ')
 \end_layout
 
@@ -8323,7 +8846,7 @@ cobbler replicate --master=master.example.org
 \end_layout
 
 \begin_layout Standard
-Con los argumentos por defecto, solo la metadata de la distribución y del
+Con los argumentos por defecto, solo la meta data de la distribución y del
  perfil es sincronizada.
  A continuación se muestra los argumentos que se le pueden pasar a Cobbler
  para que replique: 
@@ -8408,7 +8931,11 @@ Instalación
 
 \begin_layout Standard
 Primero y principal, Cobbler necesita Python >= 2.6.
- Además, requiere de un servidor DHCP, FTP, HTTP, rsync y una serie de paquetes.
+ Además, requiere de un servidor DHCP, FTP, HTTP, 
+\family typewriter
+rsync
+\family default
+ y una serie de paquetes.
 \end_layout
 
 \begin_layout Itemize
@@ -8510,7 +9037,19 @@ Configurar FTP y activación de rsyncd
 \end_layout
 
 \begin_layout Standard
-Editar /etc/xinetd.d/tftp modificando disable = yes por no.
+Editar 
+\family typewriter
+/etc/xinetd.d/tftp 
+\family default
+modificando 
+\family typewriter
+disable = yes
+\family default
+ por 
+\family typewriter
+no
+\family default
+.
  Luego ejecutar:
 \end_layout
 
@@ -8561,8 +9100,11 @@ Verificar en cada caso la versión de dhcp.
 \end_layout
 
 \begin_layout Standard
-Luego editar /etc/dhcp/dhcpd.conf, la configuración utilizada en este trabajo
- se adecúa la red 
+Luego editar 
+\family typewriter
+/etc/dhcp/dhcpd.conf
+\family default
+, la configuración utilizada en este trabajo se adecua la red 
 \begin_inset Quotes eld
 \end_inset
 
@@ -8771,12 +9313,41 @@ else { filename "pxelinux.0";
 \end_layout
 
 \begin_layout Standard
-Añadir a /etc/hosts la dirección del servidor y su hostname (puppet).
- Luego configurar el parámetro ServerName en /etc/httpd/conf/httpd.conf con
- el nombre del host, en este caso será puppet.
+Añadir a 
+\family typewriter
+/etc/hosts
+\family default
+ la dirección del servidor y su 
+\shape italic
+hostname
+\shape default
+ (
+\family typewriter
+puppet
+\family default
+).
+ Luego configurar el parámetro 
+\family typewriter
+ServerName
+\family default
+ en 
+\family typewriter
+/etc/httpd/conf/httpd.conf
+\family default
+ con el nombre del 
+\shape italic
+host
+\shape default
+, en este caso será 
+\family typewriter
+puppet
+\family default
+.
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 ServerName puppet 
 \end_layout
 
@@ -8851,16 +9422,27 @@ systemctl enable cobblerd.service
 
 \begin_layout Standard
 Se debe configurar el servidor de Cobbler, para ello se editó el archivo
- /etc/cobbler/settings.
+ 
+\family typewriter
+/etc/cobbler/settings
+\family default
+.
 \end_layout
 
 \begin_layout Standard
-La clave de los usuarios root de las VMs por defecto se decidió que sea
- 
+Se decidió que la clave del usuario 
+\shape italic
+root
+\shape default
+ de las VMs por defecto sea 
 \begin_inset Quotes eld
 \end_inset
 
+
+\family typewriter
 qwerty
+\family default
+
 \begin_inset Quotes erd
 \end_inset
 
@@ -8925,8 +9507,11 @@ default_password_crypted: "$1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/"
 
 \begin_layout Standard
 Dado que se desea utilizar un servidor DHCP en la misma máquina que contiene
- el servidor Cobbler, se modificar la sección “manage_dhcp: 0” para habilitar
- el administrador de DHCP.
+ el servidor Cobbler, se modificar la sección 
+\family typewriter
+manage_dhcp: 0
+\family default
+ para habilitar el administrador de DHCP.
 \end_layout
 
 \begin_layout Standard
@@ -8950,9 +9535,16 @@ manage_dhcp: 1
 \end_layout
 
 \begin_layout Standard
-Configurar ahora la dirección IP del servidor Cobbler en las variables “server”
- y “next_server” colocando la interfaz virtual que conecta a la máquina
- física con las máquinas virtuales, virbr0:
+Configurar ahora la dirección IP del servidor Cobbler en las variables 
+\family typewriter
+server
+\family default
+ y 
+\family typewriter
+next_server
+\family default
+ colocando la interfaz virtual que conecta a la máquina física con las máquinas
+ virtuales, virbr0:
 \end_layout
 
 \begin_layout Standard
@@ -8983,7 +9575,10 @@ server: 192.168.122.1
 
 \begin_layout Standard
 Para habilitar la interfaz web de Cobbler y configurar usuario y contraseña,
- se modificaron las siguientes líneas del archivo /etc/cobbler/modules.conf
+ se modificaron las siguientes líneas del archivo 
+\family typewriter
+/etc/cobbler/modules.conf
+\family default
  para que queden de este modo:
 \end_layout
 
@@ -9015,7 +9610,11 @@ Para habilitar la interfaz web de Cobbler y configurar usuario y contraseña,
 
 \begin_layout Standard
 El usuario y la contraseña para la interfaz web que por defecto tiene tanto
- a usuario como contraseña a “cobbler”.
+ a usuario como contraseña a “
+\family typewriter
+cobbler
+\family default
+”.
  En el proyecto se utilizó admin como el usuario para ingresar a la interfaz
  web y la clave 
 \begin_inset Quotes eld
@@ -9142,7 +9741,11 @@ systemctl restart cobblerd.service
 \end_layout
 
 \begin_layout Standard
-El próximo paso es descargar los “network boot loaders” con el comando 
+El próximo paso es descargar los 
+\shape italic
+network boot loaders
+\shape default
+ con el comando 
 \family typewriter
 cobbler get-loaders y 
 \family default
@@ -9186,8 +9789,12 @@ to del servicio de repositorios, estos servicios son
 \family typewriter
 vsftpd
 \family default
- que asegura una conexión segura y createrepo que es el encargado de generar
- las bases de datos necesarias para el correcto funcionamiento del repositorio.
+ que asegura una conexión segura y 
+\family typewriter
+createrepo
+\family default
+ que es el encargado de generar las bases de datos necesarias para el correcto
+ funcionamiento del repositorio.
 \end_layout
 
 \begin_layout Standard
@@ -9227,8 +9834,12 @@ Se recomienda utilizar como base el directorio
 
 \begin_layout Standard
 Una vez creado el sistema de archivos, se guardan los correspondientes paquetes
- rpm en los lugares adecuados, acordes a cómo se haya creado el árbol de
- archivos, y se ejecuta el siguiente comando:
+ 
+\family typewriter
+rpm
+\family default
+ en los lugares adecuados, acordes a cómo se haya creado el árbol de archivos,
+ y se ejecuta el siguiente comando:
 \end_layout
 
 \begin_layout Standard
@@ -9252,11 +9863,19 @@ creterepo -v /var/ftp/pub/nombre_repo
 \end_layout
 
 \begin_layout Standard
-Es necesario entonces configurar el demonio vsftpd editando el archivo 
+Es necesario entonces configurar el demonio 
+\family typewriter
+vsftpd
+\family default
+ editando el archivo 
 \begin_inset Newline newline
 \end_inset
 
-/etc/vsftpd/vsftpd.conf.
+
+\family typewriter
+/etc/vsftpd/vsftpd.conf
+\family default
+.
  Hay diversas configuraciones posibles, pero hay dos puntos importantes
  que deben existir:
 \end_layout
@@ -9304,8 +9923,11 @@ systemctl start vsftpd
 
 \begin_layout Standard
 En el lado del cliente es necesario informar del nuevo repositorio.
- Para ésto, crear un archivo en /etc/yum.repos.d/nombredelrepo.repo con el
- siguiente contenido:
+ Para ésto, crear un archivo en 
+\family typewriter
+/etc/yum.repos.d/nombredelrepo.repo
+\family default
+ con el siguiente contenido:
 \end_layout
 
 \begin_layout Standard
@@ -9366,9 +9988,16 @@ priority=1
 \end_layout
 
 \begin_layout Standard
-Los paquetes yum-priorities e yum-utils deben estar instalados en el cliente,
- para poder utilizar sus funcionalidades (dar prioridad a los repositorios
- y habilitarlos fácilmente.)
+Los paquetes 
+\family typewriter
+yum-priorities
+\family default
+ e 
+\family typewriter
+yum-utils
+\family default
+ deben estar instalados en el cliente, para poder utilizar sus funcionalidades
+ (dar prioridad a los repositorios y habilitarlos fácilmente.)
 \end_layout
 
 \begin_layout Standard
@@ -9443,7 +10072,8 @@ Importar imágenes ISO al servidor Cobbler
 
 \begin_layout Standard
 De esta forma, se puede generar una distribución que se utilizara para instalar
- los SO sin necesidad de acceder a Internet de una forma fácil y rápida.
+ los sistemas operativos sin necesidad de acceder a Internet de una forma
+ fácil y rápida.
 \end_layout
 
 \begin_layout Standard
@@ -9475,7 +10105,15 @@ cobbler import --name=centos7 --arch=x86_64 --path=/mnt/centos
 
 \begin_layout Standard
 Ésto creará una copia local en el servidor, dando lugar a un nuevo objeto
- “distro” y “profile”.
+ 
+\family typewriter
+distro
+\family default
+ y 
+\family typewriter
+profile
+\family default
+.
  Los cuales se pueden verificar con:
 \end_layout
 
@@ -9568,8 +10206,11 @@ Los módulos son auto-contenidos y separados.
 \end_layout
 
 \begin_layout Standard
-Todos los módulos accesibles por el puppet master están localizados en los
- directorios especificados por la variable 
+Todos los módulos accesibles por el 
+\shape italic
+puppet-master
+\shape default
+ están localizados en los directorios especificados por la variable 
 \family typewriter
 'modulepath'
 \family default
@@ -10101,16 +10742,22 @@ En este código,
 \emph on
 file
 \emph default
-, otros códigos de Puppet pueden hacer referencia al recurso como File['/etc/pas
-swd'] para declarar relación.
+, otros códigos de Puppet pueden hacer referencia al recurso como 
+\family typewriter
+File['/etc/passwd']
+\family default
+ para declarar relación.
  Porque el path es el 
 \emph on
 namevar
 \emph default
  para el tipo file y si no se le provee un valor, toma uno por defecto que
  es 
+\family typewriter
+/etc/passwd
+\family default
 \emph on
-/etc/passwd.
+.
 \end_layout
 
 \begin_layout Standard
@@ -10236,8 +10883,11 @@ Group:
 Host:
 \series default
  Instalar y manejar entradas de hosts.
- Para muchos sistemas, esas entradas deben estar solo en /etc/hosts, pero
- algunos SO tienen diferentes soluciones.
+ Para muchos sistemas, esas entradas deben estar solo en 
+\family typewriter
+/etc/hosts
+\family default
+, pero algunos sistemas operativos tienen diferentes soluciones.
  
 \end_layout
 
@@ -10246,8 +10896,11 @@ Host:
 \series bold
 Mount:
 \series default
- Maneja de filesystems montados, incluyendo agregar la información de montaje
- a la tabla de montaje.
+ Maneja de 
+\shape italic
+filesystems
+\shape default
+ montados, incluyendo agregar la información de montaje a la tabla de montaje.
  El comportamiento actual depende de el valor de el parámetro 
 \emph on
 ensure.
@@ -10384,8 +11037,11 @@ s.
 En la arquitectura estándar maestro/agente, los nodos solicitan los catálogos
  al Puppet Server, el cual los compila cuando son solicitados.
  Los agentes mantienen en caché sus más recientes catálogos, si al pedir
- el catálogo, el master falla al compilarlo, ellos reusarán su catálogo
- cacheado.
+ el catálogo, el 
+\shape italic
+master
+\shape default
+ falla al compilarlo, ellos reusarán su catálogo cacheado.
 \end_layout
 
 \begin_layout Paragraph
@@ -10448,7 +11104,11 @@ Hay dos tipos de funciones en Puppet, statements (declaraciones) y rvalues.
 \end_layout
 
 \begin_layout Standard
-Las funciones se ejecutan en el Puppet master, no se ejecutan en el agente.
+Las funciones se ejecutan en el 
+\shape italic
+puppet-master
+\shape default
+, no se ejecutan en el agente.
  Por lo tanto sólo tienen acceso a los comandos y datos disponibles en el
  nodo maestro.
 \end_layout
@@ -10765,12 +11425,26 @@ En un despliegue agente/maestro se debe preparar la red para el tráfico
 \end_layout
 
 \begin_layout Itemize
-Firewall: En el desarrollo de este proyecto se trabajó sin firewall, por
- lo tanto este debe estar desactivado.
+
+\series bold
+\shape italic
+Firewall
+\shape default
+: 
+\series default
+En el desarrollo de este proyecto se trabajó sin 
+\shape italic
+firewall
+\shape default
+, por lo tanto este debe estar desactivado.
 \end_layout
 
 \begin_layout Itemize
-Resolución de nombres: Cada nodo debe tener un nombre único.
+
+\series bold
+Resolución de nombres:
+\series default
+ Cada nodo debe tener un nombre único.
 \end_layout
 
 \begin_layout Standard
@@ -10885,8 +11559,15 @@ Básicas:
 \end_layout
 
 \begin_layout Itemize
-dns_alt_names: Una lista de los hostnames de los servidores permitidos para
- usar cuando actúan como “masters environment”.
+dns_alt_names: Una lista de los 
+\shape italic
+hostnames
+\shape default
+ de los servidores permitidos para usar cuando actúan como 
+\shape italic
+masters environment
+\shape default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -11057,13 +11738,24 @@ Descargar el paquete instalador desde
 \end_layout
 
 \begin_layout Itemize
-Arquitectura x64: Se recomienda el uso de puppet-agent-<VERSION>-x64.msi
- o puppet-agent-<VERSION>-x86.msi.
+Arquitectura x64: Se recomienda el uso de 
+\family typewriter
+puppet-agent-<VERSION>-x64.msi
+\family default
+ o 
+\family typewriter
+puppet-agent-<VERSION>-x86.msi
+\family default
+.
  
 \end_layout
 
 \begin_layout Itemize
-Arquitectura x86: Debe utilizar puppet-agent-<VERSION>-x86.msi.
+Arquitectura x86: Debe utilizarse
+\family typewriter
+ puppet-agent-<VERSION>-x86.msi
+\family default
+.
  
 \end_layout
 
@@ -11073,6 +11765,8 @@ La instalación puede ser gráfica o automática.
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 msiexec /qn /norestart /i puppet-agent-<VERSION>-x64.msi 
 \begin_inset Newline newline
 \end_inset
@@ -11095,8 +11789,12 @@ PUPPET_AGENT_ACCOUNT_DOMAIN=example.com
 \begin_layout Standard
 Este tipo de instalación por comando tiene la ventaja de proveer una mayor
  cantidad de opciones a editar que en la instalación gráfica.
- La opción que se destaca es PUPPET_AGENT_ACCOUNT_USER el cual permite indicar
- que usuario es que ejecutara los manifiestos de puppet agent en windows.
+ La opción que se destaca es 
+\family typewriter
+PUPPET_AGENT_ACCOUNT_USER
+\family default
+ la cual permite indicar qué usuario es el que ejecutará los manifiestos
+ de puppet en Windows.
  Esta es una opción importante, porque el usuario debe poseer permisos de
  administrador para poder llevar a los recursos al estado deseado.
 \end_layout
@@ -11107,8 +11805,12 @@ No se debe iniciar el servicio aún.
 \end_layout
 
 \begin_layout Standard
-Por defecto, el valor del hostname de servidor es puppet, si se nombró de
- otra forma a la máquina servidora del puppet server, se debe editar esto.
+Por defecto, el valor del 
+\shape italic
+hostname
+\shape default
+ de servidor es puppet, si se nombró de otra forma a la máquina servidora
+ del puppet server, se debe editar esto.
 \end_layout
 
 \begin_layout Paragraph
@@ -11163,7 +11865,10 @@ tags: Limita a los agentes a correr recursos con ciertas etiquetas.
 \end_layout
 
 \begin_layout Itemize
-usecacheonfailure: Se utiliza para tomar el último buen catálogo si el master
+usecacheonfailure: Se utiliza para tomar el último buen catálogo si el 
+\shape italic
+master
+\shape default
  no posee uno bueno.
  
 \end_layout
@@ -11279,7 +11984,8 @@ sudo systemctl enable puppetserver
 
 \begin_layout Standard
 En el caso de los clientes, tenemos variedad de comandos para iniciar los
- agentes de puppet puesto que son diferentes los SO donde funcionan.
+ agentes de puppet puesto que son diferentes los sistemas operativos donde
+ funcionan.
 \end_layout
 
 \begin_layout Standard
@@ -11612,7 +12318,11 @@ El término OOBE significa Out Of Box Experience y es la experiencia que
  Cuando esta opción es seleccionada, reicinia el quipo en modo Bienvenida
  de Windows.
  Este modo permite a los usuarios personalizar el sistema operativo, crear
- cuentas de usuario, cambiar el hostname y demás.
+ cuentas de usuario, cambiar el 
+\shape italic
+hostname
+\shape default
+ y demás.
  Cualquier configuración pasada al oobeSystem por medio de un archivo de
  respuestas de instalación es procesada inmediatamente antes que la Bienvenida
  de Windows inicie.
@@ -12363,8 +13073,11 @@ Una máquina de referencia tiene una instalación personalizada de Windows
 \begin_layout Standard
 Este punto conviene realizarlo manualmente y de la forma usual.
  Sin embargo, cuando en el proceso de instalación, se llega a la pantalla
- de bienvenida de Windows (diálogo de creación de usuario y hostname) se
- debe presionar 
+ de bienvenida de Windows (diálogo de creación de usuario y 
+\shape italic
+hostname
+\shape default
+) se debe presionar 
 \emph on
 Ctrl + Shift + F3
 \emph default
@@ -13113,7 +13826,11 @@ Idioma.
 \end_layout
 
 \begin_layout Standard
-Se ha configurado el firewall para que esté habilitado, valor por defecto.
+Se ha configurado el 
+\shape italic
+firewall
+\shape default
+ para que esté habilitado, valor por defecto.
 \end_layout
 
 \begin_layout Standard
@@ -13430,7 +14147,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Instalación del SO.
+Instalación del sistema operativo.
 \end_layout
 
 \end_inset
@@ -13468,7 +14185,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Instalación del SO.
+Instalación del sistema operativo.
  Elección de la versión.
 \end_layout
 
@@ -13675,16 +14392,23 @@ Activación del producto.
 \end_layout
 
 \begin_layout Standard
-Para solucionar el problema de asignar un hostname único a cada máquina
- que sea instalada con este 
+Para solucionar el problema de asignar un 
+\shape italic
+hostname
+\shape default
+ único a cada máquina que sea instalada con este 
 \emph on
 Autounattend.xml 
 \emph default
 se dió con la siguiente solución.
  Utilizando un string representativo en el campo RegisteredOwner y un asterísco
- en el campo ComputerName, se obtiene un hostname pseudo-aleatorio, ya que
- estará compuesto por máximo ocho caracteres de RegisteredOwner y/o RegisteredOr
-ganization concatenado con caracteres aleatorios.
+ en el campo ComputerName, se obtiene un 
+\shape italic
+hostname
+\shape default
+ pseudo-aleatorio, ya que estará compuesto por máximo ocho caracteres de
+ RegisteredOwner y/o RegisteredOrganization concatenado con caracteres aleatorio
+s.
  El campo ComputerName es un string con un tamaño máximo de quince caracteres.
 \end_layout
 
@@ -14075,7 +14799,15 @@ En el servidor crear el siguiente directorio, donde se colocarán los archivos
 \begin_inset Newline newline
 \end_inset
 
-winpe_cobbler_amd64.iso y Win7-personalizado.iso:
+
+\family typewriter
+winpe_cobbler_amd64.iso
+\family default
+ y 
+\family typewriter
+Win7-personalizado.iso
+\family default
+:
 \end_layout
 
 \begin_layout Standard
@@ -14524,8 +15256,8 @@ Con las siguientes funciones definimos de qué modo procederá el servidor
  definida a continuación se ejecutara cuando una solicitud get a la URL
  /virtual_machine llegue al servidor.
  La función devuelve el HTML de un formulario al navegador, que el usuario
- rellenará para indicar la cantidad de máquinas virtuales con cada SO que
- desea crear.
+ rellenará para indicar la cantidad de máquinas virtuales con cada sistema
+ operativo que desea crear.
  Los datos ingresados en el formulario se enviarán al servidor con el método
  post.
 \end_layout
@@ -15015,8 +15747,8 @@ Centos = 1 Ubuntu = 1 Windows = 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-Correcta Creación de 3 máquinas virtuales, cada una con un diferente SO
- 
+Correcta Creación de 3 máquinas virtuales, cada una con un diferente sistema
+ operativo 
 \end_layout
 
 \end_inset
@@ -15112,7 +15844,8 @@ Centos = 0 Ubuntu = 3 Windows = 0
 \begin_inset Text
 
 \begin_layout Plain Layout
-Correcta Creación de 3 máquinas virtuales, cada una con el SO Ubuntu14 
+Correcta Creación de 3 máquinas virtuales, cada una con el sistema operativo
+ Ubuntu14 
 \end_layout
 
 \end_inset
@@ -15541,7 +16274,7 @@ Crear máquinas virtuales parametrizadas
 \begin_inset Text
 
 \begin_layout Plain Layout
-SO = Ubuntu RAM=2048 Disco = 25
+sistema operativo = Ubuntu RAM=2048 Disco = 25
 \end_layout
 
 \end_inset
@@ -15625,7 +16358,7 @@ Características insuficientes
 \begin_inset Text
 
 \begin_layout Plain Layout
-SO = Ubuntu RAM =512 Disco = 5
+sistema operativo = Ubuntu RAM =512 Disco = 5
 \end_layout
 
 \end_inset
@@ -16215,7 +16948,11 @@ Protección:
 
 \begin_deeper
 \begin_layout Itemize
-Modificar el sistema para que funcione con firewall y SELinux.
+Modificar el sistema para que funcione con 
+\shape italic
+firewall
+\shape default
+ y SELinux.
 \end_layout
 
 \begin_layout Itemize
