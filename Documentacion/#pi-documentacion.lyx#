@@ -1385,7 +1385,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename Imagenes/Diagramas de secuencia/Modifica Politicas.png
+	filename ../../../tesis.2013.10.13.bak/Tesis/Documentacion/Imagenes/Diagramas de secuencia/Modifica Politicas.png
 	width 15cm
 
 \end_inset
@@ -8843,11 +8843,8 @@ Replicate
 
 \begin_layout Standard
 Este comando descarga la configuración de un servidor Cobbler a otro.
- Sirve para tener implementaciones de 
-\emph on
-High Availability,
-\emph default
- recuperación de desastres o para balanceo de carga.
+ Sirve para tener implementaciones de High Availability, recuperación de
+ desastres o para balanceo de carga.
 \end_layout
 
 \begin_layout Standard
@@ -9006,7 +9003,7 @@ La interfaz web de Cobbler requiere Django.
 \end_layout
 
 \begin_layout Standard
-Se añade el repositorio EPEL de CentOS 7
+Se añade el repositorio Epel de CentOS 7
 \end_layout
 
 \begin_layout Standard
@@ -9107,7 +9104,7 @@ cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf
 \end_layout
 
 \begin_layout Standard
-Verificar en cada caso la versión de DHCP.
+Verificar en cada caso la versión de dhcp.
 \end_layout
 
 \begin_layout Standard
@@ -10160,13 +10157,9 @@ El agente y el servidor se comunican vía HTTPS con verificación de cliente.
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-Client-vefied
-\emph default
- HTTPS quiere decir que cada maestro o agente tiene un identificador por
- certificado SSL y examinan los certificados de sus contrapartes para decidir
- si permite un intercambio de información.
+Client-vefied HTTPS quiere decir que cada maestro o agente tiene un identificado
+r por certificado SSL y examinan los certificados de sus contrapartes para
+ decidir si permite un intercambio de información.
  Puppet incluye un constructor de certificado de autorización para administrar
  los certificados.
  Los agentes puede pedir automáticamente los certificados vía la API HTTP
@@ -10189,28 +10182,17 @@ Module
 \end_layout
 
 \begin_layout Standard
-Un módulo o 
-\emph on
-module
-\emph default
-, es un conjunto de código de Puppet empaquetado junto con los otros archivos
- y datos, que se necesita administrar sobre algún aspecto del sistema.
+Un módulo o module, es un conjunto de código de Puppet empaquetado junto
+ con los otros archivos y datos, que se necesita administrar sobre algún
+ aspecto del sistema.
  Consiste en una estructura predefinida de directorios que ayudan a Puppet
  a encontrar los contenidos del módulo.
  
 \end_layout
 
 \begin_layout Standard
-Existe un repositorio público (
-\emph on
-The Puppet Forge
-\emph default
-) donde se pueden encontrar módulos hechos por la comunidad y también mantenidos
- por
-\emph on
- Puppet Labs
-\emph default
-.
+Existe un repositorio público (The Puppet Forge) donde se pueden encontrar
+ módulos hechos por la comunidad y también mantenidos por Puppet Labs.
  Estos módulos se pueden instalar en un servidor Puppet para utilizarlos.
 \end_layout
 
@@ -10227,11 +10209,8 @@ puppet module list
 \begin_layout Standard
 Los módulos son auto-contenidos y separados.
  Su estructura de archivo le da a Puppet una forma consistente de localizar
- cualquier clase, plantillas, 
-\emph on
-plugins
-\emph default
- y binarios requeridos para satisfacer la funcionalidad del módulo.
+ cualquier clase, plantillas, plugins y binarios requeridos para satisfacer
+ la funcionalidad del módulo.
 \end_layout
 
 \begin_layout Standard
@@ -10259,28 +10238,13 @@ Resources
 \end_layout
 
 \begin_layout Standard
-Cada recurso o 
-\emph on
-resource
-\emph default
-, describe algún aspecto de un sistema y su estado, como por ejemplo, un
- servicio que debería estar ejecutándose o un paquete que se quiere instalado.
+Cada recurso o resource, describe algún aspecto de un sistema y su estado,
+ como por ejemplo, un servicio que debería estar ejecutándose o un paquete
+ que se quiere instalado.
  El bloque de código que describe un recurso se llama declaración de recurso
- (
-\emph on
-resource
-\emph default
- 
-\emph on
-declaration
-\emph default
-).
+ (resource declaration).
  Estas declaraciones de recurso están escritas en código Puppet, un DLS
- (
-\emph on
-Domain Specific Language
-\emph default
-) construido en Ruby.
+ (Domain Specific Language) construido en Ruby.
  El DLS de Puppet es un lenguaje declarativo en vez de imperativo.
  Esto quiere decir que en vez de definir un proceso o un conjunto de comandos,
  el código de Puppet describe (o declara) sólo el estado final deseado,
@@ -10495,11 +10459,7 @@ atributo => 'valor',
 \series bold
 Título: 
 \series default
-Es un 
-\emph on
-string
-\emph default
- que identifica un recurso para el compilador de Puppet.
+Es un string que identifica un recurso para el compilador de Puppet.
 \end_layout
 
 \begin_deeper
@@ -10658,15 +10618,7 @@ Por ejemplo, el
 name
 \emph default
  de un servicio o paquete es el nombre por el cual las herramientas de paquetes
- o servicios lo reconocen o en el caso de un archivo, su 
-\emph on
-namevar
-\emph default
- es el 
-\emph on
-path
-\emph default
-.
+ o servicios lo reconocen o en el caso de un archivo, su namevar es el path.
  Esto es diferente al título, el cual identifica un recurso para el compilador
  de Puppet.
  Sin embargo, ellos a veces tienen el mismo valor.
@@ -11024,12 +10976,8 @@ Manifiests
 \end_layout
 
 \begin_layout Standard
-Un 
-\emph on
-manifest
-\emph default
- o manifiesto, es un archivo de texto que contiene código Puppet y posee
- la extensión .pp.
+Un manifest o manifiesto, es un archivo de texto que contiene código Puppet
+ y posee la extensión.pp.
  Para comprobar la sintaxis de un manifiesto se puede utilizar:
 \end_layout
 
@@ -11120,12 +11068,8 @@ Una clase es un bloque de código Puppet con nombre.
  Cuando Puppet se ejecuta, parseará este manifiesto y guardará la definición
  de clase; luego ésta puede declararse para aplicarla en los nodos de la
  infraestructura.
- En Puppet las clases son 
-\emph on
-singleton
-\emph default
-, lo que quiere decir que una clase puede declararse sólo una vez en un
- nodo dado.
+ En Puppet las clases son singleton, lo que quiere decir que una clase puede
+ declararse sólo una vez en un nodo dado.
  Cuando se declara una clase:
 \end_layout
 
@@ -11160,26 +11104,11 @@ Funciones
 \end_layout
 
 \begin_layout Standard
-Hay dos tipos de funciones en Puppet, 
-\emph on
-statements
-\emph default
- (declaraciones) y 
-\emph on
-rvalues
-\emph default
-.
- Las 
-\emph on
-statements
-\emph default
- no retornan argumentos, son utilizadas para hacer trabajos independientes
- como importar.
- Rvalues retornan valores y pueden usarse solo en un 
-\emph on
-statement
-\emph default
- requiriendo un valor, como una asignación o una declaración case.
+Hay dos tipos de funciones en Puppet, statements (declaraciones) y rvalues.
+ Las statements no retornan argumentos, son utilizadas para hacer trabajos
+ independientes como importar.
+ Rvalues retornan valores y pueden usarse solo en un statement requiriendo
+ un valor, como una asignación o una declaración case.
 \end_layout
 
 \begin_layout Standard
@@ -11209,31 +11138,9 @@ En general, ellos afectan el comportamiento de Puppet en preferencia a el
 
 \begin_layout Standard
 Los metaparámetros hacen cosas como agregar metadata a un recurso (alias,
- 
-\emph on
-tag
-\emph default
-), poner límites cuando el recurso debe sincronizarse (
-\emph on
-require
-\emph default
-, 
-\emph on
-schedule
-\emph default
-, etc.), evita que Puppet realice cambios (
-\emph on
-noop
-\emph default
-), y cambia la verborrea del 
-\emph on
-log
-\emph default
- (
-\emph on
-loglevel
-\emph default
-).
+ tag), poner límites cuando el recurso debe sincronizarse (require, schedule,
+ etc.), evita que Puppet realice cambios (noop), y cambia la verborrea del
+ log (loglevel).
 \end_layout
 
 \begin_layout Paragraph
@@ -11358,12 +11265,8 @@ Una declaración de nodo debe realizarse según:
 \end_layout
 
 \begin_layout Itemize
-Un 
-\emph on
-string
-\emph default
- entre comillas conteniendo sólo letras, números, guiones bajos, guiones
- medios y puntos.
+Un string entre comillas conteniendo sólo letras, números, guiones bajos,
+ guiones medios y puntos.
 \end_layout
 
 \begin_layout Itemize
@@ -11446,24 +11349,17 @@ Si hay una definición de nodo que contenga el nombre exacto del nodo, entonces
 \end_layout
 
 \begin_layout Enumerate
-Si hay una expresión regular que coincida con el nombre del nodo, entonces
+Si hay una expresión regular que coincida cone el nombre del nodo, entonces
  utilizará esta.
 \end_layout
 
 \begin_layout Enumerate
-Si el nombre de nodo es del tipo FQDN (
-\emph on
-Fully Qualified Domain Name
-\emph default
-), Puppet cortará el grupo final y comenzará nuevamente desde el punto uno.
+Si el nombre de nodo es del tipo FQDN (Fully Qualified Domain Name), Puppet
+ cortará el grupo final y comenzará nuevamente desde el punto uno.
 \end_layout
 
 \begin_layout Enumerate
-Puppet utilizará el nodo 
-\emph on
-default
-\emph default
-.
+Puppet utilizará el nodo default.
 \end_layout
 
 \begin_layout Paragraph
@@ -11471,12 +11367,9 @@ Node group
 \end_layout
 
 \begin_layout Standard
-Los grupos de nodos o 
-\emph on
-node group
-\emph default
-s permiten segmentar todos los nodos de la infraestructura en grupos separados
- configurables basados en la información colectada por 'facter tool'.
+Los grupos de nodos o node groups permiten segmentar todos los nodos de
+ la infraestructura en grupos separados configurables basados en la información
+ colectada por 'facter tool'.
 \end_layout
 
 \begin_layout Subsubsection
@@ -11503,10 +11396,7 @@ Requerimientos de sistema y chequeo de versión de sistema operativo
 \end_layout
 
 \begin_layout Itemize
-Hardware: El agente Puppet no tiene requerimientos particulares de 
-\emph on
-hardware
-\emph default
+Hardware: El agente Puppet no tiene requerimientos particulares de hardware
  y corre prácticamente en cualquier computadora, sin embargo, el servidor
  es un recurso intensivo y debe instalarse en un servidor robusto y dedicado.
  Como mínimo, el servidor debe tener dos procesadores y al menos 2GB de
@@ -11546,10 +11436,8 @@ En un despliegue agente/maestro se debe preparar la red para el tráfico
 
 \series bold
 \shape italic
-\emph on
 Firewall
 \shape default
-\emph default
 : 
 \series default
 En el desarrollo de este proyecto se trabajó sin 
@@ -11572,11 +11460,8 @@ Para cumplir con este último apartado, se decidió editar el archivo
 \family typewriter
 /etc/hosts
 \family default
- de cada máquina virtual creada utilizando Cobbler para añadir el 
-\emph on
-host
-\emph default
- del puppetserver que corresponde a la primer dirección IP de la red virtual
+ de cada máquina virtual creada utilizando Cobbler para añadir el host del
+ puppetserver que corresponde a la primer dirección IP de la red virtual
  creada por KVM.
  Así mismo, como el servidor Puppet también tiene la necesidad de conocer
  cuál dirección IP corresponde a cada máquina, se realizó un pequeño código
@@ -11619,10 +11504,7 @@ nte.
 \end_layout
 
 \begin_layout Standard
-Como se mencionó, puppetserver tiene ciertos requerimientos de 
-\emph on
-hardware
-\emph default
+Como se mencionó, puppetserver tiene ciertos requerimientos de hardware
  donde se destaca los 2GB de memoria RAM; pero esto no es exactamente así,
  lo que realmente sucede es que esa es la cantidad de memoria 
 \begin_inset Quotes eld
@@ -11633,11 +11515,7 @@ recomendada
 \end_inset
 
  para que funcione correctamente un sistema en producción.
- Mientras exista ese 
-\emph on
-hardware
-\emph default
-, puppet se 
+ Mientras exista ese hardware, puppet se 
 \begin_inset Quotes eld
 \end_inset
 
@@ -11707,7 +11585,7 @@ path: Indica la ubicación del entorno.
 
 \begin_layout Itemize
 basemodulepath: Una lista de las ubicaciones que contienen módulos que pueden
- usarse en todos los entornos.
+ susarse en todos los entornos.
 \end_layout
 
 \begin_layout Itemize
@@ -11981,20 +11859,12 @@ noop: Si está habilitado, el agente no realizará ningún trabajo, en cambio
 \end_layout
 
 \begin_layout Itemize
-priority: Permite asignar el valor “
-\emph on
-nice
-\emph default
-” para evitar que otras aplicaciones de la CPU no mueran por inanición mientras
- se aplican los catálogos.
+priority: Permite asignar el valor “nice” para evitar que otras aplicaciones
+ de la CPU no mueran por inanición mientras se aplican los catálogos.
 \end_layout
 
 \begin_layout Itemize
-report: Indica si se deben enviar reportes, por defecto es “
-\emph on
-true
-\emph default
-”.
+report: Indica si se deben enviar reportes, por defecto es “true”.
 \end_layout
 
 \begin_layout Itemize
@@ -12171,11 +12041,8 @@ puppet
 \begin_inset Quotes erd
 \end_inset
 
- (como se lo llamó en la configuración) en el archivo 
-\emph on
-hosts
-\emph default
- que su ubicación difiere en los sistemas Linux y Windows.
+ (como se lo llamó en la configuración) en el archivo hosts que su ubicación
+ difiere en los sistemas Linux y Windows.
 \end_layout
 
 \begin_layout Standard
