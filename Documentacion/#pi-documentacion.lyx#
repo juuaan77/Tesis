@@ -411,7 +411,7 @@ tos técnicos y los procesos de producción, como también los métodos para
 La orquestación reduce el tiempo y el esfuerzo necesario para desplegar
  múltiples instancias de una sola aplicación.
  A medida que se requieren más recursos, las herramientas de automatización
- pueden ejecutar tareas que, previamente, sólo podían realizarlas por múltiples
+ pueden ejecutar tareas que, previamente, sólo podían realizarse por múltiples
  administradores cada uno en su estación de trabajo física.
 \end_layout
 
@@ -429,8 +429,16 @@ De la mano de la orquestación, se encuentra la virtualización de computadoras,
 \end_layout
 
 \begin_layout Standard
-Cloud Computing o nube computacional no es lo mismo que virtualización,
- internamente en esta arquitectura puede existir la virtualización.
+
+\emph on
+Cloud
+\emph default
+ 
+\emph on
+Computing
+\emph default
+ o nube computacional no es lo mismo que virtualización, internamente en
+ esta arquitectura puede existir la virtualización.
  Describe el envío de recursos computacionales compartidos (software o datos)
  bajo demanda a través de Internet.
  Se esté o no en la nube, se puede comenzar virtualizando los servidores
@@ -544,8 +552,8 @@ La principal motivación en este Proyecto Integrador es realizar un proyecto
  que nos permita aplicar los conocimientos obtenidos a lo largo de la carrera
  de grado de Ingeniería en Computación.
  Abordamos temas como sistemas operativos, sistemas de archivos, protocolos,
- metodologías de desarrollo, redes de datos, programación en Python, Shell
- scripting, virtualización, diagramas UML.
+ metodologías de desarrollo, redes de datos, programación en diferentes
+ lenguajes, virtualización, diagramas UML.
 \end_layout
 
 \begin_layout Subsection
@@ -1385,7 +1393,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../../../tesis.2013.10.13.bak/Tesis/Documentacion/Imagenes/Diagramas de secuencia/Modifica Politicas.png
+	filename Imagenes/Diagramas de secuencia/Modifica Politicas.png
 	width 15cm
 
 \end_inset
@@ -1506,8 +1514,11 @@ Sexta etapa:
 \series default
  Realizar la implementación conjunta de todas las herramientas automatizando
  la instalación y realizar configuraciones pertinentes en los sistemas ya
- instalados por medio de scripts y la herramienta de orquestación, obteniendo
- diferentes perfiles.
+ instalados por medio de 
+\emph on
+scripts
+\emph default
+ y la herramienta de orquestación, obteniendo diferentes perfiles.
  
 \end_layout
 
@@ -4033,7 +4044,7 @@ Dificultades en la interacción entre la aplicación y el sistema operativo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Dificultades para la integracion entre las Herramientas y los Sistemas Operativo
+Dificultades para la integración entre las Herramientas y los Sistemas Operativo
 s 
 \end_layout
 
@@ -4720,12 +4731,24 @@ XFS es el sistema de archivos por defecto y permite escalar la capacidad
 \end_layout
 
 \begin_layout Itemize
-iSCSI y FCoE (Fiber Channel over Ethernet) en el espacio del Kernel.
+iSCSI y FCoE (
+\emph on
+Fiber Channel over Ethernet
+\emph default
+) en el espacio del 
+\emph on
+Kernel
+\emph default
+.
  
 \end_layout
 
 \begin_layout Itemize
-Soporte para PPTv2 (Precisión Time Protocol).
+Soporte para PPTv2 (
+\emph on
+Precision Time Protocol
+\emph default
+).
 \end_layout
 
 \begin_layout Itemize
@@ -4756,7 +4779,11 @@ systemd
  Red Hat, Debian y Ubuntu, entre otros.
  CentOS 7 es compatible con Microsoft Active Directory (y obviamente con
  Red Hat), por lo que puede trabajar con facilidad en entornos heterogéneos.
- CentOS 7 incluye PCP (Performance Co-Pilot), un conjunto de 
+ CentOS 7 incluye PCP (
+\emph on
+Performance Co-Pilot
+\emph default
+), un conjunto de 
 \shape italic
 frameworks
 \shape default
@@ -4859,8 +4886,12 @@ Entornos gráficos: Gnome 3.14, KDE 4.14,
 \end_layout
 
 \begin_layout Itemize
-Los puertos para el kernel de FreeBSD (kfreebsd-amd64 y kfreebsd-i386),
- incluidos para versiones anteriores, no son parte de esta versión.
+Los puertos para el 
+\emph on
+kernel
+\emph default
+ de FreeBSD (kfreebsd-amd64 y kfreebsd-i386), incluidos para versiones anteriore
+s, no son parte de esta versión.
 \end_layout
 
 \begin_layout Itemize
@@ -5070,7 +5101,11 @@ SNAT, soporte Ipv6.
 \end_layout
 
 \begin_layout Itemize
-Pools de almacenamiento.
+
+\emph on
+Pools
+\emph default
+ de almacenamiento.
  
 \end_layout
 
@@ -5107,14 +5142,18 @@ Virtualización es un término amplio para software ejecutándose, usualmente
  en el mismo sistema.
  Muchas de las implementaciones de virtualización utilizan un 
 \family typewriter
+\emph on
 hypervisor
 \family default
+\emph default
 , una capa de software que controla el hardware y provee sistemas operativos
  huéspedes con acceso a los dispositivos de hardware subyacentes.
  El 
 \family typewriter
+\emph on
 hypervisor
 \family default
+\emph default
  permite ejecutar múltiples sistemas operativos en el mismo sistema físico
  ofreciendo hardware virtualizado al sistema operativo huésped.
  Esta tecnología, provee un conjunto de herramientas para aumentar la flexibilid
@@ -5154,8 +5193,10 @@ virtual machine
  Poner múltiples VMs en una misma computadora habilita a varias aplicaciones
  y sistemas operativos correr en un solo servidor virtual o 
 \family typewriter
+\emph on
 host
 \family default
+\emph default
 .
  Una fina capa de software, llamado 
 \shape italic
@@ -5163,8 +5204,10 @@ hypervisor
 \shape default
 , desacopla las máquinas virtuales del 
 \family typewriter
+\emph on
 host
 \family default
+\emph default
  y asigna dinámicamente recursos computacionales a cada VM.
 \end_layout
 
@@ -5316,8 +5359,10 @@ También llamada virtualización basada en contenedores.
  es que cada invitado debe utilizar el mismo sistema operativo que utiliza
  el 
 \family typewriter
+\emph on
 host
 \family default
+\emph default
 .
  Por ejemplo, Jaulas con Warden en FreeBSD (en este caso la variante Debian/KFre
 eBSD puede correr en jaulas Warden sobre FreeBSD), OpenVZ, Docker o Linux-Vserve
@@ -5528,18 +5573,33 @@ KVM/Qemu logo
 \end_layout
 
 \begin_layout Standard
-KVM (Kernel-based Virtual Machine), desarrollado por Red Hat Enterprise
- Linux, es una infraestructura de virtualización completa para el kernel
+KVM (
+\emph on
+Kernel-based Virtual Machine
+\emph default
+), desarrollado por Red Hat Enterprise Linux, es una infraestructura de
+ virtualización completa para el 
+\emph on
+kernel
+\emph default
  de Linux que lo transforma en un 
 \shape italic
 hypervisor
 \shape default
 .
- Fue incorporado a la línea principal del kernel Linux en la versión 2.6.20.
+ Fue incorporado a la línea principal del 
+\emph on
+kernel
+\emph default
+ Linux en la versión 2.6.20.
  KVM requiere un procesador con hardware que permita extensión para virtualizaci
 ón (Intel VT o AMD-V).
  También está disponible para instalarlo desde los puertos de FreeBSD en
- la forma de módulos de kernel.
+ la forma de módulos de 
+\emph on
+kernel
+\emph default
+.
  
 \end_layout
 
@@ -5610,21 +5670,43 @@ OpenVZ logo
 OpenVZ es una herramienta de virtualización para Linux basada en contenedores.
  OpenVZ crea múltiples contenedores aislados en un servidor físico y asegurando
  que las aplicaciones no entren en conflicto.
- Utiliza un kernel de Linux modificado y por consiguiente sólo puede correr
- Linux.
- Todos los contenedores comparten la misma arquitectura y versión del kernel.
+ Utiliza un 
+\emph on
+kernel
+\emph default
+ de Linux modificado y por consiguiente sólo puede correr Linux.
+ Todos los contenedores comparten la misma arquitectura y versión del 
+\emph on
+kernel
+\emph default
+.
  Cada contenedor se comporta como un servidor autónomo.
- Ya que OpenVZ emplea un modelo de kernel único, es tan escalable como kernel
+ Ya que OpenVZ emplea un modelo de 
+\emph on
+kernel
+\emph default
+ único, es tan escalable como 
+\emph on
+kernel
+\emph default
  Linux 2.6, lo que significa que soporta hasta 64 CPUs y hasta 64 GiB de
  RAM.
  Un entorno virtual único se puede escalar hasta el equipo físico entero.
  También cuenta con migración en vivo que posibilita mover un contenedor
  de un servidor físico a otro sin apagar el contenedor.
- Un propietario (root) de un servidor físico OpenVZ (conocido como Nodo
- de Hardware) puede ver todos los procesos y archivos de los contenedores.
+ Un propietario (
+\emph on
+root
+\emph default
+) de un servidor físico OpenVZ (conocido como Nodo de Hardware) puede ver
+ todos los procesos y archivos de los contenedores.
  Esto hace la administración masiva de escenarios posible: se puede ejecutar
- un simple script de intérprete de comandos que actualice todos (o sólo
- algunos seleccionados) los contenedores a la vez.
+ un simple 
+\emph on
+script
+\emph default
+ de intérprete de comandos que actualice todos (o sólo algunos seleccionados)
+ los contenedores a la vez.
 \end_layout
 
 \begin_layout Paragraph
@@ -5672,7 +5754,11 @@ VirtualBox, desarrollado por Oracle, es un virtualizador completo de propósito
  general para hardware x86, orientado al uso para servidor, escritorio y
  embebido.
  Como software de código abierto, se puede utilizar bajo la licencia GNU
- General Public License 2 (GPL2).
+ 
+\emph on
+General Public License
+\emph default
+ 2 (GPL2).
  
 \end_layout
 
@@ -5909,7 +5995,11 @@ FAI es un sistema no interactivo para instalar, personalizar y administrar
 \family typewriter
 chroot
 \family default
-, desde pequeñas redes hasta una infraestructura grande escalable y clusters.
+, desde pequeñas redes hasta una infraestructura grande escalable y 
+\emph on
+clusters
+\emph default
+.
  Es una herramienta para la instalación totalmente automática de Debian
  y otras distribuciones de Linux como Suse, Red Hat, Solaris, ya sea vía
  red, DVDs personalizados de instalación o en entornos 
@@ -6098,7 +6188,11 @@ Orquestación
 
 \begin_layout Standard
 La orquestación describe el alineamiento automatizado, la coordinación y
- la administración de complejos sistemas de computadoras, middleware y servicios.
+ la administración de complejos sistemas de computadoras, 
+\emph on
+middleware
+\emph default
+ y servicios.
  En este sentido, la orquestación se trata de alinear los requisitos de
  negocio con las aplicaciones, datos e infraestructura.
  Define las políticas y niveles de servicio a través de flujos de trabajo
@@ -6480,7 +6574,7 @@ master
  a las que tiene acceso.
  Una vez que recibe el catálogo, el agente chequea cada recurso descrito
  en él.
- Entonces, si el agente encuentra algún recurso que no se ecuentre en el
+ Entonces, si el agente encuentra algún recurso que no se encuentre en el
  estado deseado, realiza los cambios necesarios para corregirlo.
  Luego de aplicar el catálogo, el agente enviá un reporte al 
 \shape italic
@@ -6499,9 +6593,13 @@ Protocolo PXE
 \end_layout
 
 \begin_layout Standard
-El protocolo PXE (Preboot Execution Enviroment) es un estándar que les permite
- a computadoras, dentro de una red, que todavía no tienen instalado un sistema
- operativo, configurarse e iniciarse remotamente por un administrador.
+El protocolo PXE (
+\emph on
+Preboot Execution Enviroment
+\emph default
+) es un estándar que les permite a computadoras, dentro de una red, que
+ todavía no tienen instalado un sistema operativo, configurarse e iniciarse
+ remotamente por un administrador.
  Utiliza una extensión de opciones del protocolo DHCP.
 \end_layout
 
@@ -6626,8 +6724,11 @@ Etiqueta para el identificador del cliente UUID.
 \end_layout
 
 \begin_layout Enumerate
-Etiqueta para la versión de UNDI (Universal Network Device Interface) del
- cliente.
+Etiqueta para la versión de UNDI (
+\emph on
+Universal Network Device Interface
+\emph default
+) del cliente.
 \end_layout
 
 \begin_layout Enumerate
@@ -6669,18 +6770,36 @@ Parámetros configurados por el administrador.
 \end_layout
 
 \begin_layout Enumerate
-Una lista de Boot Servers del campo “Boot Server” en las etiquetas PXE del
- DHCPOFFER.
+Una lista de 
+\emph on
+Boot 
+\emph default
+Servers
+\emph on
+ 
+\emph default
+del campo “Boot Server” en las etiquetas PXE del DHCPOFFER.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-El cliente debe enviar una solicitud por la dirección del Boot Server al
- servidor y esperar por el acuse de recibo (acknowledgment – ACK).
+El cliente debe enviar una solicitud por la dirección del 
+\emph on
+Boot
+\emph default
+ Server al servidor y esperar por el acuse de recibo (
+\emph on
+acknowledgment
+\emph default
+ – ACK).
 \end_layout
 
 \begin_layout Enumerate
-El cliente selecciona y descubre un Boot Server.
+El cliente selecciona y descubre un 
+\emph on
+Boot
+\emph default
+ Server.
  Este paquete puede enviarse por 
 \shape italic
 broadcast
@@ -6712,12 +6831,24 @@ La opción 60, Class ID, puesta a to “PXEClient:Arch:xxxxx:UNDI:yyyzzz”.
 \end_layout
 
 \begin_layout Enumerate
-El tipo de Boot Server en el campo de opciones de PXE.
+El tipo de 
+\emph on
+Boot
+\emph default
+ Server en el campo de opciones de PXE.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-El Boot Server envía un paquete DHCPACK unicast al cliente.
+El 
+\emph on
+Boot
+\emph default
+ Server envía un paquete DHCPACK 
+\emph on
+unicast
+\emph default
+ al cliente.
  Este ACK contiene:
 \end_layout
 
@@ -6992,8 +7123,28 @@ Esta selección se basó en una recomendación de los directores del proyecto.
  Se optó por Puppet, dado que es una de las herramientas con más penetración
  de mercado y por ende brinda una muy buena experiencia a futuro.
  Pero además, como todas las herramientas seleccionadas, Puppet cuenta con
- dos versiones, Enterprise y Open Source, entonces siguiendo el requerimiento
- no funcional RNF01 se escogió la versión Open Source.
+ dos versiones, 
+\emph on
+Enterprise
+\emph default
+ y 
+\emph on
+Open
+\emph default
+ 
+\emph on
+Source
+\emph default
+, entonces siguiendo el requerimiento no funcional RNF01 se escogió la versión
+ 
+\emph on
+Open
+\emph default
+ 
+\emph on
+Source
+\emph default
+.
 \end_layout
 
 \begin_layout Subsection
@@ -7305,7 +7456,11 @@ La virtualización anidada no está soportada.
 
 \begin_layout Itemize
 La sobre utilización de memoria tiene soporte de KVM utilizando el disco
- de swap.
+ de 
+\emph on
+swap
+\emph default
+.
  
 \end_layout
 
@@ -7321,8 +7476,15 @@ Virtualización de dispositivos SCSI no está soportada.
 \end_layout
 
 \begin_layout Itemize
-Soporta 32 slots para dispositivos PCI (para-virtualizados) y 8 de estos
- por cada slot (datos RHE7).
+Soporta 32 
+\emph on
+slots
+\emph default
+ para dispositivos PCI (para-virtualizados) y 8 de estos por cada 
+\emph on
+slot
+\emph default
+ (datos RHE7).
  
 \end_layout
 
@@ -7338,7 +7500,15 @@ La migración y salvado, o restauración de la VM no está soportada mientras
 \end_layout
 
 \begin_layout Itemize
-KVM no soporta kernels de real time.
+KVM no soporta 
+\emph on
+kernels
+\emph default
+ de 
+\emph on
+real time
+\emph default
+.
  
 \end_layout
 
@@ -7852,16 +8022,23 @@ Images
 \end_layout
 
 \begin_layout Standard
-Cobbler puede arrancar imágenes físicamente o virtualmente.
- Los despliegues de máquinas no basadas en imágenes son generalmente más
+Cobbler puede arrancar imagenes físicamente o virtualmente.
+ Los despliegues de máquinas no basadas en imagenes son generalmente más
  fáciles para trabajar y llevan a una infraestructura más sustentable.
  La mayoría de las instalaciones de Cobbler están directamente basadas en
- la distribución (kernel + 
+ la distribución (
+\emph on
+kernel
+\emph default
+ + 
 \family typewriter
 initrd
 \family default
 ).
- La siguiente página documenta algunas cosas que no están basadas en kernel
+ La siguiente página documenta algunas cosas que no están basadas en 
+\emph on
+kernel
+\emph default
  + 
 \family typewriter
 initrd
@@ -8096,9 +8273,13 @@ priority:
 \series default
 Especifica la prioridad del repositorio (menor número, mayor prioridad)
  que se aplica a máquinas instaladas usando los repositorios que tienen
- el plugin 
+ el 
+\emph on
+plugin
+\emph default
+ 
 \family typewriter
-yum priorities
+yum-priorities
 \family default
  instalado.
  Por defecto se tiene 99.
@@ -8118,7 +8299,7 @@ Especifica la arquitectura que el repositorio debería utilizar.
 \series bold
 breed: 
 \series default
-Especifíca la versión de la distribución.
+Específica la versión de la distribución.
  Usualmente Cobbler detectará este parámetro si no se especifica.
 \end_layout
 
@@ -8154,7 +8335,10 @@ por el directorio donde se descargará el paquete con sus dependencias y
 \family default
  por el 
 \family typewriter
-puppet.
+\emph on
+puppet
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -8211,7 +8395,11 @@ cobbler reposync
 \end_layout
 
 \begin_layout Standard
-Para añadir este nuevo repositorio a un profile de instalación existente:
+Para añadir este nuevo repositorio a un 
+\emph on
+profile
+\emph default
+ de instalación existente:
 \end_layout
 
 \begin_layout Standard
@@ -8235,12 +8423,9 @@ Import
 \end_layout
 
 \begin_layout Standard
-El propósito de 
-\family typewriter
-cobbler import
-\family default
- es configurar un servidor de instalación por red para una o más distribuciones.
- Espeja contenido basado en una imágen DVD, un archivo ISO, un árbol en
+El propósito de Cobbler import es configurar un servidor de instalación
+ por red para una o más distribuciones.
+ Espeja contenido basado en una imagen DVD, un archivo ISO, un árbol en
  un 
 \shape italic
 filesystem
@@ -8658,7 +8843,11 @@ Configura un repositorio adicional YUM que puede utilizarse como fuente
 \series bold
 rootpw (requerida): 
 \series default
-Establece la contraseña de root.
+Establece la contraseña de 
+\emph on
+root
+\emph default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -8843,8 +9032,11 @@ Replicate
 
 \begin_layout Standard
 Este comando descarga la configuración de un servidor Cobbler a otro.
- Sirve para tener implementaciones de High Availability, recuperación de
- desastres o para balanceo de carga.
+ Sirve para tener implementaciones de 
+\emph on
+High Availability,
+\emph default
+ recuperación de desastres o para balanceo de carga.
 \end_layout
 
 \begin_layout Standard
@@ -9003,7 +9195,7 @@ La interfaz web de Cobbler requiere Django.
 \end_layout
 
 \begin_layout Standard
-Se añade el repositorio Epel de CentOS 7
+Se añade el repositorio EPEL de CentOS 7
 \end_layout
 
 \begin_layout Standard
@@ -9104,7 +9296,7 @@ cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf
 \end_layout
 
 \begin_layout Standard
-Verificar en cada caso la versión de dhcp.
+Verificar en cada caso la versión de DHCP.
 \end_layout
 
 \begin_layout Standard
@@ -9623,8 +9815,11 @@ El usuario y la contraseña para la interfaz web que por defecto tiene tanto
 cobbler
 \family default
 ”.
- En el proyecto se utilizó admin como el usuario para ingresar a la interfaz
- web y la clave 
+ En el proyecto se utilizó 
+\emph on
+admin
+\emph default
+ como el usuario para ingresar a la interfaz web y la clave 
 \begin_inset Quotes eld
 \end_inset
 
@@ -10075,7 +10270,7 @@ yum-config-manager --disable * --enable proyectointegrador
 \end_layout
 
 \begin_layout Subsubsection
-Importar imágenes ISO al servidor Cobbler
+Importar imagenes ISO al servidor Cobbler
 \end_layout
 
 \begin_layout Standard
@@ -10157,9 +10352,13 @@ El agente y el servidor se comunican vía HTTPS con verificación de cliente.
 \end_layout
 
 \begin_layout Standard
-Client-vefied HTTPS quiere decir que cada maestro o agente tiene un identificado
-r por certificado SSL y examinan los certificados de sus contrapartes para
- decidir si permite un intercambio de información.
+
+\emph on
+Client-vefied
+\emph default
+ HTTPS quiere decir que cada maestro o agente tiene un identificador por
+ certificado SSL y examinan los certificados de sus contrapartes para decidir
+ si permite un intercambio de información.
  Puppet incluye un constructor de certificado de autorización para administrar
  los certificados.
  Los agentes puede pedir automáticamente los certificados vía la API HTTP
@@ -10182,17 +10381,28 @@ Module
 \end_layout
 
 \begin_layout Standard
-Un módulo o module, es un conjunto de código de Puppet empaquetado junto
- con los otros archivos y datos, que se necesita administrar sobre algún
- aspecto del sistema.
+Un módulo o 
+\emph on
+module
+\emph default
+, es un conjunto de código de Puppet empaquetado junto con los otros archivos
+ y datos, que se necesita administrar sobre algún aspecto del sistema.
  Consiste en una estructura predefinida de directorios que ayudan a Puppet
  a encontrar los contenidos del módulo.
  
 \end_layout
 
 \begin_layout Standard
-Existe un repositorio público (The Puppet Forge) donde se pueden encontrar
- módulos hechos por la comunidad y también mantenidos por Puppet Labs.
+Existe un repositorio público (
+\emph on
+The Puppet Forge
+\emph default
+) donde se pueden encontrar módulos hechos por la comunidad y también mantenidos
+ por
+\emph on
+ Puppet Labs
+\emph default
+.
  Estos módulos se pueden instalar en un servidor Puppet para utilizarlos.
 \end_layout
 
@@ -10209,8 +10419,11 @@ puppet module list
 \begin_layout Standard
 Los módulos son auto-contenidos y separados.
  Su estructura de archivo le da a Puppet una forma consistente de localizar
- cualquier clase, plantillas, plugins y binarios requeridos para satisfacer
- la funcionalidad del módulo.
+ cualquier clase, plantillas, 
+\emph on
+plugins
+\emph default
+ y binarios requeridos para satisfacer la funcionalidad del módulo.
 \end_layout
 
 \begin_layout Standard
@@ -10238,13 +10451,28 @@ Resources
 \end_layout
 
 \begin_layout Standard
-Cada recurso o resource, describe algún aspecto de un sistema y su estado,
- como por ejemplo, un servicio que debería estar ejecutándose o un paquete
- que se quiere instalado.
+Cada recurso o 
+\emph on
+resource
+\emph default
+, describe algún aspecto de un sistema y su estado, como por ejemplo, un
+ servicio que debería estar ejecutándose o un paquete que se quiere instalado.
  El bloque de código que describe un recurso se llama declaración de recurso
- (resource declaration).
+ (
+\emph on
+resource
+\emph default
+ 
+\emph on
+declaration
+\emph default
+).
  Estas declaraciones de recurso están escritas en código Puppet, un DLS
- (Domain Specific Language) construido en Ruby.
+ (
+\emph on
+Domain Specific Language
+\emph default
+) construido en Ruby.
  El DLS de Puppet es un lenguaje declarativo en vez de imperativo.
  Esto quiere decir que en vez de definir un proceso o un conjunto de comandos,
  el código de Puppet describe (o declara) sólo el estado final deseado,
@@ -10459,7 +10687,11 @@ atributo => 'valor',
 \series bold
 Título: 
 \series default
-Es un string que identifica un recurso para el compilador de Puppet.
+Es un 
+\emph on
+string
+\emph default
+ que identifica un recurso para el compilador de Puppet.
 \end_layout
 
 \begin_deeper
@@ -10583,7 +10815,11 @@ Si Puppet realiza cambios, en un recurso, registra esos cambios como eventos.
 \emph on
 log
 \emph default
- y en el reporte de ejecución de puppet.
+ y en el reporte de ejecución de 
+\emph on
+puppet
+\emph default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -10618,7 +10854,15 @@ Por ejemplo, el
 name
 \emph default
  de un servicio o paquete es el nombre por el cual las herramientas de paquetes
- o servicios lo reconocen o en el caso de un archivo, su namevar es el path.
+ o servicios lo reconocen o en el caso de un archivo, su 
+\emph on
+namevar
+\emph default
+ es el 
+\emph on
+path
+\emph default
+.
  Esto es diferente al título, el cual identifica un recurso para el compilador
  de Puppet.
  Sin embargo, ellos a veces tienen el mismo valor.
@@ -10755,7 +10999,11 @@ file
 File['/etc/passwd']
 \family default
  para declarar relación.
- Porque el path es el 
+ Porque el 
+\emph on
+path
+\emph default
+ es el 
 \emph on
 namevar
 \emph default
@@ -10976,8 +11224,12 @@ Manifiests
 \end_layout
 
 \begin_layout Standard
-Un manifest o manifiesto, es un archivo de texto que contiene código Puppet
- y posee la extensión.pp.
+Un 
+\emph on
+manifest
+\emph default
+ o manifiesto, es un archivo de texto que contiene código Puppet y posee
+ la extensión .pp.
  Para comprobar la sintaxis de un manifiesto se puede utilizar:
 \end_layout
 
@@ -11068,8 +11320,12 @@ Una clase es un bloque de código Puppet con nombre.
  Cuando Puppet se ejecuta, parseará este manifiesto y guardará la definición
  de clase; luego ésta puede declararse para aplicarla en los nodos de la
  infraestructura.
- En Puppet las clases son singleton, lo que quiere decir que una clase puede
- declararse sólo una vez en un nodo dado.
+ En Puppet las clases son 
+\emph on
+singleton
+\emph default
+, lo que quiere decir que una clase puede declararse sólo una vez en un
+ nodo dado.
  Cuando se declara una clase:
 \end_layout
 
@@ -11104,11 +11360,30 @@ Funciones
 \end_layout
 
 \begin_layout Standard
-Hay dos tipos de funciones en Puppet, statements (declaraciones) y rvalues.
- Las statements no retornan argumentos, son utilizadas para hacer trabajos
- independientes como importar.
- Rvalues retornan valores y pueden usarse solo en un statement requiriendo
- un valor, como una asignación o una declaración case.
+Hay dos tipos de funciones en Puppet, 
+\emph on
+statements
+\emph default
+ (declaraciones) y 
+\emph on
+rvalues
+\emph default
+.
+ Las 
+\emph on
+statements
+\emph default
+ no retornan argumentos, son utilizadas para hacer trabajos independientes
+ como importar.
+ 
+\emph on
+Rvalues
+\emph default
+ retornan valores y pueden usarse solo en un 
+\emph on
+statement
+\emph default
+ requiriendo un valor, como una asignación o una declaración case.
 \end_layout
 
 \begin_layout Standard
@@ -11138,9 +11413,31 @@ En general, ellos afectan el comportamiento de Puppet en preferencia a el
 
 \begin_layout Standard
 Los metaparámetros hacen cosas como agregar metadata a un recurso (alias,
- tag), poner límites cuando el recurso debe sincronizarse (require, schedule,
- etc.), evita que Puppet realice cambios (noop), y cambia la verborrea del
- log (loglevel).
+ 
+\emph on
+tag
+\emph default
+), poner límites cuando el recurso debe sincronizarse (
+\emph on
+require
+\emph default
+, 
+\emph on
+schedule
+\emph default
+, etc.), evita que Puppet realice cambios (
+\emph on
+noop
+\emph default
+), y cambia la verborrea del 
+\emph on
+log
+\emph default
+ (
+\emph on
+loglevel
+\emph default
+).
 \end_layout
 
 \begin_layout Paragraph
@@ -11265,8 +11562,12 @@ Una declaración de nodo debe realizarse según:
 \end_layout
 
 \begin_layout Itemize
-Un string entre comillas conteniendo sólo letras, números, guiones bajos,
- guiones medios y puntos.
+Un 
+\emph on
+string
+\emph default
+ entre comillas conteniendo sólo letras, números, guiones bajos, guiones
+ medios y puntos.
 \end_layout
 
 \begin_layout Itemize
@@ -11349,17 +11650,24 @@ Si hay una definición de nodo que contenga el nombre exacto del nodo, entonces
 \end_layout
 
 \begin_layout Enumerate
-Si hay una expresión regular que coincida cone el nombre del nodo, entonces
+Si hay una expresión regular que coincida con el nombre del nodo, entonces
  utilizará esta.
 \end_layout
 
 \begin_layout Enumerate
-Si el nombre de nodo es del tipo FQDN (Fully Qualified Domain Name), Puppet
- cortará el grupo final y comenzará nuevamente desde el punto uno.
+Si el nombre de nodo es del tipo FQDN (
+\emph on
+Fully Qualified Domain Name
+\emph default
+), Puppet cortará el grupo final y comenzará nuevamente desde el punto uno.
 \end_layout
 
 \begin_layout Enumerate
-Puppet utilizará el nodo default.
+Puppet utilizará el nodo 
+\emph on
+default
+\emph default
+.
 \end_layout
 
 \begin_layout Paragraph
@@ -11367,9 +11675,12 @@ Node group
 \end_layout
 
 \begin_layout Standard
-Los grupos de nodos o node groups permiten segmentar todos los nodos de
- la infraestructura en grupos separados configurables basados en la información
- colectada por 'facter tool'.
+Los grupos de nodos o 
+\emph on
+node group
+\emph default
+s permiten segmentar todos los nodos de la infraestructura en grupos separados
+ configurables basados en la información colectada por 'facter tool'.
 \end_layout
 
 \begin_layout Subsubsection
@@ -11386,8 +11697,11 @@ Puppet usualmente corre bajo la arquitectura cliente-servidor, pero además,
 
 \begin_layout Standard
 Se toma la opción de utilizar la arquitectura cliente-servidor.
- Se debe completar la instalación y configuración de todos los puppet servers
- antes de instalar cualquier agente.
+ Se debe completar la instalación y configuración de todos los 
+\emph on
+puppet servers 
+\emph default
+antes de instalar cualquier agente.
  El servidor necesariamente debe correr en un sistema basado en Unix.
 \end_layout
 
@@ -11407,8 +11721,12 @@ Hardware: El agente Puppet no tiene requerimientos particulares de hardware
 
 \begin_layout Itemize
 Sistemas operativos soportados: Hay una gran variedad de distribuciones
- Linux que soportan puppet, entre ellas destaca la utilizada para la realización
- del Proyecto, CentOS 7.
+ Linux que soportan 
+\emph on
+puppet
+\emph default
+, entre ellas destaca la utilizada para la realización del Proyecto, CentOS
+ 7.
  
 \end_layout
 
@@ -11436,8 +11754,10 @@ En un despliegue agente/maestro se debe preparar la red para el tráfico
 
 \series bold
 \shape italic
+\emph on
 Firewall
 \shape default
+\emph default
 : 
 \series default
 En el desarrollo de este proyecto se trabajó sin 
@@ -11460,9 +11780,15 @@ Para cumplir con este último apartado, se decidió editar el archivo
 \family typewriter
 /etc/hosts
 \family default
- de cada máquina virtual creada utilizando Cobbler para añadir el host del
- puppetserver que corresponde a la primer dirección IP de la red virtual
- creada por KVM.
+ de cada máquina virtual creada utilizando Cobbler para añadir el 
+\emph on
+host
+\emph default
+ del 
+\emph on
+puppetserver
+\emph default
+ que corresponde a la primer dirección IP de la red virtual creada por KVM.
  Así mismo, como el servidor Puppet también tiene la necesidad de conocer
  cuál dirección IP corresponde a cada máquina, se realizó un pequeño código
  en Python que es capaz de obtener la dirección IP de una máquina en particular
@@ -11480,7 +11806,11 @@ Instalación de puppetserver
 \end_layout
 
 \begin_layout Standard
-Primero se debe instalar puppetserver.
+Primero se debe instalar 
+\emph on
+puppetserver
+\emph default
+.
  Para ello habilitar los paquetes de los repositorios de Puppet Labs:
 \end_layout
 
@@ -11504,9 +11834,13 @@ nte.
 \end_layout
 
 \begin_layout Standard
-Como se mencionó, puppetserver tiene ciertos requerimientos de hardware
- donde se destaca los 2GB de memoria RAM; pero esto no es exactamente así,
- lo que realmente sucede es que esa es la cantidad de memoria 
+Como se mencionó, 
+\emph on
+puppetserver
+\emph default
+ tiene ciertos requerimientos de hardware donde se destaca los 2GB de memoria
+ RAM; pero esto no es exactamente así, lo que realmente sucede es que esa
+ es la cantidad de memoria 
 \begin_inset Quotes eld
 \end_inset
 
@@ -11515,7 +11849,11 @@ recomendada
 \end_inset
 
  para que funcione correctamente un sistema en producción.
- Mientras exista ese hardware, puppet se 
+ Mientras exista ese hardware, 
+\emph on
+puppet
+\emph default
+ se 
 \begin_inset Quotes eld
 \end_inset
 
@@ -11585,7 +11923,7 @@ path: Indica la ubicación del entorno.
 
 \begin_layout Itemize
 basemodulepath: Una lista de las ubicaciones que contienen módulos que pueden
- susarse en todos los entornos.
+ usarse en todos los entornos.
 \end_layout
 
 \begin_layout Itemize
@@ -11831,7 +12169,11 @@ Básicas:
 
 \begin_layout Itemize
 server: El nombre del nodo maestro al cual se le pedirán los manifiestos.
- Por defecto es puppet 
+ Por defecto es 
+\emph on
+puppet
+\emph default
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -11859,12 +12201,20 @@ noop: Si está habilitado, el agente no realizará ningún trabajo, en cambio
 \end_layout
 
 \begin_layout Itemize
-priority: Permite asignar el valor “nice” para evitar que otras aplicaciones
- de la CPU no mueran por inanición mientras se aplican los catálogos.
+priority: Permite asignar el valor “
+\emph on
+nice
+\emph default
+” para evitar que otras aplicaciones de la CPU no mueran por inanición mientras
+ se aplican los catálogos.
 \end_layout
 
 \begin_layout Itemize
-report: Indica si se deben enviar reportes, por defecto es “true”.
+report: Indica si se deben enviar reportes, por defecto es “
+\emph on
+true
+\emph default
+”.
 \end_layout
 
 \begin_layout Itemize
@@ -11883,7 +12233,11 @@ master
 
 \begin_layout Itemize
 prerun_command y postrun_command: Comandos que se desean correr de cada
- lado de puppet.
+ lado de 
+\emph on
+puppet
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -11974,8 +12328,15 @@ Ejecutar Puppet
 \end_layout
 
 \begin_layout Standard
-Para iniciar el servicio de puppet una vez configurado correctamente basta
- con iniciarlo a través de systemctl:
+Para iniciar el servicio de 
+\emph on
+puppet
+\emph default
+ una vez configurado correctamente basta con iniciarlo a través de 
+\family typewriter
+systemctl
+\family default
+:
 \end_layout
 
 \begin_layout Standard
@@ -11992,8 +12353,11 @@ sudo systemctl enable puppetserver
 
 \begin_layout Standard
 En el caso de los clientes, tenemos variedad de comandos para iniciar los
- agentes de puppet puesto que son diferentes los sistemas operativos donde
- funcionan.
+ agentes de 
+\emph on
+puppet
+\emph default
+ puesto que son diferentes los sistemas operativos donde funcionan.
 \end_layout
 
 \begin_layout Standard
@@ -12031,9 +12395,12 @@ Finalmente en windows, puede hacer por consola o por interfaz gráfica.
 \end_layout
 
 \begin_layout Standard
-Cualquier sea el sistema operativo que ejecute el agente de puppet, lo primero
- que hará es comunicarse con su servidor, esto podrá hacerlo buscando la
- dirección IP del servidor 
+Cualquier sea el sistema operativo que ejecute el agente de 
+\emph on
+puppet
+\emph default
+, lo primero que hará es comunicarse con su servidor, esto podrá hacerlo
+ buscando la dirección IP del servidor 
 \begin_inset Quotes eld
 \end_inset
 
@@ -12041,8 +12408,11 @@ puppet
 \begin_inset Quotes erd
 \end_inset
 
- (como se lo llamó en la configuración) en el archivo hosts que su ubicación
- difiere en los sistemas Linux y Windows.
+ (como se lo llamó en la configuración) en el archivo 
+\emph on
+hosts
+\emph default
+ que su ubicación difiere en los sistemas Linux y Windows.
 \end_layout
 
 \begin_layout Standard
@@ -12075,7 +12445,7 @@ El lado de Windows
 \end_layout
 
 \begin_layout Standard
-Para automatizar la instalación de Windows 7, utilizando el método de imágen
+Para automatizar la instalación de Windows 7, utilizando el método de imagen
  estándar personalizada, es necesario contar con:
 \end_layout
 
@@ -12098,7 +12468,7 @@ Máquina técnica:
 Máquina de referencia:
 \series default
  Con este término, Microsoft se refiere al equipo sobre el cual se instalará
- el sistema operativo a partir del cual se extraerá la imágen personalizada
+ el sistema operativo a partir del cual se extraerá la imagen personalizada
  con las configuraciones y programas deseados.
 \end_layout
 
@@ -12111,15 +12481,15 @@ Windows Automated Installation Kit:
  y documentación compatible con la configuración y la implementación de
  los sistemas operativos Windows.
  Mediante el WAIK, puede automatizar las instalaciones de Windows, capturar
- imágenes de Windows con ImageX, configurar y modificar imágenes usando
- Administración y mantenimiento de imágenes de implementación (DISM), crear
- imágenes de Windows PE, entre otras características.
+ imagenes de Windows con ImageX, configurar y modificar imagenes usando
+ Administración y mantenimiento de imagenes de implementación (DISM), crear
+ imagenes de Windows PE, entre otras características.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Imágen de instalación de Windows 7:
+Imagen de instalación de Windows 7:
 \series default
  Ya sea un DVD o un archivo ISO que provea la fuente de instalación del
  sistema operativo.
@@ -12144,8 +12514,20 @@ Herramienta que permite crear archivos de respuesta para la instalación
  archivos incluidos en un conjunto de configuración.
  Use Windows SIM en el equipo del técnico y, a continuación, transfiera
  el archivo de respuesta para la instalación desatendida al equipo maestro
- antes de crear la imágen de instalación de Windows.
- Esta herramienta se instala junto con Windows Automated Installation Kit.
+ antes de crear la imagen de instalación de Windows.
+ Esta herramienta se instala junto con Windows 
+\emph on
+Automated
+\emph default
+ 
+\emph on
+Installation
+\emph default
+ 
+\emph on
+Kit
+\emph default
+.
 \end_layout
 
 \begin_layout Subparagraph
@@ -12161,8 +12543,11 @@ Un archivo XML en el que se escriben las respuestas para una serie de cuadros
  configuraciones de red, particionado de discos.
  El archivo de respuesta del programa de instalación de Windows suele llamarse
  Unattend.xml o Autounattend.xml.
- Para crear y modificar este archivo de respuesta, use Windows SIM (System
- Image Manager).
+ Para crear y modificar este archivo de respuesta, use Windows SIM (
+\emph on
+System Image Manager
+\emph default
+).
 \end_layout
 
 \begin_layout Minisec
@@ -12208,14 +12593,22 @@ Entorno de preinstalación de Windows (Windows PE)
 \end_layout
 
 \begin_layout Standard
-WinPE o Windows Preinstallation Environment es un Sistema operativo mínimo
- designado para preparar una computadora para la instalación de Windows.
- Puede utiizarse para iniciar una computadora sin sistema operativo, para
- particionar y formatear discos rígidos, para copiar imágenes de discos
+WinPE o Windows 
+\emph on
+Preinstallation
+\emph default
+ 
+\emph on
+Environment
+\emph default
+ es un Sistema operativo mínimo designado para preparar una computadora
+ para la instalación de Windows.
+ Puede utilizarse para iniciar una computadora sin sistema operativo, para
+ particionar y formatear discos rígidos, para copiar imagenes de discos
  y para iniciar la instalación de Windows desde una ubicación compartida
  en la red.
  WinPE se carga directamente en memoria y permite utilizar herramientas
- como ImageX para capturar, modificar y crear imágenes de instalación basadas
+ como ImageX para capturar, modificar y crear imagenes de instalación basadas
  en archivos.
 \end_layout
 
@@ -12225,9 +12618,9 @@ ImageX
 
 \begin_layout Standard
 Herramienta de línea de comandos de Microsoft que permite capturar, modificar
- y aplicar imágenes de disco basadas en archivos para una implementación
+ y aplicar imagenes de disco basadas en archivos para una implementación
  rápida.
- ImageX copia archivos de imágen de Windows (.wim) a una red.
+ ImageX copia archivos de imagen de Windows (.wim) a una red.
  
 \end_layout
 
@@ -12241,7 +12634,7 @@ s:
 \series bold
 /capture d:
 \series default
- Indica al programa que se quiere capturar la imágen ubicada en esa unidad
+ Indica al programa que se quiere capturar la imagen ubicada en esa unidad
  de partición.
 \end_layout
 
@@ -12254,7 +12647,11 @@ windows
 \backslash
 imagenPersonalizada.wim 
 \series default
-Es el path completo donde se guardará la imágen en SAMBA.
+Es el 
+\emph on
+path
+\emph default
+ completo donde se guardará la imagen en SAMBA.
 \end_layout
 
 \begin_layout Itemize
@@ -12262,7 +12659,7 @@ Es el path completo donde se guardará la imágen en SAMBA.
 \series bold
 "Win7"
 \series default
- Es una etiqueta para el archivo imágen creado.
+ Es una etiqueta para el archivo imagen creado.
 \end_layout
 
 \begin_layout Itemize
@@ -12270,7 +12667,7 @@ Es el path completo donde se guardará la imágen en SAMBA.
 \series bold
 /verify 
 \series default
-Indica al programa que se desea verificar la consistencia de la imágen creada.
+Indica al programa que se desea verificar la consistencia de la imagen creada.
 \end_layout
 
 \begin_layout Subparagraph
@@ -12278,25 +12675,39 @@ Sysprep
 \end_layout
 
 \begin_layout Standard
-Herramienta que prepara una imágen de Windows para las imágenes de disco,
+Herramienta que prepara una imagen de Windows para las imagenes de disco,
  la comprobación del sistema o la entrega a un cliente.
- Sysprep se puede usar para quitar datos específicos del sistema desde una
- imágen de Windows, como es el caso del identificador de seguridad (SID).
- Después de quitar la información del sistema única de una imágen, puede
- capturar dicha imágen de Windows y usarla para implementarla en varios
+ 
+\family typewriter
+Sysprep
+\family default
+ se puede usar para quitar datos específicos del sistema desde una imagen
+ de Windows, como es el caso del identificador de seguridad (SID).
+ Después de quitar la información del sistema única de una imagen, puede
+ capturar dicha imagen de Windows y usarla para implementarla en varios
  sistemas.
- Además, Sysprep puede configurar la imágen de Windows para que se arranque
- en el modo auditoría.
+ Además, 
+\family typewriter
+Sysprep
+\family default
+ puede configurar la imagen de Windows para que se arranque en el modo auditoría.
  El modo auditoría permite probar la integridad del sistema e instalar aplicacio
 nes y controladores de dispositivos adicionales.
- Sysprep también se usa para configurar Windows de forma que arranque con
- la Bienvenida de Windows la próxima vez que se inicie el sistema.
+ 
+\family typewriter
+Sysprep
+\family default
+ también se usa para configurar Windows de forma que arranque con la Bienvenida
+ de Windows la próxima vez que se inicie el sistema.
  
 \end_layout
 
 \begin_layout Standard
-En particular, las opciones más importantes al ejecutar Sysprep son las
- siguientes:
+En particular, las opciones más importantes al ejecutar 
+\family typewriter
+Sysprep
+\family default
+ son las siguientes:
 \end_layout
 
 \begin_layout Itemize
@@ -12304,11 +12715,15 @@ En particular, las opciones más importantes al ejecutar Sysprep son las
 \series bold
 /generalize: 
 \series default
-Prepara a la instalación de Windows para crear una imágen.
+Prepara a la instalación de Windows para crear una imagen.
  Si esta opción es especificada, toda la información única del sistema es
  removida.
  El SID (ID de Seguridad) se resetea, cualquier punto de restauración que
- exista es quitado y todos los logs son eliminados.
+ exista es quitado y todos los 
+\emph on
+logs
+\emph default
+ son eliminados.
  La próxima vez que la computadora inicia,la fase de configuración especial
  es ejecutada y se asigna un nuevo SID y el reloj de activación de Windows
  se resetea si no ha sido reseteado ya tres veces, esto es, este proceso
@@ -12321,9 +12736,13 @@ Prepara a la instalación de Windows para crear una imágen.
 \series bold
 /oobe: 
 \series default
-El término OOBE significa Out Of Box Experience y es la experiencia que
- un usuario tiene cuando se prepara para usar por primera vez un producto.
- Cuando esta opción es seleccionada, reicinia el quipo en modo Bienvenida
+El término OOBE significa 
+\emph on
+Out Of Box Experience 
+\emph default
+y es la experiencia que un usuario tiene cuando se prepara para usar por
+ primera vez un producto.
+ Cuando esta opción es seleccionada, reinicia el equipo en modo Bienvenida
  de Windows.
  Este modo permite a los usuarios personalizar el sistema operativo, crear
  cuentas de usuario, cambiar el 
@@ -12331,9 +12750,12 @@ El término OOBE significa Out Of Box Experience y es la experiencia que
 hostname
 \shape default
  y demás.
- Cualquier configuración pasada al oobeSystem por medio de un archivo de
- respuestas de instalación es procesada inmediatamente antes que la Bienvenida
- de Windows inicie.
+ Cualquier configuración pasada al 
+\family typewriter
+oobeSystem
+\family default
+ por medio de un archivo de respuestas de instalación es procesada inmediatament
+e antes que la Bienvenida de Windows inicie.
 \end_layout
 
 \begin_layout Itemize
@@ -12341,7 +12763,11 @@ hostname
 \series bold
 /shutdown: 
 \series default
-Apaga la máquina luego que el comando sysprep finaliza.
+Apaga la máquina luego que el comando 
+\family typewriter
+sysprep
+\family default
+ finaliza.
 \end_layout
 
 \begin_layout Itemize
@@ -12350,8 +12776,15 @@ Apaga la máquina luego que el comando sysprep finaliza.
 /unattend:answerfile: 
 \series default
 Aplica las configuraciones dentro de un archivo de respuestas de instalación
- sobre el sistema operativo durante una instalación desatendida; answerfile
- especifíca el path y el nombre del archivo que contiene las respuestas.
+ sobre el sistema operativo durante una instalación desatendida; 
+\emph on
+answerfile
+\emph default
+ especifica el 
+\emph on
+path
+\emph default
+ y el nombre del archivo que contiene las respuestas.
  Esta opción se puede ignorar, ya que como se verá más adelante basta con
  agregar este archivo en el directorio principal de instalación para que
  sea tomado por el instalador de Windows.
@@ -12364,8 +12797,15 @@ Startnet.cmd
 \begin_layout Standard
 Startnet.cmd de forma predeterminada inicia wpeinit.exe, cuando se carga en
  memoria el entorno de preinstalación, que precisamente sirve para instalar
- dispositivos Plug and Play, procesar configuraciones de Autounattend.xml
- y cargar recursos de red.
+ dispositivos 
+\emph on
+Plug
+\emph default
+ and 
+\emph on
+Play
+\emph default
+, procesar configuraciones de Autounattend.xml y cargar recursos de red.
  Es necesario para montar SAMBA.
 \end_layout
 
@@ -12375,7 +12815,7 @@ Oscdimg
 
 \begin_layout Standard
 Oscdimg es una herramienta de línea de comandos que sirve para crear un
- archivo de imágen (.iso) de una versión personalizada de 32 bits o 64 bits
+ archivo de imagen (.iso) de una versión personalizada de 32 bits o 64 bits
  de Windows PE.
  
 \end_layout
@@ -12397,7 +12837,7 @@ Las opciones aquí utilizadas son las siguientes:
 \series bold
 -m:
 \series default
- Pasa por alto el límite de tamaño máximo de una imágen.
+ Pasa por alto el límite de tamaño máximo de una imagen.
 \end_layout
 
 \begin_layout Standard
@@ -12409,7 +12849,7 @@ Incluye todos los directorios y archivos ocultos bajo el d:
 \backslash
 directorio
 \backslash
- para esta imágen.
+ para esta imagen.
  
 \end_layout
 
@@ -12428,9 +12868,9 @@ directorio
 \series bold
 -u2
 \series default
-: Genera una imágen que sólo incluye el sistema de archivos UDF.
+: Genera una imagen que sólo incluye el sistema de archivos UDF.
  Los sistemas que no sean capaces de leer UDF, sólo verán un archivo de
- texto predeterminado donde se alerta al usuario de que esa imágen sólo
+ texto predeterminado donde se alerta al usuario de que esa imagen sólo
  está disponible en equipos compatibles con UDF.
  Esta opción no puede combinarse con las opciones -nt.
 \end_layout
@@ -12440,10 +12880,17 @@ SAMBA
 \end_layout
 
 \begin_layout Standard
-SAMBA es un servidor SMB (Server Message Block) libre, desarrollado por
- Andrew Tridgell y que en la actualidad es mantenido por un grupo de personas
- de todo el mundo, como casi todos los proyectos distribuidos bajo la Licencia
- Publica General de GNU.
+SAMBA es un servidor SMB (Server 
+\emph on
+Message
+\emph default
+ 
+\emph on
+Block
+\emph default
+) libre, desarrollado por Andrew Tridgell y que en la actualidad es mantenido
+ por un grupo de personas de todo el mundo, como casi todos los proyectos
+ distribuidos bajo la Licencia Publica General de GNU.
  SAMBA es capaz de ejecutarse en una gran cantidad de variantes Unix, como
  Linux, Solaris, SunOS, HP-UX, ULTRIX, Unix de Digital, SCO Open Server
  y AIX por nombrar tan sólo algunas.
@@ -12490,16 +12937,27 @@ as que permiten realizar servicios prácticos o hacer un test de la configuraci�
 \end_layout
 
 \begin_layout Standard
-El servidor está compuesto de dos aplicaciones (llamadas demonios): smbd,
- núcleo del servidor, provee los servicios de autenticación y acceso a los
- recursos.
- nmbd, permite mostrar los servicios disponibles en SAMBA (visualización
- de los servidores SAMBA en la red, etc).
+El servidor está compuesto de dos aplicaciones (llamadas demonios): 
+\family typewriter
+smbd
+\family default
+, núcleo del servidor, provee los servicios de autenticación y acceso a
+ los recursos.
+ 
+\family typewriter
+nmbd
+\family default
+, permite mostrar los servicios disponibles en SAMBA (visualización de los
+ servidores SAMBA en la red, etc).
 \end_layout
 
 \begin_layout Standard
-El cliente: smbclient es un cliente para Linux que provee una interfaz que
- permite la transferencia de archivos, el acceso a impresoras, etc.
+El cliente: 
+\family typewriter
+smbclient
+\family default
+ es un cliente para Linux que provee una interfaz que permite la transferencia
+ de archivos, el acceso a impresoras, etc.
 \end_layout
 
 \begin_layout Standard
@@ -12513,13 +12971,21 @@ testparm: comprueba la sintaxis del archivo smb.conf, el archivo de configuraci�
 
 \begin_layout Standard
 El protocolo de comunicación que permite esta comunicación entre Windows
- y Linux se llama SMB (Server Message Block).
+ y Linux se llama SMB (Server 
+\emph on
+Message
+\emph default
+ 
+\emph on
+Block
+\emph default
+).
  Puesto a punto por Microsoft en 1987, retomando un concepto desarrollado
  por IBM en 1985 (NetBIOS), este protocolo se apoya sobre NetBEUI (así como
  sobre TCP/IP).
  El interés de TCP/IP proviene del hecho que es ampliamente adoptado.
  Por ello TCP/IP ya ha sido implementado en la mayoría de sistemas operativos
- (Unix, Linux, AmigaOS, MacOS, OS/2, etc) según el esquema siguiente:
+ (Unix, Linux, MacOS, OS/2, etc) según el esquema siguiente:
 \end_layout
 
 \begin_layout Itemize
@@ -12551,7 +13017,7 @@ Controladores de red
 \end_layout
 
 \begin_layout Subsubsection
-Creación de la imágen de instalación Windows 7
+Creación de la imagen de instalación Windows 7
 \end_layout
 
 \begin_layout Standard
@@ -12559,7 +13025,7 @@ La siguiente tabla contiene una columna para cada equipo que interviene
  en el proceso.
  Los pasos de la columna en la máquina técnica se realizan en su ese equipo.
  Los pasos de la columna del equipo de referencia se realizan en el equipo
- en el que se cree la imágen personalizada.
+ en el que se cree la imagen personalizada.
 \end_layout
 
 \begin_layout Standard
@@ -12732,8 +13198,11 @@ Instalar y personalizar Windows 7
 \begin_inset Text
 
 \begin_layout Plain Layout
-Generalizar el equipo de referencia con Sysprep preparando la imágen para
- la duplicación 
+Generalizar el equipo de referencia con 
+\family typewriter
+Sysprep
+\family default
+ preparando la imagen para la duplicación 
 \end_layout
 
 \end_inset
@@ -12764,7 +13233,7 @@ Generalizar el equipo de referencia con Sysprep preparando la imágen para
 \begin_inset Text
 
 \begin_layout Plain Layout
-Capturar el equipo de referencia a un archivo de imágen mediante ImageX
+Capturar el equipo de referencia a un archivo de imagen mediante ImageX
 \end_layout
 
 \end_inset
@@ -12817,7 +13286,7 @@ Crear archivo Autounattend.xml
 \begin_inset Text
 
 \begin_layout Plain Layout
-Crear nuevos medios de instalación de Windows 7 para la imágen personalizada
+Crear nuevos medios de instalación de Windows 7 para la imagen personalizada
 \end_layout
 
 \end_inset
@@ -12869,6 +13338,8 @@ Desde la página oficial de Microsoft descargar el archivo KB3AIK_EN.iso,
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 https://www.microsoft.com/es-ar/download/details.aspx?id=5753
 \end_layout
 
@@ -12877,8 +13348,11 @@ WinPE
 \end_layout
 
 \begin_layout Standard
-Para crear una imágen ISO de WinPE es necesario ejecutar Deployment Tools
- Command Prompt como administrador.
+Para crear una imagen ISO de WinPE es necesario ejecutar 
+\emph on
+Deployment Tools Command Prompt
+\emph default
+ como administrador.
  Como se ha utilizado una versión de 64 bits se especifica amd64, si no
  i386.
 \end_layout
@@ -12916,7 +13390,14 @@ mount
 \end_layout
 
 \begin_layout Standard
-Se debe asegurar que se incluye una llamada a wpeinit en el script Startnet.cmd
+Se debe asegurar que se incluye una llamada a 
+\family typewriter
+wpeinit
+\family default
+ en el 
+\family typewriter
+script Startnet.cmd
+\family default
  personalizado, utilizar un editor de texto y dejarlo como se muestra a
  continuación, reemplazando los valores correspondientes:.
 \end_layout
@@ -12978,7 +13459,7 @@ y:
 \begin_layout Standard
 
 \family typewriter
-echo Preparando instalacion...
+echo Preparando instalación...
  
 \end_layout
 
@@ -12996,7 +13477,15 @@ setup.exe /unattend:Autounattend.xml
 \end_layout
 
 \begin_layout Standard
-Una vez modificado los valores del script, desmontar winpe.wim.
+Una vez modificado los valores del 
+\emph on
+script
+\emph default
+, desmontar 
+\family typewriter
+winpe.wim.
+
+\family default
  Para ello es necesario cerrar el explorador de Windows y cualquier programa
  que esté haciendo uso de directorio anterior, caso contrario dará error.
  Luego:
@@ -13015,7 +13504,13 @@ mount /commit
 \end_layout
 
 \begin_layout Standard
-Se copia entonces winpe.wim al directorio renombrándolo como boot.wim:
+Se copia entonces
+\family typewriter
+ winpe.wim
+\family default
+ al directorio renombrándolo como 
+\family typewriter
+boot.wim:
 \end_layout
 
 \begin_layout Standard
@@ -13041,7 +13536,7 @@ boot.wim
 \end_layout
 
 \begin_layout Standard
-Por último es necesario crear una imágen ISO de WinPE.
+Por último es necesario crear una imagen ISO de WinPE.
 \end_layout
 
 \begin_layout Standard
@@ -13093,14 +13588,18 @@ Ctrl + Shift + F3
  Ahora la máquina debería reiniciarse e ingresar automáticamente en una
  cuenta temporal en modo administrador.
  Esto permanecerá así por más que se reinicie el equipo hasta que el comando
- Sysprep sea ejecutado luego de realizar todas las actualizaciones, instalación
+ 
+\family typewriter
+Sysprep
+\family default
+ sea ejecutado luego de realizar todas las actualizaciones, instalación
  de los controladores de dispositivo y las aplicaciones.
 \end_layout
 
 \begin_layout Standard
 Cada vez que sea reiniciado el equipo estando en este modo, aparecerá un
  cuadro de diálogo del modo auditoría.
- Simplemente ignorarlo hasta terminar de preparar la imágen.
+ Simplemente ignorarlo hasta terminar de preparar la imagen.
 \end_layout
 
 \begin_layout Standard
@@ -13248,7 +13747,11 @@ Paso de archivos a Windows
 \begin_layout Standard
 Además de instalar las aplicaciones necesarias, para que el agente Puppet
  pueda encontrar al nodo servidor es necesario añadir una entrada al archivo
- hosts.
+ 
+\emph on
+hosts
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -13272,18 +13775,26 @@ hosts
 \end_layout
 
 \begin_layout Paragraph
-Generalizar el equipo de referencia para preparar la imágen 
+Generalizar el equipo de referencia para preparar la imagen 
 \end_layout
 
 \begin_layout Standard
-En este paso, se generaliza la imágen y se prepara para su inicio en Bienvenida
+En este paso, se generaliza la imagen y se prepara para su inicio en Bienvenida
  de Windows después de haberla instalado en cada equipo.
- Para esto se hace uso de la herramienta Sysprep.
+ Para esto se hace uso de la herramienta 
+\family typewriter
+Sysprep
+\family default
+.
 \end_layout
 
 \begin_layout Standard
 De forma gráfica, cuando inicia el sistema operativo en modo auditoría,
- Windows 7 ejecuta Sysprep de forma automática.
+ Windows 7 ejecuta 
+\family typewriter
+Sysprep
+\family default
+ de forma automática.
 \end_layout
 
 \begin_layout Standard
@@ -13338,7 +13849,11 @@ En la lista Opciones de apagado, seleccionar Apagar.
 \end_layout
 
 \begin_layout Itemize
-Aceptar para ejecutar Sysprep y apagar el equipo.
+Aceptar para ejecutar 
+\family typewriter
+Sysprep
+\family default
+ y apagar el equipo.
 \end_layout
 
 \begin_layout Standard
@@ -13408,7 +13923,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Ejecución sysprep
+Ejecución 
+\family typewriter
+sysprep
 \end_layout
 
 \end_inset
@@ -13423,7 +13940,7 @@ Ejecución sysprep
 
 \begin_layout Standard
 A esta altura del proceso, ha instalado Windows 7 en el equipo de referencia
- y está listo para capturar una imágen del mismo.
+ y está listo para capturar una imagen del mismo.
 \end_layout
 
 \begin_layout Subsubsection
@@ -13431,9 +13948,9 @@ Capturar el equipo de referencia
 \end_layout
 
 \begin_layout Standard
-En este paso se captura una imágen de la máquina de referencia utilizando
+En este paso se captura una imagen de la máquina de referencia utilizando
  la herramienta ImageX, que está en el WinPE anteriormente creado.
- La imágen será guardada en el directorio compartido SAMBA.
+ La imagen será guardada en el directorio compartido SAMBA.
 \end_layout
 
 \begin_layout Standard
@@ -13461,7 +13978,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Carga WinPE.iso para extraer imágen
+Carga WinPE.iso para extraer imagen
 \end_layout
 
 \end_inset
@@ -13652,7 +14169,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-ImageX capturando imágen
+ImageX capturando imagen
 \end_layout
 
 \end_inset
@@ -13675,7 +14192,11 @@ Autounattend.xml
 
 \begin_layout Standard
 Para generarlo, una vez instalado el WAIK, se debe abrir en modo Administrador
- el programa Windows System Image Manager desde el menú Inicio.
+ el programa Windows 
+\emph on
+System Image Manager
+\emph default
+ desde el menú Inicio.
 \end_layout
 
 \begin_layout Standard
@@ -13688,7 +14209,7 @@ Windows Image
 Select a Windows image or catalog file
 \emph default
 .
- En este punto se debe buscar en el directorio de la imágen del sistema
+ En este punto se debe buscar en el directorio de la imagen del sistema
  operativo ya descomprimida, un archivo.
 \emph on
 clg
@@ -13964,7 +14485,7 @@ Configuración discos.
 \end_layout
 
 \begin_layout Standard
-Partición de 300 MB, donde será instlado el MBR.
+Partición de 300 MB, donde será instalado el MBR.
 \end_layout
 
 \begin_layout Standard
@@ -14165,7 +14686,7 @@ Instalación del sistema operativo.
 
 \end_inset
 
-En el caso de contar con una imágen de instalción multiversión, Windows
+En el caso de contar con una imagen de instalación multiversión, Windows
  Home, Basic, Professional y Ultimate y/o con ambas arquitecturas, i386
  y amd64, es necesario seleccionar cuál de ellas se desea instalar.
  La opción más fácil y efectiva es contar la posición de la versión que
@@ -14301,10 +14822,12 @@ Aceptación de las condiciones de privacidad y uso.
 
 \begin_layout Standard
 La clave de producto, para poder realizar instalaciones desatendidas debe
- ser del tipo de Volúmen, esto es, una clave para realizar instalación en
+ ser del tipo de Volumen, esto es, una clave para realizar instalación en
  masa.
  A modo de ejemplo y para pruebas, Microsoft entrega una serie de claves
- para ésto: https://technet.microsoft.com/en-us/library/jj612867.aspx
+ para ésto: 
+\family typewriter
+https://technet.microsoft.com/en-us/library/jj612867.aspx
 \end_layout
 
 \begin_layout Standard
@@ -14405,19 +14928,27 @@ Para solucionar el problema de asignar un
 hostname
 \shape default
  único a cada máquina que sea instalada con este 
-\emph on
+\family typewriter
 Autounattend.xml 
+\family default
+se dio con la siguiente solución.
+ Utilizando un 
+\emph on
+string
 \emph default
-se dió con la siguiente solución.
- Utilizando un string representativo en el campo RegisteredOwner y un asterísco
- en el campo ComputerName, se obtiene un 
+ representativo en el campo RegisteredOwner y un asterisco en el campo ComputerN
+ame, se obtiene un 
 \shape italic
 hostname
 \shape default
  pseudo-aleatorio, ya que estará compuesto por máximo ocho caracteres de
  RegisteredOwner y/o RegisteredOrganization concatenado con caracteres aleatorio
 s.
- El campo ComputerName es un string con un tamaño máximo de quince caracteres.
+ El campo ComputerName es un 
+\emph on
+string
+\emph default
+ con un tamaño máximo de quince caracteres.
 \end_layout
 
 \begin_layout Standard
@@ -14425,7 +14956,7 @@ Otro campo que es necesario añadir, es CopyProfile ya que es la única manera
  válida para copiar todos los cambios y preferencias que se han hecho al
  perfil de usuario por defecto.
  Esto es, cada vez que se cree un nuevo usuario, se le aplicarán las configuraci
-ones hechas al personalizar la imágen.
+ones hechas al personalizar la imagen.
 \end_layout
 
 \begin_layout Standard
@@ -14728,7 +15259,7 @@ Cuentas de usuario, invitado.
 \end_layout
 
 \begin_layout Paragraph
-Crear nuevos medios de instalación de Windows 7 para la imágen personalizada
+Crear nuevos medios de instalación de Windows 7 para la imagen personalizada
 \end_layout
 
 \begin_layout Standard
@@ -14736,36 +15267,69 @@ En la máquina técnica realizar las siguientes operaciones:
 \end_layout
 
 \begin_layout Itemize
-Descomprimir todo el contenido de la imágen de instalación sin modificar
+Descomprimir todo el contenido de la imagen de instalación sin modificar
  de Windows 7 en 
+\family typewriter
+
 \backslash
 directorio-instalacion
 \backslash
+
+\family default
 .
 \end_layout
 
 \begin_layout Itemize
-En el sub-directorio Sources (
+En el sub-directorio 
+\emph on
+Sources
+\emph default
+ 
+\family typewriter
+(
 \backslash
 directorio-instalacion
 \backslash
 Sources
 \backslash
-), substituir la imágen install.wim, por la recientemente imágen capturada
- imagenPersonalizada.wim, renombrándola como install.wim.
+
+\family default
+), substituir la imagen 
+\family typewriter
+install.wim
+\family default
+, por la recientemente imagen capturada 
+\family typewriter
+imagenPersonalizada.wim
+\family default
+, renombrándola como 
+\family typewriter
+install.wim
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
-En el directorio principal de donde ha sido extraída la imágen, copiar el
- archivo de respuestas de instalación Autounattend.xml.
+En el directorio principal de donde ha sido extraída la imagen, copiar el
+ archivo de respuestas de instalación
+\family typewriter
+ Autounattend.xml
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
-Abrir Deployment Tools Command Prompt como administrador, y ejecutar:
+Abrir 
+\emph on
+Deployment Tools Command Prompt 
+\emph default
+como administrador, y ejecutar:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\family typewriter
 oscdimg -m -h -u2 -bd:
 \backslash
 directorio-instalacion
@@ -14785,7 +15349,7 @@ Win7-personalizado.iso
 
 \end_deeper
 \begin_layout Standard
-En este punto se tiene una imágen de instalación personalizada y automatizada
+En este punto se tiene una imagen de instalación personalizada y automatizada
  lista para instalarse en cualquier equipo.
  A continuación, se verá la preparación necesaria del servidor Linux para
  poder instalar y configurar SAMBA y la integración de Windows 7 con Cobbler
@@ -14846,7 +15410,7 @@ sudo mkdir /windows/
 \end_layout
 
 \begin_layout Standard
-En este directorio se debe copiar el contenido de la imágen de instalación
+En este directorio se debe copiar el contenido de la imagen de instalación
  de Windows personalizada, para ello:
 \end_layout
 
@@ -14892,11 +15456,11 @@ sudo yum install -y SAMBA SAMBA-client SAMBA-common SAMBA-winbind
 
 \begin_layout Standard
 Una vez finalizada la instalación agregar una ubicación compartida en el
- archivo de configuración 
-\emph on
-/etc/SAMBA/smb.conf
-\emph default
- como se muestra a continuación:
+ archivo de configuración
+\family typewriter
+ /etc/SAMBA/smb.conf 
+\family default
+como se muestra a continuación:
 \end_layout
 
 \begin_layout Standard
@@ -15014,7 +15578,7 @@ guest account = nobody
 \begin_layout Standard
 
 \family typewriter
-[imágen]
+[imagen]
 \end_layout
 
 \begin_layout Standard
@@ -15126,7 +15690,7 @@ sudo mkdir /media/SAMBA
 \begin_layout Standard
 
 \family typewriter
-sudo mount // IP_del_servidor_Cobbler /imágen/media/SAMBA/ 
+sudo mount // IP_del_servidor_Cobbler /imagen/media/SAMBA/ 
 \end_layout
 
 \begin_layout Standard
@@ -15144,8 +15708,12 @@ Integración con Cobbler
 \end_layout
 
 \begin_layout Standard
-Para integrar la imágen de instalación Windows al servidor Cobbler se debe
- añadir una entrada distro y una entrada de perfil a Cobbler.
+Para integrar la imagen de instalación Windows al servidor Cobbler se debe
+ añadir una entrada 
+\emph on
+distro
+\emph default
+ y una entrada de perfil a Cobbler.
 \end_layout
 
 \begin_layout Standard
@@ -15201,7 +15769,7 @@ Se decidió realizar la interfaz web en Python, dado que el paquete Bottle
  del proyecto.
  A su vez, se utilizo la IDE pycharm, en su versión libre, dado que funciona
  correctamente y ademas ya tuvimos experiencias con ella.
- Instalar Bottle es muy simple, simplemente se realiza a travez del siguiente
+ Instalar Bottle es muy simple, simplemente se realiza a través del siguiente
  comando
 \end_layout
 
@@ -15232,19 +15800,22 @@ Mientras que la IDE pycharm se descarga desde la pagina oficial de Jetbrains
 \end_inset
 
 
+\family typewriter
 \size small
-\emph on
 https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code
 =PCC
+\family default
 \size default
-\emph default
 
 \begin_inset Newline newline
 \end_inset
 
-Una vez descargado, se descomprime y se ejecuta el script de bash pycharm.sh
- que se encuentra en la carpeta bin del archivo descomprimido y este que
- se encarga de la instalación.
+Una vez descargado, se descomprime y se ejecuta el 
+\emph on
+script
+\emph default
+ de bash pycharm.sh que se encuentra en la carpeta bin del archivo descomprimido
+ y este que se encarga de la instalación.
 \end_layout
 
 \begin_layout Standard
@@ -15259,15 +15830,34 @@ Creamos dos ejemplos muy simples que luego utilizamos en la aplicación para
 
 \begin_layout Standard
 Con las siguientes funciones definimos de qué modo procederá el servidor
- Bottle cuando recibe peticiones get y post enviadas a la URL /virtual_machine.
- En la siguiente figura vemos el decorador get, lo que indica que la función
- definida a continuación se ejecutara cuando una solicitud get a la URL
- /virtual_machine llegue al servidor.
+ Bottle cuando recibe peticiones 
+\emph on
+get
+\emph default
+ y 
+\emph on
+post
+\emph default
+ enviadas a la URL /virtual_machine.
+ En la siguiente figura vemos el decorador 
+\emph on
+get
+\emph default
+, lo que indica que la función definida a continuación se ejecutara cuando
+ una solicitud 
+\emph on
+get
+\emph default
+ a la URL /virtual_machine llegue al servidor.
  La función devuelve el HTML de un formulario al navegador, que el usuario
  rellenará para indicar la cantidad de máquinas virtuales con cada sistema
  operativo que desea crear.
  Los datos ingresados en el formulario se enviarán al servidor con el método
- post.
+ 
+\emph on
+post
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -15293,7 +15883,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Metodo get
+Método get
 \end_layout
 
 \end_inset
@@ -15307,9 +15897,17 @@ Metodo get
 \end_layout
 
 \begin_layout Standard
-En la siguiente figura, tenemos el decorador post.
+En la siguiente figura, tenemos el decorador 
+\emph on
+post
+\emph default
+.
  Luego del decorador se encuentra la función que se ejecutará cuando una
- solicitud post a la URL /virtual_machine llegue al servidor.
+ solicitud 
+\emph on
+post
+\emph default
+ a la URL /virtual_machine llegue al servidor.
  Este caso se dará, por ejemplo, cuando el usuario rellene el formulario
  devuelto en la función de la figura anterior.
  Esta función tomará los parámetros presentes en el formulario y realizará
@@ -15341,7 +15939,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Metodo post
+Método post
 \end_layout
 
 \end_inset
@@ -15356,7 +15954,11 @@ Metodo post
 
 \begin_layout Standard
 La última línea que pondremos en el código, será la que nos permita iniciar
- el servidor web de Bottle, es decir, la función run.
+ el servidor web de Bottle, es decir, la función 
+\emph on
+run
+\emph default
+.
  Recibirá cada petición a la dirección y puerto que definimos hasta que
  detengamos la ejecución de la aplicación.
 \end_layout
@@ -15381,7 +15983,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Metodo run
+Método run
 \end_layout
 
 \end_inset
@@ -15395,15 +15997,29 @@ Metodo run
 \end_layout
 
 \begin_layout Standard
-Si declaramos la función run como en la figura anterior, solo podremos acceder
- al servidor web Bottle desde la misma PC que lo ejecuta ( localhost ) y
- utilizando el puerto 8080.
+Si declaramos la función 
+\emph on
+run
+\emph default
+ como en la figura anterior, solo podremos acceder al servidor web Bottle
+ desde la misma PC que lo ejecuta ( 
+\emph on
+localhost
+\emph default
+ ) y utilizando el puerto 8080.
  Si queremos que el servidor se pueda acceder desde otras direcciones IP,
- reemplazamos localhost por la IP que deseamos o reemplazamos por 0.0.0.0 para
- habilitar, toda la red.
- Finalmente, vemos que esta activada la opción de debug, esta nos permite
- ver a través de la pagina web el retorno de los errores que nos entrega
- python, facilitando el debuguer.
+ reemplazamos 
+\emph on
+localhost
+\emph default
+ por la IP que deseamos o reemplazamos por 0.0.0.0 para habilitar, toda la
+ red.
+ Finalmente, vemos que esta activada la opción de 
+\emph on
+debug
+\emph default
+, esta nos permite ver a través de la pagina web el retorno de los errores
+ que nos entrega python, facilitando el debuguer.
  Una vez puesto en producción en sistema, esta opción debe desactivarse.
 \end_layout
 
@@ -15919,7 +16535,11 @@ Tipo de dato incorrecto en la creación de VM
 
 \begin_layout Plain Layout
 1- Ingresar a la web http://localhost:8080/ virtual_machine 2- Introducir
- un string en la cantidad de máquinas a crear
+ un 
+\emph on
+string
+\emph default
+ en la cantidad de máquinas a crear
 \end_layout
 
 \end_inset
