@@ -17,3 +17,5 @@ preguntar como corregir
 • La sobre utilización de CPUs tiene soporte de KVM, pero se recomienda no utilizar más de diez CPUs virtuales por cada CPU físico.
 
 overcommiting
+
+visto hasta 3.6.3
