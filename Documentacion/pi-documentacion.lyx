@@ -1631,7 +1631,7 @@ Riesgos de estimación:
 \end_layout
 
 \begin_layout Standard
-La siguiente tabla muestra los riesgos encontrados.
+La tabla 2 muestra los riesgos encontrados.
 \end_layout
 
 \begin_layout Standard
@@ -3016,7 +3016,7 @@ RS02
 \begin_inset Text
 
 \begin_layout Plain Layout
-Incompatibilidad de funciones del sistema operativo con el Hardware disponible
+Incompatibilidad de funciones del sistema operativo con el hardware disponible
  
 \end_layout
 
@@ -3688,7 +3688,7 @@ Una vez que analizamos los riesgos, podemos interpretar cuáles son los más
 \end_layout
 
 \begin_layout Standard
-A continuación describiremos estrategias para cada uno de los riesgos:
+A continuación describiremos estrategias para cada uno de los riesgos.
 \end_layout
 
 \begin_layout Standard
@@ -3985,7 +3985,7 @@ RS02
 \begin_inset Text
 
 \begin_layout Plain Layout
-Incompatibilidad de funciones del sistema operativo con el Hardware disponible
+Incompatibilidad de funciones del sistema operativo con el hardware disponible
  
 \end_layout
 
@@ -3995,7 +3995,7 @@ Incompatibilidad de funciones del sistema operativo con el Hardware disponible
 \begin_inset Text
 
 \begin_layout Plain Layout
-Dificultades para integrar varios Sistemas Operativos al desarrollo 
+Dificultades para integrar varios sistemas operativos al desarrollo 
 \end_layout
 
 \end_inset
@@ -4004,7 +4004,7 @@ Dificultades para integrar varios Sistemas Operativos al desarrollo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Conseguir Hardware compatible 
+Conseguir hardware compatible 
 \end_layout
 
 \end_inset
@@ -4014,7 +4014,7 @@ Conseguir Hardware compatible
 
 \begin_layout Plain Layout
 Desarrollar la parte del proyecto que tenga que ver con la funcionalidad
- en conflicto en un Hardware compatible 
+ en conflicto en un hardware compatible 
 \end_layout
 
 \end_inset
@@ -4044,7 +4044,7 @@ Dificultades en la interacción entre la aplicación y el sistema operativo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Dificultades para la integración entre las Herramientas y los Sistemas Operativo
+Dificultades para la integración entre las herramientas y los sistemas operativo
 s 
 \end_layout
 
@@ -4064,7 +4064,7 @@ Utilizar Aplicaciones y herramientas desarrolladas para dicho sistema operativo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Utilizar Aplicaciones y Sistemas Operativos compatibles 
+Utilizar Aplicaciones y sistemas operativos compatibles 
 \end_layout
 
 \end_inset
@@ -4105,7 +4105,7 @@ Diferencias de paquetes disponibles entre los sistemas operativos
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mayor dificultad para que la aplicación soporte varios Sistemas Operativos
+Mayor dificultad para que la aplicación soporte varios sistemas operativos
  
 \end_layout
 
@@ -4153,7 +4153,7 @@ Diferencias entre funciones disponibles entre los sistemas operativos
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mayor dificultad para que la aplicación soporte varios Sistemas Operativos
+Mayor dificultad para que la aplicación soporte varios sistemas operativos
  
 \end_layout
 
@@ -4283,7 +4283,7 @@ Eliminar objetivos secundarios o requerimientos para acortar el tiempo de
 \begin_inset Text
 
 \begin_layout Plain Layout
-Reveer los requerimientos para limitarse a los esenciales 
+Revisar los requerimientos para limitarse a los esenciales 
 \end_layout
 
 \end_inset
@@ -4342,7 +4342,7 @@ Dedicación de horas semanales exclusivas al proyecto
 \begin_inset Text
 
 \begin_layout Plain Layout
-Reveer los requerimientos para eliminar los pocos importantes 
+Revisar los requerimientos para eliminar los pocos importantes 
 \end_layout
 
 \end_inset
@@ -4684,7 +4684,11 @@ Principales novedades de CentOS 7:
 \end_layout
 
 \begin_layout Itemize
-Actualización del núcleo del sistema: Kernel 3.10.0.
+Actualización del núcleo del sistema: 
+\shape italic
+Kernel
+\shape default
+ 3.10.0.
  
 \end_layout
 
@@ -7439,59 +7443,146 @@ modprobe kvm_amd
 Limitaciones de KVM
 \end_layout
 
+\begin_layout Standard
+A medida que un servicio tecnológico se extiende aparecen formas de optimizar
+ su implementación y su uso, buscando generalmente mayor eficiencia y rentabilid
+ad.
+ Una estrategia que existe para lograrlo es el 
+\shape italic
+overcommit.
+
+\shape default
+ En términos de virtualización, el 
+\shape italic
+overcommit
+\shape default
+ es el parámetro que indica qué cantidad de recursos virtuales se definen
+ respecto los recursos de hardware que puede entregar un 
+\shape italic
+host
+\shape default
+ físico.
+ Hay dos parámetros que tienen una incidencia directa en el rendimiento
+ de una aplicación: la memoria RAM y la CPU.
+\end_layout
+
+\begin_layout Standard
+En el caso de la memoria RAM, hay 
+\shape italic
+overcommit
+\shape default
+ si la suma de los GB de RAM de todas las VMs es mayor a los GB de RAM de
+ que disponen los servidores físicos.
+ Por lo tanto, en este caso, una VM no contaría con 
+\shape italic
+n
+\shape default
+GB de RAM real, sino el uso de dicho recurso que es compartido entre varias
+ máquinas virtuales.
+ Si la solución está bien diseñada, el 
+\shape italic
+overcommit
+\shape default
+ es proporcional a la demanda de recursos y contempla picos de carga a nivel
+ de plataforma, no tiene por qué generar conflictos.
+ Además, permite reducir los costos gracias a esta especulación sobre la
+ demanda.
+\end_layout
+
+\begin_layout Standard
+En el caso del 
+\shape italic
+overcommit
+\shape default
+ de procesador o CPU, dado que las capacidades de procesamiento que ofrecen
+ actualmente los servidores físicos son muy altas, el 
+\shape italic
+overcommit
+\shape default
+ sirve para aprovechar todas las prestaciones del 
+\shape italic
+host
+\shape default
+.
+ Si bien la mayoría de 
+\shape italic
+hypervisors
+\shape default
+ permiten configurar muchos VCPUs (CPUs virtuales ) por 
+\shape italic
+core
+\shape default
+ físico, la realidad es que no es recomendable configurar más de 4 ó 5 VCPUs
+ por 
+\shape italic
+core
+\shape default
+ físico, ya que afectaría notablemente al rendimiento del servidor.
+ Cuanto más 
+\shape italic
+overcommit
+\shape default
+ tenga la plataforma más aumenta la posibilidad de cargas de CPU física
+ cercanas al 100% que producirán solicitudes o tiempos de respuesta altos
+ que inutilizarán la aplicación.
+\end_layout
+
+\begin_layout Standard
+Para el 
+\shape italic
+hypervisor 
+\shape default
+de KVM, las siguientes restricciones deben tenerse en cuenta al momento
+ de planificar una solución:
+\end_layout
+
 \begin_layout Itemize
-El número máximo de CPUs por huésped es elevado (240 para RHE 7.1) por lo
- que no aplica en este trabajo.
+El número máximo de CPUs por huésped es grande (240 para RHE 7.1).
+\end_layout
+
+\begin_layout Itemize
+La virtualización anidada no tiene soporte.
  
 \end_layout
 
 \begin_layout Itemize
-La virtualización anidada no está soportada.
- 
-\end_layout
-
-\begin_layout Itemize
-La sobre utilización de memoria tiene soporte de KVM utilizando el disco
- de 
+El 
+\shape italic
+overcommit 
+\shape default
+de memoria RAM tiene soporte utilizando el disco de 
 \emph on
 swap
 \emph default
 .
+\end_layout
+
+\begin_layout Itemize
+Para hacer 
+\shape italic
+overcommit
+\shape default
+ de CPUs no se recomienda utilizar más de 10 VCPUs por cada CPU físico.
+\end_layout
+
+\begin_layout Itemize
+La virtualización de dispositivos SCSI no está soportada.
  
 \end_layout
 
 \begin_layout Itemize
-La sobre utilización de CPUs tiene soporte de KVM, pero se recomienda no
- utilizar más de diez CPUs virtuales por cada CPU físico.
-\end_layout
-
-\begin_layout Itemize
-Virtualización de dispositivos SCSI no está soportada.
- La virtualización de dispositivos IDE en KVM es limitada a cuatro por huésped.
+La virtualización de dispositivos IDE en KVM se limita a 4 por huésped.
  
 \end_layout
 
 \begin_layout Itemize
-Soporta 32 
-\emph on
-slots
-\emph default
- para dispositivos PCI (para-virtualizados) y 8 de estos por cada 
-\emph on
-slot
-\emph default
- (datos RHE7).
- 
+La asignación de dispositivos referenciados a dispositivos físicos es de
+ uso exclusivo de la VM.
 \end_layout
 
 \begin_layout Itemize
-La asignación de dispositivos referenciados a dispositivos físicos son de
- uso exclusivo a la VM.
-\end_layout
-
-\begin_layout Itemize
-La migración y salvado, o restauración de la VM no está soportada mientras
- el dispositivo esté en uso.
+La migración y guardado, o restauración de la VM, no tienen soporte mientras
+ el dispositivo se encuentra en uso.
  
 \end_layout
 
@@ -8140,7 +8231,11 @@ Donde se tiene:
 \series bold
 mirror:
 \series default
- Es la dirección del espejo yum.
+ Es la dirección del espejo 
+\family typewriter
+yum
+\family default
+.
  Puede ser una URL 
 \family typewriter
 rsync://
@@ -10922,21 +11017,18 @@ NTP
 \emph default
 en sistemas Red Hat tiene por nombre 
 \family typewriter
-\shape italic
-\emph on
 ntpd
 \family default
-\shape default
+\emph on
  
 \emph default
 y en sistemas Debian
 \emph on
  
 \family typewriter
-\shape italic
+\emph default
 ntp
 \family default
-\shape default
 .
 \end_layout
 
@@ -13369,11 +13461,10 @@ Creación de la imagen de instalación Windows 7
 \end_layout
 
 \begin_layout Standard
-La siguiente tabla contiene una columna para cada equipo que interviene
- en el proceso.
- Los pasos de la columna en la máquina técnica se realizan en su ese equipo.
+La tabla 6 contiene una columna para cada equipo que interviene en el proceso.
+ Los pasos de la columna en la máquina técnica se realizan en ese equipo.
  Los pasos de la columna del equipo de referencia se realizan en el equipo
- en el que se cree la imagen personalizada.
+ donde se crea la imagen personalizada.
 \end_layout
 
 \begin_layout Standard
@@ -13474,7 +13565,7 @@ Instalar WAIK
 \begin_inset Text
 
 \begin_layout Plain Layout
-Crear un disco de inicio del Entorno de Preinstalación de Windows (WinPE)
+Crear un disco de inicio del Entorno de Pre-instalación de Windows (WinPE)
  
 \end_layout
 
@@ -13581,7 +13672,9 @@ Sysprep
 \begin_inset Text
 
 \begin_layout Plain Layout
-Capturar el equipo de referencia a un archivo de imagen mediante ImageX
+Capturar el equipo de referencia a un archivo de imagen mediante 
+\family typewriter
+ImageX
 \end_layout
 
 \end_inset
@@ -13603,7 +13696,9 @@ Capturar el equipo de referencia a un archivo de imagen mediante ImageX
 \begin_inset Text
 
 \begin_layout Plain Layout
-Crear archivo Autounattend.xml 
+Crear archivo 
+\family typewriter
+Autounattend.xml 
 \end_layout
 
 \end_inset
@@ -13680,9 +13775,13 @@ Instalar WAIK
 \end_layout
 
 \begin_layout Standard
-Desde la página oficial de Microsoft descargar el archivo KB3AIK_EN.iso,
- grabarlo en un DVD o montarlo en una unidad virtual e instalarlo.
- El mismo se puede descargar del siguiente enlace:
+Desde la página oficial de Microsoft descargar el archivo 
+\family typewriter
+KB3AIK_EN.iso
+\family default
+.
+ Grabarlo en un DVD o montarlo en una unidad virtual para instalarlo.
+ El archivo se puede descargar del siguiente enlace:
 \end_layout
 
 \begin_layout Standard
@@ -13696,13 +13795,24 @@ WinPE
 \end_layout
 
 \begin_layout Standard
-Para crear una imagen ISO de WinPE es necesario ejecutar 
+Para crear una imagen ISO de WinPE se necesita ejecutar 
 \emph on
 Deployment Tools Command Prompt
 \emph default
  como administrador.
- Como se ha utilizado una versión de 64 bits se especifica amd64, si no
- i386.
+ Como se utilizó una versión de 64 bits se especifica 
+\family typewriter
+amd64
+\family default
+, si no, 
+\family typewriter
+i386
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Copiar los archivos necesarios:
 \end_layout
 
 \begin_layout Standard
@@ -13716,7 +13826,7 @@ winpe
 \end_layout
 
 \begin_layout Standard
-Montar el archivo.WIM:
+Una vez copiados los archivos, montar el archivo WIM obtenido:
 \end_layout
 
 \begin_layout Standard
@@ -13738,19 +13848,29 @@ mount
 \end_layout
 
 \begin_layout Standard
-Se debe asegurar que se incluye una llamada a 
+Para conectar con el servidor Cobbler, se necesita asegurar que se incluye
+ una llamada a 
 \family typewriter
 wpeinit
 \family default
  en el 
+\shape italic
+script
 \family typewriter
-script Startnet.cmd
+\shape default
+ Startnet.cmd
 \family default
- personalizado, utilizar un editor de texto y dejarlo como se muestra a
- continuación, reemplazando los valores correspondientes:.
+ personalizado.
+ Para ello, utilizar un editor de texto y modificar a 
+\family typewriter
+Startnet.cmd
+\family default
+ como se muestra a continuación, reemplazando los valores correspondientes.
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 notepad.exe d:
 \backslash
 directorio
@@ -13825,7 +13945,7 @@ setup.exe /unattend:Autounattend.xml
 \end_layout
 
 \begin_layout Standard
-Una vez modificado los valores del 
+Una vez modificados los valores del 
 \emph on
 script
 \emph default
@@ -13834,9 +13954,10 @@ script
 winpe.wim.
 
 \family default
- Para ello es necesario cerrar el explorador de Windows y cualquier programa
- que esté haciendo uso de directorio anterior, caso contrario dará error.
- Luego:
+ Antes que nada, cerrar el explorador de Windows y cualquier programa que
+ esté haciendo uso del directorio anterior, ya que en caso contrario dará
+ error.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -13852,11 +13973,21 @@ mount /commit
 \end_layout
 
 \begin_layout Standard
-Se copia entonces
+Copiar entonces
 \family typewriter
  winpe.wim
 \family default
- al directorio renombrándolo como 
+ al directorio 
+\family typewriter
+winpe
+\backslash
+ISO
+\backslash
+sources
+\backslash
+
+\family default
+ renombrándolo como 
 \family typewriter
 boot.wim:
 \end_layout
@@ -13884,7 +14015,7 @@ boot.wim
 \end_layout
 
 \begin_layout Standard
-Por último es necesario crear una imagen ISO de WinPE.
+Por último, crear una imagen ISO del nuevo WinPE.
 \end_layout
 
 \begin_layout Standard
@@ -13917,49 +14048,72 @@ Instalar y personalizar Windows 7
 
 \begin_layout Standard
 Una máquina de referencia tiene una instalación personalizada de Windows
- que se planea replicar en uno o más computadoras.
- Se puede crear utilizando un DVD o archivo ISO de Windows.
+ que se planea replicar en una o más computadoras.
+ La instalación personalizada se puede crear utilizando un DVD o archivo
+ ISO de Windows.
 \end_layout
 
 \begin_layout Standard
-Este punto conviene realizarlo manualmente y de la forma usual.
- Sin embargo, cuando en el proceso de instalación, se llega a la pantalla
- de bienvenida de Windows (diálogo de creación de usuario y 
+Este punto conviene realizarlo manualmente y de la forma usual, es decir,
+ instalar manualmente el sistema operativo en la VM.
+ Sin embargo, cuando en el proceso de instalación se llega a la pantalla
+ de ”Bienvenida de Windows” (diálogo de creación de usuario y 
 \shape italic
 hostname
 \shape default
 ) se debe presionar 
-\emph on
+\family typewriter
 Ctrl + Shift + F3
-\emph default
+\family default
  para ingresar en modo auditoría.
- Ahora la máquina debería reiniciarse e ingresar automáticamente en una
- cuenta temporal en modo administrador.
- Esto permanecerá así por más que se reinicie el equipo hasta que el comando
- 
+ Ahora la máquina se reinicia e ingresa automáticamente en una cuenta temporal
+ en modo administrador.
+ Permanecerá en este estado por más que se reinicie el equipo, hasta que
+ el comando 
 \family typewriter
 Sysprep
 \family default
- sea ejecutado luego de realizar todas las actualizaciones, instalación
- de los controladores de dispositivo y las aplicaciones.
+ se ejecute luego de realizar todas las actualizaciones, instalación de
+ los controladores de dispositivo y las aplicaciones deseadas.
 \end_layout
 
 \begin_layout Standard
-Cada vez que sea reiniciado el equipo estando en este modo, aparecerá un
- cuadro de diálogo del modo auditoría.
+Cada vez que se reinicie el equipo estando en este modo, aparecerá un cuadro
+ de diálogo del modo auditoría.
  Simplemente ignorarlo hasta terminar de preparar la imagen.
 \end_layout
 
 \begin_layout Standard
-Para transferir los programas a instalar, alojados en el servidor en 
+Para transferir los programas a instalar, alojados en el servidor Cobbler
+ en 
+\family typewriter
+\shape italic
 \emph on
 /windows/PROGRAMAS/
 \emph default
-, desde la máquina de referencia ir a 
-\emph on
-Equipo → Conectar a unidad de red
-\emph default
- e ingresar la dirección IP del servidor con el formato:
+,
+\family default
+\shape default
+ desde la máquina de referencia ir a:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+Equipo.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+Conectar a unidad de red.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Ingresar la dirección IP del servidor con el siuiente formato, como se muestra
+ en las figuras 32 y 33:
 \end_layout
 
 \begin_layout Standard
@@ -14055,6 +14209,18 @@ Paso de archivos a Windows
 \end_layout
 
 \begin_layout Standard
+En la figura 34 se muestra la ruta 
+\family typewriter
+\shape italic
+\emph on
+/windows/PROGRAMAS/
+\family default
+\shape default
+\emph default
+ del servidor Cobbler, visto desde la máquina Windows.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -14094,7 +14260,7 @@ Paso de archivos a Windows
 
 \begin_layout Standard
 Además de instalar las aplicaciones necesarias, para que el agente Puppet
- pueda encontrar al nodo servidor es necesario añadir una entrada al archivo
+ pueda encontrar al nodo servidor, es necesario añadir una entrada al archivo
  
 \emph on
 hosts
@@ -14103,7 +14269,7 @@ hosts
 \end_layout
 
 \begin_layout Standard
-Desde la terminal como administrador, ejecutar:
+Desde la terminal, ejecutar como administrador:
 \end_layout
 
 \begin_layout Standard
@@ -14127,8 +14293,8 @@ Generalizar el equipo de referencia para preparar la imagen
 \end_layout
 
 \begin_layout Standard
-En este paso, se generaliza la imagen y se prepara para su inicio en Bienvenida
- de Windows después de haberla instalado en cada equipo.
+En este paso, se generaliza la imagen y se prepara para su inicio en ”Bienvenida
+ de Windows” al instalarla en cada equipo.
  Para esto se hace uso de la herramienta 
 \family typewriter
 Sysprep
@@ -14143,6 +14309,7 @@ De forma gráfica, cuando inicia el sistema operativo en modo auditoría,
 Sysprep
 \family default
  de forma automática.
+ La figura 35 muestra el cuadro de diálogo.
 \end_layout
 
 \begin_layout Standard
@@ -14184,20 +14351,43 @@ Modo auditoría
 \end_layout
 
 \begin_layout Itemize
-En la lista Acción de limpieza del sistema, seleccionar Iniciar la configuración
- rápida (OOBE) del sistema.
+En la sección 
+\family typewriter
+Acción de limpieza del sistema
+\family default
+, seleccionar 
+\family typewriter
+Iniciar la configuración rápida (OOBE) del sistema
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
-Activar la casilla Generalizar.
+Activar la casilla 
+\family typewriter
+Generalizar
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
-En la lista Opciones de apagado, seleccionar Apagar.
+En la sección 
+\family typewriter
+Opciones de apagado
+\family default
+, seleccionar 
+\family typewriter
+Apagar
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
-Aceptar para ejecutar 
+Pulsar 
+\family typewriter
+Aceptar
+\family default
+ para ejecutar 
 \family typewriter
 Sysprep
 \family default
@@ -14205,12 +14395,8 @@ Sysprep
 \end_layout
 
 \begin_layout Standard
-Particularmente se decidió realizar la generalización del sistema por consola.
- 
-\end_layout
-
-\begin_layout Standard
-Desde la consola, ejecutar por línea de comando:
+Particularmente, se decidió realizar la generalización del sistema por consola.
+ Entonces, ejecutar por línea de comando:
 \end_layout
 
 \begin_layout Standard
@@ -14287,8 +14473,8 @@ sysprep
 \end_layout
 
 \begin_layout Standard
-A esta altura del proceso, ha instalado Windows 7 en el equipo de referencia
- y está listo para capturar una imagen del mismo.
+A esta altura del proceso, se tiene instalado Windows 7 en el equipo de
+ referencia y preparado para capturar una imagen del sistema personalizado.
 \end_layout
 
 \begin_layout Subsubsection
@@ -14296,9 +14482,14 @@ Capturar el equipo de referencia
 \end_layout
 
 \begin_layout Standard
-En este paso se captura una imagen de la máquina de referencia utilizando
- la herramienta ImageX, que está en el WinPE anteriormente creado.
- La imagen será guardada en el directorio compartido SAMBA.
+Se utiliza la herramienta ImageX, incluida en el WinPE creado, para capturar
+ la imagen.
+ Ésta se guarda en el directorio compartido SAMBA.
+\end_layout
+
+\begin_layout Standard
+Conectar en la máquina de referencia el WinPE y configurar el orden de arranque
+ como muestran las figuras 37 y 38.
 \end_layout
 
 \begin_layout Standard
@@ -14378,9 +14569,9 @@ Prioridad de inicio en máquina virtual
 \end_layout
 
 \begin_layout Standard
-Se carga el disco WinPE y se obtiene una consola.
- Verificar que la máquina ve al servidor que tiene SAMBA configurado y corrobora
-r que se tiene acceso a la ubicación compartida:
+Una vez encendida la VM, se carga el disco WinPE y retorna una consola.
+ Verificar que la máquina conecta al servidor SAMBA y corroborar que se
+ tiene acceso a la ubicación compartida:
 \end_layout
 
 \begin_layout Standard
@@ -14422,12 +14613,13 @@ dir
 \end_layout
 
 \begin_layout Standard
-Verificar la letra asignada al disco WinPE, usualmente es 
+Es necesario corroborar la letra asignada al disco WinPE, que usualmente
+ es 
 \emph on
 e:
 \emph default
- y verificar la letra de la partición donde está instalado Windows ya personaliz
-ado, usualmente 
+ y verificar la letra de la partición donde está instalado Windows personalizado
+, la cual es usualmente 
 \emph on
 d:
 \emph default
@@ -14477,7 +14669,7 @@ Verificación de letras de unidad
 \end_layout
 
 \begin_layout Standard
-Desde la unidad que contiene a WinPE:
+Desde la VM que corre WinPE, para capturar la imagen ejecutar:
 \end_layout
 
 \begin_layout Standard
@@ -14490,6 +14682,11 @@ imagex.exe /capture d y:
 windows
 \backslash
 imagenPersonalizada.wim "Win7" /verify
+\end_layout
+
+\begin_layout Standard
+Una vez finalizado el proceso de copiado se muestra el porcentaje de finalizació
+n y el tiempo requerido para completar el proceso.
 \end_layout
 
 \begin_layout Standard
@@ -14539,8 +14736,12 @@ Autounattend.xml
 \end_layout
 
 \begin_layout Standard
-Para generarlo, una vez instalado el WAIK, se debe abrir en modo Administrador
- el programa Windows 
+Para generar el archivo de respuestas, una vez instalado el WAIK, se debe
+ abrir en modo Administrador el programa 
+\shape italic
+Windows
+\shape default
+ 
 \emph on
 System Image Manager
 \emph default
@@ -14548,32 +14749,31 @@ System Image Manager
 \end_layout
 
 \begin_layout Standard
-Bajo la sección 
+Seleccionar:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\shape italic
 \emph on
 Windows Image
 \emph default
- seleccionar 
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+\shape italic
 \emph on
 Select a Windows image or catalog file
 \emph default
 .
- En este punto se debe buscar en el directorio de la imagen del sistema
- operativo ya descomprimida, un archivo.
-\emph on
-clg
-\emph default
- que en este caso particular es 
-\emph on
-install_Windows 7 ULTIMATE.clg
-\emph default
-.
- Acto seguido crear el archivo de respuestas de instalación 
-\emph on
-Create a New Answer File
-\emph default
-.
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 \begin_inset Float figure
 placement H
@@ -14613,13 +14813,48 @@ Windows System Image Manager
 \end_layout
 
 \begin_layout Standard
-Se muestra a continuación una configuración personalizada completa utilizando
- Windows AIK.
+Se debe buscar en el directorio de la imagen del sistema operativo ya descomprim
+ida, un archivo .
+\family typewriter
+clg
+\family default
+.
+ En particular, este archivo es 
+\family typewriter
+install_Windows 7 ULTIMATE.clg
+\family default
+.
+ Luego, crear el archivo de respuestas de instalación
+\emph on
+:
+\end_layout
+
+\begin_layout Itemize
+Answer File
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Create or open a new answer file
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+Create a new answer file
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+A partir de la figura 42 y hasta la 63, se muestra una configuración personaliza
+da completa utilizando Windows AIK.
 \end_layout
 
 \begin_layout Standard
-Se ha configurado la entrada de texto, interfaz gráfica y ayuda del sistema
- en idioma español.
+En las figuras 42 y 43, se ha configurado la entrada de texto, interfaz
+ gráfica y ayuda del sistema en idioma español.
 \end_layout
 
 \begin_layout Standard
@@ -14749,9 +14984,13 @@ Firewall activado por defecto.
 \end_layout
 
 \begin_layout Standard
-Se han configurado los discos para que existan dos particiones.
- Una donde se instalará el MBR y otra donde se copiarán los archivos del
- sistema operativo.
+En las figuras 45 a 51, se han configurado los discos para que existan dos
+ particiones.
+ Una donde se instalará el MBR (
+\shape italic
+Master Boot Record
+\shape default
+) y otra donde se copiarán los archivos del sistema operativo.
 \end_layout
 
 \begin_layout Standard
@@ -15034,12 +15273,20 @@ Instalación del sistema operativo.
 
 \end_inset
 
-En el caso de contar con una imagen de instalación multiversión, Windows
- Home, Basic, Professional y Ultimate y/o con ambas arquitecturas, i386
- y amd64, es necesario seleccionar cuál de ellas se desea instalar.
- La opción más fácil y efectiva es contar la posición de la versión que
- se quiere instalar y seleccionarla como se muestra a continuación, donde
- se ve que en este caso es la primera opción.
+En el caso de contar con unapc imagen de instalación con múltiples versiones
+ como Windows Home, Basic, Professional y Ultimate y/o con ambas arquitecturas
+\family typewriter
+ (i386
+\family default
+ y 
+\family typewriter
+amd64
+\family default
+), se debe seleccionar cuál de opción instalar.
+ La manera más fácil es conocer la posición, en la lista de opciones de
+ instalación, de la versión que se quiere instalar.
+ Seleccionarla como se muestra en la figura 52, donde se observa que en
+ este caso es la primera posición.
 \end_layout
 
 \begin_layout Standard
@@ -15169,17 +15416,16 @@ Aceptación de las condiciones de privacidad y uso.
 \end_layout
 
 \begin_layout Standard
-La clave de producto, para poder realizar instalaciones desatendidas debe
- ser del tipo de Volumen, esto es, una clave para realizar instalación en
- masa.
+Para poder realizar instalaciones desatendidas, la clave de producto debe
+ ser del tipo de Volumen, esto es, una clave para realizar instalaciones
+ en masa.
  A modo de ejemplo y para pruebas, Microsoft entrega una serie de claves
- para ésto: 
+ para ésto.
+ La clave de producto utilizada en este caso se obtuvo de 
 \family typewriter
-https://technet.microsoft.com/en-us/library/jj612867.aspx
-\end_layout
-
-\begin_layout Standard
-Entonces, la clave de producto utilizada en este caso es: 
+https://technet.microsoft.com/en-us/library/jj612867.aspx y es
+\family default
+ 
 \series bold
 FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4
 \series default
@@ -15271,28 +15517,47 @@ Activación del producto.
 \end_layout
 
 \begin_layout Standard
-Para solucionar el problema de asignar un 
+Uno de los problemas que se presentan al momento de realizar una instalación
+ en masa, es asignar un 
 \shape italic
 hostname
 \shape default
- único a cada máquina que sea instalada con este 
+ único a cada máquina que se instala con el mismo archivo 
 \family typewriter
-Autounattend.xml 
+Autounattend.xml.
+
 \family default
-se dio con la siguiente solución.
- Utilizando un 
+ Para solucionarlo, utilizando un 
 \emph on
 string
 \emph default
- representativo en el campo RegisteredOwner y un asterisco en el campo ComputerN
-ame, se obtiene un 
+ representativo en el campo 
+\family typewriter
+RegisteredOwner
+\family default
+ y un asterisco (*) en el campo 
+\family typewriter
+ComputerName
+\family default
+, se obtiene un 
 \shape italic
 hostname
 \shape default
  pseudo-aleatorio, ya que estará compuesto por máximo ocho caracteres de
- RegisteredOwner y/o RegisteredOrganization concatenado con caracteres aleatorio
-s.
- El campo ComputerName es un 
+ 
+\family typewriter
+RegisteredOwner
+\family default
+ y/o 
+\family typewriter
+RegisteredOrganization
+\family default
+ concatenado con caracteres aleatorios.
+ El campo 
+\family typewriter
+ComputerName
+\family default
+ es un 
 \emph on
 string
 \emph default
@@ -15300,11 +15565,22 @@ string
 \end_layout
 
 \begin_layout Standard
-Otro campo que es necesario añadir, es CopyProfile ya que es la única manera
- válida para copiar todos los cambios y preferencias que se han hecho al
- perfil de usuario por defecto.
- Esto es, cada vez que se cree un nuevo usuario, se le aplicarán las configuraci
+La única manera válida para copiar todos los cambios y preferencias que
+ se han hecho al perfil de usuario por defecto, es añadir el campo 
+\family typewriter
+CopyProfile
+\family default
+ con el valor 
+\family typewriter
+true
+\family default
+.
+ Esto es, cada vez que se crea un nuevo usuario, se le aplicarán las configuraci
 ones hechas al personalizar la imagen.
+\end_layout
+
+\begin_layout Standard
+Lo anterior se muestra en la figura 57.
 \end_layout
 
 \begin_layout Standard
@@ -15350,7 +15626,9 @@ Hostname, organización, propietario y zona horaria.
 \end_layout
 
 \begin_layout Standard
-Se debe ingresar nuevamente la configuración deseada.
+Como se indicó anteriormente, algunas configuraciones se pueden ingresar
+ en diferentes etapas.
+ Entonces, se debe ingresar nuevamente la configuración deseada.
 \end_layout
 
 \begin_layout Standard
@@ -15522,7 +15800,8 @@ Contraseña administrador.
 
 \end_inset
 
-Creación de cuentas de usuario.
+Las figuras 62 y 63 muestran la creación de cuentas de usuario administrador
+ e invitado.
 \end_layout
 
 \begin_layout Standard
@@ -15611,7 +15890,8 @@ Crear nuevos medios de instalación de Windows 7 para la imagen personalizada
 \end_layout
 
 \begin_layout Standard
-En la máquina técnica realizar las siguientes operaciones:
+Para unir todo lo expuesto en un archivo ISO, en la máquina técnica realizar
+ las siguientes operaciones:
 \end_layout
 
 \begin_layout Itemize
@@ -15646,7 +15926,7 @@ Sources
 \family typewriter
 install.wim
 \family default
-, por la recientemente imagen capturada 
+, por la imagen capturada 
 \family typewriter
 imagenPersonalizada.wim
 \family default
@@ -15658,8 +15938,8 @@ install.wim
 \end_layout
 
 \begin_layout Itemize
-En el directorio principal de donde ha sido extraída la imagen, copiar el
- archivo de respuestas de instalación
+En el directorio principal de donde se extrajo la imagen, copiar el archivo
+ de respuestas de instalación
 \family typewriter
  Autounattend.xml
 \family default
@@ -15667,7 +15947,8 @@ En el directorio principal de donde ha sido extraída la imagen, copiar el
 \end_layout
 
 \begin_layout Itemize
-Abrir 
+Por último, generar el archivo ISO.
+ Abrir 
 \emph on
 Deployment Tools Command Prompt 
 \emph default
@@ -15698,7 +15979,7 @@ Win7-personalizado.iso
 \end_deeper
 \begin_layout Standard
 En este punto se tiene una imagen de instalación personalizada y automatizada
- lista para instalarse en cualquier equipo.
+ lista para instalar en cualquier equipo.
  A continuación, se verá la preparación necesaria del servidor Linux para
  poder instalar y configurar SAMBA y la integración de Windows 7 con Cobbler
  para el posterior despliegue a través de la red.
@@ -15710,12 +15991,15 @@ El lado de Linux
 
 \begin_layout Standard
 Lo primero que se debe hacer es copiar todos los archivos necesarios, anteriorme
-nte generados en Windows, al servidor de despliegue, Cobbler.
+nte generados en Windows, al servidor de despliegue (Cobbler).
 \end_layout
 
 \begin_layout Standard
-En el servidor crear el siguiente directorio, donde se colocarán los archivos
- 
+En el servidor crear el directorio 
+\family typewriter
+/var/lib/cobbler/isos
+\family default
+, donde se colocarán los archivos 
 \begin_inset Newline newline
 \end_inset
 
@@ -15725,9 +16009,7 @@ winpe_cobbler_amd64.iso
 \family default
  y 
 \family typewriter
-Win7-personalizado.iso
-\family default
-:
+Win7-personalizado.iso.
 \end_layout
 
 \begin_layout Standard
@@ -15747,8 +16029,10 @@ sudo chmod -R 777 /var/lib/cobbler/isos/*.iso
 \end_layout
 
 \begin_layout Standard
-También es necesario crear un directorio que se utilizará como zona de intercamb
-io entre Linux y Windows:
+La zona de intercambio entre ambos sistemas operativos se logra utilizando
+ SAMBA.
+ Por ello es necesario crear un directorio que se utilizará como zona de
+ intercambio entre Linux y Windows:
 \end_layout
 
 \begin_layout Standard
@@ -15758,8 +16042,8 @@ sudo mkdir /windows/
 \end_layout
 
 \begin_layout Standard
-En este directorio se debe copiar el contenido de la imagen de instalación
- de Windows personalizada, para ello:
+En este directorio copiar el contenido de la imagen de instalación personalizada
+ de Windows.
 \end_layout
 
 \begin_layout Standard
@@ -15786,10 +16070,8 @@ sudo cp -rf /mnt/windows /windows
 sudo umount /mnt/windows
 \end_layout
 
-\begin_layout Standard
-La zona de intercambio entre ambos sistemas operativos se logra utilizando
- SAMBA.
- 
+\begin_layout Paragraph
+Instalación de SAMBA
 \end_layout
 
 \begin_layout Standard
@@ -15999,7 +16281,9 @@ locking = no
 \end_layout
 
 \begin_layout Standard
-Habiendo modificado la configuración reiniciar el servicio: 
+Luego de modificar la configuración reiniciar el servicio 
+\family typewriter
+smb.
 \end_layout
 
 \begin_layout Standard
@@ -16009,8 +16293,8 @@ sudo systemctl restart smb
 \end_layout
 
 \begin_layout Standard
-Corroborar que se pueden compartir archivos, si se hace desde otra pc Linux,
- es necesario tener los siguientes paquetes:
+Para corroborar que se pueden compartir archivos, si se hace desde otra
+ máquina Linux, es necesario tener los siguientes paquetes instalados:
 \end_layout
 
 \begin_layout Standard
@@ -16038,13 +16322,18 @@ sudo mkdir /media/SAMBA
 \begin_layout Standard
 
 \family typewriter
-sudo mount // IP_del_servidor_Cobbler /imagen/media/SAMBA/ 
+sudo mount //IP_del_servidor_Cobbler/imagen/media/SAMBA/ 
 \end_layout
 
 \begin_layout Standard
 
 \family typewriter
 sudo ls /media/SAMBA/
+\end_layout
+
+\begin_layout Standard
+Para corroborar desde otra máquina Windows, los pasos se explican en la
+ sección 3.6.3 en las figuras 32 a 34.
 \end_layout
 
 \begin_layout Standard
@@ -16058,10 +16347,18 @@ Integración con Cobbler
 \begin_layout Standard
 Para integrar la imagen de instalación Windows al servidor Cobbler se debe
  añadir una entrada 
+\family typewriter
+\shape italic
 \emph on
 distro
+\family default
+\shape default
 \emph default
- y una entrada de perfil a Cobbler.
+ y una entrada de 
+\family typewriter
+profile
+\family default
+ a Cobbler, sincronizarlo y reiniciar el servicio.
 \end_layout
 
 \begin_layout Standard
@@ -16113,12 +16410,10 @@ Interfaz Web
 
 \begin_layout Standard
 Se decidió realizar la interfaz web en Python, dado que el paquete Bottle
- nos provee un servidor web fácil de utilizar y fue recomendado por el director
+ provee un servidor web fácil de utilizar y fue recomendado por el director
  del proyecto.
- A su vez, se utilizo la IDE pycharm, en su versión libre, dado que funciona
- correctamente y ademas ya tuvimos experiencias con ella.
  Instalar Bottle es muy simple, simplemente se realiza a través del siguiente
- comando
+ comando:
 \end_layout
 
 \begin_layout Standard
@@ -16142,69 +16437,56 @@ sudo easy-install bottle
 \end_layout
 
 \begin_layout Standard
-Mientras que la IDE pycharm se descarga desde la pagina oficial de Jetbrains
+Se crearon dos ejemplos muy simples que luego se utilizaron en la aplicación
+ para recolectar parámetros utilizados para crear las máquinas virtuales.
  
-\begin_inset Newline newline
-\end_inset
-
-
-\family typewriter
-\size small
-https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code
-=PCC
-\family default
-\size default
-
-\begin_inset Newline newline
-\end_inset
-
-Una vez descargado, se descomprime y se ejecuta el 
-\emph on
-script
-\emph default
- de bash pycharm.sh que se encuentra en la carpeta bin del archivo descomprimido
- y este que se encarga de la instalación.
 \end_layout
 
 \begin_layout Standard
-Creamos dos ejemplos muy simples que luego utilizamos en la aplicación para
- realizar la recolección de parámetros que serán utilizados para crear las
- máquinas Virtuales.
- Mas concretamente, este ejemplo pide el ingreso de 3 números que representan
- las cantidad de máquinas virtuales a crear (el primero corresponde a CentOS,
- el segundo a Ubuntu y el ultimo a la cantidad de máquinas que correrán
- Windows7), y luego los utilizara para crear dichas máquinas virtuales.
+El siguiente ejemplo pide el ingreso de tres números que representan las
+ cantidad de máquinas virtuales a crear.
+ El primero corresponde a CentOS, el segundo a Ubuntu y el último a Windows.
+ Luego, utilizará estos parámetros para crear la cantidad requerida de máquinas
+ virtuales en cada sistema operativo.
 \end_layout
 
 \begin_layout Standard
-Con las siguientes funciones definimos de qué modo procederá el servidor
+Con las siguientes funciones se difinió el modo en que procederá el servidor
  Bottle cuando recibe peticiones 
-\emph on
+\family typewriter
 get
-\emph default
+\family default
  y 
-\emph on
+\family typewriter
 post
-\emph default
- enviadas a la URL /virtual_machine.
- En la siguiente figura vemos el decorador 
-\emph on
+\family default
+ enviadas a la URL 
+\family typewriter
+/virtual_machine
+\family default
+.
+ En la figura 64 se ve el decorador 
+\family typewriter
 get
-\emph default
-, lo que indica que la función definida a continuación se ejecutara cuando
+\family default
+, el cual indica que la función definida a continuación se ejecutará cuando
  una solicitud 
-\emph on
+\family typewriter
 get
-\emph default
- a la URL /virtual_machine llegue al servidor.
+\family default
+ apuntada a la URL 
+\family typewriter
+/virtual_machine
+\family default
+ llegue al servidor.
  La función devuelve el HTML de un formulario al navegador, que el usuario
- rellenará para indicar la cantidad de máquinas virtuales con cada sistema
- operativo que desea crear.
+ completará para indicar la cantidad de máquinas virtuales que desea crear
+ con cada sistema operativo.
  Los datos ingresados en el formulario se enviarán al servidor con el método
  
-\emph on
+\family typewriter
 post
-\emph default
+\family default
 .
 \end_layout
 
@@ -16245,22 +16527,26 @@ Método get
 \end_layout
 
 \begin_layout Standard
-En la siguiente figura, tenemos el decorador 
-\emph on
+En la figura 65, se tiene el decorador 
+\family typewriter
 post
-\emph default
+\family default
 .
  Luego del decorador se encuentra la función que se ejecutará cuando una
  solicitud 
-\emph on
+\family typewriter
 post
-\emph default
- a la URL /virtual_machine llegue al servidor.
- Este caso se dará, por ejemplo, cuando el usuario rellene el formulario
- devuelto en la función de la figura anterior.
+\family default
+ apuntada a la URL 
+\family typewriter
+/virtual_machine 
+\family default
+llegue al servidor.
+ Este caso se dará, por ejemplo, cuando el usuario complete el formulario
+ devuelto en la función de la figura 64.
  Esta función tomará los parámetros presentes en el formulario y realizará
  el proceso para crear las máquinas virtuales deseadas.
- Ademas, la función devuelve el HTML que indica que se están instalando
+ Además, la función devuelve el HTML que indica que se están instalando
  las máquinas virtuales.
 \end_layout
 
@@ -16301,14 +16587,14 @@ Método post
 \end_layout
 
 \begin_layout Standard
-La última línea que pondremos en el código, será la que nos permita iniciar
+La última línea que se coloca en el código, será la que permita iniciar
  el servidor web de Bottle, es decir, la función 
-\emph on
+\family typewriter
 run
-\emph default
+\family default
 .
- Recibirá cada petición a la dirección y puerto que definimos hasta que
- detengamos la ejecución de la aplicación.
+ Recibirá cada petición a la dirección y puerto definidos hasta que se detenga
+ la ejecución de la aplicación.
 \end_layout
 
 \begin_layout Standard
@@ -16345,38 +16631,38 @@ Método run
 \end_layout
 
 \begin_layout Standard
-Si declaramos la función 
-\emph on
+Si se declara la función 
+\family typewriter
 run
-\emph default
- como en la figura anterior, solo podremos acceder al servidor web Bottle
- desde la misma PC que lo ejecuta ( 
-\emph on
-localhost
-\emph default
- ) y utilizando el puerto 8080.
- Si queremos que el servidor se pueda acceder desde otras direcciones IP,
- reemplazamos 
-\emph on
-localhost
-\emph default
- por la IP que deseamos o reemplazamos por 0.0.0.0 para habilitar, toda la
- red.
- Finalmente, vemos que esta activada la opción de 
-\emph on
-debug
-\emph default
-, esta nos permite ver a través de la pagina web el retorno de los errores
- que nos entrega Python, facilitando el 
+\family default
+ como en la figura 66, solo se puede acceder al servidor web Bottle desde
+ la misma máquina que lo ejecuta (
 \shape italic
-debugger
+localhost
 \shape default
-.
- Una vez puesto en producción en sistema, esta opción debe desactivarse.
+) y utilizando el puerto 8080.
+ Para permitir el acceso al servidor desde otra máquina, se debe reemplazar
+ 
+\shape italic
+localhost 
+\shape default
+por la IP deseada o por 0.0.0.0 para habilitar toda la red.
+ 
 \end_layout
 
 \begin_layout Standard
-Las siguientes capturas corresponden a la sencilla interfaz web.
+Finalmente, se ve que esta activada la opción de 
+\shape italic
+debug
+\shape default
+.
+ Ésta permite ver, a través de la página web, el retorno de los errores
+ que retorna Python.
+ Una vez puesto en producción el sistema, esta opción debe desactivarse.
+\end_layout
+
+\begin_layout Standard
+Las figuras 67 - 70 ilustran la sencilla interfaz web.
  
 \end_layout
 
@@ -16401,7 +16687,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Crear Virtual Machine
+Crear virtual_machine
 \end_layout
 
 \end_inset
@@ -16438,7 +16724,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Crear Virtual Machine Parametrizada
+Crear virtual_machine_parametrizada
 \end_layout
 
 \end_inset
@@ -16479,7 +16765,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Editar politicas
+Editar políticas/servicios
 \end_layout
 
 \end_inset
@@ -16513,7 +16799,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Estado de las Virtual Machine
+Estado de las máquinas virtuales
 \end_layout
 
 \end_inset
@@ -16531,12 +16817,12 @@ Validación de las Herramientas
 \end_layout
 
 \begin_layout Standard
-Realizamos una etapa de pruebas para validar el correcto funcionamiento
- del sistema en conjunto.
+Se realizó una etapa de pruebas para validar el funcionamiento del sistema
+ en conjunto.
 \end_layout
 
 \begin_layout Standard
-La siguiente tabla muestra los casos de pruebas seleccionados.
+Las tablas 7,8 y 9 muestran los casos de pruebas seleccionados.
 \end_layout
 
 \begin_layout Standard
@@ -17888,16 +18174,16 @@ Conclusión
 \end_layout
 
 \begin_layout Standard
-La idea de realizar este proyecto surge luego de finalizar la Práctica Profesion
-al Supervisada, donde se tuvo una primera inserción a temas relacionados
- con servidores y recursos de red, implentando un sistema de monitorización
+La idea de este proyecto surge luego de finalizar la Práctica Profesional
+ Supervisada, donde se tuvo una primera inserción a temas relacionados con
+ servidores y recursos de red, implementando un sistema de monitorización
  de estos dispositivos.
  
 \end_layout
 
 \begin_layout Standard
 Se comenzó este proyecto con escasos conocimientos acerca de virtualización,
- programación en HTML, programación en Python, orquestación, etc.
+ orquestación, programación en HTML, programación en Python, etc.
  Sin embargo, para lograr un desarrollo exitoso no es imprescindible conocer
  profundamente los aspectos técnicos.
  Para lograrlo se debe saber cómo enfrentarse al proceso, usar una metodología
