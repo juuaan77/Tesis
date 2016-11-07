@@ -6963,10 +6963,8 @@ Como caso particular, en la implementación se tomará un laboratorio informáti
  los administradores (o incluso a cualquier persona sin conocimiento técnico)
  crear máquinas virtuales con pocos 
 \shape italic
-\emph on
-clics
+clicks
 \shape default
-\emph default
 , dichas máquinas virtuales cuentan con todos los servicios y programas
  necesarios para los alumnos de las diferentes carreras.
  También se pueden crear máquinas virtuales con otros perfiles, por ejemplo,
