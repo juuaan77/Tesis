@@ -1351,7 +1351,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename Imagenes/Diagramas de secuencia/Creacion VM.png
+	filename Imagenes/Diagramas de secuencia/Crear VM.png
 	width 15cm
 
 \end_inset
@@ -1392,7 +1392,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename Imagenes/Diagramas de secuencia/Modifica Politicas.png
+	filename Imagenes/Diagramas de secuencia/Modificar Políticas.png
 	width 15cm
 
 \end_inset
@@ -7250,7 +7250,7 @@ Arquitectura
 
 \begin_layout Standard
 En este Proyecto se utiliza la técnica de virtualización completa.
- En particular, la arquitectura que utiliza KVM es la mostrada en la figura
+ En particular, la arquitectura que utiliza KVM se muestra en la Figura
  27:
 \end_layout
 
@@ -7301,9 +7301,9 @@ El
 hypervisor
 \shape default
  KVM requiere que el microprocesador cuente con VT-X para procesadores de
- Intel o con AMD -V para los propios de AMD.
- Para poder confirmar que un procesador cuenta con esto, en los sistemas
- basados en Linux, se debe ejecutar el siguiente comando:
+ Intel o con AMD -V para los de AMD.
+ Para confirmar que un procesador cuenta con esto, en los sistemas basados
+ en Linux, se debe ejecutar el siguiente comando:
 \end_layout
 
 \begin_layout Standard
@@ -7361,10 +7361,21 @@ La siguiente, es la salida obtenida con un AMD Athlon(tm) II P360 Dual-Core
 
 \family typewriter
 flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat
- pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp
- lm 3dnowext 3dnow constant_tsc rep_good nopl nonstop_tsc extd_apicid pni
- monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a
- 3dnowprefetch osvw ibs skinit wdt nodeid_msr hw_pstate npt lbrv svm_lock
+ pse36 clflush mmx fxsr 
+\begin_inset Newline newline
+\end_inset
+
+sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow
+ constant_tsc rep_good 
+\begin_inset Newline newline
+\end_inset
+
+nopl nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy
+ svm extapic cr8_legacy abm 
+\begin_inset Newline newline
+\end_inset
+
+sse4a 3dnowprefetch osvw ibs skinit wdt nodeid_msr hw_pstate npt lbrv svm_lock
  nrip_save 
 \end_layout
 
@@ -7376,7 +7387,7 @@ flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat
 \end_layout
 
 \begin_layout Standard
-Se debe asegurar que el módulo de KVM esté cargado, para ejecutar:
+Se debe asegurar que el módulo de KVM esté cargado para ejecutar:
 \end_layout
 
 \begin_layout Standard
@@ -7400,7 +7411,7 @@ lsmod | grep kvm
 \end_layout
 
 \begin_layout Standard
-La salida obtenida en la misma máquina que en el caso anterior, es:
+La salida obtenida en la misma máquina que en el caso anterior es:
 \end_layout
 
 \begin_layout Standard
@@ -7446,7 +7457,7 @@ Limitaciones de KVM
 \end_layout
 
 \begin_layout Standard
-A medida que un servicio tecnológico se extiende aparecen formas de optimizar
+A medida que un servicio tecnológico se extiende, aparecen formas de optimizar
  su implementación y su uso, buscando generalmente mayor eficiencia y rentabilid
 ad.
  Una estrategia que existe para lograrlo es el 
@@ -7479,7 +7490,7 @@ overcommit
 \shape italic
 n
 \shape default
-GB de RAM real, sino el uso de dicho recurso que es compartido entre varias
+GB de RAM real, sino que el uso de dicho recurso se comparte entre varias
  máquinas virtuales.
  Si la solución está bien diseñada, el 
 \shape italic
@@ -7497,24 +7508,21 @@ En el caso del
 overcommit
 \shape default
  de procesador o CPU, dado que las capacidades de procesamiento que ofrecen
- actualmente los servidores físicos son muy altas, el 
-\shape italic
-overcommit
-\shape default
- sirve para aprovechar todas las prestaciones del 
+ actualmente los servidores físicos son muy altas, sirve para aprovechar
+ todas las prestaciones del 
 \shape italic
 host
 \shape default
 .
- Si bien la mayoría de 
+ Si bien la mayoría de los 
 \shape italic
 hypervisors
 \shape default
- permiten configurar muchos VCPUs (CPUs virtuales ) por 
+ permiten configurar muchos VCPUs (CPUs virtuales) por 
 \shape italic
 core
 \shape default
- físico, la realidad es que no es recomendable configurar más de 4 ó 5 VCPUs
+ físico, la realidad es que no es recomendable configurar más de 10 VCPUs
  por 
 \shape italic
 core
@@ -7524,8 +7532,8 @@ core
 \shape italic
 overcommit
 \shape default
- tenga la plataforma más aumenta la posibilidad de cargas de CPU física
- cercanas al 100% que producirán solicitudes o tiempos de respuesta altos
+ tenga la plataforma, más aumenta la posibilidad de cargas de CPU física
+ cercanas al 100%, que producirán solicitudes o tiempos de respuesta altos
  que inutilizarán la aplicación.
 \end_layout
 
@@ -7663,12 +7671,11 @@ yum update
 \begin_layout Standard
 
 \family typewriter
-yum install -y kvm libvirt qemu-kvm virt-manager libvirt qemu-system-x86
- 
+yum install -y kvm libvirt qemu-kvm virt-manager libvirt 
 \begin_inset Newline newline
 \end_inset
 
-qemu-img libvirt-python libvirt-client virt-install
+qemu-system-x86 qemu-img libvirt-python libvirt-client virt-install
 \end_layout
 
 \begin_layout Standard
@@ -7708,7 +7715,7 @@ Redes virtuales.
 \end_layout
 
 \begin_layout Standard
-Se abre el menú de la figura 28.
+Se abre el menú de la Figura 28.
 \end_layout
 
 \begin_layout Standard
@@ -7781,7 +7788,7 @@ Se encuentra la opción de habilitar IPv6.
 \begin_layout Enumerate
 Finalmente, se indica que la red debe ser NAT y se elige el dispositivo
  al cual se reenvía.
- Ver figura 29.
+ Ver Figura 29.
 \end_layout
 
 \begin_layout Standard
@@ -7925,9 +7932,19 @@ Un ejemplo utilizado en el desarrollo del proyecto es:
 \begin_layout Standard
 
 \family typewriter
-virt-install --connect qemu:///system --virt-type kvm --name centos1025
- --ram 1024 --disk path=/var/lib/libvirt/images/centos1025.qcow2,size=15
- --network network=puppet --pxe --os-type linux --os-variant rhel7
+virt-install --connect qemu:///system --virt-type kvm --name 
+\begin_inset Newline newline
+\end_inset
+
+centos1025 --ram 1024 
+\begin_inset Newline newline
+\end_inset
+
+--disk path=/var/lib/libvirt/images/centos1025.qcow2,size=15 
+\begin_inset Newline newline
+\end_inset
+
+--network network=puppet --pxe --os-type linux --os-variant rhel7
 \end_layout
 
 \begin_layout Subsection
@@ -8173,7 +8190,11 @@ profile
 \shape default
  tiene un repositorio dado, este repositorio puede configurarse automáticamente
  durante el aprovisionamiento y los sistemas instalados podrán usarlo como
- espejo (
+ espejo 
+\begin_inset Newline newline
+\end_inset
+
+(
 \family typewriter
 yum_post_install_mirror
 \family default
@@ -8193,26 +8214,19 @@ Los repositorios pueden crearse del siguiente modo:
 \begin_layout Standard
 
 \family typewriter
-cobbler repo add --mirror=url --name=string [--rpmlist=list] 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
- [--creatrepo-flags=string] [--keep-updated=Y/N] [--priority=number] 
+cobbler repo add --mirror=url --name=string [--rpmlist=list]
 \begin_inset Newline newline
 \end_inset
 
-[--arch=string] [--mirror-locally=Y/N] [--breed=yum|rsync|rhn]
+[--creatrepo-flags=string] [--keep-updated=Y/N] 
+\begin_inset Newline newline
+\end_inset
+
+[--priority=number] [--arch=string] [--mirror-locally=Y/N] 
+\begin_inset Newline newline
+\end_inset
+
+[--breed=yum|rsync|rhn]
 \end_layout
 
 \begin_layout Standard
@@ -8242,7 +8256,7 @@ yum
 \family typewriter
 rsync://
 \family default
-, una ubicación ssh o una ubicación 
+, una ubicación ssh, una ubicación 
 \family typewriter
 http://
 \family default
@@ -8251,11 +8265,11 @@ http://
 ftp://
 \family default
  de un espejo.
- Direcciones del 
+ También funcionan direcciones del 
 \shape italic
 filesystem
 \shape default
- también funcionan.
+ .
  Esta dirección debe especificar un repositorio exacto a espejar, solo una
  arquitectura y una distribución.
 \end_layout
@@ -8348,7 +8362,7 @@ http://
 \family typewriter
 ftp://
 \family default
- son soportados cuando se utiliza 
+ se soportad cuando se utiliza 
 \family typewriter
 --mirror-locally=N,
 \family default
@@ -8572,7 +8586,7 @@ eth0
 cobbler
 \family default
 ”.
- Si esto no es deseado, editar los archivos 
+ Si esto no se desea, editar los archivos 
 \shape italic
 kickstart
 \shape default
@@ -8591,7 +8605,11 @@ profile
 .
  El contenido espejado se guarda automáticamente en 
 \family typewriter
-/var/www/cobbler/ks_mirror
+/
+\begin_inset Newline newline
+\end_inset
+
+var/www/cobbler/ks_mirror
 \family default
 .
  
@@ -8632,13 +8650,11 @@ cobbler import --path=/path/to/stuff –name=glorp
 \begin_layout Enumerate
 
 \family typewriter
-cobbler import --path=/path/where/filer/is/mounted --name=anyname 
-\backslash
- z
+cobbler import --path=/path/where/filer/is/mounted 
 \begin_inset Newline newline
 \end_inset
 
---available-as=nfs://nfs.example.org:/where/mounted/
+--name=anyname --available-as=nfs://nfs.example.org:/where/mounted/
 \end_layout
 
 \begin_layout Standard
@@ -8689,7 +8705,7 @@ kickstarts
 kickstart 
 \shape default
 contiene palabras claves, valores y en otros casos, sólo contiene la palabra
- clave que en sí misma es una configuración específica.
+ clave, que en sí misma es una configuración específica.
  
 \end_layout
 
@@ -8747,7 +8763,7 @@ Especifica cómo se debe instalar el gestor de arranque.
 \series bold
 clearpart (opcional):
 \series default
- Elimina las particiones del sistema, antes de la creación de nuevas particiones.
+ Elimina las particiones del sistema antes de la creación de nuevas particiones.
  Por defecto no se eliminan las particiones.
 \end_layout
 
@@ -8875,7 +8891,7 @@ Establece el idioma que desea utilizar durante la instalación y el idioma
 \series bold
 network (opcional): 
 \series default
-Configura la información de red para el sistema.Si la instalación no requiere
+Configura la información de red para el sistema, si la instalación no requiere
  redes y la información de la red no se proporciona en el archivo 
 \shape italic
 kickstart
@@ -8885,8 +8901,8 @@ kickstart
 \family typewriter
 eth0
 \family default
- a través de una dirección IP dinámica ( BOOTP / DHCP), y configura el sistema
- final, instalado para determinar su dirección IP de forma dinámica.
+ a través de una dirección IP dinámica (BOOTP / DHCP), y configura el sistema,
+ instalado para determinar su dirección IP de forma dinámica.
  
 \end_layout
 
@@ -8927,8 +8943,11 @@ Reinicia el sistema después de una instalación exitosa.
 \series bold
 repo (opcional): 
 \series default
-Configura un repositorio adicional YUM que puede utilizarse como fuente
- para la instalación de paquetes.
+Configura un repositorio adicional 
+\emph on
+yum
+\emph default
+ que puede utilizarse como fuente para la instalación de paquetes.
 \end_layout
 
 \begin_layout Itemize
@@ -8997,7 +9016,7 @@ Indica que se realiza una actualización del sistema instalado.
 \series bold
 user (opcional):
 \series default
- Crea usuario en el sistema.
+ Crea un usuario en el sistema.
 \end_layout
 
 \begin_layout Itemize
@@ -9029,8 +9048,11 @@ snippets
 kickstarts
 \shape default
  (también funcionan en otros tipos de archivos).
- Esto quiere decir que cada vez que el texto SNIPPET aparezca en un archivo
- 
+ Esto quiere decir que cada vez que el texto 
+\emph on
+snippet
+\emph default
+ aparezca en un archivo 
 \shape italic
 kickstart
 \shape default
@@ -9066,11 +9088,11 @@ snippet
 \emph on
  
 \emph default
-y, en un archivo 
+y en un archivo 
 \shape italic
 kickstart
 \shape default
-, al momento de llamar a esta porción de código se utiliza:
+, al momento de llamar a esta porción de código, se utiliza:
 \end_layout
 
 \begin_layout Standard
@@ -9294,7 +9316,11 @@ Se añade el repositorio EPEL de CentOS 7:
 \begin_layout Standard
 
 \family typewriter
-wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7
+\begin_inset Newline newline
+\end_inset
+
+.noarch.rpm
 \end_layout
 
 \begin_layout Standard
@@ -9311,8 +9337,11 @@ Se instalan los paquetes necesarios para Cobbler, el servidor DHCP, FTP,
 \begin_layout Standard
 
 \family typewriter
-yum install cobbler cobbler-web dhcp pykickstart system-config-kickstarttftp
- httpd xinetd fence-agents-all -y
+yum install cobbler cobbler-web dhcp pykickstart 
+\begin_inset Newline newline
+\end_inset
+
+system-config-kickstarttftp httpd xinetd fence-agents-all -y
 \end_layout
 
 \begin_layout Paragraph
@@ -9385,7 +9414,11 @@ Copiar el archivo de configuración de ejemplo:
 \begin_layout Standard
 
 \family typewriter
-cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf
+cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example 
+\begin_inset Newline newline
+\end_inset
+
+/etc/dhcp/dhcpd.conf
 \end_layout
 
 \begin_layout Standard
@@ -9545,8 +9578,11 @@ next-server $next-server;
 \begin_layout Standard
 
 \family typewriter
-class "pxeclients" { match if substring (option vendor-class-identifier,
- 0, 9) = "PXEClient"; 
+class "pxeclients" { match if substring 
+\begin_inset Newline newline
+\end_inset
+
+(option vendor-class-identifier, 0, 9) = "PXEClient"; 
 \end_layout
 
 \begin_layout Standard
@@ -9738,6 +9774,10 @@ systemctl enable cobblerd.service
 Se debe configurar el servidor de Cobbler, para ello se editó el archivo
  
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 /etc/cobbler/settings
 \family default
 .
@@ -9791,7 +9831,11 @@ Lo que dará una salida similar a:
 \begin_layout Standard
 
 \family typewriter
-Password: Verifying - Password: $1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/
+Password: Verifying - Password: 
+\begin_inset Newline newline
+\end_inset
+
+$1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/
 \end_layout
 
 \begin_layout Standard
@@ -9823,9 +9867,9 @@ default_password_crypted: "$1$U.Svb2gw$MNHrAmG.axVHYQaQRySR5/"
 Dado que se desea utilizar un servidor DHCP en la misma máquina que contiene
  el servidor Cobbler, se modifica la sección 
 \family typewriter
-manage_dhcp: 0
+manage_dhcp 
 \family default
- para habilitar el administrador de DHCP.
+para habilitar el administrador de DHCP.
 \end_layout
 
 \begin_layout Standard
@@ -9855,6 +9899,10 @@ server
 \family default
  y 
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 next_server
 \family default
  colocando la interfaz virtual que conecta a la máquina física con las máquinas
@@ -9927,8 +9975,8 @@ Para habilitar la interfaz web de Cobbler y configurar usuario y contraseña,
 \end_layout
 
 \begin_layout Standard
-El usuario y la contraseña para la interfaz web que por defecto tiene tanto
- a usuario como contraseña a “
+El usuario y la contraseña para la interfaz web tiene por defecto usuario
+ y contraseña “
 \family typewriter
 cobbler
 \family default
@@ -9949,7 +9997,11 @@ admin
 \begin_inset Quotes eld
 \end_inset
 
+
+\emph on
 qwerty
+\emph default
+
 \begin_inset Quotes erd
 \end_inset
 
@@ -10076,7 +10128,11 @@ network boot loaders
 \shape default
  con el comando 
 \family typewriter
-cobbler get-loaders y 
+cobbler 
+\begin_inset Newline newline
+\end_inset
+
+get-loaders y 
 \family default
 sincronizar el servidor Cobbler:
 \end_layout
@@ -10120,7 +10176,8 @@ Repositorio local separado de Cobbler
 \begin_layout Standard
 En el caso que se desee crear un repositorio local que no dependa del servidor
  Cobbler, se debe primero instalar los servicios necesarios para el funcionamien
-to del servicio de repositorios, estos servicios son 
+to del servicio de repositorios.
+ Estos servicios son 
 \family typewriter
 vsftpd,
 \family default
@@ -10293,8 +10350,15 @@ comment ="Repositorio local para proyecto integrador"
 \begin_layout Standard
 
 \family typewriter
-baseurl=ftp://IP_servidor/nombre_del_sistema_de_archivos #Notar que el path
- es absoluto, partiendo desde el path permitido para los usuarios anónimos.
+baseurl=ftp://IP_servidor/nombre_del_sistema_de_archivos 
+\begin_inset Newline newline
+\end_inset
+
+#Notar que el path es absoluto, partiendo desde el path 
+\begin_inset Newline newline
+\end_inset
+
+permitido para los usuarios anónimos.
 \end_layout
 
 \begin_layout Standard
@@ -10331,8 +10395,8 @@ yum-priorities
 \family typewriter
 yum-utils
 \family default
- deben estar instalados en el cliente, para poder utilizar sus funcionalidades
- (dar prioridad a los repositorios y habilitarlos fácilmente.)
+ deben estar instalados en el cliente para poder utilizar sus funcionalidades
+ (dar prioridad a los repositorios y habilitarlos fácilmente).
 \end_layout
 
 \begin_layout Standard
@@ -10424,8 +10488,11 @@ mkdir /mnt/centos
 \begin_layout Standard
 
 \family typewriter
-mount -t iso9660 -o loop,ro /directorio/isos/CentOS-7-x86_64-DVD-1503-01.iso
- /mnt/centos
+mount -t iso9660 -o loop,ro /directorio/isos/
+\begin_inset Newline newline
+\end_inset
+
+_64-DVD-1503-01.iso /mnt/centos
 \end_layout
 
 \begin_layout Standard
@@ -10448,8 +10515,7 @@ distro
 \family typewriter
 profile
 \family default
-.
- Los cuales se pueden verificar con:
+, los cuales se pueden verificar con:
 \end_layout
 
 \begin_layout Standard
@@ -10493,8 +10559,7 @@ Client-vefied
  si permite un intercambio de información.
  Puppet incluye un constructor de certificado de autorización para administrar
  los certificados.
- Los agentes puede pedir automáticamente los certificados vía API HTTP del
- maestro.
+ Los agentes piden automáticamente los certificados vía API HTTP del maestro.
  El administrador del nodo maestro puede usar el comando 
 \family typewriter
 puppet cert
@@ -10518,7 +10583,7 @@ Un módulo o
 module
 \emph default
 , es un conjunto de código de Puppet empaquetado junto con los otros archivos
- y datos, que se necesita administrar sobre algún aspecto del sistema.
+ y datos que se necesita administrar sobre algún aspecto del sistema.
  Consiste en una estructura predefinida de directorios que ayudan a Puppet
  a encontrar los contenidos del módulo.
  
@@ -10590,8 +10655,8 @@ Cada recurso o
 \emph on
 resource
 \emph default
-, describe algún aspecto de un sistema y su estado, como por ejemplo, un
- servicio que debería estar ejecutándose o un paquete que se quiere instalado.
+ describe algún aspecto de un sistema y su estado, como por ejemplo, un
+ servicio que debería estar ejecutándose o un paquete que se quiere instalar.
  El bloque de código que describe un recurso se llama declaración de recurso
  (
 \emph on
@@ -10602,7 +10667,7 @@ resource
 declaration
 \emph default
 ).
- éstas declaraciones de recurso están escritas en código Puppet, un DLS
+ Éstas declaraciones de recurso están escritas en código Puppet, un DLS
  (
 \emph on
 Domain Specific Language
@@ -10621,7 +10686,7 @@ puppet resource tool -> puppet resource <type> <name>
 \end_layout
 
 \begin_layout Standard
-Puppet incluye una variedad de tipos de recursos integrados, que permiten
+Puppet incluye una variedad de tipos de recursos integrados que permiten
  administrar varios aspectos de un sistema.
  Algunos de los tipos de recursos claves que generalmente se encuentran
  en un sistema son los siguientes:
@@ -10745,7 +10810,11 @@ cron:
 \begin_inset space \space{}
 \end_inset
 
-Un trabajo programado de cron.
+Un trabajo programado de 
+\emph on
+cron
+\emph default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -10853,8 +10922,8 @@ Describen el estado deseado para un recurso, cada atributo maneja algún
 \begin_deeper
 \begin_layout Standard
 Cada tipo de recurso tiene su propio juego de atributos.
- Muchos tipos de recursos tienen atributos claves y una gran cantidad de
- opcionales.
+ Muchos tipos de recursos tienen atributos obligatorios y una gran cantidad
+ de opcionales.
 \end_layout
 
 \begin_layout Standard
@@ -10879,7 +10948,7 @@ Leer el estado actual del recurso en el sistema objetivo.
 \end_layout
 
 \begin_layout Itemize
-Comprar el estado actual con el deseado.
+Comparar el estado actual con el deseado.
 \end_layout
 
 \begin_layout Itemize
@@ -10925,6 +10994,7 @@ Puppet no permite que se declare un mismo recurso dos veces.
  duplicar.
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 
 \series bold
@@ -10935,10 +11005,11 @@ Por defecto, Puppet aplica los recursos sin seguir el orden en que fueron
  Esto se puede desactivar con la opción de ordenado.
  Sin embargo, si un recurso debe aplicarse antes o después de otro, se puede
  indicar una relación entre ellos.
- Incluso se puede indicar que cambios en un recurso causen que otro recurso
- se refresque.
+ Incluso se puede indicar que los cambios en un recurso causen que otro
+ recurso se refresque.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 
 \series bold
@@ -11003,7 +11074,7 @@ path
 .
  Esto es diferente al título, el cual identifica un recurso para el compilador
  de Puppet.
- Sin embargo, ellos a veces tienen el mismo valor.
+ Sin embargo, a veces tienen el mismo valor.
 
 \series bold
  
@@ -11062,7 +11133,7 @@ namevar
 \family typewriter
 namevar
 \family default
-, este valor es tomado por defecto según el título del recurso.
+, este valor toma por defecto el título del recurso.
 \end_layout
 
 \begin_layout Standard
@@ -11159,7 +11230,7 @@ file
 File['/etc/passwd']
 \family default
  para declarar una relación.
- Porque el 
+ El 
 \emph on
 path
 \emph default
@@ -11175,12 +11246,7 @@ namevar
 \family typewriter
 file
 \family default
- y si no se le provee un valor, toma uno por defecto que es 
-\family typewriter
-/etc/passwd
-\family default
-\emph on
-.
+, si no se le provee un valor, lo toma por defecto.
 \end_layout
 
 \begin_layout Standard
@@ -11251,8 +11317,8 @@ features
 \series default
  Son características que algunos proveedores pueden no soportar.
  Generalmente una característica corresponderá con algunos valores permitidos
- por un recurso de un atributo, por ejemplo, si un paquete soporta la caracterís
-tica 
+ por un recurso de un atributo por ejemplo, si un paquete soporta la característ
+ica 
 \family typewriter
 \shape italic
 \emph on
@@ -11268,8 +11334,8 @@ para borrar los archivos de configuración instalados por el paquete.
 \end_layout
 
 \begin_layout Standard
-Algunas de las referencias de tipo más importantes son las explicadas a
- continuación:
+Algunas de las referencias de tipo más importantes están explicadas a continuaci
+ón:
 \end_layout
 
 \begin_layout Itemize
@@ -11277,25 +11343,39 @@ Algunas de las referencias de tipo más importantes son las explicadas a
 \series bold
 Cron:
 \series default
- Instalar y manejar trabajos Cron.
- Todo Cron creado por Puppet requiere un comando y al menos un atributo
- de un período (horas, minutos, meses, etc).
- Mientras que el nombre del Cron no es parte del trabajo actual, el nombre
- es almacenado en un comentario comenzando con 
+ Instalar y manejar trabajos 
+\emph on
+Cron
+\emph default
+.
+ Todo 
+\emph on
+Cron
+\emph default
+ creado por Puppet requiere un comando y al menos un atributo de un período
+ (horas, minutos, meses, etc).
+ Mientras que el nombre del 
+\emph on
+Cron
+\emph default
+ no es parte del trabajo actual, el nombre se almacena en un comentario
+ comenzando con 
 \family typewriter
 \emph on
-#Puppet Name:
+#Puppet Name
 \family default
 \emph default
 .
- Ese comentario es usado para coincidir entadas 
+ Ese comentario se usa para coincidir entradas 
 \family typewriter
 crontab
 \family default
  creadas por Puppet con un recurso 
 \family typewriter
+\emph on
 Cron
 \family default
+\emph default
 .
  
 \end_layout
@@ -11365,7 +11445,7 @@ filesystems
 \shape default
  montados.
  Puede agregar la información de montaje a la tabla de montaje.
- El comportamiento actual depende de el valor de el parámetro 
+ El comportamiento actual depende del valor del parámetro 
 \family typewriter
 \shape italic
 \emph on
@@ -11380,7 +11460,7 @@ ensure
 \series bold
 Notify:
 \series default
- Envió de un mensaje arbitrario a el 
+ Envío de un mensaje arbitrario al 
 \shape italic
 log
 \shape default
@@ -11431,8 +11511,8 @@ meta-tipo
 \shape italic
 meta-parámetro
 \shape default
- especificado aquí sera pasado a los recursos generados, por lo que puede
- purgar recursos no administrados.
+ especificado aquí se pasa a los recursos generados, por lo que puede purgar
+ recursos no administrados.
  
 \end_layout
 
@@ -11499,7 +11579,7 @@ pp
 \begin_layout Standard
 
 \family typewriter
-include módulo::clase
+include modulo::clase
 \end_layout
 
 \begin_layout Standard
@@ -11508,7 +11588,7 @@ Antes de aplicar cambios en el sistema, se puede utilizar la bandera
 --noop
 \family default
  para compilar el catálogo y notificar los cambios que Puppet habría realizado
- si hubiera sido ejecutado sin 
+ si se ejecuta sin 
 \family typewriter
 --noop
 \family default
@@ -11576,13 +11656,13 @@ singleton
 \begin_layout Standard
 
 \family typewriter
-include módulo::clase
+include modulo::clase
 \end_layout
 
 \begin_layout Standard
 Aquí,
 \family typewriter
- módulo
+ modulo
 \family default
  le indica a Puppet dónde encontrar esa 
 \family typewriter
@@ -11610,6 +11690,10 @@ statements
 \family default
  (declaraciones) y 
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 rvalues
 \family default
 .
@@ -11617,11 +11701,11 @@ rvalues
 \family typewriter
 statements
 \family default
- no retornan argumentos, son utilizadas para hacer trabajos independientes
+ no retornan argumentos, se utilizan para hacer trabajos independientes
  como importar.
  
 \family typewriter
-Rvalues
+rvalues
 \family default
  retornan valores y pueden usarse solo en un 
 \family typewriter
@@ -11693,7 +11777,7 @@ Definición de nodos
 
 \begin_layout Standard
 Una definición o declaración de nodo es un bloque de código Puppet que sólo
- será incluido en catálogos de nodos que coincidan.
+ se incluye en catálogos de nodos que coincidan.
  Esta característica permite asignar configuraciones específicas a nodos
  específicos.
 \end_layout
@@ -11709,8 +11793,14 @@ certname
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 # node 'www1.example.com' { include common include apache include squid }
- node 'db1.example.com' { include common include mysql }
+ 
+\begin_inset Newline newline
+\end_inset
+
+node 'db1.example.com' { include common include mysql }
 \end_layout
 
 \begin_layout Subparagraph
@@ -11783,7 +11873,7 @@ include mysql
 \end_layout
 
 \begin_layout Standard
-En este ejemplo, sólo el primero nodo obtendrá las clases 
+En este ejemplo, sólo el primer nodo obtendrá las clases 
 \family typewriter
 apache
 \family default
@@ -11826,15 +11916,18 @@ Expresiones regulares.
 
 \begin_layout Itemize
 La palabra 
+\family typewriter
+default
+\family default
 \emph on
-default, 
+, 
 \emph default
 sin comillas.
 \end_layout
 
 \begin_layout Standard
 Se pueden utilizar listas de nombres separados por comas para crear grupos
- de nodos son una sola declaración de nodo:
+ de nodos en una sola declaración de nodo:
 \end_layout
 
 \begin_layout Standard
@@ -11868,10 +11961,13 @@ El nodo default
 \begin_layout Standard
 Si ninguna declaración de nodo coincide  o no puede encontrarse, el nodo
  
+\family typewriter
+default
+\family default
 \emph on
-default 
+ 
 \emph default
-es utilizado.
+se utiliza.
 \end_layout
 
 \begin_layout Subparagraph
@@ -11918,9 +12014,9 @@ Fully Qualified Domain Name
 
 \begin_layout Enumerate
 Puppet utilizará el nodo 
-\emph on
+\family typewriter
 default
-\emph default
+\family default
 .
 \end_layout
 
@@ -11946,7 +12042,7 @@ Creación del sistema de orquestación Puppet.
 \end_layout
 
 \begin_layout Standard
-Puppet usualmente corre bajo la arquitectura cliente-servidor pero además,
+Puppet usualmente corre bajo la arquitectura cliente-servidor, pero además,
  puede correr en una arquitectura auto-contenida.
  La decisión determina qué paquetes serán instalados y qué configuraciones
  extra necesarias se harán.
@@ -11972,8 +12068,9 @@ Requerimientos de sistema y chequeo de versión de sistema operativo
 \series bold
 Hardware:
 \series default
- El agente Puppet no tiene requerimientos particulares de hardware y corre
- prácticamente en cualquier computadora, sin embargo, el 
+ El agente puppet no tiene requerimientos particulares de hardware y corre
+ prácticamente en cualquier computadora.
+ Sin embargo, el 
 \shape italic
 pupper server
 \shape default
@@ -11990,12 +12087,8 @@ pupper server
 \series bold
 Sistemas operativos soportados:
 \series default
- Hay una gran variedad de distribuciones Linux que soportan 
-\emph on
-puppet
-\emph default
-, entre ellas destaca la utilizada para la realización del proyecto, CentOS
- 7.
+ Hay una gran variedad de distribuciones Linux que soportan puppet, entre
+ ellas destaca la utilizada para la realización del proyecto, CentOS 7.
  
 \end_layout
 
@@ -12018,7 +12111,7 @@ Librerías obligatorias:
 \end_layout
 
 \begin_layout Paragraph
-Chequeo de la configuración de red
+Verificación de la configuración de red
 \end_layout
 
 \begin_layout Standard
@@ -12074,8 +12167,8 @@ puppetserver
 /var/lib/dhcpd/dhcpd.leases
 \family default
 .
- Este archivo, es utilizado por el servidor DHCP para saber a que máquina
- corresponde cada dirección IP.
+ De la misma forma, este archivo es utilizado por el servidor DHCP para
+ saber a que máquina corresponde cada dirección IP.
 \end_layout
 
 \begin_layout Paragraph
@@ -12085,7 +12178,7 @@ Instalación de puppetserver
 \begin_layout Standard
 Primero se debe instalar 
 \emph on
-puppetserver
+puppet server
 \emph default
 .
  Para ello, habilitar los paquetes de los repositorios de Puppet Labs:
@@ -12094,7 +12187,11 @@ puppetserver
 \begin_layout Standard
 
 \family typewriter
-# rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+# rpm -ivh https://yum.puppetlabs.com/
+\begin_inset Newline newline
+\end_inset
+
+puppetlabs-release-pc1-el-7.noarch.rpm
 \family default
  
 \end_layout
@@ -12148,7 +12245,9 @@ Si lo que se desea es experimentar con un pequeño servidor Puppet y unos
  memoria.
  Esto se hace editando el archivo 
 \family typewriter
-/etc/sysconfig/puppetserver y modificando la siguiente línea:
+/etc/sysconfig/puppetserver 
+\family default
+y modificando la siguiente línea:
 \end_layout
 
 \begin_layout Standard
@@ -12250,7 +12349,7 @@ Configuraciones de CA:
 \series bold
 ca
 \series default
-: Si actúa como un autoridad de certificación.
+: Si actúa como una autoridad de certificación.
 \end_layout
 
 \begin_layout Itemize
@@ -12344,8 +12443,11 @@ Del mismo modo que para el servidor, es necesario añadir el repositorio
 \begin_layout Standard
 
 \family typewriter
-# rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
- 
+# rpm -Uvh https://yum.puppetlabs.com/
+\begin_inset Newline newline
+\end_inset
+
+puppetlabs-release-pc1-el-7.noarch.rpm 
 \end_layout
 
 \begin_layout Standard
@@ -12397,7 +12499,11 @@ Windows 7:
 \begin_layout Standard
 Descargar el paquete instalador desde
 \family typewriter
- https://downloads.puppetlabs.com/windows/
+ 
+\begin_inset Newline newline
+\end_inset
+
+https://downloads.puppetlabs.com/windows/
 \end_layout
 
 \begin_layout Itemize
@@ -12706,7 +12812,7 @@ En el caso de los clientes, exite una gran variedad de comandos para iniciarlos,
 \end_layout
 
 \begin_layout Standard
-Sobre Centos es similar:
+Sobre CentOS es similar:
 \end_layout
 
 \begin_layout Standard
@@ -12728,15 +12834,15 @@ Sobre Ubuntu se debe ejecutar:
 \begin_layout Standard
 
 \family typewriter
-sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running 
+sudo /opt/puppetlabs/bin/puppet resource service puppet 
 \begin_inset Newline newline
 \end_inset
 
-enable=true
+ensure=running enable=true
 \end_layout
 
 \begin_layout Standard
-Finalmente, en Windows puede hacer por consola o por interfaz gráfica.
+Finalmente, en Windows se puede hacer por consola o por interfaz gráfica.
 \end_layout
 
 \begin_layout Standard
@@ -13053,8 +13159,8 @@ Sysprep
 \end_layout
 
 \begin_layout Standard
-Es la herramienta que prepara una imagen de Windows para las imagenes de
- disco, la comprobación del sistema o la entrega a un cliente.
+Es la herramienta que prepara una imagen de Windows para el disco, la comprobaci
+ón del sistema o la entrega a un cliente.
  
 \family typewriter
 Sysprep
@@ -13069,7 +13175,7 @@ Sysprep
 \family typewriter
 Sysprep
 \family default
- puede configurar la imagen de Windows para que se arranque en el modo auditoría.
+ puede configurar la imagen de Windows para que arranque en el modo auditoría.
  El modo auditoría permite probar la integridad del sistema e instalar aplicacio
 nes y controladores de dispositivos adicionales.
  
@@ -13186,6 +13292,10 @@ script
 \shape default
 que de forma predeterminada inicia 
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 wpeinit.exe
 \family default
 , cuando se carga en memoria el entorno de pre-instalación, que precisamente
@@ -13214,8 +13324,12 @@ Oscdimg
 \end_layout
 
 \begin_layout Standard
-Oscdimg es una herramienta de línea de comandos que sirve para crear un
- archivo de imagen (
+
+\family typewriter
+Oscdimg
+\family default
+ es una herramienta de línea de comandos que sirve para crear un archivo
+ de imagen (
 \family typewriter
 .iso
 \family default
@@ -13279,7 +13393,11 @@ directorio
  Los sistemas que no sean capaces de leer UDF, sólo verán un archivo de
  texto predeterminado donde se alerta al usuario de que esa imagen sólo
  está disponible en equipos compatibles con UDF.
- Esta opción no puede combinarse con la opción -nt.
+ Esta opción no puede combinarse con la opción 
+\family typewriter
+-nt
+\family default
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -13299,9 +13417,9 @@ Message
 \emph on
 Block
 \emph default
-) libre, desarrollado por Andrew Tridgell y que en la actualidad está mantenido
- por personas de todo el mundo, como casi todos los proyectos distribuidos
- bajo la Licencia Pública General de GNU.
+) libre, desarrollado por Andrew Tridgell y que en la actualidad se mantiene
+ con el trabajo de personas de todo el mundo, como casi todos los proyectos
+ distribuidos bajo la Licencia Pública General de GNU.
  SAMBA es capaz de ejecutarse en una gran cantidad de variantes Unix, como
  Linux, Solaris, SunOS, HP-UX, ULTRIX, Unix de Digital, SCO Open Server
  y AIX por nombrar tan sólo algunas.
@@ -13330,12 +13448,8 @@ Compartir impresoras, instaladas tanto en el servidor como en los clientes.
 \end_layout
 
 \begin_layout Itemize
-SAMBA permite compartir entre máquinas Windows y Linux recursos.
+SAMBA permite compartir entre máquinas Windows y Linux.
  
-\end_layout
-
-\begin_layout Itemize
-Siendo un recurso una carpeta o la impresora.
 \end_layout
 
 \begin_layout Paragraph
@@ -13344,7 +13458,7 @@ Arquitectura SAMBA
 
 \begin_layout Standard
 SAMBA está compuesto de un servidor y un cliente, así como de algunas herramient
-as que permiten realizar servicios prácticos o hacer un 
+as que permiten brindar servicios o hacer un 
 \shape italic
 test
 \shape default
@@ -13425,8 +13539,8 @@ Block
  Puesto a punto por Microsoft en 1987, retomando un concepto desarrollado
  por IBM en 1985 (NetBIOS), este protocolo se apoya sobre NetBEUI (así como
  sobre TCP/IP).
- El interés de TCP/IP proviene del hecho que es ampliamente adoptado.
- Por ello TCP/IP ya ha sido implementado en la mayoría de sistemas operativos
+ El interés de TCP/IP proviene del hecho que se usa ampliamente.
+ Por ello TCP/IP se encuentra implementado en la mayoría de sistemas operativos
  (Unix, Linux, MacOS, OS/2, etc) según el esquema siguiente:
 \end_layout
 
@@ -13463,7 +13577,7 @@ Creación de la imagen de instalación Windows 7
 \end_layout
 
 \begin_layout Standard
-La tabla 6 contiene una columna para cada equipo que interviene en el proceso.
+La Tabla 6 contiene una columna para cada equipo que interviene en el proceso.
  Los pasos de la columna en la máquina técnica se realizan en ese equipo.
  Los pasos de la columna del equipo de referencia se realizan en el equipo
  donde se crea la imagen personalizada.
@@ -13840,7 +13954,11 @@ directorio
 \backslash
 winpe
 \backslash
-winpe.wim 1 d:
+winpe.wim 1 
+\begin_inset Newline newline
+\end_inset
+
+d:
 \backslash
 directorio
 \backslash
@@ -14003,7 +14121,11 @@ directorio
 \backslash
 winpe
 \backslash
-winpe.wim d:
+winpe.wim 
+\begin_inset Newline newline
+\end_inset
+
+d:
 \backslash
 directorio
 \backslash
@@ -14029,7 +14151,11 @@ directorio
 \backslash
 winpe
 \backslash
-etfsboot.com d:
+etfsboot.com 
+\begin_inset Newline newline
+\end_inset
+
+d:
 \backslash
 directorio
 \backslash
@@ -14091,6 +14217,10 @@ Para transferir los programas a instalar, alojados en el servidor Cobbler
 \family typewriter
 \shape italic
 \emph on
+
+\begin_inset Newline newline
+\end_inset
+
 /windows/PROGRAMAS/
 \emph default
 ,
@@ -14115,7 +14245,7 @@ Conectar a unidad de red.
 \end_deeper
 \begin_layout Standard
 Ingresar la dirección IP del servidor con el siuiente formato, como se muestra
- en las figuras 32 y 33:
+ en las Figuras 32 y 33:
 \end_layout
 
 \begin_layout Standard
@@ -14211,7 +14341,7 @@ Paso de archivos a Windows
 \end_layout
 
 \begin_layout Standard
-En la figura 34 se muestra la ruta 
+En la Figura 34 se muestra la ruta 
 \family typewriter
 \shape italic
 \emph on
@@ -14282,6 +14412,10 @@ echo IP_del_servidor_Cobbler puppet >> c:
 Windows
 \backslash
 System32
+\begin_inset Newline newline
+\end_inset
+
+
 \backslash
 drivers
 \backslash
@@ -14311,7 +14445,7 @@ De forma gráfica, cuando inicia el sistema operativo en modo auditoría,
 Sysprep
 \family default
  de forma automática.
- La figura 35 muestra el cuadro de diálogo.
+ La Figura 35 muestra el cuadro de diálogo.
 \end_layout
 
 \begin_layout Standard
@@ -14491,7 +14625,7 @@ Se utiliza la herramienta ImageX, incluida en el WinPE creado, para capturar
 
 \begin_layout Standard
 Conectar en la máquina de referencia el WinPE y configurar el orden de arranque
- como muestran las figuras 37 y 38.
+ como muestran las Figuras 37 y 38.
 \end_layout
 
 \begin_layout Standard
@@ -14617,15 +14751,11 @@ dir
 \begin_layout Standard
 Es necesario corroborar la letra asignada al disco WinPE, que usualmente
  es 
-\emph on
+\family typewriter
 e:
-\emph default
+\family default
  y verificar la letra de la partición donde está instalado Windows personalizado
-, la cual es usualmente 
-\emph on
-d:
-\emph default
-.
+, la cual es usualmente d:.
 \end_layout
 
 \begin_layout Standard
@@ -14850,12 +14980,12 @@ Create a new answer file
 \end_deeper
 \end_deeper
 \begin_layout Standard
-A partir de la figura 42 y hasta la 63, se muestra una configuración personaliza
+A partir de la Figura 42 y hasta la 63, se muestra una configuración personaliza
 da completa utilizando Windows AIK.
 \end_layout
 
 \begin_layout Standard
-En las figuras 42 y 43, se ha configurado la entrada de texto, interfaz
+En las Figuras 42 y 43, se ha configurado la entrada de texto, interfaz
  gráfica y ayuda del sistema en idioma español.
 \end_layout
 
@@ -15074,7 +15204,7 @@ Configuración discos.
 \end_layout
 
 \begin_layout Standard
-Partición de 300 MB, donde será instalado el MBR.
+Partición de 300 MB, donde se instala el MBR.
 \end_layout
 
 \begin_layout Standard
@@ -15284,7 +15414,7 @@ En el caso de contar con unapc imagen de instalación con múltiples versiones
 \family typewriter
 amd64
 \family default
-), se debe seleccionar cuál de opción instalar.
+), se debe seleccionar cuál opción instalar.
  La manera más fácil es conocer la posición, en la lista de opciones de
  instalación, de la versión que se quiere instalar.
  Seleccionarla como se muestra en la figura 52, donde se observa que en
@@ -15425,10 +15555,18 @@ Para poder realizar instalaciones desatendidas, la clave de producto debe
  para ésto.
  La clave de producto utilizada en este caso se obtuvo de 
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 https://technet.microsoft.com/en-us/library/jj612867.aspx y es
 \family default
  
 \series bold
+
+\begin_inset Newline newline
+\end_inset
+
 FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4
 \series default
 .
@@ -15582,7 +15720,7 @@ ones hechas al personalizar la imagen.
 \end_layout
 
 \begin_layout Standard
-Lo anterior se muestra en la figura 57.
+Lo anterior se muestra en la Figura 57.
 \end_layout
 
 \begin_layout Standard
@@ -15802,7 +15940,7 @@ Contraseña administrador.
 
 \end_inset
 
-Las figuras 62 y 63 muestran la creación de cuentas de usuario administrador
+Las Figuras 62 y 63 muestran la creación de cuentas de usuario administrador
  e invitado.
 \end_layout
 
@@ -15930,6 +16068,10 @@ install.wim
 \family default
 , por la imagen capturada 
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 imagenPersonalizada.wim
 \family default
 , renombrándola como 
@@ -15967,11 +16109,19 @@ directorio-instalacion
 \backslash
 boot
 \backslash
-etfsboot.com d:
+etfsboot.com 
+\begin_inset Newline newline
+\end_inset
+
+d:
 \backslash
 directorio-instalacion
 \backslash
- d:
+ 
+\begin_inset Newline newline
+\end_inset
+
+d:
 \backslash
 path-directorio-destino
 \backslash
@@ -16001,7 +16151,7 @@ En el servidor crear el directorio
 \family typewriter
 /var/lib/cobbler/isos
 \family default
-, donde se colocarán los archivos 
+, donde se colocarán los siguientes archivos: 
 \begin_inset Newline newline
 \end_inset
 
@@ -16467,7 +16617,7 @@ post
 /virtual_machine
 \family default
 .
- En la figura 64 se ve el decorador 
+ En la Figura 64 se ve el decorador 
 \family typewriter
 get
 \family default
@@ -16515,7 +16665,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Método get
+Método 
+\family typewriter
+\emph on
+get
 \end_layout
 
 \end_inset
@@ -16529,7 +16682,7 @@ Método get
 \end_layout
 
 \begin_layout Standard
-En la figura 65, se tiene el decorador 
+En la Figura 65 se presenta el decorador 
 \family typewriter
 post
 \family default
@@ -16545,7 +16698,7 @@ post
 \family default
 llegue al servidor.
  Este caso se dará, por ejemplo, cuando el usuario complete el formulario
- devuelto en la función de la figura 64.
+ devuelto en la función de la Figura 64.
  Esta función tomará los parámetros presentes en el formulario y realizará
  el proceso para crear las máquinas virtuales deseadas.
  Además, la función devuelve el HTML que indica que se están instalando
@@ -16575,7 +16728,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Método post
+Método 
+\family typewriter
+\emph on
+post
 \end_layout
 
 \end_inset
@@ -16619,7 +16775,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Método run
+Método 
+\emph on
+run
 \end_layout
 
 \end_inset
@@ -16637,7 +16795,7 @@ Si se declara la función
 \family typewriter
 run
 \family default
- como en la figura 66, solo se puede acceder al servidor web Bottle desde
+ como en la Figura 66, solo se puede acceder al servidor web Bottle desde
  la misma máquina que lo ejecuta (
 \shape italic
 localhost
@@ -16653,7 +16811,7 @@ por la IP deseada o por 0.0.0.0 para habilitar toda la red.
 \end_layout
 
 \begin_layout Standard
-Finalmente, se ve que esta activada la opción de 
+Finalmente, se ve que está activada la opción de 
 \shape italic
 debug
 \shape default
@@ -16664,7 +16822,7 @@ debug
 \end_layout
 
 \begin_layout Standard
-Las figuras 67 - 70 ilustran la sencilla interfaz web.
+Las Figuras 67 a 70 ilustran la sencilla interfaz web.
  
 \end_layout
 
@@ -16689,7 +16847,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Crear virtual_machine
+Crear 
+\family typewriter
+\emph on
+virtual_machine
 \end_layout
 
 \end_inset
@@ -16726,7 +16887,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Crear virtual_machine_parametrizada
+Crear 
+\emph on
+virtual_machine_parametrizada
 \end_layout
 
 \end_inset
@@ -16824,7 +16987,7 @@ Se realizó una etapa de pruebas para validar el funcionamiento del sistema
 \end_layout
 
 \begin_layout Standard
-Las tablas 7,8 y 9 muestran los casos de pruebas seleccionados.
+Las Tablas 7, 8 y 9 muestran los casos de pruebas seleccionados.
 \end_layout
 
 \begin_layout Standard
@@ -16994,7 +17157,19 @@ Crear máquina virtual con cada perfil
 \begin_layout Plain Layout
 1- Ingresar a la web 
 \family typewriter
-http://localhost:8080/ virtual_machine
+http://
+\begin_inset Newline newline
+\end_inset
+
+localhost:
+\begin_inset Newline newline
+\end_inset
+
+8080/ virtual_
+\begin_inset Newline newline
+\end_inset
+
+machine
 \family default
  2- Introducir X cantidad de máquinas a crear
 \end_layout
@@ -17005,7 +17180,7 @@ http://localhost:8080/ virtual_machine
 \begin_inset Text
 
 \begin_layout Plain Layout
-Centos = 1 Ubuntu = 1 Windows = 1
+CentOS = 1 Ubuntu = 1 Windows = 1
 \end_layout
 
 \end_inset
@@ -17083,7 +17258,7 @@ RF01 RF02 RF03 RF04 RF05 RF08 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-Crear varias máquina virtual con el mismo perfil 
+Crear varias máquinas virtuales con el mismo perfil 
 \end_layout
 
 \end_inset
@@ -17105,7 +17280,7 @@ http://localhost:8080/ virtual_machine
 \begin_inset Text
 
 \begin_layout Plain Layout
-Centos = 0 Ubuntu = 3 Windows = 0
+CentOS = 0 Ubuntu = 3 Windows = 0
 \end_layout
 
 \end_inset
@@ -17197,7 +17372,7 @@ string
 \begin_inset Text
 
 \begin_layout Plain Layout
-Centos = hola Ubuntu = 1 Windows = 1
+CentOS = hola Ubuntu = 1 Windows = 1
 \end_layout
 
 \end_inset
@@ -17296,7 +17471,7 @@ http://localhost:8080/ virtual_machine
 \begin_inset Text
 
 \begin_layout Plain Layout
-Centos = Ubuntu = 1 Windows = 1
+CentOS = Ubuntu = 1 Windows = 1
 \end_layout
 
 \end_inset
@@ -18176,10 +18351,10 @@ Conclusión
 \end_layout
 
 \begin_layout Standard
-La idea de este proyecto surge luego de finalizar la Práctica Profesional
- Supervisada, donde se tuvo una primera inserción a temas relacionados con
- servidores y recursos de red, implementando un sistema de monitorización
- de estos dispositivos.
+Este proyecto surge luego de finalizar la Práctica Profesional Supervisada,
+ donde se tuvo una primera inserción a temas relacionados con servidores
+ y recursos de red, implementando un sistema de monitorización de estos
+ dispositivos.
  
 \end_layout
 
@@ -18206,8 +18381,8 @@ El análisis formal del problema para la obtención de los requerimientos
  decisión ponderados, es fundamental para el trabajo como ingeniero.
  De aquí también se puede hacer notar que la utilización de soluciones de
  código abierto no siempre permiten estar en la "cresta de la ola" tecnológica
- y muchas veces es necesario contar con software privativo para sacar la
- máxima producción.
+ y muchas veces es necesario contar con software privativo para obtener
+ la máxima producción.
 \end_layout
 
 \begin_layout Standard
