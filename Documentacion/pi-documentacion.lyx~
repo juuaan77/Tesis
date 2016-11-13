@@ -17046,8 +17046,6 @@ begin{turn}{90}
 \begin_layout Plain Layout
 \noindent
 \align center
-
-\size small
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="8">
 <features rotate="0" tabularvalignment="middle">
@@ -17064,8 +17062,6 @@ begin{turn}{90}
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 \begin_inset ERT
 status open
 
@@ -17087,8 +17083,6 @@ ID
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Requerimiento asociado 
 \end_layout
 
@@ -17098,8 +17092,6 @@ Requerimiento asociado
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Casos de prueba 
 \end_layout
 
@@ -17109,8 +17101,6 @@ Casos de prueba
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Pasos de la prueba 
 \end_layout
 
@@ -17120,8 +17110,6 @@ Pasos de la prueba
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Datos de la prueba 
 \end_layout
 
@@ -17131,8 +17119,6 @@ Datos de la prueba
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Resultado esperado 
 \end_layout
 
@@ -17142,8 +17128,6 @@ Resultado esperado
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Prioridad 
 \end_layout
 
@@ -17153,8 +17137,6 @@ Prioridad
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Resultado obtenido 
 \end_layout
 
@@ -17166,8 +17148,6 @@ Resultado obtenido
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 PU_01
 \end_layout
 
@@ -17177,8 +17157,6 @@ PU_01
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF01 RF02 RF03 RF04 RF05 RF09
 \end_layout
 
@@ -17188,8 +17166,6 @@ RF01 RF02 RF03 RF04 RF05 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Crear máquina virtual con cada perfil 
 \end_layout
 
@@ -17199,16 +17175,16 @@ Crear máquina virtual con cada perfil
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ virtual_machine
 \begin_inset Newline newline
 \end_inset
 
 
 \family default
+\size default
  2- Introducir X cantidad de máquinas a crear
 \end_layout
 
@@ -17218,8 +17194,6 @@ http://localhost:8080/ virtual_machine
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 CentOS = 1 Ubuntu = 1 Windows = 1
 \end_layout
 
@@ -17229,8 +17203,6 @@ CentOS = 1 Ubuntu = 1 Windows = 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Correcta Creación de 3 máquinas virtuales, cada una con un diferente sistema
  operativo 
 \end_layout
@@ -17241,8 +17213,6 @@ Correcta Creación de 3 máquinas virtuales, cada una con un diferente sistema
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Alta 
 \end_layout
 
@@ -17252,8 +17222,6 @@ Alta
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -17265,8 +17233,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 \begin_inset ERT
 status open
 
@@ -17288,8 +17254,6 @@ PU_02
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF01 RF02 RF03 RF04 RF05 RF08 RF09
 \end_layout
 
@@ -17299,8 +17263,6 @@ RF01 RF02 RF03 RF04 RF05 RF08 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Crear varias máquinas virtuales con el mismo perfil 
 \end_layout
 
@@ -17310,13 +17272,14 @@ Crear varias máquinas virtuales con el mismo perfil
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ virtual_machine
 \family default
  
+\size default
+
 \begin_inset Newline newline
 \end_inset
 
@@ -17329,8 +17292,6 @@ http://localhost:8080/ virtual_machine
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 CentOS = 0 Ubuntu = 3 Windows = 0
 \end_layout
 
@@ -17340,8 +17301,6 @@ CentOS = 0 Ubuntu = 3 Windows = 0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Correcta Creación de 3 máquinas virtuales, cada una con el sistema operativo
  Ubuntu14 
 \end_layout
@@ -17352,8 +17311,6 @@ Correcta Creación de 3 máquinas virtuales, cada una con el sistema operativo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Alta 
 \end_layout
 
@@ -17363,8 +17320,6 @@ Alta
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -17376,8 +17331,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 PU_03
 \end_layout
 
@@ -17387,8 +17340,6 @@ PU_03
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF09 
 \end_layout
 
@@ -17398,8 +17349,6 @@ RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Tipo de dato incorrecto en la creación de VM 
 \end_layout
 
@@ -17409,17 +17358,18 @@ Tipo de dato incorrecto en la creación de VM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ virtual_machine
 \begin_inset Newline newline
 \end_inset
 
 
 \family default
- 2- Introducir un 
+ 
+\size default
+2- Introducir un 
 \emph on
 string
 \emph default
@@ -17432,8 +17382,6 @@ string
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 CentOS = hola Ubuntu = 1 Windows = 1
 \end_layout
 
@@ -17443,8 +17391,6 @@ CentOS = hola Ubuntu = 1 Windows = 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Mensaje indicando que se deben utilizar números 
 \end_layout
 
@@ -17454,8 +17400,6 @@ Mensaje indicando que se deben utilizar números
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Baja 
 \end_layout
 
@@ -17465,8 +17409,6 @@ Baja
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -17478,8 +17420,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 \begin_inset ERT
 status open
 
@@ -17501,8 +17441,6 @@ PU_04
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF09 
 \end_layout
 
@@ -17512,8 +17450,6 @@ RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Ausencia de dato
 \end_layout
 
@@ -17523,16 +17459,17 @@ Ausencia de dato
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ virtual_machine
 \family default
  
 \begin_inset Newline newline
 \end_inset
 
+
+\size default
 2- No introducir datos y poner a crear
 \end_layout
 
@@ -17542,8 +17479,6 @@ http://localhost:8080/ virtual_machine
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 CentOS = Ubuntu = 1 Windows = 1
 \end_layout
 
@@ -17553,8 +17488,6 @@ CentOS = Ubuntu = 1 Windows = 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Mensaje indicando que se deben utilizar números como datos 
 \end_layout
 
@@ -17564,8 +17497,6 @@ Mensaje indicando que se deben utilizar números como datos
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Baja 
 \end_layout
 
@@ -17575,8 +17506,6 @@ Baja
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -17649,8 +17578,6 @@ begin{turn}{90}
 \begin_layout Plain Layout
 \noindent
 \align center
-
-\size small
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="8">
 <features rotate="0" tabularvalignment="middle">
@@ -17667,8 +17594,6 @@ begin{turn}{90}
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 PU_05
 \end_layout
 
@@ -17678,8 +17603,6 @@ PU_05
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF09 
 \end_layout
 
@@ -17689,8 +17612,6 @@ RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Navegar entre pestañas 
 \end_layout
 
@@ -17700,17 +17621,18 @@ Navegar entre pestañas
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ virtual_machin
 \family default
 e
 \begin_inset Newline newline
 \end_inset
 
- 2- Ingresar a cada pestaña
+ 
+\size default
+2- Ingresar a cada pestaña
 \end_layout
 
 \end_inset
@@ -17719,8 +17641,6 @@ e
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 -
 \end_layout
 
@@ -17730,8 +17650,6 @@ e
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Navegación correcta entre pestañas 
 \end_layout
 
@@ -17741,8 +17659,6 @@ Navegación correcta entre pestañas
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Media 
 \end_layout
 
@@ -17752,8 +17668,6 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -17765,8 +17679,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 \begin_inset ERT
 status open
 
@@ -17788,8 +17700,6 @@ PU_06
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF01 RF02 RF03 RF04 RF05 RF09
 \end_layout
 
@@ -17799,8 +17709,6 @@ RF01 RF02 RF03 RF04 RF05 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Crear máquinas virtuales parametrizadas 
 \end_layout
 
@@ -17810,10 +17718,9 @@ Crear máquinas virtuales parametrizadas
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ virtual_machine_
 \begin_inset Newline newline
 \end_inset
@@ -17824,6 +17731,8 @@ parametrizada
 \begin_inset Newline newline
 \end_inset
 
+
+\size default
 2- Introducir los datos necesarios
 \end_layout
 
@@ -17833,8 +17742,6 @@ parametrizada
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 sistema operativo = Ubuntu RAM=2048 Disco = 25
 \end_layout
 
@@ -17844,8 +17751,6 @@ sistema operativo = Ubuntu RAM=2048 Disco = 25
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Correcta creación de la VM con Ubuntu y las características pedidas 
 \end_layout
 
@@ -17855,8 +17760,6 @@ Correcta creación de la VM con Ubuntu y las características pedidas
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Media 
 \end_layout
 
@@ -17866,8 +17769,6 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -17879,8 +17780,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 PU_07
 \end_layout
 
@@ -17890,8 +17789,6 @@ PU_07
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF09 
 \end_layout
 
@@ -17901,8 +17798,6 @@ RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Características insuficientes 
 \end_layout
 
@@ -17912,16 +17807,17 @@ Características insuficientes
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ virtual_machine_ parametrizada 
 \family default
 
 \begin_inset Newline newline
 \end_inset
 
+
+\size default
 2- Introducir los datos necesarios
 \end_layout
 
@@ -17931,8 +17827,6 @@ http://localhost:8080/ virtual_machine_ parametrizada
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 sistema operativo = Ubuntu RAM =512 Disco = 5
 \end_layout
 
@@ -17942,8 +17836,6 @@ sistema operativo = Ubuntu RAM =512 Disco = 5
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Correcta creación de la VM con Ubuntu y las características mínimas (1024MB
  RAM y 15GB de disco para los GNU/Linux y 25GB de disco en windows) 
 \end_layout
@@ -17954,8 +17846,6 @@ Correcta creación de la VM con Ubuntu y las características mínimas (1024MB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 baja 
 \end_layout
 
@@ -17965,8 +17855,6 @@ baja
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -17978,8 +17866,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 \begin_inset ERT
 status open
 
@@ -18001,8 +17887,6 @@ PU_08
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF09 RF10
 \end_layout
 
@@ -18012,8 +17896,6 @@ RF09 RF10
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Consultar estado de las VMs 
 \end_layout
 
@@ -18023,10 +17905,9 @@ Consultar estado de las VMs
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ estados 
 \end_layout
 
@@ -18036,8 +17917,6 @@ http://localhost:8080/ estados
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 - 
 \end_layout
 
@@ -18047,8 +17926,6 @@ http://localhost:8080/ estados
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Correcta visualización del estado de las VM 
 \end_layout
 
@@ -18058,8 +17935,6 @@ Correcta visualización del estado de las VM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Media 
 \end_layout
 
@@ -18069,8 +17944,6 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -18155,8 +18028,6 @@ begin{turn}{90}
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 PU_09
 \end_layout
 
@@ -18166,8 +18037,6 @@ PU_09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF09 RF10
 \end_layout
 
@@ -18177,8 +18046,6 @@ RF09 RF10
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Modificar estado de una VM 
 \end_layout
 
@@ -18188,10 +18055,9 @@ Modificar estado de una VM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 \color black
 http://localhost:8080/ estados 
 \family default
@@ -18199,6 +18065,8 @@ http://localhost:8080/ estados
 \begin_inset Newline newline
 \end_inset
 
+
+\size default
 2-
 \color inherit
  Introducir los datos necesarios
@@ -18210,8 +18078,6 @@ http://localhost:8080/ estados
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Encender / Apagar 
 \end_layout
 
@@ -18221,8 +18087,6 @@ Encender / Apagar
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Correcto encendido y apagado de la VM 
 \end_layout
 
@@ -18232,8 +18096,6 @@ Correcto encendido y apagado de la VM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Media 
 \end_layout
 
@@ -18243,8 +18105,6 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -18256,8 +18116,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 \begin_inset ERT
 status open
 
@@ -18279,8 +18137,6 @@ PU_10
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF06 RF07 RF09
 \end_layout
 
@@ -18290,8 +18146,6 @@ RF06 RF07 RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Añadir políticas de las VM 
 \end_layout
 
@@ -18301,16 +18155,17 @@ Añadir políticas de las VM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
+\size small
 http://localhost:8080/ servicios 
 \family default
 
 \begin_inset Newline newline
 \end_inset
 
+
+\size default
 2- Introducir los datos necesarios
 \end_layout
 
@@ -18320,8 +18175,6 @@ http://localhost:8080/ servicios
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Marcar las siguientes opciones en la sección Centos: Eclipse idle repositorio
  update usuarios
 \end_layout
@@ -18332,8 +18185,6 @@ Marcar las siguientes opciones en la sección Centos: Eclipse idle repositorio
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Adecuación correcta del estado de la máquina virtual Centos de acuerdo a
  lo pedido 
 \end_layout
@@ -18344,8 +18195,6 @@ Adecuación correcta del estado de la máquina virtual Centos de acuerdo a
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Alta 
 \end_layout
 
@@ -18355,8 +18204,6 @@ Alta
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -18368,8 +18215,6 @@ OK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 PU_11
 \end_layout
 
@@ -18379,8 +18224,6 @@ PU_11
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 RF09 
 \end_layout
 
@@ -18390,8 +18233,6 @@ RF09
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Ingreso Interfaz web desde máquinas en red 
 \end_layout
 
@@ -18401,11 +18242,12 @@ Ingreso Interfaz web desde máquinas en red
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1- Ingresar a la web 
 \family typewriter
-http://192.168.1.137: 8080/servicios 
+\size small
+http://192.168.1.137: 8080/servicios
+\size default
+ 
 \end_layout
 
 \end_inset
@@ -18414,8 +18256,6 @@ http://192.168.1.137: 8080/servicios
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 - 
 \end_layout
 
@@ -18425,8 +18265,6 @@ http://192.168.1.137: 8080/servicios
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Correcto ingreso a la interfaz web desde una pc en la red 
 \end_layout
 
@@ -18436,8 +18274,6 @@ Correcto ingreso a la interfaz web desde una pc en la red
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 baja 
 \end_layout
 
@@ -18447,8 +18283,6 @@ baja
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 OK
 \end_layout
 
@@ -18537,19 +18371,6 @@ Este Proyecto Integrador ha consolidado buena parte de los conocimientos
  La posibilidad de poner en práctica e integrar material de diversas materias
  ha sido beneficioso para el ejercicio de nuestra profesión en el ámbito
  académico y laboral.
-\end_layout
-
-\begin_layout Standard
-El resultado final es positivo.
- El sistema final cumple con los requerimientos, es capaz de generar una
- gran cantidad de máquinas virtuales completamente equipadas y preparadas
- para desempeñar diferentes funciones, ya sean académicas o en entornos
- laborales, formando parte de una red 
-\family typewriter
-nat
-\family default
- con la cual cada maquina puede comunicarse con las demás maquinas de la
- red y tener acceso a internet.
 \end_layout
 
 \begin_layout Section
