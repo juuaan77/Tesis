@@ -1,0 +1,103 @@
+Copiar direccion IP del server
+	 192.168.122.1:8888/estados
+Abrir pestaña Chrome about:blank
+Preparar virt-manager vacio
+Borrar los certificados firmados de pupeptserver
+	puppet cert list --all
+	puppet cert clean nombre
+Colocar una terminal en VMs para ejecutar ./creo_web.py
+Preparar otra terminal para mostrar puppet y cobbler corriendo
+
+******************************************************************************************
+PARTE 1 DEPLOY
+******************************************************************************************
+GRABAR PANTALLA
+
+Mostrar que puppetserver está corriendo
+Mostrar que cobbler está corriendo
+Ejecutar creo_web.py
+Ingresar a la ip
+Mostrar las diferentes pestañas de la pagina
+Mostrar verificacion de errores en crear multiples vms optimizadas
+Poner a crear ubuntu y centos
+	Abrir las terminales de las vms
+	Colocar de fondo a ubuntu y en frente a centos
+	Centos demora banda, acomodar la pantalla para que se muestre abajo el progreso.
+	Cuando se ponga negra la pantalla de centos apretar una tecla para que despierte
+Hacer pruebas de apagado
+	No apagar ambas a la vez (se rompe)
+	Dejar que la pantalla de estados refresque sola
+Hacer prueba de encendido-apagado cruzado
+	Dejar que la pantalla de estados refresque sola
+Apagar todas las vms una por vez
+Crear un windows personalizado con parametros
+	ram 2560
+	disco 35
+	Demora muchisimo
+Ingresar con usuario admin password qwerty
+
+CORTAR VIDEO.
+
+
+******************************************************************************************
+PARTE 2 ORQUESTACION
+******************************************************************************************
+NO GRABAR TODAVIA
+
+Asegurar que puppet agent corre en las vms
+	service puppet status
+	service puppet start
+Limpiar pantalla
+
+GRABAR PANTALLA
+
+En la vm windows mostrar los usuarios existentes
+De la web enviar tarea usuarios
+	Esperar 2 minutos
+Volver a mostrar los usuarios
+	alumno deberia estar creado
+Ingreasar con usuario alumno.
+Apagar vm
+
+CORTAR VIDEO
+
+
+con las vms linux encendidas y habiendo corroborado puppet agent.
+
+GRABAR PANTALLA
+
+Mostrar usuarios creados en ubuntu y centos
+Mostrar que centos no tiene eclipse, idle
+
+Enviar todas las tareas
+
+Mostrar que ubuntu tiene GUI
+Mostrar que todos tienen usuario alumno, idle y eclipse
+Mostrar que sudo apt-get update/upgrade esta hecho
+Mostrar que sudo yum update/upgrade esta hecho
+
+CORTAR VIDEO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

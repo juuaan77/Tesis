@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 __author__ = 'juan'
 
 import os, time, commands,re,threading
@@ -40,7 +42,7 @@ def do_creaVM():
         nubuntu = int(request.forms.get('nubuntu'))
         nwindows = int(request.forms.get('nwindows'))
     except ValueError:
-        frace = '''Por favor, ingrese solo el NUMERO de la cantidad de maquinas que desea crear \n'''
+        frace = '''Sólo se admiten valores numéricos. \n'''
         peticionhtml = commands.getoutput("cat /root/tesis/Tesis/Python/HTMLs/virtual_machine.html")
         return frace + peticionhtml
 
@@ -76,9 +78,9 @@ def do_creaVM_parametrizado():
     disco = request.forms.get('disco')
     #reviso que los parametros sean adecuados
     if str(perfil)=="None":
-        return '''Por favor, seleccione un perfil\n'''
+        return '''Seleccione un perfil\n'''
     if CreaVm_parametrizada(perfil,ram,disco)=="error":
-        return'''Por favor, ingrese solo el NUMERO en la cantidad de ram y disco\n'''
+        return'''Sólo se admiten valores numéricos en los parámetros RAM y disco\n'''
     return estadosVM()
 
 #Pagina que permite seleccionar los servicios deseados.
@@ -223,7 +225,7 @@ def genera_html_politicas(maquinas):
 
     html = html + '''</SELECT>
 
-        <H3>Marque los servicios que desea que tenga la maquina virtual.</H3>
+        <H3>Marque los servicios deseados para la máquina virtual.</H3>
         <br/>
             <INPUT type="checkbox" name="eclipse">eclipse<BR>
             <INPUT type="checkbox" name="idle">idle<BR>
@@ -235,10 +237,10 @@ def genera_html_politicas(maquinas):
             <hr> <input value="Aceptar" type="submit" /> <br>
 		</form>
 		<ul class="navbar">
-		    <li><a href="virtual_machine">Crear virtual machine sin parametros.</a>
-			<li><a href="virtual_machine_parametrizada">Crear virtual machine con parametros.</a>
-			<li><a href="servicios">Editar configuraciones de las maquinas virtuales.</a>
-			<li><a href="estados">Ver estado actual de las maquinas virtuales.</a>
+		    <li><a href="virtual_machine">Crear máquinas virtuales optimizadas.</a>
+			<li><a href="virtual_machine_parametrizada">Crear máquina virtual con parámetros.</a>
+			<li><a href="servicios">Editar configuraciones de las máquinas virtuales.</a>
+			<li><a href="estados">Ver estado actual de las máquinas virtuales.</a>
 		</ul>
 
 	</body>
@@ -246,4 +248,4 @@ def genera_html_politicas(maquinas):
 
     return html
 
-run(host='0.0.0.0', port=8080, debug=True)
+run(host='0.0.0.0', port=8888, debug=True)

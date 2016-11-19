@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 __author__ = 'juan'
 
 import commands,re,fnmatch
@@ -100,12 +102,12 @@ def genera_estado_html():
             </TR>'''
 
     html = html +'''</TABLE>
-    <TD><input value="Ejecutar accion" type="submit" /></TD>
+    <TD><input value="Ejecutar acción" type="submit" /></TD>
     <ul class="navbar">
-			<li><a href="virtual_machine">Crear virtual machine sin parametros.</a>
-			<li><a href="virtual_machine_parametrizada">Crear virtual machine con parametros.</a>
-			<li><a href="servicios">Editar configuraciones de las maquinas virtuales.</a>
-			<li><a href="politicas_maquinas">Editar politica de una VM.</a>
+			<li><a href="virtual_machine">Crear máquinas virtuales optimizadas.</a>
+			<li><a href="virtual_machine_parametrizada">Crear máquina virtual con parámetros.</a>
+			<li><a href="servicios">Editar configuraciones de las máquinas virtuales.</a>
+			<li><a href="politicas_maquinas">Editar política de una máquina virtual.</a>
 		</ul>
         </body>
     </html>'''
