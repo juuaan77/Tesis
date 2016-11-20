@@ -1,3 +1,11 @@
+Path de puppet
+	/etc/puppetlabs/code/environments/production
+Contraseñas
+	Windows Admin qwerty
+	Linux 	gui alumno
+		alumno alumno
+		root qwerty
+
 Copiar direccion IP del server
 	 192.168.122.1:8888/estados
 Abrir pestaña Chrome about:blank
@@ -39,6 +47,9 @@ Ingresar con usuario admin password qwerty
 CORTAR VIDEO.
 
 
+Crear otra vm ubuntu para mostrar la gui
+
+
 ******************************************************************************************
 PARTE 2 ORQUESTACION
 ******************************************************************************************
@@ -62,16 +73,25 @@ Apagar vm
 CORTAR VIDEO
 
 
+
 con las vms linux encendidas y habiendo corroborado puppet agent.
 
 GRABAR PANTALLA
 
 Mostrar usuarios creados en ubuntu y centos
 Mostrar que centos no tiene eclipse, idle
+Mostrar los logs
+	Centos
+		cd /var/log		
+		tail -n 70 -f messages  | grep puppet-agent
+	Ubuntu
+		cd /var/log
+		tail -n 70 -f syslog  | grep puppet-agent
 
-Enviar todas las tareas
-
-Mostrar que ubuntu tiene GUI
+Enviar tareas usuario y eclipse a centos.
+Enviar primero a UBUTNU la gui, luego las otras.
+Cuando en UBUNTU los logs diga que la gui esta creada, reiniciar la maquina.
+	Mostrar que ubuntu tiene GUI
 Mostrar que todos tienen usuario alumno, idle y eclipse
 Mostrar que sudo apt-get update/upgrade esta hecho
 Mostrar que sudo yum update/upgrade esta hecho
