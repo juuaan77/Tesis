@@ -1550,7 +1550,7 @@ Para la gestión de riesgos de nuestro proyecto, introducimos un pequeño
 Los riesgos se pueden definir como una probabilidad de que una circunstancia
  adversa ocurra.
  La gestión de riesgos permite identificar los riesgos de un proyecto y
- crear planes para minimizar su efecto sobre el proyecto.
+ crear planes para minimizar su efecto sobre el proyecto.[8]
 \end_layout
 
 \begin_layout Standard
@@ -5628,7 +5628,7 @@ hypervisor
  Xen o KVM.
  En conjunto KVM/Qemu, KVM es quien hace las veces de árbitro del acceso
  al CPU y memoria, y Qemu emula los recursos de hardware.
- 
+ [1]
 \end_layout
 
 \begin_layout Paragraph
@@ -5950,7 +5950,7 @@ snippets
 \shape italic
 kickstart
 \shape default
-.
+.[2]
 \end_layout
 
 \begin_layout Paragraph
@@ -6538,7 +6538,7 @@ indica a sus agentes las configuraciones que deben aplicar.
 masters
 \shape default
  pueden aplicar manifiestos a sí mismos.
- Notar que hay dos etapas: 
+ Notar que hay dos etapas: [4]
 \end_layout
 
 \begin_layout Enumerate
@@ -6606,7 +6606,7 @@ Preboot Execution Enviroment
 ) es un estándar que les permite a computadoras, dentro de una red, que
  todavía no tienen instalado un sistema operativo, configurarse e iniciarse
  remotamente por un administrador.
- Utiliza una extensión de opciones del protocolo DHCP.
+ Utiliza una extensión de opciones del protocolo DHCP.[7]
 \end_layout
 
 \begin_layout Standard
@@ -7348,7 +7348,7 @@ vmx
 \family default
  (Intel).
  En caso de no poseer esas banderas, el procesador no soporta virtualización
- y la salida será vacía.
+ y la salida será vacía.[1]
 \end_layout
 
 \begin_layout Standard
@@ -7557,7 +7557,7 @@ Para el
 hypervisor 
 \shape default
 de KVM, las siguientes restricciones deben tenerse en cuenta al momento
- de planificar una solución:
+ de planificar una solución:[1]
 \end_layout
 
 \begin_layout Itemize
@@ -7857,7 +7857,7 @@ Entre la gran cantidad opciones del comando
 \family typewriter
 virt-install
 \family default
- se destacan:
+ se destacan:[1]
 \end_layout
 
 \begin_layout Itemize
@@ -8042,7 +8042,7 @@ Modelado
 \begin_layout Standard
 Cobbler utiliza objetos para definir la configuración de aprovisionamiento.
  A medida que se desciende por el árbol de objetos, las variables se sobre
- escriben y se añaden a la información definida en los objetos superiores.
+ escriben y se añaden a la información definida en los objetos superiores.[2]
 \end_layout
 
 \begin_layout Standard
@@ -8737,7 +8737,7 @@ Algunas palabras clave (
 \shape italic
 keywords
 \shape default
-) son opcionales, mientras que otras son necesarias para la instalación.
+) son opcionales, mientras que otras son necesarias para la instalación.[3]
 \end_layout
 
 \begin_layout Subparagraph
@@ -10572,7 +10572,7 @@ puppet cert
 \family default
  para inspeccionar los pedidos y firmar nuevos certificados; los agentes
  pueden entonces descargar los certificados firmados.
- 
+ [4]
 \end_layout
 
 \begin_layout Subsubsection
@@ -10695,7 +10695,7 @@ puppet resource tool -> puppet resource <type> <name>
 Puppet incluye una variedad de tipos de recursos integrados que permiten
  administrar varios aspectos de un sistema.
  Algunos de los tipos de recursos claves que generalmente se encuentran
- en un sistema son los siguientes:
+ en un sistema son los siguientes:[4]
 \end_layout
 
 \begin_layout Itemize
@@ -11139,7 +11139,7 @@ namevar
 \family typewriter
 namevar
 \family default
-, este valor toma por defecto el título del recurso.
+, este valor toma por defecto el título del recurso.[4]
 \end_layout
 
 \begin_layout Standard
@@ -11341,7 +11341,7 @@ para borrar los archivos de configuración instalados por el paquete.
 
 \begin_layout Standard
 Algunas de las referencias de tipo más importantes están explicadas a continuaci
-ón:
+ón:[4]
 \end_layout
 
 \begin_layout Itemize
@@ -12185,7 +12185,7 @@ puppetserver
 \shape default
 \emph default
 .
- Para ello, habilitar los paquetes de los repositorios de Puppet Labs:
+ Para ello, habilitar los paquetes de los repositorios de Puppet Labs:[4]
 \end_layout
 
 \begin_layout Standard
@@ -12980,7 +12980,7 @@ Es la herramienta que permite crear archivos de respuesta para la instalación
  Se debe usar Windows SIM en el equipo del técnico y, a continuación, transferir
  el archivo de respuesta para la instalación desatendida al equipo maestro
  antes de crear la imagen de instalación de Windows.
- Esta herramienta se instala junto con WAIK.
+ Esta herramienta se instala junto con WAIK.[6]
 \end_layout
 
 \begin_layout Subparagraph
@@ -13014,7 +13014,7 @@ Contenido del archivo de respuesta
 \begin_layout Standard
 La configuración de un archivo de respuesta se organiza en dos secciones:
  componentes y paquetes.
- 
+ [6]
 \end_layout
 
 \begin_layout Itemize
@@ -13101,7 +13101,7 @@ Environment
  en la red.
  WinPE se carga directamente en memoria y permite utilizar herramientas
  como ImageX para capturar, modificar y crear imagenes de instalación basadas
- en archivos.
+ en archivos.[6]
 \end_layout
 
 \begin_layout Subparagraph
@@ -13117,7 +13117,7 @@ Es una herramienta de línea de comandos de Microsoft que permite capturar,
 .wim
 \family default
 ) a una red.
- 
+ [6]
 \end_layout
 
 \begin_layout Standard
@@ -13202,7 +13202,7 @@ Sysprep
 \family default
  también se usa para configurar Windows de forma que arranque con la ”Bienvenida
  de Windows” la próxima vez que se inicie el sistema.
- 
+ [6]
 \end_layout
 
 \begin_layout Standard
@@ -13450,7 +13450,7 @@ Block
  Solaris, SunOS, HP-UX, ULTRIX, Unix de Digital, SCO Open Server y AIX por
  nombrar tan sólo algunas.
  Con SAMBA se puede hacer que el sistema Linux utilizado actúe como servidor
- SMB dentro de la red.
+ SMB dentro de la red.[9]
 \end_layout
 
 \begin_layout Standard
@@ -13488,7 +13488,7 @@ as que permiten brindar servicios o hacer un
 \shape italic
 test
 \shape default
- de la configuración.
+ de la configuración.[9]
 \end_layout
 
 \begin_layout Standard
@@ -16602,7 +16602,7 @@ Se decidió realizar la interfaz web en Python, dado que el paquete Bottle
  provee un servidor web fácil de utilizar y fue recomendado por el director
  del proyecto.
  Instalar Bottle es muy simple, simplemente se realiza a través del siguiente
- comando:
+ comando:[5]
 \end_layout
 
 \begin_layout Standard
@@ -18373,6 +18373,15 @@ Este Proyecto Integrador ha consolidado buena parte de los conocimientos
  académico y laboral.
 \end_layout
 
+\begin_layout Standard
+El resultado final es positivo.
+ El sistema final cumple con los requerimientos, es capaz de generar una
+ gran cantidad de máquinas virtuales completamente equipadas y preparadas
+ para desempeñar diferentes funciones, ya sean académicas o en entornos
+ laborales, formando parte de una red nat con la cual cada maquina puede
+ comunicarse con las demás maquinas de la red y tener acceso a internet.
+\end_layout
+
 \begin_layout Section
 Trabajos Futuros
 \end_layout
@@ -18465,19 +18474,19 @@ Documentación Oficial de KVM de Red Hat Enterprise
 \begin_layout Itemize
 
 \family typewriter
-http://www.linux-kvm.org/page/Documents
+http://www.linux-kvm.org/page/Documents (10/15)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://linux.die.net/man/1/virt-install
+http://linux.die.net/man/1/virt-install (10/15)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://linux.die.net/man/1/virsh
+http://linux.die.net/man/1/virsh (10/15)
 \end_layout
 
 \begin_layout Standard
@@ -18489,13 +18498,13 @@ http://linux.die.net/man/1/virsh
 \begin_layout Itemize
 
 \family typewriter
-http://cobbler.github.io/manuals/2.6.0/
+http://cobbler.github.io/manuals/2.6.0/ (11/15)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-https://fedorahosted.org/cobbler/wiki/UserDocs
+https://fedorahosted.org/cobbler/wiki/UserDocs (11/15)
 \end_layout
 
 \begin_layout Standard
@@ -18515,7 +18524,7 @@ Red_Hat_Enterprise_Linux/6/html/Installation_Guide/
 \begin_inset Newline newline
 \end_inset
 
-ch-kickstart2.html
+ch-kickstart2.html (11/15)
 \end_layout
 
 \begin_layout Standard
@@ -18527,13 +18536,13 @@ ch-kickstart2.html
 \begin_layout Itemize
 
 \family typewriter
-https://docs.puppet.com/puppet/
+https://docs.puppet.com/puppet/ (02/16)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-https://docs.puppet.com/windows/
+https://docs.puppet.com/windows/ (02/16)
 \end_layout
 
 \begin_layout Standard
@@ -18545,13 +18554,13 @@ https://docs.puppet.com/windows/
 \begin_layout Itemize
 
 \family typewriter
-http://bottlepy.org/docs/dev/index.html
+http://bottlepy.org/docs/dev/index.html (03/16)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://docs.python.org/dev/library/
+http://docs.python.org/dev/library/ (03/16)
 \end_layout
 
 \begin_layout Standard
@@ -18567,7 +18576,7 @@ https://technet.microsoft.com/es-es/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744547%28v=ws.10%29.aspx
+library/dd744547%28v=ws.10%29.aspx (03/16)
 \end_layout
 
 \begin_layout Itemize
@@ -18577,7 +18586,7 @@ https://technet.microsoft.com/es-ar/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744263%28v=ws.10%29.aspx
+library/dd744263%28v=ws.10%29.aspx (03/16)
 \end_layout
 
 \begin_layout Itemize
@@ -18587,7 +18596,7 @@ https://technet.microsoft.com/es-ar/
 \begin_inset Newline newline
 \end_inset
 
-library/ee523217%28v=ws.10%29.aspx
+library/ee523217%28v=ws.10%29.aspx (03/16)
 \end_layout
 
 \begin_layout Itemize
@@ -18597,7 +18606,7 @@ https://technet.microsoft.com/es-es/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744393%28v=ws.10%29.aspx 
+library/dd744393%28v=ws.10%29.aspx (03/16)
 \end_layout
 
 \begin_layout Itemize
@@ -18607,7 +18616,7 @@ https://technet.microsoft.com/es-es/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744393%28v=ws.10%29.aspx
+library/dd744393%28v=ws.10%29.aspx (03/16)
 \end_layout
 
 \begin_layout Itemize
@@ -18617,7 +18626,7 @@ https://technet.microsoft.com/es-ar/
 \begin_inset Newline newline
 \end_inset
 
-library/gg241188%28v=ws.10%29.aspx 
+library/gg241188%28v=ws.10%29.aspx (03/16)
 \end_layout
 
 \begin_layout Itemize
@@ -18627,19 +18636,19 @@ https://technet.microsoft.com/es-es/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744317%28v=ws.10%29.aspx
+library/dd744317%28v=ws.10%29.aspx (03/16)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-https://support.microsoft.com/es-ar/kb/973289
+https://support.microsoft.com/es-ar/kb/973289 (03/16)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://www.letifer.org/2014/03/26/cobbler-and-windows/
+http://www.letifer.org/2014/03/26/cobbler-and-windows/ (03/16)
 \end_layout
 
 \begin_layout Standard
@@ -18655,7 +18664,7 @@ ftp://download.intel.com/design/archives/wfm/downloads/
 \begin_inset Newline newline
 \end_inset
 
-pxespec.pdf
+pxespec.pdf (11/15)
 \end_layout
 
 \begin_layout Standard
@@ -18671,19 +18680,19 @@ http://www.slideshare.net/noriver/
 \begin_inset Newline newline
 \end_inset
 
-desarrollo-iterativo-e-incremental
+desarrollo-iterativo-e-incremental (10/15)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://www.javiergarzas.com/metodologias-agiles
+http://www.javiergarzas.com/metodologias-agiles (10/15)
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://es.wikipedia.org/wiki/Desarrollo_%C3%A1gil_de_software
+http://es.wikipedia.org/wiki/Desarrollo_%C3%A1gil_de_software (10/15)
 \end_layout
 
 \begin_layout Itemize
@@ -18693,55 +18702,13 @@ http://ocw.unican.es/ensenanzas-tecnicas/
 \begin_inset Newline newline
 \end_inset
 
-ingenieria-del-software-ii/materiales/tema7-gestionRiesgos.pdf 
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-http://www.dlsiis.fi.upm.es/docto_lsiis/Trabajos20052006/
-\begin_inset Newline newline
-\end_inset
-
-Gasca.pdf
+ingenieria-del-software-ii/materiales/tema7-gestionRiesgos.pdf (10/15)
 \end_layout
 
 \begin_layout Standard
 
 \series bold
-[9] Python
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-http://campuscurico.utalca.cl/~rgarrido/recursos/python2.pdf
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-http://www.cyberciti.biz/faq/python-execute-
-\begin_inset Newline newline
-\end_inset
-
-unix-linux-command-examples/
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-http://docs.python.org/dev/library/
-\begin_inset Newline newline
-\end_inset
-
-subprocess.html#module-subprocess
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-[10] SAMBA
+[9] SAMBA
 \end_layout
 
 \begin_layout Itemize
@@ -18774,44 +18741,6 @@ http://www.techbrown.com/
 \end_inset
 
 samba-server-configuration-centos-7-rhel-7.shtml 
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-[11] Ubuntu
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-https://wiki.debian.org/AutomatedInstallation
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-https://help.ubuntu.com/14.04/installation-guide/
-\begin_inset Newline newline
-\end_inset
-
-amd64/index.html
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-http://www.sanitarium.net/golug/netboot.html
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-https://help.ubuntu.com/12.04/
-\begin_inset Newline newline
-\end_inset
-
-installation-guide/example-preseed.txt
 \end_layout
 
 \end_body
