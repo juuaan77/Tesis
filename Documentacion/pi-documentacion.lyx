@@ -227,6 +227,22 @@ status open
 
 
 \backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 pagebreak
 \end_layout
 
@@ -662,6 +678,11 @@ Los requerimientos del sistema se obtuvieron directamente desde el Director
 De este modo, se han definido cinco niveles de importancia, siendo el número
  5 el que representa la mayor importancia, disminuyendo sucesivamente hasta
  el nivel 1, el menor nivel de importancia.
+\end_layout
+
+\begin_layout Standard
+La Tabla 1 muestra los requerimientos funcionales y no funcionales junto
+ a su valor de importancia.
 \end_layout
 
 \begin_layout Standard
@@ -2208,6 +2229,7 @@ En nuestro caso, definimos tres niveles de probabilidad (alta, moderada,
  que producen los riesgos.
  Cada combinación de probabilidad y efecto se traduce en un nivel de importancia
  del requerimiento.
+ Esto se ve de forma mas gráfica en la Tabla 3.
 \end_layout
 
 \begin_layout Standard
@@ -2741,6 +2763,11 @@ Matriz de importancia de los riesgos
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+En la Tabla 4 podemos observar la relación obtenida entre los riegos, su
+ probabilidad, impacto e importancia.
 \end_layout
 
 \begin_layout Standard
@@ -3693,7 +3720,7 @@ Una vez que analizamos los riesgos, podemos interpretar cuáles son los más
 \end_layout
 
 \begin_layout Standard
-A continuación describiremos estrategias para cada uno de los riesgos.
+En la Tabla 5 describimos estrategias para cada uno de los riesgos.
 \end_layout
 
 \begin_layout Standard
@@ -15439,7 +15466,7 @@ Instalación del sistema operativo.
 
 \end_inset
 
-En el caso de contar con unapc imagen de instalación con múltiples versiones
+En el caso de contar con una pc imagen de instalación con múltiples versiones
  como Windows Home, Basic, Professional y Ultimate y/o con ambas arquitecturas
 \family typewriter
  (i386
@@ -15481,10 +15508,6 @@ Instalación del sistema operativo.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -16789,6 +16812,27 @@ run
 \end_layout
 
 \begin_layout Standard
+Si se declara la función 
+\family typewriter
+run
+\family default
+ (es la función encargada de levantar el entorno web) como en la Figura
+ 66, solo se puede acceder al servidor web Bottle desde la misma máquina
+ que lo ejecuta (
+\shape italic
+localhost
+\shape default
+) y utilizando el puerto 8080.
+ Para permitir el acceso al servidor desde otra máquina, se debe reemplazar
+ 
+\shape italic
+localhost 
+\shape default
+por la IP deseada o por 0.0.0.0 para habilitar toda la red.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -16821,26 +16865,6 @@ run
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Si se declara la función 
-\family typewriter
-run
-\family default
- como en la Figura 66, solo se puede acceder al servidor web Bottle desde
- la misma máquina que lo ejecuta (
-\shape italic
-localhost
-\shape default
-) y utilizando el puerto 8080.
- Para permitir el acceso al servidor desde otra máquina, se debe reemplazar
- 
-\shape italic
-localhost 
-\shape default
-por la IP deseada o por 0.0.0.0 para habilitar toda la red.
- 
 \end_layout
 
 \begin_layout Standard
@@ -17017,7 +17041,9 @@ Se realizó una etapa de pruebas para validar el funcionamiento del sistema
 \end_layout
 
 \begin_layout Standard
-Las Tablas 7, 8 y 9 muestran los casos de pruebas seleccionados.
+Las Tablas 7, 8 y 9 muestran los casos de pruebas seleccionados, inficando
+ los pasos a seguir para realizar el test en particular, su prioridad y
+ el resultado obtenido.
 \end_layout
 
 \begin_layout Standard
@@ -18474,19 +18500,37 @@ Documentación Oficial de KVM de Red Hat Enterprise
 \begin_layout Itemize
 
 \family typewriter
-http://www.linux-kvm.org/page/Documents (10/15)
+Linux-KVM.
+ Documentacion Oficial.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<http://www.linux-kvm.org/page/Documents> Consultada 10/15
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://linux.die.net/man/1/virt-install (10/15)
+Virsh-intall.
+ Documentacion Manual Oficial.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<http://linux.die.net/man/1/virt-install> Consultada 10/15
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://linux.die.net/man/1/virsh (10/15)
+Virsh.
+ Documentacion Manual Oficial.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<http://linux.die.net/man/1/virsh> Consultada 11/15
 \end_layout
 
 \begin_layout Standard
@@ -18498,13 +18542,27 @@ http://linux.die.net/man/1/virsh (10/15)
 \begin_layout Itemize
 
 \family typewriter
-http://cobbler.github.io/manuals/2.6.0/ (11/15)
+Documentacion oficial Cobbler.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<http://cobbler.github.io/manuals/2.6.0/> Consultada 11/15
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-https://fedorahosted.org/cobbler/wiki/UserDocs (11/15)
+Documentacion de usuario de Fedora sobre Cobbler.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<https://fedorahosted.org/cobbler/wiki/UserDocs> 
+\begin_inset Newline newline
+\end_inset
+
+Consultada 11/15
 \end_layout
 
 \begin_layout Standard
@@ -18516,7 +18574,13 @@ https://fedorahosted.org/cobbler/wiki/UserDocs (11/15)
 \begin_layout Itemize
 
 \family typewriter
-https://access.redhat.com/documentation/en-US/
+Red-Hat.
+ Documentacion Oficial Kickstart.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<https://access.redhat.com/documentation/en-US/
 \begin_inset Newline newline
 \end_inset
 
@@ -18524,7 +18588,7 @@ Red_Hat_Enterprise_Linux/6/html/Installation_Guide/
 \begin_inset Newline newline
 \end_inset
 
-ch-kickstart2.html (11/15)
+ch-kickstart2.html> Consultada 11/15
 \end_layout
 
 \begin_layout Standard
@@ -18536,13 +18600,23 @@ ch-kickstart2.html (11/15)
 \begin_layout Itemize
 
 \family typewriter
-https://docs.puppet.com/puppet/ (02/16)
+Documentacion Oficial Puppet.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<https://docs.puppet.com/puppet/> Consultada 02/16
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-https://docs.puppet.com/windows/ (02/16)
+Documentacion Oficial Puppet para Windows.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<https://docs.puppet.com/windows/> Consultada 02/16
 \end_layout
 
 \begin_layout Standard
@@ -18554,13 +18628,23 @@ https://docs.puppet.com/windows/ (02/16)
 \begin_layout Itemize
 
 \family typewriter
-http://bottlepy.org/docs/dev/index.html (03/16)
+Documentacion Oficial Python-Bottle.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<http://bottlepy.org/docs/dev/index.html> Consultada 03/16
 \end_layout
 
 \begin_layout Itemize
 
 \family typewriter
-http://docs.python.org/dev/library/ (03/16)
+Documentacion Librerias Python.
+ 
+\begin_inset Newline newline
+\end_inset
+
+<http://docs.python.org/dev/library/> Consultada 03/16
 \end_layout
 
 \begin_layout Standard
