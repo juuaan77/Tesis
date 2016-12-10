@@ -1,3 +1,7 @@
+ubuntu 1510
+
+
+
 Path de puppet
 	/etc/puppetlabs/code/environments/production
 Contraseñas
@@ -65,7 +69,7 @@ GRABAR PANTALLA
 En la vm windows mostrar los usuarios existentes
 De la web enviar tarea usuarios
 	Esperar 2 minutos
-Volver a mostrar los usuarios
+ACTUALIZAR LA LISTA --> Volver a mostrar los usuarios
 	alumno deberia estar creado
 Ingreasar con usuario alumno.
 Apagar vm

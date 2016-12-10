@@ -5472,6 +5472,10 @@ OpenVZ
 \end_layout
 
 \begin_layout Itemize
+Openstack
+\end_layout
+
+\begin_layout Itemize
 VirtualBox 
 \end_layout
 
@@ -5743,6 +5747,125 @@ script
 \end_layout
 
 \begin_layout Paragraph
+Openstack 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/virtualizacion/virtualizacion_herramientas_openstack.png
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Openstack logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Openstack es un conjunto de proyectos de código abierto.
+ En sus inicios quienes contribuyeron con mas código fué RackSpace y la
+ NASA.
+ Actualmente, muchas empresas se han unido al proyecto, entre las que se
+ encuentran empresas tan importantes como AMD, Intel, Canonical, SUSE Linux,
+ Red Hat, IBM, Dell, HP, Cisco, etc.
+ OpenStack es software libre bajo los términos de la licencia Apache.
+ Este conjunto de proyectos y grupo de empresas tienen como objetivo construir
+ una plataforma de nube.
+ Como tal, Openstack podría considerarse como un 
+\shape italic
+Cloud Management Platform
+\shape default
+ o Plataforma de Gestión en la Nube, que permite orquestar y gestionar distintos
+ componentes de una infraestructura para dar servicios de nube.
+ En resumen, Openstack es una solución de 
+\shape italic
+cloud computing
+\shape default
+ del tipo IaaS (
+\shape italic
+Infrastructure as a Service
+\shape default
+) de código abierto.
+\end_layout
+
+\begin_layout Standard
+Dependiendo del número de equipos en la nube y la configuración de red,
+ se instalarán en cada nodo diferentes componentes.
+ Cada componente de Openstack ofrecen una API que se pueden utilizar con
+ XML o JSON.
+ Esto hace a Openstack extensible y adaptable a cada entorno.
+\end_layout
+
+\begin_layout Standard
+Uno de sus componentes, el encargado de la virtualización, es Nova Compute.
+ Este es el componente principal de OpenStack.
+ Gestiona las instancias de imágenes, dónde deben ejecutarse y el acceso
+ mediante consola.
+ Soporta diferentes 
+\shape italic
+hypervisors
+\shape default
+: KVM/QEMU, Xen, Hyper-V, VMware ESXi, LXC, Docker.
+ Cabe aclarar que Nova se comunica con 
+\shape italic
+hypervisors
+\shape default
+ para poder crear instancias de los sistema operativos, es decir, Nova no
+ realiza la virtualización sino que quien virtualiza es el 
+\shape italic
+hypervisor
+\shape default
+ en cuestión, esto es, KVM, Docker, VMware ESXi, etc.
+ Cuando se crea un ambiente de nube OpenStack permite al usuario abstraerse
+ del 
+\shape italic
+hypervisor 
+\shape default
+ya que está una capa arriba.
+\end_layout
+
+\begin_layout Standard
+Otro componente de Openstack es Heat.
+ Éste es un servicio de orquestación basado en plantillas para describir
+ una aplicación en la nube mediante las APIs de Openstack, para ejecutar
+ esas aplicaciones.
+ Las plantillas permiten crear la mayoría de los recursos de Openstack,
+ como instancias, IPs flotantes, volúmenes, grupos de seguridad, usuarios,
+ etc.
+ 
+\end_layout
+
+\begin_layout Paragraph
 VirtualBox
 \end_layout
 
@@ -5788,9 +5911,9 @@ VirtualBox, desarrollado por Oracle, es un virtualizador completo de propósito
  embebido.
  Como software de código abierto, se puede utilizar bajo la licencia GNU
  
-\emph on
+\shape italic
 General Public License
-\emph default
+\shape default
  2 (GPL2).
  
 \end_layout
@@ -14589,7 +14712,7 @@ Sysprep
 
 \begin_layout Standard
 Particularmente, se decidió realizar la generalización del sistema por consola.
- Entonces, ejecutar por línea de comando:
+ Entonces, como se muestra en la Figura 36, ejecutar por línea de comando:
 \end_layout
 
 \begin_layout Standard
@@ -14820,6 +14943,10 @@ d:
 \end_layout
 
 \begin_layout Standard
+Lo anterior se muestra en la Figura 39.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -14880,6 +15007,7 @@ imagenPersonalizada.wim "Win7" /verify
 \begin_layout Standard
 Una vez finalizado el proceso de copiado se muestra el porcentaje de finalizació
 n y el tiempo requerido para completar el proceso.
+ Como se muestra en la Figura 40.
 \end_layout
 
 \begin_layout Standard
@@ -14939,6 +15067,7 @@ Windows
 System Image Manager
 \emph default
  desde el menú Inicio.
+ La Figura 41 muestra la pantalla de inicio de esta herramienta.
 \end_layout
 
 \begin_layout Standard
@@ -15136,6 +15265,7 @@ Se ha configurado el
 firewall
 \shape default
  para que esté habilitado, valor por defecto.
+ Se muestra en la Figura 44.
 \end_layout
 
 \begin_layout Standard
@@ -15184,6 +15314,7 @@ En las Figuras 45 a 51, se han configurado los discos para que existan dos
 Master Boot Record
 \shape default
 ) y otra donde se copiarán los archivos del sistema operativo.
+ Se muestra en las Figuras 45 y 46.
 \end_layout
 
 \begin_layout Standard
@@ -15266,6 +15397,7 @@ Configuración discos.
 
 \begin_layout Standard
 Partición de 300 MB, donde se instala el MBR.
+ Se muestra en la Figura 47.
 \end_layout
 
 \begin_layout Standard
@@ -15310,6 +15442,7 @@ Discos.
 
 Partición que utilizará el espacio restante del disco, donde se copiarán
  los archivos de Windows.
+ Se muestra en la Figura 48.
 \end_layout
 
 \begin_layout Standard
@@ -15353,6 +15486,7 @@ Discos.
 \end_inset
 
 Formato de la partición.
+ Ver Figuras 49 y 50.
 \end_layout
 
 \begin_layout Standard
@@ -15466,7 +15600,7 @@ Instalación del sistema operativo.
 
 \end_inset
 
-En el caso de contar con una pc imagen de instalación con múltiples versiones
+En el caso de contar con una PC imagen de instalación con múltiples versiones
  como Windows Home, Basic, Professional y Ultimate y/o con ambas arquitecturas
 \family typewriter
  (i386
@@ -15517,7 +15651,8 @@ Instalación del sistema operativo.
 \end_layout
 
 \begin_layout Standard
-Selección de la partición de instalación de Windows.
+La selección de la partición de instalación de Windows se realiza como se
+ muestra en la Figura 53.
 \end_layout
 
 \begin_layout Standard
@@ -15559,7 +15694,8 @@ Elección de partición de instalación.
 \end_layout
 
 \begin_layout Standard
-Aceptación de las condiciones de privacidad y uso del sistema operativo.
+La aceptación de las condiciones de privacidad y uso del sistema operativo
+ se realiza como se muestra en la Figura 54.
 \end_layout
 
 \begin_layout Standard
@@ -15629,7 +15765,7 @@ https://technet.microsoft.com/en-us/library/jj612867.aspx y es
 \series default
 FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4
 \family default
-.
+ como se muestra en la Figura 55.
 \end_layout
 
 \begin_layout Standard
@@ -15675,7 +15811,8 @@ Clave de producto.
 \end_layout
 
 \begin_layout Standard
-Saltar activación del producto.
+La omisión de la activación del producto se realiza como se muestra en la
+ Figura 56.
 \end_layout
 
 \begin_layout Standard
@@ -15829,6 +15966,7 @@ Hostname, organización, propietario y zona horaria.
 Como se indicó anteriormente, algunas configuraciones se pueden ingresar
  en diferentes etapas.
  Entonces, se debe ingresar nuevamente la configuración deseada.
+ Esto se realiza como se muestra en la Figuras 58 y 59.
 \end_layout
 
 \begin_layout Standard
@@ -15867,10 +16005,6 @@ Idioma, teclado, regional.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Se debe ingresar nuevamente la configuración deseada.
 \end_layout
 
 \begin_layout Standard
@@ -15916,7 +16050,8 @@ Organización, propietario y zona horaria.
 \end_layout
 
 \begin_layout Standard
-Selección de la configuración rápida de red.
+La selección de la configuración de red se realiza como se muestra en la
+ Figura 60.
 \end_layout
 
 \begin_layout Standard
@@ -15958,7 +16093,8 @@ Configuración de red.
 
 \end_inset
 
-Configuración de contraseñas de administrador.
+La configuración de contraseñas de administrador se realiza como se muestra
+ en la Figura 61.
 \end_layout
 
 \begin_layout Standard
@@ -18494,43 +18630,45 @@ Bibliografía
 \end_layout
 
 \begin_layout Itemize
-Documentación Oficial de KVM de Red Hat Enterprise
-\end_layout
-
-\begin_layout Itemize
+Red Hat Enterprise Linux.
+ Documentación oficial KVM.
 
 \family typewriter
-Linux-KVM.
- Documentacion Oficial.
  
 \begin_inset Newline newline
 \end_inset
 
-<http://www.linux-kvm.org/page/Documents> Consultada 10/15
+http://www.linux-kvm.org/page/Documents 
+\family default
+Consultada 10/2015
 \end_layout
 
 \begin_layout Itemize
+Red Hat Enterprise Linux.
+ Documentación oficial virsh-install.
 
 \family typewriter
-Virsh-intall.
- Documentacion Manual Oficial.
  
 \begin_inset Newline newline
 \end_inset
 
-<http://linux.die.net/man/1/virt-install> Consultada 10/15
+http://linux.die.net/man/1/virt-install 
+\family default
+Consultada 10/2015
 \end_layout
 
 \begin_layout Itemize
+Red Hat Enterprise Linux.
+ Documentación oficial virsh.
 
 \family typewriter
-Virsh.
- Documentacion Manual Oficial.
  
 \begin_inset Newline newline
 \end_inset
 
-<http://linux.die.net/man/1/virsh> Consultada 11/15
+http://linux.die.net/man/1/virsh 
+\family default
+Consultada 11/2015
 \end_layout
 
 \begin_layout Standard
@@ -18540,29 +18678,29 @@ Virsh.
 \end_layout
 
 \begin_layout Itemize
+Documentación oficial Cobbler.
 
 \family typewriter
-Documentacion oficial Cobbler.
  
 \begin_inset Newline newline
 \end_inset
 
-<http://cobbler.github.io/manuals/2.6.0/> Consultada 11/15
+http://cobbler.github.io/manuals/2.6.0/ 
+\family default
+Consultada 11/2015
 \end_layout
 
 \begin_layout Itemize
-
-\family typewriter
-Documentacion de usuario de Fedora sobre Cobbler.
+Documentación de Fedora sobre Cobbler.
  
+\family typewriter
+
 \begin_inset Newline newline
 \end_inset
 
-<https://fedorahosted.org/cobbler/wiki/UserDocs> 
-\begin_inset Newline newline
-\end_inset
-
-Consultada 11/15
+https://fedorahosted.org/cobbler/wiki/UserDocs
+\family default
+ Consultada 11/2015
 \end_layout
 
 \begin_layout Standard
@@ -18572,23 +18710,29 @@ Consultada 11/15
 \end_layout
 
 \begin_layout Itemize
-
+Red Hat Enterprise Linux.
+ Documentación oficial
 \family typewriter
-Red-Hat.
- Documentacion Oficial Kickstart.
+ 
+\family default
+Kickstart
+\family typewriter
+.
  
 \begin_inset Newline newline
 \end_inset
 
-<https://access.redhat.com/documentation/en-US/
+https://access.redhat.com/documentation/en-US/
 \begin_inset Newline newline
 \end_inset
 
-Red_Hat_Enterprise_Linux/6/html/Installation_Guide/
+Red_Hat_Enterprise_Linux/6/html/Installation_Guide/http://docs.openstack.org/
 \begin_inset Newline newline
 \end_inset
 
-ch-kickstart2.html> Consultada 11/15
+ch-kickstart2.html 
+\family default
+Consultada 11/2015
 \end_layout
 
 \begin_layout Standard
@@ -18598,25 +18742,30 @@ ch-kickstart2.html> Consultada 11/15
 \end_layout
 
 \begin_layout Itemize
+Documentación oficial Puppet.
 
 \family typewriter
-Documentacion Oficial Puppet.
  
 \begin_inset Newline newline
 \end_inset
 
-<https://docs.puppet.com/puppet/> Consultada 02/16
+https://docs.puppet.com/puppet/ 
+\family default
+Consultada 02/2016
 \end_layout
 
 \begin_layout Itemize
+Documentación oficial Puppet.
+ Windows Docs.
 
 \family typewriter
-Documentacion Oficial Puppet para Windows.
  
 \begin_inset Newline newline
 \end_inset
 
-<https://docs.puppet.com/windows/> Consultada 02/16
+https://docs.puppet.com/windows/ 
+\family default
+Consultada 02/2016
 \end_layout
 
 \begin_layout Standard
@@ -18626,25 +18775,29 @@ Documentacion Oficial Puppet para Windows.
 \end_layout
 
 \begin_layout Itemize
+Documentación oficial Python-Bottle.
 
 \family typewriter
-Documentacion Oficial Python-Bottle.
  
 \begin_inset Newline newline
 \end_inset
 
-<http://bottlepy.org/docs/dev/index.html> Consultada 03/16
+http://bottlepy.org/docs/dev/index.html 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
+Documentación librerías Python.
 
 \family typewriter
-Documentacion Librerias Python.
  
 \begin_inset Newline newline
 \end_inset
 
-<http://docs.python.org/dev/library/> Consultada 03/16
+http://docs.python.org/dev/library/ 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Standard
@@ -18654,85 +18807,102 @@ Documentacion Librerias Python.
 \end_layout
 
 \begin_layout Itemize
+Biblioteca Microsoft TechNet.
+ Documentación oficial Windows 7.
+ Automatización de Bienvenida de Windows.
 
 \family typewriter
+ 
+\begin_inset Newline newline
+\end_inset
+
 https://technet.microsoft.com/es-es/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744547%28v=ws.10%29.aspx (03/16)
+library/dd744547%28v=ws.10%29.aspx 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
+Biblioteca Microsoft TechNet.
+ Documentación oficial Windows 7.
+ Referencia técnica de Sysprep
+\family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
+https://technet.microsoft.com/es-ar/
+\begin_inset Newline newline
+\end_inset
+
+library/dd744263%28v=ws.10%29.aspx 
+\family default
+Consultada 03/2016
+\end_layout
+
+\begin_layout Itemize
+Biblioteca Microsoft TechNet.
+ Documentación oficial Windows 7.
+ Crear una imagen estándar de Windows 7
+\begin_inset Newline newline
+\end_inset
+
 
 \family typewriter
 https://technet.microsoft.com/es-ar/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744263%28v=ws.10%29.aspx (03/16)
+library/ee523217%28v=ws.10%29.aspx 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
-
-\family typewriter
-https://technet.microsoft.com/es-ar/
+Biblioteca Microsoft TechNet.
+ Documentación oficial Windows 7.
+ Conceptos sobre la pre-instalación.
 \begin_inset Newline newline
 \end_inset
 
-library/ee523217%28v=ws.10%29.aspx (03/16)
-\end_layout
-
-\begin_layout Itemize
 
 \family typewriter
 https://technet.microsoft.com/es-es/
 \begin_inset Newline newline
 \end_inset
 
-library/dd744393%28v=ws.10%29.aspx (03/16)
+library/dd744317%28v=ws.10%29.aspx 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
-
-\family typewriter
-https://technet.microsoft.com/es-es/
+Soporte de Microsoft.
+ Personalizar el perfil de usuario local predeterminado al preparar una
+ imagen de Windows.
 \begin_inset Newline newline
 \end_inset
 
-library/dd744393%28v=ws.10%29.aspx (03/16)
+
+\family typewriter
+https://support.microsoft.com/es-ar/kb/973289 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
-
+Installing Windows with Cobbler
 \family typewriter
-https://technet.microsoft.com/es-ar/
+.
 \begin_inset Newline newline
 \end_inset
 
-library/gg241188%28v=ws.10%29.aspx (03/16)
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-https://technet.microsoft.com/es-es/
-\begin_inset Newline newline
-\end_inset
-
-library/dd744317%28v=ws.10%29.aspx (03/16)
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-https://support.microsoft.com/es-ar/kb/973289 (03/16)
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-http://www.letifer.org/2014/03/26/cobbler-and-windows/ (03/16)
+http://www.letifer.org/2014/03/26/cobbler-and-windows/
+\family default
+ Consultada 03/2016
 \end_layout
 
 \begin_layout Standard
@@ -18742,13 +18912,20 @@ http://www.letifer.org/2014/03/26/cobbler-and-windows/ (03/16)
 \end_layout
 
 \begin_layout Itemize
-
+Intel.
+ Preboot Execution Environment (PXE) Specification.
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 ftp://download.intel.com/design/archives/wfm/downloads/
 \begin_inset Newline newline
 \end_inset
 
-pxespec.pdf (11/15)
+pxespec.pdf 
+\family default
+Consultada 11/2015
 \end_layout
 
 \begin_layout Standard
@@ -18758,35 +18935,50 @@ pxespec.pdf (11/15)
 \end_layout
 
 \begin_layout Itemize
-
+SlideShare.
+ Desarrollo iterativo e incremental.
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 http://www.slideshare.net/noriver/
 \begin_inset Newline newline
 \end_inset
 
-desarrollo-iterativo-e-incremental (10/15)
+desarrollo-iterativo-e-incremental 
+\family default
+Consultada 10/2015
 \end_layout
 
 \begin_layout Itemize
-
+Wikipedia.
+ Desarrollo ágil de software.
 \family typewriter
-http://www.javiergarzas.com/metodologias-agiles (10/15)
+
+\begin_inset Newline newline
+\end_inset
+
+http://es.wikipedia.org/wiki/Desarrollo_%C3%A1gil_de_software
+\family default
+ Consultada 10/2015
 \end_layout
 
 \begin_layout Itemize
-
+Universidad de Cantabria.
+ Gestión de riesgos.
 \family typewriter
-http://es.wikipedia.org/wiki/Desarrollo_%C3%A1gil_de_software (10/15)
-\end_layout
 
-\begin_layout Itemize
+\begin_inset Newline newline
+\end_inset
 
-\family typewriter
 http://ocw.unican.es/ensenanzas-tecnicas/
 \begin_inset Newline newline
 \end_inset
 
-ingenieria-del-software-ii/materiales/tema7-gestionRiesgos.pdf (10/15)
+ingenieria-del-software-ii/materiales/tema7-gestionRiesgos.pdf 
+\family default
+Consultada 10/2015
 \end_layout
 
 \begin_layout Standard
@@ -18796,35 +18988,62 @@ ingenieria-del-software-ii/materiales/tema7-gestionRiesgos.pdf (10/15)
 \end_layout
 
 \begin_layout Itemize
-
+Wikipedia.
+ Samba programa.
 \family typewriter
-https://es.wikipedia.org/wiki/Samba_%28programa%29
+
+\begin_inset Newline newline
+\end_inset
+
+https://es.wikipedia.org/wiki/Samba_%28programa%29 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
-
+Documentación oficial de SAMBA.
 \family typewriter
-https://www.samba.org/ (03/16)
+
+\begin_inset Newline newline
+\end_inset
+
+https://www.samba.org/ 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
-
+Instituto Nacional de Tecnologías Educativas y de Formación de Profesorado.
+ Servidor SAMBA.
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 http://www.ite.educacion.es/formacion/materiales/85/cd/
 \begin_inset Newline newline
 \end_inset
 
-linux0/m4/servidor_samba.html (03/16)
+linux0/m4/servidor_samba.html 
+\family default
+Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
-
+TechBrown.
+ Samba Server Configuration on CentOS 7 / RHEL 7.
 \family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
 http://www.techbrown.com/
 \begin_inset Newline newline
 \end_inset
 
-samba-server-configuration-centos-7-rhel-7.shtml (03/16)
+samba-server-configuration-centos-7-rhel-7.shtml 
+\family default
+Consultada 03/2016
 \end_layout
 
 \end_body
