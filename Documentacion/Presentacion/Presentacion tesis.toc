@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Organizaci\IeC {\'o}n de la Presentaci\IeC {\'o}n}{2}{0}{1}
+\beamer@sectionintoc {2}{Introduccion}{3}{0}{2}
+\beamer@sectionintoc {3}{Objetivos}{5}{0}{3}
+\beamer@sectionintoc {4}{Arquitectura}{8}{0}{4}
+\beamer@sectionintoc {5}{Desarrollo}{10}{0}{5}

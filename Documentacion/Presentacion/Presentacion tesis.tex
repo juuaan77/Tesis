@@ -1,0 +1,176 @@
+
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\graphicspath{{./figuras/}}
+\mode<presentation>
+{
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth]{tesis.jpg}}
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\title[Your Short Title]{Infraestructura tecnológica virtual con automatización y orquestación.}
+\author{Arese, Juan Pablo - Diers, Werner Christian}
+\institute{Facultad de Ciencias Exactas, Físicas y Naturales - UNC}
+\date{Diciembre 2016}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Organización de la Presentación}
+
+\begin{frame}{Organización de la Presentación}
+
+\vspace{-1.5cm}
+La precentación esta organizada de manera incremental explicando cada uno de los siguientes puntos.\\
+\begin{itemize}
+    \item Introduccion.
+    \item Objetivos.
+    \item Arquitectura.
+    \item Desarrollo del sistema.
+    \begin{itemize}
+        \item Herramienta de virtualizacion.
+        \item Herramienta de aprovicionamiento.
+        \item Herramienta de orquestacion.
+        \item Interfaz grafica.
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\section{Introduccion}
+
+
+\begin{frame}
+    %\vspace{}
+    \Huge
+    \centering
+    \textbf{ Introduccion }
+
+\end{frame}
+
+
+\begin{frame}{Introduccion}
+
+\vspace{-1.5cm}
+La cantidad de servicios y servidores necesarios en las organizaciones tiende a ser cada vez mayor.
+Cada día los despliegues son más complejos, siendo necesario trabajar con aplicaciones clusterizadas, múltiples datacenters,etc.
+Este tipo de tareas ya no pueden realizarse individualmente para cada máquina y menos aún en entornos escalables donde pueden haber cientos de nodos.
+
+\begin{block}{}
+Hablar de orquestación implica eficiencia en los recursos, tanto humanos como computacionales, y por ello implica hablar de virtualización, provisionamiento y datacenters dinámicos.
+\end{block}
+
+%\begin{itemize}
+%  \item Your introduction goes here!
+%  \item Use \texttt{itemize} to organize your main points.
+%\end{itemize}
+
+%\vskip 1cm
+
+%\begin{block}{Examples}
+%Some examples of commonly used commands and features are included, to help you get started.
+%\end{block}
+
+\end{frame}
+
+\section{Objetivos}
+
+
+\begin{frame}
+    %\vspace{}
+    \Huge
+    \centering
+    \textbf{ Objetivos }
+
+\end{frame}
+
+\begin{frame}{Objetivo principal}
+
+\vspace{-1.5cm}
+Desarrollar un sistema que integre diferentes tecnologías para implementar las técnicas de orquestación, virtualización y configuración automática para facilitar la gestión de servidores virtuales y sus servicios asociados.
+
+\end{frame}
+
+
+\begin{frame}{Objetivos secundarios}
+
+\vspace{-1.5cm}
+\begin{itemize}
+    \item Instalar y utilizar sistemas operativos para servidor.
+    \item Emplear herramientas de virtualización.
+    \item Usar herramientas de aprovisionamiento.
+    \item Utilizar herramientas de orquestación.
+    \item Analizar protocolos para booteo a través de la red.
+\end{itemize}
+
+\end{frame}
+
+\section{Arquitectura}
+
+\begin{frame}
+    %\vspace{}
+    \Huge
+    \centering
+    \textbf{ Arquitectura }
+
+\end{frame}
+
+\begin{frame}{Arquitectura}
+
+\vspace{-1.5cm}
+La arquitectura seleccionada es la de Cliente-Servidor
+Las tareas del servidor son las siguientes:
+\begin{itemize}
+    \item Crear las maquinas virtuales (En caso de utilizar un servidor virtual).
+    \item Asignar direcciones IP via servidor DHCP.
+    \item Aprovicionar la maquina con el SO deseado y los parametros de configuracion establecidos.
+    \item Orquestar las politicas definidas para la maquina.
+\end{itemize}
+ INSERTAR FIGURA ACA
+%\begin{figure}[ht]
+%    \centering
+%    \vspace{-0.50cm}
+%    \scalebox{0.25}{\includegraphics[angle=0]{./oh_source.eps}}
+%\end{figure}
+
+\end{frame}
+
+\section{Desarrollo}
+
+\begin{frame}
+    %\vspace{}
+    \Huge
+    \centering
+    \textbf{ Desarrollo }
+
+\end{frame}
+
+\begin{frame}{Desarrollo - Virtualizacion}
+
+\vspace{-1.5cm}
+La herramienta de virtualizacion seleccionada es Qemu/KVM.\\
+INSERTAR ACA EL TIPO DE VIRTUALIZACION DE KVM
+INSERTAR ACA LA IMAGEN DE LA ARQUITECTURA DE LA VIRTUALIZACION DE KVM
+\end{frame}
+
+
+
+\end{document}
+
+              
