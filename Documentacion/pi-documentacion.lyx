@@ -520,9 +520,9 @@ Principal:
 \end_layout
 
 \begin_layout Itemize
-Desarrollar un sistema que integre diferentes tecnologías para implementar
- las técnicas de orquestación, virtualización y configuración automática
- para facilitar la gestión de servidores virtuales y sus servicios asociados.
+Integrar diferentes herramientas con el fin de implementar técnicas de orquestac
+ión, virtualización, instalación y configuración automática para facilitar
+ la gestión de servidores virtuales y sus servicios asociados.
 \end_layout
 
 \begin_layout Standard
@@ -563,7 +563,9 @@ Antecedentes de Proyectos similares
 \end_layout
 
 \begin_layout Itemize
-No hay antecedentes en este tema.
+No hay antecedentes de proyectos que abarquen este tema, realizados en la
+ Facultad de Ciencias Exactas, Físicas y Naturales de la Universidad Nacional
+ de Córdoba.
 \end_layout
 
 \begin_layout Subsection
@@ -601,7 +603,7 @@ Metodología
 \begin_layout Standard
 Para afrontar el Proyecto Integrador de la carrera se utilizó una metodología
  de desarrollo ágil de software basado en el desarrollo iterativo e incremental.
- El trabajo desarrollado en una unidad de tiempo se denomina iteración.
+ [8] El trabajo desarrollado en una unidad de tiempo se denomina iteración.
  Las iteraciones constan de un corto lapso de tiempo de entre una y tres
  semanas.
  Cada iteración se compone de un ciclo de vida que integra diversas etapas
@@ -675,8 +677,8 @@ Los requerimientos del sistema se obtuvieron directamente desde el Director
 \end_layout
 
 \begin_layout Standard
-De este modo, se han definido cinco niveles de importancia, siendo el número
- 5 el que representa la mayor importancia, disminuyendo sucesivamente hasta
+De este modo, se han definido tres niveles de importancia, siendo el número
+ 3 el que representa la mayor importancia, disminuyendo sucesivamente hasta
  el nivel 1, el menor nivel de importancia.
 \end_layout
 
@@ -835,7 +837,7 @@ La herramienta debe poder aprovisionar máquinas virtuales.
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+3
 \end_layout
 
 \end_inset
@@ -876,7 +878,7 @@ La herramienta debe poder aprovisionar distintos sistemas operativos.
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+3
 \end_layout
 
 \end_inset
@@ -907,7 +909,7 @@ La herramienta debe poder aprovisionar software y configuraciones a las
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+3
 \end_layout
 
 \end_inset
@@ -949,7 +951,7 @@ La herramienta debe poder aprovisionar software y configuraciones utilizando
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+1
 \end_layout
 
 \end_inset
@@ -978,7 +980,7 @@ La herramienta debe poder aprovisionar utilizando repositorios locales.
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+3
 \end_layout
 
 \end_inset
@@ -1020,7 +1022,7 @@ La herramienta debe poder actualizar los repositorios locales.
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+2
 \end_layout
 
 \end_inset
@@ -1049,7 +1051,7 @@ La herramienta debe poder setear políticas a las máquinas virtuales.
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+3
 \end_layout
 
 \end_inset
@@ -1091,7 +1093,7 @@ La herramienta debe ser escalable, integrar nuevas máquinas virtuales fácilmen
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+3
 \end_layout
 
 \end_inset
@@ -1121,7 +1123,7 @@ La herramienta debe poseer una interfaz web que permita utilizar todas sus
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+1
 \end_layout
 
 \end_inset
@@ -1163,7 +1165,7 @@ La herramienta debe permitir visualizar y modificar el estado de las máquinas
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+1
 \end_layout
 
 \end_inset
@@ -1193,7 +1195,7 @@ Las herramientas a integrar deben poseer licencias de uso libre.
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+3
 \end_layout
 
 \end_inset
@@ -1236,7 +1238,7 @@ La herramienta debe estar implementada en una versión estable al momento
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+2
 \end_layout
 
 \end_inset
@@ -3108,8 +3110,7 @@ RS03
 \begin_inset Text
 
 \begin_layout Plain Layout
-Dificultades en la interacción entre la aplicación y el sistema operativo
- 
+Incompatibilidad entre las herramientas y el sistema operativo 
 \end_layout
 
 \end_inset
@@ -3180,7 +3181,8 @@ RS04
 \begin_inset Text
 
 \begin_layout Plain Layout
-Diferencias de paquetes disponibles entre los sistemas operativos 
+Diferencias en las versiones de paquetes pre-compilados disponibles entre
+ los sistemas operativos 
 \end_layout
 
 \end_inset
@@ -4608,7 +4610,6 @@ Previamente al abordaje del desarrollo, se requieren conocimientos teóricos
  que componen el sistema, las herramientas que darán soporte o permitirán
  cumplir con las funcionalidades previstas y las que se utilizarán para
  desarrollar.
- Algunas de ellas fueron solicitadas en los requerimientos.
  El resto de las herramientas, que están implícitas en los requerimientos,
  precisaron de investigación y pruebas para conocer si permiten cumplir
  estos requerimientos y, además, si hay varias opciones, elegir la más convenien
@@ -5029,7 +5030,7 @@ Otras características:
 \end_layout
 
 \begin_layout Itemize
-Servicios multiusuario que permiten a mucha gente usar el sistema FreeBSD
+Servicios multiusuario que permiten a muchos usuarios usar el sistema FreeBSD
  simultáneamente.
 \end_layout
 
@@ -5227,11 +5228,7 @@ virtual machine
  y aplicaciones adentro.
  Cada VM es completamente independiente.
  Poner múltiples VMs en una misma computadora habilita a varias aplicaciones
- y sistemas operativos correr en un solo servidor virtual o 
-\emph on
-host
-\emph default
-.
+ y sistemas operativos correr en un solo servidor físico.
  Una fina capa de software, llamado 
 \shape italic
 hypervisor
@@ -6822,7 +6819,8 @@ Universal Network Driver Interface (UNDI) API:
 \end_layout
 
 \begin_layout Standard
-La Figura 24 ilustra la relación entre los NBP y las APIs de PXE:
+La Figura 24 ilustra la relación entre los NBP (Network Boot Programs) y
+ las APIs de PXE:
 \end_layout
 
 \begin_layout Standard
@@ -7118,7 +7116,7 @@ Para facilitar la lectura y comprensión de las herramientas utilizadas,
 
 \begin_layout Standard
 Como caso particular, en la implementación se tomará un laboratorio informático
- de aprendizaje.
+ de aprendizaje, similar a uno de los pertenecientes a la FCEFyN .
  Las funcionalidades desarrolladas permiten orquestar las políticas a seguir
  de las diferentes máquinas de la red al mismo tiempo que posibilitan a
  los administradores (o incluso a cualquier persona sin conocimiento técnico)
@@ -18627,6 +18625,27 @@ Las pruebas realizadas sobre las herramientas, y las pruebas de los resultados
  en un servidor de alto rendimiento para aumentar el volumen de nodos administra
 dos.
  
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Actualización: 
+\series default
+Como todo software, debe ser mantenido utilizando las últimas versiones
+ disponibles de las herramientas y de los sistemas operativos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Migración: 
+\series default
+Poder realizar el traslado de 
+\shape italic
+hosts 
+\shape default
+virtuales entre las diferentes máquinas físicas.
 \end_layout
 
 \begin_layout Section

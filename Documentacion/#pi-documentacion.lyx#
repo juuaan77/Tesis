@@ -18637,15 +18637,7 @@ Como todo software, debe ser mantenido utilizando las últimas versiones
 \end_layout
 
 \begin_layout Itemize
-
-\series bold
-Migración: 
-\series default
-Poder realizar el traslado de 
-\shape italic
-hosts 
-\shape default
-virtuales entre las diferentes máquinas físicas.
+Migraci
 \end_layout
 
 \begin_layout Section
