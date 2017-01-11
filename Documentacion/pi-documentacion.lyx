@@ -5180,6 +5180,7 @@ La Tabla 6 hace una pequeña comparación de las características mas importante
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -6328,6 +6329,7 @@ La Tabla 7 Compara alguna de las caracteristicas de las diferentes herramientas
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -6388,11 +6390,7 @@ textcolor{white}{
 
 \end_inset
 
-
-Herramienta de 
-\lang spanish
-virtualización
-
+Herramienta de virtualización
 \begin_inset ERT
 status open
 
@@ -7174,6 +7172,7 @@ La Tabla 8 Compara algunas de las características mas interesantes de las
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -7234,11 +7233,7 @@ textcolor{white}{
 
 \end_inset
 
-
-Herramienta de 
-\lang spanish
-aprovisionamiento
-
+Herramienta de aprovisionamiento
 \begin_inset ERT
 status open
 
@@ -7549,10 +7544,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparación 
-Herramienta de 
-\lang spanish
-aprovisionamiento
+Comparación Herramienta de aprovisionamiento
 \end_layout
 
 \end_inset
@@ -7979,6 +7971,7 @@ La Tabla 9 muestra las características mas importantes para este proyecto
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -8036,11 +8029,7 @@ textcolor{white}{
 
 \end_inset
 
-
-Herramienta de 
-\lang spanish
-orquestación
-
+Herramienta de orquestación
 \begin_inset ERT
 status open
 
@@ -15329,7 +15318,7 @@ Creación de la imagen de instalación Windows 7
 \end_layout
 
 \begin_layout Standard
-La Tabla 6 contiene una columna para cada equipo que interviene en el proceso.
+La Tabla 10 contiene una columna para cada equipo que interviene en el proceso.
  Los pasos de la columna en la máquina técnica se realizan en ese equipo.
  Los pasos de la columna del equipo de referencia se realizan en el equipo
  donde se crea la imagen personalizada.
@@ -18753,7 +18742,7 @@ Se realizó una etapa de pruebas para validar el funcionamiento del sistema
 \end_layout
 
 \begin_layout Standard
-Las Tablas 7, 8 y 9 muestran los casos de pruebas seleccionados, inficando
+Las Tablas 10,11 y 12 muestran los casos de pruebas seleccionados, inficando
  los pasos a seguir para realizar el test en particular, su prioridad y
  el resultado obtenido.
 \end_layout

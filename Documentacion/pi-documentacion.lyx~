@@ -5174,6 +5174,11 @@ Solaris Containers
 \end_layout
 
 \begin_layout Standard
+La Tabla 6 hace una pequeña comparación de las características mas importantes
+ de cada SO.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -5550,7 +5555,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
+Comparación de SO
 \end_layout
 
 \end_inset
@@ -6317,6 +6322,35 @@ s 3.x, Linux (2.4, 2.6, 3.x and 4.x), Solaris y OpenSolaris, OS/2, y FreeBSD.
 \end_layout
 
 \begin_layout Standard
+La Tabla 7 Compara alguna de las caracteristicas de las diferentes herramientas
+ de virtualización
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -6686,6 +6720,34 @@ VirtualBox
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparación Herramientas de virtualización
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -7106,6 +7168,35 @@ s sobre tecnología industrial estándar.
 \end_layout
 
 \begin_layout Standard
+La Tabla 8 Compara algunas de las características mas interesantes de las
+ herramientas de aprovisionamiento analizadas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -7437,6 +7528,37 @@ X
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparación 
+Herramienta de 
+\lang spanish
+aprovisionamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -7851,12 +7973,32 @@ Los sistemas soportados son Linux (Red Hat Enterprise y derivados, Debian,
 \end_layout
 
 \begin_layout Standard
+La Tabla 9 muestra las características mas importantes para este proyecto
+ de las herramientas de orquestación
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{%
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -8145,10 +8287,21 @@ Cliente-Servidor
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
 
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparación Herramientas de orquestación
 \end_layout
 
 \end_inset
