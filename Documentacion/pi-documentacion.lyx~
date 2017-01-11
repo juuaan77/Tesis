@@ -5931,9 +5931,10 @@ Docker (Figura 12) es una herramienta de virtualización para Linux basada
 \begin_layout Standard
 El contenedor Docker se puede desplegar en cualquier otro sistema (que soporte
  esta tecnología).
- Un contenedor Docker no incluye todo un sistema completo, sino únicamente
- aquellas librerías, archivos y configuraciones necesarias para desplegar
- las funcionalidades que contenga.
+ Un contenedor Docker no incluye todo un sistema completo, es decir, no
+ crea maquinas virtuales completas, sino únicamente aquellas librerías,
+ archivos y configuraciones necesarias para desplegar las funcionalidades
+ que contenga.
  Docker se encarga de la gestión del contenedor y de las aplicaciones que
  contenga.
 \end_layout
@@ -20400,6 +20401,28 @@ http://www.techbrown.com/
 samba-server-configuration-centos-7-rhel-7.shtml 
 \family default
 Consultada 03/2016
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[10] Referencias generales
+\end_layout
+
+\begin_layout Itemize
+Cloud computing models.
+\family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
+hhttp://web.mit.edu/smadnick/www/wp/2013-01.pdf
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+Consultada 10/2015
 \end_layout
 
 \end_body

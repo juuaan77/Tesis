@@ -463,7 +463,7 @@ Computing
  Se esté o no en la nube, se puede comenzar virtualizando los servidores
  locales y luego moverlos a ella para obtener aún más agilidad.
  Así, la orquestación es crucial al momento de desplegar servicios en la
- nube porque éstos:
+ nube porque éstos: [10]
 \end_layout
 
 \begin_layout Itemize
@@ -20401,6 +20401,28 @@ http://www.techbrown.com/
 samba-server-configuration-centos-7-rhel-7.shtml 
 \family default
 Consultada 03/2016
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[10] Referencias generales
+\end_layout
+
+\begin_layout Itemize
+Cloud computing models.
+\family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
+hhttp://web.mit.edu/smadnick/www/wp/2013-01.pdf
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+Consultada 10/2015
 \end_layout
 
 \end_body

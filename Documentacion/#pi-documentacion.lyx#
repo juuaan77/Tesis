@@ -5770,7 +5770,7 @@ drivers
 \end_layout
 
 \begin_layout Paragraph
-Virtualización a nivel del sistema operativo 
+Virtualización a nivel del sistema operativo o basada en contenedores
 \end_layout
 
 \begin_layout Standard
@@ -5931,9 +5931,10 @@ Docker (Figura 12) es una herramienta de virtualización para Linux basada
 \begin_layout Standard
 El contenedor Docker se puede desplegar en cualquier otro sistema (que soporte
  esta tecnología).
- Un contenedor Docker no incluye todo un sistema completo, sino únicamente
- aquellas librerías, archivos y configuraciones necesarias para desplegar
- las funcionalidades que contenga.
+ Un contenedor Docker no incluye todo un sistema completo, es decir, no
+ crea maquinas virtuales completas, sino únicamente aquellas librerías,
+ archivos y configuraciones necesarias para desplegar las funcionalidades
+ que contenga.
  Docker se encarga de la gestión del contenedor y de las aplicaciones que
  contenga.
 \end_layout
@@ -6235,9 +6236,8 @@ textwidth}{!}{%
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="5">
+<lyxtabular version="3" rows="5" columns="4">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -6352,38 +6352,6 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textcolor{white}{
-\end_layout
-
-\end_inset
-
-Core soportados
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -6445,15 +6413,6 @@ X
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -6504,15 +6463,6 @@ X
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-240
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -6538,15 +6488,6 @@ OpenVZ
 
 \begin_layout Plain Layout
 Contenedores
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6606,15 +6547,6 @@ Completo
 
 \begin_layout Plain Layout
 X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -7280,7 +7212,7 @@ FAI
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -7289,7 +7221,7 @@ FAI
 \begin_inset Text
 
 \begin_layout Plain Layout
-X
+
 \end_layout
 
 \end_inset
@@ -7359,7 +7291,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+X
 \end_layout
 
 \end_inset
@@ -20469,6 +20401,12 @@ http://www.techbrown.com/
 samba-server-configuration-centos-7-rhel-7.shtml 
 \family default
 Consultada 03/2016
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[10]  
 \end_layout
 
 \end_body
