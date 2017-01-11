@@ -5770,7 +5770,7 @@ drivers
 \end_layout
 
 \begin_layout Paragraph
-Virtualización a nivel del sistema operativo 
+Virtualización a nivel del sistema operativo o basada en contenedores
 \end_layout
 
 \begin_layout Standard
@@ -5931,9 +5931,10 @@ Docker (Figura 12) es una herramienta de virtualización para Linux basada
 \begin_layout Standard
 El contenedor Docker se puede desplegar en cualquier otro sistema (que soporte
  esta tecnología).
- Un contenedor Docker no incluye todo un sistema completo, sino únicamente
- aquellas librerías, archivos y configuraciones necesarias para desplegar
- las funcionalidades que contenga.
+ Un contenedor Docker no incluye todo un sistema completo, es decir, no
+ crea maquinas virtuales completas, sino únicamente aquellas librerías,
+ archivos y configuraciones necesarias para desplegar las funcionalidades
+ que contenga.
  Docker se encarga de la gestión del contenedor y de las aplicaciones que
  contenga.
 \end_layout
@@ -6143,125 +6144,6 @@ script
 \end_layout
 
 \begin_layout Paragraph
-Openstack 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename Imagenes/virtualizacion/virtualizacion_herramientas_openstack.png
-	lyxscale 50
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Openstack logo
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Openstack (Figura 15) es un conjunto de proyectos de código abierto.
- En sus inicios quienes contribuyeron con mas código fué RackSpace y la
- NASA.
- Actualmente, muchas empresas se han unido al proyecto, entre las que se
- encuentran empresas tan importantes como AMD, Intel, Canonical, SUSE Linux,
- Red Hat, IBM, Dell, HP, Cisco, etc.
- OpenStack es software libre bajo los términos de la licencia Apache.
- Este conjunto de proyectos y grupo de empresas tienen como objetivo construir
- una plataforma de nube.
- Como tal, Openstack podría considerarse como un 
-\shape italic
-Cloud Management Platform
-\shape default
- o Plataforma de Gestión en la Nube, que permite orquestar y gestionar distintos
- componentes de una infraestructura para dar servicios de nube.
- En resumen, Openstack es una solución de 
-\shape italic
-cloud computing
-\shape default
- del tipo IaaS (
-\shape italic
-Infrastructure as a Service
-\shape default
-) de código abierto.
-\end_layout
-
-\begin_layout Standard
-Dependiendo del número de equipos en la nube y la configuración de red,
- se instalarán en cada nodo diferentes componentes.
- Cada componente de Openstack ofrecen una API que se pueden utilizar con
- XML o JSON.
- Esto hace a Openstack extensible y adaptable a cada entorno.
-\end_layout
-
-\begin_layout Standard
-Uno de sus componentes, el encargado de la virtualización, es Nova Compute.
- Este es el componente principal de OpenStack.
- Gestiona las instancias de imágenes, dónde deben ejecutarse y el acceso
- mediante consola.
- Soporta diferentes 
-\shape italic
-hypervisors
-\shape default
-: KVM/QEMU, Xen, Hyper-V, VMware ESXi, LXC, Docker.
- Cabe aclarar que Nova se comunica con 
-\shape italic
-hypervisors
-\shape default
- para poder crear instancias de los sistema operativos, es decir, Nova no
- realiza la virtualización sino que quien virtualiza es el 
-\shape italic
-hypervisor
-\shape default
- en cuestión, esto es, KVM, Docker, VMware ESXi, etc.
- Cuando se crea un ambiente de nube OpenStack permite al usuario abstraerse
- del 
-\shape italic
-hypervisor 
-\shape default
-ya que está una capa arriba.
-\end_layout
-
-\begin_layout Standard
-Otro componente de Openstack es Heat.
- Éste es un servicio de orquestación basado en plantillas para describir
- una aplicación en la nube mediante las APIs de Openstack, para ejecutar
- esas aplicaciones.
- Las plantillas permiten crear la mayoría de los recursos de Openstack,
- como instancias, IPs flotantes, volúmenes, grupos de seguridad, usuarios,
- etc.
- 
-\end_layout
-
-\begin_layout Paragraph
 VirtualBox
 \end_layout
 
@@ -6302,7 +6184,7 @@ VirtualBox logo
 \end_layout
 
 \begin_layout Standard
-VirtualBox (Figura 16), desarrollado por Oracle, es un virtualizador completo
+VirtualBox (Figura 15), desarrollado por Oracle, es un virtualizador completo
  de propósito general para hardware x86, orientado al uso para servidor,
  escritorio y embebido.
  Como software de código abierto, se puede utilizar bajo la licencia GNU
@@ -6354,7 +6236,7 @@ textwidth}{!}{%
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="4">
+<lyxtabular version="3" rows="5" columns="4">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -6454,7 +6336,7 @@ textcolor{white}{
 
 \end_inset
 
-Alto rendimiento
+Multiplataforma
 \begin_inset ERT
 status open
 
@@ -6486,7 +6368,7 @@ textcolor{white}{
 
 \end_inset
 
-Multiplataforma
+Migración en vivo
 \begin_inset ERT
 status open
 
@@ -6517,7 +6399,7 @@ Docker
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Contenedores
 \end_layout
 
 \end_inset
@@ -6526,7 +6408,7 @@ Docker
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -6535,7 +6417,7 @@ Docker
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -6567,7 +6449,7 @@ KVM/Qemu
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Completa
 \end_layout
 
 \end_inset
@@ -6576,7 +6458,7 @@ KVM/Qemu
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -6585,7 +6467,7 @@ KVM/Qemu
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -6605,7 +6487,7 @@ OpenVZ
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Contenedores
 \end_layout
 
 \end_inset
@@ -6623,14 +6505,14 @@ OpenVZ
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6646,44 +6528,6 @@ rowcolor[rgb]{0.9,1,1}
 
 \end_inset
 
-Openstack
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 VirtualBox
 \end_layout
 
@@ -6693,7 +6537,7 @@ VirtualBox
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Completo
 \end_layout
 
 \end_inset
@@ -6702,7 +6546,7 @@ VirtualBox
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -6711,7 +6555,7 @@ VirtualBox
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -6885,7 +6729,7 @@ Cobbler logo
 \end_layout
 
 \begin_layout Standard
-Cobbler (Figura 17) es un servidor Linux de aprovisionamiento que centraliza
+Cobbler (Figura 16) es un servidor Linux de aprovisionamiento que centraliza
  y simplifica el control de los servicios incluyendo DHCP, TFTP y DNS con
  el propósito de realizar instalaciones de sistemas operativos basadas en
  la red.
@@ -6972,7 +6816,7 @@ FAI logo
 \end_layout
 
 \begin_layout Standard
-FAI (Figura 18) es un sistema no interactivo para instalar, personalizar
+FAI (Figura 17) es un sistema no interactivo para instalar, personalizar
  y administrar sistemas Linux y configuraciones de software en computadoras
  como también en máquinas virtuales y entornos 
 \family typewriter
@@ -7067,7 +6911,7 @@ Foreman logo
 \end_layout
 
 \begin_layout Standard
-Foreman (Figura 19) es una herramienta para el aprovisionamiento, configuración
+Foreman (Figura 18) es una herramienta para el aprovisionamiento, configuración
  y monitorización de servidores físicos y virtuales.
  Puede aprovisionar máquinas 
 \shape italic
@@ -7155,7 +6999,7 @@ Vagrant logo
 \end_layout
 
 \begin_layout Standard
-Vagrant (Figura 20) provee entornos fáciles de reproducir, configurar construido
+Vagrant (Figura 19) provee entornos fáciles de reproducir, configurar construido
 s sobre tecnología industrial estándar.
  Vagrant es un software que crea y configura entornos de desarrollo virtuales
  aprovisionando sobre VirtualBox, VMware, KVM y contenedores Linux.
@@ -7197,9 +7041,8 @@ textwidth}{!}{%
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="4">
+<lyxtabular version="3" rows="5" columns="3">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -7281,38 +7124,6 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textcolor{white}{
-\end_layout
-
-\end_inset
-
-Alto rendimiento
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -7365,15 +7176,6 @@ X
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -7410,16 +7212,7 @@ FAI
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
+X
 \end_layout
 
 \end_inset
@@ -7428,7 +7221,7 @@ FAI
 \begin_inset Text
 
 \begin_layout Plain Layout
-X
+
 \end_layout
 
 \end_inset
@@ -7440,15 +7233,6 @@ X
 
 \begin_layout Plain Layout
 Foreman
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
 \end_layout
 
 \end_inset
@@ -7503,20 +7287,11 @@ X
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+X
 \end_layout
 
 \end_inset
@@ -7693,7 +7468,7 @@ Ansible logo
 \end_layout
 
 \begin_layout Standard
-Ansible (Figura 21) es una plataforma para configurar y administrar computadoras.
+Ansible (Figura 20) es una plataforma para configurar y administrar computadoras.
  Combina instalación multi-nodo, ejecuciones de tareas ad-hoc y administración
  de configuraciones.
  
@@ -7773,7 +7548,7 @@ Chef logo
 \end_layout
 
 \begin_layout Standard
-Chef (Figura 22) es una herramienta de automatización de infraestructura
+Chef (Figura 21) es una herramienta de automatización de infraestructura
  de sistemas o administración de configuraciones.
  Se enfoca en seguir un conjunto de pasos (llamados recetas) con el propósito
  de presentar un producto final ya listo para trabajar y/o probar.
@@ -7863,7 +7638,7 @@ Puppet logo
 \end_layout
 
 \begin_layout Standard
-Puppet (Figura 23) es un sistema de orquestación que permite definir el
+Puppet (Figura 22) es un sistema de orquestación que permite definir el
  estado de la infraestructura, forzando automáticamente que se llegue al
  estado correcto definido.
 \end_layout
@@ -8376,7 +8151,7 @@ Universal Network Driver Interface (UNDI) API:
 \end_layout
 
 \begin_layout Standard
-La Figura 24 ilustra la relación entre los NBP (Network Boot Programs) y
+La Figura 23 ilustra la relación entre los NBP (Network Boot Programs) y
  las APIs de PXE:
 \end_layout
 
@@ -8422,7 +8197,7 @@ Funcionamiento de PXE
 \end_layout
 
 \begin_layout Standard
-En la Figura 25 se puede observar el funcionamiento del protocolo PXE.
+En la Figura 24 se puede observar el funcionamiento del protocolo PXE.
 \end_layout
 
 \begin_layout Enumerate
@@ -8870,7 +8645,7 @@ Arquitectura de desarrollo
 \end_layout
 
 \begin_layout Standard
-La Figura 26 representa la arquitectura de desarrollo utilizada para todas
+La Figura 25 representa la arquitectura de desarrollo utilizada para todas
  las pruebas.
 \end_layout
 
@@ -8915,7 +8690,7 @@ Arquitectura de desarrollo
 \begin_layout Standard
 Sin embargo, como también se puede aplicar para máquinas de escritorio o
  un entorno mixto, con equipos virtualizados y reales, se realizaron pruebas
- como se muestra en la Figura 27.
+ como se muestra en la Figura 26.
 \end_layout
 
 \begin_layout Standard
@@ -8967,7 +8742,7 @@ Arquitectura
 \begin_layout Standard
 En este Proyecto se utiliza la técnica de virtualización completa.
  En particular, la arquitectura que utiliza KVM se muestra en la Figura
- 28:
+ 27:
 \end_layout
 
 \begin_layout Standard
@@ -9443,7 +9218,7 @@ Redes virtuales.
 \end_layout
 
 \begin_layout Standard
-Se abre el menú de la Figura 29.
+Se abre el menú de la Figura 28.
 \end_layout
 
 \begin_layout Standard
@@ -9512,7 +9287,7 @@ Se encuentra la opción de habilitar IPv6.
 \begin_layout Enumerate
 Finalmente, se indica que la red debe ser NAT y se elige el dispositivo
  al cual se reenvía.
- Ver Figura 30.
+ Ver Figura 29.
 \end_layout
 
 \begin_layout Standard
@@ -9753,7 +9528,7 @@ Modelado
 Cobbler utiliza objetos para definir la configuración de aprovisionamiento.
  A medida que se desciende por el árbol de objetos, las variables se sobre
  escriben y se añaden a la información definida en los objetos superiores.
- La Figura 31 muestra este modelo.[2]
+ La Figura 30 muestra este modelo.[2]
 \end_layout
 
 \begin_layout Standard
@@ -11747,7 +11522,7 @@ htdigest /etc/cobbler/users.digest "Cobbler" admin
 \end_layout
 
 \begin_layout Standard
-La Figura 32 muestra la interfaz gráfica de Cobbler web.
+La Figura 31 muestra la interfaz gráfica de Cobbler web.
 \end_layout
 
 \begin_layout Standard
@@ -15990,7 +15765,7 @@ Conectar a unidad de red.
 \end_deeper
 \begin_layout Standard
 Ingresar la dirección IP del servidor con el siuiente formato, como se muestra
- en las Figuras 33 y 34:
+ en las Figuras 32 y 33:
 \end_layout
 
 \begin_layout Standard
@@ -16086,7 +15861,7 @@ Paso de archivos a Windows
 \end_layout
 
 \begin_layout Standard
-En la Figura 35 se muestra la ruta 
+En la Figura 34 se muestra la ruta 
 \family typewriter
 \shape italic
 \emph on
@@ -16190,7 +15965,7 @@ De forma gráfica, cuando inicia el sistema operativo en modo auditoría,
 Sysprep
 \family default
  de forma automática.
- La Figura 36 muestra el cuadro de diálogo.
+ La Figura 35 muestra el cuadro de diálogo.
 \end_layout
 
 \begin_layout Standard
@@ -16277,7 +16052,7 @@ Sysprep
 
 \begin_layout Standard
 Particularmente, se decidió realizar la generalización del sistema por consola.
- Entonces, como se muestra en la Figura 37, ejecutar por línea de comando:
+ Entonces, como se muestra en la Figura 36, ejecutar por línea de comando:
 \end_layout
 
 \begin_layout Standard
@@ -16370,7 +16145,7 @@ Se utiliza la herramienta ImageX, incluida en el WinPE creado, para capturar
 
 \begin_layout Standard
 Conectar en la máquina de referencia el WinPE y configurar el orden de arranque
- como muestran las Figuras 38 y 39.
+ como muestran las Figuras 37 y 38.
 \end_layout
 
 \begin_layout Standard
@@ -16508,7 +16283,7 @@ d:
 \end_layout
 
 \begin_layout Standard
-Lo anterior se muestra en la Figura 40.
+Lo anterior se muestra en la Figura 39.
 \end_layout
 
 \begin_layout Standard
@@ -16572,7 +16347,7 @@ imagenPersonalizada.wim "Win7" /verify
 \begin_layout Standard
 Una vez finalizado el proceso de copiado se muestra el porcentaje de finalizació
 n y el tiempo requerido para completar el proceso.
- Como se muestra en la Figura 41.
+ Como se muestra en la Figura 40.
 \end_layout
 
 \begin_layout Standard
@@ -16632,7 +16407,7 @@ Windows
 System Image Manager
 \emph default
  desde el menú Inicio.
- La Figura 42 muestra la pantalla de inicio de esta herramienta.
+ La Figura 41 muestra la pantalla de inicio de esta herramienta.
 \end_layout
 
 \begin_layout Standard
@@ -16735,12 +16510,12 @@ Create a new answer file
 \end_deeper
 \end_deeper
 \begin_layout Standard
-A partir de la Figura 43 y hasta la 63, se muestra una configuración personaliza
+A partir de la Figura 42 y hasta la 62, se muestra una configuración personaliza
 da completa utilizando Windows AIK.
 \end_layout
 
 \begin_layout Standard
-En las Figuras 43 y 44, se ha configurado la entrada de texto, interfaz
+En las Figuras 42 y 43, se ha configurado la entrada de texto, interfaz
  gráfica y ayuda del sistema en idioma español.
 \end_layout
 
@@ -16830,7 +16605,7 @@ Se ha configurado el
 firewall
 \shape default
  para que esté habilitado, valor por defecto.
- Se muestra en la Figura 45.
+ Se muestra en la Figura 44.
 \end_layout
 
 \begin_layout Standard
@@ -16872,14 +16647,14 @@ Firewall activado por defecto.
 \end_layout
 
 \begin_layout Standard
-En las Figuras 46 a 52, se han configurado los discos para que existan dos
+En las Figuras 45 a 51, se han configurado los discos para que existan dos
  particiones.
  Una donde se instalará el MBR (
 \shape italic
 Master Boot Record
 \shape default
 ) y otra donde se copiarán los archivos del sistema operativo.
- Se muestra en las Figuras 46 y 47.
+ Se muestra en las Figuras 45 y 46.
 \end_layout
 
 \begin_layout Standard
@@ -16962,7 +16737,7 @@ Configuración discos.
 
 \begin_layout Standard
 Partición de 300 MB, donde se instala el MBR.
- Se muestra en la Figura 48.
+ Se muestra en la Figura 47.
 \end_layout
 
 \begin_layout Standard
@@ -17007,7 +16782,7 @@ Discos.
 
 Partición que utilizará el espacio restante del disco, donde se copiarán
  los archivos de Windows.
- Se muestra en la Figura 49.
+ Se muestra en la Figura 48.
 \end_layout
 
 \begin_layout Standard
@@ -17051,7 +16826,7 @@ Discos.
 \end_inset
 
 Formato de la partición.
- Ver Figuras 50, 51 y 52.
+ Ver Figuras 49, 50 y 51.
 \end_layout
 
 \begin_layout Standard
@@ -17177,7 +16952,7 @@ amd64
 ), se debe seleccionar cuál opción instalar.
  La manera más fácil es conocer la posición, en la lista de opciones de
  instalación, de la versión que se quiere instalar.
- Seleccionarla como se muestra en la Figura 53, donde se observa que en
+ Seleccionarla como se muestra en la Figura 52, donde se observa que en
  este caso es la primera posición.
 \end_layout
 
@@ -17217,7 +16992,7 @@ Instalación del sistema operativo.
 
 \begin_layout Standard
 La selección de la partición de instalación de Windows se realiza como se
- muestra en la Figura 54.
+ muestra en la Figura 53.
 \end_layout
 
 \begin_layout Standard
@@ -17260,7 +17035,7 @@ Elección de partición de instalación.
 
 \begin_layout Standard
 La aceptación de las condiciones de privacidad y uso del sistema operativo
- se realiza como se muestra en la Figura 55.
+ se realiza como se muestra en la Figura 54.
 \end_layout
 
 \begin_layout Standard
@@ -17330,7 +17105,7 @@ https://technet.microsoft.com/en-us/library/jj612867.aspx y es
 \series default
 FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4
 \family default
- como se muestra en la Figura 56.
+ como se muestra en la Figura 55.
 \end_layout
 
 \begin_layout Standard
@@ -17377,7 +17152,7 @@ Clave de producto.
 
 \begin_layout Standard
 La omisión de la activación del producto se realiza como se muestra en la
- Figura 57.
+ Figura 56.
 \end_layout
 
 \begin_layout Standard
@@ -17482,7 +17257,7 @@ ones hechas al personalizar la imagen.
 \end_layout
 
 \begin_layout Standard
-Lo anterior se muestra en la Figura 58.
+Lo anterior se muestra en la Figura 57.
 \end_layout
 
 \begin_layout Standard
@@ -17531,7 +17306,7 @@ Hostname, organización, propietario y zona horaria.
 Como se indicó anteriormente, algunas configuraciones se pueden ingresar
  en diferentes etapas.
  Entonces, se debe ingresar nuevamente la configuración deseada.
- Esto se realiza como se muestra en la Figuras 59 y 60.
+ Esto se realiza como se muestra en la Figuras 58 y 59.
 \end_layout
 
 \begin_layout Standard
@@ -17616,7 +17391,7 @@ Organización, propietario y zona horaria.
 
 \begin_layout Standard
 La selección de la configuración de red se realiza como se muestra en la
- Figura 61.
+ Figura 60.
 \end_layout
 
 \begin_layout Standard
@@ -17659,7 +17434,7 @@ Configuración de red.
 \end_inset
 
 La configuración de contraseñas de administrador se realiza como se muestra
- en la Figura 62.
+ en la Figura 61.
 \end_layout
 
 \begin_layout Standard
@@ -17701,7 +17476,7 @@ Contraseña administrador.
 
 \end_inset
 
-Las Figuras 63 y 64 muestran la creación de cuentas de usuario administrador
+Las Figuras 62 y 63 muestran la creación de cuentas de usuario administrador
  e invitado.
 \end_layout
 
@@ -18378,7 +18153,7 @@ post
 /virtual_machine
 \family default
 .
- En la Figura 65 se ve el decorador 
+ En la Figura 64 se ve el decorador 
 \family typewriter
 get
 \family default
@@ -18442,7 +18217,7 @@ get
 \end_layout
 
 \begin_layout Standard
-En la Figura 66 se presenta el decorador 
+En la Figura 65 se presenta el decorador 
 \family typewriter
 post
 \family default
@@ -18458,7 +18233,7 @@ post
 \family default
 llegue al servidor.
  Este caso se dará, por ejemplo, cuando el usuario complete el formulario
- devuelto en la función de la Figura 65.
+ devuelto en la función de la Figura 64.
  Esta función tomará los parámetros presentes en el formulario y realizará
  el proceso para crear las máquinas virtuales deseadas.
  Además, la función devuelve el HTML que indica que se están instalando
@@ -18518,7 +18293,7 @@ Si se declara la función
 run
 \family default
  (es la función encargada de levantar el entorno web) como en la Figura
- 67, solo se puede acceder al servidor web Bottle desde la misma máquina
+ 66, solo se puede acceder al servidor web Bottle desde la misma máquina
  que lo ejecuta (
 \shape italic
 localhost
@@ -18580,7 +18355,7 @@ debug
 \end_layout
 
 \begin_layout Standard
-Las Figuras 68 a 71 ilustran la sencilla interfaz web.
+Las Figuras 67 a 70 ilustran la sencilla interfaz web.
  
 \end_layout
 

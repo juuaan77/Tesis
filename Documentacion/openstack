@@ -1,0 +1,11 @@
+Openstack 
+
+
+
+Openstack (Figura 15) es un conjunto de proyectos de código abierto. En sus inicios quienes contribuyeron con mas código fué RackSpace y la NASA. Actualmente, muchas empresas se han unido al proyecto, entre las que se encuentran empresas tan importantes como AMD, Intel, Canonical, SUSE Linux, Red Hat, IBM, Dell, HP, Cisco, etc. OpenStack es software libre bajo los términos de la licencia Apache. Este conjunto de proyectos y grupo de empresas tienen como objetivo construir una plataforma de nube. Como tal, Openstack podría considerarse como un Cloud Management Platform o Plataforma de Gestión en la Nube, que permite orquestar y gestionar distintos componentes de una infraestructura para dar servicios de nube. En resumen, Openstack es una solución de cloud computing del tipo IaaS (Infrastructure as a Service) de código abierto.
+
+Dependiendo del número de equipos en la nube y la configuración de red, se instalarán en cada nodo diferentes componentes. Cada componente de Openstack ofrecen una API que se pueden utilizar con XML o JSON. Esto hace a Openstack extensible y adaptable a cada entorno.
+
+Uno de sus componentes, el encargado de la virtualización, es Nova Compute. Este es el componente principal de OpenStack. Gestiona las instancias de imágenes, dónde deben ejecutarse y el acceso mediante consola. Soporta diferentes hypervisors: KVM/QEMU, Xen, Hyper-V, VMware ESXi, LXC, Docker. Cabe aclarar que Nova se comunica con hypervisors para poder crear instancias de los sistema operativos, es decir, Nova no realiza la virtualización sino que quien virtualiza es el hypervisor en cuestión, esto es, KVM, Docker, VMware ESXi, etc. Cuando se crea un ambiente de nube OpenStack permite al usuario abstraerse del hypervisor ya que está una capa arriba.
+
+Otro componente de Openstack es Heat. Éste es un servicio de orquestación basado en plantillas para describir una aplicación en la nube mediante las APIs de Openstack, para ejecutar esas aplicaciones. Las plantillas permiten crear la mayoría de los recursos de Openstack, como instancias, IPs flotantes, volúmenes, grupos de seguridad, usuarios, etc. 

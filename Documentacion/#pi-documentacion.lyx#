@@ -5770,7 +5770,7 @@ drivers
 \end_layout
 
 \begin_layout Paragraph
-Virtualización a nivel del sistema operativo o basada en contenedores
+Virtualización a nivel del sistema operativo 
 \end_layout
 
 \begin_layout Standard
@@ -6235,8 +6235,9 @@ textwidth}{!}{%
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="4">
+<lyxtabular version="3" rows="5" columns="5">
 <features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -6351,6 +6352,38 @@ status open
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{white}{
+\end_layout
+
+\end_inset
+
+Core soportados
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -6412,6 +6445,15 @@ X
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -6462,6 +6504,15 @@ X
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+240
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -6487,6 +6538,15 @@ OpenVZ
 
 \begin_layout Plain Layout
 Contenedores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -6546,6 +6606,15 @@ Completo
 
 \begin_layout Plain Layout
 X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -7211,7 +7280,7 @@ FAI
 \begin_inset Text
 
 \begin_layout Plain Layout
-X
+
 \end_layout
 
 \end_inset
@@ -7220,7 +7289,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -7290,7 +7359,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-X
+?
 \end_layout
 
 \end_inset
