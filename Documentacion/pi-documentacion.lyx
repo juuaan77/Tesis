@@ -18159,7 +18159,7 @@ El siguiente ejemplo pide el ingreso de tres números que representan las
 \end_layout
 
 \begin_layout Standard
-Con las siguientes funciones se difinió el modo en que procederá el servidor
+Con las siguientes funciones se definió el modo en que procederá el servidor
  Bottle cuando recibe peticiones 
 \family typewriter
 get
@@ -20476,6 +20476,23 @@ Wikipedia.
 
 \family typewriter
 https://en.wikipedia.org/wiki/Orchestration_%28computing%29 
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 12/2015
+\end_layout
+
+\begin_layout Itemize
+DEVOPS.
+ Automation & Orchestration
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+https://devops.com/automation-versus-orchestration/
 \family default
 
 \begin_inset Newline newline
