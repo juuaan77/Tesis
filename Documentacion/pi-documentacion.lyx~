@@ -5651,7 +5651,6 @@ Es una forma virtualización donde el sistema operativo huésped desconoce
  que está en un entorno virtual y, por lo tanto, el 
 \shape italic
 hardware 
-<<<<<<< Updated upstream
 \shape default
 se encuentra virtualizado por el sistema operativo anfitrión.
  La capa de virtualización, un 
@@ -5663,19 +5662,6 @@ hypervisor
 \shape italic
 hardware
 \shape default
-=======
-\shape default
-se encuentra virtualizado por el sistema operativo anfitrión.
- La capa de virtualización, un 
-\shape italic
-hypervisor
-\shape default
-, media entre los sistemas huéspedes y el anfitrión.
- En términos generales consiste en la abstracción de todo el 
-\shape italic
-hardware
-\shape default
->>>>>>> Stashed changes
  subyacente de una plataforma de manera que múltiples instancias de sistemas
  operativos puedan ejecutarse de forma independiente, con la ilusión de
  que los recursos abstraídos les pertenecen en exclusiva.
@@ -6335,7 +6321,7 @@ textcolor{white}{
 
 \end_inset
 
-Tipo de Virtualizacion
+Tipo de virtualización
 \begin_inset ERT
 status open
 
@@ -7379,7 +7365,7 @@ middleware
  Define las políticas y niveles de servicio a través de flujos de trabajo
  automatizados, aprovisionamiento y gestión de cambio.
  Esto crea una infraestructura alineada con la aplicación que escala basándose
- en las necesidades de cada aplicación.
+ en las necesidades de cada aplicación.[10]
 \end_layout
 
 \begin_layout Standard
@@ -7388,7 +7374,7 @@ La orquestación también provee la gestión centralizada de los recursos.
  de una sola aplicación.
  Cuando es necesario que se creen más instancias de diferentes aplicaciones,
  herramientas automatizadas realizan tareas que previamente podían llevarse
- a cabo sólo por múltiples administradores.[10]
+ a cabo sólo por múltiples administradores.
 \end_layout
 
 \begin_layout Standard
@@ -7931,7 +7917,7 @@ textcolor{white}{
 
 \end_inset
 
-Tipo de Arquitectura
+Tipo de arquitectura
 \begin_inset ERT
 status open
 
@@ -7980,7 +7966,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cliente-Servidor
+Sin cliente, utiliza SSH
 \end_layout
 
 \end_inset
@@ -8030,7 +8016,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cliente-Servidor
+Cliente / Servidor
 \end_layout
 
 \end_inset
@@ -8068,7 +8054,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cliente-Servidor
+Cliente / Servidor
 \end_layout
 
 \end_inset
@@ -20372,7 +20358,7 @@ Consultada 10/2015
 \begin_layout Standard
 
 \series bold
-[9] SAMBA
+[9] SAMBAhttps://en.wikipedia.org/wiki/Virtualization
 \end_layout
 
 \begin_layout Itemize
@@ -20429,7 +20415,11 @@ http://www.techbrown.com/
 \begin_inset Newline newline
 \end_inset
 
-samba-server-configuration-centos-7-rhel-7.shtml 
+samba-server-configuration-centos-7-rhel-7.shtml
+\begin_inset Newline newline
+\end_inset
+
+
 \family default
 Consultada 03/2016
 \end_layout
@@ -20441,13 +20431,14 @@ Consultada 03/2016
 \end_layout
 
 \begin_layout Itemize
-Cloud computing models.
+MIT Massachusetts Institute of Technology.
+ Cloud computing models.
 \family typewriter
 
 \begin_inset Newline newline
 \end_inset
 
-hhttp://web.mit.edu/smadnick/www/wp/2013-01.pdf
+http://web.mit.edu/smadnick/www/wp/2013-01.pdf
 \begin_inset Newline newline
 \end_inset
 
@@ -20457,23 +20448,16 @@ Consultada 10/2015
 \end_layout
 
 \begin_layout Itemize
-Virtual Machines
+Wikipedia.
+ Provisioning 
 \begin_inset Newline newline
 \end_inset
 
-http://www.cse.unsw.edu.au/~cs9242/07/lectures/05-vm.pdf
-\begin_inset Newline newline
-\end_inset
 
-Consultada 10/2015
-\end_layout
-
-\begin_layout Itemize
-Provisioning 
-\begin_inset Newline newline
-\end_inset
-
+\family typewriter
 https://en.wikipedia.org/wiki/Provisioning
+\family default
+
 \begin_inset Newline newline
 \end_inset
 
@@ -20481,15 +20465,98 @@ Consultada 11/2015
 \end_layout
 
 \begin_layout Itemize
-Orchestration
+Wikipedia.
+ Orchestration
 \begin_inset Newline newline
 \end_inset
 
-https://en.wikipedia.org/wiki/Orchestration_%28computing%29
+
+\family typewriter
+https://en.wikipedia.org/wiki/Orchestration_%28computing%29 
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 12/2015
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[11] Virtualización
 \end_layout
 
 \begin_layout Itemize
-Consultada 12/2015
+Wikipedia.
+ Virtualization
+\family typewriter
+.
+\begin_inset Newline newline
+\end_inset
+
+https://en.wikipedia.org/wiki/Virtualization
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+UNSW Australia - Computer Science and Engineering.
+ Virtual Machines.
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+http://www.cse.unsw.edu.au/~cs9242/07/lectures/05-vm.pdf
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+Red Hat Documentation.
+ Types of Virtualization
+\family typewriter
+.
+\begin_inset Newline newline
+\end_inset
+
+https://access.redhat.com/documentation/en-US/
+\begin_inset Newline newline
+\end_inset
+
+Red_Hat_Enterprise_Linux/5/html/Virtualization/pr01s05.html
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+VMWare Docs.
+ Virtualization
+\family typewriter
+ Overview.
+\begin_inset Newline newline
+\end_inset
+
+https://www.vmware.com/pdf/virtualization.pdf
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+Consultada 10/2015
 \end_layout
 
 \end_body
