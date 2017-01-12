@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  12 JAN 2017 17:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  12 JAN 2017 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,12 +897,12 @@ LaTeX Info: Redefining \includegraphics on input line 47.
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-(./Presentacion tesis.nav) <./figuras/tesis.jpg, id=53, 301.125pt x 240.9pt>
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+(./Presentacion tesis.nav) <./figuras/fondo_2.jpg, id=53, 1606.0pt x 1204.5pt>
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 55.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 55.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
@@ -910,8 +910,8 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 [1
 
-{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figuras/tesis.
-jpg>]
+{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figuras/fondo_
+2.jpg>]
 LaTeX Font Info:    Try loading font information for U+msa on input line 79.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -921,86 +921,86 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 79.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 79.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 79.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [2
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 93.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 93.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [3
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 107.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 107.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [4
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 123.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 123.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [5
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 138.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 138.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [6
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 147.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 147.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [7
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 159.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 159.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [8
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 169.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 169.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [9
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 182.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 182.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [10
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 196.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 196.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [11
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 209.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 209.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [12
 
 ]
@@ -1012,39 +1012,39 @@ File: ./figuras/ArquitecturaDeDesarrolloEnUnEntornoMixto.png Graphic file (type
 Package pdftex.def Info: ./figuras/ArquitecturaDeDesarrolloEnUnEntornoMixto.png
  used on input line 219.
 (pdftex.def)             Requested size: 573.64172pt x 392.21436pt.
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 219.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 219.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [13
 
  <./figuras/ArquitecturaDeDesarrolloEnUnEntornoMixto.png>]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 232.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 232.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [14
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 245.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
- [15
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 245.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
 
-]
-<./figuras/virtualizacion_tipos_3.png, id=140, 193.523pt x 264.99pt>
+[15
+
+] <./figuras/virtualizacion_tipos_3.png, id=140, 193.523pt x 264.99pt>
 File: ./figuras/virtualizacion_tipos_3.png Graphic file (type png)
 
 <use ./figuras/virtualizacion_tipos_3.png>
 Package pdftex.def Info: ./figuras/virtualizacion_tipos_3.png used on input lin
 e 256.
 (pdftex.def)             Requested size: 193.5225pt x 264.98935pt.
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 256.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 256.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [16
 
  <./figuras/virtualizacion_tipos_3.png>]
@@ -1055,55 +1055,55 @@ File: ./figuras/kvm_arquitectura_1.png Graphic file (type png)
 Package pdftex.def Info: ./figuras/kvm_arquitectura_1.png used on input line 26
 7.
 (pdftex.def)             Requested size: 717.88025pt x 646.41342pt.
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 267.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 267.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [17
 
  <./figuras/kvm_arquitectura_1.png>]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 280.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 280.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [18
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 290.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 290.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [19
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 302.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 302.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [20
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 313.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 313.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [21
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 324.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 324.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [22
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 338.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 338.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [23
 
 ]
@@ -1114,124 +1114,124 @@ File: ./figuras/PuppetLabsEnforceDesiredState.png Graphic file (type png)
 Package pdftex.def Info: ./figuras/PuppetLabsEnforceDesiredState.png used on in
 put line 350.
 (pdftex.def)             Requested size: 616.301pt x 449.6789pt.
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 350.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 350.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
 
 [24
 
  <./figuras/PuppetLabsEnforceDesiredState.png (PNG copy)>]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 361.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 361.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [25
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 372.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 372.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [26
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 378.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 378.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [27
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 389.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 389.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [28
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 400.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 400.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [29
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 411.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 411.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [30
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 417.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 417.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [31
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 424.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 424.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [32
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 437.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 437.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [33
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 453.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 453.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [34
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 466.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 466.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [35
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 479.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 479.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [36
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 489.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 489.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [37
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
- <use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 502.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 502.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [38
 
 ]
-File: ./figuras/tesis.jpg Graphic file (type jpg)
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
 
-<use ./figuras/tesis.jpg>
-Package pdftex.def Info: ./figuras/tesis.jpg used on input line 513.
-(pdftex.def)             Requested size: 364.19536pt x 291.38329pt.
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 513.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [39
 
 ]
@@ -1260,8 +1260,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 518.
  ) 
 Here is how much of TeX's memory you used:
  16690 strings out of 495063
- 304377 string characters out of 3182201
- 384397 words of memory out of 3000000
+ 304387 string characters out of 3182201
+ 384395 words of memory out of 3000000
  19382 multiletter control sequences out of 15000+200000
  11512 words of font info for 42 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1273,7 +1273,7 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on "Presentacion tesis.pdf" (39 pages, 257055 bytes).
+Output written on "Presentacion tesis.pdf" (39 pages, 481199 bytes).
 PDF statistics:
  319 PDF objects out of 1000 (max. 8388607)
  255 compressed objects within 3 object streams
