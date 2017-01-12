@@ -295,7 +295,7 @@ datacenters
  Este tipo de tareas ya no pueden realizarse individualmente para cada máquina
  y menos aún en entornos escalables donde pueden haber cientos de nodos.
  Para ello es necesario contar con herramientas profesionales para orquestar
- éstas tareas complejas de manera sencilla.
+ estas tareas complejas de manera sencilla.
  
 \end_layout
 
@@ -20361,7 +20361,7 @@ Consultada 10/2015
 \begin_layout Standard
 
 \series bold
-[9] SAMBAhttps://en.wikipedia.org/wiki/Virtualization
+[9] SAMBA
 \end_layout
 
 \begin_layout Itemize
