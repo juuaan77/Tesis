@@ -5635,7 +5635,7 @@ hypervisor
 host
 \family default
 \emph default
- y asigna dinámicamente recursos computacionales a cada VM.
+ y asigna dinámicamente recursos computacionales a cada VM.[10]
 \end_layout
 
 \begin_layout Subsubsection
@@ -6626,7 +6626,7 @@ e.
  Aprovisionamiento es el conjunto de acciones para preparar una máquina
  virtual, con el sistema apropiado, datos y software, y dejarla lista para
  su operación.
- 
+ [10]
 \end_layout
 
 \begin_layout Standard
@@ -7365,7 +7365,7 @@ middleware
  Define las políticas y niveles de servicio a través de flujos de trabajo
  automatizados, aprovisionamiento y gestión de cambio.
  Esto crea una infraestructura alineada con la aplicación que escala basándose
- en las necesidades de cada aplicación.
+ en las necesidades de cada aplicación.[10]
 \end_layout
 
 \begin_layout Standard
@@ -20440,6 +20440,42 @@ hhttp://web.mit.edu/smadnick/www/wp/2013-01.pdf
 
 \family default
 Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+Virtual Machines
+\begin_inset Newline newline
+\end_inset
+
+http://www.cse.unsw.edu.au/~cs9242/07/lectures/05-vm.pdf
+\begin_inset Newline newline
+\end_inset
+
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+Provisioning 
+\begin_inset Newline newline
+\end_inset
+
+https://en.wikipedia.org/wiki/Provisioning
+\begin_inset Newline newline
+\end_inset
+
+Consultada 11/2015
+\end_layout
+
+\begin_layout Itemize
+Orchestration
+\begin_inset Newline newline
+\end_inset
+
+https://en.wikipedia.org/wiki/Orchestration_%28computing%29
+\end_layout
+
+\begin_layout Itemize
+Consultada 12/2015
 \end_layout
 
 \end_body

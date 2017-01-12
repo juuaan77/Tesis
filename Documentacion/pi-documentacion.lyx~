@@ -463,7 +463,7 @@ Computing
  Se esté o no en la nube, se puede comenzar virtualizando los servidores
  locales y luego moverlos a ella para obtener aún más agilidad.
  Así, la orquestación es crucial al momento de desplegar servicios en la
- nube porque éstos:
+ nube porque éstos: [10]
 \end_layout
 
 \begin_layout Itemize
@@ -5635,7 +5635,7 @@ hypervisor
 host
 \family default
 \emph default
- y asigna dinámicamente recursos computacionales a cada VM.
+ y asigna dinámicamente recursos computacionales a cada VM.[10]
 \end_layout
 
 \begin_layout Subsubsection
@@ -5647,21 +5647,29 @@ Virtualización completa
 \end_layout
 
 \begin_layout Standard
-Consiste en la virtualización de paquetes y herramientas para correr de
- forma totalmente virtualizada, sin modificaciones, sistemas operativos
- huéspedes.
- Este modo cuenta con la ventaja de consolidar sistemas viejos en hardware
- nuevo, más eficiente y reducir el espacio físico y costos de operación
- relativos al consumo energético y refrigeración de estos sistemas menos
- eficientes.
- La virtualización completa ofrece, sin embargo, menor rendimiento de entrada/sa
-lida que instalaciones nativas (también llamadas 
+Es una forma virtualización donde el sistema operativo huésped desconoce
+ que está en un entorno virtual y, por lo tanto, el 
 \shape italic
-bare-metal
+hardware 
 \shape default
- o “metal-pelado”) de sistemas operativos.
- Por ejemplo, el software KVM, Xen, VMware Workstation o VirtualBox hacen
- uso de esta técnica.
+se encuentra virtualizado por el sistema operativo anfitrión.
+ La capa de virtualización, un 
+\shape italic
+hypervisor
+\shape default
+, media entre los sistemas huéspedes y el anfitrión.
+ En términos generales consiste en la abstracción de todo el 
+\shape italic
+hardware
+\shape default
+ subyacente de una plataforma de manera que múltiples instancias de sistemas
+ operativos puedan ejecutarse de forma independiente, con la ilusión de
+ que los recursos abstraídos les pertenecen en exclusiva.
+ Esto es muy importante, ya que cada máquina virtual no ve a otra máquina
+ virtual como tal, sino como otra máquina independiente de la que desconoce
+ que comparte con ella ciertos recursos.
+ Por ejemplo, el software KVM, VMware Workstation o VirtualBox hacen uso
+ de esta técnica.
  Cabe destacar que en el caso de KVM se requiere soporte de hardware para
  ejecutar la virtualización, ya sea con procesadores Intel o AMD.
  La Figura 9 ilustra este tipo de virtualización.
@@ -5841,7 +5849,16 @@ Un emulador es hardware o software que permite a un sistema de computación
  comportarse como otro sistema.
  Generalmente, un emulador permite a un sistema correr software o utilizar
  dispositivos periféricos diseñados para el otro sistema.
- Como ejemplo de emulador el principal referente es Qemu.
+ Un emulador que replica una arquitectura 
+\shape italic
+hardware
+\shape default
+ al completo (procesador, juego de instrucciones, periféricos) permite que
+ se ejecuten sobre él máquinas virtuales.
+ Por lo tanto se permite la ejecución de sistemas operativos y aplicaciones
+ distintos al instalado físicamente en la máquina que ejecuta el emulador.
+ Los emuladores más importantes actualmente son Bochs, MAME, DOSBox, Hercules,
+ MESS, VirtualPC, y Qemu.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6609,7 +6626,7 @@ e.
  Aprovisionamiento es el conjunto de acciones para preparar una máquina
  virtual, con el sistema apropiado, datos y software, y dejarla lista para
  su operación.
- 
+ [10]
 \end_layout
 
 \begin_layout Standard
@@ -7357,7 +7374,7 @@ La orquestación también provee la gestión centralizada de los recursos.
  de una sola aplicación.
  Cuando es necesario que se creen más instancias de diferentes aplicaciones,
  herramientas automatizadas realizan tareas que previamente podían llevarse
- a cabo sólo por múltiples administradores.
+ a cabo sólo por múltiples administradores.[10]
 \end_layout
 
 \begin_layout Standard
@@ -20423,6 +20440,42 @@ hhttp://web.mit.edu/smadnick/www/wp/2013-01.pdf
 
 \family default
 Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+Virtual Machines
+\begin_inset Newline newline
+\end_inset
+
+http://www.cse.unsw.edu.au/~cs9242/07/lectures/05-vm.pdf
+\begin_inset Newline newline
+\end_inset
+
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+Provisioning 
+\begin_inset Newline newline
+\end_inset
+
+https://en.wikipedia.org/wiki/Provisioning
+\begin_inset Newline newline
+\end_inset
+
+Consultada 11/2015
+\end_layout
+
+\begin_layout Itemize
+Orchestration
+\begin_inset Newline newline
+\end_inset
+
+https://en.wikipedia.org/wiki/Orchestration_%28computing%29
+\end_layout
+
+\begin_layout Itemize
+Consultada 12/2015
 \end_layout
 
 \end_body
