@@ -5241,7 +5241,7 @@ textcolor{white}{
 
 \end_inset
 
-Sistema Operativo
+Sistema operativo
 \begin_inset ERT
 status open
 
@@ -5338,10 +5338,10 @@ textcolor{white}{
 \end_inset
 
 Estándar 
-\emph on
-sy
-\emph default
-stemd
+\shape italic
+systemd
+\shape default
+
 \begin_inset ERT
 status open
 
@@ -6321,7 +6321,7 @@ textcolor{white}{
 
 \end_inset
 
-Tipo de Virtualizacion
+Tipo de virtualización
 \begin_inset ERT
 status open
 
@@ -7966,7 +7966,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cliente-Servidor
+Sin cliente, utiliza SSH
 \end_layout
 
 \end_inset
@@ -8016,7 +8016,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cliente-Servidor
+Cliente / Servidor
 \end_layout
 
 \end_inset
@@ -8054,7 +8054,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cliente-Servidor
+Cliente / Servidor
 \end_layout
 
 \end_inset

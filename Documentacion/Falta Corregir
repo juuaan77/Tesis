@@ -43,23 +43,27 @@ Correcciones Wolfmann
 Agregar apartado Openstack
 OK - LO PUSE EN LA PARTE DE VIRTUALIZACIÓN.
 
-Actualizar diagrama -> Done
+Actualizar diagrama -> DONE
 
-Referencias introduccion (de la intro y de las herramientas-> paginas oficiales)
+Referencias introduccion (de la intro y de las herramientas-> paginas oficiales) ->DONE
 
-Referencias virtualizacion (de la intro y de las herramientas-> paginas oficiales)
+Referencias virtualizacion (de la intro y de las herramientas-> paginas oficiales) ->DONE
 
-Referencias orquestacion (de la intro y de las herramientas-> paginas oficiales)
+Referencias orquestacion (de la intro y de las herramientas-> paginas oficiales) ->DONE
 
-Tabla comparativa de OS -> Falta ver ubicacion, no la puedo dejar quieta
+Tabla comparativa de OS -> Falta ver ubicacion, no la puedo dejar quieta->DONE
 
-Tabla comparativa de virtualizacion -> Falta ver ubicacion, no la puedo dejar quieta
+Tabla comparativa de virtualizacion -> Falta ver ubicacion, no la puedo dejar quieta->DONE
 
-Tabla comparativa de aprovisionamiento -> Falta ver ubicacion, no la puedo dejar quieta
+Tabla comparativa de aprovisionamiento -> Falta ver ubicacion, no la puedo dejar quieta->DONE
 
-Tabla comparativa de orquestacion -> Falta ver ubicacion, no la puedo dejar quieta
+Tabla comparativa de orquestacion -> Falta ver ubicacion, no la puedo dejar quieta->DONE
 
+<<<<<<< Updated upstream
 Explicar mejor Docker -> Done
+=======
+Explicar mejor Docker-> DONE
+>>>>>>> Stashed changes
 
 -----------------------------------------------------------------------------------------------------------------------------
 Correcciones Ambrosini

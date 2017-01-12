@@ -5241,7 +5241,7 @@ textcolor{white}{
 
 \end_inset
 
-Sistema Operativo
+Sistema operativo
 \begin_inset ERT
 status open
 
@@ -5338,10 +5338,10 @@ textcolor{white}{
 \end_inset
 
 Estándar 
-\emph on
-sy
-\emph default
-stemd
+\shape italic
+systemd
+\shape default
+
 \begin_inset ERT
 status open
 
@@ -5651,6 +5651,7 @@ Es una forma virtualización donde el sistema operativo huésped desconoce
  que está en un entorno virtual y, por lo tanto, el 
 \shape italic
 hardware 
+<<<<<<< Updated upstream
 \shape default
 se encuentra virtualizado por el sistema operativo anfitrión.
  La capa de virtualización, un 
@@ -5662,6 +5663,19 @@ hypervisor
 \shape italic
 hardware
 \shape default
+=======
+\shape default
+se encuentra virtualizado por el sistema operativo anfitrión.
+ La capa de virtualización, un 
+\shape italic
+hypervisor
+\shape default
+, media entre los sistemas huéspedes y el anfitrión.
+ En términos generales consiste en la abstracción de todo el 
+\shape italic
+hardware
+\shape default
+>>>>>>> Stashed changes
  subyacente de una plataforma de manera que múltiples instancias de sistemas
  operativos puedan ejecutarse de forma independiente, con la ilusión de
  que los recursos abstraídos les pertenecen en exclusiva.
