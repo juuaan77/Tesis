@@ -463,7 +463,7 @@ Computing
  Se esté o no en la nube, se puede comenzar virtualizando los servidores
  locales y luego moverlos a ella para obtener aún más agilidad.
  Así, la orquestación es crucial al momento de desplegar servicios en la
- nube porque éstos: [10]
+ nube porque éstos: [1]
 \end_layout
 
 \begin_layout Itemize
@@ -5635,7 +5635,7 @@ hypervisor
 host
 \family default
 \emph default
- y asigna dinámicamente recursos computacionales a cada VM.[10]
+ y asigna dinámicamente recursos computacionales a cada VM.[1]
 \end_layout
 
 \begin_layout Subsubsection
@@ -6072,7 +6072,7 @@ hypervisor
  Xen o KVM.
  En conjunto KVM/Qemu, KVM es quien hace las veces de árbitro del acceso
  al CPU y memoria, y Qemu emula los recursos de hardware.
- [1]
+ [3]
 \end_layout
 
 \begin_layout Paragraph
@@ -6626,7 +6626,7 @@ e.
  Aprovisionamiento es el conjunto de acciones para preparar una máquina
  virtual, con el sistema apropiado, datos y software, y dejarla lista para
  su operación.
- [10]
+ [1]
 \end_layout
 
 \begin_layout Standard
@@ -6788,7 +6788,7 @@ snippets
 \shape italic
 kickstart
 \shape default
-.[2]
+.[4]
 \end_layout
 
 \begin_layout Paragraph
@@ -7365,7 +7365,7 @@ middleware
  Define las políticas y niveles de servicio a través de flujos de trabajo
  automatizados, aprovisionamiento y gestión de cambio.
  Esto crea una infraestructura alineada con la aplicación que escala basándose
- en las necesidades de cada aplicación.[10]
+ en las necesidades de cada aplicación.[1]
 \end_layout
 
 \begin_layout Standard
@@ -7700,7 +7700,7 @@ indica a sus agentes las configuraciones que deben aplicar.
 masters
 \shape default
  pueden aplicar manifiestos a sí mismos.
- Notar que hay dos etapas: [4]
+ Notar que hay dos etapas: [6]
 \end_layout
 
 \begin_layout Enumerate
@@ -8853,7 +8853,7 @@ vmx
 \family default
  (Intel).
  En caso de no poseer esas banderas, el procesador no soporta virtualización
- y la salida será vacía.[1]
+ y la salida será vacía.[3]
 \end_layout
 
 \begin_layout Standard
@@ -9062,7 +9062,7 @@ Para el
 hypervisor 
 \shape default
 de KVM, las siguientes restricciones deben tenerse en cuenta al momento
- de planificar una solución:[1]
+ de planificar una solución:[3]
 \end_layout
 
 \begin_layout Itemize
@@ -9362,7 +9362,7 @@ Entre la gran cantidad opciones del comando
 \family typewriter
 virt-install
 \family default
- se destacan:[1]
+ se destacan:[3]
 \end_layout
 
 \begin_layout Itemize
@@ -9548,7 +9548,7 @@ Modelado
 Cobbler utiliza objetos para definir la configuración de aprovisionamiento.
  A medida que se desciende por el árbol de objetos, las variables se sobre
  escriben y se añaden a la información definida en los objetos superiores.
- La Figura 30 muestra este modelo.[2]
+ La Figura 30 muestra este modelo.[4]
 \end_layout
 
 \begin_layout Standard
@@ -10243,7 +10243,7 @@ Algunas palabras clave (
 \shape italic
 keywords
 \shape default
-) son opcionales, mientras que otras son necesarias para la instalación.[3]
+) son opcionales, mientras que otras son necesarias para la instalación.[5]
 \end_layout
 
 \begin_layout Subparagraph
@@ -12082,7 +12082,7 @@ puppet cert
 \family default
  para inspeccionar los pedidos y firmar nuevos certificados; los agentes
  pueden entonces descargar los certificados firmados.
- [4]
+ [6]
 \end_layout
 
 \begin_layout Subsubsection
@@ -12205,7 +12205,7 @@ puppet resource tool -> puppet resource <type> <name>
 Puppet incluye una variedad de tipos de recursos integrados que permiten
  administrar varios aspectos de un sistema.
  Algunos de los tipos de recursos claves que generalmente se encuentran
- en un sistema son los siguientes:[4]
+ en un sistema son los siguientes:[6]
 \end_layout
 
 \begin_layout Itemize
@@ -12649,7 +12649,7 @@ namevar
 \family typewriter
 namevar
 \family default
-, este valor toma por defecto el título del recurso.[4]
+, este valor toma por defecto el título del recurso.[6]
 \end_layout
 
 \begin_layout Standard
@@ -12851,7 +12851,7 @@ para borrar los archivos de configuración instalados por el paquete.
 
 \begin_layout Standard
 Algunas de las referencias de tipo más importantes están explicadas a continuaci
-ón:[4]
+ón:[6]
 \end_layout
 
 \begin_layout Itemize
@@ -13695,7 +13695,7 @@ puppetserver
 \shape default
 \emph default
 .
- Para ello, habilitar los paquetes de los repositorios de Puppet Labs:[4]
+ Para ello, habilitar los paquetes de los repositorios de Puppet Labs:[6]
 \end_layout
 
 \begin_layout Standard
@@ -14490,7 +14490,7 @@ Es la herramienta que permite crear archivos de respuesta para la instalación
  Se debe usar Windows SIM en el equipo del técnico y, a continuación, transferir
  el archivo de respuesta para la instalación desatendida al equipo maestro
  antes de crear la imagen de instalación de Windows.
- Esta herramienta se instala junto con WAIK.[6]
+ Esta herramienta se instala junto con WAIK.[8]
 \end_layout
 
 \begin_layout Subparagraph
@@ -14524,7 +14524,7 @@ Contenido del archivo de respuesta
 \begin_layout Standard
 La configuración de un archivo de respuesta se organiza en dos secciones:
  componentes y paquetes.
- [6]
+ [8]
 \end_layout
 
 \begin_layout Itemize
@@ -18121,7 +18121,7 @@ Se decidió realizar la interfaz web en Python, dado que el paquete Bottle
  provee un servidor web fácil de utilizar y fue recomendado por el director
  del proyecto.
  Instalar Bottle es muy simple, simplemente se realiza a través del siguiente
- comando:[5]
+ comando:[7]
 \end_layout
 
 \begin_layout Standard
@@ -20007,7 +20007,159 @@ Bibliografía
 \begin_layout Standard
 
 \series bold
-[1] KVM
+[1] Referencias generales
+\end_layout
+
+\begin_layout Itemize
+MIT Massachusetts Institute of Technology.
+ Cloud computing models.
+\family typewriter
+
+\begin_inset Newline newline
+\end_inset
+
+http://web.mit.edu/smadnick/www/wp/2013-01.pdf
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+Wikipedia.
+ Provisioning 
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+https://en.wikipedia.org/wiki/Provisioning
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 11/2015
+\end_layout
+
+\begin_layout Itemize
+Wikipedia.
+ Orchestration
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+https://en.wikipedia.org/wiki/Orchestration_%28computing%29 
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 12/2015
+\end_layout
+
+\begin_layout Itemize
+DEVOPS.
+ Automation & Orchestration
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+https://devops.com/automation-versus-orchestration/
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 12/2015
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[2] Virtualización
+\end_layout
+
+\begin_layout Itemize
+Wikipedia.
+ Virtualization
+\family typewriter
+.
+\begin_inset Newline newline
+\end_inset
+
+https://en.wikipedia.org/wiki/Virtualization
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+UNSW Australia - Computer Science and Engineering.
+ Virtual Machines.
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+http://www.cse.unsw.edu.au/~cs9242/07/lectures/05-vm.pdf
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+Red Hat Documentation.
+ Types of Virtualization
+\family typewriter
+.
+\begin_inset Newline newline
+\end_inset
+
+https://access.redhat.com/documentation/en-US/
+\begin_inset Newline newline
+\end_inset
+
+Red_Hat_Enterprise_Linux/5/html/Virtualization/pr01s05.html
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+Consultada 10/2015
+\end_layout
+
+\begin_layout Itemize
+VMWare Docs.
+ Virtualization
+\family typewriter
+ Overview.
+\begin_inset Newline newline
+\end_inset
+
+https://www.vmware.com/pdf/virtualization.pdf
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+Consultada 10/2015
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+[3] KVM
 \end_layout
 
 \begin_layout Itemize
@@ -20055,7 +20207,7 @@ Consultada 11/2015
 \begin_layout Standard
 
 \series bold
-[2] Cobbler
+[4] Cobbler
 \end_layout
 
 \begin_layout Itemize
@@ -20087,7 +20239,7 @@ https://fedorahosted.org/cobbler/wiki/UserDocs
 \begin_layout Standard
 
 \series bold
-[3]Kickstart
+[5]Kickstart
 \end_layout
 
 \begin_layout Itemize
@@ -20115,7 +20267,7 @@ Red_Hat_Enterprise_Linux/6
 \begin_layout Standard
 
 \series bold
-[4] Puppet
+[6] Puppet
 \end_layout
 
 \begin_layout Itemize
@@ -20148,7 +20300,7 @@ Consultada 02/2016
 \begin_layout Standard
 
 \series bold
-[5] Python-Bottle
+[7] Python-Bottle
 \end_layout
 
 \begin_layout Itemize
@@ -20180,7 +20332,7 @@ Consultada 03/2016
 \begin_layout Standard
 
 \series bold
-[6] Windows 7
+[8] Windows 7
 \end_layout
 
 \begin_layout Itemize
@@ -20285,7 +20437,7 @@ http://www.letifer.org/2014/03/26/cobbler-and-windows/
 \begin_layout Standard
 
 \series bold
-[7] PXE
+[9] PXE
 \end_layout
 
 \begin_layout Itemize
@@ -20308,7 +20460,7 @@ Consultada 11/2015
 \begin_layout Standard
 
 \series bold
-[8] Ingeniería de Software
+[10] Ingeniería de Software
 \end_layout
 
 \begin_layout Itemize
@@ -20361,7 +20513,7 @@ Consultada 10/2015
 \begin_layout Standard
 
 \series bold
-[9] SAMBA
+[11] SAMBA
 \end_layout
 
 \begin_layout Itemize
@@ -20425,158 +20577,6 @@ samba-server-configuration-centos-7-rhel-7.shtml
 
 \family default
 Consultada 03/2016
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-[10] Referencias generales
-\end_layout
-
-\begin_layout Itemize
-MIT Massachusetts Institute of Technology.
- Cloud computing models.
-\family typewriter
-
-\begin_inset Newline newline
-\end_inset
-
-http://web.mit.edu/smadnick/www/wp/2013-01.pdf
-\begin_inset Newline newline
-\end_inset
-
-
-\family default
-Consultada 10/2015
-\end_layout
-
-\begin_layout Itemize
-Wikipedia.
- Provisioning 
-\begin_inset Newline newline
-\end_inset
-
-
-\family typewriter
-https://en.wikipedia.org/wiki/Provisioning
-\family default
-
-\begin_inset Newline newline
-\end_inset
-
-Consultada 11/2015
-\end_layout
-
-\begin_layout Itemize
-Wikipedia.
- Orchestration
-\begin_inset Newline newline
-\end_inset
-
-
-\family typewriter
-https://en.wikipedia.org/wiki/Orchestration_%28computing%29 
-\family default
-
-\begin_inset Newline newline
-\end_inset
-
-Consultada 12/2015
-\end_layout
-
-\begin_layout Itemize
-DEVOPS.
- Automation & Orchestration
-\begin_inset Newline newline
-\end_inset
-
-
-\family typewriter
-https://devops.com/automation-versus-orchestration/
-\family default
-
-\begin_inset Newline newline
-\end_inset
-
-Consultada 12/2015
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-[11] Virtualización
-\end_layout
-
-\begin_layout Itemize
-Wikipedia.
- Virtualization
-\family typewriter
-.
-\begin_inset Newline newline
-\end_inset
-
-https://en.wikipedia.org/wiki/Virtualization
-\begin_inset Newline newline
-\end_inset
-
-
-\family default
-Consultada 10/2015
-\end_layout
-
-\begin_layout Itemize
-UNSW Australia - Computer Science and Engineering.
- Virtual Machines.
-\begin_inset Newline newline
-\end_inset
-
-
-\family typewriter
-http://www.cse.unsw.edu.au/~cs9242/07/lectures/05-vm.pdf
-\family default
-
-\begin_inset Newline newline
-\end_inset
-
-Consultada 10/2015
-\end_layout
-
-\begin_layout Itemize
-Red Hat Documentation.
- Types of Virtualization
-\family typewriter
-.
-\begin_inset Newline newline
-\end_inset
-
-https://access.redhat.com/documentation/en-US/
-\begin_inset Newline newline
-\end_inset
-
-Red_Hat_Enterprise_Linux/5/html/Virtualization/pr01s05.html
-\family default
-
-\begin_inset Newline newline
-\end_inset
-
-Consultada 10/2015
-\end_layout
-
-\begin_layout Itemize
-VMWare Docs.
- Virtualization
-\family typewriter
- Overview.
-\begin_inset Newline newline
-\end_inset
-
-https://www.vmware.com/pdf/virtualization.pdf
-\begin_inset Newline newline
-\end_inset
-
-
-\family default
-Consultada 10/2015
 \end_layout
 
 \end_body
