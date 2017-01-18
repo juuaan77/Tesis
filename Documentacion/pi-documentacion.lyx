@@ -3700,15 +3700,6 @@ Implicación de los riesgos
 
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Planificación de riesgos
 \end_layout
@@ -3723,15 +3714,6 @@ Una vez que analizamos los riesgos, podemos interpretar cuáles son los más
 
 \begin_layout Standard
 En la Tabla 5 describimos estrategias para cada uno de los riesgos.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-\begin_inset space ~
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4575,16 +4557,6 @@ Planificación de riesgos
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
