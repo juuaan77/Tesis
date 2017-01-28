@@ -1,12 +1,12 @@
 \beamer@endinputifotherversion {3.26pt}
 \select@language {english}
 \beamer@sectionintoc {1}{Organizaci\IeC {\'o}n de la Presentaci\IeC {\'o}n}{2}{0}{1}
-\beamer@sectionintoc {2}{Introduccion}{3}{0}{2}
+\beamer@sectionintoc {2}{Introducci\IeC {\'o}n}{3}{0}{2}
 \beamer@sectionintoc {3}{Objetivos}{8}{0}{3}
 \beamer@sectionintoc {4}{Arquitectura}{11}{0}{4}
 \beamer@sectionintoc {5}{Desarrollo}{14}{0}{5}
-\beamer@sectionintoc {6}{Conclusiones}{30}{0}{6}
-\beamer@sectionintoc {7}{Trabajos Futuros}{33}{0}{7}
-\beamer@sectionintoc {8}{Video demostraci\IeC {\'o}n}{36}{0}{8}
-\beamer@sectionintoc {9}{Preguntas}{38}{0}{9}
-\beamer@sectionintoc {10}{Muchas Gracias!}{39}{0}{10}
+\beamer@sectionintoc {6}{Conclusiones}{35}{0}{6}
+\beamer@sectionintoc {7}{Trabajos Futuros}{38}{0}{7}
+\beamer@sectionintoc {8}{Video demostraci\IeC {\'o}n}{41}{0}{8}
+\beamer@sectionintoc {9}{Preguntas}{43}{0}{9}
+\beamer@sectionintoc {10}{Muchas Gracias!}{44}{0}{10}

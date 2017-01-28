@@ -62,16 +62,16 @@
 
 \begin{frame}{Organización de la Presentación}
     \vspace{-1.5cm}
-    La precentación esta organizada de manera incremental explicando cada uno de los siguientes puntos.\\
+    La precentación está organizada de manera incremental explicando cada uno de los siguientes puntos:\\
     \begin{itemize}
-        \item Introduccion.
+        \item Introducción.
         \item Objetivos.
         \item Arquitectura.
         \item Desarrollo del sistema.
         \begin{itemize}
-            \item Herramienta de virtualizacion.
+            \item Herramienta de virtualización.
             \item Herramienta de aprovicionamiento.
-            \item Herramienta de orquestacion.
+            \item Herramienta de orquestación.
             \item Interfaz web.
         \end{itemize}
     \end{itemize}
@@ -82,32 +82,31 @@
 %---------------------------------------------------------------------------------------------------------------------------------------------
 %                                                             INTRODUCCION
 %---------------------------------------------------------------------------------------------------------------------------------------------
-\section{Introduccion}
+\section{Introducción}
 
 \begin{frame}
     %\vspace{}
     \Huge
     \centering
-    \textbf{ Introduccion }
+    \textbf{Introducción}
 
 \end{frame}
 
 
-\begin{frame}{Introduccion}
-    \vspace{-1.5cm}
+\begin{frame}{Introducción}
+    \vspace{-1cm}
     La cantidad de servicios y servidores necesarios en las organizaciones tiende a ser cada vez mayor.
-    Cada día los despliegues son más complejos, siendo necesario trabajar con aplicaciones clusterizadas, múltiples datacenters,etc.
+    Cada día los despliegues son más complejos, siendo necesario trabajar con aplicaciones clusterizadas, múltiples datacenters, etc.
     Este tipo de tareas ya no pueden realizarse individualmente para cada máquina y menos aún en entornos escalables donde pueden haber cientos de nodos.
 
     \begin{block}{}
-        Hablar de orquestación implica eficiencia en los recursos, tanto humanos como computacionales, y por ello implica hablar de virtualización, provisionamiento y datacenters dinámicos. En este sentido, virtualización puede aplicar a computadoras, sistemas opera
-        tivos, dispositivos de almacenamiento, aplicaciones o redes.
+        Hablar de orquestación implica eficiencia en los recursos, tanto humanos como computacionales, y por ello implica hablar de virtualización, provisionamiento y datacenters dinámicos. En este sentido, virtualización puede aplicar a computadoras, sistemas operativos, dispositivos de almacenamiento, aplicaciones o redes.
     \end{block}
 
 \end{frame}
 
-\begin{frame}{Introduccion}
-    \vspace{-1.5cm}
+\begin{frame}{Introducción}
+    \vspace{-0.5cm}
     \textbf{¿Qué es virtualización?}
 
     Virtualización es un término para software ejecutándose, usualmente sistemas operativos, de manera concurrente y aislada de otros programas en el mismo sistema. 
@@ -122,8 +121,8 @@
 
 \end{frame}
 
-\begin{frame}{Introduccion}
-    \vspace{-1.5cm}
+\begin{frame}{Introducción}
+    \vspace{-2.0cm}
     \textbf{¿Qué es aprovisionamiento?}
 
     En general, aprovisionamiento, significa proveer o hacer que algo esté disponible. El término es utilizado en un gran variedad de contextos en el área de Tecnologías de Información. En este Proyecto Integrador, el término hace referencia a lo siguiente:
@@ -131,18 +130,18 @@
     \begin{block}{}
     \textit
     {
-        Aprovisionamiento es el conjunto de acciones para preparar una máquina virtual, con el sistema apropiado, datos y software, y dejarla lista para su operación.
+        Aprovisionamiento es el conjunto de acciones para preparar una máquina virtual, con el sistema apropiado, datos y software dejándola lista para su operación.
     }
     \end{block}
 
 \end{frame}
 
-\begin{frame}{Introduccion}
-    \vspace{-1.5cm}
+\begin{frame}{Introducción}
+    \vspace{-2.5cm}
     \textbf{¿Qué es orquestación?}
 
-    La orquestación es automatizar procesos y flujos de trabajo mientras que la automatización básicamente automatiza una tarea específica.
-    Un orquestador es una pieza de software (middleware) que permite integrar servicios provenientes de diversas fuentes, y proveer información de forma síncrona o asíncrona, a través del uso de servicios web, bases de datos, archivos, entre otras fuentes y destinos.
+    Orquestación es automatizar procesos y flujos de trabajo, mientras que la automatización básicamente automatiza una tarea específica.
+    Un orquestador es una pieza de software que permite integrar servicios provenientes de diversas fuentes, y proveer información de forma síncrona o asíncrona, a través del uso de servicios web, bases de datos, archivos, entre otras fuentes y destinos.
 
 \end{frame}
 %---------------------------------------------------------------------------------------------------------------------------------------------
@@ -154,7 +153,7 @@
     %\vspace{}
     \Huge
     \centering
-    \textbf{ Objetivos }
+    \textbf{Objetivos}
 
 \end{frame}
 
@@ -191,29 +190,31 @@
     %\vspace{}
     \Huge
     \centering
-    \textbf{ Arquitectura }
+    \textbf{Arquitectura}
 
 \end{frame}
 
 \begin{frame}{Arquitectura}
     \vspace{-1.5cm}
-    La arquitectura implementada es la de Cliente-Servidor.
+    La arquitectura implementada es la de cliente - servidor. 
+    \\
     Las tareas del servidor son las siguientes:
     \begin{itemize}
-        \item Crear las maquinas virtuales.
-        \item Asignar direcciones IP via servidor DHCP.
-        \item Aprovicionar la maquina con el SO deseado y los parametros de configuracion establecidos.
-        \item Orquestar las politicas definidas para una maquina o un conjunto de maquinas.
+        \item Crear las máquinas virtuales.
+        \item Asignar direcciones IP por medio del servidor DHCP.
+        \item Aprovicionar la máquina con el sistema operativo deseado y los parámetros de configuración establecidos.
+        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas.
     \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Arquitectura}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Arquitectura de desarrollo}
+    \vspace{0.5cm}
     \begin{figure}[ht]
        \centering
        \vspace{-0.50cm}
-       \scalebox{0.35}{\includegraphics[angle=0]{./figuras/ArquitecturaDeDesarrolloEnUnEntornoMixto.png}}
+       \scalebox{0.35}{\includegraphics[angle=0]{./figuras/arquitectura_desarrollo.png}}
     \end{figure}
 
 \end{frame}
@@ -227,48 +228,59 @@
     %\vspace{}
     \Huge
     \centering
-    \textbf{ Desarrollo }
+    \textbf{Desarrollo}
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Virtualizacion}
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+%           VIRTUALIZACION
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+\begin{frame}{Desarrollo - Virtualización}
     \vspace{-1.5cm}
     La herramienta utilizada para virtualizar fue KVM/Qemu.
 
     KVM utiliza virtualización completa:
     \begin{itemize}
-        \item Es una forma virtualización donde el sistema operativo huésped desconoce que está en un entorno virtual.
+        \item El sistema operativo huésped desconoce que está en un entorno virtual.
         \item El hardware se encuentra virtualizado por el sistema operativo anfitrión. 
-        \item La capa de virtualización, un hypervisor, media entre los sistemas huéspedes y el anfitrión. 
+        \item La capa de virtualización, el hypervisor, media entre los sistemas huéspedes y el anfitrión. 
     \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Virtualizacion}
-    \vspace{-1.5cm}
+\begin{frame}{Desarrollo - Virtualización}
+    \vspace{0cm} {Esquema de virtualización completa}
+    \vspace{0.5cm}
     \begin{figure}[ht]
        \centering
        \vspace{-0.50cm}
        \scalebox{0.60}{\includegraphics[angle=0]{./figuras/virtualizacion_tipos_3.png}}
-       %+INSERTAR ACA LA IMAGEN DE VIRTUALIZACION COMPLETA\\
     \end{figure}
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Virtualizacion}
-    \vspace{-1.5cm}
+\begin{frame}{Desarrollo - Virtualización}
+    \vspace{0cm} {Arquitectura de KVM}
+    \vspace{0.5cm}
     \begin{figure}[ht]
-       \centering
+       %\centering
+       \raggedright
        \vspace{-0.50cm}
        \scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA ARQUITECTURA DE LA VIRTUALIZACION DE KVM
     \end{figure}
 
 \end{frame}
+
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+%           APROVISIONAMIENTO
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
 
 \begin{frame}{Desarrollo - Aprovisionamiento}
     \vspace{-1.5cm}
     La herramienta utilizada para el aprovisionamiento fue Cobbler.
+    \\
+    Utiliza una arquitectura cliente - servidor.
     \begin{block}{}
         Es un servidor del aprovisionamiento Linux que centraliza y simplifica el control de servicios incluyendo PXE, DHCP, TFTP, y DNS con propósito de realizar instalaciones basadas en red de sistemas operativos.
     \end{block}
@@ -280,56 +292,88 @@
 \end{frame}
 
 \begin{frame}{Desarrollo - Aprovisionamiento}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Modelado de Cobbler}
+    \vspace{0.5cm}
     \begin{figure}[ht]
        \centering
        \vspace{-0.50cm}
-       %\scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA ARQUITECTURA DE MODELADO DE COBBLER
+       \scalebox{0.32}{\includegraphics[angle=0]{./figuras/cobbler_modelado.png}}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Desarrollo - Aprovisionamiento}
     \vspace{-1.5cm}
     \begin{itemize}
-        \item Distro: Distribución que se desea instalar. 
-        \item Repo: Un repositorio, sitio centralizado donde se almacena y mantiene información digital.
-        \item Perfil: Asocia una distribución a opciones especializadas adicionales, como puede ser un archivo de configuración.
-        \item Imágen: Copia del estado de un sistema computacional, guardado en un archivo o disco.
-        \item Sistema: Mapea una pieza de hardware (o una máquina virtual) con el perfil asignado a correr en ella. 
+        \item \textbf{Distro}: Distribución que se desea instalar. 
+        \item \textbf{Repo}: Repositorio, sitio centralizado donde se almacena y mantiene información digital.
+        \item \textbf{Perfil}: Asocia una distribución a opciones especializadas adicionales, como puede ser un archivo de configuración.
+        \item \textbf{Imágen}: Copia del estado de un sistema computacional, guardado en un archivo o disco.
+        \item \textbf{Sistema}: Mapea una pieza de hardware (o una máquina virtual) con el perfil asignado a correr en ella. 
     \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Desarrollo - Aprovisionamiento}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Distribuciones}
+    \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \vspace{-0.50cm}
-       %\scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA INTERFAZ WEB DE COBBLER MOSTRANDO PERFILES, SISTEMAS; DISTROS, ETC CREADOS
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/cobbler_web_distros.png}}
     \end{figure}
 
 \end{frame}
 
 \begin{frame}{Desarrollo - Aprovisionamiento}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Sistemas}
+    \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \vspace{-0.50cm}
-       %\scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA INTERFAZ WEB DE COBBLER MOSTRANDO PERFILES, SISTEMAS; DISTROS, ETC CREADOS
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/cobbler_web_systems.png}}
     \end{figure}
 
 \end{frame}
 
+\begin{frame}{Desarrollo - Aprovisionamiento}
+    \vspace{0cm} {Perfiles}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/cobbler_web_profile.png}}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Desarrollo - Aprovisionamiento}
+    \vspace{0cm} {Propiedades del perfil}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.35}{\includegraphics[angle=0]{./figuras/cobbler_terminal_perfil_1.png}}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Desarrollo - Aprovisionamiento}
+    \vspace{0cm} {Propiedades del perfil}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.35}{\includegraphics[angle=0]{./figuras/cobbler_terminal_perfil_2.png}}
+    \end{figure}
+
+\end{frame}
+
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+%           ORQUESTACION
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
 \begin{frame}{Desarrollo - Orquestación}
     \vspace{-1.5cm}
     La herramienta utilizada para orquestar fue Puppet.
-
-    Utiliza una arquitectura cliente/servidor.  
+    \\
+    Utiliza una arquitectura cliente - servidor.  
     \begin{itemize}
-        \item El servidor necesariamente debe correr en un sistema basado en Unix.
+        \item El servidor debe ejecutarse en un sistema basado en Unix.
         \item El usuario describe los recursos del sistema y sus estados utilizando un lenguaje declarativo.    
         \item El nodo maestro (servidor) provee una interfaz HTTPS con varios extremos disponibles.
         \item Cuando se pide o envía cualquier dato al servidor, el agente hace un pedido HTTPS o a uno de esos extremos. 
@@ -339,65 +383,86 @@
 
 
 \begin{frame}{Desarrollo - Orquestación}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Forzar las configuraciones}
+    \vspace{0cm}
         \begin{figure}[ht]
            \centering
-           \vspace{-0.50cm}
-           \scalebox{0.25}{\includegraphics[angle=0]{./figuras/PuppetLabsEnforceDesiredState.png}}
-           %++INSERTAR ACA LA IMAGEN DE FUNCIONAMIENTO DE PUPPET\\
+           \scalebox{0.38}{\includegraphics[angle=0]{./figuras/puppet_funcionamiento.png}}
         \end{figure}
 
 \end{frame}
 
 \begin{frame}{Desarrollo - Orquestación}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Nodos administrados}
+    \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \vspace{-0.50cm}
-       %\scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA TERMINAL MOSTRANDO LOS NODOS ADMINISTRADOS\\
+       \scalebox{0.6}{\includegraphics[angle=0]{./figuras/puppet_nodos.png}}
     \end{figure}
 
 \end{frame}
 
 \begin{frame}{Desarrollo - Orquestación}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Estructura de los módulos de Puppet}
+    \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \vspace{-0.50cm}
-       %\scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA TERMINAL MOSTRANDO LA ESTRUCTURA DE MANIFIESTOS
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/puppet_modulos.png}}
+    \end{figure}
+
+\end{frame}
+
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+%           INTERFAZ WEB
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{-1.5cm}
+    La herramienta utilizada para crear la interfaz web fue Python Bottle.
+    Utiliza una arquitectura cliente - servidor.
+\end{frame}
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{0cm} {Crear múltiples máquinas virtuales}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_1.png}}
     \end{figure}
 
 \end{frame}
 
 \begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{-1.5cm}
-    La herramienta utilizada para crear la interfaz web fue Pyhton Bottle.
-
-\end{frame}
-
-\begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Aplicar políticas por sistema operativo}
+    \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \vspace{-0.50cm}
-       %\scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA INTERFAZ WEB\\
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_2.png}}
     \end{figure}
 
 \end{frame}
 
 \begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{-1.5cm}
+    \vspace{0cm} {Aplicar políticas por máquina específica}
+    \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \vspace{-0.50cm}
-       %\scalebox{0.25}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
-       %+INSERTAR ACA LA IMAGEN DE LA TERMINAL EJECUTANDO LA INTERFAZ WEB
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_3.png}}
     \end{figure}
 
 \end{frame}
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{0cm} {Ver estado de las máquinas}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_4.png}}
+    \end{figure}
+
+\end{frame}
+
+
 %---------------------------------------------------------------------------------------------------------------------------------------------
 %                                                               CONCLUSIONES
 %---------------------------------------------------------------------------------------------------------------------------------------------
@@ -406,20 +471,20 @@
     %\vspace{}
     \Huge
     \centering
-    \textbf{ Conclusiones }
+    \textbf{Conclusiones}
 
 \end{frame}
 
 \begin{frame}{Conclusiones}
-    \vspace{-1.5cm}
+    \vspace{0cm}
     El análisis formal del problema para la obtención de los requerimientos y los riesgos del proyecto, es algo que también debe destacarse. Esta es una fase imprescindible para poder llevar a cabo las estimaciones pertinentes a los tiempos de desarrollo e investigación de cualquier proyecto. En muchas ocasiones se cuenta con diferentes herramientas para llevar a cabo una misma tarea. El análisis de cada una de ellas y su elección, utilizando factores de decisión ponderados, es fundamental para el trabajo como ingeniero. De aquí también se puede hacer notar que la utilización de soluciones de código abierto no siempre permiten estar en la "cresta de la ola" tecnológica y muchas veces es necesario contar con software privativo para obtener la máxima producción.
 
 \end{frame}
 
 
 \begin{frame}{Conclusiones}
-    \vspace{-1.5cm}
-    El resultado final es positivo. El sistema final cumple con los requerimientos, es capaz de generar una gran cantidad de máquinas virtuales completamente equipadas y preparadas para desempeñar diferentes funciones, ya sean académicas o en entornos laborales, formando parte de una red nat con la cual cada maquina puede comunicarse con las demás maquinas de la red y tener acceso a internet.
+    \vspace{-1cm}
+    El resultado final es positivo. El sistema final cumple con los requerimientos, es capaz de generar una gran cantidad de máquinas virtuales completamente equipadas y preparadas para desempeñar diferentes funciones, ya sean académicas o en entornos laborales, formando parte de una red nat con la cual cada máquina puede comunicarse con las demás máquinas de la red y tener acceso a internet.
 
 \end{frame}
 
@@ -437,7 +502,7 @@
 \end{frame}
 
 \begin{frame}{Trabajos Futuros}
-    \vspace{-1.5cm}
+    \vspace{0cm}
     \begin{itemize}
         \item Protección: Valoración de la probabilidad de que el sistema pueda resistir intrusiones accidentales o premeditadas. Para mejorar esta probabilidad se propone:
         \begin{itemize}
@@ -454,7 +519,7 @@
 
 
 \begin{frame}{Trabajos Futuros}
-    \vspace{-1.5cm}
+    \vspace{0cm}
     \begin{itemize}
         \item Las pruebas realizadas sobre las herramientas, y las pruebas de los resultados finales de las aplicaciones no fueron ejecutadas sobre equipos servidores dado que no se contaba con acceso a ellos. éstas pruebas se efectuaron sobre los equipos personales de escritorio y notebooks, quedando como tema pendiente la implementación de estos pasos en un servidor de alto rendimiento para aumentar el volumen de nodos administrados. 
 
@@ -481,9 +546,9 @@
 \begin{frame}{Video demostración}
     \vspace{-1.5cm}
     \begin{itemize}
-        \item Creación de las maquinas virtuales.
-        \item Aprovicionamiento de las maquinas con el sistema operativo deseado. 
-        \item Orquestar las politicas definidas para una maquina o un conjunto de maquinas.
+        \item Creación de las máquinas virtuales.
+        \item Aprovicionamiento de las máquinas con el sistema operativo deseado. 
+        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas.
     \end{itemize}
 
 \end{frame}
