@@ -61,19 +61,22 @@
 \section{Organización de la Presentación}
 
 \begin{frame}{Organización de la Presentación}
-    \vspace{-1.5cm}
-    La precentación está organizada de manera incremental explicando cada uno de los siguientes puntos:\\
+    \vspace{-1cm}
     \begin{itemize}
-        \item Introducción.
-        \item Objetivos.
-        \item Arquitectura.
-        \item Desarrollo del sistema.
+        \item Introducción
+        \item Objetivos
+        \item Arquitectura
+        \item Desarrollo del sistema
         \begin{itemize}
-            \item Herramienta de virtualización.
-            \item Herramienta de aprovicionamiento.
-            \item Herramienta de orquestación.
-            \item Interfaz web.
+            \item Herramienta de virtualización
+            \item Herramienta de aprovicionamiento
+            \item Herramienta de orquestación
+            \item Interfaz web
         \end{itemize}
+        \item Demostración
+        \item Conslusión
+        \item Trabajos futuros
+        \item Preguntas
     \end{itemize}
 
 \end{frame}
@@ -94,54 +97,73 @@
 
 
 \begin{frame}{Introducción}
-    \vspace{-1cm}
-    La cantidad de servicios y servidores necesarios en las organizaciones tiende a ser cada vez mayor.
-    Cada día los despliegues son más complejos, siendo necesario trabajar con aplicaciones clusterizadas, múltiples datacenters, etc.
-    Este tipo de tareas ya no pueden realizarse individualmente para cada máquina y menos aún en entornos escalables donde pueden haber cientos de nodos.
-
-    \begin{block}{}
-        Hablar de orquestación implica eficiencia en los recursos, tanto humanos como computacionales, y por ello implica hablar de virtualización, provisionamiento y datacenters dinámicos. En este sentido, virtualización puede aplicar a computadoras, sistemas operativos, dispositivos de almacenamiento, aplicaciones o redes.
-    \end{block}
-
+    \vspace{0cm}
+    Orquestación implica:
+    \begin{itemize}
+        \item Eficiencia humana y computacional
+        \item Virtualización
+        \item Aprovisionamiento
+        \item Datacenters dinámicos
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Introducción}
-    \vspace{-0.5cm}
+    \vspace{0cm}
     \textbf{¿Qué es virtualización?}
+    \begin{itemize}
+        \item Software ejecutándose
+        \item Concurrencia
+        \item Aislamiento
+        \item Hypervisor
+    \end{itemize}
+    % Virtualización es un término para software ejecutándose, usualmente sistemas operativos, de manera concurrente y aislada de otros programas en el mismo sistema. 
 
-    Virtualización es un término para software ejecutándose, usualmente sistemas operativos, de manera concurrente y aislada de otros programas en el mismo sistema. 
+    % \begin{block}{}
+    %     Muchas de las implementaciones de virtualización utilizan un hypervisor, una capa de software que controla el hardware y provee sistemas operativos huéspedes con acceso a los dispositivos de hardware subyacentes. 
+    % \end{block}
 
-    \begin{block}{}
-        Muchas de las implementaciones de virtualización utilizan un hypervisor, una capa de software que controla el hardware y provee sistemas operativos huéspedes con acceso a los dispositivos de hardware subyacentes. 
-    \end{block}
-
-    \begin{block}{}
-        El hypervisor permite ejecutar múltiples sistemas operativos en el mismo sistema físico ofreciendo hardware virtualizado al sistema operativo huésped.
-    \end{block}
+    % \begin{block}{}
+    %     El hypervisor permite ejecutar múltiples sistemas operativos en el mismo sistema físico ofreciendo hardware virtualizado al sistema operativo huésped.
+    % \end{block}
 
 \end{frame}
 
 \begin{frame}{Introducción}
-    \vspace{-2.0cm}
+    \vspace{0cm}
     \textbf{¿Qué es aprovisionamiento?}
+    \begin{itemize}
+        \item Proveer o hacer que algo esté disponible
+        \item Conjunto de acciones para preparar una máquina virtual
+        \begin{itemize}
+            \item Disco
+            \item Memoria RAM
+            \item CPU
+            \item Sistema operativo
+            \item Servicios
+            \item Configuración
+        \end{itemize}
+    \end{itemize}
+    % En general, aprovisionamiento, significa proveer o hacer que algo esté disponible. El término es utilizado en un gran variedad de contextos en el área de Tecnologías de Información. En este Proyecto Integrador, el término hace referencia a lo siguiente:
 
-    En general, aprovisionamiento, significa proveer o hacer que algo esté disponible. El término es utilizado en un gran variedad de contextos en el área de Tecnologías de Información. En este Proyecto Integrador, el término hace referencia a lo siguiente:
-
-    \begin{block}{}
-    \textit
-    {
-        Aprovisionamiento es el conjunto de acciones para preparar una máquina virtual, con el sistema apropiado, datos y software dejándola lista para su operación.
-    }
-    \end{block}
+    % \begin{block}{}
+    % \textit
+    % {
+    %     Aprovisionamiento es el conjunto de acciones para preparar una máquina virtual, con el sistema apropiado, datos y software dejándola lista para su operación.
+    % }
+    % \end{block}
 
 \end{frame}
 
 \begin{frame}{Introducción}
-    \vspace{-2.5cm}
+    \vspace{0cm}
     \textbf{¿Qué es orquestación?}
-
-    Orquestación es automatizar procesos y flujos de trabajo, mientras que la automatización básicamente automatiza una tarea específica.
-    Un orquestador es una pieza de software que permite integrar servicios provenientes de diversas fuentes, y proveer información de forma síncrona o asíncrona, a través del uso de servicios web, bases de datos, archivos, entre otras fuentes y destinos.
+    \begin{itemize}
+        \item Automatizar procesos y flujos de trabajo
+        \item Integrar servicios
+        \item Proveer información de forma síncrona o asíncrona
+    \end{itemize}
+    % Orquestación es automatizar procesos y flujos de trabajo, mientras que la automatización básicamente automatiza una tarea específica.
+    % Un orquestador es una pieza de software que permite integrar servicios provenientes de diversas fuentes, y proveer información de forma síncrona o asíncrona, a través del uso de servicios web, bases de datos, archivos, entre otras fuentes y destinos.
 
 \end{frame}
 %---------------------------------------------------------------------------------------------------------------------------------------------
@@ -158,24 +180,20 @@
 \end{frame}
 
 \begin{frame}{Objetivo principal}
-    \vspace{-1.5cm}
-    Un sistema de infraestructura virtual automatizado y con orquestación tiene como objetivo brindar a los administradores de servidores una herramienta que facilite la preparación y configuración de sus sistemas de manera simple.
-
-    \begin{block}{}
-        El objetivo principal de este proyecto es integrar diferentes herramientas con el fin de implementar técnicas de orquestación, virtualización, instalación y configuración automática para facilitar la gestión de servidores virtuales y sus servicios asociados.
-    \end{block}
+    \vspace{0cm}
+    Integrar diferentes herramientas con el fin de implementar técnicas de orquestación, virtualización, instalación y configuración automática para facilitar la gestión de servidores virtuales y sus servicios asociados.
 
 \end{frame}
 
 
 \begin{frame}{Objetivos secundarios}
-\vspace{-1.5cm}
+\vspace{0cm}
 \begin{itemize}
-    \item Instalar y utilizar sistemas operativos para servidor.
-    \item Emplear herramientas de virtualización.
-    \item Usar herramientas de aprovisionamiento.
-    \item Utilizar herramientas de orquestación.
-    \item Analizar protocolos para booteo a través de la red.
+    \item Instalar y utilizar sistemas operativos para servidor
+    \item Emplear herramientas de virtualización
+    \item Usar herramientas de aprovisionamiento
+    \item Utilizar herramientas de orquestación
+    \item Analizar protocolos para booteo a través de la red
 \end{itemize}
 
 \end{frame}
@@ -200,10 +218,10 @@
     \\
     Las tareas del servidor son las siguientes:
     \begin{itemize}
-        \item Crear las máquinas virtuales.
-        \item Asignar direcciones IP por medio del servidor DHCP.
-        \item Aprovicionar la máquina con el sistema operativo deseado y los parámetros de configuración establecidos.
-        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas.
+        \item Crear las máquinas virtuales
+        \item Asignar direcciones IP por medio del servidor DHCP
+        \item Proveer a la máquina con el sistema operativo deseado y los parámetros de configuración establecidos
+        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas
     \end{itemize}
 
 \end{frame}
@@ -242,9 +260,9 @@
 
     KVM utiliza virtualización completa:
     \begin{itemize}
-        \item El sistema operativo huésped desconoce que está en un entorno virtual.
-        \item El hardware se encuentra virtualizado por el sistema operativo anfitrión. 
-        \item La capa de virtualización, el hypervisor, media entre los sistemas huéspedes y el anfitrión. 
+        \item El sistema operativo huésped desconoce que está en un entorno virtual
+        \item El hardware se encuentra virtualizado por el sistema operativo anfitrión
+        \item La capa de virtualización, el hypervisor, media entre los sistemas huéspedes y el anfitrión
     \end{itemize}
 
 \end{frame}
@@ -281,14 +299,12 @@
     La herramienta utilizada para el aprovisionamiento fue Cobbler.
     \\
     Utiliza una arquitectura cliente - servidor.
-    \begin{block}{}
-        Es un servidor del aprovisionamiento Linux que centraliza y simplifica el control de servicios incluyendo PXE, DHCP, TFTP, y DNS con propósito de realizar instalaciones basadas en red de sistemas operativos.
-    \end{block}
-
-    \begin{block}{}
-        Cobbler utiliza objetos para definir la configuración de aprovisionamiento:
-    \end{block}
-
+    \begin{itemize}
+        \item El servidor debe ejecutarse en un sistema basado en Unix
+        \item Centraliza y simplifica el control de servicios incluyendo PXE, DHCP, TFTP, y DNS con propósito de realizar instalaciones basadas en red de sistemas operativos
+        \item Cobbler utiliza objetos para definir la configuración de aprovisionamiento:
+    \end{itemize}
+    
 \end{frame}
 
 \begin{frame}{Desarrollo - Aprovisionamiento}
@@ -304,11 +320,11 @@
 \begin{frame}{Desarrollo - Aprovisionamiento}
     \vspace{-1.5cm}
     \begin{itemize}
-        \item \textbf{Distro}: Distribución que se desea instalar. 
-        \item \textbf{Repo}: Repositorio, sitio centralizado donde se almacena y mantiene información digital.
-        \item \textbf{Perfil}: Asocia una distribución a opciones especializadas adicionales, como puede ser un archivo de configuración.
-        \item \textbf{Imágen}: Copia del estado de un sistema computacional, guardado en un archivo o disco.
-        \item \textbf{Sistema}: Mapea una pieza de hardware (o una máquina virtual) con el perfil asignado a correr en ella. 
+        \item \textbf{Distro}: Distribución que se desea instalar
+        \item \textbf{Repo}: Repositorio, sitio centralizado donde se almacena y mantiene información digital
+        \item \textbf{Perfil}: Asocia una distribución a opciones especializadas adicionales, como puede ser un archivo de configuración
+        \item \textbf{Imágen}: Copia del estado de un sistema computacional, guardado en un archivo o disco
+        \item \textbf{Sistema}: Mapea una pieza de hardware (o una máquina virtual) con el perfil asignado a correr en ella
     \end{itemize}
 
 \end{frame}
@@ -373,10 +389,12 @@
     \\
     Utiliza una arquitectura cliente - servidor.  
     \begin{itemize}
-        \item El servidor debe ejecutarse en un sistema basado en Unix.
-        \item El usuario describe los recursos del sistema y sus estados utilizando un lenguaje declarativo.    
-        \item El nodo maestro (servidor) provee una interfaz HTTPS con varios extremos disponibles.
-        \item Cuando se pide o envía cualquier dato al servidor, el agente hace un pedido HTTPS o a uno de esos extremos. 
+        \item El servidor (nodo maestro) debe ejecutarse en un sistema basado en Unix
+        \item Los clientes (agentes) soportan múltiples plataformas
+        \item Posee su propio DSL (Domain Specific Language)
+        \item El usuario describe los recursos del sistema y sus estados utilizando un lenguaje declarativo  
+        \item El nodo maestro provee una interfaz HTTPS con varios extremos disponibles
+        \item Cuando se pide o envía cualquier dato al servidor, el agente hace un pedido HTTPS o a uno de esos extremos
     \end{itemize}
 
 \end{frame}
@@ -420,6 +438,14 @@
     \vspace{-1.5cm}
     La herramienta utilizada para crear la interfaz web fue Python Bottle.
     Utiliza una arquitectura cliente - servidor.
+    \begin{itemize}
+        \item Es un WSGI (Web Server Gateway Interface) rápido, sencillo y ligero
+        \item Distribuído como un módulo único
+        \item Su única dependencia es la Librería Estándar de Python
+        \item Puede ejecutarse como un servidor web autónomo
+        \item Plugins para bases de datos populares
+    \end{itemize}
+    
 \end{frame}
 
 \begin{frame}{Desarrollo - Interfaz Web}
@@ -464,6 +490,29 @@
 
 
 %---------------------------------------------------------------------------------------------------------------------------------------------
+%                                                         VIDEO DEMOSTRACIÓN
+%---------------------------------------------------------------------------------------------------------------------------------------------
+\section{Video demostración}
+\begin{frame}
+    %\vspace{}
+    \Huge
+    \centering
+    \textbf{Video demostración}
+
+\end{frame}
+
+\begin{frame}{Video demostración}
+    \vspace{-1.5cm}
+    \begin{itemize}
+        \item Creación de las máquinas virtuales
+        \item Aprovicionamiento de las máquinas con el sistema operativo deseado
+        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas
+    \end{itemize}
+
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------
 %                                                               CONCLUSIONES
 %---------------------------------------------------------------------------------------------------------------------------------------------
 \section{Conclusiones}
@@ -477,14 +526,17 @@
 
 \begin{frame}{Conclusiones}
     \vspace{0cm}
-    El análisis formal del problema para la obtención de los requerimientos y los riesgos del proyecto, es algo que también debe destacarse. Esta es una fase imprescindible para poder llevar a cabo las estimaciones pertinentes a los tiempos de desarrollo e investigación de cualquier proyecto. En muchas ocasiones se cuenta con diferentes herramientas para llevar a cabo una misma tarea. El análisis de cada una de ellas y su elección, utilizando factores de decisión ponderados, es fundamental para el trabajo como ingeniero. De aquí también se puede hacer notar que la utilización de soluciones de código abierto no siempre permiten estar en la "cresta de la ola" tecnológica y muchas veces es necesario contar con software privativo para obtener la máxima producción.
+    \begin{itemize}
+        \item Elección del entorno realizado utilizando factores de decisión ponderados
+        \item Solución modularizada
+        \item Permite la escalabilidad necesaria
+        \item Soluciones de código abierto no siempre permiten estar en la "cresta de la ola"
+        \item El sistema final cumple con los requerimientos
+    \end{itemize}
 
-\end{frame}
+    % El análisis formal del problema para la obtención de los requerimientos y los riesgos del proyecto, es algo que también debe destacarse. Esta es una fase imprescindible para poder llevar a cabo las estimaciones pertinentes a los tiempos de desarrollo e investigación de cualquier proyecto. En muchas ocasiones se cuenta con diferentes herramientas para llevar a cabo una misma tarea. El análisis de cada una de ellas y su elección, utilizando factores de decisión ponderados, es fundamental para el trabajo como ingeniero. De aquí también se puede hacer notar que la utilización de soluciones de código abierto no siempre permiten estar en la "cresta de la ola" tecnológica y muchas veces es necesario contar con software privativo para obtener la máxima producción.
 
-
-\begin{frame}{Conclusiones}
-    \vspace{-1cm}
-    El resultado final es positivo. El sistema final cumple con los requerimientos, es capaz de generar una gran cantidad de máquinas virtuales completamente equipadas y preparadas para desempeñar diferentes funciones, ya sean académicas o en entornos laborales, formando parte de una red nat con la cual cada máquina puede comunicarse con las demás máquinas de la red y tener acceso a internet.
+    % El resultado final es positivo. El sistema final cumple con los requerimientos, es capaz de generar una gran cantidad de máquinas virtuales completamente equipadas y preparadas para desempeñar diferentes funciones, ya sean académicas o en entornos laborales, formando parte de una red nat con la cual cada máquina puede comunicarse con las demás máquinas de la red y tener acceso a internet.
 
 \end{frame}
 
@@ -504,51 +556,24 @@
 \begin{frame}{Trabajos Futuros}
     \vspace{0cm}
     \begin{itemize}
-        \item Protección: Valoración de la probabilidad de que el sistema pueda resistir intrusiones accidentales o premeditadas. Para mejorar esta probabilidad se propone:
+        \item Protección: 
         \begin{itemize}
-            \item  Modificar el sistema para que funcione con firewall y SELinux.
-
-            \item  Incluir validación por usuario en la interfaz web. 
-
-            \item  Incluir un log de cambios al sistema que permita saber quién y qué cambio realizó.
+            \item  Modificar el sistema para que funcione con firewall y SELinux
+            \item  Incluir validación por usuario en la interfaz web
+            \item  Incluir un log de cambios al sistema que permita saber quién y qué cambio realizó
         \end{itemize}
-        \item Tolerancia a errores: La tolerancia a errores refleja hasta qué punto el sistema se diseñó para evitar y tolerar errores. En las aplicaciones desarrolladas se introdujeron porciones de código que las protegen del mal funcionamiento. Sin embargo, esto está lejos de la perfección y muchos errores quedan sin reconocimiento, por lo cual, incluir más secciones dedicadas a subsanar errores es una interesante mejora.
+        \item Implementación en un entorno híbrido, con máquinas en la nube y en un servidor físico de alto rendimiento
+        
     \end{itemize}
 
 \end{frame}
-
 
 \begin{frame}{Trabajos Futuros}
     \vspace{0cm}
     \begin{itemize}
-        \item Las pruebas realizadas sobre las herramientas, y las pruebas de los resultados finales de las aplicaciones no fueron ejecutadas sobre equipos servidores dado que no se contaba con acceso a ellos. éstas pruebas se efectuaron sobre los equipos personales de escritorio y notebooks, quedando como tema pendiente la implementación de estos pasos en un servidor de alto rendimiento para aumentar el volumen de nodos administrados. 
-
-        \item Actualización: Como todo software, debe ser mantenido utilizando las últimas versiones disponibles de las herramientas y de los sistemas operativos.
-
-        \item Migración: Poder realizar el traslado de hosts virtuales entre las diferentes máquinas físicas.
-    \end{itemize}
-
-\end{frame}
-
-
-%---------------------------------------------------------------------------------------------------------------------------------------------
-%                                                         VIDEO DEMOSTRACIÓN
-%---------------------------------------------------------------------------------------------------------------------------------------------
-\section{Video demostración}
-\begin{frame}
-    %\vspace{}
-    \Huge
-    \centering
-    \textbf{Video demostración}
-
-\end{frame}
-
-\begin{frame}{Video demostración}
-    \vspace{-1.5cm}
-    \begin{itemize}
-        \item Creación de las máquinas virtuales.
-        \item Aprovicionamiento de las máquinas con el sistema operativo deseado. 
-        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas.
+        \item Integrar utilizando herramientas de Continuous Integration y Continuous Delivery
+        \item Brindar servicios locales o en la nube utilizando Linux Containers dentro de las máquinas virtuales
+        \item Migración: Poder realizar el traslado de hosts virtuales entre las diferentes máquinas físicas
     \end{itemize}
 
 \end{frame}
