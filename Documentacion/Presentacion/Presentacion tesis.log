@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.10.10)  4 MAR 2017 17:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  4 MAR 2017 20:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,7 +1011,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 238.
 [12
 
  <./figuras/arquitectura_desarrollo.png>]
-<./figuras/Crear_VM.png, id=123, 1110.1475pt x 864.22874pt>
+<./figuras/Crear_VM.png, id=125, 1110.1475pt x 864.22874pt>
 File: ./figuras/Crear_VM.png Graphic file (type png)
 
 <use ./figuras/Crear_VM.png>
@@ -1038,7 +1038,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 280.
  [15
 
 ]
-<./figuras/virtualizacion_tipos_3.png, id=142, 193.523pt x 264.99pt>
+<./figuras/virtualizacion_tipos_3.png, id=143, 193.523pt x 264.99pt>
 File: ./figuras/virtualizacion_tipos_3.png Graphic file (type png)
 
 <use ./figuras/virtualizacion_tipos_3.png>
@@ -1052,7 +1052,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 291.
  [16
 
  <./figuras/virtualizacion_tipos_3.png>]
-<./figuras/kvm_arquitectura_1.png, id=149, 717.882pt x 646.415pt>
+<./figuras/kvm_arquitectura_1.png, id=150, 717.882pt x 646.415pt>
 File: ./figuras/kvm_arquitectura_1.png Graphic file (type png)
 
 <use ./figuras/kvm_arquitectura_1.png>
@@ -1073,7 +1073,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 320.
  [18
 
 ]
-<./figuras/cobbler_modelado.png, id=161, 545.237pt x 476.179pt>
+<./figuras/cobbler_modelado.png, id=162, 545.237pt x 476.179pt>
 File: ./figuras/cobbler_modelado.png Graphic file (type png)
 
 <use ./figuras/cobbler_modelado.png>
@@ -1102,7 +1102,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 412.
  [21
 
 ]
-<./figuras/puppet_funcionamiento.png, id=180, 616.3025pt x 449.68pt>
+<./figuras/puppet_funcionamiento.png, id=181, 616.3025pt x 449.68pt>
 File: ./figuras/puppet_funcionamiento.png Graphic file (type png)
 
 <use ./figuras/puppet_funcionamiento.png>
@@ -1116,7 +1116,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 423.
  [22
 
  <./figuras/puppet_funcionamiento.png (PNG copy)>]
-<./figuras/puppet_modulos.png, id=186, 464.73625pt x 678.535pt>
+<./figuras/puppet_modulos.png, id=187, 464.73625pt x 678.535pt>
 File: ./figuras/puppet_modulos.png Graphic file (type png)
 
 <use ./figuras/puppet_modulos.png>
@@ -1136,7 +1136,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 461.
  [24
 
 ]
-<./figuras/interfaz_web_1.png, id=198, 898.35625pt x 601.24625pt>
+<./figuras/interfaz_web_1.png, id=199, 898.35625pt x 601.24625pt>
 File: ./figuras/interfaz_web_1.png Graphic file (type png)
 
 <use ./figuras/interfaz_web_1.png>
@@ -1149,7 +1149,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 471.
  [25
 
  <./figuras/interfaz_web_1.png>]
-<./figuras/interfaz_web_2.png, id=206, 899.36pt x 610.28pt>
+<./figuras/interfaz_web_2.png, id=207, 899.36pt x 610.28pt>
 File: ./figuras/interfaz_web_2.png Graphic file (type png)
 
 <use ./figuras/interfaz_web_2.png>
@@ -1162,7 +1162,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 481.
  [26
 
  <./figuras/interfaz_web_2.png>]
-<./figuras/interfaz_web_3.png, id=213, 902.37125pt x 606.265pt>
+<./figuras/interfaz_web_3.png, id=214, 902.37125pt x 606.265pt>
 File: ./figuras/interfaz_web_3.png Graphic file (type png)
 
 <use ./figuras/interfaz_web_3.png>
@@ -1175,7 +1175,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 491.
  [27
 
  <./figuras/interfaz_web_3.png>]
-<./figuras/interfaz_web_4.png, id=220, 902.37125pt x 607.26875pt>
+<./figuras/interfaz_web_4.png, id=221, 902.37125pt x 607.26875pt>
 File: ./figuras/interfaz_web_4.png Graphic file (type png)
 
 <use ./figuras/interfaz_web_4.png>
@@ -1273,7 +1273,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 609.
  ) 
 Here is how much of TeX's memory you used:
  16691 strings out of 495063
- 304654 string characters out of 3182200
+ 304654 string characters out of 3182201
  384391 words of memory out of 3000000
  19383 multiletter control sequences out of 15000+200000
  10849 words of font info for 40 fonts, out of 3000000 for 9000
@@ -1285,9 +1285,9 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on "Presentacion tesis.pdf" (36 pages, 724817 bytes).
+Output written on "Presentacion tesis.pdf" (36 pages, 728400 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
+ 311 PDF objects out of 1000 (max. 8388607)
  236 compressed objects within 3 object streams
  83 named destinations out of 1000 (max. 500000)
  183 words of extra memory for PDF output out of 10000 (max. 10000000)
