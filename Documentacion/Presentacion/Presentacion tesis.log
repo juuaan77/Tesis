@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.10.10)  4 MAR 2017 15:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.10.10)  4 MAR 2017 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,12 +1011,12 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 238.
 [12
 
  <./figuras/arquitectura_desarrollo.png>]
-<./figuras/Crear_VM.png, id=123, 1092.08pt x 864.22874pt>
+<./figuras/Crear_VM.png, id=123, 1110.1475pt x 864.22874pt>
 File: ./figuras/Crear_VM.png Graphic file (type png)
 
 <use ./figuras/Crear_VM.png>
 Package pdftex.def Info: ./figuras/Crear_VM.png used on input line 249.
-(pdftex.def)             Requested size: 1092.07735pt x 864.22662pt.
+(pdftex.def)             Requested size: 1110.14479pt x 864.22662pt.
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 249.
@@ -1272,10 +1272,10 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 609.
  ) 
 Here is how much of TeX's memory you used:
- 16705 strings out of 495063
- 304780 string characters out of 3182200
+ 16691 strings out of 495063
+ 304654 string characters out of 3182200
  384391 words of memory out of 3000000
- 19397 multiletter control sequences out of 15000+200000
+ 19383 multiletter control sequences out of 15000+200000
  10849 words of font info for 40 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  49i,11n,53p,813b,540s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1285,7 +1285,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on "Presentacion tesis.pdf" (36 pages, 724773 bytes).
+Output written on "Presentacion tesis.pdf" (36 pages, 724797 bytes).
 PDF statistics:
  310 PDF objects out of 1000 (max. 8388607)
  236 compressed objects within 3 object streams
