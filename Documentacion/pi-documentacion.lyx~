@@ -415,7 +415,7 @@ datacenters
 tos técnicos y los procesos de producción, como también los métodos para
  asegurar la estabilidad y continuidad del sistema.
  Para ello, es necesario contar con herramientas profesionales para orquestar
- éstas tareas complejas de manera sencilla.
+ estas tareas complejas de manera sencilla.
  En el área de cómputos, la orquestación trata de alinear los requerimientos
  de las organizaciones con las aplicaciones, datos e infraestructura.
  Define las políticas y los niveles de servicios a través de flujos de trabajo
@@ -4557,16 +4557,6 @@ Planificación de riesgos
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -5765,24 +5755,36 @@ Virtualización a nivel del sistema operativo o basada en contenedores
 
 \begin_layout Standard
 También llamada virtualización basada en contenedores.
- Esta técnica virtualiza un servidor físico a nivel del sistema operativo,
- permitiendo que múltiples servidores virtuales aislados y seguros se ejecuten
- sobre un solo servidor físico.
- Con la virtualización basada en contenedores, no existe la sobrecarga asociada
+ Esta técnica consiste en la ejecución de sistemas operativos dentro de
+ otros, obteniendo los sistemas “invitados” su propio sistema de ficheros,
+ su propio espacio de usuarios, sus propios procesos y sus propias interfaces
+ de red, pero compartiendo algunos elementos de la máquina anfitriona como
+ el kernel.
+\end_layout
+
+\begin_layout Standard
+Para separar los contenedores entre sí y de la máquina anfitriona, utiliza
+ las características de aislamiento del kernel Linux.
+ Todo este enfoque permite a los contenedores ser mucho más ligeros que
+ las máquinas virtuales, tanto en espacio en disco como de consumo de recursos.
+ 
+\end_layout
+
+\begin_layout Standard
+Con la virtualización basada en contenedores, no existe la sobrecarga asociada
  a cada huésped ejecutando un sistema operativo completamente instalado
  como se ilustra en la Figura 11.
  Este enfoque también puede mejorar el rendimiento porque hay un solo sistema
  operativo encargándose de los avisos de hardware.
  Una desventaja de la virtualización basada en contenedores, sin embargo,
- es que cada invitado debe utilizar el mismo sistema operativo que utiliza
- el 
+ es todos los contenedores deben utilizar el mismo kernel que utiliza el
+ 
 \emph on
 host
 \emph default
 .
- Por ejemplo, Jaulas con Warden en FreeBSD (en este caso la variante Debian/KFre
-eBSD puede correr en jaulas Warden sobre FreeBSD), OpenVZ, Docker o Linux-Vserve
-r usan esta técnica.
+ Por ejemplo, Jaulas con Warden en FreeBSD, OpenVZ, Docker o Linux-Vserver
+ usan esta técnica.
  
 \end_layout
 
