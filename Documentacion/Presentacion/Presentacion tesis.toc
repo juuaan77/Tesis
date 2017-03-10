@@ -5,8 +5,8 @@
 \beamer@sectionintoc {3}{Objetivos}{8}{0}{3}
 \beamer@sectionintoc {4}{Arquitectura}{10}{0}{4}
 \beamer@sectionintoc {5}{Desarrollo}{14}{0}{5}
-\beamer@sectionintoc {6}{Video demostraci\IeC {\'o}n}{29}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones}{31}{0}{7}
-\beamer@sectionintoc {8}{Trabajos Futuros}{33}{0}{8}
-\beamer@sectionintoc {9}{Preguntas}{35}{0}{9}
-\beamer@sectionintoc {10}{Muchas Gracias!}{36}{0}{10}
+\beamer@sectionintoc {6}{Video demostraci\IeC {\'o}n}{30}{0}{6}
+\beamer@sectionintoc {7}{Conclusiones}{32}{0}{7}
+\beamer@sectionintoc {8}{Trabajos Futuros}{34}{0}{8}
+\beamer@sectionintoc {9}{Preguntas}{36}{0}{9}
+\beamer@sectionintoc {10}{Muchas Gracias!}{37}{0}{10}
