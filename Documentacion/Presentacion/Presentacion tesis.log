@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  11 MAR 2017 13:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  11 MAR 2017 19:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1191,13 +1191,13 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 508.
  [28
 
  <./figuras/puppet_funcionamiento.png (PNG copy)>]
-<./figuras/orquestacion-modulos-puppet.png, id=228, 566.115pt x 708.6475pt>
+<./figuras/orquestacion-modulos-puppet.png, id=228, 371.3875pt x 399.4925pt>
 File: ./figuras/orquestacion-modulos-puppet.png Graphic file (type png)
 
 <use ./figuras/orquestacion-modulos-puppet.png>
 Package pdftex.def Info: ./figuras/orquestacion-modulos-puppet.png used on inpu
 t line 528.
-(pdftex.def)             Requested size: 566.11362pt x 708.64578pt.
+(pdftex.def)             Requested size: 371.38658pt x 399.49152pt.
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 528.
@@ -1206,13 +1206,13 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 528.
 [29
 
  <./figuras/orquestacion-modulos-puppet.png>]
-<./figuras/orquestacion-codigo-puppet.png, id=235, 620.3175pt x 645.41125pt>
+<./figuras/orquestacion-codigo-puppet.png, id=235, 513.92pt x 410.53375pt>
 File: ./figuras/orquestacion-codigo-puppet.png Graphic file (type png)
 
 <use ./figuras/orquestacion-codigo-puppet.png>
 Package pdftex.def Info: ./figuras/orquestacion-codigo-puppet.png used on input
  line 538.
-(pdftex.def)             Requested size: 620.316pt x 645.40968pt.
+(pdftex.def)             Requested size: 513.91873pt x 410.53275pt.
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 538.
@@ -1323,7 +1323,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam7.pfb>
-Output written on "Presentacion tesis.pdf" (38 pages, 849362 bytes).
+Output written on "Presentacion tesis.pdf" (38 pages, 811742 bytes).
 PDF statistics:
  335 PDF objects out of 1000 (max. 8388607)
  254 compressed objects within 3 object streams
