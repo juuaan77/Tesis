@@ -61,10 +61,9 @@
 \section{Organización de la Presentación}
 
 \begin{frame}{Organización de la Presentación}
-    \vspace{-1cm}
+    \vspace{0cm}
     \begin{itemize}
         \item Introducción
-        \item Objetivos
         \item Arquitectura
         \item Desarrollo del sistema
         \begin{itemize}
@@ -172,17 +171,17 @@
 %---------------------------------------------------------------------------------------------------------------------------------------------
 %                                                           OBJETIVOS
 %---------------------------------------------------------------------------------------------------------------------------------------------
-\section{Objetivos}
+\section{Objetivo}
 
 \begin{frame}
     %\vspace{}
     \Huge
     \centering
-    \textbf{Objetivos}
+    \textbf{Objetivo}
 
 \end{frame}
 
-\begin{frame}{Objetivo principal}
+\begin{frame}{Objetivo}
     \vspace{0cm}
     Integrar diferentes herramientas con el fin de implementar técnicas de orquestación, virtualización, instalación y configuración automática para facilitar la gestión de servidores virtuales y sus servicios asociados.
 
@@ -265,12 +264,72 @@
 
 \end{frame}
 
+
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+%           INTERFAZ WEB
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{-1.5cm}
+    La herramienta utilizada para crear la interfaz web fue Python Bottle.
+    Utiliza una arquitectura cliente - servidor.
+    \begin{itemize}
+        \item Es un WSGI (Web Server Gateway Interface) rápido, sencillo y ligero
+        \item Distribuído como un módulo único
+        \item Su única dependencia es la Librería Estándar de Python
+        \item Puede ejecutarse como un servidor web autónomo
+        \item Plugins para bases de datos populares
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{0cm} {Crear múltiples máquinas virtuales}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_1.png}}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{0cm} {Aplicar políticas por sistema operativo}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_2.png}}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{0cm} {Aplicar políticas por máquina específica}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_3.png}}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Desarrollo - Interfaz Web}
+    \vspace{0cm} {Ver estado de las máquinas}
+    \vspace{0cm}
+    \begin{figure}[ht]
+       \centering
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_4.png}}
+    \end{figure}
+
+\end{frame}
+
+
 % -  -  -  -  -  -  -  -  -  -  -  -  -  -
 %           VIRTUALIZACION
 % -  -  -  -  -  -  -  -  -  -  -  -  -  -
 
 \begin{frame}{Desarrollo - Virtualización}
-    \vspace{-1.5cm}
+    \vspace{-1cm}
     La herramienta utilizada para virtualizar fue KVM/Qemu.
 
     KVM utiliza virtualización completa:
@@ -298,11 +357,34 @@
     \vspace{0.5cm}
     \begin{figure}[ht]
        %\centering
-       \raggedright
+       %\raggedright \hspace*{4cm}
        \vspace{-0.50cm} 
-       \scalebox{0.25}{\hspace*{4cm}\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
+       \scalebox{0.30}{\includegraphics[angle=0]{./figuras/kvm_arquitectura_1.png}}
     \end{figure}
 
+\end{frame}
+
+\begin{frame}{Desarrollo - Virtualización}
+    \vspace{-1cm} {Ejemplo de creación de una máquina virtual}
+    \\
+    \vspace{0.5cm}
+    \begingroup
+    \fontsize{8pt}{12pt}\selectfont
+        \texttt{
+        \# virt-install \textbackslash \\
+           \hspace{0.75cm} --connect qemu:///system \textbackslash \\
+           \hspace{0.75cm} --name=centos-vm \textbackslash \\
+           \hspace{0.75cm} --disk path=/var/lib/libvirt/images/centos-vm.qcow2,size=25 \textbackslash \\
+           \hspace{0.75cm} --graphics spice \textbackslash \\
+           \hspace{0.75cm} --vcpus=2 --ram=3072 \textbackslash \\
+           \hspace{0.75cm} --network network=puppet, mac="52:54:00:d5:a1:76" --pxe \textbackslash \\
+           \hspace{0.75cm} --os-type=linux \textbackslash \\
+           \hspace{0.75cm} --os-variant=centos7
+        }    
+    \endgroup
+
+
+    
 \end{frame}
 
 % -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -439,65 +521,17 @@
     \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/puppet_modulos.png}}
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/orquestacion-modulos-puppet.png}}
     \end{figure}
 
 \end{frame}
 
-% -  -  -  -  -  -  -  -  -  -  -  -  -  -
-%           INTERFAZ WEB
-% -  -  -  -  -  -  -  -  -  -  -  -  -  -
-
-\begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{-1.5cm}
-    La herramienta utilizada para crear la interfaz web fue Python Bottle.
-    Utiliza una arquitectura cliente - servidor.
-    \begin{itemize}
-        \item Es un WSGI (Web Server Gateway Interface) rápido, sencillo y ligero
-        \item Distribuído como un módulo único
-        \item Su única dependencia es la Librería Estándar de Python
-        \item Puede ejecutarse como un servidor web autónomo
-        \item Plugins para bases de datos populares
-    \end{itemize}
-    
-\end{frame}
-
-\begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{0cm} {Crear múltiples máquinas virtuales}
+\begin{frame}{Desarrollo - Orquestación}
+    \vspace{0cm} {Ejemplo lenguaje declarativo de Puppet}
     \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_1.png}}
-    \end{figure}
-
-\end{frame}
-
-\begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{0cm} {Aplicar políticas por sistema operativo}
-    \vspace{0cm}
-    \begin{figure}[ht]
-       \centering
-       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_2.png}}
-    \end{figure}
-
-\end{frame}
-
-\begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{0cm} {Aplicar políticas por máquina específica}
-    \vspace{0cm}
-    \begin{figure}[ht]
-       \centering
-       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_3.png}}
-    \end{figure}
-
-\end{frame}
-
-\begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{0cm} {Ver estado de las máquinas}
-    \vspace{0cm}
-    \begin{figure}[ht]
-       \centering
-       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/interfaz_web_4.png}}
+       \scalebox{0.3}{\includegraphics[angle=0]{./figuras/orquestacion-codigo-puppet.png}}
     \end{figure}
 
 \end{frame}
