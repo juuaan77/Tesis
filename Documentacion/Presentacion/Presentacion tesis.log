@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.10.10)  12 MAR 2017 17:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  12 MAR 2017 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,21 +1011,27 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 243.
 [12
 
  <./figuras/arquitectura_desarrollo.png>]
-<./figuras/Crear_VM.png, id=121, 1110.1475pt x 864.22874pt>
+<./figuras/Crear_VM.png, id=121, 1051.93pt x 709.65125pt>
 File: ./figuras/Crear_VM.png Graphic file (type png)
 
 <use ./figuras/Crear_VM.png>
 Package pdftex.def Info: ./figuras/Crear_VM.png used on input line 253.
-(pdftex.def)             Requested size: 1110.14479pt x 864.22662pt.
+(pdftex.def)             Requested size: 1051.92743pt x 709.6495pt.
+
+Overfull \hbox (8.29156pt too wide) in paragraph at lines 253--253
+ [] 
+ []
+
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
- <use ./figuras/fondo_2.jpg>
+<use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 253.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [13
 
  <./figuras/Crear_VM.png>]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
- <use ./figuras/fondo_2.jpg>
+
+<use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 267.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [14
@@ -1174,13 +1180,13 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 430.
  [27
 
 ]
-<./figuras/Aprovisionamiento.png, id=216, 560.0925pt x 484.81125pt>
+<./figuras/Aprovisionamiento.png, id=216, 446.41782pt x 335.00156pt>
 File: ./figuras/Aprovisionamiento.png Graphic file (type png)
 
 <use ./figuras/Aprovisionamiento.png>
 Package pdftex.def Info: ./figuras/Aprovisionamiento.png used on input line 439
 .
-(pdftex.def)             Requested size: 560.09113pt x 484.81006pt.
+(pdftex.def)             Requested size: 446.41672pt x 335.00073pt.
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 439.
@@ -1203,12 +1209,12 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 469.
  [30
 
 ]
-<./figuras/Orquestacion.png, id=233, 560.0925pt x 484.81125pt>
+<./figuras/Orquestacion.png, id=233, 510.40688pt x 405.76593pt>
 File: ./figuras/Orquestacion.png Graphic file (type png)
 
 <use ./figuras/Orquestacion.png>
 Package pdftex.def Info: ./figuras/Orquestacion.png used on input line 480.
-(pdftex.def)             Requested size: 560.09113pt x 484.81006pt.
+(pdftex.def)             Requested size: 510.40562pt x 405.76494pt.
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 480.
@@ -1231,13 +1237,13 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 500.
 [32
 
  <./figuras/orquestacion-modulos-puppet.png>]
-<./figuras/orquestacion-codigo-puppet.png, id=248, 513.92pt x 410.53375pt>
-File: ./figuras/orquestacion-codigo-puppet.png Graphic file (type png)
+<./figuras/orquestacion-codigo-puppet-1.png, id=248, 479.7925pt x 398.48875pt>
+File: ./figuras/orquestacion-codigo-puppet-1.png Graphic file (type png)
 
-<use ./figuras/orquestacion-codigo-puppet.png>
-Package pdftex.def Info: ./figuras/orquestacion-codigo-puppet.png used on input
- line 510.
-(pdftex.def)             Requested size: 513.91873pt x 410.53275pt.
+<use ./figuras/orquestacion-codigo-puppet-1.png>
+Package pdftex.def Info: ./figuras/orquestacion-codigo-puppet-1.png used on inp
+ut line 510.
+(pdftex.def)             Requested size: 479.7913pt x 398.48778pt.
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
 Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 510.
@@ -1245,65 +1251,80 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 510.
 
 [33
 
- <./figuras/orquestacion-codigo-puppet.png>]
+ <./figuras/orquestacion-codigo-puppet-1.png>]
+<./figuras/orquestacion-codigo-puppet-2.png, id=255, 518.93875pt x 515.9275pt>
+File: ./figuras/orquestacion-codigo-puppet-2.png Graphic file (type png)
+
+<use ./figuras/orquestacion-codigo-puppet-2.png>
+Package pdftex.def Info: ./figuras/orquestacion-codigo-puppet-2.png used on inp
+ut line 520.
+(pdftex.def)             Requested size: 518.93748pt x 515.92624pt.
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 522.
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 520.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
 
 [34
 
-]
+ <./figuras/orquestacion-codigo-puppet-2.png>]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 538.
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 531.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
- [35
+
+[35
 
 ]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
  <use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 550.
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 547.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [36
 
 ]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
-
-<use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 565.
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 559.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [37
 
 ]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
- <use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 577.
+
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 574.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [38
 
 ]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
-
-<use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 587.
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 586.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [39
 
 ]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
- <use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 599.
+
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 596.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [40
 
 ]
 File: ./figuras/fondo_2.jpg Graphic file (type jpg)
-
-<use ./figuras/fondo_2.jpg>
-Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 610.
+ <use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 608.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [41
+
+]
+File: ./figuras/fondo_2.jpg Graphic file (type jpg)
+
+<use ./figuras/fondo_2.jpg>
+Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 619.
+(pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
+ [42
 
 ]
 \tf@nav=\write6
@@ -1315,11 +1336,11 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 610.
 \tf@snm=\write8
 \openout8 = `"Presentacion tesis.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 624.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 624.
  (./Presentacion tesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 615.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 624.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 624.
 Package rerunfilecheck Info: File `"Presentacion tesis".out' has not changed.
 (rerunfilecheck)             Checksum: E2BD42917A90270F847B16F652532B84;455.
 
@@ -1330,13 +1351,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 615.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 624.
  ) 
 Here is how much of TeX's memory you used:
- 16719 strings out of 495063
- 305041 string characters out of 3182200
+ 16728 strings out of 495063
+ 305307 string characters out of 3182201
  384390 words of memory out of 3000000
- 19398 multiletter control sequences out of 15000+200000
+ 19404 multiletter control sequences out of 15000+200000
  11017 words of font info for 41 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  49i,11n,53p,813b,540s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1348,10 +1369,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam7.pfb>
-Output written on "Presentacion tesis.pdf" (41 pages, 738531 bytes).
+Output written on "Presentacion tesis.pdf" (42 pages, 764959 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 92 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 267 compressed objects within 3 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
