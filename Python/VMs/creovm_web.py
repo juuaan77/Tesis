@@ -64,7 +64,7 @@ def do_creaVM():
 
     return estadosVM()
 
-#Pagina que recibe los parametros para crear una VM con disco y memoria a a eleccion
+#Pagina que recibe los parametros para crear una VM con disco y memoria a eleccion
 @get('/virtual_machine_parametrizada')
 def creaVM_parametrizado():
     peticionhtml = open("/root/tesis/Tesis/Python/HTMLs/virtual_machine_parametrizada.html","r", 0)
