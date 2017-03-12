@@ -1,3 +1,0 @@
-class {'::mysql':
-	dbname => 'tomo_test',
-}
