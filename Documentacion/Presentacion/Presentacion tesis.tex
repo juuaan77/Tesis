@@ -371,13 +371,46 @@
         \texttt{
         \# virt-install \textbackslash \\
            \hspace{0.75cm} --connect qemu:///system \textbackslash \\
-           \hspace{0.75cm} --name=centos-vm \textbackslash \\
+           \hspace{0.75cm} --name=nodo-01 \textbackslash \\
            \hspace{0.75cm} --disk path=/var/lib/libvirt/images/centos-vm.qcow2,size=25 \textbackslash \\
            \hspace{0.75cm} --graphics spice \textbackslash \\
            \hspace{0.75cm} --vcpus=2 --ram=3072 \textbackslash \\
            \hspace{0.75cm} --network network=puppet, mac="52:54:00:d5:a1:76" --pxe \textbackslash \\
            \hspace{0.75cm} --os-type=linux \textbackslash \\
-           \hspace{0.75cm} --os-variant=centos7
+           \hspace{0.75cm} --os-variant=centos7 \textbackslash \\
+           \hspace{0.75cm} --description "nodo con CentOS 7" \textbackslash  \\
+           \hspace{0.75cm} --arch=x86-64 \textbackslash \\
+           \hspace{0.75cm} --accelerate \textbackslash \\
+        }    
+    \endgroup    
+\end{frame}
+
+\begin{frame}{Desarrollo - Virtualización}
+    \vspace{-1cm} {Obtener información acerca de un máquina virtual}
+    \\
+    \vspace{0.5cm}
+    \begingroup
+    \fontsize{8pt}{8pt}\selectfont
+        \texttt{
+            \# virsh list --all \\
+             Id\hspace{0.15cm}  Name\hspace{1.5cm} State \\
+            ---------------------------- \\
+             1\hspace{0.15cm}   centos-1720\hspace{0.5cm}   stopped \\
+             2\hspace{0.15cm}   centos-1575\hspace{0.5cm}   stopped \\
+             3\hspace{0.15cm}   centos-1575\hspace{0.5cm}   running \\
+             4\hspace{0.15cm}   ubuntu-2285\hspace{0.5cm}   running \\
+             5\hspace{0.15cm}   windows-7295\hspace{0.38cm}  stopped \\
+            \vspace{0.5cm}
+             \# virsh dominfo  centos-1516  \\
+             id:\quad 3 \\
+             name:\quad centos-1516  \\
+             uuid:\quad  4a4c59a7-ee3f-c781-96e4-288f2862f011 \\
+             os type:\quad linux \\
+             state:\quad running  \\
+             cpu(s):\quad  2  \\
+             cpu time:\quad  11.0s \\ 
+             max memory:\quad   512000 kb  \\
+             used memory:\quad  512000 kb  \\
         }    
     \endgroup    
 \end{frame}
