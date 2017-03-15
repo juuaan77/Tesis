@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  15 MAR 2017 20:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.4.20)  15 MAR 2017 20:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1008,8 +1008,8 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 252.
 (pdftex.def)             Requested size: 364.19536pt x 273.13278pt.
  [12
 
- <./figuras/arquitectura.png (PNG copy)>]
-<./figuras/Crear_VM.png, id=119, 1051.93pt x 709.65125pt>
+ <./figuras/arquitectura.png>] <./figuras/Crear_VM.png, id=121, 1051.93pt x 709
+.65125pt>
 File: ./figuras/Crear_VM.png Graphic file (type png)
 
 <use ./figuras/Crear_VM.png>
@@ -1050,14 +1050,14 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 305.
  [16
 
 ]
-<./figuras/get-post.png, id=144, 751.80875pt x 287.0725pt>
+<./figuras/get-post.png, id=145, 751.80875pt x 287.0725pt>
 File: ./figuras/get-post.png Graphic file (type png)
 
 <use ./figuras/get-post.png>
 Package pdftex.def Info: ./figuras/get-post.png used on input line 318.
 (pdftex.def)             Requested size: 751.8069pt x 287.0718pt.
 
-<./figuras/Hilos.png, id=145, 565.11125pt x 105.39375pt>
+<./figuras/Hilos.png, id=146, 565.11125pt x 105.39375pt>
 File: ./figuras/Hilos.png Graphic file (type png)
 
 <use ./figuras/Hilos.png>
@@ -1070,7 +1070,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 318.
  [17
 
  <./figuras/get-post.png> <./figuras/Hilos.png>]
-<./figuras/interfaz_web_4.png, id=153, 902.37125pt x 607.26875pt>
+<./figuras/interfaz_web_4.png, id=154, 902.37125pt x 607.26875pt>
 File: ./figuras/interfaz_web_4.png Graphic file (type png)
 
 <use ./figuras/interfaz_web_4.png>
@@ -1098,7 +1098,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 353.
  [20
 
 ]
-<./figuras/virtualizacion_tipos_3.png, id=172, 193.523pt x 264.99pt>
+<./figuras/virtualizacion_tipos_3.png, id=173, 193.523pt x 264.99pt>
 File: ./figuras/virtualizacion_tipos_3.png Graphic file (type png)
 
 <use ./figuras/virtualizacion_tipos_3.png>
@@ -1106,7 +1106,7 @@ Package pdftex.def Info: ./figuras/virtualizacion_tipos_3.png used on input lin
 e 393.
 (pdftex.def)             Requested size: 122.91406pt x 168.31125pt.
 
-<./figuras/kvm_arquitectura_1.png, id=173, 603.25375pt x 439.6425pt>
+<./figuras/kvm_arquitectura_1.png, id=174, 603.25375pt x 439.6425pt>
 File: ./figuras/kvm_arquitectura_1.png Graphic file (type png)
 
 <use ./figuras/kvm_arquitectura_1.png>
@@ -1125,7 +1125,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 393.
  [21
 
  <./figuras/virtualizacion_tipos_3.png> <./figuras/kvm_arquitectura_1.png>]
-<./figuras/kvm_virt_install.png, id=181, 499.8675pt x 355.3275pt>
+<./figuras/kvm_virt_install.png, id=182, 499.8675pt x 355.3275pt>
 File: ./figuras/kvm_virt_install.png Graphic file (type png)
 
 <use ./figuras/kvm_virt_install.png>
@@ -1142,7 +1142,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--411
 
  []
 
-<./figuras/kvm_virsh.png, id=182, 460.72125pt x 207.77625pt>
+<./figuras/kvm_virsh.png, id=183, 460.72125pt x 207.77625pt>
 File: ./figuras/kvm_virsh.png Graphic file (type png)
 
 <use ./figuras/kvm_virsh.png>
@@ -1179,7 +1179,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 496.
 
 [24
 
-] <./figuras/cobbler_modelado.png, id=200, 545.237pt x 476.179pt>
+] <./figuras/cobbler_modelado.png, id=201, 545.237pt x 476.179pt>
 File: ./figuras/cobbler_modelado.png Graphic file (type png)
 
 <use ./figuras/cobbler_modelado.png>
@@ -1200,7 +1200,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 518.
  [26
 
 ]
-<./figuras/Aprovisionamiento.png, id=213, 446.41782pt x 335.00156pt>
+<./figuras/Aprovisionamiento.png, id=214, 446.41782pt x 335.00156pt>
 File: ./figuras/Aprovisionamiento.png Graphic file (type png)
 
 <use ./figuras/Aprovisionamiento.png>
@@ -1229,7 +1229,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 554.
  [29
 
 ]
-<./figuras/Orquestacion.png, id=230, 510.40688pt x 405.76593pt>
+<./figuras/Orquestacion.png, id=231, 510.40688pt x 405.76593pt>
 File: ./figuras/Orquestacion.png Graphic file (type png)
 
 <use ./figuras/Orquestacion.png>
@@ -1242,7 +1242,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 565.
  [30
 
  <./figuras/Orquestacion.png>]
-<./figuras/orquestacion-modulos-puppet.png, id=237, 310.15875pt x 375.4025pt>
+<./figuras/orquestacion-modulos-puppet.png, id=238, 310.15875pt x 375.4025pt>
 File: ./figuras/orquestacion-modulos-puppet.png Graphic file (type png)
 
 <use ./figuras/orquestacion-modulos-puppet.png>
@@ -1257,7 +1257,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 585.
 [31
 
  <./figuras/orquestacion-modulos-puppet.png>]
-<./figuras/orquestacion-codigo-puppet-1.png, id=245, 479.7925pt x 398.48875pt>
+<./figuras/orquestacion-codigo-puppet-1.png, id=246, 479.7925pt x 398.48875pt>
 File: ./figuras/orquestacion-codigo-puppet-1.png Graphic file (type png)
 
 <use ./figuras/orquestacion-codigo-puppet-1.png>
@@ -1272,7 +1272,7 @@ Package pdftex.def Info: ./figuras/fondo_2.jpg used on input line 595.
 [32
 
  <./figuras/orquestacion-codigo-puppet-1.png>]
-<./figuras/orquestacion-codigo-puppet-2.png, id=252, 500.87125pt x 499.8675pt>
+<./figuras/orquestacion-codigo-puppet-2.png, id=253, 500.87125pt x 499.8675pt>
 File: ./figuras/orquestacion-codigo-puppet-2.png Graphic file (type png)
 
 <use ./figuras/orquestacion-codigo-puppet-2.png>
@@ -1385,9 +1385,9 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on "Presentacion tesis.pdf" (41 pages, 801282 bytes).
+Output written on "Presentacion tesis.pdf" (41 pages, 803431 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
+ 350 PDF objects out of 1000 (max. 8388607)
  260 compressed objects within 3 object streams
  92 named destinations out of 1000 (max. 500000)
  195 words of extra memory for PDF output out of 10000 (max. 10000000)
