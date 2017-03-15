@@ -1,6 +1,6 @@
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                            HEADER
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 % ¿Qué secciones debe contener una presentación?
 
 % Índice
@@ -47,17 +47,17 @@
 \begin{document}
 
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                                TITULO
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \begin{frame}
   \titlepage
 \end{frame}
 
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                   ORGANIZACIÓN DE LA PRESENTACIÓN
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Organización de la Presentación}
 
 \begin{frame}{Organización de la Presentación}
@@ -68,10 +68,10 @@
         \item Arquitectura
         \item Desarrollo del sistema
         \begin{itemize}
-            \item Interfaz web
-            \item Herramienta de virtualización
-            \item Herramienta de aprovisionamiento
-            \item Herramienta de orquestación          
+            \item Servidor web
+            \item Servidor de virtualización
+            \item Servidor de aprovisionamiento
+            \item Servidor de orquestación          
         \end{itemize}
         \item Conclusión
         \begin{itemize}
@@ -83,9 +83,9 @@
 \end{frame}
 
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                             INTRODUCCION
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Introducción}
 
 \begin{frame}
@@ -115,12 +115,18 @@
 \begin{frame}{Introducción}
     \vspace{0cm}
     \textbf{¿Qué es virtualización?}
-    \begin{itemize}
-        \item Software ejecutándose
-        \item Concurrencia
-        \item Aislamiento
-        %\item Hypervisor
-    \end{itemize}
+    \begin{block}{}
+        \textbf{Software ejecutándose}, de forma \textbf{concurrente} y \textbf{aislada de otros procesos} en el mismo sistema.
+    \end{block}
+    \begin{block}{}
+        Es la manera más eficaz de \textbf{reducir los costos} y \textbf{aumentar la  agilidad} de cualquier organización.
+    \end{block}
+    % \begin{itemize}
+    %     \item Software ejecutándose
+    %     \item Concurrencia
+    %     \item Aislamiento
+    %     %\item Hypervisor
+    % \end{itemize}
     % Virtualización es un término para software ejecutándose, usualmente sistemas operativos, de manera concurrente y aislada de otros programas en el mismo sistema. 
 
     % \begin{block}{}
@@ -136,17 +142,16 @@
 \begin{frame}{Introducción}
     \vspace{0cm}
     \textbf{¿Qué es aprovisionamiento?}
+    \\
+    Aprovisionar es proveer o hacer que algo esté disponible. En el \textbf{contexto de esta presentación}, aprovisionar es el \textbf{conjunto de acciones} requeridas para preparar una máquina virtual para su uso básico.
+
     \begin{itemize}
-        \item Proveer o hacer que algo esté disponible
-        \item Conjunto de acciones para preparar una máquina virtual
-        \begin{itemize}
-            \item Disco
-            \item Memoria RAM
-            \item CPU
-            \item Sistema operativo
-            \item Servicios
-            \item Configuración
-        \end{itemize}
+        \item Disco
+        \item Memoria RAM
+        \item CPU
+        \item Sistema operativo
+        \item Servicios
+        \item Configuración
     \end{itemize}
     % En general, aprovisionamiento, significa proveer o hacer que algo esté disponible. El término es utilizado en un gran variedad de contextos en el área de Tecnologías de Información. En este Proyecto Integrador, el término hace referencia a lo siguiente:
 
@@ -163,18 +168,18 @@
     \vspace{0cm}
     \textbf{¿Qué es orquestación?}
     \begin{itemize}
-        \item Automatizar procesos y flujos de trabajo
-        \item Consistencia
-        \item Infraestructura como código
-        \item Integrar servicios
+        \item Automatizar procesos y flujos de trabajo.
+        \item Consistencia de la infraestructura.
+        \item Infraestructura como código.
+        \item Integrar servicios rápidamente.
     \end{itemize}
     % Orquestación es automatizar procesos y flujos de trabajo, mientras que la automatización básicamente automatiza una tarea específica.
     % Un orquestador es una pieza de software que permite integrar servicios provenientes de diversas fuentes, y proveer información de forma síncrona o asíncrona, a través del uso de servicios web, bases de datos, archivos, entre otras fuentes y destinos.
 
 \end{frame}
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                           OBJETIVOS
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Objetivos}
 
 \begin{frame}
@@ -205,9 +210,9 @@
 %\end{frame}
 
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                            ARQUITECTURA
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Arquitectura}
 
 \begin{frame}
@@ -219,16 +224,20 @@
 \end{frame}
 
 \begin{frame}{Arquitectura}
-    \vspace{-1.5cm}
+    \vspace{0cm}
     La arquitectura implementada es la de cliente - servidor. 
+    \vspace{0.5cm}
     \\
-    Las tareas del servidor son las siguientes:
-    \begin{itemize}
-        \item Crear las máquinas virtuales
-        \item Asignar direcciones IP por medio del protocolo DHCP
-        \item Proveer a la máquina con el sistema operativo deseado y los parámetros de configuración establecidos
-        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas
-    \end{itemize}
+    En esta arquitectura, múltiples clientes \textbf{realizan peticiones} a los servidores, los cuales les \textbf{dan respuesta}.
+    \vspace{0.5cm}
+    \\
+    El sistema cuenta con 4 servidores principales, un servidor de máquinas virtuales, uno de aprovisionamiento, otro de orquestación y un servidor web. 
+    %\begin{itemize}
+    %    \item Crear las máquinas virtuales
+    %    \item Asignar direcciones IP por medio del protocolo DHCP
+    %    \item Proveer a la máquina con el sistema operativo deseado y los parámetros de configuración establecidos
+    %    \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas
+    %\end{itemize}
 
 \end{frame}
 
@@ -237,7 +246,7 @@
     \begin{figure}[ht]
        \centering
        \vspace{-0.50cm}
-       \scalebox{0.35}{\includegraphics[angle=0]{./figuras/arquitectura_desarrollo.png}}
+       \scalebox{0.35}{\includegraphics[angle=0]{./figuras/arquitectura.png}}
     \end{figure}
 
 \end{frame}
@@ -254,9 +263,9 @@
 
 
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                                DESARROLLO
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Desarrollo}
 \begin{frame}
     %\vspace{}
@@ -274,24 +283,28 @@
     %\vspace{}
     \Huge
     \centering
-    \textbf{Interfaz Web}
+    \textbf{Servidor Web}
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Interfaz Web}
-    \vspace{-1.5cm}
-    La herramienta utilizada para crear la interfaz web fue Python Bottle.
-    \begin{itemize}
-        \item Es un WSGI (Web Server Gateway Interface) rápido, sencillo y ligero
-        \item Distribuído como un módulo único
-        \item Su única dependencia es la Librería Estándar de Python
-        \item Puede ejecutarse como un servidor web autónomo
-        \item Plugins para bases de datos populares
-    \end{itemize}
+\begin{frame}{Desarrollo - Servidor Web}
+    \vspace{0cm}
+    Se utilizó la herramienta Python Bottle para la realización del servidor web, dado que es un WSGI (Web Server Gateway Interface) rápido, sencillo y ligero.
+    \\
+    \vspace{0.5cm}
+    Los \textbf{GET} y \textbf{POST} son \textit{decorators} que enlazan una pieza de código con una URL. 
+    %La herramienta utilizada para crear la interfaz web fue Python Bottle.
+    %\begin{itemize}
+    %    \item Es un WSGI (Web Server Gateway Interface) rápido, sencillo y ligero
+    %    \item Distribuído como un módulo único
+    %    \item Su única dependencia es la Librería Estándar de Python
+    %    \item Puede ejecutarse como un servidor web autónomo
+    %    \item Plugins para bases de datos populares
+    %\end{itemize}
     
 \end{frame}
 
-\begin{frame}{Desarrollo - Interfaz Web}
+\begin{frame}{Desarrollo - Servidor Web}
     \vspace{0cm}
     \begin{figure}[ht]
        \centering
@@ -304,7 +317,7 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Interfaz Web}
+\begin{frame}{Desarrollo - Servidor Web}
     \vspace{0cm}
     \begin{figure}[ht]
        \centering
@@ -326,20 +339,20 @@
 \end{frame}
 
 
-\begin{frame}{Desarrollo - Virtualización}
-    \vspace{-1.5cm}
-    La herramienta utilizada para virtualizar fue KVM/Qemu.
-
-    KVM utiliza virtualización completa:
+\begin{frame}{Desarrollo - Servidor de virtualización}
+    \vspace{0cm}
+    Existen diferentes tipos de virtualización. Nosotros aplicamos \textbf{virtualización completa}. 
+    \\
+    La herramienta utilizada fue KVM/Qemu.
     \begin{itemize}
-        \item El sistema operativo huésped desconoce que está en un entorno virtual
+        \item El sistema operativo huésped \textbf{desconoce} que está en un entorno virtual
         \item El hardware se encuentra virtualizado por el sistema operativo anfitrión
-        \item La capa de virtualización, el hypervisor, media entre los sistemas huéspedes y el anfitrión
+        \item La capa de virtualización, el \textbf{hypervisor}, media entre los sistemas huéspedes y el anfitrión
     \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Virtualización}
+\begin{frame}{Desarrollo - Servidor de virtualización}
     \vspace{0cm} {Esquema de virtualización completa}
     \vspace{0.5cm}
     \begin{figure}[ht]
@@ -350,7 +363,7 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Virtualización}
+\begin{frame}{Desarrollo - Servidor de virtualización}
     \vspace{0cm} {Arquitectura de KVM}
     \vspace{0.5cm}
     \begin{figure}[ht]
@@ -362,7 +375,7 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Virtualización}
+\begin{frame}{Desarrollo - Servidor de virtualización}
     \vspace{-1cm} {Ejemplo de creación de una máquina virtual}
     \\
     \vspace{0.5cm}
@@ -371,13 +384,46 @@
         \texttt{
         \# virt-install \textbackslash \\
            \hspace{0.75cm} --connect qemu:///system \textbackslash \\
-           \hspace{0.75cm} --name=centos-vm \textbackslash \\
+           \hspace{0.75cm} --name=nodo-01 \textbackslash \\
            \hspace{0.75cm} --disk path=/var/lib/libvirt/images/centos-vm.qcow2,size=25 \textbackslash \\
            \hspace{0.75cm} --graphics spice \textbackslash \\
            \hspace{0.75cm} --vcpus=2 --ram=3072 \textbackslash \\
            \hspace{0.75cm} --network network=puppet, mac="52:54:00:d5:a1:76" --pxe \textbackslash \\
            \hspace{0.75cm} --os-type=linux \textbackslash \\
-           \hspace{0.75cm} --os-variant=centos7
+           \hspace{0.75cm} --os-variant=centos7 \textbackslash \\
+           \hspace{0.75cm} --description "nodo con CentOS 7" \textbackslash  \\
+           \hspace{0.75cm} --arch=x86-64 \textbackslash \\
+           \hspace{0.75cm} --accelerate \textbackslash \\
+        }    
+    \endgroup    
+\end{frame}
+
+\begin{frame}{Desarrollo - Servidor de virtualización}
+    \vspace{-1cm} {Obtener información acerca de un máquina virtual}
+    \\
+    \vspace{0.5cm}
+    \begingroup
+    \fontsize{8pt}{8pt}\selectfont
+        \texttt{
+            \# virsh list --all \\
+             Id\hspace{0.15cm}  Name\hspace{1.5cm} State \\
+            ---------------------------- \\
+             1\hspace{0.15cm}   ubuntu-1720\hspace{0.5cm}   stopped \\
+             2\hspace{0.15cm}   centos-1575\hspace{0.5cm}   stopped \\
+             3\hspace{0.15cm}   centos-1575\hspace{0.5cm}   running \\
+             4\hspace{0.15cm}   ubuntu-2285\hspace{0.5cm}   running \\
+             5\hspace{0.15cm}   windows-7295\hspace{0.38cm}  stopped \\
+            \vspace{0.5cm}
+             \# virsh dominfo  centos-1516  \\
+             id:\quad 3 \\
+             name:\quad centos-1516  \\
+             uuid:\quad  4a4c59a7-ee3f-c781-96e4-288f2862f011 \\
+             os type:\quad linux \\
+             state:\quad running  \\
+             cpu(s):\quad  2  \\
+             cpu time:\quad  11.0s \\ 
+             max memory:\quad   512000 kb  \\
+             used memory:\quad  512000 kb  \\
         }    
     \endgroup    
 \end{frame}
@@ -394,20 +440,26 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Aprovisionamiento}
-    \vspace{-1.5cm}
-    La herramienta utilizada para el aprovisionamiento fue Cobbler.
+\begin{frame}{Desarrollo - Servidor de aprovisionamiento}
+    \vspace{0cm}
+    El centro del servidor de aprovisionamiento es Cobbler. Además de este, encontramos servidores PXE, DHCP, TFTP, SAMBA y DNS.
+    \vspace{0.5cm}
+    \\ 
+    El servidor Cobbler se \textbf{basa en objetos} para definir la instalación y configuración deseada en cada caso.
     \\
-    Utiliza una arquitectura cliente - servidor.
-    \begin{itemize}
-        \item El servidor debe ejecutarse en un sistema basado en Unix
-        \item Centraliza y simplifica el control de servicios incluyendo PXE, DHCP, TFTP y DNS con propósito de realizar instalaciones basadas en red de sistemas operativos
-        \item Cobbler utiliza objetos para definir la configuración de aprovisionamiento:
-    \end{itemize}
+    Los objetos se ordenan en una  \textbf{jerarquía vertical}, donde el objeto inferior, contiene a los superiores.
+    %La herramienta utilizada para el aprovisionamiento fue Cobbler.
+    %\\
+    %Utiliza una arquitectura cliente - servidor.
+    %\begin{itemize}
+    %    \item El servidor debe ejecutarse en un sistema basado en Unix
+    %    \item Centraliza y simplifica el control de servicios incluyendo PXE, DHCP, TFTP y DNS con propósito de realizar instalaciones basadas en red de sistemas operativos
+    %    \item Cobbler utiliza objetos para definir la configuración de aprovisionamiento:
+    %\end{itemize}
     
 \end{frame}
 
-\begin{frame}{Desarrollo - Aprovisionamiento}
+\begin{frame}{Desarrollo - Servidor de aprovisionamiento}
     \vspace{0cm} {Modelado de Cobbler}
     \vspace{0.5cm}
     \begin{figure}[ht]
@@ -417,8 +469,8 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Desarrollo - Aprovisionamiento}
-    \vspace{-1.5cm}
+\begin{frame}{Desarrollo - Servidor de aprovisionamiento}
+    \vspace{0cm}
     \begin{itemize}
         \item \textbf{Distro}: Distribución que se desea instalar
         \item \textbf{Repo}: Repositorio, sitio centralizado donde se almacena y mantiene información digital
@@ -429,7 +481,7 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Aprovisionamiento}
+\begin{frame}{Desarrollo - Servidor de aprovisionamiento}
     \vspace{0.5cm}
     \begin{figure}[ht]
        \centering
@@ -452,24 +504,21 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Orquestación}
-    \vspace{-1.5cm}
-    La herramienta utilizada para orquestar fue Puppet.
-    \\
-    Utiliza una arquitectura cliente - servidor.  
+\begin{frame}{Desarrollo - Servidor de orquestación}
+    \vspace{0cm}
+    El servidor usado para orquestar fue Puppet. 
     \begin{itemize}
-        \item El servidor (nodo maestro) debe ejecutarse en un sistema basado en Unix
-        \item Los clientes (agentes) soportan múltiples plataformas
-        \item Posee su propio DSL (Domain Specific Language)
-        \item El usuario describe los recursos del sistema y sus estados utilizando un lenguaje declarativo  
-        \item El nodo maestro provee una interfaz HTTPS con varios extremos disponibles
-        \item Cuando se pide o envía cualquier dato al servidor, el agente hace un pedido HTTPS o a uno de esos extremos
+        \item Tiene soporte para la administración de \textbf{múltiples plataformas}.
+        \item Los recursos del sistema y sus estados se configuran utilizando un \textbf{lenguaje declarativo propio}.
+        \item Estas configuraciones se denominan \textbf{manifiestos}.
+        \item Las comunicaciones se realizan bajo \textbf{HTTPS}.
+
     \end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{Desarrollo - Orquestación}
+\begin{frame}{Desarrollo - Servidor de orquestación}
     \vspace{0cm} {Ciclo de orquestación}
     \vspace{0cm}
         \begin{figure}[ht]
@@ -489,7 +538,7 @@
 %
 %\end{frame}
 
-\begin{frame}{Desarrollo - Orquestación}
+\begin{frame}{Desarrollo - Servidor de orquestación}
     \vspace{0cm} {Estructura de los módulos de Puppet}
     \vspace{0cm}
     \begin{figure}[ht]
@@ -499,7 +548,7 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Orquestación}
+\begin{frame}{Desarrollo - Servidor de orquestación}
     \vspace{0cm} {Ejemplo lenguaje declarativo de Puppet}
     \vspace{0cm}
     \begin{figure}[ht]
@@ -509,7 +558,7 @@
 
 \end{frame}
 
-\begin{frame}{Desarrollo - Orquestación}
+\begin{frame}{Desarrollo - Servidor de orquestación}
     \vspace{0cm} {Ejemplo lenguaje declarativo de Puppet}
     \vspace{0cm}
     \begin{figure}[ht]
@@ -518,9 +567,9 @@
     \end{figure}
 
 \end{frame}
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                               CONCLUSIONES
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Conclusiones}
 \begin{frame}
     %\vspace{}
@@ -532,13 +581,19 @@
 
 \begin{frame}{Conclusiones}
     \vspace{0cm}
-    \begin{itemize}
-        \item Elección del entorno realizado utilizando factores de decisión ponderados
-        \item Solución modularizada
-        \item Permite la escalabilidad necesaria
-        \item Soluciones de código abierto no siempre permiten estar en la "cresta de la ola"
-        \item El sistema final cumple con los requerimientos
-    \end{itemize}
+
+    El sistema obtenido, es un \textbf{sistema modularizado}. Cada tarea es realizada por un servidor de forma independiente al resto. 
+    \\
+    \vspace{0.5cm}
+    Se implementó un diseño que permite \textbf{escalabilidad y mejoras a futuro}.
+    \\
+    \vspace{0.5cm}  
+    Si bien se encontró una solución basada en \textbf{herramientas libres}, estas no siempre permiten situarse en la \textbf{cresta de la ola}.
+    %\begin{itemize}
+    %    \item Solución modularizada
+    %    \item Permite la escalabilidad
+    %    \item Las soluciones de código abierto no siempre permiten estar en la "cresta de la ola"
+    %\end{itemize}
 
     % El análisis formal del problema para la obtención de los requerimientos y los riesgos del proyecto, es algo que también debe destacarse. Esta es una fase imprescindible para poder llevar a cabo las estimaciones pertinentes a los tiempos de desarrollo e investigación de cualquier proyecto. En muchas ocasiones se cuenta con diferentes herramientas para llevar a cabo una misma tarea. El análisis de cada una de ellas y su elección, utilizando factores de decisión ponderados, es fundamental para el trabajo como ingeniero. De aquí también se puede hacer notar que la utilización de soluciones de código abierto no siempre permiten estar en la "cresta de la ola" tecnológica y muchas veces es necesario contar con software privativo para obtener la máxima producción.
 
@@ -547,9 +602,9 @@
 \end{frame}
 
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                        TRABAJOS FUTUROS
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \begin{frame}
     %\vspace{}
     \Huge
@@ -563,19 +618,19 @@
     \begin{itemize}
         \item Protección: 
         \begin{itemize}
-            \item  Modificar el sistema para que funcione con firewall y SELinux
-            \item  Incluir autenticación por usuario en la interfaz web
-            \item  Incluir un log de cambios al sistema que permita saber quién y qué cambio realizó
+            \item  Modificar el sistema para que funcione con \textbf{firewall} y \textbf{SELinux}.
+            \item  Incluir \textbf{autenticación} por usuario en la interfaz web.
+            \item  Incluir un \textbf{log de cambios} al sistema que permita saber quién y qué cambio realizó.
         \end{itemize}
-        \item Migración: Poder realizar el traslado de hosts virtuales entre las diferentes máquinas físicas
+        \item Migración: Poder realizar la \textbf{migración en vivo} de máquinas virtuales.
         
     \end{itemize}
 
 \end{frame}
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                         VIDEO DEMOSTRACIÓN
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Video demostración}
 \begin{frame}
     %\vspace{}
@@ -586,18 +641,18 @@
 \end{frame}
 
 \begin{frame}{Video demostración}
-    \vspace{-1.5cm}
+    \vspace{0cm}
     \begin{itemize}
-        \item Creación de las máquinas virtuales
-        \item Aprovisionamiento de las máquinas con el sistema operativo deseado
-        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas
+        \item Creación de las máquinas virtuales.
+        \item Aprovisionamiento de las máquinas con el sistema operativo deseado.
+        \item Orquestar las políticas definidas para una máquina o un conjunto de máquinas.
     \end{itemize}
 
 \end{frame}
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                                Q & A
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Preguntas}
 \begin{frame}
     %\vspace{}
@@ -606,9 +661,9 @@
     \textbf{Preguntas}
 
 \end{frame}
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                           AGRADECIMIENTOS
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \section{Muchas Gracias!}
 \begin{frame}
     %\vspace{}
@@ -618,9 +673,9 @@
 
 \end{frame}
 
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 %                                                                 END
-%---------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 \end{document}
 
               
