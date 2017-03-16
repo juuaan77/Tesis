@@ -1,6 +1,0 @@
-node /alumno*/ {
-        class {'modulo':
-                contenido => "Esta fruta ya no es por defecto, es parametro viteh\n",
-        }
-}
-
