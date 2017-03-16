@@ -394,19 +394,16 @@
 
 
 \begin{frame}{Desarrollo - Servidor de virtualización}
-    \begin{figure}[!tbp]
-      \centering
-      \begin{minipage}[b]{0.4\textwidth}
-        \scalebox{1.2}{\includegraphics[width=\textwidth]{./figuras/kvm_virt_install.png}}
-        \caption{\scriptsize Creación VM}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[b]{0.4\textwidth}
-        \scalebox{1.2}{\includegraphics[width=\textwidth]{./figuras/kvm_virsh.png}}
-        \caption{\scriptsize Administración VM}
-      \end{minipage}
-    \end{figure}
-
+    \vspace{0cm}
+    \textbf{Virsh} es la librería que controla al servidor de virtualización. Su funcionalidad es administrar la creación de las máquinas virtuales, personalizando diferentes aspectos como:
+        \begin{itemize}
+            \item Nombre
+            \item Estado
+            \item Aceleración por hardware
+            \item MAC Address
+            \item Prioridad de inicio del sistema (PXE, DVD, HDD/SSD)
+        \end{itemize}
+    También permite obtener información sobre las máquinas virtuales alojadas en el servidor. Estos datos los procesamos y enviamos a la interfaz web para \textbf{presentársela al usuario}.
 
 \end{frame}
 
@@ -589,7 +586,7 @@
     \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \scalebox{0.5}{\includegraphics[angle=0]{./figuras/orquestacion-codigo-puppet-2.png}}
+       \scalebox{0.4}{\includegraphics[angle=0]{./figuras/orquestacion-codigo-puppet-2.png}}
     \end{figure}
 
 \end{frame}
@@ -599,7 +596,7 @@
     \vspace{0cm}
     \begin{figure}[ht]
        \centering
-       \scalebox{0.4}{\includegraphics[angle=0]{./figuras/orquestacion-codigo-puppet-1.png}}
+       \scalebox{0.5}{\includegraphics[angle=0]{./figuras/orquestacion-codigo-puppet-1.png}}
     \end{figure}
 
 \end{frame}
