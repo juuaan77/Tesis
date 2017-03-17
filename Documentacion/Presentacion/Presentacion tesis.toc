@@ -7,5 +7,5 @@
 \beamer@sectionintoc {5}{Desarrollo}{14}{0}{5}
 \beamer@sectionintoc {6}{Conclusiones}{34}{0}{6}
 \beamer@sectionintoc {7}{Video demostraci\IeC {\'o}n}{38}{0}{7}
-\beamer@sectionintoc {8}{Preguntas}{40}{0}{8}
-\beamer@sectionintoc {9}{Muchas Gracias!}{41}{0}{9}
+\beamer@sectionintoc {8}{Preguntas}{39}{0}{8}
+\beamer@sectionintoc {9}{Muchas Gracias!}{40}{0}{9}
